@@ -1,5 +1,6 @@
 import { zip, enumerate, count, permute, combinations, wrapAroundGet } from "https://deno.land/x/good@1.5.1.0/array.js"
 import { Input } from "../subrepos/cliffy/prompt/input.ts"
+import { Checkbox } from "../subrepos/cliffy/prompt/checkbox.ts"
 import { stripColor } from "../subrepos/cliffy/prompt/deps.ts"
 import { distance } from "../subrepos/cliffy/_utils/distance.ts"
 
@@ -14,15 +15,11 @@ export function selectOne({ message, showList, showInfo, options, optionDescript
     const { rows, columns } = Deno.consoleSize()
     const maxOptionWidth = columns-3
     const longest = Math.max(...optionStrings.map(each=>each.length))
-    const operations = {}
     const suggestions = optionStrings
     const suggestionDescriptions = []
     if (optionDescriptions) {
         for (let [suggestion, description] of zip(suggestions, optionDescriptions)) {
             let offset = 2
-            if (suggestion.indexOf("❄️") != -1) {
-                offset = 3
-            }
             suggestionDescriptions.push(
                 stripColor(suggestion.padEnd(longest+offset," ")+": "+description).slice(0,maxOptionWidth).slice(suggestion.length+2)
             )
@@ -59,4 +56,25 @@ export function selectOne({ message, showList, showInfo, options, optionDescript
             return options[optionStrings[0]]
         }
     })
+}
+// note: this can go in the options array
+// Checkbox.separator("--------"),
+
+export function selectMany({ message, options, ...other}) {
+    let optionStrings
+    if (options instanceof Array) {
+        optionStrings = options
+        options = Object.fromEntries(optionStrings.map(each=>[each,each]))
+    } else {
+        optionStrings = Object.keys(options)
+    }
+    const { rows, columns } = Deno.consoleSize()
+    const maxOptionWidth = columns-3
+    const longest = Math.max(...optionStrings.map(each=>each.length))
+    const suggestions = optionStrings
+    return Checkbox.prompt({
+        message,
+        options: suggestions,
+        ...other,
+    }).then((answers)=>answers.map(each=>options[each]))
 }
