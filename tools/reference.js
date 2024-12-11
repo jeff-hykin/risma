@@ -1,0 +1,40 @@
+export class Reference {
+    constructor({
+        title,
+        possibleYear,
+        notesConsideredRelevent,
+        notesCustomKeywords,
+        notesComment,
+        notesWasRelatedTo,
+        notesIsCitedByTitles,
+        notesCites,
+        discoveryMethod,
+        authorNames,
+        pdfLink,
+        link,
+        citationId,
+        multiArticleId,
+        citedByLink,
+        publisherInfo,
+        ...other
+    }) {
+        Object.assign(this,{
+            title,
+            possibleYear,
+            notesConsideredRelevent,
+            notesCustomKeywords,
+            notesComment,
+            notesWasRelatedTo,
+            notesIsCitedByTitles,
+            notesCites,
+            discoveryMethod,
+            authorNames,
+            pdfLink,
+            link,
+            citationId,
+            multiArticleId,
+            citedByLink,
+            publisherInfo,
+        },other)
+    }
+}
