@@ -3,6 +3,8 @@ import { Input } from "../subrepos/cliffy/prompt/input.ts"
 import { Checkbox } from "../subrepos/cliffy/prompt/checkbox.ts"
 import { stripColor } from "../subrepos/cliffy/prompt/deps.ts"
 import { distance } from "../subrepos/cliffy/_utils/distance.ts"
+import { isValidPathStringForFilePosix } from "https://deno.land/x/good@1.13.4.0/flattened/is_valid_path_string_for_file_posix.js"
+import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, dim, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.72/main/console.js"
 
 export function selectOne({ message, showList, showInfo, options, optionDescriptions, autocompleteOnSubmit=true }) {
     let optionStrings
@@ -77,4 +79,46 @@ export function selectMany({ message, options, ...other}) {
         options: suggestions,
         ...other,
     }).then((answers)=>answers.map(each=>options[each]))
+}
+
+export const askForPath = async (message, other={}) => {
+    return Input.prompt({
+        message,
+        list: true,
+        info: true,
+        files: true,
+        ...other
+    })
+}
+
+export const askForFilePath = async (message, other={}) => {
+    while (true) {
+        const response = await askForPath(message, other)
+        if (response) {
+            if (isValidPathStringForFilePosix(response)) {
+                return response
+            } else {
+                console.log(`Sorry, that's not a valid posix path for a file`)
+            }
+        }
+    }
+}
+
+export const askForParagraph = async (message, other={}) => {
+    console.log(message)
+    let lastWasNewline = false
+    let paragraph = []
+    while (1) {
+        const response = await Console.askFor.line()
+        if (response == "") {
+            if (lastWasNewline) {
+                break
+            }
+            lastWasNewline = true
+            continue
+        } else {
+            paragraph.push(response)
+        }
+    }
+    return paragraph.join("\n")
 }
