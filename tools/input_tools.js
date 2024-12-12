@@ -15,6 +15,15 @@ export async function selectOne({ message, showList=true, mustBeOnList=true, sho
     } else {
         optionStrings = Object.keys(options)
     }
+    if (Object.values(options).length == 0) {
+        console.warn(`[selectOne] I'm suppose to let the user select an option, but no options were given!`)
+        return null
+    }
+    // if there's only one option, its not really a choice so just return it
+    if (Object.values(options).length == 1) {
+        console.log(`[selectOne] there's only one option, so I'm auto-selecting ${green(JSON.stringify(Object.keys(options)[0]))}`)
+        return Object.values(options)[0]
+    }
     const { rows, columns } = Deno.consoleSize()
     const maxOptionWidth = columns-3
     const longest = Math.max(...optionStrings.map(each=>each.length))

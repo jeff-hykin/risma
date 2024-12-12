@@ -12,7 +12,7 @@ import DateTime from "https://deno.land/x/good@1.13.4.0/date.js"
 import { parseArgs, flag, required, initialValue } from "https://deno.land/x/good@1.13.4.0/flattened/parse_args.js" 
 
 import { version } from "./tools/version.js"
-import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner } from "./tools/input_tools.js"  
+import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses } from "./tools/input_tools.js"  
 import { searchOptions } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
@@ -85,18 +85,41 @@ const storageObject = createStorageObject(cacheItemPath)
         await FileSystem.write({path: storageObject.activeProjectPath, data: yaml.stringify(activeProject)})
     }
 
+    function getReferenceStatusCounts() {
+        const counts = {}
+        const references = Object.values(activeProject.references)
+        const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
+        for (const element of statuses) {
+            counts[element] = (counts[element] || 0) + 1
+        }
+        for (const [key, value] of Object.entries(counts)) {
+            if (value == 0) {
+                delete counts[key]
+            }
+        }
+        return counts
+    }
+
+    function showProjectStatus() {
+        const counts = getReferenceStatusCounts()
+        console.log(yaml.stringify({
+            totalReferences: Object.keys(activeProject.references).length, 
+            ...counts
+        }))
+    }
 
 // 
 // main loop
 // 
-while (true) {
+mainLoop: while (true) {
+    showProjectStatus()
     const whichAction = await selectOne({
         message: "next action",
         options: [
             "gather references (search internet)",
             "change project",
             "modify keywords",
-            "curate references",
+            "review references",
             "explore references",
         ],
     })
@@ -105,10 +128,9 @@ while (true) {
     
     if (whichAction == "gather references (search internet)") {
         const searchEngineName = await selectOne({
-            message: "next action",
+            message: "which engine?",
             options: Object.keys(searchOptions),
         })
-        const searchEngineName = options.search
         const searchEngine = searchOptions[searchEngineName]
         const query = await Console.askFor.line(`What's the search query?`)
         const discoveryMethod = new DiscoveryMethod({
@@ -116,7 +138,6 @@ while (true) {
             dateTime: new Date().getTime(),
             searchEngine: searchEngineName,
         })
-        let references
         const references = await withSpinner("searching", 
             ()=>searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query, discoveryMethod)}`)
         )
@@ -193,88 +214,91 @@ while (true) {
             activeProject.keywords[kind] = activeProject.keywords[kind].filter(each=>!onesToDelete.includes(each))
         }
         saveProject()
-    } else if (whichAction == "curate references") {
-        const counts = {}
-        const references = Object.values(activeProject.references)
-        const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
-        const counts = {
-            "unseen:title": 0,
-            "relevent:title": 0,
-            "relevent:abstract": 0,
-            "relevent:partial-read": 0,
-            "relevent:full-read": 0,
-            "super-relevent:partial-read": 0,
-            "super-relevent:full-read": 0,
-        }
-        for (const element of statuses) {
-            counts[element] = (counts[element] || 0) + 1
-        }
-        for (const [key, value] of Object.entries(counts)) {
-            if (value == 0) {
-                delete counts[key]
+    } else if (whichAction == "review references") {
+        reviewLoop: while (true) {
+            const references = Object.values(activeProject.references)
+            const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
+            const counts = {
+                "unseen:title": 0,
+                "skipped:title": 0,
+                "relevent:title": 0,
+                "relevent:abstract": 0,
+                "relevent:partial-read": 0,
+                "relevent:full-read": 0,
+                "super-relevent:partial-read": 0,
+                "super-relevent:full-read": 0,
             }
-        }
-        const whatKind = await selectOne({
-            message: "what to review?",
-            options: Object.keys(counts),
-            optionsDescription: Object.values(counts).map(each=>`(${each} references)`),
-        })
-        
-        // 
-        // title review
-        // 
-        if (whatKind == "unseen:title") {
-            console.log(`g=relevent (good), b=not relevent (bad), n=skip (next)`)
-            for (let each of references.filter(each=>each.resumeStatus == whatKind)) {
-                
+            for (const element of statuses) {
+                counts[element] = (counts[element] || 0) + 1
             }
-        }
-
-        // 
-        // 
-        // mark good titles
-        // 
-        //
-            const stage2References = {}
-            const stage2ReferenceKeys = await selectMany({
-                message: "Which titles are good enough to view the abstracts for?",
-                options: Object.keys(unseenReferences),
-            })
-            // mark irrelvent/relevant
-            for (const [key, value] of Object.entries(unseenReferences)) {
-
-                if (!stage2ReferenceKeys.includes(key)) {
-                    value.reasonsNotRelevant = value.reasonsNotRelevant || []
-                    value.reasonsNotRelevant.push("title")
-                    value.resumeStatus = "irrelevent:title"
-                } else {
-                    stage2References[key] = value
-                    value.relevanceStages = [ "title", ]
-                    value.resumeStatus = "relevent:title"
+            for (const [key, value] of Object.entries(counts)) {
+                if (value == 0) {
+                    delete counts[key]
                 }
             }
-            saveProject()
-        // 
-        // explore
-        //
-            const choice = await selectOne({
-                message: "next action",
-                options: [
-                    "explore pending",
-                    "search",
-                ],
-                showList: true,
+            
+            const whatKind = await selectOne({
+                message: "what to review?",
+                options: ["nothing (quit)"].concat(Object.keys(counts)),
+                optionsDescription: [""].concat(Object.values(counts).map(each=>`(${each} references)`)),
             })
-            if (choice == "explore pending") {
-                let stage3References = {}
-                while (Object.values(stage2References).length > 0) {
-                    const title = await selectOne({
+            
+            // 
+            // title review
+            // 
+            if (whatKind == "nothing (quit)") {
+                continue mainLoop
+            } else if (whatKind == "unseen:title" || whatKind == "skipped:title") {
+                console.log(`g=relevent (good), b=not relevent (bad), n=skip (next), q=quit`)
+                nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind)) {
+                    // TODO: highlight good and bad keywords
+                    console.log(`title: ${each.title}`)
+                    for await (let { name: keyName, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
+                        if (keyName == "q" || (ctrl && keyName == "c")) {
+                            continue reviewLoop
+                        }
+                        each.reasonsNotRelevant = each.reasonsNotRelevant || []
+                        each.relevanceStages = each.relevanceStages || []
+                        each.events = each.events || {}
+                        each.events["saw title"] =  each.events["saw title"] || new DateTime().date
+                        saveProject()
+                        if (keyName == "n") {
+                            continue nextReferenceLoop
+                        } else {
+                            if (keyName == "g") {
+                                each.resumeStatus = "relevent:title"
+                                each.relevanceStages.push("title")
+                                break
+                            } else if (keyName == "b") {
+                                each.resumeStatus = "irrelevent:title"
+                                each.reasonsNotRelevant.push("title")
+                                break
+                            } else {
+                                console.log(`unrecognized key: ${keyName}`)
+                            }
+                            saveProject()
+                        }
+                        break
+                    }
+                }
+                console.log(`finished reviewing ${whatKind}!`)
+            } else if (whatKind == "relevent:title") {
+                let quit = { title: "quit", }
+                let activeReferences
+                nextReferenceLoop: while (1) {
+                    activeReferences = [quit].concat(references.filter(each=>each.resumeStatus == whatKind))
+                    if (activeReferences.length == 1) {
+                        await saveProject()
+                        prompt(`finished reviewing ${whatKind}! (press enter to continue)`)
+                        continue reviewLoop
+                    }
+                    const active = await selectOne({
                         message: "Which title do you want to explore?",
-                        options: Object.keys(stage2References),
-                        showList: true,
+                        options: Object.fromEntries(activeReferences.map(each=>[each.title, each])),
                     })
-                    const active = stage2References[title]
-                    delete stage2References[title]
+                    if (active == quit) {
+                        continue mainLoop
+                    }
                     // TODO: add filtering words that could be fetched here
                     // TODO: wget the result into a file
                     // TODO: if it's a pdf, download it
@@ -288,7 +312,6 @@ while (true) {
                             "unclear",
                             "relevent",
                         ],
-                        showList: true,
                     })
                     active.relevanceStages = active.relevanceStages || [ ]
                     active.reasonsNotRelevant = active.reasonsNotRelevant || []
@@ -299,9 +322,31 @@ while (true) {
                     if (choice == "relevent") {
                         active.relevanceStages.push("abstract")
                     }
+                    saveProject()
+                }
+            } else {
+                let quit = { title: "quit", }
+                let activeReferences
+                nextReferenceLoop: while (1) {
+                    activeReferences = [quit].concat(references.filter(each=>each.resumeStatus == whatKind))
+                    if (activeReferences.length == 1) {
+                        await saveProject()
+                        prompt(`finished reviewing ${whatKind}! (press enter to continue)`)
+                        continue reviewLoop
+                    }
+                    const active = await selectOne({
+                        message: "Which title do you want to explore?",
+                        options: Object.fromEntries(activeReferences.map(each=>[each.title, each])),
+                    })
+                    if (active == quit) {
+                        continue mainLoop
+                    }
+                    await OperatingSystem.openUrl(active.link||active.pdfLink)
                 }
             }
-        throw Error(`not implemented yet`)
+
+            break 
+        }
     } else if (whichAction == "explore references") {
         throw Error(`not implemented yet`)
     }
