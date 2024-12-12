@@ -5,9 +5,9 @@ import { parse } from "../subrepos/cliffy/keycode/mod.ts"
 import { stripColor } from "../subrepos/cliffy/prompt/deps.ts"
 import { distance } from "../subrepos/cliffy/_utils/distance.ts"
 import { isValidPathStringForFilePosix } from "https://deno.land/x/good@1.13.4.3/flattened/is_valid_path_string_for_file_posix.js"
-import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, dim, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
+import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
 
-export async function selectOne({ message, showList=true, mustBeOnList=true, showInfo, options, optionDescriptions, autocompleteOnSubmit=true }) {
+export async function selectOne({ message, showList=true, mustBeOnList=true, showInfo, options, optionDescriptions, autocompleteOnSubmit=true, descriptionHighlighter=stripColor }) {
     let optionStrings
     if (options instanceof Array) {
         optionStrings = options
@@ -26,14 +26,17 @@ export async function selectOne({ message, showList=true, mustBeOnList=true, sho
     }
     const { rows, columns } = Deno.consoleSize()
     const maxOptionWidth = columns-3
-    const longest = Math.max(...optionStrings.map(each=>each.length))
+    const longest = Math.max(...optionStrings.map(each=>clearAnsiStylesFrom(each).length))
     const suggestions = optionStrings
     const suggestionDescriptions = []
     if (optionDescriptions) {
         for (let [suggestion, description] of zip(suggestions, optionDescriptions)) {
+            suggestion = clearAnsiStylesFrom(suggestion)
             let offset = 2
             suggestionDescriptions.push(
-                stripColor(suggestion.padEnd(longest+offset," ")+": "+description).slice(0,maxOptionWidth).slice(suggestion.length+2)
+                descriptionHighlighter(
+                    (suggestion.padEnd(longest+offset," ")+": "+description).slice(0,maxOptionWidth).slice(suggestion).length+2)
+                )
             )
         }
     }
@@ -207,4 +210,8 @@ export async function* listenToKeypresses({ stream=Deno.stdin, cbreak=true }={})
             yield key
         }
     }
+}
+
+export function dim(text) {
+    return `\x1b[2m${text}`.replace(/\x1b\[0m/g,"\x1b[0m\x1b[2m")
 }
