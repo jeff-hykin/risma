@@ -139,3 +139,19 @@ export const askForParagraph = async (message, other={}) => {
     }
     return paragraph.join("\n")
 }
+
+
+import { TerminalSpinner, SpinnerTypes } from "https://deno.land/x/spinners@v1.1.2/mod.ts"
+export const withSpinner = async (taskName, func) => {
+    const terminalSpinner = new TerminalSpinner({
+        text: "fetching",
+        color: "green",
+        spinner: SpinnerTypes.dots, // check the file - see import
+        indent: 0, // The level of indentation of the spinner in spaces
+        cursor: false, // Whether or not to display a cursor when the spinner is active
+        writer: Deno.stderr
+    })
+    terminalSpinner.start()
+    return Promise.resolve(func()).finally(()=>terminalSpinner.succeed(taskName))
+}
+
