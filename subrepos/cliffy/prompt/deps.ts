@@ -10,9 +10,9 @@ export {
   yellow,
   reset,
   cyan,
-} from "https://deno.land/std@0.196.0/fmt/colors.ts";
+} from "../std/fmt/colors.ts";
 export {
   dirname,
   join,
   normalize,
-} from "https://deno.land/std@0.196.0/path/mod.ts";
+} from "../std/path/mod.ts";
