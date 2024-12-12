@@ -1,6 +1,7 @@
 export class Reference {
     constructor({
         title,
+        resumeStatus,
         possibleYear,
         notesConsideredRelevent,
         notesCustomKeywords,
@@ -16,10 +17,15 @@ export class Reference {
         multiArticleId,
         citedByLink,
         publisherInfo,
+        reasonsNotRelevant=[],
+        relevanceStages=[],
         ...other
     }) {
         Object.assign(this,{
             title,
+            resumeStatus,
+            reasonsNotRelevant,
+            relevanceStages,
             possibleYear,
             notesConsideredRelevent,
             notesCustomKeywords,
@@ -36,5 +42,11 @@ export class Reference {
             citedByLink,
             publisherInfo,
         },other)
+        // for yaml
+        for (const [key, value] of Object.entries(this)) {
+            if (value === undefined) {
+                this[key] = null
+            }
+        }
     }
 }
