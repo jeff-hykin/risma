@@ -3,10 +3,10 @@ references:
     title: >-
       Maal: Multimodality-aware autoencoder-based affordance learning for 3d
       articulated objects
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
+    resumeStatus: 'relevent:title'
+    reasonsNotRelevant: []
+    relevanceStages:
       - title
-    relevanceStages: []
     possibleYear: '2023'
     notesConsideredRelevent: null
     notesCustomKeywords: []
@@ -21,9 +21,9 @@ references:
       - L Zhu
       - Y Yang�
     pdfLink: >-
-      https://scholar.google.com/http://openaccess.thecvf.com/content/ICCV2023/papers/Liang_MAAL_Multimodality-Aware_Autoencoder-Based_Affordance_Learning_for_3D_Articulated_Objects_ICCV_2023_paper.pdf
+      http://openaccess.thecvf.com/content/ICCV2023/papers/Liang_MAAL_Multimodality-Aware_Autoencoder-Based_Affordance_Learning_for_3D_Articulated_Objects_ICCV_2023_paper.pdf
     link: >-
-      https://scholar.google.com/http://openaccess.thecvf.com/content/ICCV2023/html/Liang_MAAL_Multimodality-Aware_Autoencoder-Based_Affordance_Learning_for_3D_Articulated_Objects_ICCV_2023_paper.html
+      http://openaccess.thecvf.com/content/ICCV2023/html/Liang_MAAL_Multimodality-Aware_Autoencoder-Based_Affordance_Learning_for_3D_Articulated_Objects_ICCV_2023_paper.html
     citationId: '17996314394227749729'
     multiArticleId: '17996314394227749729'
     citedByLink: >-
@@ -31,10 +31,10 @@ references:
     publisherInfo: ' Proceedings of the IEEE�…, 2023 '
   Context-based affordance segmentation from 2D images for robot actions: &ref_1
     title: Context-based affordance segmentation from 2D images for robot actions
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
+    resumeStatus: 'relevent:title'
+    reasonsNotRelevant: []
+    relevanceStages:
       - title
-    relevanceStages: []
     possibleYear: '2019'
     notesConsideredRelevent: null
     notesCustomKeywords: []
@@ -48,8 +48,7 @@ references:
       - T Kulvicius
       - F Woergoetter�
     pdfLink: null
-    link: >-
-      https://scholar.google.com/https://www.sciencedirect.com/science/article/pii/S0921889018309990
+    link: 'https://www.sciencedirect.com/science/article/pii/S0921889018309990'
     citationId: '5367276595225124923'
     multiArticleId: '5367276595225124923'
     citedByLink: >-
@@ -72,10 +71,8 @@ references:
     authorNames:
       - A H�m�l�inen
       - K Arndt…�
-    pdfLink: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/iel7/8957008/8967518/08968596.pdf
-    link: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/abstract/document/8968596/
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/8957008/8967518/08968596.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/8968596/'
     citationId: '7670289181984295731'
     multiArticleId: '7670289181984295731'
     citedByLink: >-
@@ -101,10 +98,8 @@ references:
       - TT Do
       - A Nguyen
       - I Reid�
-    pdfLink: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/iel7/8449910/8460178/08460902.pdf
-    link: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/abstract/document/8460902/
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/8449910/8460178/08460902.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/8460902/'
     citationId: '1465475766093395209'
     multiArticleId: '1465475766093395209'
     citedByLink: >-
@@ -129,10 +124,8 @@ references:
       - D Kong
       - J Li
       - S Wang…�
-    pdfLink: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/iel7/6687317/7153538/10171410.pdf
-    link: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/abstract/document/10171410/
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/6687317/7153538/10171410.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/10171410/'
     citationId: '2819040255177116931'
     multiArticleId: '2819040255177116931'
     citedByLink: >-
@@ -158,10 +151,8 @@ references:
       - A Dehban
       - L Jamone
       - AR Kampff…�
-    pdfLink: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/iel7/7478842/7487087/07487691.pdf
-    link: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/abstract/document/7487691/
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/7478842/7487087/07487691.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/7487691/'
     citationId: '11949289151280402096'
     multiArticleId: '11949289151280402096'
     citedByLink: >-
@@ -188,10 +179,8 @@ references:
       - S Kavuri
       - M Lee�- The 1st International Conference on�…
       - '2013'
-    pdfLink: >-
-      https://scholar.google.com/https://hai-conference.net/ihai2013/proceedings/pdf/II-1-2.pdf
-    link: >-
-      https://scholar.google.com/https://hai-conference.net/ihai2013/proceedings/pdf/II-1-2.pdf
+    pdfLink: 'https://hai-conference.net/ihai2013/proceedings/pdf/II-1-2.pdf'
+    link: 'https://hai-conference.net/ihai2013/proceedings/pdf/II-1-2.pdf'
     citationId: '2444273210503652124'
     multiArticleId: '2444273210503652124'
     citedByLink: >-
@@ -218,8 +207,7 @@ references:
       - J Su
       - L Yuan�
     pdfLink: null
-    link: >-
-      https://scholar.google.com/https://www.sciencedirect.com/science/article/pii/S0925231221000278
+    link: 'https://www.sciencedirect.com/science/article/pii/S0925231221000278'
     citationId: '9769992525597622155'
     multiArticleId: null
     citedByLink: >-
@@ -245,8 +233,8 @@ references:
       - G Sun
       - P Wang
       - L Van Gool�
-    pdfLink: 'https://scholar.google.com/https://arxiv.org/pdf/2404.05603'
-    link: 'https://scholar.google.com/https://arxiv.org/abs/2404.05603'
+    pdfLink: 'https://arxiv.org/pdf/2404.05603'
+    link: 'https://arxiv.org/abs/2404.05603'
     citationId: '5889717116834026125'
     multiArticleId: '5889717116834026125'
     citedByLink: >-
@@ -271,10 +259,8 @@ references:
       - W Zhai
       - J Zhang
       - Y Cao…�
-    pdfLink: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/iel7/5962385/6104215/10246333.pdf
-    link: >-
-      https://scholar.google.com/https://ieeexplore.ieee.org/abstract/document/10246333/
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/5962385/6104215/10246333.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/10246333/'
     citationId: '5454105531384108386'
     multiArticleId: '5454105531384108386'
     citedByLink: >-
@@ -283,26 +269,46 @@ references:
 discoveryAttempts:
   - query: affordance based encoder
     date: 12/11/2024
-    dateTime: 1733964962655
+    dateTime: 1733965846533
     searchEngine: scholar
     referenceLinks:
       - hadBeenSeenBefore: false
+        title: >-
+          Maal: Multimodality-aware autoencoder-based affordance learning for 3d
+          articulated objects
         link: *ref_0
       - hadBeenSeenBefore: false
+        title: Context-based affordance segmentation from 2D images for robot actions
         link: *ref_1
       - hadBeenSeenBefore: false
+        title: Affordance learning for end-to-end visuomotor robot control
         link: *ref_2
       - hadBeenSeenBefore: false
+        title: >-
+          Affordancenet: An end-to-end deep learning approach for object
+          affordance detection
         link: *ref_3
       - hadBeenSeenBefore: false
+        title: A survey of visual affordance recognition based on deep learning
         link: *ref_4
       - hadBeenSeenBefore: false
+        title: >-
+          Denoising auto-encoders for learning of objects and tools affordances
+          in continuous space
         link: *ref_5
       - hadBeenSeenBefore: false
+        title: >-
+          Intention recognition and object recommendation system using deep
+          auto-encoder based affordance model
         link: *ref_6
       - hadBeenSeenBefore: false
+        title: >-
+          Visual affordance detection using an efficient attention convolutional
+          neural network
         link: *ref_7
       - hadBeenSeenBefore: false
+        title: Self-Explainable Affordance Learning with Embodied Caption
         link: *ref_8
       - hadBeenSeenBefore: false
+        title: Learning visual affordance grounding from demonstration videos
         link: *ref_9

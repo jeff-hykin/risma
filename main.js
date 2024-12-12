@@ -99,11 +99,13 @@ const options = argsInfo.simplifiedNames
             }
             console.log(`active project is: `,cyan(storageObject.activeProject))
             let activeProject = await FileSystem.read(storageObject.activeProject) || {
+                keywords: [],
                 references: {},
                 discoveryAttempts: [],
             }
             if (!activeProject.discoveryAttempts || !activeProject.references) {
                 activeProject ={
+                    keywords: [],
                     references: {},
                     discoveryAttempts: [],
                 }
@@ -111,7 +113,6 @@ const options = argsInfo.simplifiedNames
             console.debug(`activeProject.references is:`,activeProject.references)
             
             const saveProject = async ()=>{
-                console.debug(`activeProject is:`,activeProject)
                 await FileSystem.write({path: storageObject.activeProject, data: yaml.stringify(activeProject)})
             }
             // if (!activeProject) {
@@ -182,6 +183,7 @@ const options = argsInfo.simplifiedNames
                 const hadBeenSeenBefore = !!activeProject.references[each.title]
                 discoveryMethod.referenceLinks.push({
                     hadBeenSeenBefore,
+                    title: each.title,
                     // link to object directly rather than spread so that yaml will make it a anchor to it
                     link: each,
                 })
@@ -197,17 +199,20 @@ const options = argsInfo.simplifiedNames
         // mark good titles
         // 
         //
-            const stage2References = await selectMany({
+            const stage2References = {}
+            const stage2ReferenceKeys = await selectMany({
                 message: "Which titles are good enough to view the abstracts for?",
-                options: unseenReferences,
+                options: Object.keys(unseenReferences),
             })
             // mark irrelvent/relevant
             for (const [key, value] of Object.entries(unseenReferences)) {
-                if (!stage2References[key]) {
+
+                if (!stage2ReferenceKeys.includes(key)) {
                     value.reasonsNotRelevant = value.reasonsNotRelevant || []
                     value.reasonsNotRelevant.push("title")
                     value.resumeStatus = "irrelevent:title"
                 } else {
+                    stage2References[key] = value
                     value.relevanceStages = [ "title", ]
                     value.resumeStatus = "relevent:title"
                 }
@@ -222,6 +227,7 @@ const options = argsInfo.simplifiedNames
                     "explore pending",
                     "search",
                 ],
+                showList: true,
             })
             if (choice == "explore pending") {
                 let stage3References = {}
@@ -229,14 +235,16 @@ const options = argsInfo.simplifiedNames
                     const title = await selectOne({
                         message: "Which title do you want to explore?",
                         options: Object.keys(stage2References),
+                        showList: true,
                     })
                     const active = stage2References[title]
                     delete stage2References[title]
                     // TODO: add filtering words that could be fetched here
                     // TODO: wget the result into a file
                     // TODO: if it's a pdf, download it
-                    OperatingSystem.openUrl(active.url)
+                    await OperatingSystem.openUrl(active.link||active.pdfLink)
                     active.abstract = await askForParagraph(`paste in the abstract (press enter twice to submit):`)
+                    // TODO: highlight good and bad keywords
                     const choice = await selectOne({
                         message: "abstract was",
                         options: [
@@ -244,15 +252,16 @@ const options = argsInfo.simplifiedNames
                             "unclear",
                             "relevent",
                         ],
+                        showList: true,
                     })
-                    value.relevanceStages = value.relevanceStages || [ ]
-                    value.reasonsNotRelevant = value.reasonsNotRelevant || []
-                    value.resumeStatus = `${choice}:abstract`
+                    active.relevanceStages = active.relevanceStages || [ ]
+                    active.reasonsNotRelevant = active.reasonsNotRelevant || []
+                    active.resumeStatus = `${choice}:abstract`
                     if (choice == "irrelevent") {
-                        value.reasonsNotRelevant.push("abstract")
+                        active.reasonsNotRelevant.push("abstract")
                     }
                     if (choice == "relevent") {
-                        value.relevanceStages.push("abstract")
+                        active.relevanceStages.push("abstract")
                     }
                 }
             }

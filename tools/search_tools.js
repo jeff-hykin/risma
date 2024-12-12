@@ -209,7 +209,7 @@ export const searchOptions = {
         async urlToListOfResults(url, discoveryMethod) {
             let htmlResult
             const baseUrl = new URL(url).origin
-            const getHref = (element)=>`${baseUrl}/${element.getAttribute("href")}`
+            const getHref = (element)=>element.getAttribute("href").startsWith("/")?`${baseUrl}/${element.getAttribute("href")}`:element.getAttribute("href")
             try {
                 htmlResult = await fetch(new URL(url)).then(result=>result.text())
             } catch (error) {

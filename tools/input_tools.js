@@ -109,7 +109,7 @@ export const askForParagraph = async (message, other={}) => {
     let lastWasNewline = false
     let paragraph = []
     while (1) {
-        const response = await Console.askFor.line()
+        const response = await Console.askFor.line("")
         if (response == "") {
             if (lastWasNewline) {
                 break
