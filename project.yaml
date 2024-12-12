@@ -1,12 +1,37 @@
+keywords:
+  positive:
+    - affordance
+    - imagin
+    - encode
+    - robot
+    - embodied
+    - agent
+    - task
+    - egocentric
+    - emergent
+  negative:
+    - large language model
+    - llm
+    - supervised
+    - label
+    - discretize
+  neutral:
+    - visual
+    - predict
+    - centric
+    - learn
+    - transformer
+    - unseen
+    - embedding
+    - latent
 references:
-  'Maal: Multimodality-aware autoencoder-based affordance learning for 3d articulated objects': &ref_0
-    title: >-
-      Maal: Multimodality-aware autoencoder-based affordance learning for 3d
-      articulated objects
-    resumeStatus: 'relevent:title'
+  Visual affordance prediction for guiding robot exploration: &ref_0
+    title: Visual affordance prediction for guiding robot exploration
+    resumeStatus: 'relevent:abstract'
     reasonsNotRelevant: []
     relevanceStages:
       - title
+      - abstract
     possibleYear: '2023'
     notesConsideredRelevent: null
     notesCustomKeywords: []
@@ -16,209 +41,50 @@ references:
     notesCites: []
     discoveryMethod: null
     authorNames:
-      - Y Liang
-      - X Wang
-      - L Zhu
-      - Y Yang�
-    pdfLink: >-
-      http://openaccess.thecvf.com/content/ICCV2023/papers/Liang_MAAL_Multimodality-Aware_Autoencoder-Based_Affordance_Learning_for_3D_Articulated_Objects_ICCV_2023_paper.pdf
-    link: >-
-      http://openaccess.thecvf.com/content/ICCV2023/html/Liang_MAAL_Multimodality-Aware_Autoencoder-Based_Affordance_Learning_for_3D_Articulated_Objects_ICCV_2023_paper.html
-    citationId: '17996314394227749729'
-    multiArticleId: '17996314394227749729'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=17996314394227749729&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' Proceedings of the IEEE�…, 2023 '
-  Context-based affordance segmentation from 2D images for robot actions: &ref_1
-    title: Context-based affordance segmentation from 2D images for robot actions
-    resumeStatus: 'relevent:title'
+      - H Bharadhwaj
+      - A Gupta
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/10160211/10160212/10161288.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/10161288/'
+    citationId: '15979805052095820058'
+    multiArticleId: '15979805052095820058'
+    citedByLink: 'https://scholar.google.com//scholar?cites=15979805052095820058&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: ' 2023 IEEE International�…, 2023 '
+    events:
+      saw title: '2024-12-12T16:30:43.287Z'
+    abstract: 'Motivated by the intuitive understanding humans have about the space of possible interactions, and the ease with which they can generalize this understanding to previously unseen scenes, we develop an approach for learning ‘visual affordances’. Given an input image of a scene, we infer a distribution over plausible future states that can be achieved via interactions with it. To allow predicting diverse plausible futures, we discretize the space of continuous images with a VQ-VAE and use a Transformer-based model to learn a conditional distribution in the latent embedding space. We show that these models can be trained using large-scale and diverse passive data, and that the learned models exhibit compositional generalization to diverse objects beyond the training distribution. We evaluate the quality and diversity of the generations, and demonstrate how the trained affordance model can be used for guiding exploration during visual goal-conditioned policy learning in robotic manipulation.'
+  'RAIL: Robot Affordance Imagination with Large Language Models': &ref_1
+    title: 'RAIL: Robot Affordance Imagination with Large Language Models'
+    resumeStatus: 'unclear:title'
     reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '1936'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - C Zhang
+      - X Meng
+      - D Qi
+      - GS Chirikjian�
+    pdfLink: 'https://arxiv.org/pdf/2403.19369'
+    link: 'https://arxiv.org/abs/2403.19369'
+    citationId: '8172269612940938567'
+    multiArticleId: '8172269612940938567'
+    citedByLink: 'https://scholar.google.com//scholar?cites=8172269612940938567&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: ' arXiv preprint arXiv:2403.19369, 2024 '
+    events:
+      saw title: '2024-12-12T16:30:58.343Z'
+  Affordance-Based Goal Imagination for Embodied AI Agents: &ref_2
+    title: Affordance-Based Goal Imagination for Embodied AI Agents
+    resumeStatus: 'irrelevent:abstract'
+    reasonsNotRelevant:
+      - abstract
     relevanceStages:
       - title
-    possibleYear: '2019'
-    notesConsideredRelevent: null
-    notesCustomKeywords: []
-    notesComment: null
-    notesWasRelatedTo: []
-    notesIsCitedByTitles: []
-    notesCites: []
-    discoveryMethod: null
-    authorNames:
-      - T Lueddecke
-      - T Kulvicius
-      - F Woergoetter�
-    pdfLink: null
-    link: 'https://www.sciencedirect.com/science/article/pii/S0921889018309990'
-    citationId: '5367276595225124923'
-    multiArticleId: '5367276595225124923'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=5367276595225124923&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' Robotics and Autonomous�…, 2019 '
-  Affordance learning for end-to-end visuomotor robot control: &ref_2
-    title: Affordance learning for end-to-end visuomotor robot control
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
-      - title
-    relevanceStages: []
-    possibleYear: '2019'
-    notesConsideredRelevent: null
-    notesCustomKeywords: []
-    notesComment: null
-    notesWasRelatedTo: []
-    notesIsCitedByTitles: []
-    notesCites: []
-    discoveryMethod: null
-    authorNames:
-      - A H�m�l�inen
-      - K Arndt…�
-    pdfLink: 'https://ieeexplore.ieee.org/iel7/8957008/8967518/08968596.pdf'
-    link: 'https://ieeexplore.ieee.org/abstract/document/8968596/'
-    citationId: '7670289181984295731'
-    multiArticleId: '7670289181984295731'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=7670289181984295731&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' 2019 IEEE/RSJ�…, 2019 '
-  'Affordancenet: An end-to-end deep learning approach for object affordance detection': &ref_3
-    title: >-
-      Affordancenet: An end-to-end deep learning approach for object affordance
-      detection
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
-      - title
-    relevanceStages: []
-    possibleYear: '2018'
-    notesConsideredRelevent: null
-    notesCustomKeywords: []
-    notesComment: null
-    notesWasRelatedTo: []
-    notesIsCitedByTitles: []
-    notesCites: []
-    discoveryMethod: null
-    authorNames:
-      - TT Do
-      - A Nguyen
-      - I Reid�
-    pdfLink: 'https://ieeexplore.ieee.org/iel7/8449910/8460178/08460902.pdf'
-    link: 'https://ieeexplore.ieee.org/abstract/document/8460902/'
-    citationId: '1465475766093395209'
-    multiArticleId: '1465475766093395209'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=1465475766093395209&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' 2018 IEEE international conference�…, 2018 '
-  A survey of visual affordance recognition based on deep learning: &ref_4
-    title: A survey of visual affordance recognition based on deep learning
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
-      - title
-    relevanceStages: []
-    possibleYear: '2023'
-    notesConsideredRelevent: null
-    notesCustomKeywords: []
-    notesComment: null
-    notesWasRelatedTo: []
-    notesIsCitedByTitles: []
-    notesCites: []
-    discoveryMethod: null
-    authorNames:
-      - D Chen
-      - D Kong
-      - J Li
-      - S Wang…�
-    pdfLink: 'https://ieeexplore.ieee.org/iel7/6687317/7153538/10171410.pdf'
-    link: 'https://ieeexplore.ieee.org/abstract/document/10171410/'
-    citationId: '2819040255177116931'
-    multiArticleId: '2819040255177116931'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=2819040255177116931&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' IEEE Transactions on Big�…, 2023 '
-  Denoising auto-encoders for learning of objects and tools affordances in continuous space: &ref_5
-    title: >-
-      Denoising auto-encoders for learning of objects and tools affordances in
-      continuous space
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
-      - title
-    relevanceStages: []
-    possibleYear: '2016'
-    notesConsideredRelevent: null
-    notesCustomKeywords: []
-    notesComment: null
-    notesWasRelatedTo: []
-    notesIsCitedByTitles: []
-    notesCites: []
-    discoveryMethod: null
-    authorNames:
-      - A Dehban
-      - L Jamone
-      - AR Kampff…�
-    pdfLink: 'https://ieeexplore.ieee.org/iel7/7478842/7487087/07487691.pdf'
-    link: 'https://ieeexplore.ieee.org/abstract/document/7487691/'
-    citationId: '11949289151280402096'
-    multiArticleId: '11949289151280402096'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=11949289151280402096&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' …�on Robotics and�…, 2016 '
-  Intention recognition and object recommendation system using deep auto-encoder based affordance model: &ref_6
-    title: >-
-      Intention recognition and object recommendation system using deep
-      auto-encoder based affordance model
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
-      - title
-    relevanceStages: []
-    possibleYear: null
-    notesConsideredRelevent: null
-    notesCustomKeywords: []
-    notesComment: null
-    notesWasRelatedTo: []
-    notesIsCitedByTitles: []
-    notesCites: []
-    discoveryMethod: null
-    authorNames:
-      - S Kim
-      - S Kavuri
-      - M Lee�- The 1st International Conference on�…
-      - '2013'
-    pdfLink: 'https://hai-conference.net/ihai2013/proceedings/pdf/II-1-2.pdf'
-    link: 'https://hai-conference.net/ihai2013/proceedings/pdf/II-1-2.pdf'
-    citationId: '2444273210503652124'
-    multiArticleId: '2444273210503652124'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=2444273210503652124&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' hai'
-  Visual affordance detection using an efficient attention convolutional neural network: &ref_7
-    title: >-
-      Visual affordance detection using an efficient attention convolutional
-      neural network
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
-      - title
-    relevanceStages: []
-    possibleYear: '2021'
-    notesConsideredRelevent: null
-    notesCustomKeywords: []
-    notesComment: null
-    notesWasRelatedTo: []
-    notesIsCitedByTitles: []
-    notesCites: []
-    discoveryMethod: null
-    authorNames:
-      - Q Gu
-      - J Su
-      - L Yuan�
-    pdfLink: null
-    link: 'https://www.sciencedirect.com/science/article/pii/S0925231221000278'
-    citationId: '9769992525597622155'
-    multiArticleId: null
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=9769992525597622155&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' Neurocomputing, 2021 '
-  Self-Explainable Affordance Learning with Embodied Caption: &ref_8
-    title: Self-Explainable Affordance Learning with Embodied Caption
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
-      - title
-    relevanceStages: []
     possibleYear: '2024'
     notesConsideredRelevent: null
     notesCustomKeywords: []
@@ -228,25 +94,24 @@ references:
     notesCites: []
     discoveryMethod: null
     authorNames:
-      - Z Zhang
-      - Z Wei
-      - G Sun
-      - P Wang
-      - L Van Gool�
-    pdfLink: 'https://arxiv.org/pdf/2404.05603'
-    link: 'https://arxiv.org/abs/2404.05603'
-    citationId: '5889717116834026125'
-    multiArticleId: '5889717116834026125'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=5889717116834026125&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' arXiv preprint arXiv�…, 2024 '
-  Learning visual affordance grounding from demonstration videos: &ref_9
-    title: Learning visual affordance grounding from demonstration videos
-    resumeStatus: 'irrelevent:title'
-    reasonsNotRelevant:
-      - title
+      - V Aregbede
+      - SS Abraham
+      - A Persson
+    pdfLink: 'https://ieeexplore.ieee.org/iel8/10644131/10644157/10644764.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/10644764/'
+    citationId: null
+    multiArticleId: null
+    citedByLink: null
+    publisherInfo: ' on Development and�…, 2024 '
+    events:
+      saw title: '2024-12-12T16:31:01.901Z'
+    abstract: 'Goal imagination in robotics is an emerging concept and involves the capability to automatically generate realistic goals, which, in turn, requires the assessment of the feasibility of transitioning from the current conditions of an initial scene to the desired goal state. Existing research has explored the utilization of diverse image-generative models to create images depicting potential goal states based on the current state and instructions. In this paper, we illustrate the limitations of current state-of-the-art image generative models in accurately assessing the feasibility of specific actions in particular situations. Consequently, we present how integrating large language models, which possess profound knowledge of real-world objects and affordances, can enhance the performance of image-generative models in discerning plausible from implausible actions and simulating the outcomes of actions in a given context. This will be a step towards achieving the pragmatic goal of imagination in robotics.'
+  Learning to anticipate egocentric actions by imagination: &ref_3
+    title: Learning to anticipate egocentric actions by imagination
+    resumeStatus: 'unclear:title'
+    reasonsNotRelevant: []
     relevanceStages: []
-    possibleYear: '2023'
+    possibleYear: '2020'
     notesConsideredRelevent: null
     notesCustomKeywords: []
     notesComment: null
@@ -255,60 +120,216 @@ references:
     notesCites: []
     discoveryMethod: null
     authorNames:
-      - H Luo
-      - W Zhai
-      - J Zhang
-      - Y Cao…�
-    pdfLink: 'https://ieeexplore.ieee.org/iel7/5962385/6104215/10246333.pdf'
-    link: 'https://ieeexplore.ieee.org/abstract/document/10246333/'
-    citationId: '5454105531384108386'
-    multiArticleId: '5454105531384108386'
-    citedByLink: >-
-      https://scholar.google.com//scholar?cites=5454105531384108386&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII
-    publisherInfo: ' IEEE Transactions on�…, 2023 '
+      - Y Wu
+      - L Zhu
+      - X Wang
+      - Y Yang
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/83/9263394/09280353.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/9280353/'
+    citationId: '6012752103031775791'
+    multiArticleId: '6012752103031775791'
+    citedByLink: 'https://scholar.google.com//scholar?cites=6012752103031775791&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: ' IEEE Transactions on�…, 2020 '
+    events:
+      saw title: '2024-12-12T21:30:37.470Z'
+  Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_4
+    title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
+    resumeStatus: 'relevent:abstract'
+    reasonsNotRelevant: []
+    relevanceStages:
+      - title
+      - abstract
+    possibleYear: '2019'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - Y Wu
+      - S Kasewa
+      - O Groth
+      - S Salter
+      - L Sun
+    pdfLink: 'https://arxiv.org/pdf/1909.13561'
+    link: 'https://arxiv.org/abs/1909.13561'
+    citationId: '1893778644382906900'
+    multiArticleId: '1893778644382906900'
+    citedByLink: 'https://scholar.google.com//scholar?cites=1893778644382906900&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: ' arXiv preprint arXiv�…, 2019 '
+    events:
+      saw title: '2024-12-12T21:30:43.250Z'
+    abstract: '     In this paper we explore the richness of information captured by the latent space of a vision-based generative model. The model combines unsupervised generative learning with a task-based performance predictor to learn and to exploit task-relevant object affordances given visual observations from a reaching task, involving a scenario and a stick-like tool. While the learned embedding of the generative model captures factors of variation in 3D tool geometry (e.g. length, width, and shape), the performance predictor identifies sub-manifolds of the embedding that correlate with task success. Within a variety of scenarios, we demonstrate that traversing the latent space via backpropagation from the performance predictor allows us to imagine tools appropriate for the task at hand. Our results indicate that affordances-like the utility for reaching-are encoded along smooth trajectories in latent space. Accessing these emergent affordances by considering only high-level performance criteria (such as task success) enables an agent to manipulate tool geometries in a targeted and deliberate way. '
+  What can i do here? learning new skills by imagining visual affordances: &ref_5
+    title: What can i do here? learning new skills by imagining visual affordances
+    resumeStatus: 'relevent:title'
+    reasonsNotRelevant: []
+    relevanceStages:
+      - title
+    possibleYear: '2021'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - A Khazatsky
+      - A Nair
+      - D Jing
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/9560720/9560666/09561692.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/9561692/'
+    citationId: '15430638141641676250'
+    multiArticleId: '15430638141641676250'
+    citedByLink: 'https://scholar.google.com//scholar?cites=15430638141641676250&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: ' 2021 IEEE International�…, 2021 '
+    events:
+      saw title: '2024-12-12T21:40:37.271Z'
+  'Learning to act properly: Predicting and explaining affordances from images': &ref_6
+    title: 'Learning to act properly: Predicting and explaining affordances from images'
+    resumeStatus: 'relevent:title'
+    reasonsNotRelevant: []
+    relevanceStages:
+      - title
+    possibleYear: '2018'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - CY Chuang
+      - J Li
+      - A Torralba
+    pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2018/papers/Chuang_Learning_to_Act_CVPR_2018_paper.pdf'
+    link: 'http://openaccess.thecvf.com/content_cvpr_2018/html/Chuang_Learning_to_Act_CVPR_2018_paper.html'
+    citationId: '9413040909214203914'
+    multiArticleId: '9413040909214203914'
+    citedByLink: 'https://scholar.google.com//scholar?cites=9413040909214203914&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: ' Proceedings of the IEEE�…, 2018 '
+    events:
+      saw title: '2024-12-12T21:41:04.424Z'
+  Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_7
+    title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
+    resumeStatus: 'relevent:title'
+    reasonsNotRelevant: []
+    relevanceStages:
+      - title
+    possibleYear: '2019'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - Y Wu
+      - S Kasewa
+      - O Groth
+      - S Salter
+      - L Sun
+      - OP Jones…
+    pdfLink: 'https://openreview.net/pdf?id=BkeyOxrYwH'
+    link: 'https://openreview.net/forum?id=BkeyOxrYwH'
+    citationId: '2961549995427504858'
+    multiArticleId: null
+    citedByLink: 'https://scholar.google.com//scholar?cites=2961549995427504858&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: ' 2019 '
+    events:
+      saw title: '2024-12-12T21:41:38.912Z'
+  'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_8
+    title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
+    resumeStatus: 'relevent:title'
+    reasonsNotRelevant: []
+    relevanceStages:
+      - title
+    possibleYear: '2024'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - S Adak
+      - D Agrawal
+      - A Mukherjee
+    pdfLink: 'https://aclanthology.org/2024.conll-1.27.pdf'
+    link: 'https://aclanthology.org/2024.conll-1.27/'
+    citationId: null
+    multiArticleId: null
+    citedByLink: null
+    publisherInfo: ' Proceedings of the 28th�…, 2024 '
+    events:
+      saw title: '2024-12-12T21:43:23.737Z'
+  Learning affordances in object-centric generative models: &ref_9
+    title: Learning affordances in object-centric generative models
+    resumeStatus: 'relevent:title'
+    reasonsNotRelevant: []
+    relevanceStages:
+      - title
+    possibleYear: '2020'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - Y Wu
+      - S Kasewa
+      - O Groth
+      - S Salter
+      - L Sun…
+    pdfLink: 'https://ora.ox.ac.uk/objects/uuid:003cbbd9-a3aa-42e7-8e2d-bcc6b22db89a/download_file?safe_filename=OOL_7.pdf&file_format=pdf&type_of_work=Conference+item'
+    link: 'https://ora.ox.ac.uk/objects/uuid:003cbbd9-a3aa-42e7-8e2d-bcc6b22db89a'
+    citationId: '7478229689628350853'
+    multiArticleId: '7478229689628350853'
+    citedByLink: 'https://scholar.google.com//scholar?cites=7478229689628350853&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: ' 2020 '
+    events:
+      saw title: '2024-12-12T21:43:33.262Z'
 discoveryAttempts:
-  - query: affordance based encoder
-    date: 12/11/2024
-    dateTime: 1733965846533
+  - query: affordance based encoder imagination prediction
+    date: 12/12/2024
+    dateTime: 1734020081395
     searchEngine: scholar
     referenceLinks:
       - hadBeenSeenBefore: false
-        title: >-
-          Maal: Multimodality-aware autoencoder-based affordance learning for 3d
-          articulated objects
+        title: Visual affordance prediction for guiding robot exploration
         link: *ref_0
       - hadBeenSeenBefore: false
-        title: Context-based affordance segmentation from 2D images for robot actions
+        title: 'RAIL: Robot Affordance Imagination with Large Language Models'
         link: *ref_1
       - hadBeenSeenBefore: false
-        title: Affordance learning for end-to-end visuomotor robot control
+        title: Affordance-Based Goal Imagination for Embodied AI Agents
         link: *ref_2
       - hadBeenSeenBefore: false
-        title: >-
-          Affordancenet: An end-to-end deep learning approach for object
-          affordance detection
+        title: Learning to anticipate egocentric actions by imagination
         link: *ref_3
       - hadBeenSeenBefore: false
-        title: A survey of visual affordance recognition based on deep learning
+        title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
         link: *ref_4
       - hadBeenSeenBefore: false
-        title: >-
-          Denoising auto-encoders for learning of objects and tools affordances
-          in continuous space
+        title: What can i do here? learning new skills by imagining visual affordances
         link: *ref_5
       - hadBeenSeenBefore: false
-        title: >-
-          Intention recognition and object recommendation system using deep
-          auto-encoder based affordance model
+        title: 'Learning to act properly: Predicting and explaining affordances from images'
         link: *ref_6
       - hadBeenSeenBefore: false
-        title: >-
-          Visual affordance detection using an efficient attention convolutional
-          neural network
+        title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
         link: *ref_7
       - hadBeenSeenBefore: false
-        title: Self-Explainable Affordance Learning with Embodied Caption
+        title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
         link: *ref_8
       - hadBeenSeenBefore: false
-        title: Learning visual affordance grounding from demonstration videos
+        title: Learning affordances in object-centric generative models
         link: *ref_9

@@ -135,7 +135,7 @@ export const askForFilePath = async (message, other={}) => {
 }
 
 export const askForParagraph = async (message, other={}) => {
-    console.log(message)
+    console.log(message, dim(""))
     let lastWasNewline = false
     let paragraph = []
     while (1) {
@@ -150,6 +150,8 @@ export const askForParagraph = async (message, other={}) => {
             paragraph.push(response)
         }
     }
+    // reset the color
+    Deno.stdout.writeSync(new TextEncoder().encode(reset``))
     return paragraph.join("\n")
 }
 
@@ -214,4 +216,18 @@ export async function* listenToKeypresses({ stream=Deno.stdin, cbreak=true }={})
 
 export function dim(text) {
     return `\x1b[2m${text}`.replace(/\x1b\[0m/g,"\x1b[0m\x1b[2m")
+}
+
+export function wordWrap(text, maxLength=80) {
+    const { rows, columns } = Deno.consoleSize()
+    if (text.length < columns) {
+        return text
+    }
+    if (text.length < maxLength) {
+        return text
+    }
+    if (columns < maxLength) {
+        return text
+    }
+    return text.replace(/\n/g," ").replace(new RegExp(`(.{0,${maxLength}})`, "g"),"$1\n").replace(/\n\s+/g,"\n")
 }

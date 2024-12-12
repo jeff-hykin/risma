@@ -321,7 +321,7 @@ export const searchOptions = {
                                 let probablyAuthorsElement = titleElement.nextElementSibling
                                 if (probablyAuthorsElement && probablyAuthorsElement.innerText.match(/.+-.+-/)) {
                                     // let probablyAuthorLinks = [...probablyAuthorsElement.querySelectorAll("a")]
-                                    let pieces = probablyAuthorsElement.innerText.split("-")
+                                    let pieces = probablyAuthorsElement.innerText.replace(/…|�/g,"").split("-")
                                     let source = pieces.at(-1).trim()
                                     let publishInstanceInfo = pieces.at(-2)||""
                                     let authorInfoString = pieces.slice(0,-2).join("-") // join is just to be defensive, should be 1 item
