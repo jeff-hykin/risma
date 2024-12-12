@@ -72,7 +72,8 @@ const storageObject = createStorageObject(cacheItemPath)
             references: {},
             discoveryAttempts: [],
         }
-        activeProject = await FileSystem.read(storageObject.activeProjectPath) || defaultObject
+        activeProject = await FileSystem.read(storageObject.activeProjectPath) || JSON.stringify(defaultObject)
+        activeProject = yaml.parse(activeProject)
         if (!activeProject.discoveryAttempts || !activeProject.references) {
             activeProject = defaultObject
         }
@@ -116,10 +117,10 @@ mainLoop: while (true) {
     const whichAction = await selectOne({
         message: "next action",
         options: [
+            "review references",
             "gather references (search internet)",
             "change project",
             "modify keywords",
-            "review references",
             "explore references",
         ],
     })
@@ -174,10 +175,13 @@ mainLoop: while (true) {
                 activeProject.references[each.title] = each
                 unseenReferences[each.title] = each
                 each.resumeStatus = "unseen:title"
+                each.events = each.events || {}
+                each.events["added"] =  each.events["added"] || new DateTime().toISOString()
             }
         }
         activeProject.discoveryAttempts.unshift(discoveryMethod)
         saveProject()
+        console.log(`added a bunch of references, check them out with "review references" "unseen:title"`)
     } else if (whichAction == "change project") {
         const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
         let project = await selectOne({
@@ -249,7 +253,7 @@ mainLoop: while (true) {
             if (whatKind == "nothing (quit)") {
                 continue mainLoop
             } else if (whatKind == "unseen:title" || whatKind == "skipped:title") {
-                console.log(`g=relevent (good), b=not relevent (bad), n=skip (next), q=quit`)
+                console.log(`\ng=relevent (good), b=not relevent (bad), n=skip (next), q=quit`)
                 nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind)) {
                     // TODO: highlight good and bad keywords
                     console.log(`title: ${each.title}`)
@@ -260,21 +264,25 @@ mainLoop: while (true) {
                         each.reasonsNotRelevant = each.reasonsNotRelevant || []
                         each.relevanceStages = each.relevanceStages || []
                         each.events = each.events || {}
-                        each.events["saw title"] =  each.events["saw title"] || new DateTime().date
+                        each.events["saw title"] =  each.events["saw title"] || new DateTime().toISOString()
                         saveProject()
                         if (keyName == "n") {
+                            console.log(cyan`skipped`)
                             continue nextReferenceLoop
                         } else {
                             if (keyName == "g") {
+                                console.log(green`relevent`)
                                 each.resumeStatus = "relevent:title"
                                 each.relevanceStages.push("title")
                                 break
                             } else if (keyName == "b") {
+                                console.log(green`irrelevent`)
                                 each.resumeStatus = "irrelevent:title"
                                 each.reasonsNotRelevant.push("title")
                                 break
                             } else {
                                 console.log(`unrecognized key: ${keyName}`)
+                                continue
                             }
                             saveProject()
                         }
