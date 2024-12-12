@@ -1,5 +1,3 @@
-import { TerminalSpinner, SpinnerTypes } from "https://deno.land/x/spinners@v1.1.2/mod.ts"
-import { Command, EnumType } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts"
 import { zip, enumerate, count, permute, combinations, wrapAroundGet } from "https://deno.land/x/good@1.13.4.0/array.js"
 // import { FileSystem } from "https://deno.land/x/quickr@0.6.51/main/file_system.js"
 // import $ from "https://deno.land/x/dax@0.39.2/mod.ts"
@@ -9,40 +7,25 @@ import { run, hasCommand, throwIfFails, zipInto, mergeInto, returnAsString, Time
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, dim, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
 import { OperatingSystem } from "https://deno.land/x/quickr@0.6.73/main/operating_system.js"
 import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
-
-import { version } from "./tools/version.js"
-import { selectMany, selectOne, askForFilePath, askForParagraph } from "./tools/input_tools.js"  
-import { searchOptions } from "./tools/search_tools.js"
-import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@0.0.3.5/deno.js'
 import DateTime from "https://deno.land/x/good@1.13.4.0/date.js"
+import { parseArgs, flag, required, initialValue } from "https://deno.land/x/good@1.13.4.0/flattened/parse_args.js" 
+
+import { version } from "./tools/version.js"
+import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner } from "./tools/input_tools.js"  
+import { searchOptions } from "./tools/search_tools.js"
+import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 
 const posixShellEscape = (string)=>"'"+string.replace(/'/g, `'"'"'`)+"'"
 const clearScreen = ()=>console.log('\x1B[2J')
 
-const cacheFolder = `${FileSystem.home}/.cache/rizma/`
-const explainPath = `${cacheFolder}/prev_explain.json`
-const cacheItemPath = `${cacheFolder}/cache.json`
-const storageObject = createStorageObject(cacheItemPath)
-
-const saveExplain = (explanationConversation)=>{
-    FileSystem.write({
-        path: explainPath,
-        data: JSON.stringify(explanationConversation)
-    }).catch(console.error)
-}
-
-const maxNameBroadeningRetries = 10
-
-import { parseArgs, flag, required, initialValue } from "https://deno.land/x/good@1.13.4.0/flattened/parse_args.js"
-
 const argsInfo = parseArgs({
     rawArgs: Deno.args,
     fields: [
-        [["--help", ], flag, ],
-        [["--search"], initialValue(null), ],
-        [["--set-output"], initialValue(null),],
+        // [["--version", ], flag, ],
+        [["--cache-path", ], initialValue(`${FileSystem.home}/.cache/risma/`), ],
+        // [["--set-output"], initialValue(null),],
     ],
     namedArgsStopper: "--",
     allowNameRepeats: true,
@@ -60,140 +43,193 @@ didYouMean({
 })
 const options = argsInfo.simplifiedNames
 
-// const command =new Command()
-//     .name("Research CLI Recorder")
-//     .version(version)
-//     .description(`
-//         Misc:
-//             The cache folder is: ${JSON.stringify(cacheFolder)}
-//     `.replace(/\n        /g,"\n"))
-//     .globalOption("--set-output", "Choose which project file is active")
-//     .option("--search", "Search under a particular project")
-//     .arguments("[...args:string]")
-//     .action(async function (options, ...args) {
+const cacheFolder = options.cachePath
+const cacheItemPath = `${cacheFolder}/cache.json`
+const storageObject = createStorageObject(cacheItemPath)
 
-        // 
-        // arg boilerplate
-        // 
-            const numberedArgs = argsInfo.argList
+// 
+// get active project   
+//
+    storageObject.previouslyActiveProjectPaths = storageObject.previouslyActiveProjectPaths || {}
+    if (!storageObject.activeProjectPath) {
+        if (await Console.askFor.yesNo(`No active project set (path to a yaml file), do you want to set one now?`)) {
+            storageObject.activeProjectPath = FileSystem.makeAbsolutePath(await askForFilePath(`What is the path to the yaml file? (if what you enter doesn't exist, I'll create it)`,))
+            let name = (await Console.askFor.line(`What is a good name for this project? (empty will use date)`)) || new DateTime().date
+            storageObject.previouslyActiveProjectPaths[name] = storageObject.activeProjectPath
+        } else {
+            console.log(`okay, well I need one to continue`)
+            Deno.exit(1)
+        }
+    }
+    let activeProject
+    const loadProject = async () => {
+        const defaultObject = {
+            keywords: {
+                positive: [],
+                negative: [],
+                neutral: [],
+            },
+            references: {},
+            discoveryAttempts: [],
+        }
+        activeProject = await FileSystem.read(storageObject.activeProjectPath) || defaultObject
+        if (!activeProject.discoveryAttempts || !activeProject.references) {
+            activeProject = defaultObject
+        }
+        activeProject.keywords = activeProject.keywords || {}
+        console.log(`active project is: `,cyan(storageObject.activeProjectPath))
+    }
+    await loadProject()
+    
+    const saveProject = async ()=>{
+        await FileSystem.write({path: storageObject.activeProjectPath, data: yaml.stringify(activeProject)})
+    }
 
-            globalThis.debugMode = options.debug
-            const commandWithExplainFlag = green`rizma `+yellow`--explain `+dim`${Deno.args.map(posixShellEscape).join(" ")}`
-        
-        // 
-        // --set-output
-        // 
-            if (options.setOutput) {
-                storageObject.activeProject = FileSystem.makeAbsolutePath(options.setOutput)
-            }
-        // 
-        // get active project   
-        //
-            if (!storageObject.activeProject) {
-                if (await Console.askFor.yesNo(`No active project set (path to a yaml file), do you want to set one now?`)) {
-                    storageObject.activeProject = FileSystem.makeAbsolutePath(await askForFilePath(`What is the path to the yaml file? (if what you enter doesn't exist, I'll create it)`,))
-                } else {
-                    console.log(`okay, you can set the active project with --set-output <path to a yaml file>`)
-                    Deno.exit(1)
-                }
-            }
-            console.log(`active project is: `,cyan(storageObject.activeProject))
-            let activeProject = await FileSystem.read(storageObject.activeProject) || {
-                keywords: [],
-                references: {},
-                discoveryAttempts: [],
-            }
-            if (!activeProject.discoveryAttempts || !activeProject.references) {
-                activeProject ={
-                    keywords: [],
-                    references: {},
-                    discoveryAttempts: [],
-                }
-            }
-            console.debug(`activeProject.references is:`,activeProject.references)
-            
-            const saveProject = async ()=>{
-                await FileSystem.write({path: storageObject.activeProject, data: yaml.stringify(activeProject)})
-            }
-            // if (!activeProject) {
-            //     if (await Console.askFor.yesNo(`Project file doesn't exist, do you want to create it?`)) {
-            //         console.log(`creating project file`)
-            //         await FileSystem.write(storageObject.activeProject, yaml.stringify(activeProject))
-            //     }
-            // }
-        
-        // 
-        // boilerplate
-        // 
-            const terminalSpinner = new TerminalSpinner({
-                text: "fetching",
-                color: "green",
-                spinner: SpinnerTypes.dots, // check the file - see import
-                indent: 0, // The level of indentation of the spinner in spaces
-                cursor: false, // Whether or not to display a cursor when the spinner is active
-                writer: Deno.stderr
+
+// 
+// main loop
+// 
+while (true) {
+    const whichAction = await selectOne({
+        message: "next action",
+        options: [
+            "gather references (search internet)",
+            "change project",
+            "modify keywords",
+            "curate references",
+            "explore references",
+        ],
+    })
+    // in case file has been edited
+    await loadProject()
+    
+    if (whichAction == "gather references (search internet)") {
+        const searchEngineName = await selectOne({
+            message: "next action",
+            options: Object.keys(searchOptions),
+        })
+        const searchEngineName = options.search
+        const searchEngine = searchOptions[searchEngineName]
+        const query = await Console.askFor.line(`What's the search query?`)
+        const discoveryMethod = new DiscoveryMethod({
+            query,
+            dateTime: new Date().getTime(),
+            searchEngine: searchEngineName,
+        })
+        let references
+        const references = await withSpinner("searching", 
+            ()=>searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query, discoveryMethod)}`)
+        )
+        // example references: [
+        //         Reference {
+        //             title: "RAIL: Robot Affordance Imagination with Large Language Models",
+        //             possibleYear: "1936",
+        //             notesConsideredRelevent: null,
+        //             notesCustomKeywords: [],
+        //             notesComment: null,
+        //             notesWasRelatedTo: [],
+        //             notesIsCitedByTitles: [],
+        //             notesCites: [],
+        //             discoveryMethod: undefined,
+        //             authorNames: [ "C Zhang", "X Meng", "D Qi", "GS Chirikjian�" ],
+        //             pdfLink: "https://scholar.google.com/https://arxiv.org/pdf/2403.19369",
+        //             link: "https://scholar.google.com/https://arxiv.org/abs/2403.19369",
+        //             citationId: "8172269612940938567",
+        //             multiArticleId: "8172269612940938567",
+        //             citedByLink: "https://scholar.google.com//scholar?cites=8172269612940938567&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII",
+        //             publisherInfo: " arXiv preprint arXiv:2403.19369, 2024 "
+        //         },
+        // ]
+        let unseenReferences = {}
+        for (let each of references) {
+            const hadBeenSeenBefore = !!activeProject.references[each.title]
+            discoveryMethod.referenceLinks.push({
+                hadBeenSeenBefore,
+                title: each.title,
+                // link to object directly rather than spread so that yaml will make it a anchor to it
+                link: each,
             })
-            terminalSpinner.start()
-
-            // clear out the previous explain
-            FileSystem.write({
-                path: explainPath,
-                data: ""
-            }).catch(_=>0)
+            if (!hadBeenSeenBefore) {
+                activeProject.references[each.title] = each
+                unseenReferences[each.title] = each
+                each.resumeStatus = "unseen:title"
+            }
+        }
+        activeProject.discoveryAttempts.unshift(discoveryMethod)
+        saveProject()
+    } else if (whichAction == "change project") {
+        const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
+        let project = await selectOne({
+            message: "pick a project",
+            options,
+        })
+        if (project == "<new project>") {
+            storageObject.activeProjectPath = FileSystem.makeAbsolutePath(await askForFilePath(`What is the path to the yaml file? (if what you enter doesn't exist, I'll create it)`,))
+            let name = (await Console.askFor.line(`What is a good name for this project? (empty will use date)`)) || new DateTime().date
+            storageObject.previouslyActiveProjectPaths[name] = storageObject.activeProjectPath
+            await loadProject()
+        } else {
+            project = project.replace(/^- /, "")
+            storageObject.activeProjectPath = storageObject.previouslyActiveProjectPaths[project]
+            await loadProject()
+        }
+    } else if (whichAction == "modify keywords") {
+        const kind = await selectOne({
+            message: "next action",
+            options: [
+                "positive",
+                "negative",
+                "neural",
+            ],
+        })
+        const keywords = (await askForParagraph(`press enter twice to submit list`)).split("\n").map(each=>each.trim()).filter(each=>each.length>0)
+        const possibleForDelete = [...activeProject.keywords[kind]]
+        activeProject.keywords[kind].push(...keywords)
+        if (await Console.askFor.yesNo(`delete some keywords?`)) {
+            const onesToDelete = await selectMany({
+                message: "Ones with checkmark will be deleted",
+                options: possibleForDelete,
+            })
+            activeProject.keywords[kind] = activeProject.keywords[kind].filter(each=>!onesToDelete.includes(each))
+        }
+        saveProject()
+    } else if (whichAction == "curate references") {
+        const counts = {}
+        const references = Object.values(activeProject.references)
+        const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
+        const counts = {
+            "unseen:title": 0,
+            "relevent:title": 0,
+            "relevent:abstract": 0,
+            "relevent:partial-read": 0,
+            "relevent:full-read": 0,
+            "super-relevent:partial-read": 0,
+            "super-relevent:full-read": 0,
+        }
+        for (const element of statuses) {
+            counts[element] = (counts[element] || 0) + 1
+        }
+        for (const [key, value] of Object.entries(counts)) {
+            if (value == 0) {
+                delete counts[key]
+            }
+        }
+        const whatKind = await selectOne({
+            message: "what to review?",
+            options: Object.keys(counts),
+            optionsDescription: Object.values(counts).map(each=>`(${each} references)`),
+        })
         
         // 
-        // normal search
+        // title review
         // 
-            const searchEngineName = options.search
-            const searchEngine = searchOptions[searchEngineName]
-            if (!searchEngine) {
-                didYouMean({ givenWord: searchEngineName, possibleWords: Object.keys(searchOptions), autoThrow: true, suggestionLimit: 1 })
+        if (whatKind == "unseen:title") {
+            console.log(`g=relevent (good), b=not relevent (bad), n=skip (next)`)
+            for (let each of references.filter(each=>each.resumeStatus == whatKind)) {
+                
             }
-            
-            const query = numberedArgs.join(" ")
-            const discoveryMethod = new DiscoveryMethod({
-                query,
-                dateTime: new Date().getTime(),
-                searchEngine: searchEngineName,
-            })
-            const references = await searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query, discoveryMethod)}`)
-            // example references: [
-            //         Reference {
-            //             title: "RAIL: Robot Affordance Imagination with Large Language Models",
-            //             possibleYear: "1936",
-            //             notesConsideredRelevent: null,
-            //             notesCustomKeywords: [],
-            //             notesComment: null,
-            //             notesWasRelatedTo: [],
-            //             notesIsCitedByTitles: [],
-            //             notesCites: [],
-            //             discoveryMethod: undefined,
-            //             authorNames: [ "C Zhang", "X Meng", "D Qi", "GS Chirikjian�" ],
-            //             pdfLink: "https://scholar.google.com/https://arxiv.org/pdf/2403.19369",
-            //             link: "https://scholar.google.com/https://arxiv.org/abs/2403.19369",
-            //             citationId: "8172269612940938567",
-            //             multiArticleId: "8172269612940938567",
-            //             citedByLink: "https://scholar.google.com//scholar?cites=8172269612940938567&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII",
-            //             publisherInfo: " arXiv preprint arXiv:2403.19369, 2024 "
-            //         },
-            // ]
-            await terminalSpinner.succeed(`finished fetching ${references.length} references`)
-            let unseenReferences = {}
-            for (let each of references) {
-                const hadBeenSeenBefore = !!activeProject.references[each.title]
-                discoveryMethod.referenceLinks.push({
-                    hadBeenSeenBefore,
-                    title: each.title,
-                    // link to object directly rather than spread so that yaml will make it a anchor to it
-                    link: each,
-                })
-                if (!hadBeenSeenBefore) {
-                    activeProject.references[each.title] = each
-                    unseenReferences[each.title] = each
-                }
-            }
-            activeProject.discoveryAttempts.unshift(discoveryMethod)
-            saveProject()
+        }
+
         // 
         // 
         // mark good titles
@@ -265,7 +301,9 @@ const options = argsInfo.simplifiedNames
                     }
                 }
             }
+        throw Error(`not implemented yet`)
+    } else if (whichAction == "explore references") {
+        throw Error(`not implemented yet`)
+    }
             
-    // })
-
-// await command.parse(Deno.args)
+}
