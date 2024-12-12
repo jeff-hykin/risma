@@ -6,7 +6,7 @@ import { distance } from "../subrepos/cliffy/_utils/distance.ts"
 import { isValidPathStringForFilePosix } from "https://deno.land/x/good@1.13.4.3/flattened/is_valid_path_string_for_file_posix.js"
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, dim, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
 
-export function selectOne({ message, showList, showInfo, options, optionDescriptions, autocompleteOnSubmit=true }) {
+export function selectOne({ message, showList=true, mustBeOnList=true, showInfo, options, optionDescriptions, autocompleteOnSubmit=true }) {
     let optionStrings
     if (options instanceof Array) {
         optionStrings = options
@@ -27,22 +27,22 @@ export function selectOne({ message, showList, showInfo, options, optionDescript
             )
         }
     }
-    
-    return Input.prompt({
-        message,
-        list: showList,
-        info: showInfo,
-        suggestions,
-        suggestionDescriptions,
-        completeOnSubmit: autocompleteOnSubmit,
-    }).then((answer)=>{
-        if (!autocompleteOnSubmit) {
-            return answer
-        }
-        
-        if (optionStrings.includes(answer)) {
+    while (true) {  
+        const answer = await Input.prompt({
+            message,
+            list: showList,
+            info: showInfo,
+            suggestions,
+            suggestionDescriptions,
+            completeOnSubmit: autocompleteOnSubmit,
+        })
+        const isAlreadyValidOption = optionStrings.includes(answer)
+        if (isAlreadyValidOption) {
             return options[answer]
-        } else {
+        }
+
+        if (autocompleteOnSubmit) {
+            // autocomplete on submit
             // Note: this sort NEEDs to exactly match https://github.com/c4spar/deno-cliffy/blob/aa1311f8d0891f535805395b0fb7d99de0b01b74/prompt/_generic_suggestions.ts#L242
             //       in order for it to work
             //       (this is why we pin versions)
@@ -57,7 +57,24 @@ export function selectOne({ message, showList, showInfo, options, optionDescript
             // return closest match
             return options[optionStrings[0]]
         }
-    })
+
+        if (mustBeOnList) {
+            const suggestions = await didYouMean({
+                givenWord: answer,
+                possibleWords: Object.keys(options),
+                suggestionLimit: 1,
+            })
+            if (await Console.askFor.yesNo(`Did you mean ${suggestions[0]}? (y/n)`)) {
+                return options[suggestions[0]]
+            } else {
+                prompt(`okay, here is the full list again (press enter to continue)`)
+            }
+            continue
+        }
+        return answer
+
+        break // sanity check for if more code is added
+    }
 }
 // note: this can go in the options array
 // Checkbox.separator("--------"),
