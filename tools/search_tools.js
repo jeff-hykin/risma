@@ -5,7 +5,6 @@ import { deepCopy, deepCopySymbol, allKeyDescriptions, allKeys } from "https://d
 import { run, Out, Stdout, Stderr, returnAsString } from "https://deno.land/x/quickr@0.6.54/main/run.js"
 import { FileSystem } from "https://deno.land/x/quickr@0.6.56/main/file_system.js"
 import DateTime from "https://deno.land/x/good@1.13.4.0/date.js"
-
 // import { Parser, parserFromWasm } from "https://deno.land/x/deno_tree_sitter@0.1.3.0/main.js"
 // import html from "https://github.com/jeff-hykin/common_tree_sitter_languages/raw/4d8a6d34d7f6263ff570f333cdcf5ded6be89e3d/main/html.js"
 
@@ -15,6 +14,37 @@ import { DiscoveryMethod } from "./discovery_method.js"
 import { Reference } from "./reference.js"
 
 const refreshCacheEvery = 1 // days
+
+export async function title2Doi(title) {
+    const url = `https://search.crossref.org/search/works?q=${encodeURIComponent(title)}&from_ui=yes`
+    const baseUrl = new URL(url).origin
+    const getHref = (element)=>element.getAttribute("href").startsWith("/")?`${baseUrl}/${element.getAttribute("href")}`:element.getAttribute("href")
+    let htmlResult
+    try {
+        htmlResult = await fetch(url).then(result=>result.text())
+    } catch (error) {
+        console.debug(`error when getting ${url} is:`,error)
+        return null
+    }
+    const document = new DOMParser().parseFromString(
+        htmlResult,
+        "text/html",
+    )
+    const results =  [...document.querySelector("tbody").children]
+    for (let each of results) {
+        let titleElement = each.querySelector("p.lead")
+        if (titleElement) {
+            if (titleElement.innerText.trim().toLowerCase() == title.toLowerCase()) {
+                const linksEl = each.querySelector("div.item-links")
+                const doiHrefs = [...linksEl.querySelectorAll("a")].map(each=>getHref(each)).filter(each=>each.startsWith("https://doi.org/"))
+                if (doiHrefs.length >= 1) {
+                    return doiHrefs[0].replace("https://doi.org/","")
+                }
+            }
+        }
+    }
+    return null
+}
 
 export const searchOptions = {
     "scholar": {
@@ -229,7 +259,7 @@ export const searchOptions = {
                 for (let each of links) {
                     const title = each.innerText
                     const link = getHref(each)
-                    articles.push(new Reference({
+                    const reference = new Reference({
                         title,
                         possibleYear: null,
                         notesConsideredRelevent: null,
@@ -246,7 +276,16 @@ export const searchOptions = {
                         multiArticleId: null,
                         citedByLink: null,
                         publisherInfo: null,
-                    }))
+                    })
+                    // this is pretty slow so we do it in the background
+                    title2Doi(title).then(doi=>{
+                        if (doi) {
+                            reference.doi = doi
+                        }
+                    }).catch(error=>{
+                        // console.warn(`error getting doi for ${title}`,error)
+                    })
+                    articles.push()
                 }
                 if (links.length > 0) {
                     // try to get main list
@@ -332,7 +371,10 @@ export const searchOptions = {
                                         articleObject.possibleYear = year[0]
                                     }
                                     if (publishInstanceInfo) {
-                                        articleObject.publisherInfo = publishInstanceInfo
+                                        articleObject.publisherInfo = publishInstanceInfo.trim().replace(/�|…/g,"")
+                                        if (articleObject.publisherInfo.match(/^(20|19)\d\d$/)) {
+                                            articleObject.publisherInfo = null
+                                        }
                                     }
                                 }
                             }

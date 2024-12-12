@@ -8,3 +8,8 @@
 ## What is this?
 
 under construction research lit review tool
+
+```sh
+# example of getting data out
+yq -e '.references | map(.link)' project.yaml
+```

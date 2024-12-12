@@ -13,7 +13,7 @@ import { parseArgs, flag, required, initialValue } from "https://deno.land/x/goo
 
 import { version } from "./tools/version.js"
 import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap } from "./tools/input_tools.js"  
-import { searchOptions } from "./tools/search_tools.js"
+import { searchOptions, title2Doi } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 
@@ -79,6 +79,22 @@ const storageObject = createStorageObject(cacheItemPath)
         }
         activeProject.keywords = activeProject.keywords || {}
         // console.log(`active project is: `,cyan(storageObject.activeProjectPath))
+        for (let each of Object.values(activeProject.references)) {
+            each.publisherInfo = each.publisherInfo.replace(/�|…/g,"").trim()
+            // for papers added manually
+            if (!each.doi) {
+                // this is pretty slow so we do it in the background
+                title2Doi(each.title).then(doi=>{
+                    if (doi) {
+                        each.doi = doi
+                    }
+                    saveProject()
+                }).catch(error=>{
+                    // console.warn(`error getting doi for ${title}`,error)
+                })
+            }
+            
+        }
     }
     await loadProject()
     
@@ -337,6 +353,17 @@ mainLoop: while (true) {
                     await OperatingSystem.openUrl(active.link||active.pdfLink)
                     if (!active.abstract) {
                         active.abstract = await askForParagraph(reset`paste in the abstract (press enter twice to submit)`)
+                    }
+                    if (active.pdfLink) {
+                        const downloadPath = FileSystem.parentPath(storageObject.activeProjectPath) + "/pdfs/"+active.title+".pdf"
+                        if (await Console.askFor.yesNo(`want me to download the pdf for you?\n` + cyan(downloadPath))+"\n") {
+                            FileSystem.write({
+                                path: downloadPath,
+                                data: fetch(active.pdfLink).then(each=>each.arrayBuffer()).catch(error=>`error: ${error}`),
+                            }).then(()=>{
+                                active.pdfWasDownloaded = true
+                            })
+                        }
                     }
                     console.log(`abstract:\n\n${highlightKeywords(wordWrap(active.abstract, 80))}\n`)
                     // TODO: highlight good and bad keywords
