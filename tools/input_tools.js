@@ -1,12 +1,13 @@
 import { zip, enumerate, count, permute, combinations, wrapAroundGet } from "https://deno.land/x/good@1.5.1.0/array.js"
 import { Input } from "../subrepos/cliffy/prompt/input.ts"
 import { Checkbox } from "../subrepos/cliffy/prompt/checkbox.ts"
+import { parse } from "../subrepos/cliffy/keycode/mod.ts"
 import { stripColor } from "../subrepos/cliffy/prompt/deps.ts"
 import { distance } from "../subrepos/cliffy/_utils/distance.ts"
 import { isValidPathStringForFilePosix } from "https://deno.land/x/good@1.13.4.3/flattened/is_valid_path_string_for_file_posix.js"
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, dim, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
 
-export function selectOne({ message, showList=true, mustBeOnList=true, showInfo, options, optionDescriptions, autocompleteOnSubmit=true }) {
+export async function selectOne({ message, showList=true, mustBeOnList=true, showInfo, options, optionDescriptions, autocompleteOnSubmit=true }) {
     let optionStrings
     if (options instanceof Array) {
         optionStrings = options
@@ -155,3 +156,46 @@ export const withSpinner = async (taskName, func) => {
     return Promise.resolve(func()).finally(()=>terminalSpinner.succeed(taskName))
 }
 
+/**
+ * listenToKeypresses
+ *
+ * @example
+ * ```js
+ * for await (const { name, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
+ *     if (ctrl && name === "c") {
+ *         console.log("exit")
+ *         break
+ *     }
+ *     console.log(key)
+ * }
+ * ```
+ */
+export async function* listenToKeypresses({ stream=Deno.stdin, cbreak=true }={}){
+    // example outputs:
+    // [
+    //     { name: "up", sequence: "\x1b[A", code: "[A", ctrl: false, meta: false, shift: false },
+    //     { name: "down", sequence: "\x1b[B", code: "[B", ctrl: false, meta: false, shift: false },
+    //     { name: "right", sequence: "\x1b[C", code: "[C", ctrl: false, meta: false, shift: false },
+    //     { name: "left", sequence: "\x1b[D", code: "[D", ctrl: false, meta: false, shift: false },
+    //     { name: "clear", sequence: "\x1b[E", code: "[E", ctrl: false, meta: false, shift: false },
+    //     { name: "end", sequence: "\x1b[F", code: "[F", ctrl: false, meta: false, shift: false },
+    //     { name: "home", sequence: "\x1b[H", code: "[H", ctrl: false, meta: false, shift: false }
+    // ]
+    while (true) {
+        const data = new Uint8Array(8)
+        
+        stream.setRaw(true, { cbreak })
+        const numberRead = await stream.read(data)
+        stream.setRaw(false)
+        
+        if (numberRead === null) {
+            return
+        }
+
+        const keys = parse(data.subarray(0, numberRead))
+
+        for (const key of keys) {
+            yield key
+        }
+    }
+}
