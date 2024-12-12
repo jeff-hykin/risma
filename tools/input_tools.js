@@ -35,7 +35,7 @@ export async function selectOne({ message, showList=true, mustBeOnList=true, sho
             let offset = 2
             suggestionDescriptions.push(
                 descriptionHighlighter(
-                    (suggestion.padEnd(longest+offset," ")+": "+description).slice(0,maxOptionWidth).slice(suggestion).length+2)
+                    (suggestion.padEnd(longest+offset," ")+": "+description).slice(0,maxOptionWidth).slice(suggestion.length+2)
                 )
             )
         }
