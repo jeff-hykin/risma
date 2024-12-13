@@ -738,7 +738,7 @@ export function crossrefToSimpleFormat(crossrefData) {
 }
 
 export const searchOptions = {
-    "scholar": {
+    "googleScholar": {
         "base": "https://scholar.google.com/scholar",
         searchStringToParams(string) {
             // https://scholar.google.com/scholar?q=imagination+based+affordance+recognition&btnG=

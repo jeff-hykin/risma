@@ -6,14 +6,15 @@ import { FileSystem, glob } from "https://deno.land/x/quickr@0.6.73/main/file_sy
 import { run, hasCommand, throwIfFails, zipInto, mergeInto, returnAsString, Timeout, Env, Cwd, Stdin, Stdout, Stderr, Out, Overwrite, AppendTo, } from "https://deno.land/x/quickr@0.6.73/main/run.js"
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
 import { OperatingSystem } from "https://deno.land/x/quickr@0.6.73/main/operating_system.js"
-import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
+// import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
+import * as yaml from "./yaml.js"
 import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@0.0.3.5/deno.js'
 import DateTime from "https://deno.land/x/good@1.13.5.0/date.js"
 import { parseArgs, flag, required, initialValue } from "https://deno.land/x/good@1.13.5.0/flattened/parse_args.js" 
 import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranked_compare.js" 
 
 import { version } from "./tools/version.js"
-import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap } from "./tools/input_tools.js"  
+import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write } from "./tools/input_tools.js"  
 import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
@@ -87,6 +88,11 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
         for (const [key, value] of Object.entries(activeProject.references)) {
             activeProject.references[key] = new Reference(value)
         }
+        for (let eachDiscoveryAttempt of activeProject.discoveryAttempts) {
+            for (let each of eachDiscoveryAttempt.referenceLinks) {
+                each.link = activeProject.references[each.title]
+            }
+        }
         // console.log(`active project is: `,cyan(storageObject.activeProjectPath))
         for (let each of Object.values(activeProject.references)) {
             each.publisherInfo = (each.publisherInfo||"").replace(/�|…/g,"").trim()
@@ -95,9 +101,15 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
                 // this is pretty slow so we do it in the background
                 title2Doi(each.title).then(doi=>{
                     if (doi) {
-                        each.doi = doi
+                        try {
+                            each.accordingTo = each.accordingTo || {}
+                            each.accordingTo.crossref = each.accordingTo.crossref || {}
+                            each.accordingTo.crossref.doi = doi
+                            saveProject()
+                        } catch (error) {
+                            
+                        }
                     }
-                    saveProject()
                 }).catch(error=>{
                     // console.warn(`error getting doi for ${title}`,error)
                 })
@@ -108,7 +120,16 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
     await loadProject()
     
     const saveProject = async ()=>{
-        console.log(`saving project`)
+        // fixup references
+        for (const [key, value] of Object.entries(activeProject.references)) {
+            activeProject.references[key] = new Reference(value)
+        }
+        // fixup links
+        for (let eachDiscoveryAttempt of activeProject.discoveryAttempts) {
+            for (let each of eachDiscoveryAttempt.referenceLinks) {
+                each.link = activeProject.references[each.title]
+            }
+        }
         await FileSystem.write({path: storageObject.activeProjectPath, data: yaml.stringify(activeProject,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
     }
 
@@ -125,7 +146,7 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
             'irrelevent|abstract': 0,
         }
         const references = Object.values(activeProject.references)
-        const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
+        const statuses = Object.values(activeProject.references).map(each=>each.notes.resumeStatus)
         for (const element of statuses) {
             counts[element] = (counts[element] || 0) + 1
         }
@@ -139,12 +160,16 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
 
     function showProjectStatus() {
         const counts = getReferenceStatusCounts()
-        console.log(green`project summary`,cyan(yaml.stringify({
+        clearScreen()
+        console.log(green`project summary`)
+        console.log(green`------------------------------------------`)
+        console.log(cyan(`${(yaml.stringify({
             references: {
                 total: Object.keys(activeProject.references).length, 
                 ...counts
-            }
-        })))
+            },
+        }))}`.replace(/\b(\d+)\b/g, "\x1b[31m$1\x1b[36m")))
+        console.log(green`\n\n`)
     }
     
     function highlightKeywords(text) {
@@ -269,15 +294,15 @@ mainLoop: while (true) {
             options: Object.keys(searchOptions),
         })
         const searchEngine = searchOptions[searchEngineName]
-        const query = await Console.askFor.line(`What's the search query?`)
+        const query = await Console.askFor.line(cyan`What's the search query?`)
         const discoveryMethod = new DiscoveryMethod({
             query,
-            dateTime: new Date().getTime(),
+            dateTime: new Date().toISOString(),
             searchEngine: searchEngineName,
         })
         const references = await withSpinner("searching",
             ()=>searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query, discoveryMethod)}`)
-        ).then(each=>new Reference({
+        ).then(all=>all.map(each=>new Reference({
             title: each.title,
             notes: {
                 resumeStatus: "unseen|title",
@@ -285,35 +310,35 @@ mainLoop: while (true) {
                 reasonsRelevant: [],
                 reasonsNotRelevant: [],
                 customKeywords: [],
-                discoveryMethod: { dateTime: new Date().getTime(), query, searchEngine: searchEngineName },
+                discoveryMethod: { dateTime: new Date().toISOString(), query, searchEngine: searchEngineName },
                 events: {},
             },
             accordingTo: {
                 crossref: {},
-                [searchEngine]: each,
+                [searchEngineName]: each,
             },
-        }))
-        await withSpinner("getting full data for references",
-            ()=>Promise.all(references.map(async each=>{
+        })))
+        let count = 0
+        await withSpinner("getting full data for each result",
+            (mention)=>Promise.all(references.map(async each=>{
                 if (!each?.doi) {
                     try {
                         each.accordingTo.crossref = { doi: await title2Doi(each.title) }
                     } catch (error) {
-                        
                     }
                 }
                 if (each.doi) {
                     try {
                         each.accordingTo.crossref = crossrefToSimpleFormat(
-                            await doiToCrossrefInfo(each.doi, { cacheObject: crossrefCacheObject, }={})
+                            await doiToCrossrefInfo(each.doi, { cacheObject: crossrefCacheObject, })
                         )
                     } catch (error) {
-                        
                     }
                 }
+                count++
+                mention(`got ${count} of ${references.length}`)
             }))
         )
-        references.map(each=>each.accordingTo[searchEngine].year = each.year)
         // example references: [
         //         Reference {
         //             title: "RAIL: Robot Affordance Imagination with Large Language Models",
@@ -393,7 +418,7 @@ mainLoop: while (true) {
             const counts = getReferenceStatusCounts()
             
             const whatKind = await selectOne({
-                message: "what to review?",
+                message: "which group do you want to review?",
                 options: Object.keys(counts).concat(["nothing (quit)"]),
                 optionDescriptions: Object.values(counts).map(each=>`(${each} references)`).concat([""]),
                 showInfo: true,
@@ -405,10 +430,11 @@ mainLoop: while (true) {
             if (whatKind == "nothing (quit)") {
                 continue mainLoop
             } else if (whatKind == "unseen|title" || whatKind == "skipped|title") {
-                console.log(cyan`\ng=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
+                console.log(cyan`\nCONTROLS: g=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
                 nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(titleSorter())) {
                     // TODO: highlight good and bad keywords
-                    console.log(`${cyan`title: (${each.year}) `}${highlightKeywords(each.title)}`)
+                    let message = `${cyan`(${each?.year}) `}${highlightKeywords(each.title)}: `
+                    write(message)
                     for await (let { name: keyName, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
                         if (keyName == "q" || (ctrl && keyName == "c")) {
                             console.log(cyan`quit`)
@@ -417,28 +443,28 @@ mainLoop: while (true) {
                         each.reasonsNotRelevant = each.reasonsNotRelevant || []
                         each.reasonsRelevant = each.reasonsRelevant || []
                         each.events = each.events || {}
-                        each.events["saw title"] =  each.events["saw title"] || new DateTime().toISOString()
+                        each.events["sawTitle"] =  each.events["sawTitle"] || new DateTime().toISOString()
                         saveProject()
+                        const maxTagLength = 23
                         if (keyName == "n") {
-                            console.log(cyan`⏺  skipped`)
+                            console.log(`\r${cyan`⏺  skipped`}`.padEnd(maxTagLength), message)
                             continue nextReferenceLoop
                         } else {
                             if (keyName == "g") {
-                                console.log(green`✅ relevent`)
+                                console.log(`\r${green`✅ relevent`}`.padEnd(maxTagLength), message)
                                 each.resumeStatus = "relevent|title"
                                 each.reasonsRelevant.push("title")
                             } else if (keyName == "u") {
-                                console.log(magenta`❔ unclear`)
+                                console.log(`\r${magenta`❔ unclear`}`.padEnd(maxTagLength), message)
                                 each.resumeStatus = "unclear|title"
                             } else if (keyName == "b") {
-                                console.log(red`❌ irrelevent`)
+                                console.log(`\r${red`❌ irrelevent`}`.padEnd(maxTagLength), message)
                                 each.resumeStatus = "irrelevent|title"
                                 each.reasonsNotRelevant.push("title")
                             } else {
-                                console.log(`unrecognized key: ${keyName}`)
+                                console.log(`\runrecognized key: ${keyName}`)
                                 continue
                             }
-                            console.log(`saving`)
                             await saveProject()
                         }
                         break
@@ -472,7 +498,7 @@ mainLoop: while (true) {
                     if (!active.abstract) {
                         active.abstract = await askForParagraph(reset`paste in the abstract (press enter twice to submit)`)
                         active.events = active.events || {}
-                        active.events["saw abstract"] =  active.events["saw abstract"] || new DateTime().toISOString()
+                        active.events["sawAbstract"] =  active.events["sawAbstract"] || new DateTime().toISOString()
                         saveProject()
                     }
                     if (active.pdfLink && !active.pdfWasDownloaded) {
