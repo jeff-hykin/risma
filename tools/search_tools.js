@@ -1227,7 +1227,7 @@ export const searchOptions = {
                         // related articles link
                         // 
                         try {
-                            const linkElement = [...eachArticleElement.querySelectorAll("a")].filter(each=>each.innerText=="Related Articles"))[0]
+                            const linkElement = [...eachArticleElement.querySelectorAll("a")].filter(each=>each.innerText=="Related Articles")[0]
                             if (linkElement) {
                                 articleObject.linkToRelatedArticles = getHref(linkElement)
                             }

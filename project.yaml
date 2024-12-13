@@ -1,43 +1,65 @@
-keywords:
-    positive:
-        - affordance
-        - imagin
-        - encode
-        - robot
-        - embodied
-        - agent
-        - task
-        - egocentric
-        - emergent
-        - ecological
-        - ecology
-        - self-supervised
-        - percept
-        - unsupervised
-        - visual cortex
-    negative:
-        - large language model
-        - language model
-        - llm
-        - supervised
-        - label
-        - discretize
-    neutral:
-        - visual
-        - predict
-        - centric
-        - learn
-        - transformer
-        - unseen
-        - embedding
-        - latent
-        - multimodal
-        - behavior
-        - mice
-        - mouse
-        - animal
-        - biolog
-        - primate
+settings:
+    scoreGivers:
+        firstByYear: |
+            (reference, currentScoreList, {keywords, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
+                currentScoreList[0] += (reference.year-0||0)
+            }
+        thenByKeywords: |
+            (reference, currentScoreList, {keywords, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
+                currentScoreList[0] += numberOfGoodKeywordsIn(reference.title)
+                currentScoreList[0] -= numberOfBadKeywordsIn(reference.title)
+                currentScoreList[1] += numberOfNeutralKeywordsIn(reference.title)
+            }
+        thenByPublisher: |
+            (reference, currentScoreList, {keywords, settings, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
+                // const publisherRanking = settings.publisherRanking||[]
+                // currentScoreList[1] += Math.max(publisherRanking.map(
+                //     (eachPublisher,index)=>(
+                //         each.publisherInfo.toLowerCase().includes(eachPublisher.toLowerCase())
+                //         || (each.link||"").toLowerCase().includes(eachPublisher.toLowerCase())
+                //     )?index+1:0
+                // ))
+            }
+    keywords:
+        positive:
+            - affordance
+            - imagin
+            - encode
+            - robot
+            - embodied
+            - agent
+            - task
+            - egocentric
+            - emergent
+            - ecological
+            - ecology
+            - self-supervised
+            - percept
+            - unsupervised
+            - visual cortex
+        negative:
+            - large language model
+            - language model
+            - llm
+            - supervised
+            - label
+            - discretize
+        neutral:
+            - visual
+            - predict
+            - centric
+            - learn
+            - transformer
+            - unseen
+            - embedding
+            - latent
+            - multimodal
+            - behavior
+            - mice
+            - mouse
+            - animal
+            - biolog
+            - primate
 references:
     Visual Affordance Prediction for Guiding Robot Exploration: &ref_10
         notes:

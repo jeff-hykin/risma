@@ -23,6 +23,13 @@ import { Reference } from "./tools/reference.js"
 // TODO: make relevence score of discoveryMethod, list most helpful searches
 // TODO: put keywords into a settings section
 // TODO: make something for related work discovery
+// TODO: find a way to add info to a manually entered reference
+// TODO: have a better system for sorting
+    // account for:
+    // reference count
+    // publication year
+    // keyword combos
+    // specific author included
 
 const posixShellEscape = (string)=>"'"+string.replace(/'/g, `'"'"'`)+"'"
 const clearScreen = ()=>console.log('\x1B[2J')
@@ -73,10 +80,12 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
     let activeProject
     const loadProject = async () => {
         const defaultObject = {
-            keywords: {
-                positive: [],
-                negative: [],
-                neutral: [],
+            settings: {
+                keywords: {
+                    positive: [],
+                    negative: [],
+                    neutral: [],
+                },
             },
             references: {},
             discoveryAttempts: [],
@@ -86,7 +95,8 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
         if (!activeProject.discoveryAttempts || !activeProject.references) {
             activeProject = defaultObject
         }
-        activeProject.keywords = activeProject.keywords || {}
+        activeProject.settings = activeProject.settings || {}
+        activeProject.settings.keywords = activeProject.settings.keywords || {}
         for (const [key, value] of Object.entries(activeProject.references)) {
             activeProject.references[key] = new Reference(value)
         }
@@ -171,19 +181,20 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
                 ...counts
             },
         }))}`.replace(/\b(\d+)\b/g, "\x1b[31m$1\x1b[36m")))
-        console.log(green`\n\n`)
+        console.log(green``)
     }
     
     function highlightKeywords(text) {
-        activeProject.keywords.positive = activeProject.keywords.positive || []
-        activeProject.keywords.negative = activeProject.keywords.negative || []
-        activeProject.keywords.neutral = activeProject.keywords.neutral || []
-        activeProject.keywords.positive = activeProject.keywords.positive.map(each=>each.toLowerCase())
-        activeProject.keywords.negative = activeProject.keywords.negative.map(each=>each.toLowerCase())
-        activeProject.keywords.neutral = activeProject.keywords.neutral.map(each=>each.toLowerCase())
-        const goodKeywords = activeProject.keywords.positive
-        const badKeywords = activeProject.keywords.negative
-        const neutralKeywords = activeProject.keywords.neutral
+        const keywords = activeProject.settings.keywords
+        keywords.positive = keywords.positive || []
+        keywords.negative = keywords.negative || []
+        keywords.neutral = keywords.neutral || []
+        keywords.positive = keywords.positive.map(each=>each.toLowerCase())
+        keywords.negative = keywords.negative.map(each=>each.toLowerCase())
+        keywords.neutral = keywords.neutral.map(each=>each.toLowerCase())
+        const goodKeywords = keywords.positive
+        const badKeywords = keywords.negative
+        const neutralKeywords = keywords.neutral
         let index = -1
         for (let char of text) {
             index++
@@ -208,56 +219,69 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
         return reset``+text
     }
 
-    function titleSorter(reverse) {
+    function referenceSorter(reverse) {
         const score = (each)=>{
-            let scoreList = [0,0,0]
-
             //
             // keyword count
             //
-            activeProject.keywords.positive = activeProject.keywords.positive || []
-            activeProject.keywords.negative = activeProject.keywords.negative || []
-            activeProject.keywords.neutral = activeProject.keywords.neutral || []
-            activeProject.keywords.positive = activeProject.keywords.positive.map(each=>each.toLowerCase())
-            activeProject.keywords.negative = activeProject.keywords.negative.map(each=>each.toLowerCase())
-            activeProject.keywords.neutral = activeProject.keywords.neutral.map(each=>each.toLowerCase())
-            const goodKeywords = activeProject.keywords.positive
-            const badKeywords = activeProject.keywords.negative
-            const neutralKeywords = activeProject.keywords.neutral
-            let index = -1
-            for (let char of each.title) {
-                index++
-                if (!each.title.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
-                    const remaining = each.title.slice(index,).toLowerCase()
-                    let matching
-                    // FIXME: need to sort by length of keyword 
-                    if (goodKeywords.some(each=>(remaining.startsWith(matching=each)))) {
-                        scoreList[0] += 1
-                        index += matching.length
-                    } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
-                        scoreList[0] -= 1
-                        index += matching.length
-                    } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
-                        index += matching.length
+            const keywords = activeProject.settings.keywords
+            keywords.positive = keywords.positive || []
+            keywords.negative = keywords.negative || []
+            keywords.neutral = keywords.neutral || []
+            keywords.positive = keywords.positive.map(each=>each.toLowerCase())
+            keywords.negative = keywords.negative.map(each=>each.toLowerCase())
+            keywords.neutral = keywords.neutral.map(each=>each.toLowerCase())
+            const goodKeywords = keywords.positive
+            const badKeywords = keywords.negative
+            const neutralKeywords = keywords.neutral
+            function getKeywordCount(title) {
+                let numberOfGoodKeywords = 0
+                let numberOfBadKeywords = 0
+                let numberOfNeutralKeywords = 0
+                let index = -1
+                for (let char of title) {
+                    index++
+                    if (!title.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
+                        const remaining = title.slice(index,).toLowerCase()
+                        let matching
+                        // FIXME: need to sort by length of keyword 
+                        if (goodKeywords.some(each=>(remaining.startsWith(matching=each)))) {
+                            numberOfGoodKeywords++
+                            index += matching.length
+                        } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
+                            numberOfBadKeywords++
+                            index += matching.length
+                        } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
+                            numberOfNeutralKeywords++
+                            index += matching.length
+                        }
                     }
                 }
+                return {good: numberOfGoodKeywords, bad: numberOfBadKeywords, neutral: numberOfNeutralKeywords}
             }
             
             // 
-            // publisher
+            // evaluate user-defined scoring functions
             // 
-            const publisherRanking = activeProject.publisherRanking||[]
-            scoreList[1] += Math.max(publisherRanking.map(
-                (eachPublisher,index)=>(
-                    each.publisherInfo.toLowerCase().includes(eachPublisher.toLowerCase())
-                    || (each.link||"").toLowerCase().includes(eachPublisher.toLowerCase())
-                )?index+1:0
-            ))
-            
-            // 
-            // year (currently gets added to keyword score)
-            // 
-            scoreList[0] += (each.year-0||0)
+            let scoreList = [0,0,0]
+            for (const [key, value] of Object.entries(activeProject.settings.scoreGivers||{})) {
+                const func = eval(value)
+                func(
+                    each,
+                    scoreList,
+                    {
+                        keywords,
+                        settings: activeProject.settings,
+                        numberOfGoodKeywordsIn: (title)=>getKeywordCount(title).good,
+                        numberOfBadKeywordsIn: (title)=>getKeywordCount(title).bad,
+                        numberOfNeutralKeywordsIn: (title)=>getKeywordCount(title).neutral,
+                    }
+                )
+            }
+            if (Object.values(activeProject.settings.scoreGivers).length == 0) {
+                // use year (currently gets added to keyword score)
+                scoreList[0] += (each.year-0||0)
+            }
             
             return scoreList
         }
@@ -403,14 +427,14 @@ mainLoop: while (true) {
             ],
         })
         const keywords = (await askForParagraph(`list keyterms to add, one per line, press enter twice to submit list`)).split("\n").map(each=>each.trim()).filter(each=>each.length>0)
-        const possibleForDelete = [...activeProject.keywords[kind]]
-        activeProject.keywords[kind].push(...keywords)
+        const possibleForDelete = [...activeProject.settings.keywords[kind]]
+        activeProject.settings.keywords[kind].push(...keywords)
         if (await Console.askFor.yesNo(`delete some keywords? (y/n)`)) {
             const onesToDelete = await selectMany({
                 message: "Ones with checkmark will be deleted",
                 options: possibleForDelete,
             })
-            activeProject.keywords[kind] = activeProject.keywords[kind].filter(each=>!onesToDelete.includes(each))
+            activeProject.settings.keywords[kind] = activeProject.settings.keywords[kind].filter(each=>!onesToDelete.includes(each))
         }
         saveProject()
     } else if (whichAction == "review references") {
@@ -433,7 +457,7 @@ mainLoop: while (true) {
                 continue mainLoop
             } else if (whatKind == "unseen|title" || whatKind == "skipped|title") {
                 console.log(cyan`\nCONTROLS: g=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
-                nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(titleSorter())) {
+                nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(referenceSorter())) {
                     // TODO: highlight good and bad keywords
                     let message = `${cyan`(${each?.year}) `}${highlightKeywords(each.title)}: `
                     write(message)
@@ -484,7 +508,7 @@ mainLoop: while (true) {
                         continue reviewLoop
                     }
                     // TODO: sort by publisher and year, allow ranking publishers
-                    activeReferences.sort(titleSorter())
+                    activeReferences.sort(referenceSorter())
                     const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${highlightKeywords(each.title)}`), each]))
                     const active = await selectOne({
                         message: "Which title do you want to explore?",
