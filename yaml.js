@@ -781,8 +781,13 @@ var int = new Type("tag:yaml.org,2002:int", {
 // https://deno.land/std@0.168.0/encoding/_yaml/type/map.ts
 var map = new Type("tag:yaml.org,2002:map", {
   construct(data) {
-    return data !== null ? data : {};
+    data = data !== null ? data : {};
+    data.toYAML instanceof Function && (data = data.toYAML());
+    return data;
   },
+//   predicate: obj => {
+//     return obj != null && obj instanceof Object && !Array.isArray(obj)
+//   },
   kind: "mapping"
 });
 
@@ -804,7 +809,7 @@ function constructYamlNull() {
   return null;
 }
 function isNull(object) {
-  return object === null;
+  return object == null;
 }
 var nil = new Type("tag:yaml.org,2002:null", {
   construct: constructYamlNull,
