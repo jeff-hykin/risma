@@ -9,7 +9,6 @@ export class DiscoveryMethod {
     }) {
         Object.assign(this,{
             query,
-            date: new DateTime(dateTime).date,
             dateTime,
             searchEngine,
             ...other,

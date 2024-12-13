@@ -303,7 +303,7 @@ mainLoop: while (true) {
             searchEngine: searchEngineName,
         })
         const references = await withSpinner("searching",
-            ()=>searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query, discoveryMethod)}`)
+            ()=>searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query)}`)
         ).then(all=>all.map(each=>new Reference({
             title: each.title,
             notes: {

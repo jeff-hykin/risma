@@ -39,7 +39,7 @@ keywords:
         - biolog
         - primate
 references:
-    Visual Affordance Prediction for Guiding Robot Exploration: &ref_0
+    Visual Affordance Prediction for Guiding Robot Exploration: &ref_10
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -114,7 +114,7 @@ references:
                 publisherInfo: '2023 IEEE International, 2023'
                 year: '2023'
         publisherInfo: ''
-    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_1
+    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_11
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -156,7 +156,7 @@ references:
                 publisherInfo: 'arXiv preprint arXiv:2403.19369, 2024'
                 year: '1936'
         publisherInfo: ''
-    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_2
+    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_12
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -231,7 +231,7 @@ references:
                 publisherInfo: 'on Development and, 2024'
                 year: '2024'
         publisherInfo: ''
-    Learning to Anticipate Egocentric Actions by Imagination: &ref_3
+    Learning to Anticipate Egocentric Actions by Imagination: &ref_13
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -329,7 +329,7 @@ references:
                 publisherInfo: 'IEEE Transactions on, 2020'
                 year: '2020'
         publisherInfo: ''
-    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_4
+    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_14
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -373,7 +373,7 @@ references:
                 publisherInfo: 'arXiv preprint arXiv, 2019'
                 year: '2019'
         publisherInfo: ''
-    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_5
+    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_15
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -434,7 +434,7 @@ references:
                 publisherInfo: '2021 IEEE International, 2021'
                 year: '2021'
         publisherInfo: ''
-    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_6
+    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_16
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -503,7 +503,7 @@ references:
                 publisherInfo: 'Proceedings of the IEEE, 2018'
                 year: '2018'
         publisherInfo: ''
-    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_7
+    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_17
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -548,7 +548,7 @@ references:
                 publisherInfo: null
                 year: '2019'
         publisherInfo: ''
-    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_8
+    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_18
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -603,7 +603,7 @@ references:
                 publisherInfo: 'Proceedings of the 28th, 2024'
                 year: '2024'
         publisherInfo: ''
-    Learning affordances in object-centric generative models: &ref_9
+    Learning affordances in object-centric generative models: &ref_19
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -646,7 +646,545 @@ references:
                 publisherInfo: null
                 year: '2020'
         publisherInfo: ''
+    'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception': &ref_0
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.467Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/iv55156.2024.10588865
+            googleScholar:
+                title: 'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception'
+                authorNames:
+                    - Y Yuan
+                    - M Sester
+                pdfLink: 'https://arxiv.org/pdf/2404.18617'
+                link: 'https://arxiv.org/abs/2404.18617'
+                citationId: null
+                multiArticleId: '14674823755777045882'
+                citedByLink: null
+                publisherInfo: 'arXiv preprint arXiv:2404.18617, 2024'
+                year: '2024'
+    Multi-Agent Active Perception Based on Reinforcement Learning and POMDP: &ref_1
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/access.2024.3383544
+            googleScholar:
+                title: Multi-Agent Active Perception Based on Reinforcement Learning and POMDP
+                authorNames:
+                    - T Selimović
+                    - M Peti
+                    - S Bogdan
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/6287639/6514899/10486889.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/10486889/'
+                citationId: null
+                multiArticleId: '13114516728628612025'
+                citedByLink: null
+                publisherInfo: 'IEEE Access, 2024'
+                year: '2024'
+    Mutual influence between language and perception in multi-agent communication games: &ref_2
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                title: Mutual influence between language and perception in multi-agent communication games
+                subtitle: null
+                abstract: 'Language interfaces with many other cognitive domains. This paper explores how interactions at these interfaces can be studied with deep learning methods, focusing on the relation between language emergence and visual perception. To model the emergence of language, a sender and a receiver agent are trained on a reference game. The agents are implemented as deep neural networks, with dedicated vision and language modules. Motivated by the mutual influence between language and perception in cognition, we apply systematic manipulations to the agents’ (i) visual representations, to analyze the effects on emergent communication, and (ii) communication protocols, to analyze the effects on visual representations. Our analyses show that perceptual biases shape semantic categorization and communicative content. Conversely, if the communication protocol partitions object space along certain attributes, agents learn to represent visual information about these attributes more accurately, and the representations of communication partners align. Finally, an evolutionary analysis suggests that visual representations may be shaped in part to facilitate the communication of environmentally relevant distinctions. Aside from accounting for co-adaptation effects between language and perception, our results point out ways to modulate and improve visual representation learning and emergent communication in artificial agents.'
+                authorNames:
+                    - Xenia Ohmer
+                    - Michael Marino
+                    - Michael Franke
+                    - Peter König
+                year: 2022
+                doi: 10.1371/journal.pcbi.1010658
+                url: 'https://doi.org/10.1371/journal.pcbi.1010658'
+                pdfLink: null
+                citationCount: 0
+                citedDois:
+                    - 10.18653/v1/2020.emnlp-main.703
+                    - 10.1073/pnas.2016569118
+                    - 10.1371/journal.pone.0234894
+                    - 10.18653/v1/D19-1384
+                    - 10.18653/v1/2021.conll-1.48
+                    - 10.1146/annurev-vision-082114-035447
+                    - 10.1038/srep27755
+                    - 10.3389/fpsyg.2017.01726
+                    - 10.1111/cogs.12670
+                    - 10.1073/pnas.0610341104
+                    - 10.1016/j.tics.2020.08.005
+                    - 10.1073/pnas.0701644104
+                    - 10.1037/xge0000560
+                    - 10.1016/S1364-6613(99)01333-9
+                    - 10.18653/v1/2020.findings-emnlp.397
+                    - 10.18653/v1/2020.acl-main.685
+                    - 10.1016/S1364-6613(03)00109-8
+                    - 10.1016/0022-5193(74)90110-6
+                    - 10.2307/1913390
+                    - 10.1006/jeth.1997.2359
+                    - 10.1162/106454602320184248
+                    - 10.1017/S0140525X05000087
+                    - 10.18653/v1/P19-1380
+                    - 10.18653/v1/2020.blackboxnlp-1.2
+                    - 10.18653/v1/2020.acl-main.407
+                    - 10.18653/v1/D18-1119
+                    - 10.3115/v1/D14-1179
+                    - 10.1080/23273798.2017.1391398
+                    - 10.1007/BF00992696
+                    - 10.1016/0025-5564(78)90077-9
+                    - 10.1017/CBO9781139173179
+                    - 10.1093/bjps/axx002
+                    - 10.1006/jeth.1997.2319
+                    - 10.7551/mitpress/2884.001.0001
+                    - 10.1016/0010-0285(76)90013-X
+                    - 10.1037/0096-3445.131.4.477
+                    - 10.1016/j.cognition.2008.03.009
+                    - 10.1075/eoc.4.1.07can
+                    - 10.1037/0096-3445.127.4.331
+                    - 10.1111/cogs.12796
+                    - 10.1162/NECO_a_00475
+                    - 10.1016/j.tics.2004.05.009
+                    - 10.1007/s00429-021-02437-y
+                    - 10.1017/S0140525X08004998
+                    - 10.1016/0022-5193(83)90445-9
+                    - '10.1093/acprof:oso/9780199580828.001.0001'
+                    - 10.1167/15.8.22
+                    - 10.1162/jocn_a_01544
+                    - 10.1093/acrefore/9780190264086.013.46
+                    - 10.1038/s41593-019-0520-2
+                    - 10.1073/pnas.1905544116
+                    - 10.1016/j.neunet.2020.11.004
+                    - 10.1515/lity.1997.1.1.33
+                    - 10.1145/3465055
+                    - 10.1038/nature20101
+                    - 10.1002/wcs.104
+                    - 10.1098/rstb.2012.0117
+                    - 10.1016/j.neunet.2009.03.007
+            googleScholar:
+                title: Mutual influence between language and perception in multi-agent communication games
+                authorNames:
+                    - X Ohmer
+                    - M Marino
+                    - M Franke
+                pdfLink: null
+                link: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010658'
+                citationId: '5350802694831905244'
+                multiArticleId: '5350802694831905244'
+                citedByLink: 'https://scholar.google.com//scholar?cites=5350802694831905244&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'PLOS Computational, 2022'
+                year: '2022'
+    'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness': &ref_3
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1038/s42256-023-00720-7
+            googleScholar:
+                title: 'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness'
+                authorNames:
+                    - P Pataranutaporn
+                    - R Liu
+                    - E Finn
+                    - P Maes
+                pdfLink: 'https://dspace.mit.edu/bitstream/handle/1721.1/152316/NMI_AI_beholder_Final-Unformatted%5B85%5D.pdf?sequence=1&isAllowed=y&utm_source=nationaltribune&utm_medium=nationaltribune&utm_campaign=news'
+                link: 'https://www.nature.com/articles/s42256-023-00720-7'
+                citationId: '14041336950901741464'
+                multiArticleId: '14041336950901741464'
+                citedByLink: 'https://scholar.google.com//scholar?cites=14041336950901741464&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Nature Machine Intelligence, 2023'
+                year: '2023'
+    Why and how to study the impact of perception on language emergence in artificial agents: &ref_4
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Why and how to study the impact of perception on language emergence in artificial agents
+                authorNames:
+                    - X Ohmer
+                    - M Marino
+                    - M Franke
+                pdfLink: 'https://escholarship.org/content/qt6p82v6st/qt6p82v6st.pdf'
+                link: 'https://escholarship.org/uc/item/6p82v6st'
+                citationId: '2179981516739486040'
+                multiArticleId: '2179981516739486040'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2179981516739486040&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the Annual, 2021'
+                year: '2021'
+    Interaction Algorithm Effect on Human Experience with Reinforcement Learning: &ref_5
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                title: Interaction Algorithm Effect on Human Experience with Reinforcement Learning
+                subtitle: null
+                abstract: 'A goal of interactive machine learning (IML) is to enable people with no specialized training to intuitively teach intelligent agents how to perform tasks. Toward achieving that goal, we are studying how the design of the interaction method for a Bayesian Q-Learning algorithm impacts aspects of the human’s experience of teaching the agent using human-centric metrics such as frustration in addition to traditional ML performance metrics. This study investigated two methods of natural language instruction: critique and action advice. We conducted a human-in-the-loop experiment in which people trained two agents with different teaching methods but, unknown to each participant, the same underlying reinforcement learning algorithm. The results show an agent that learns from action advice creates a better user experience compared to an agent that learns from binary critique in terms of frustration, perceived performance, transparency, immediacy, and perceived intelligence. We identified nine main characteristics of an IML algorithm’s design that impact the human’s experience with the agent, including using human instructions about the future, compliance with input, empowerment, transparency, immediacy, a deterministic interaction, the complexity of the instructions, accuracy of the speech recognition software, and the robust and flexible nature of the interaction algorithm.'
+                authorNames:
+                    - Samantha Krening
+                    - Karen M. Feigh
+                year: 2018
+                doi: 10.1145/3277904
+                url: 'https://doi.org/10.1145/3277904'
+                pdfLink: null
+                citationCount: 22
+                citedDois:
+                    - 10.1109/IROS.2008.4651020
+                    - 10.1007/s12369-009-0013-7
+                    - 10.1145/778712.778756
+                    - 10.1016/S0921-8890(02)00374-3
+                    - 10.1016/S0921-8890(02)00372-X
+                    - 10.1177/154193120605000909
+                    - 10.1145/375735.376334
+                    - 10.1007/s10458-006-0005-z
+                    - 10.1109/ICTAI.2012.152
+                    - 10.1109/TCDS.2016.2628365
+                    - 10.15607/RSS.2015.XI.018
+                    - 10.3115/v1/P14-5010
+                    - 10.3115/1219840.1219855
+                    - 10.1561/1500000011
+                    - 10.1518/001872097778543886
+                    - 10.1037/a0021522
+                    - 10.1126/science.7244649
+                    - 10.1609/aaai.v25i1.7979
+                    - 10.1016/j.artint.2007.09.009
+            googleScholar:
+                title: Interaction algorithm effect on human experience with reinforcement learning
+                authorNames:
+                    - S Krening
+                    - KM Feigh- ACM Transactions on Human
+                pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3277904'
+                link: 'https://dl.acm.org/doi/abs/10.1145/3277904'
+                citationId: '15452678659896386539'
+                multiArticleId: '15452678659896386539'
+                citedByLink: 'https://scholar.google.com//scholar?cites=15452678659896386539&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Robot Interaction, 2018'
+                year: '2018'
+    'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues': &ref_6
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1016/j.array.2021.100057
+            googleScholar:
+                title: 'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues'
+                authorNames:
+                    - A Gupta
+                    - A Anpalagan
+                    - L Guan
+                    - AS Khwaja
+                pdfLink: null
+                link: 'https://www.sciencedirect.com/science/article/pii/S2590005621000059'
+                citationId: '2507582518469208253'
+                multiArticleId: '2507582518469208253'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2507582518469208253&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Array, 2021'
+                year: '2021'
+    Research on autonomous driving decision-making strategies based deep reinforcement learning: &ref_7
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1145/3697467.3697643
+            googleScholar:
+                title: Research on autonomous driving decision-making strategies based deep reinforcement learning
+                authorNames:
+                    - Z Wang
+                    - H Yan
+                    - C Wei
+                    - J Wang
+                    - S Bo
+                pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3697467.3697643'
+                link: 'https://dl.acm.org/doi/abs/10.1145/3697467.3697643'
+                citationId: '1006030502322123597'
+                multiArticleId: '1006030502322123597'
+                citedByLink: 'https://scholar.google.com//scholar?cites=1006030502322123597&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'and Machine Learning, 2024'
+                year: '2024'
+    Finding and visualizing weaknesses of deep reinforcement learning agents: &ref_8
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Finding and visualizing weaknesses of deep reinforcement learning agents
+                authorNames:
+                    - C Rupprecht
+                    - C Ibrahim
+                    - CJ Pal
+                pdfLink: 'https://arxiv.org/pdf/1904.01318'
+                link: 'https://arxiv.org/abs/1904.01318'
+                citationId: '11518984940352760452'
+                multiArticleId: '11518984940352760452'
+                citedByLink: 'https://scholar.google.com//scholar?cites=11518984940352760452&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'arXiv preprint arXiv:1904.01318, 2019'
+                year: '1904'
+    Simulation-based reinforcement learning for real-world autonomous driving: &ref_9
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T20:06:55.468Z'
+                query: ' agent driven affect based perception machine learning -emotion'
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T20:07:00.834Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/icra40945.2020.9196730
+            googleScholar:
+                title: Simulation-based reinforcement learning for real-world autonomous driving
+                authorNames:
+                    - B Osiński
+                    - A Jakubowski
+                    - P Zięcina
+                pdfLink: 'https://arxiv.org/pdf/1911.12905'
+                link: 'https://ieeexplore.ieee.org/abstract/document/9196730/'
+                citationId: '18072154790906392218'
+                multiArticleId: '18072154790906392218'
+                citedByLink: 'https://scholar.google.com//scholar?cites=18072154790906392218&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'on robotics and, 2020'
+                year: '2020'
 discoveryAttempts:
+    -
+        query: ' agent driven affect based perception machine learning -emotion'
+        dateTime: '2024-12-13T20:06:54.724Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: 'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception'
+                link: *ref_0
+            -
+                hadBeenSeenBefore: false
+                title: Multi-Agent Active Perception Based on Reinforcement Learning and POMDP
+                link: *ref_1
+            -
+                hadBeenSeenBefore: false
+                title: Mutual influence between language and perception in multi-agent communication games
+                link: *ref_2
+            -
+                hadBeenSeenBefore: false
+                title: 'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness'
+                link: *ref_3
+            -
+                hadBeenSeenBefore: false
+                title: Why and how to study the impact of perception on language emergence in artificial agents
+                link: *ref_4
+            -
+                hadBeenSeenBefore: false
+                title: Interaction Algorithm Effect on Human Experience with Reinforcement Learning
+                link: *ref_5
+            -
+                hadBeenSeenBefore: false
+                title: 'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues'
+                link: *ref_6
+            -
+                hadBeenSeenBefore: false
+                title: Research on autonomous driving decision-making strategies based deep reinforcement learning
+                link: *ref_7
+            -
+                hadBeenSeenBefore: false
+                title: Finding and visualizing weaknesses of deep reinforcement learning agents
+                link: *ref_8
+            -
+                hadBeenSeenBefore: false
+                title: Simulation-based reinforcement learning for real-world autonomous driving
+                link: *ref_9
     -
         query: affordance based encoder imagination prediction
         date: null
@@ -656,40 +1194,40 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Visual Affordance Prediction for Guiding Robot Exploration
-                link: *ref_0
+                link: *ref_10
             -
                 hadBeenSeenBefore: false
                 title: 'RAIL: Robot Affordance Imagination with Large Language Models'
-                link: *ref_1
+                link: *ref_11
             -
                 hadBeenSeenBefore: false
                 title: Affordance-Based Goal Imagination for Embodied AI Agents
-                link: *ref_2
+                link: *ref_12
             -
                 hadBeenSeenBefore: false
                 title: Learning to Anticipate Egocentric Actions by Imagination
-                link: *ref_3
+                link: *ref_13
             -
                 hadBeenSeenBefore: false
                 title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
-                link: *ref_4
+                link: *ref_14
             -
                 hadBeenSeenBefore: false
                 title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
-                link: *ref_5
+                link: *ref_15
             -
                 hadBeenSeenBefore: false
                 title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
-                link: *ref_6
+                link: *ref_16
             -
                 hadBeenSeenBefore: false
                 title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
-                link: *ref_7
+                link: *ref_17
             -
                 hadBeenSeenBefore: false
                 title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
-                link: *ref_8
+                link: *ref_18
             -
                 hadBeenSeenBefore: false
                 title: Learning affordances in object-centric generative models
-                link: *ref_9
+                link: *ref_19

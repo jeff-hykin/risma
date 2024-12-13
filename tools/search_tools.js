@@ -726,7 +726,7 @@ export function crossrefToSimpleFormat(crossrefData) {
     return {
         "title": (crossrefData.title||[]).at(-1) || (crossrefData["short-title"]||[]).at(-1),
         "subtitle": (crossrefData.subtitle||[]).at(-1),
-        "abstract": crossrefData.abstract,
+        "abstract": crossrefData.abstract.replace(/<\/?jats:\w+>/g,"").trim().replace(/^Abstract\b/i,"").trim(),
         "authorNames": crossrefData.author.map(author => author.given + " " + author.family),
         "year": crossrefData?.published?.["date-parts"]?.[0]?.[0] || crossrefData?.issued?.["date-parts"]?.[0]?.[0] || crossrefData?.indexed?.["date-parts"]?.[0]?.[0],
         "doi": crossrefData.DOI,
@@ -737,6 +737,7 @@ export function crossrefToSimpleFormat(crossrefData) {
     }
 }
 
+let debugCount = 0
 export const searchOptions = {
     "googleScholar": {
         "base": "https://scholar.google.com/scholar",
@@ -941,6 +942,11 @@ export const searchOptions = {
                 htmlResult,
                 "text/html",
             )
+                // debug:
+                // FileSystem.write({
+                //     path: `${debugCount++}.html`,
+                //     data: htmlResult,
+                // })
             // 
             // pull article info
             // 
@@ -1056,6 +1062,48 @@ export const searchOptions = {
                             }
                         } catch (error) {
                             console.warn(`issue getting year & author`, error)
+                        }
+                        
+                        // 
+                        // abstract
+                        // 
+                        try {
+                            const abstractElement = eachArticleElement.querySelector(".gs_rs.gs_fma_s")
+                            if (abstractElement) {
+                                articleObject.abstract = abstractElement.innerText.trim()
+                            } else {
+                                // unable to get abstract cause google detects it as bot (too fast)
+                                
+                                // // when there is only one result, google tends to show the abstract
+                                // try {
+                                //     const query = articleObject.title+" "+(articleObject.authorNames||[]).join(" ")
+                                //     const url = `${searchOptions.googleScholar.base}${searchOptions.googleScholar.searchStringToParams(query)}`
+                                //     let htmlResult
+                                //     try {
+                                //         htmlResult = await fetch(new URL(url)).then(result=>result.text())
+                                //     } catch (error) {
+                                //         console.debug(`error when getting ${url} is:`,error)
+                                //         return []
+                                //     }
+                                //     const document = new DOMParser().parseFromString(
+                                //         htmlResult,
+                                //         "text/html",
+                                //     )
+                                //     FileSystem.write({
+                                //         path: `${debugCount++}.html`,
+                                //         data: htmlResult,
+                                //     })
+                                //     const abstractElement = document.querySelector(".gs_rs.gs_fma_s")
+                                //     console.debug(`abstractElement is:`,abstractElement)
+                                //     articleObject.abstract = abstractElement.innerText.trim()
+                                // } catch (error) {
+                                //     console.warn(`issue getting abstract`, error)
+                                // }
+                            }
+                            // /scholar?q=related:e4ZuT8QNQM8J:scholar.google.com/&scioq=Affordance-Based+Goal+Imagination&hl=en&as_sdt=0,44
+                            // https://scholar.googleusercontent.com/scholar.bib?q=info:e4ZuT8QNQM8J:scholar.google.com/&output=citation&scisdr=ClEVMutuEMztnOqBQJ0:AFWwaeYAAAAAZ1yHWJ3RbrZHSuLGSUL_1SPMIgs&scisig=AFWwaeYAAAAAZ1yHWCl6VuL-prnamkSUfJ77dHM&scisf=4&ct=citation&cd=-1&hl=en
+                        } catch (error) {
+                            console.warn(`issue getting abstract`, error)
                         }
                     }
                 }
