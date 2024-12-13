@@ -18,7 +18,7 @@ import { searchOptions, title2Doi } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 
-// TODO: relevence score of search query
+// TODO: make relevence score of discoveryMethod, list most helpful searches
 
 const posixShellEscape = (string)=>"'"+string.replace(/'/g, `'"'"'`)+"'"
 const clearScreen = ()=>console.log('\x1B[2J')
