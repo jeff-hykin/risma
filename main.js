@@ -15,7 +15,7 @@ import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranke
 
 import { version } from "./tools/version.js"
 import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write } from "./tools/input_tools.js"  
-import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo } from "./tools/search_tools.js"
+import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
@@ -63,6 +63,8 @@ const cacheItemPath = `${cacheFolder}/cache.json`
 const storageObject = createStorageObject(cacheItemPath)
 const crossrefCachePath = `${cacheFolder}/cache.json`
 doiToCrossrefInfo.cache = createStorageObject(crossrefCachePath)
+const openAlexCachePath = `${cacheFolder}/openAlexCache.json`
+getOpenAlexData.cache = createStorageObject(openAlexCachePath)
 
 // 
 // get active project   
@@ -240,6 +242,9 @@ doiToCrossrefInfo.cache = createStorageObject(crossrefCachePath)
         const badKeywords = keywords.negative
         const neutralKeywords = keywords.neutral
         function getKeywordCount(title) {
+            if (!title) {
+                return {good: 0, bad: 0, neutral: 0}
+            }
             let numberOfGoodKeywords = 0
             let numberOfBadKeywords = 0
             let numberOfNeutralKeywords = 0
@@ -270,18 +275,23 @@ doiToCrossrefInfo.cache = createStorageObject(crossrefCachePath)
         // 
         let scoreList = [0,0,0]
         for (const [key, value] of Object.entries(activeProject.settings.scoreGivers||{})) {
-            const func = eval(value)
-            func(
-                each,
-                scoreList,
-                {
-                    keywords,
-                    settings: activeProject.settings,
-                    numberOfGoodKeywordsIn: (title)=>getKeywordCount(title).good,
-                    numberOfBadKeywordsIn: (title)=>getKeywordCount(title).bad,
-                    numberOfNeutralKeywordsIn: (title)=>getKeywordCount(title).neutral,
-                }
-            )
+            try {
+                const func = eval(value)
+                func(
+                    each,
+                    scoreList,
+                    {
+                        keywords,
+                        settings: activeProject.settings,
+                        numberOfGoodKeywordsIn: (title)=>getKeywordCount(title).good,
+                        numberOfBadKeywordsIn: (title)=>getKeywordCount(title).bad,
+                        numberOfNeutralKeywordsIn: (title)=>getKeywordCount(title).neutral,
+                    }
+                )
+            } catch (error) {
+                console.debug(`\nerror when calculating score with ${key}() for `, value)
+                throw error
+            }
         }
         if (Object.values(activeProject.settings.scoreGivers).length == 0) {
             // use year (currently gets added to keyword score)
@@ -312,6 +322,7 @@ mainLoop: while (true) {
         options: [
             "review references",
             "gather references (search internet)",
+            "get related work",
             "change project",
             "modify keywords",
             "explore references",
@@ -466,7 +477,7 @@ mainLoop: while (true) {
                 console.log(cyan`\nCONTROLS: g=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
                 nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(referenceSorter())) {
                     // TODO: highlight good and bad keywords
-                    let message = `${cyan`(${each?.year}) `}${highlightKeywords(each.title)}: `
+                    let message = `${cyan`(${each?.year}, ${score(each)}) `}${highlightKeywords(each.title)}: `
                     write(message)
                     for await (let { name: keyName, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
                         if (keyName == "q" || (ctrl && keyName == "c")) {
@@ -587,6 +598,84 @@ mainLoop: while (true) {
                         continue mainLoop
                     }
                     await OperatingSystem.openUrl(active.link||active.pdfLink)
+                }
+            }
+            
+            break 
+        }
+    } else if (whichAction == "get related work") {
+        getRelatedLoop: while (true) {
+            const references = Object.values(activeProject.references)
+            const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
+            const counts = getReferenceStatusCounts()
+            
+            const whatKind = await selectOne({
+                message: "which group do you want to review?",
+                options: Object.keys(counts).concat(["nothing (quit)"]),
+                optionDescriptions: Object.values(counts).map(each=>`(${each} references)`).concat([""]),
+                showInfo: true,
+            })
+            
+            // 
+            // pick
+            // 
+            if (whatKind == "nothing (quit)") {
+                continue mainLoop
+            } else {
+                let quit = { title: "quit", }
+                let activeReferences
+                nextReferenceLoop: while (1) {
+                    activeReferences = references.filter(each=>each.resumeStatus == whatKind).concat([quit])
+                    if (activeReferences.length == 1) {
+                        await saveProject()
+                        prompt(`finished getting references for ${whatKind}! (press enter to continue)`)
+                        continue mainLoop
+                    }
+                    activeReferences.sort(referenceSorter())
+                    const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${highlightKeywords(each.title)}`), each]))
+                    const active = await selectOne({
+                        message: "Which title do you want to explore related work of?",
+                        options: colorObject,
+                        optionDescriptions: activeReferences.map(each=>cyan`${each.year}`),
+                        descriptionHighlighter: dim,
+                    })
+                    if (active == quit) {
+                        continue mainLoop
+                    }
+                    const {discoveryMethod,relatedArticles} = await withSpinner("getting related articles", 
+                        (mention)=>getRelatedArticles(active, (index,total)=>mention(`got ${index} of ${total}`))
+                    )
+                    let addedReferences = 0
+                    let unseenReferences = {}
+                    for (const [title, each] of Object.entries(relatedArticles)) {
+                        if (!each.title) {
+                            console.debug(`each is:`,each)
+                            console.debug(`title is:`,title)
+                            each.title = title
+                        }
+                        activeProject.references[title] = each
+                        const hadBeenSeenBefore = !!activeProject.references[title]
+                        discoveryMethod.referenceLinks.push({
+                            hadBeenSeenBefore,
+                            title: title,
+                            // link to object directly rather than spread so that yaml will make it a anchor to it
+                            link: each,
+                        })
+                        if (!hadBeenSeenBefore) {
+                            addedReferences++
+                            activeProject.references[title] = each
+                            unseenReferences[title] = each
+                            each.resumeStatus = "unseen|title"
+                            each.events = each.events || {}
+                            each.events["added"] =  each.events["added"] || new DateTime().toISOString()
+                        } else {
+                            active.notes.alreadyConnectedTo = [...new Set(active.notes.alreadyConnectedTo||[])]
+                            active.notes.alreadyConnectedTo.push(title)
+                        }
+                    }
+                    activeProject.discoveryAttempts.unshift(discoveryMethod)
+                    await saveProject()
+                    prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
                 }
             }
             

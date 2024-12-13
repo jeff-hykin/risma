@@ -740,9 +740,34 @@ export async function doiToCrossrefInfo(doi, { cacheObject, onUpdateCache=_=>0,}
 doiToCrossrefInfo.cache = {}
 
 /**
+ * this exists mostly for caching
+ */
+export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0,}={}) {
+    cacheObject = cacheObject||getOpenAlexData.cache
+    urlOrDoi = urlOrDoi.replace("https://openalex.org","https://api.openalex.org")
+    if (!urlOrDoi.startsWith("https://api.openalex.org") && !urlOrDoi.startsWith("https://doi.org/")) {
+        urlOrDoi = `https://api.openalex.org/works/https://doi.org/${urlOrDoi}`
+    }
+    if (!cacheObject[urlOrDoi]) {
+        const result = await fetch(urlOrDoi)
+        if (result.ok) {
+            let output = (await result.json())
+            if (output instanceof Object) {
+                cacheObject[urlOrDoi] = output
+                await onUpdateCache(urlOrDoi)
+            }
+        } else {
+            throw Error(`when fetching ${urlOrDoi} I got an error response ${result.statusText}`, result)
+        }
+    }
+    return cacheObject[urlOrDoi]
+}
+getOpenAlexData.cache = {}
+
+/**
  * @example
  * ```js
- * console.log(Object.keys(await getRelatedArticles({ doi: "10.1109/icra48891.2023.10161288" })))
+ * console.log(Object.keys((await getRelatedArticles({ doi: "10.1109/icra48891.2023.10161288" })).relatedArticles))
  * ```
  */
 export async function getRelatedArticles(reference, onProgress) {
@@ -752,7 +777,7 @@ export async function getRelatedArticles(reference, onProgress) {
     }
     const doi = reference.doi
     let relatedArticles = {}
-    const openAlexData = reference?.accordingTo?.openAlex || (await jsonFetch(`https://api.openalex.org/works/https://doi.org/${doi}`))
+    const openAlexData = reference?.accordingTo?.openAlex || (await getOpenAlexData(`https://api.openalex.org/works/https://doi.org/${doi}`))
     const discoveryMethod = new DiscoveryMethod({
         wasRelatedTo: reference.title,
         dateTime: new Date().toISOString(),
@@ -760,7 +785,7 @@ export async function getRelatedArticles(reference, onProgress) {
     })
     const relatedIds = (openAlexData.related_works||openAlexData.relatedAlexIds).concat(openAlexData.referenced_works||openAlexData.citedAlexIds)
     const handleEach = async (each)=>{
-        await jsonFetch(each.replace("https://openalex.org","https://api.openalex.org")).then(each=>{
+        await getOpenAlexData(each).then(each=>{
             if (!relatedArticles[each.title]) {
                 relatedArticles[each.title] = new Reference()
                 relatedArticles[each.title].discoveryMethod = { dateTime: discoveryMethod.dateTime, query: discoveryMethod.query, searchEngine: discoveryMethod.searchEngine }
@@ -792,7 +817,7 @@ export async function getRelatedArticles(reference, onProgress) {
         }
         onProgress(index+1,relatedIds.length)
     }
-    return relatedArticles
+    return {discoveryMethod,relatedArticles}
 }
 
 export function crossrefToSimpleFormat(crossrefData) {
@@ -841,6 +866,7 @@ export function openAlexToSimpleFormat(each) {
         citationCount: (each.counts_by_year||[]).map(each=>each.cited_by_count).reduce((a,b)=>(a-0)+(b-0),0),
         citedAlexIds: each.referenced_works,
         relatedAlexIds: each.related_works,
+        openAlexId: each.id.replace("https://openalex.org/",""),
     }
 }
 
