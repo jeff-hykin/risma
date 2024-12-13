@@ -21,6 +21,8 @@ import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
 
 // TODO: make relevence score of discoveryMethod, list most helpful searches
+// TODO: put keywords into a settings section
+// TODO: make something for related work discovery
 
 const posixShellEscape = (string)=>"'"+string.replace(/'/g, `'"'"'`)+"'"
 const clearScreen = ()=>console.log('\x1B[2J')
@@ -181,7 +183,7 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
         activeProject.keywords.neutral = activeProject.keywords.neutral.map(each=>each.toLowerCase())
         const goodKeywords = activeProject.keywords.positive
         const badKeywords = activeProject.keywords.negative
-        const neuralKeywords = activeProject.keywords.neutral
+        const neutralKeywords = activeProject.keywords.neutral
         let index = -1
         for (let char of text) {
             index++
@@ -196,7 +198,7 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
                     const replacement = `${red(matching)}`
                     text = text.slice(0, index) + replacement + text.slice(index + matching.length,)
                     index += replacement.length
-                } else if (neuralKeywords.some(each=>remaining.startsWith(matching=each))) {
+                } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
                     const replacement = `${magenta(matching)}`
                     text = text.slice(0, index) + replacement + text.slice(index + matching.length,)
                     index += replacement.length
@@ -221,7 +223,7 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
             activeProject.keywords.neutral = activeProject.keywords.neutral.map(each=>each.toLowerCase())
             const goodKeywords = activeProject.keywords.positive
             const badKeywords = activeProject.keywords.negative
-            const neuralKeywords = activeProject.keywords.neutral
+            const neutralKeywords = activeProject.keywords.neutral
             let index = -1
             for (let char of each.title) {
                 index++
@@ -235,7 +237,7 @@ const crossrefCacheObject = createStorageObject(crossrefCachePath)
                     } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
                         scoreList[0] -= 1
                         index += matching.length
-                    } else if (neuralKeywords.some(each=>remaining.startsWith(matching=each))) {
+                    } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
                         index += matching.length
                     }
                 }
@@ -393,17 +395,17 @@ mainLoop: while (true) {
         }
     } else if (whichAction == "modify keywords") {
         const kind = await selectOne({
-            message: "next action",
+            message: "which group?",
             options: [
                 "positive",
                 "negative",
-                "neural",
+                "neutral",
             ],
         })
-        const keywords = (await askForParagraph(`press enter twice to submit list`)).split("\n").map(each=>each.trim()).filter(each=>each.length>0)
+        const keywords = (await askForParagraph(`list keyterms to add, one per line, press enter twice to submit list`)).split("\n").map(each=>each.trim()).filter(each=>each.length>0)
         const possibleForDelete = [...activeProject.keywords[kind]]
         activeProject.keywords[kind].push(...keywords)
-        if (await Console.askFor.yesNo(`delete some keywords?`)) {
+        if (await Console.askFor.yesNo(`delete some keywords? (y/n)`)) {
             const onesToDelete = await selectMany({
                 message: "Ones with checkmark will be deleted",
                 options: possibleForDelete,
