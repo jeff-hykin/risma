@@ -100,6 +100,11 @@ doiToCrossrefInfo.cache = createStorageObject(crossrefCachePath)
         activeProject.settings.keywords = activeProject.settings.keywords || {}
         for (const [key, value] of Object.entries(activeProject.references)) {
             activeProject.references[key] = new Reference(value)
+            try {
+                activeProject.references[key].score = score(activeProject.references[key])
+            } catch (error) {
+                
+            }
         }
         for (let eachDiscoveryAttempt of activeProject.discoveryAttempts) {
             for (let each of eachDiscoveryAttempt.referenceLinks) {
@@ -220,72 +225,73 @@ doiToCrossrefInfo.cache = createStorageObject(crossrefCachePath)
         return reset``+text
     }
 
-    function referenceSorter(reverse) {
-        const score = (each)=>{
-            //
-            // keyword count
-            //
-            const keywords = activeProject.settings.keywords
-            keywords.positive = keywords.positive || []
-            keywords.negative = keywords.negative || []
-            keywords.neutral = keywords.neutral || []
-            keywords.positive = keywords.positive.map(each=>each.toLowerCase())
-            keywords.negative = keywords.negative.map(each=>each.toLowerCase())
-            keywords.neutral = keywords.neutral.map(each=>each.toLowerCase())
-            const goodKeywords = keywords.positive
-            const badKeywords = keywords.negative
-            const neutralKeywords = keywords.neutral
-            function getKeywordCount(title) {
-                let numberOfGoodKeywords = 0
-                let numberOfBadKeywords = 0
-                let numberOfNeutralKeywords = 0
-                let index = -1
-                for (let char of title) {
-                    index++
-                    if (!title.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
-                        const remaining = title.slice(index,).toLowerCase()
-                        let matching
-                        // FIXME: need to sort by length of keyword 
-                        if (goodKeywords.some(each=>(remaining.startsWith(matching=each)))) {
-                            numberOfGoodKeywords++
-                            index += matching.length
-                        } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
-                            numberOfBadKeywords++
-                            index += matching.length
-                        } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
-                            numberOfNeutralKeywords++
-                            index += matching.length
-                        }
+    const score = (each)=>{
+        //
+        // keyword count
+        //
+        const keywords = activeProject.settings.keywords
+        keywords.positive = keywords.positive || []
+        keywords.negative = keywords.negative || []
+        keywords.neutral = keywords.neutral || []
+        keywords.positive = keywords.positive.map(each=>each.toLowerCase())
+        keywords.negative = keywords.negative.map(each=>each.toLowerCase())
+        keywords.neutral = keywords.neutral.map(each=>each.toLowerCase())
+        const goodKeywords = keywords.positive
+        const badKeywords = keywords.negative
+        const neutralKeywords = keywords.neutral
+        function getKeywordCount(title) {
+            let numberOfGoodKeywords = 0
+            let numberOfBadKeywords = 0
+            let numberOfNeutralKeywords = 0
+            let index = -1
+            for (let char of title) {
+                index++
+                if (!title.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
+                    const remaining = title.slice(index,).toLowerCase()
+                    let matching
+                    // FIXME: need to sort by length of keyword 
+                    if (goodKeywords.some(each=>(remaining.startsWith(matching=each)))) {
+                        numberOfGoodKeywords++
+                        index += matching.length
+                    } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
+                        numberOfBadKeywords++
+                        index += matching.length
+                    } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
+                        numberOfNeutralKeywords++
+                        index += matching.length
                     }
                 }
-                return {good: numberOfGoodKeywords, bad: numberOfBadKeywords, neutral: numberOfNeutralKeywords}
             }
-            
-            // 
-            // evaluate user-defined scoring functions
-            // 
-            let scoreList = [0,0,0]
-            for (const [key, value] of Object.entries(activeProject.settings.scoreGivers||{})) {
-                const func = eval(value)
-                func(
-                    each,
-                    scoreList,
-                    {
-                        keywords,
-                        settings: activeProject.settings,
-                        numberOfGoodKeywordsIn: (title)=>getKeywordCount(title).good,
-                        numberOfBadKeywordsIn: (title)=>getKeywordCount(title).bad,
-                        numberOfNeutralKeywordsIn: (title)=>getKeywordCount(title).neutral,
-                    }
-                )
-            }
-            if (Object.values(activeProject.settings.scoreGivers).length == 0) {
-                // use year (currently gets added to keyword score)
-                scoreList[0] += (each.year-0||0)
-            }
-            
-            return scoreList
+            return {good: numberOfGoodKeywords, bad: numberOfBadKeywords, neutral: numberOfNeutralKeywords}
         }
+        
+        // 
+        // evaluate user-defined scoring functions
+        // 
+        let scoreList = [0,0,0]
+        for (const [key, value] of Object.entries(activeProject.settings.scoreGivers||{})) {
+            const func = eval(value)
+            func(
+                each,
+                scoreList,
+                {
+                    keywords,
+                    settings: activeProject.settings,
+                    numberOfGoodKeywordsIn: (title)=>getKeywordCount(title).good,
+                    numberOfBadKeywordsIn: (title)=>getKeywordCount(title).bad,
+                    numberOfNeutralKeywordsIn: (title)=>getKeywordCount(title).neutral,
+                }
+            )
+        }
+        if (Object.values(activeProject.settings.scoreGivers).length == 0) {
+            // use year (currently gets added to keyword score)
+            scoreList[0] += (each.year-0||0)
+        }
+        
+        return scoreList
+    }
+
+    function referenceSorter(reverse) {
         // const activeReferences = references.filter(each=>each.resumeStatus == whatKind)
         // for (let each of activeReferences) {
         //     console.debug(`each.title, score(each) is:`,highlightKeywords(each.title), score(each))
