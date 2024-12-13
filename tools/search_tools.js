@@ -285,7 +285,7 @@ export const searchOptions = {
                     }).catch(error=>{
                         // console.warn(`error getting doi for ${title}`,error)
                     })
-                    articles.push()
+                    articles.push(reference)
                 }
                 if (links.length > 0) {
                     // try to get main list

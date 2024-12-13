@@ -25,9 +25,9 @@ keywords:
     - embedding
     - latent
 references:
-  Visual affordance prediction for guiding robot exploration: &ref_0
+  Visual affordance prediction for guiding robot exploration: &ref_20
     title: Visual affordance prediction for guiding robot exploration
-    resumeStatus: 'relevent:abstract'
+    resumeStatus: relevent-abstract
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -53,9 +53,9 @@ references:
       saw title: '2024-12-12T16:30:43.287Z'
     abstract: 'Motivated by the intuitive understanding humans have about the space of possible interactions, and the ease with which they can generalize this understanding to previously unseen scenes, we develop an approach for learning ‘visual affordances’. Given an input image of a scene, we infer a distribution over plausible future states that can be achieved via interactions with it. To allow predicting diverse plausible futures, we discretize the space of continuous images with a VQ-VAE and use a Transformer-based model to learn a conditional distribution in the latent embedding space. We show that these models can be trained using large-scale and diverse passive data, and that the learned models exhibit compositional generalization to diverse objects beyond the training distribution. We evaluate the quality and diversity of the generations, and demonstrate how the trained affordance model can be used for guiding exploration during visual goal-conditioned policy learning in robotic manipulation.'
     doi: 10.1109/icra48891.2023.10161288
-  'RAIL: Robot Affordance Imagination with Large Language Models': &ref_1
+  'RAIL: Robot Affordance Imagination with Large Language Models': &ref_21
     title: 'RAIL: Robot Affordance Imagination with Large Language Models'
-    resumeStatus: 'unclear:title'
+    resumeStatus: unclear-title
     reasonsNotRelevant: []
     relevanceStages: []
     possibleYear: '1936'
@@ -79,9 +79,9 @@ references:
     publisherInfo: 'arXiv preprint arXiv:2403.19369, 2024'
     events:
       saw title: '2024-12-12T16:30:58.343Z'
-  Affordance-Based Goal Imagination for Embodied AI Agents: &ref_2
+  Affordance-Based Goal Imagination for Embodied AI Agents: &ref_22
     title: Affordance-Based Goal Imagination for Embodied AI Agents
-    resumeStatus: 'irrelevent:abstract'
+    resumeStatus: irrelevent-abstract
     reasonsNotRelevant:
       - abstract
     relevanceStages:
@@ -108,9 +108,9 @@ references:
       saw title: '2024-12-12T16:31:01.901Z'
     abstract: 'Goal imagination in robotics is an emerging concept and involves the capability to automatically generate realistic goals, which, in turn, requires the assessment of the feasibility of transitioning from the current conditions of an initial scene to the desired goal state. Existing research has explored the utilization of diverse image-generative models to create images depicting potential goal states based on the current state and instructions. In this paper, we illustrate the limitations of current state-of-the-art image generative models in accurately assessing the feasibility of specific actions in particular situations. Consequently, we present how integrating large language models, which possess profound knowledge of real-world objects and affordances, can enhance the performance of image-generative models in discerning plausible from implausible actions and simulating the outcomes of actions in a given context. This will be a step towards achieving the pragmatic goal of imagination in robotics.'
     doi: 10.1109/icdl61372.2024.10644764
-  Learning to anticipate egocentric actions by imagination: &ref_3
+  Learning to anticipate egocentric actions by imagination: &ref_23
     title: Learning to anticipate egocentric actions by imagination
-    resumeStatus: 'unclear:title'
+    resumeStatus: unclear-title
     reasonsNotRelevant: []
     relevanceStages: []
     possibleYear: '2020'
@@ -135,9 +135,9 @@ references:
     events:
       saw title: '2024-12-12T21:30:37.470Z'
     doi: 10.1109/tip.2020.3040521
-  Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_4
+  Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_24
     title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
-    resumeStatus: 'relevent:abstract'
+    resumeStatus: relevent-abstract
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -165,9 +165,9 @@ references:
     events:
       saw title: '2024-12-12T21:30:43.250Z'
     abstract: '     In this paper we explore the richness of information captured by the latent space of a vision-based generative model. The model combines unsupervised generative learning with a task-based performance predictor to learn and to exploit task-relevant object affordances given visual observations from a reaching task, involving a scenario and a stick-like tool. While the learned embedding of the generative model captures factors of variation in 3D tool geometry (e.g. length, width, and shape), the performance predictor identifies sub-manifolds of the embedding that correlate with task success. Within a variety of scenarios, we demonstrate that traversing the latent space via backpropagation from the performance predictor allows us to imagine tools appropriate for the task at hand. Our results indicate that affordances-like the utility for reaching-are encoded along smooth trajectories in latent space. Accessing these emergent affordances by considering only high-level performance criteria (such as task success) enables an agent to manipulate tool geometries in a targeted and deliberate way. '
-  What can i do here? learning new skills by imagining visual affordances: &ref_5
+  What can i do here? learning new skills by imagining visual affordances: &ref_25
     title: What can i do here? learning new skills by imagining visual affordances
-    resumeStatus: 'relevent:title'
+    resumeStatus: relevent-title
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -192,9 +192,9 @@ references:
     events:
       saw title: '2024-12-12T21:40:37.271Z'
     doi: 10.1109/icra48506.2021.9561692
-  'Learning to act properly: Predicting and explaining affordances from images': &ref_6
+  'Learning to act properly: Predicting and explaining affordances from images': &ref_26
     title: 'Learning to act properly: Predicting and explaining affordances from images'
-    resumeStatus: 'relevent:title'
+    resumeStatus: relevent-title
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -219,9 +219,9 @@ references:
     events:
       saw title: '2024-12-12T21:41:04.424Z'
     doi: 10.1109/cvpr.2018.00108
-  Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_7
+  Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_27
     title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
-    resumeStatus: 'relevent:title'
+    resumeStatus: relevent-title
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -248,9 +248,9 @@ references:
     publisherInfo: '2019'
     events:
       saw title: '2024-12-12T21:41:38.912Z'
-  'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_8
+  'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_28
     title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
-    resumeStatus: 'relevent:title'
+    resumeStatus: relevent-title
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -275,9 +275,9 @@ references:
     events:
       saw title: '2024-12-12T21:43:23.737Z'
     doi: 10.18653/v1/2024.conll-1.27
-  Learning affordances in object-centric generative models: &ref_9
+  Learning affordances in object-centric generative models: &ref_29
     title: Learning affordances in object-centric generative models
-    resumeStatus: 'relevent:title'
+    resumeStatus: relevent-title
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -303,7 +303,616 @@ references:
     publisherInfo: '2020'
     events:
       saw title: '2024-12-12T21:43:33.262Z'
+  Applications of machine learning to ecological modelling: &ref_10
+    title: Applications of machine learning to ecological modelling
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2001'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - F Recknagel
+    pdfLink: null
+    link: 'https://www.sciencedirect.com/science/article/pii/S0304380001003167'
+    citationId: '16336708018187229886'
+    multiArticleId: '16336708018187229886'
+    citedByLink: 'https://scholar.google.com//scholar?cites=16336708018187229886&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Ecological modelling, 2001'
+    events:
+      added: '2024-12-12T23:32:47.064Z'
+    doi: 10.1016/s0304-3800(01)00316-7
+  'Machine learning in landscape ecological analysis: a review of recent approaches': &ref_11
+    title: 'Machine learning in landscape ecological analysis: a review of recent approaches'
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2022'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - MS Stupariu
+      - SA Cushman
+      - AI Pleşoianu
+    pdfLink: null
+    link: 'https://link.springer.com/article/10.1007/s10980-021-01366-9'
+    citationId: '17693767866700412269'
+    multiArticleId: '17693767866700412269'
+    citedByLink: 'https://scholar.google.com//scholar?cites=17693767866700412269&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Ecology, 2022'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+    doi: 10.1007/s10980-021-01366-9
+  'Study becomes insight: ecological learning from machine learning': &ref_12
+    title: 'Study becomes insight: ecological learning from machine learning'
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2021'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - Q Yu
+      - W Ji
+      - L Prihodko
+      - CW Ross
+    pdfLink: 'https://besjournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/2041-210X.13686'
+    link: 'https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13686'
+    citationId: '2395320027051734214'
+    multiArticleId: '2395320027051734214'
+    citedByLink: 'https://scholar.google.com//scholar?cites=2395320027051734214&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Methods in Ecology, 2021'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+    doi: 10.1111/2041-210x.13686
+  Machine learning and deep learning—A review for ecologists: &ref_13
+    title: Machine learning and deep learning—A review for ecologists
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2023'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - M Pichler
+      - F Hartig
+    pdfLink: 'https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.14061'
+    link: 'https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.14061'
+    citationId: '9552878792133591305'
+    multiArticleId: '9552878792133591305'
+    citedByLink: 'https://scholar.google.com//scholar?cites=9552878792133591305&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Methods in Ecology and Evolution, 2023'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+    doi: 10.1111/2041-210x.14061
+  A review of supervised machine learning algorithms and their applications to ecological data: &ref_14
+    title: A review of supervised machine learning algorithms and their applications to ecological data
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2012'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - C Crisci
+      - B Ghattas
+      - G Perera
+    pdfLink: null
+    link: 'https://www.sciencedirect.com/science/article/pii/S0304380012001081'
+    citationId: '17952662263087878820'
+    multiArticleId: '17952662263087878820'
+    citedByLink: 'https://scholar.google.com//scholar?cites=17952662263087878820&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Ecological Modelling, 2012'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+    doi: 10.1016/j.ecolmodel.2012.03.001
+  'Application of machine-learning methods in forest ecology: recent progress and future challenges': &ref_15
+    title: 'Application of machine-learning methods in forest ecology: recent progress and future challenges'
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2018'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - Z Liu
+      - C Peng
+      - T Work
+      - JN Candau
+    pdfLink: 'https://www.jstor.org/stable/pdf/90026557.pdf'
+    link: 'https://cdnsciencepub.com/doi/abs/10.1139/er-2018-0034'
+    citationId: '4453085440788621880'
+    multiArticleId: '4453085440788621880'
+    citedByLink: 'https://scholar.google.com//scholar?cites=4453085440788621880&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Environmental, 2018'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+    doi: 10.1139/er-2018-0034
+  Machine learning of poorly predictable ecological data: &ref_16
+    title: Machine learning of poorly predictable ecological data
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2006'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - Y Shan
+      - D Paull
+      - RI McKay
+    pdfLink: null
+    link: 'https://www.sciencedirect.com/science/article/pii/S0304380005005843'
+    citationId: '16457976426863564747'
+    multiArticleId: '16457976426863564747'
+    citedByLink: 'https://scholar.google.com//scholar?cites=16457976426863564747&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Ecological Modelling, 2006'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+    doi: 10.1016/j.ecolmodel.2005.11.015
+  Deep learning as a tool for ecology and evolution: &ref_17
+    title: Deep learning as a tool for ecology and evolution
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2022'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - ML Borowiec
+      - RB Dikow
+      - PB Frandsen
+    pdfLink: 'https://besjournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/2041-210X.13901'
+    link: 'https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13901'
+    citationId: '13767141339350237515'
+    multiArticleId: '13767141339350237515'
+    citedByLink: 'https://scholar.google.com//scholar?cites=13767141339350237515&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Methods in Ecology, 2022'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+    doi: 10.32942/osf.io/nt3as
+  Towards machine learning of predictive models from ecological data: &ref_18
+    title: Towards machine learning of predictive models from ecological data
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2014'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - A Tamaddoni-Nezhad
+      - D Bohan
+      - A Raybould
+    pdfLink: 'https://openresearch.surrey.ac.uk/view/pdfCoverPage?instCode=44SUR_INST&filePid=13145139490002346&download=true'
+    link: 'https://link.springer.com/chapter/10.1007/978-3-319-23708-4_11'
+    citationId: '14916557987462187508'
+    multiArticleId: '14916557987462187508'
+    citedByLink: 'https://scholar.google.com//scholar?cites=14916557987462187508&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Conference, ILP 2014, 2015'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+    doi: 10.1007/978-3-319-23708-4_11
+  'Machine learning in marine ecology: an overview of techniques and applications': &ref_19
+    title: 'Machine learning in marine ecology: an overview of techniques and applications'
+    resumeStatus: unseen-title
+    reasonsNotRelevant: []
+    relevanceStages: []
+    possibleYear: '2023'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    discoveryMethod: null
+    authorNames:
+      - P Rubbens
+      - S Brodie
+      - T Cordier
+    pdfLink: 'https://academic.oup.com/icesjms/article-pdf/80/7/1829/51951447/fsad100.pdf'
+    link: 'https://academic.oup.com/icesjms/article-abstract/80/7/1829/7236451'
+    citationId: '6370710186406620474'
+    multiArticleId: '6370710186406620474'
+    citedByLink: 'https://scholar.google.com//scholar?cites=6370710186406620474&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'ICES Journal of, 2023'
+    events:
+      added: '2024-12-12T23:32:47.065Z'
+  Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation: &ref_0
+    resumeStatus: unseen-title
+    possibleYear: '2023'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - A Nayebi
+      - NCL Kong
+      - C Zhuang
+    pdfLink: null
+    link: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011506'
+    citationId: '2471520982509518470'
+    multiArticleId: '2471520982509518470'
+    citedByLink: 'https://scholar.google.com//scholar?cites=2471520982509518470&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'PLOS Computational, 2023'
+    title: Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  'Decoding the brain: From neural representations to mechanistic models': &ref_1
+    resumeStatus: unseen-title
+    possibleYear: '2024'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - MW Mathis
+      - AP Rotondo
+      - EF Chang
+      - AS Tolias
+    pdfLink: null
+    link: 'https://www.cell.com/cell/fulltext/S0092-8674(24)00980-2'
+    citationId: '11232172302713992781'
+    multiArticleId: '11232172302713992781'
+    citedByLink: 'https://scholar.google.com//scholar?cites=11232172302713992781&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Cell, 2024'
+    title: 'Decoding the brain: From neural representations to mechanistic models'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  Unsupervised learning of mid-level visual representations: &ref_2
+    resumeStatus: unseen-title
+    possibleYear: '2024'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - G Matteucci
+      - E Piasini
+      - D Zoccolan
+    pdfLink: null
+    link: 'https://www.sciencedirect.com/science/article/pii/S0959438823001599'
+    citationId: '15740752807531591599'
+    multiArticleId: '15740752807531591599'
+    citedByLink: 'https://scholar.google.com//scholar?cites=15740752807531591599&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Current opinion in neurobiology, 2024'
+    title: Unsupervised learning of mid-level visual representations
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  Multimodal deep learning model unveils behavioral dynamics of V1 activity in freely moving mice: &ref_3
+    resumeStatus: unseen-title
+    possibleYear: '2024'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - A Xu
+      - Y Hou
+      - C Niell
+      - M Beyeler
+    pdfLink: 'https://proceedings.neurips.cc/paper_files/paper/2023/file/31a19921acd38cdf7a8c86ec032cef2d-Paper-Conference.pdf'
+    link: 'https://proceedings.neurips.cc/paper_files/paper/2023/hash/31a19921acd38cdf7a8c86ec032cef2d-Abstract-Conference.html'
+    citationId: '10466266600843421970'
+    multiArticleId: '10466266600843421970'
+    citedByLink: 'https://scholar.google.com//scholar?cites=10466266600843421970&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Advances in Neural, 2024'
+    title: Multimodal deep learning model unveils behavioral dynamics of V1 activity in freely moving mice
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  Integrating statistical and machine learning approaches for neural classification: &ref_4
+    resumeStatus: unseen-title
+    possibleYear: '2022'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - M Sarmashghi
+      - SP Jadhav
+      - UT Eden
+    pdfLink: 'https://ieeexplore.ieee.org/iel7/6287639/9668973/09945938.pdf'
+    link: 'https://ieeexplore.ieee.org/abstract/document/9945938/'
+    citationId: '8883119780015359249'
+    multiArticleId: '8883119780015359249'
+    citedByLink: 'https://scholar.google.com//scholar?cites=8883119780015359249&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'IEEE Access, 2022'
+    title: Integrating statistical and machine learning approaches for neural classification
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  Top-down perceptual inference shaping the activity of early visual cortex: &ref_5
+    resumeStatus: unseen-title
+    possibleYear: '2023'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - F Csikor
+      - B Meszna
+      - G Orbn
+    pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2023/12/02/2023.11.29.569262.full.pdf'
+    link: 'https://www.biorxiv.org/content/10.1101/2023.11.29.569262.abstract'
+    citationId: '17366242440903237122'
+    multiArticleId: '17366242440903237122'
+    citedByLink: 'https://scholar.google.com//scholar?cites=17366242440903237122&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'BioRxiv, 2023'
+    title: Top-down perceptual inference shaping the activity of early visual cortex
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  Population encoding of stimulus features along the visual hierarchy: &ref_6
+    resumeStatus: unseen-title
+    possibleYear: '2024'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - L Dyballa
+      - AM Rudzite
+      - MS Hoseini
+    pdfLink: 'https://www.pnas.org/doi/pdf/10.1073/pnas.2317773121'
+    link: 'https://www.pnas.org/doi/abs/10.1073/pnas.2317773121'
+    citationId: '10526467924589966000'
+    multiArticleId: '10526467924589966000'
+    citedByLink: 'https://scholar.google.com//scholar?cites=10526467924589966000&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'Proceedings of the, 2024'
+    title: Population encoding of stimulus features along the visual hierarchy
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  'Integrative, Embodied Agents to Reverse-Engineer Natural Intelligence': &ref_7
+    resumeStatus: unseen-title
+    possibleYear: '2024'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - A Nayebi
+    pdfLink: 'https://kilthub.cmu.edu/ndownloader/files/49110250'
+    link: 'https://kilthub.cmu.edu/ndownloader/files/49110250'
+    citationId: null
+    multiArticleId: '15381445104070421971'
+    citedByLink: null
+    publisherInfo: null
+    title: 'Integrative, Embodied Agents to Reverse-Engineer Natural Intelligence'
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  Heterogeneous orientation tuning in the primary visual cortex of mice diverges from Gabor-like receptive fields in primates: &ref_8
+    resumeStatus: unseen-title
+    possibleYear: '2024'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - J Fu
+      - PA Pierzchlewicz
+      - KF Willeke
+      - M Bashiri
+    pdfLink: null
+    link: 'https://www.cell.com/cell-reports/fulltext/S2211-1247(24)00989-6'
+    citationId: null
+    multiArticleId: '12707078753044341556'
+    citedByLink: null
+    publisherInfo: 'Cell reports, 2024'
+    title: Heterogeneous orientation tuning in the primary visual cortex of mice diverges from Gabor-like receptive fields in primates
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
+  Self-supervised learning facilitates neural representation structures that can be unsupervisedly aligned to human behaviors: &ref_9
+    resumeStatus: unseen-title
+    possibleYear: '2024'
+    doi: null
+    reasonsNotRelevant: []
+    relevanceStages: []
+    cites: null
+    isCitedBy: null
+    discoveryMethod: null
+    authorNames:
+      - S Takahashi
+      - M Sasaki
+      - K Takeda
+    pdfLink: 'https://openreview.net/pdf?id=MaFIvgBceX'
+    link: 'https://openreview.net/forum?id=MaFIvgBceX'
+    citationId: '7385240804493898907'
+    multiArticleId: '7385240804493898907'
+    citedByLink: 'https://scholar.google.com//scholar?cites=7385240804493898907&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+    publisherInfo: 'ICLR 2024 Workshop on, 2024'
+    title: Self-supervised learning facilitates neural representation structures that can be unsupervisedly aligned to human behaviors
+    notesConsideredRelevent: null
+    notesCustomKeywords: []
+    notesComment: null
+    notesWasRelatedTo: []
+    notesIsCitedByTitles: []
+    notesCites: []
+    events:
+      added: '2024-12-12T23:45:35.827Z'
 discoveryAttempts:
+  - query: ecologically-general representation machine learning
+    date: 12/12/2024
+    dateTime: 1734047135516
+    searchEngine: scholar
+    referenceLinks:
+      - hadBeenSeenBefore: false
+        title: Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation
+        link: *ref_0
+      - hadBeenSeenBefore: false
+        title: 'Decoding the brain: From neural representations to mechanistic models'
+        link: *ref_1
+      - hadBeenSeenBefore: false
+        title: Unsupervised learning of mid-level visual representations
+        link: *ref_2
+      - hadBeenSeenBefore: false
+        title: Multimodal deep learning model unveils behavioral dynamics of V1 activity in freely moving mice
+        link: *ref_3
+      - hadBeenSeenBefore: false
+        title: Integrating statistical and machine learning approaches for neural classification
+        link: *ref_4
+      - hadBeenSeenBefore: false
+        title: Top-down perceptual inference shaping the activity of early visual cortex
+        link: *ref_5
+      - hadBeenSeenBefore: false
+        title: Population encoding of stimulus features along the visual hierarchy
+        link: *ref_6
+      - hadBeenSeenBefore: false
+        title: 'Integrative, Embodied Agents to Reverse-Engineer Natural Intelligence'
+        link: *ref_7
+      - hadBeenSeenBefore: false
+        title: Heterogeneous orientation tuning in the primary visual cortex of mice diverges from Gabor-like receptive fields in primates
+        link: *ref_8
+      - hadBeenSeenBefore: false
+        title: Self-supervised learning facilitates neural representation structures that can be unsupervisedly aligned to human behaviors
+        link: *ref_9
+  - query: ecological representation machine learning
+    date: 12/12/2024
+    dateTime: 1734046366799
+    searchEngine: scholar
+    referenceLinks:
+      - hadBeenSeenBefore: false
+        title: Applications of machine learning to ecological modelling
+        link: *ref_10
+      - hadBeenSeenBefore: false
+        title: 'Machine learning in landscape ecological analysis: a review of recent approaches'
+        link: *ref_11
+      - hadBeenSeenBefore: false
+        title: 'Study becomes insight: ecological learning from machine learning'
+        link: *ref_12
+      - hadBeenSeenBefore: false
+        title: Machine learning and deep learning—A review for ecologists
+        link: *ref_13
+      - hadBeenSeenBefore: false
+        title: A review of supervised machine learning algorithms and their applications to ecological data
+        link: *ref_14
+      - hadBeenSeenBefore: false
+        title: 'Application of machine-learning methods in forest ecology: recent progress and future challenges'
+        link: *ref_15
+      - hadBeenSeenBefore: false
+        title: Machine learning of poorly predictable ecological data
+        link: *ref_16
+      - hadBeenSeenBefore: false
+        title: Deep learning as a tool for ecology and evolution
+        link: *ref_17
+      - hadBeenSeenBefore: false
+        title: Towards machine learning of predictive models from ecological data
+        link: *ref_18
+      - hadBeenSeenBefore: false
+        title: 'Machine learning in marine ecology: an overview of techniques and applications'
+        link: *ref_19
   - query: affordance based encoder imagination prediction
     date: 12/12/2024
     dateTime: 1734020081395
@@ -311,31 +920,31 @@ discoveryAttempts:
     referenceLinks:
       - hadBeenSeenBefore: false
         title: Visual affordance prediction for guiding robot exploration
-        link: *ref_0
+        link: *ref_20
       - hadBeenSeenBefore: false
         title: 'RAIL: Robot Affordance Imagination with Large Language Models'
-        link: *ref_1
+        link: *ref_21
       - hadBeenSeenBefore: false
         title: Affordance-Based Goal Imagination for Embodied AI Agents
-        link: *ref_2
+        link: *ref_22
       - hadBeenSeenBefore: false
         title: Learning to anticipate egocentric actions by imagination
-        link: *ref_3
+        link: *ref_23
       - hadBeenSeenBefore: false
         title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
-        link: *ref_4
+        link: *ref_24
       - hadBeenSeenBefore: false
         title: What can i do here? learning new skills by imagining visual affordances
-        link: *ref_5
+        link: *ref_25
       - hadBeenSeenBefore: false
         title: 'Learning to act properly: Predicting and explaining affordances from images'
-        link: *ref_6
+        link: *ref_26
       - hadBeenSeenBefore: false
         title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
-        link: *ref_7
+        link: *ref_27
       - hadBeenSeenBefore: false
         title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
-        link: *ref_8
+        link: *ref_28
       - hadBeenSeenBefore: false
         title: Learning affordances in object-centric generative models
-        link: *ref_9
+        link: *ref_29

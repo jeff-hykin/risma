@@ -1,14 +1,10 @@
 export class Reference {
     constructor({
-        title,
         resumeStatus,
+        doi,
         possibleYear,
-        notesConsideredRelevent,
-        notesCustomKeywords,
-        notesComment,
-        notesWasRelatedTo,
-        notesIsCitedByTitles,
-        notesCites,
+        cites,
+        isCitedBy,
         discoveryMethod,
         authorNames,
         pdfLink,
@@ -19,20 +15,17 @@ export class Reference {
         publisherInfo,
         reasonsNotRelevant=[],
         relevanceStages=[],
+        title,
         ...other
     }) {
         Object.assign(this,{
-            title,
             resumeStatus,
+            possibleYear,
+            doi,
             reasonsNotRelevant,
             relevanceStages,
-            possibleYear,
-            notesConsideredRelevent,
-            notesCustomKeywords,
-            notesComment,
-            notesWasRelatedTo,
-            notesIsCitedByTitles,
-            notesCites,
+            cites,
+            isCitedBy,
             discoveryMethod,
             authorNames,
             pdfLink,
@@ -41,6 +34,7 @@ export class Reference {
             multiArticleId,
             citedByLink,
             publisherInfo,
+            title,
         },other)
         // for yaml
         for (const [key, value] of Object.entries(this)) {

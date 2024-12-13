@@ -103,7 +103,17 @@ const storageObject = createStorageObject(cacheItemPath)
     }
 
     function getReferenceStatusCounts() {
-        const counts = {}
+        const counts = {
+            'unseen-title': 0,
+            'unclear-title': 0,
+            'skipped-title': 0,
+            'relevent-title': 0,
+            'relevent-abstract': 0,
+            'super-relevent-abstract': 0,
+            'irrelevent-title': 0,
+            'partialy-irrelevent-abstract': 0,
+            'irrelevent-abstract': 0,
+        }
         const references = Object.values(activeProject.references)
         const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
         for (const element of statuses) {
@@ -119,10 +129,12 @@ const storageObject = createStorageObject(cacheItemPath)
 
     function showProjectStatus() {
         const counts = getReferenceStatusCounts()
-        console.log(yaml.stringify({
-            totalReferences: Object.keys(activeProject.references).length, 
-            ...counts
-        }))
+        console.log(green`project summary`,cyan(yaml.stringify({
+            references: {
+                total: Object.keys(activeProject.references).length, 
+                ...counts
+            }
+        })))
     }
     
     function highlightKeywords(text) {
@@ -171,6 +183,7 @@ mainLoop: while (true) {
             "change project",
             "modify keywords",
             "explore references",
+            "exit",
         ],
     })
     // in case file has been edited
@@ -212,6 +225,7 @@ mainLoop: while (true) {
         //         },
         // ]
         let unseenReferences = {}
+        let addedReferences = 0
         for (let each of references) {
             const hadBeenSeenBefore = !!activeProject.references[each.title]
             discoveryMethod.referenceLinks.push({
@@ -221,16 +235,17 @@ mainLoop: while (true) {
                 link: each,
             })
             if (!hadBeenSeenBefore) {
+                addedReferences++
                 activeProject.references[each.title] = each
                 unseenReferences[each.title] = each
-                each.resumeStatus = "unseen:title"
+                each.resumeStatus = "unseen-title"
                 each.events = each.events || {}
                 each.events["added"] =  each.events["added"] || new DateTime().toISOString()
             }
         }
         activeProject.discoveryAttempts.unshift(discoveryMethod)
-        saveProject()
-        console.log(`added a bunch of references, check them out with "review references" "unseen:title"`)
+        await saveProject()
+        prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen-title")}\n(press enter to continue)\n`)
     } else if (whichAction == "change project") {
         const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
         let project = await selectOne({
@@ -285,7 +300,7 @@ mainLoop: while (true) {
             // 
             if (whatKind == "nothing (quit)") {
                 continue mainLoop
-            } else if (whatKind == "unseen:title" || whatKind == "skipped:title") {
+            } else if (whatKind == "unseen-title" || whatKind == "skipped-title") {
                 console.log(cyan`\ng=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
                 nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind)) {
                     // TODO: highlight good and bad keywords
@@ -306,14 +321,14 @@ mainLoop: while (true) {
                         } else {
                             if (keyName == "g") {
                                 console.log(green`✅ relevent`)
-                                each.resumeStatus = "relevent:title"
+                                each.resumeStatus = "relevent-title"
                                 each.relevanceStages.push("title")
                             } else if (keyName == "u") {
                                 console.log(magenta`❔ unclear`)
-                                each.resumeStatus = "unclear:title"
+                                each.resumeStatus = "unclear-title"
                             } else if (keyName == "b") {
                                 console.log(red`❌ irrelevent`)
-                                each.resumeStatus = "irrelevent:title"
+                                each.resumeStatus = "irrelevent-title"
                                 each.reasonsNotRelevant.push("title")
                             } else {
                                 console.log(`unrecognized key: ${keyName}`)
@@ -326,7 +341,7 @@ mainLoop: while (true) {
                     }
                 }
                 console.log(`\n🎉 finished reviewing ${whatKind}! 🎉\n`)
-            } else if (whatKind == "relevent:title") {
+            } else if (whatKind == "relevent-title") {
                 let quit = { title: "quit", }
                 let activeReferences
                 nextReferenceLoop: while (1) {
@@ -371,6 +386,7 @@ mainLoop: while (true) {
                         message: "abstract was",
                         options: [
                             "irrelevent",
+                            "slightly-irrelevent",
                             "unclear",
                             "relevent",
                             "super-relevent",
@@ -379,10 +395,10 @@ mainLoop: while (true) {
                     active.relevanceStages = active.relevanceStages || [ ]
                     active.reasonsNotRelevant = active.reasonsNotRelevant || []
                     active.resumeStatus = `${choice}:abstract`
-                    if (choice == "irrelevent" || choice == "super-relevent") {
+                    if (choice == "irrelevent" || choice == "slightly-irrelevent") {
                         active.reasonsNotRelevant.push("abstract")
                     }
-                    if (choice == "relevent") {
+                    if (choice == "relevent" || choice == "super-relevent") {
                         active.relevanceStages.push("abstract")
                     }
                     saveProject()
@@ -407,11 +423,12 @@ mainLoop: while (true) {
                     await OperatingSystem.openUrl(active.link||active.pdfLink)
                 }
             }
-
+            
             break 
         }
+    } else if (whichAction == "exit") {
+        break mainLoop
     } else if (whichAction == "explore references") {
         throw Error(`not implemented yet`)
     }
-            
 }
