@@ -1,5 +1,5 @@
 {
-    description = "A CLI tool (nvs) for finding old versions of nix packages!";
+    description = "A CLI tool (risma) for finding research papers quickly.";
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -10,7 +10,7 @@
         flakeUtils.lib.eachDefaultSystem (system:
             let
                 pkgs = nixpkgs.legacyPackages.${system};
-                nvs = (pkgs.callPackage
+                risma = (pkgs.callPackage
                     (builtins.import ./default.nix)
                     {
                     }
@@ -18,8 +18,8 @@
             in
                 {
                     packages = {
-                        nvs = nvs;
-                        default = nvs;
+                        risma = risma;
+                        default = risma;
                     };
                 }
         );
