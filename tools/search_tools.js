@@ -46,9 +46,8 @@ export async function title2Doi(title) {
     return null
 }
 
-let outerCache = {}
-export async function doiToCrossrefInfo(doi, { cacheObject, onUpdateCache=_=>0,}) {
-    cacheObject = cacheObject||outerCache
+export async function doiToCrossrefInfo(doi, { cacheObject, onUpdateCache=_=>0,}={}) {
+    cacheObject = cacheObject||doiToCrossrefInfo.cache
     if (!cacheObject[doi]) {
         let url = `https://api.crossref.org/works/${doi}`
         const result = await fetch(url)
@@ -717,6 +716,26 @@ export async function doiToCrossrefInfo(doi, { cacheObject, onUpdateCache=_=>0,}
     //     }
     // }
 }
+doiToCrossrefInfo.cache = {}
+
+export function crossrefToSimpleFormat(crossrefData) {
+    //   "link": [
+    //             {
+    //                 "URL": "http://downloads.hindawi.com/journals/bmri/2014/413629.pdf",
+    //                 "content-type": "application/pdf",
+    return {
+        "title": (crossrefData.title||[]).at(-1) || (crossrefData["short-title"]||[]).at(-1),
+        "subtitle": (crossrefData.subtitle||[]).at(-1),
+        "abstract": crossrefData.abstract,
+        "authorNames": crossrefData.author.map(author => author.given + " " + author.family),
+        "year": crossrefData?.published?.["date-parts"]?.[0]?.[0] || crossrefData?.issued?.["date-parts"]?.[0]?.[0] || crossrefData?.indexed?.["date-parts"]?.[0]?.[0],
+        "doi": crossrefData.DOI,
+        "url": crossrefData.URL,
+        "pdfLink": crossrefData.link?.filter(each=>each.contentType=="application/pdf").map(each=>each.URL)[0],
+        "citationCount": crossrefData["is-referenced-by-count"]-0,
+        "citedDois": (crossrefData.reference||[]).map(each=>each.DOI).filter(each=>each),
+    }
+}
 
 export const searchOptions = {
     "scholar": {
@@ -729,7 +748,7 @@ export const searchOptions = {
         // [
         //         Reference {
         //             title: "RAIL: Robot Affordance Imagination with Large Language Models",
-        //             possibleYear: "1936",
+        //             year: "1936",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -747,7 +766,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Affordance-Based Goal Imagination for Embodied AI Agents",
-        //             possibleYear: "2024",
+        //             year: "2024",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -765,7 +784,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Affordance-based Generation of Pretend Object Interaction Variants For Human-Computer Improvisational Theater.",
-        //             possibleYear: "2019",
+        //             year: "2019",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -783,7 +802,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Learning to anticipate egocentric actions by imagination",
-        //             possibleYear: "2020",
+        //             year: "2020",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -801,7 +820,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Imagine that! Leveraging emergent affordances for 3d tool synthesis",
-        //             possibleYear: "2019",
+        //             year: "2019",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -819,7 +838,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks",
-        //             possibleYear: "2019",
+        //             year: "2019",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -837,7 +856,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Designing to support reasoned imagination through embodied metaphor",
-        //             possibleYear: "2009",
+        //             year: "2009",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -855,7 +874,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Is that a chair? imagining affordances using simulations of an articulated human body",
-        //             possibleYear: "2020",
+        //             year: "2020",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -873,7 +892,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Understanding effects of observing affordance-driven action during motor imagery through EEG analysis",
-        //             possibleYear: "2024",
+        //             year: "2024",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -891,7 +910,7 @@ export const searchOptions = {
         //         },
         //         Reference {
         //             title: "Rethinking affordance",
-        //             possibleYear: "2019",
+        //             year: "2019",
         //             notesConsideredRelevent: null,
         //             notesCustomKeywords: [],
         //             notesComment: null,
@@ -931,15 +950,8 @@ export const searchOptions = {
                 for (let each of links) {
                     const title = each.innerText
                     const link = getHref(each)
-                    const reference = new Reference({
+                    const reference = {
                         title,
-                        possibleYear: null,
-                        notesConsideredRelevent: null,
-                        notesCustomKeywords: [],
-                        notesComment: null,
-                        notesWasRelatedTo: [],
-                        notesIsCitedByTitles: [],
-                        notesCites: [],
                         // discoveryMethod,
                         authorNames: null,
                         pdfLink: null,
@@ -948,15 +960,7 @@ export const searchOptions = {
                         multiArticleId: null,
                         citedByLink: null,
                         publisherInfo: null,
-                    })
-                    // this is pretty slow so we do it in the background
-                    title2Doi(title).then(doi=>{
-                        if (doi) {
-                            reference.doi = doi
-                        }
-                    }).catch(error=>{
-                        // console.warn(`error getting doi for ${title}`,error)
-                    })
+                    }
                     articles.push(reference)
                 }
                 if (links.length > 0) {
@@ -1040,7 +1044,7 @@ export const searchOptions = {
                                     let year
                                     // yep sadly this code will break in the year 2100
                                     if (year = publishInstanceInfo.match(/((?:20|19)(?:\d\d))/)) {
-                                        articleObject.possibleYear = year[0]
+                                        articleObject.year = year[0]
                                     }
                                     if (publishInstanceInfo) {
                                         articleObject.publisherInfo = publishInstanceInfo.trim().replace(/�|…/g,"")

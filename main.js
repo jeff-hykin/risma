@@ -14,9 +14,10 @@ import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranke
 
 import { version } from "./tools/version.js"
 import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap } from "./tools/input_tools.js"  
-import { searchOptions, title2Doi } from "./tools/search_tools.js"
+import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
+import { Reference } from "./tools/reference.js"
 
 // TODO: make relevence score of discoveryMethod, list most helpful searches
 
@@ -49,6 +50,8 @@ const options = argsInfo.simplifiedNames
 const cacheFolder = options.cachePath
 const cacheItemPath = `${cacheFolder}/cache.json`
 const storageObject = createStorageObject(cacheItemPath)
+const crossrefCachePath = `${cacheFolder}/cache.json`
+const crossrefCacheObject = createStorageObject(crossrefCachePath)
 
 // 
 // get active project   
@@ -81,6 +84,9 @@ const storageObject = createStorageObject(cacheItemPath)
             activeProject = defaultObject
         }
         activeProject.keywords = activeProject.keywords || {}
+        for (const [key, value] of Object.entries(activeProject.references)) {
+            activeProject.references[key] = new Reference(value)
+        }
         // console.log(`active project is: `,cyan(storageObject.activeProjectPath))
         for (let each of Object.values(activeProject.references)) {
             each.publisherInfo = (each.publisherInfo||"").replace(/�|…/g,"").trim()
@@ -102,7 +108,8 @@ const storageObject = createStorageObject(cacheItemPath)
     await loadProject()
     
     const saveProject = async ()=>{
-        await FileSystem.write({path: storageObject.activeProjectPath, data: yaml.stringify(activeProject,{ lineWidth: Infinity, })})
+        console.log(`saving project`)
+        await FileSystem.write({path: storageObject.activeProjectPath, data: yaml.stringify(activeProject,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
     }
 
     function getReferenceStatusCounts() {
@@ -223,7 +230,7 @@ const storageObject = createStorageObject(cacheItemPath)
             // 
             // year (currently gets added to keyword score)
             // 
-            scoreList[0] += (each.possibleYear-0||0)
+            scoreList[0] += (each.year-0||0)
             
             return scoreList
         }
@@ -268,19 +275,49 @@ mainLoop: while (true) {
             dateTime: new Date().getTime(),
             searchEngine: searchEngineName,
         })
-        const references = await withSpinner("searching", 
+        const references = await withSpinner("searching",
             ()=>searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query, discoveryMethod)}`)
+        ).then(each=>new Reference({
+            title: each.title,
+            notes: {
+                resumeStatus: "unseen|title",
+                comment: "",
+                reasonsRelevant: [],
+                reasonsNotRelevant: [],
+                customKeywords: [],
+                discoveryMethod: { dateTime: new Date().getTime(), query, searchEngine: searchEngineName },
+                events: {},
+            },
+            accordingTo: {
+                crossref: {},
+                [searchEngine]: each,
+            },
+        }))
+        await withSpinner("getting full data for references",
+            ()=>Promise.all(references.map(async each=>{
+                if (!each?.doi) {
+                    try {
+                        each.accordingTo.crossref = { doi: await title2Doi(each.title) }
+                    } catch (error) {
+                        
+                    }
+                }
+                if (each.doi) {
+                    try {
+                        each.accordingTo.crossref = crossrefToSimpleFormat(
+                            await doiToCrossrefInfo(each.doi, { cacheObject: crossrefCacheObject, }={})
+                        )
+                    } catch (error) {
+                        
+                    }
+                }
+            }))
         )
+        references.map(each=>each.accordingTo[searchEngine].year = each.year)
         // example references: [
         //         Reference {
         //             title: "RAIL: Robot Affordance Imagination with Large Language Models",
-        //             possibleYear: "1936",
-        //             notesConsideredRelevent: null,
-        //             notesCustomKeywords: [],
-        //             notesComment: null,
-        //             notesWasRelatedTo: [],
-        //             notesIsCitedByTitles: [],
-        //             notesCites: [],
+        //             year: "1936",
         //             discoveryMethod: undefined,
         //             authorNames: [ "C Zhang", "X Meng", "D Qi", "GS Chirikjian�" ],
         //             pdfLink: "https://scholar.google.com/https://arxiv.org/pdf/2403.19369",
@@ -371,14 +408,14 @@ mainLoop: while (true) {
                 console.log(cyan`\ng=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
                 nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(titleSorter())) {
                     // TODO: highlight good and bad keywords
-                    console.log(`${cyan`title: (${each.possibleYear}) `}${highlightKeywords(each.title)}`)
+                    console.log(`${cyan`title: (${each.year}) `}${highlightKeywords(each.title)}`)
                     for await (let { name: keyName, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
                         if (keyName == "q" || (ctrl && keyName == "c")) {
                             console.log(cyan`quit`)
                             continue reviewLoop
                         }
                         each.reasonsNotRelevant = each.reasonsNotRelevant || []
-                        each.relevanceStages = each.relevanceStages || []
+                        each.reasonsRelevant = each.reasonsRelevant || []
                         each.events = each.events || {}
                         each.events["saw title"] =  each.events["saw title"] || new DateTime().toISOString()
                         saveProject()
@@ -389,7 +426,7 @@ mainLoop: while (true) {
                             if (keyName == "g") {
                                 console.log(green`✅ relevent`)
                                 each.resumeStatus = "relevent|title"
-                                each.relevanceStages.push("title")
+                                each.reasonsRelevant.push("title")
                             } else if (keyName == "u") {
                                 console.log(magenta`❔ unclear`)
                                 each.resumeStatus = "unclear|title"
@@ -424,7 +461,7 @@ mainLoop: while (true) {
                     const active = await selectOne({
                         message: "Which title do you want to explore?",
                         options: colorObject,
-                        optionDescriptions: activeReferences.map(each=>cyan`${each.possibleYear}`),
+                        optionDescriptions: activeReferences.map(each=>cyan`${each.year}`),
                         descriptionHighlighter: dim,
                     })
                     if (active == quit) {
@@ -462,14 +499,14 @@ mainLoop: while (true) {
                             "super-relevent",
                         ],
                     })
-                    active.relevanceStages = active.relevanceStages || [ ]
+                    active.reasonsRelevant = active.reasonsRelevant || [ ]
                     active.reasonsNotRelevant = active.reasonsNotRelevant || []
                     active.resumeStatus = `${choice}|abstract`
                     if (choice == "irrelevent" || choice == "slightly-irrelevent") {
                         active.reasonsNotRelevant.push("abstract")
                     }
                     if (choice == "relevent" || choice == "super-relevent") {
-                        active.relevanceStages.push("abstract")
+                        active.reasonsRelevant.push("abstract")
                     }
                     saveProject()
                 }
