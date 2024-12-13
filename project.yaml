@@ -38,6 +38,658 @@ keywords:
         - animal
         - biolog
         - primate
-references: {}
-    
-discoveryAttempts: []
+references:
+    Visual Affordance Prediction for Guiding Robot Exploration: &ref_0
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:30:42.560Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                title: Visual Affordance Prediction for Guiding Robot Exploration
+                subtitle: null
+                abstract: null
+                authorNames:
+                    - Homanga Bharadhwaj
+                    - Abhinav Gupta
+                    - Shubham Tulsiani
+                year: 2023
+                doi: 10.1109/icra48891.2023.10161288
+                url: 'https://doi.org/10.1109/icra48891.2023.10161288'
+                pdfLink: null
+                citationCount: 7
+                citedDois:
+                    - 10.1109/CVPRW.2017.70
+                    - 10.1007/978-3-642-33715-4_53
+                    - 10.1109/ICCV.2017.622
+                    - 10.1109/ICRA.2016.7487517
+                    - 10.1109/ICCV.2019.00878
+                    - 10.1109/CVPR.2019.00891
+                    - 10.1109/ICCV.2017.438
+                    - 10.1109/CVPR.2011.5995448
+                    - 10.1109/IROS40897.2019.8967784
+                    - 10.1109/ICRA48506.2021.9561692
+                    - 10.1109/CVPR.2018.00068
+                    - 10.1109/ICRA40945.2020.9197415
+                    - 10.1109/IROS.2018.8593986
+                    - 10.1109/ICCV.2017.244
+                    - 10.1109/CVPR.2017.632
+                    - 10.1109/CVPR.2017.359
+                    - 10.1109/CVPR42600.2020.00813
+                    - 10.7717/peerj.1058
+                    - 10.1109/CVPR.2019.00453
+                    - 10.1109/ICRA48506.2021.9561802
+                    - 10.1109/ICCV48922.2021.00674
+                    - 10.1109/CVPR46437.2021.01268
+            googleScholar:
+                title: Visual affordance prediction for guiding robot exploration
+                authorNames:
+                    - H Bharadhwaj
+                    - A Gupta
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/10160211/10160212/10161288.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/10161288/'
+                citationId: '15979805052095820058'
+                multiArticleId: '15979805052095820058'
+                citedByLink: 'https://scholar.google.com//scholar?cites=15979805052095820058&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: '2023 IEEE International, 2023'
+                year: '2023'
+        publisherInfo: ''
+    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_1
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:39:28.970Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: 'RAIL: Robot Affordance Imagination with Large Language Models'
+                authorNames:
+                    - C Zhang
+                    - X Meng
+                    - D Qi
+                    - GS Chirikjian
+                pdfLink: 'https://arxiv.org/pdf/2403.19369'
+                link: 'https://arxiv.org/abs/2403.19369'
+                citationId: '8172269612940938567'
+                multiArticleId: '8172269612940938567'
+                citedByLink: 'https://scholar.google.com//scholar?cites=8172269612940938567&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'arXiv preprint arXiv:2403.19369, 2024'
+                year: '1936'
+        publisherInfo: ''
+    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_2
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:30:36.897Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                title: Affordance-Based Goal Imagination for Embodied AI Agents
+                subtitle: null
+                abstract: null
+                authorNames:
+                    - Victor Aregbede
+                    - Savitha Sam Abraham
+                    - Andreas Persson
+                    - Martin Längkvist
+                    - Amy Loutfi
+                year: 2024
+                doi: 10.1109/icdl61372.2024.10644764
+                url: 'https://doi.org/10.1109/icdl61372.2024.10644764'
+                pdfLink: null
+                citationCount: 0
+                citedDois:
+                    - 10.1016/j.cobeha.2018.12.011
+                    - 10.1109/DEVLRN.2019.8850723
+                    - 10.1109/LRA.2023.3272516
+                    - 10.1006/nimg.2001.0832
+                    - 10.1109/DEVLRN.2007.4354054
+                    - 10.1109/ICRA48506.2021.9561802
+                    - 10.1177/0278364914549607
+                    - 10.1007/978-3-031-24628-9_16
+                    - 10.1016/j.robot.2020.103630
+                    - 10.1109/IJCNN.2019.8852254
+                    - 10.1109/CVPR52729.2023.00582
+                    - 10.15607/RSS.2023.XIX.010
+                    - 10.1109/TCDS.2019.2915763
+                    - 10.1109/CVPR52729.2023.01436
+                    - 10.1109/ICCV48922.2021.01091
+                    - 10.1609/aaai.v36i3.20215
+                    - 10.18653/v1/2022.emnlp-main.812
+                    - 10.1109/ICCV51070.2023.00371
+                    - 10.1109/ICRA48891.2023.10161288
+            googleScholar:
+                title: Affordance-Based Goal Imagination for Embodied AI Agents
+                authorNames:
+                    - V Aregbede
+                    - SS Abraham
+                    - A Persson
+                pdfLink: 'https://ieeexplore.ieee.org/iel8/10644131/10644157/10644764.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/10644764/'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: 'on Development and, 2024'
+                year: '2024'
+        publisherInfo: ''
+    Learning to Anticipate Egocentric Actions by Imagination: &ref_3
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:34:23.116Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                title: Learning to Anticipate Egocentric Actions by Imagination
+                subtitle: null
+                abstract: null
+                authorNames:
+                    - Yu Wu
+                    - Linchao Zhu
+                    - Xiaohan Wang
+                    - Yi Yang
+                    - Fei Wu
+                year: 2021
+                doi: 10.1109/tip.2020.3040521
+                url: 'https://doi.org/10.1109/tip.2020.3040521'
+                pdfLink: null
+                citationCount: 43
+                citedDois:
+                    - 10.1109/ICCV.2017.399
+                    - 10.1109/ICCV.2017.326
+                    - 10.1109/TIP.2019.2937757
+                    - 10.5244/C.31.92
+                    - 10.1109/TIP.2020.3021497
+                    - 10.1109/ICCV.2017.616
+                    - 10.1016/j.jvcir.2017.10.004
+                    - 10.1109/ICCV.2017.362
+                    - 10.1109/CVPR.2018.00560
+                    - 10.1109/CVPR.2019.00587
+                    - 10.1109/TMM.2018.2834873
+                    - 10.1109/CVPR.2019.00038
+                    - 10.1007/978-3-030-01219-9_26
+                    - 10.1109/ICCV.2017.39
+                    - 10.1109/TPAMI.2020.3015894
+                    - 10.1007/978-3-319-46454-1_17
+                    - 10.1109/CVPR.2016.214
+                    - 10.1109/WACV.2018.00173
+                    - 10.1162/neco.1997.9.8.1735
+                    - 10.1109/ICRA.2016.7487478
+                    - 10.1109/CVPR.2016.18
+                    - 10.1109/TPAMI.2015.2430335
+                    - 10.1109/TIP.2019.2891895
+                    - 10.1109/CVPR.2018.00393
+                    - 10.1109/ICCV.2019.00566
+                    - 10.1109/TIP.2016.2613686
+                    - 10.1007/978-3-030-01228-1_38
+                    - 10.1007/978-3-319-46484-8_2
+                    - 10.1109/ICCV.2015.510
+                    - 10.1109/CVPR.2017.147
+                    - 10.1109/ICCV.2019.00559
+                    - 10.1109/CVPR.2019.01019
+                    - 10.1109/ICCV.2019.00635
+                    - 10.1109/CVPRW.2019.00351
+                    - 10.1109/TCSVT.2018.2875441
+                    - 10.1007/978-3-030-01240-3_36
+                    - 10.1109/CVPR.2018.00684
+                    - 10.1109/CVPR42600.2020.00975
+                    - 10.1007/978-3-030-01249-6_19
+                    - 10.1109/ICCVW.2019.00151
+                    - 10.1007/978-3-030-58517-4_10
+                    - 10.1016/j.neucom.2020.07.135
+            googleScholar:
+                title: Learning to anticipate egocentric actions by imagination
+                authorNames:
+                    - Y Wu
+                    - L Zhu
+                    - X Wang
+                    - Y Yang
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/83/9263394/09280353.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/9280353/'
+                citationId: '6012752103031775791'
+                multiArticleId: '6012752103031775791'
+                citedByLink: 'https://scholar.google.com//scholar?cites=6012752103031775791&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'IEEE Transactions on, 2020'
+                year: '2020'
+        publisherInfo: ''
+    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_4
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:38:14.464Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
+                authorNames:
+                    - Y Wu
+                    - S Kasewa
+                    - O Groth
+                    - S Salter
+                    - L Sun
+                pdfLink: 'https://arxiv.org/pdf/1909.13561'
+                link: 'https://arxiv.org/abs/1909.13561'
+                citationId: '1893778644382906900'
+                multiArticleId: '1893778644382906900'
+                citedByLink: 'https://scholar.google.com//scholar?cites=1893778644382906900&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'arXiv preprint arXiv, 2019'
+                year: '2019'
+        publisherInfo: ''
+    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_5
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:34:31.778Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
+                subtitle: null
+                abstract: null
+                authorNames:
+                    - Alexander Khazatsky
+                    - Ashvin Nair
+                    - Daniel Jing
+                    - Sergey Levine
+                year: 2021
+                doi: 10.1109/icra48506.2021.9561692
+                url: 'https://doi.org/10.1109/icra48506.2021.9561692'
+                pdfLink: null
+                citationCount: 12
+                citedDois:
+                    - 10.1109/ICRA.2017.7989202
+                    - 10.1038/nature16961
+                    - 10.1016/S0921-8890(97)00043-2
+                    - 10.1609/aaai.v24i1.7727
+                    - 10.1016/j.robot.2012.05.008
+                    - 10.1109/CVPRW.2017.70
+            googleScholar:
+                title: What can i do here? learning new skills by imagining visual affordances
+                authorNames:
+                    - A Khazatsky
+                    - A Nair
+                    - D Jing
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/9560720/9560666/09561692.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/9561692/'
+                citationId: '15430638141641676250'
+                multiArticleId: '15430638141641676250'
+                citedByLink: 'https://scholar.google.com//scholar?cites=15430638141641676250&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: '2021 IEEE International, 2021'
+                year: '2021'
+        publisherInfo: ''
+    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_6
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:39:12.076Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
+                subtitle: null
+                abstract: null
+                authorNames:
+                    - Ching-Yao Chuang
+                    - Jiaman Li
+                    - Antonio Torralba
+                    - Sanja Fidler
+                year: 2018
+                doi: 10.1109/cvpr.2018.00108
+                url: 'https://doi.org/10.1109/cvpr.2018.00108'
+                pdfLink: null
+                citationCount: 47
+                citedDois:
+                    - 10.1109/CVPR.2017.544
+                    - 10.1109/ICCV.2013.312
+                    - 10.1109/CVPR.2011.5995327
+                    - 10.1109/CVPR.2016.90
+                    - 10.1109/CVPR.2013.385
+                    - 10.1109/CVPR.2016.494
+                    - 10.1109/ICCV.2017.448
+                    - 10.1109/CVPR.2015.7298935
+                    - 10.1109/ICCV.2017.64
+                    - 10.1109/CVPR.2015.7299054
+                    - 10.1109/ICCV.2017.323
+                    - 10.1109/CVPR.2015.7298932
+                    - 10.1109/ICCV.2017.448
+                    - 10.1109/ICCV.2017.556
+                    - 10.1007/s11263-015-0816-y
+            googleScholar:
+                title: 'Learning to act properly: Predicting and explaining affordances from images'
+                authorNames:
+                    - CY Chuang
+                    - J Li
+                    - A Torralba
+                pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2018/papers/Chuang_Learning_to_Act_CVPR_2018_paper.pdf'
+                link: 'http://openaccess.thecvf.com/content_cvpr_2018/html/Chuang_Learning_to_Act_CVPR_2018_paper.html'
+                citationId: '9413040909214203914'
+                multiArticleId: '9413040909214203914'
+                citedByLink: 'https://scholar.google.com//scholar?cites=9413040909214203914&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the IEEE, 2018'
+                year: '2018'
+        publisherInfo: ''
+    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_7
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:38:01.850Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
+                authorNames:
+                    - Y Wu
+                    - S Kasewa
+                    - O Groth
+                    - S Salter
+                    - L Sun
+                    - OP Jones
+                pdfLink: 'https://openreview.net/pdf?id=BkeyOxrYwH'
+                link: 'https://openreview.net/forum?id=BkeyOxrYwH'
+                citationId: '2961549995427504858'
+                multiArticleId: null
+                citedByLink: 'https://scholar.google.com//scholar?cites=2961549995427504858&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: null
+                year: '2019'
+        publisherInfo: ''
+    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_8
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:34:08.243Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
+                subtitle: null
+                abstract: null
+                authorNames:
+                    - Sayantan Adak
+                    - Daivik Agrawal
+                    - Animesh Mukherjee
+                    - Somak Aditya
+                year: 2024
+                doi: 10.18653/v1/2024.conll-1.27
+                url: 'https://doi.org/10.18653/v1/2024.conll-1.27'
+                pdfLink: null
+                citationCount: 0
+                citedDois: []
+            googleScholar:
+                title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
+                authorNames:
+                    - S Adak
+                    - D Agrawal
+                    - A Mukherjee
+                pdfLink: 'https://aclanthology.org/2024.conll-1.27.pdf'
+                link: 'https://aclanthology.org/2024.conll-1.27/'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: 'Proceedings of the 28th, 2024'
+                year: '2024'
+        publisherInfo: ''
+    Learning affordances in object-centric generative models: &ref_9
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T18:27:21.952Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-13T18:27:32.072Z'
+                sawTitle: '2024-12-13T18:38:33.224Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Learning affordances in object-centric generative models
+                authorNames:
+                    - Y Wu
+                    - S Kasewa
+                    - O Groth
+                    - S Salter
+                    - L Sun
+                pdfLink: 'https://ora.ox.ac.uk/objects/uuid:003cbbd9-a3aa-42e7-8e2d-bcc6b22db89a/download_file?safe_filename=OOL_7.pdf&file_format=pdf&type_of_work=Conference+item'
+                link: 'https://ora.ox.ac.uk/objects/uuid:003cbbd9-a3aa-42e7-8e2d-bcc6b22db89a'
+                citationId: '7478229689628350853'
+                multiArticleId: '7478229689628350853'
+                citedByLink: 'https://scholar.google.com//scholar?cites=7478229689628350853&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: null
+                year: '2020'
+        publisherInfo: ''
+discoveryAttempts:
+    -
+        query: affordance based encoder imagination prediction
+        date: null
+        dateTime: '2024-12-13T18:27:21.644Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Visual Affordance Prediction for Guiding Robot Exploration
+                link: *ref_0
+            -
+                hadBeenSeenBefore: false
+                title: 'RAIL: Robot Affordance Imagination with Large Language Models'
+                link: *ref_1
+            -
+                hadBeenSeenBefore: false
+                title: Affordance-Based Goal Imagination for Embodied AI Agents
+                link: *ref_2
+            -
+                hadBeenSeenBefore: false
+                title: Learning to Anticipate Egocentric Actions by Imagination
+                link: *ref_3
+            -
+                hadBeenSeenBefore: false
+                title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
+                link: *ref_4
+            -
+                hadBeenSeenBefore: false
+                title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
+                link: *ref_5
+            -
+                hadBeenSeenBefore: false
+                title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
+                link: *ref_6
+            -
+                hadBeenSeenBefore: false
+                title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
+                link: *ref_7
+            -
+                hadBeenSeenBefore: false
+                title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
+                link: *ref_8
+            -
+                hadBeenSeenBefore: false
+                title: Learning affordances in object-centric generative models
+                link: *ref_9
