@@ -24,7 +24,8 @@ import { Reference } from "./tools/reference.js"
 // TODO: put keywords into a settings section
 // TODO: make something for related work discovery
 // TODO: find a way to add info to a manually entered reference
-// TODO: have a better system for sorting
+
+// done: have a better system for sorting
     // account for:
     // reference count
     // publication year
@@ -61,7 +62,7 @@ const cacheFolder = options.cachePath
 const cacheItemPath = `${cacheFolder}/cache.json`
 const storageObject = createStorageObject(cacheItemPath)
 const crossrefCachePath = `${cacheFolder}/cache.json`
-const crossrefCacheObject = createStorageObject(crossrefCachePath)
+doiToCrossrefInfo.cache = createStorageObject(crossrefCachePath)
 
 // 
 // get active project   
@@ -336,7 +337,7 @@ mainLoop: while (true) {
                 reasonsRelevant: [],
                 reasonsNotRelevant: [],
                 customKeywords: [],
-                discoveryMethod: { dateTime: new Date().toISOString(), query, searchEngine: searchEngineName },
+                discoveryMethod: { dateTime: discoveryMethod.dateTime, query: discoveryMethod.query, searchEngine: discoveryMethod.searchEngine },
                 events: {},
             },
             accordingTo: {

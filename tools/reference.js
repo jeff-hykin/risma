@@ -13,7 +13,7 @@ export class Reference {
             $manuallyEntered: {},
         },
         ...other
-    }) {
+    }={}) {
         if (arguments[0] instanceof Reference) {
             Object.assign(this,arguments[0])
             return

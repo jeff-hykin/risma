@@ -44,6 +44,7 @@ settings:
             - supervised
             - label
             - discretize
+            - Д
         neutral:
             - visual
             - predict
@@ -61,7 +62,7 @@ settings:
             - biolog
             - primate
 references:
-    Visual Affordance Prediction for Guiding Robot Exploration: &ref_10
+    Visual Affordance Prediction for Guiding Robot Exploration: &ref_20
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -136,7 +137,7 @@ references:
                 publisherInfo: '2023 IEEE International, 2023'
                 year: '2023'
         publisherInfo: ''
-    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_11
+    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_21
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -178,7 +179,7 @@ references:
                 publisherInfo: 'arXiv preprint arXiv:2403.19369, 2024'
                 year: '1936'
         publisherInfo: ''
-    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_12
+    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_22
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -253,7 +254,7 @@ references:
                 publisherInfo: 'on Development and, 2024'
                 year: '2024'
         publisherInfo: ''
-    Learning to Anticipate Egocentric Actions by Imagination: &ref_13
+    Learning to Anticipate Egocentric Actions by Imagination: &ref_23
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -351,7 +352,7 @@ references:
                 publisherInfo: 'IEEE Transactions on, 2020'
                 year: '2020'
         publisherInfo: ''
-    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_14
+    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_24
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -395,7 +396,7 @@ references:
                 publisherInfo: 'arXiv preprint arXiv, 2019'
                 year: '2019'
         publisherInfo: ''
-    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_15
+    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_25
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -456,7 +457,7 @@ references:
                 publisherInfo: '2021 IEEE International, 2021'
                 year: '2021'
         publisherInfo: ''
-    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_16
+    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_26
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -525,7 +526,7 @@ references:
                 publisherInfo: 'Proceedings of the IEEE, 2018'
                 year: '2018'
         publisherInfo: ''
-    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_17
+    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_27
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -570,7 +571,7 @@ references:
                 publisherInfo: null
                 year: '2019'
         publisherInfo: ''
-    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_18
+    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_28
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -625,7 +626,7 @@ references:
                 publisherInfo: 'Proceedings of the 28th, 2024'
                 year: '2024'
         publisherInfo: ''
-    Learning affordances in object-centric generative models: &ref_19
+    Learning affordances in object-centric generative models: &ref_29
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -668,7 +669,7 @@ references:
                 publisherInfo: null
                 year: '2020'
         publisherInfo: ''
-    'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception': &ref_0
+    'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception': &ref_10
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -706,7 +707,8 @@ references:
                 citedByLink: null
                 publisherInfo: 'arXiv preprint arXiv:2404.18617, 2024'
                 year: '2024'
-    Multi-Agent Active Perception Based on Reinforcement Learning and POMDP: &ref_1
+        publisherInfo: ''
+    Multi-Agent Active Perception Based on Reinforcement Learning and POMDP: &ref_11
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -745,7 +747,8 @@ references:
                 citedByLink: null
                 publisherInfo: 'IEEE Access, 2024'
                 year: '2024'
-    Mutual influence between language and perception in multi-agent communication games: &ref_2
+        publisherInfo: ''
+    Mutual influence between language and perception in multi-agent communication games: &ref_12
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -855,7 +858,8 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=5350802694831905244&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'PLOS Computational, 2022'
                 year: '2022'
-    'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness': &ref_3
+        publisherInfo: ''
+    'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness': &ref_13
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -895,7 +899,8 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=14041336950901741464&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Nature Machine Intelligence, 2023'
                 year: '2023'
-    Why and how to study the impact of perception on language emergence in artificial agents: &ref_4
+        publisherInfo: ''
+    Why and how to study the impact of perception on language emergence in artificial agents: &ref_14
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -934,7 +939,8 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=2179981516739486040&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Proceedings of the Annual, 2021'
                 year: '2021'
-    Interaction Algorithm Effect on Human Experience with Reinforcement Learning: &ref_5
+        publisherInfo: ''
+    Interaction Algorithm Effect on Human Experience with Reinforcement Learning: &ref_15
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1002,7 +1008,8 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=15452678659896386539&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Robot Interaction, 2018'
                 year: '2018'
-    'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues': &ref_6
+        publisherInfo: ''
+    'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues': &ref_16
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1042,7 +1049,8 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=2507582518469208253&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Array, 2021'
                 year: '2021'
-    Research on autonomous driving decision-making strategies based deep reinforcement learning: &ref_7
+        publisherInfo: ''
+    Research on autonomous driving decision-making strategies based deep reinforcement learning: &ref_17
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1083,7 +1091,8 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=1006030502322123597&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'and Machine Learning, 2024'
                 year: '2024'
-    Finding and visualizing weaknesses of deep reinforcement learning agents: &ref_8
+        publisherInfo: ''
+    Finding and visualizing weaknesses of deep reinforcement learning agents: &ref_18
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1122,7 +1131,8 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=11518984940352760452&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'arXiv preprint arXiv:1904.01318, 2019'
                 year: '1904'
-    Simulation-based reinforcement learning for real-world autonomous driving: &ref_9
+        publisherInfo: ''
+    Simulation-based reinforcement learning for real-world autonomous driving: &ref_19
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1161,7 +1171,1908 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=18072154790906392218&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'on robotics and, 2020'
                 year: '2020'
+        publisherInfo: ''
+    'Whatever next? Predictive brains, situated agents, and the future of cognitive science': &ref_0
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1017/s0140525x12000477'
+                title: 'Whatever next? Predictive brains, situated agents, and the future of cognitive science'
+                abstract: null
+                concepts:
+                    - embodied and extended cognition
+                    - neural dynamics and brain function
+                    - action observation and synchronization
+                    - cognitive neuroscience
+                    - social psychology
+                    - situated
+                    - cognitive science
+                    - cognition
+                    - psychology
+                    - computer science
+                    - cognitive psychology
+                    - neuroscience
+                    - artificial intelligence
+                year: 2013
+                authorNames:
+                    - Andy Clark
+                link: 'https://doi.org/10.1017/s0140525x12000477'
+                pdfLink: 'https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33542C736E17E3D1D44E8D03BE5F4CD9/S0140525X12000477a.pdf/div-class-title-whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science-div.pdf'
+                citationCount: 4772
+                citedAlexIds:
+                    - 'https://openalex.org/W10789807'
+                    - 'https://openalex.org/W109508954'
+                    - 'https://openalex.org/W135452875'
+                    - 'https://openalex.org/W145640948'
+                    - 'https://openalex.org/W1482293806'
+                    - 'https://openalex.org/W1482317340'
+                    - 'https://openalex.org/W1484003379'
+                    - 'https://openalex.org/W1486071255'
+                    - 'https://openalex.org/W1488029108'
+                    - 'https://openalex.org/W1489822490'
+                    - 'https://openalex.org/W1490667783'
+                    - 'https://openalex.org/W1502378244'
+                    - 'https://openalex.org/W1504499192'
+                    - 'https://openalex.org/W1511070613'
+                    - 'https://openalex.org/W1523723941'
+                    - 'https://openalex.org/W1534668202'
+                    - 'https://openalex.org/W1537155450'
+                    - 'https://openalex.org/W1543614656'
+                    - 'https://openalex.org/W1552580351'
+                    - 'https://openalex.org/W1557130869'
+                    - 'https://openalex.org/W1567866491'
+                    - 'https://openalex.org/W1575226200'
+                    - 'https://openalex.org/W1575566090'
+                    - 'https://openalex.org/W1576165815'
+                    - 'https://openalex.org/W1581154111'
+                    - 'https://openalex.org/W1581981439'
+                    - 'https://openalex.org/W1589088869'
+                    - 'https://openalex.org/W1590636096'
+                    - 'https://openalex.org/W1591127930'
+                    - 'https://openalex.org/W1603307924'
+                    - 'https://openalex.org/W1603717513'
+                    - 'https://openalex.org/W1604879017'
+                    - 'https://openalex.org/W1605221999'
+                    - 'https://openalex.org/W1606994719'
+                    - 'https://openalex.org/W1622095090'
+                    - 'https://openalex.org/W1632686212'
+                    - 'https://openalex.org/W1641311894'
+                    - 'https://openalex.org/W1686884809'
+                    - 'https://openalex.org/W1698657956'
+                    - 'https://openalex.org/W1700223554'
+                    - 'https://openalex.org/W170173273'
+                    - 'https://openalex.org/W1715265662'
+                    - 'https://openalex.org/W1729777349'
+                    - 'https://openalex.org/W1746680969'
+                    - 'https://openalex.org/W1751175273'
+                    - 'https://openalex.org/W1753220462'
+                    - 'https://openalex.org/W1792331941'
+                    - 'https://openalex.org/W1798429093'
+                    - 'https://openalex.org/W1823954399'
+                    - 'https://openalex.org/W1860122035'
+                    - 'https://openalex.org/W1926906640'
+                    - 'https://openalex.org/W1933657216'
+                    - 'https://openalex.org/W1944874745'
+                    - 'https://openalex.org/W1948209394'
+                    - 'https://openalex.org/W1966014830'
+                    - 'https://openalex.org/W1966342514'
+                    - 'https://openalex.org/W1967272295'
+                    - 'https://openalex.org/W1967826667'
+                    - 'https://openalex.org/W1969090956'
+                    - 'https://openalex.org/W1969469807'
+                    - 'https://openalex.org/W1971404739'
+                    - 'https://openalex.org/W1973198231'
+                    - 'https://openalex.org/W1973243121'
+                    - 'https://openalex.org/W1975140269'
+                    - 'https://openalex.org/W1975918057'
+                    - 'https://openalex.org/W1977308918'
+                    - 'https://openalex.org/W1977628053'
+                    - 'https://openalex.org/W1977683420'
+                    - 'https://openalex.org/W1980440818'
+                    - 'https://openalex.org/W1981698940'
+                    - 'https://openalex.org/W1981814724'
+                    - 'https://openalex.org/W1981820307'
+                    - 'https://openalex.org/W1983079498'
+                    - 'https://openalex.org/W1983578042'
+                    - 'https://openalex.org/W1983622171'
+                    - 'https://openalex.org/W1984259816'
+                    - 'https://openalex.org/W1984383922'
+                    - 'https://openalex.org/W1985072454'
+                    - 'https://openalex.org/W1985283741'
+                    - 'https://openalex.org/W1986910700'
+                    - 'https://openalex.org/W1991362484'
+                    - 'https://openalex.org/W1991848143'
+                    - 'https://openalex.org/W1993479012'
+                    - 'https://openalex.org/W1993845689'
+                    - 'https://openalex.org/W1993875113'
+                    - 'https://openalex.org/W1994841627'
+                    - 'https://openalex.org/W1997321942'
+                    - 'https://openalex.org/W1997901895'
+                    - 'https://openalex.org/W1998651249'
+                    - 'https://openalex.org/W1999949014'
+                    - 'https://openalex.org/W2000900121'
+                    - 'https://openalex.org/W2002134846'
+                    - 'https://openalex.org/W2003984303'
+                    - 'https://openalex.org/W2004340664'
+                    - 'https://openalex.org/W2004729255'
+                    - 'https://openalex.org/W2004843412'
+                    - 'https://openalex.org/W2008523042'
+                    - 'https://openalex.org/W2008767889'
+                    - 'https://openalex.org/W2009040429'
+                    - 'https://openalex.org/W2009193140'
+                    - 'https://openalex.org/W2009202666'
+                    - 'https://openalex.org/W2009833265'
+                    - 'https://openalex.org/W2014937798'
+                    - 'https://openalex.org/W2016381226'
+                    - 'https://openalex.org/W2016478629'
+                    - 'https://openalex.org/W2016708835'
+                    - 'https://openalex.org/W2017040534'
+                    - 'https://openalex.org/W2017354652'
+                    - 'https://openalex.org/W2018528947'
+                    - 'https://openalex.org/W2018699045'
+                    - 'https://openalex.org/W2019300872'
+                    - 'https://openalex.org/W2021503473'
+                    - 'https://openalex.org/W2021546183'
+                    - 'https://openalex.org/W2021696685'
+                    - 'https://openalex.org/W2022659913'
+                    - 'https://openalex.org/W2025566384'
+                    - 'https://openalex.org/W2026799324'
+                    - 'https://openalex.org/W2026914444'
+                    - 'https://openalex.org/W2027682488'
+                    - 'https://openalex.org/W2028345044'
+                    - 'https://openalex.org/W2029378533'
+                    - 'https://openalex.org/W2029776687'
+                    - 'https://openalex.org/W2029949252'
+                    - 'https://openalex.org/W2031334042'
+                    - 'https://openalex.org/W2032558547'
+                    - 'https://openalex.org/W2032743424'
+                    - 'https://openalex.org/W2033471768'
+                    - 'https://openalex.org/W2033613103'
+                    - 'https://openalex.org/W2034135634'
+                    - 'https://openalex.org/W2034426409'
+                    - 'https://openalex.org/W2035910815'
+                    - 'https://openalex.org/W2036897014'
+                    - 'https://openalex.org/W2038206292'
+                    - 'https://openalex.org/W2039044032'
+                    - 'https://openalex.org/W2039170454'
+                    - 'https://openalex.org/W2040306393'
+                    - 'https://openalex.org/W2040336773'
+                    - 'https://openalex.org/W2043175705'
+                    - 'https://openalex.org/W2043775332'
+                    - 'https://openalex.org/W2045836305'
+                    - 'https://openalex.org/W2046093942'
+                    - 'https://openalex.org/W2046513060'
+                    - 'https://openalex.org/W2047229728'
+                    - 'https://openalex.org/W2048716193'
+                    - 'https://openalex.org/W2048967798'
+                    - 'https://openalex.org/W2049633694'
+                    - 'https://openalex.org/W2050878336'
+                    - 'https://openalex.org/W2051017435'
+                    - 'https://openalex.org/W2052707010'
+                    - 'https://openalex.org/W2055368975'
+                    - 'https://openalex.org/W2057124854'
+                    - 'https://openalex.org/W2057650202'
+                    - 'https://openalex.org/W2058670155'
+                    - 'https://openalex.org/W2059156134'
+                    - 'https://openalex.org/W2060192212'
+                    - 'https://openalex.org/W2060603252'
+                    - 'https://openalex.org/W2061131717'
+                    - 'https://openalex.org/W2061637033'
+                    - 'https://openalex.org/W2062948774'
+                    - 'https://openalex.org/W2063440895'
+                    - 'https://openalex.org/W2065540111'
+                    - 'https://openalex.org/W2067393309'
+                    - 'https://openalex.org/W2070461647'
+                    - 'https://openalex.org/W2071004610'
+                    - 'https://openalex.org/W2072128103'
+                    - 'https://openalex.org/W2073139509'
+                    - 'https://openalex.org/W2073257493'
+                    - 'https://openalex.org/W2073744342'
+                    - 'https://openalex.org/W2075312701'
+                    - 'https://openalex.org/W2075796617'
+                    - 'https://openalex.org/W2076198154'
+                    - 'https://openalex.org/W2077106910'
+                    - 'https://openalex.org/W2079366972'
+                    - 'https://openalex.org/W2080512970'
+                    - 'https://openalex.org/W2081364575'
+                    - 'https://openalex.org/W2081939415'
+                    - 'https://openalex.org/W2085529605'
+                    - 'https://openalex.org/W2085663684'
+                    - 'https://openalex.org/W2087068919'
+                    - 'https://openalex.org/W2087460754'
+                    - 'https://openalex.org/W2088247269'
+                    - 'https://openalex.org/W2089131666'
+                    - 'https://openalex.org/W2089810755'
+                    - 'https://openalex.org/W2090144013'
+                    - 'https://openalex.org/W2092265892'
+                    - 'https://openalex.org/W2092552062'
+                    - 'https://openalex.org/W2093072166'
+                    - 'https://openalex.org/W2093098710'
+                    - 'https://openalex.org/W2094371906'
+                    - 'https://openalex.org/W2095087224'
+                    - 'https://openalex.org/W2096962395'
+                    - 'https://openalex.org/W2097466798'
+                    - 'https://openalex.org/W2097560155'
+                    - 'https://openalex.org/W2097985595'
+                    - 'https://openalex.org/W2098125043'
+                    - 'https://openalex.org/W2098220152'
+                    - 'https://openalex.org/W2100495367'
+                    - 'https://openalex.org/W2102409316'
+                    - 'https://openalex.org/W2103104224'
+                    - 'https://openalex.org/W2103393785'
+                    - 'https://openalex.org/W2103410189'
+                    - 'https://openalex.org/W2105244423'
+                    - 'https://openalex.org/W2107019937'
+                    - 'https://openalex.org/W2111626459'
+                    - 'https://openalex.org/W2111947800'
+                    - 'https://openalex.org/W2112129677'
+                    - 'https://openalex.org/W2112464722'
+                    - 'https://openalex.org/W2113820953'
+                    - 'https://openalex.org/W2114069527'
+                    - 'https://openalex.org/W2114755200'
+                    - 'https://openalex.org/W2114950643'
+                    - 'https://openalex.org/W2116064496'
+                    - 'https://openalex.org/W2117726420'
+                    - 'https://openalex.org/W2117731089'
+                    - 'https://openalex.org/W2117776204'
+                    - 'https://openalex.org/W2118615399'
+                    - 'https://openalex.org/W2119574220'
+                    - 'https://openalex.org/W2119885245'
+                    - 'https://openalex.org/W2119969856'
+                    - 'https://openalex.org/W2119985666'
+                    - 'https://openalex.org/W2120156218'
+                    - 'https://openalex.org/W2120238402'
+                    - 'https://openalex.org/W2120794957'
+                    - 'https://openalex.org/W2123786976'
+                    - 'https://openalex.org/W2124537004'
+                    - 'https://openalex.org/W2124942870'
+                    - 'https://openalex.org/W2125417185'
+                    - 'https://openalex.org/W2125663122'
+                    - 'https://openalex.org/W2126283334'
+                    - 'https://openalex.org/W2126548873'
+                    - 'https://openalex.org/W2127094700'
+                    - 'https://openalex.org/W2127531110'
+                    - 'https://openalex.org/W2127806105'
+                    - 'https://openalex.org/W2127958135'
+                    - 'https://openalex.org/W2128211763'
+                    - 'https://openalex.org/W2128676863'
+                    - 'https://openalex.org/W2129849871'
+                    - 'https://openalex.org/W2130195834'
+                    - 'https://openalex.org/W2131352719'
+                    - 'https://openalex.org/W2132003317'
+                    - 'https://openalex.org/W2132226631'
+                    - 'https://openalex.org/W2133257461'
+                    - 'https://openalex.org/W2134178808'
+                    - 'https://openalex.org/W2134631584'
+                    - 'https://openalex.org/W2134664038'
+                    - 'https://openalex.org/W2135100787'
+                    - 'https://openalex.org/W2135346645'
+                    - 'https://openalex.org/W2135472384'
+                    - 'https://openalex.org/W2135806332'
+                    - 'https://openalex.org/W2136748963'
+                    - 'https://openalex.org/W2136922672'
+                    - 'https://openalex.org/W2137273911'
+                    - 'https://openalex.org/W2137352931'
+                    - 'https://openalex.org/W2137411342'
+                    - 'https://openalex.org/W2137734618'
+                    - 'https://openalex.org/W2137967377'
+                    - 'https://openalex.org/W2139276121'
+                    - 'https://openalex.org/W2139295975'
+                    - 'https://openalex.org/W2139360674'
+                    - 'https://openalex.org/W2140993980'
+                    - 'https://openalex.org/W2141564777'
+                    - 'https://openalex.org/W2142393318'
+                    - 'https://openalex.org/W2145171938'
+                    - 'https://openalex.org/W2145761392'
+                    - 'https://openalex.org/W2145798752'
+                    - 'https://openalex.org/W2145889472'
+                    - 'https://openalex.org/W2146538941'
+                    - 'https://openalex.org/W2146656425'
+                    - 'https://openalex.org/W2147279990'
+                    - 'https://openalex.org/W2147336195'
+                    - 'https://openalex.org/W2148331243'
+                    - 'https://openalex.org/W2148596731'
+                    - 'https://openalex.org/W2148754764'
+                    - 'https://openalex.org/W2148764920'
+                    - 'https://openalex.org/W2151103178'
+                    - 'https://openalex.org/W2151725582'
+                    - 'https://openalex.org/W2152663369'
+                    - 'https://openalex.org/W2152871995'
+                    - 'https://openalex.org/W2154409655'
+                    - 'https://openalex.org/W2154697997'
+                    - 'https://openalex.org/W2154834451'
+                    - 'https://openalex.org/W2155770057'
+                    - 'https://openalex.org/W2156014011'
+                    - 'https://openalex.org/W2156776168'
+                    - 'https://openalex.org/W2157376352'
+                    - 'https://openalex.org/W2157754891'
+                    - 'https://openalex.org/W2158261978'
+                    - 'https://openalex.org/W2158535651'
+                    - 'https://openalex.org/W2158562456'
+                    - 'https://openalex.org/W2158573972'
+                    - 'https://openalex.org/W2158997610'
+                    - 'https://openalex.org/W2159843622'
+                    - 'https://openalex.org/W2160195521'
+                    - 'https://openalex.org/W2161144680'
+                    - 'https://openalex.org/W2161907849'
+                    - 'https://openalex.org/W2162241822'
+                    - 'https://openalex.org/W2162693531'
+                    - 'https://openalex.org/W2164137768'
+                    - 'https://openalex.org/W2164146725'
+                    - 'https://openalex.org/W2164180391'
+                    - 'https://openalex.org/W2164943206'
+                    - 'https://openalex.org/W2165055912'
+                    - 'https://openalex.org/W2166851140'
+                    - 'https://openalex.org/W2166876238'
+                    - 'https://openalex.org/W2167550399'
+                    - 'https://openalex.org/W2167652605'
+                    - 'https://openalex.org/W2167956961'
+                    - 'https://openalex.org/W2169281351'
+                    - 'https://openalex.org/W2169720294'
+                    - 'https://openalex.org/W2170100837'
+                    - 'https://openalex.org/W2170303295'
+                    - 'https://openalex.org/W2170585417'
+                    - 'https://openalex.org/W2171627550'
+                    - 'https://openalex.org/W2171904973'
+                    - 'https://openalex.org/W2171916839'
+                    - 'https://openalex.org/W2187736830'
+                    - 'https://openalex.org/W2188585002'
+                    - 'https://openalex.org/W2215804359'
+                    - 'https://openalex.org/W2264612703'
+                    - 'https://openalex.org/W2280280036'
+                    - 'https://openalex.org/W2317030384'
+                    - 'https://openalex.org/W2341514930'
+                    - 'https://openalex.org/W2346626577'
+                    - 'https://openalex.org/W2408970007'
+                    - 'https://openalex.org/W2416589028'
+                    - 'https://openalex.org/W2469390141'
+                    - 'https://openalex.org/W2476114575'
+                    - 'https://openalex.org/W2476584077'
+                    - 'https://openalex.org/W2490373712'
+                    - 'https://openalex.org/W2493829266'
+                    - 'https://openalex.org/W2567948266'
+                    - 'https://openalex.org/W2573514974'
+                    - 'https://openalex.org/W2587573685'
+                    - 'https://openalex.org/W2593864877'
+                    - 'https://openalex.org/W2596741730'
+                    - 'https://openalex.org/W2626452129'
+                    - 'https://openalex.org/W2678181971'
+                    - 'https://openalex.org/W2755951117'
+                    - 'https://openalex.org/W2764433274'
+                    - 'https://openalex.org/W2769597330'
+                    - 'https://openalex.org/W2796425399'
+                    - 'https://openalex.org/W2962730232'
+                    - 'https://openalex.org/W2979454998'
+                    - 'https://openalex.org/W2991594977'
+                    - 'https://openalex.org/W3110909889'
+                    - 'https://openalex.org/W3122320823'
+                    - 'https://openalex.org/W3126968700'
+                    - 'https://openalex.org/W3171389120'
+                    - 'https://openalex.org/W3188690837'
+                    - 'https://openalex.org/W3202455648'
+                    - 'https://openalex.org/W3207342693'
+                    - 'https://openalex.org/W3209862660'
+                    - 'https://openalex.org/W36240454'
+                    - 'https://openalex.org/W393180982'
+                    - 'https://openalex.org/W395200665'
+                    - 'https://openalex.org/W4211203277'
+                    - 'https://openalex.org/W4229548447'
+                    - 'https://openalex.org/W4230066411'
+                    - 'https://openalex.org/W4231563569'
+                    - 'https://openalex.org/W4232897512'
+                    - 'https://openalex.org/W4233333838'
+                    - 'https://openalex.org/W4236504720'
+                    - 'https://openalex.org/W4243023839'
+                    - 'https://openalex.org/W4250325771'
+                    - 'https://openalex.org/W4252491629'
+                    - 'https://openalex.org/W4254710302'
+                    - 'https://openalex.org/W4256092587'
+                    - 'https://openalex.org/W4285719527'
+                    - 'https://openalex.org/W4300402905'
+                    - 'https://openalex.org/W4386062341'
+                    - 'https://openalex.org/W568588005'
+                    - 'https://openalex.org/W575576090'
+                    - 'https://openalex.org/W592386890'
+                    - 'https://openalex.org/W602323019'
+                    - 'https://openalex.org/W60626809'
+                    - 'https://openalex.org/W617170969'
+                    - 'https://openalex.org/W622323476'
+                    - 'https://openalex.org/W624852971'
+                    - 'https://openalex.org/W629383582'
+                    - 'https://openalex.org/W632970994'
+                    - 'https://openalex.org/W645773412'
+                    - 'https://openalex.org/W645920547'
+                    - 'https://openalex.org/W648633'
+                    - 'https://openalex.org/W87418582'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4391375266'
+                    - 'https://openalex.org/W4248151009'
+                    - 'https://openalex.org/W3156433428'
+                    - 'https://openalex.org/W3127991229'
+                    - 'https://openalex.org/W2748952813'
+                    - 'https://openalex.org/W2081348319'
+                    - 'https://openalex.org/W2074627502'
+                    - 'https://openalex.org/W1974622901'
+                    - 'https://openalex.org/W1601337804'
+                    - 'https://openalex.org/W1600697036'
+    Disjuncture and Difference in the Global Cultural Economy: &ref_1
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1215/08992363-2-2-1'
+                title: Disjuncture and Difference in the Global Cultural Economy
+                abstract: null
+                concepts:
+                    - cultural industries and urban development
+                    - urban studies
+                    - economy
+                    - economic geography
+                    - political science
+                    - political economy
+                    - economic system
+                    - sociology
+                    - economics
+                year: 1990
+                authorNames:
+                    - Arjun Appadurai
+                link: 'https://doi.org/10.1215/08992363-2-2-1'
+                pdfLink: null
+                citationCount: 1709
+                citedAlexIds:
+                    - 'https://openalex.org/W1493998861'
+                    - 'https://openalex.org/W1529220146'
+                    - 'https://openalex.org/W1585773363'
+                    - 'https://openalex.org/W1586405747'
+                    - 'https://openalex.org/W1965538637'
+                    - 'https://openalex.org/W1975753648'
+                    - 'https://openalex.org/W1979731710'
+                    - 'https://openalex.org/W1990286798'
+                    - 'https://openalex.org/W1992376479'
+                    - 'https://openalex.org/W2011945159'
+                    - 'https://openalex.org/W2019751518'
+                    - 'https://openalex.org/W2021761088'
+                    - 'https://openalex.org/W2026916634'
+                    - 'https://openalex.org/W2033303246'
+                    - 'https://openalex.org/W2040531585'
+                    - 'https://openalex.org/W2050705696'
+                    - 'https://openalex.org/W2052417512'
+                    - 'https://openalex.org/W2053771067'
+                    - 'https://openalex.org/W2069768627'
+                    - 'https://openalex.org/W2071862856'
+                    - 'https://openalex.org/W2079341247'
+                    - 'https://openalex.org/W2103917930'
+                    - 'https://openalex.org/W2121393013'
+                    - 'https://openalex.org/W2146751695'
+                    - 'https://openalex.org/W2315920716'
+                    - 'https://openalex.org/W2795965391'
+                    - 'https://openalex.org/W2800465422'
+                    - 'https://openalex.org/W3148502743'
+                    - 'https://openalex.org/W4213078504'
+                    - 'https://openalex.org/W4230032716'
+                    - 'https://openalex.org/W4252925105'
+                    - 'https://openalex.org/W4255728129'
+                    - 'https://openalex.org/W4302231525'
+                    - 'https://openalex.org/W4361023655'
+                    - 'https://openalex.org/W631530378'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4313389613'
+                    - 'https://openalex.org/W2104764082'
+                    - 'https://openalex.org/W2073254488'
+                    - 'https://openalex.org/W2070530935'
+                    - 'https://openalex.org/W2066504725'
+                    - 'https://openalex.org/W2017540542'
+                    - 'https://openalex.org/W2006758266'
+                    - 'https://openalex.org/W1549310245'
+                    - 'https://openalex.org/W1527813328'
+                    - 'https://openalex.org/W1502198272'
+    'Principal warps: thin-plate splines and the decomposition of deformations': &ref_2
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1109/34.24792'
+                title: 'Principal warps: thin-plate splines and the decomposition of deformations'
+                abstract: null
+                concepts:
+                    - medical image segmentation techniques
+                    - image and object detection techniques
+                    - image and signal denoising methods
+                    - computer vision and pattern recognition
+                    - artificial intelligence
+                    - decomposition
+                    - principal (computer security)
+                    - computer science
+                    - computer vision
+                    - principal component analysis
+                    - pattern recognition (psychology)
+                    - feature extraction
+                    - mathematics
+                    - biology
+                    - ecology
+                    - operating system
+                year: 1989
+                authorNames:
+                    - Fred L. Bookstein
+                link: 'https://doi.org/10.1109/34.24792'
+                pdfLink: null
+                citationCount: 2421
+                citedAlexIds:
+                    - 'https://openalex.org/W1564699816'
+                    - 'https://openalex.org/W1578500489'
+                    - 'https://openalex.org/W1963734529'
+                    - 'https://openalex.org/W1979966786'
+                    - 'https://openalex.org/W1986442311'
+                    - 'https://openalex.org/W2022140147'
+                    - 'https://openalex.org/W2061577311'
+                    - 'https://openalex.org/W2061700871'
+                    - 'https://openalex.org/W2068179746'
+                    - 'https://openalex.org/W2074797641'
+                    - 'https://openalex.org/W2104095591'
+                    - 'https://openalex.org/W2114261252'
+                    - 'https://openalex.org/W2139762693'
+                    - 'https://openalex.org/W2242858999'
+                    - 'https://openalex.org/W2289960991'
+                    - 'https://openalex.org/W2444430'
+                    - 'https://openalex.org/W2582614493'
+                    - 'https://openalex.org/W4246727630'
+                    - 'https://openalex.org/W564242753'
+                    - 'https://openalex.org/W564320318'
+                    - 'https://openalex.org/W63727357'
+                    - 'https://openalex.org/W80790960'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4312376745'
+                    - 'https://openalex.org/W2811390910'
+                    - 'https://openalex.org/W2601157893'
+                    - 'https://openalex.org/W2373052636'
+                    - 'https://openalex.org/W2373006798'
+                    - 'https://openalex.org/W2151520854'
+                    - 'https://openalex.org/W2123759770'
+                    - 'https://openalex.org/W2112208972'
+                    - 'https://openalex.org/W2056912418'
+                    - 'https://openalex.org/W2033213769'
+    Neuroscience-Inspired Artificial Intelligence: &ref_3
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1016/j.neuron.2017.06.011'
+                title: Neuroscience-Inspired Artificial Intelligence
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - functional brain connectivity studies
+                    - advanced memory and neural computing
+                    - cognitive neuroscience
+                    - electrical and electronic engineering
+                    - systems neuroscience
+                    - computational neuroscience
+                    - cognitive science
+                    - field (mathematics)
+                    - psychology
+                    - neuroscience
+                    - computer science
+                    - artificial intelligence
+                    - myelin
+                    - oligodendrocyte
+                    - central nervous system
+                    - mathematics
+                    - pure mathematics
+                year: 2017
+                authorNames:
+                    - Demis Hassabis
+                    - Dharshan Kumaran
+                    - Christopher Summerfield
+                    - Matthew Botvinick
+                link: 'https://doi.org/10.1016/j.neuron.2017.06.011'
+                pdfLink: 'http://www.cell.com/article/S0896627317305093/pdf'
+                citationCount: 1261
+                citedAlexIds:
+                    - 'https://openalex.org/W1440335865'
+                    - 'https://openalex.org/W1485981043'
+                    - 'https://openalex.org/W1497599070'
+                    - 'https://openalex.org/W1503404806'
+                    - 'https://openalex.org/W1506196175'
+                    - 'https://openalex.org/W1520121841'
+                    - 'https://openalex.org/W1533375280'
+                    - 'https://openalex.org/W1535656004'
+                    - 'https://openalex.org/W1565932041'
+                    - 'https://openalex.org/W1573503290'
+                    - 'https://openalex.org/W1581407678'
+                    - 'https://openalex.org/W1597375909'
+                    - 'https://openalex.org/W1604195904'
+                    - 'https://openalex.org/W1777649940'
+                    - 'https://openalex.org/W1825869920'
+                    - 'https://openalex.org/W1836583613'
+                    - 'https://openalex.org/W1850742715'
+                    - 'https://openalex.org/W1904365287'
+                    - 'https://openalex.org/W1924619199'
+                    - 'https://openalex.org/W1965133220'
+                    - 'https://openalex.org/W1966678693'
+                    - 'https://openalex.org/W1972586294'
+                    - 'https://openalex.org/W1975849605'
+                    - 'https://openalex.org/W1975958074'
+                    - 'https://openalex.org/W1979019425'
+                    - 'https://openalex.org/W1980035368'
+                    - 'https://openalex.org/W1988699227'
+                    - 'https://openalex.org/W1991564165'
+                    - 'https://openalex.org/W1995341919'
+                    - 'https://openalex.org/W2000214310'
+                    - 'https://openalex.org/W2000775105'
+                    - 'https://openalex.org/W2001771035'
+                    - 'https://openalex.org/W2003103143'
+                    - 'https://openalex.org/W2006760951'
+                    - 'https://openalex.org/W2007283628'
+                    - 'https://openalex.org/W2007414406'
+                    - 'https://openalex.org/W2008193883'
+                    - 'https://openalex.org/W2010526455'
+                    - 'https://openalex.org/W2023162769'
+                    - 'https://openalex.org/W2028384357'
+                    - 'https://openalex.org/W2031284965'
+                    - 'https://openalex.org/W2033276871'
+                    - 'https://openalex.org/W2040036684'
+                    - 'https://openalex.org/W2040598998'
+                    - 'https://openalex.org/W2040870580'
+                    - 'https://openalex.org/W2041336675'
+                    - 'https://openalex.org/W2043106712'
+                    - 'https://openalex.org/W2047057213'
+                    - 'https://openalex.org/W2059100041'
+                    - 'https://openalex.org/W2059569317'
+                    - 'https://openalex.org/W2060277733'
+                    - 'https://openalex.org/W2064675550'
+                    - 'https://openalex.org/W2067840211'
+                    - 'https://openalex.org/W2070811448'
+                    - 'https://openalex.org/W2071432748'
+                    - 'https://openalex.org/W2073667556'
+                    - 'https://openalex.org/W2073840350'
+                    - 'https://openalex.org/W2076063813'
+                    - 'https://openalex.org/W2085679424'
+                    - 'https://openalex.org/W2087058693'
+                    - 'https://openalex.org/W2092387347'
+                    - 'https://openalex.org/W2093397813'
+                    - 'https://openalex.org/W2094192576'
+                    - 'https://openalex.org/W2096698697'
+                    - 'https://openalex.org/W2096707172'
+                    - 'https://openalex.org/W2101926813'
+                    - 'https://openalex.org/W2102109487'
+                    - 'https://openalex.org/W2103212315'
+                    - 'https://openalex.org/W2104622689'
+                    - 'https://openalex.org/W2108598243'
+                    - 'https://openalex.org/W2110485445'
+                    - 'https://openalex.org/W2111534506'
+                    - 'https://openalex.org/W2112707476'
+                    - 'https://openalex.org/W2114977008'
+                    - 'https://openalex.org/W2115441154'
+                    - 'https://openalex.org/W2117726420'
+                    - 'https://openalex.org/W2118373646'
+                    - 'https://openalex.org/W2118688707'
+                    - 'https://openalex.org/W2120079537'
+                    - 'https://openalex.org/W2125930537'
+                    - 'https://openalex.org/W2126160338'
+                    - 'https://openalex.org/W2126316555'
+                    - 'https://openalex.org/W2126634239'
+                    - 'https://openalex.org/W2128084896'
+                    - 'https://openalex.org/W2128493489'
+                    - 'https://openalex.org/W2129386380'
+                    - 'https://openalex.org/W2129789527'
+                    - 'https://openalex.org/W2130156168'
+                    - 'https://openalex.org/W2131600418'
+                    - 'https://openalex.org/W2133564696'
+                    - 'https://openalex.org/W2136518234'
+                    - 'https://openalex.org/W2136922672'
+                    - 'https://openalex.org/W2141399712'
+                    - 'https://openalex.org/W2144225695'
+                    - 'https://openalex.org/W2144982973'
+                    - 'https://openalex.org/W2145339207'
+                    - 'https://openalex.org/W2145482038'
+                    - 'https://openalex.org/W2147101007'
+                    - 'https://openalex.org/W2147800946'
+                    - 'https://openalex.org/W2149194912'
+                    - 'https://openalex.org/W2153633111'
+                    - 'https://openalex.org/W2156761163'
+                    - 'https://openalex.org/W2158068330'
+                    - 'https://openalex.org/W2159210250'
+                    - 'https://openalex.org/W2163176541'
+                    - 'https://openalex.org/W2163605009'
+                    - 'https://openalex.org/W2166620359'
+                    - 'https://openalex.org/W2167362547'
+                    - 'https://openalex.org/W2184218725'
+                    - 'https://openalex.org/W2194321275'
+                    - 'https://openalex.org/W2201581102'
+                    - 'https://openalex.org/W2201923684'
+                    - 'https://openalex.org/W22297218'
+                    - 'https://openalex.org/W2257979135'
+                    - 'https://openalex.org/W2274405424'
+                    - 'https://openalex.org/W2284856356'
+                    - 'https://openalex.org/W2286279415'
+                    - 'https://openalex.org/W2295763703'
+                    - 'https://openalex.org/W2314470091'
+                    - 'https://openalex.org/W2327562811'
+                    - 'https://openalex.org/W2328078142'
+                    - 'https://openalex.org/W2330569896'
+                    - 'https://openalex.org/W2346736747'
+                    - 'https://openalex.org/W2399033357'
+                    - 'https://openalex.org/W2400568150'
+                    - 'https://openalex.org/W2412748630'
+                    - 'https://openalex.org/W2418098761'
+                    - 'https://openalex.org/W2418421170'
+                    - 'https://openalex.org/W2424347275'
+                    - 'https://openalex.org/W2424498330'
+                    - 'https://openalex.org/W2426211887'
+                    - 'https://openalex.org/W2426267443'
+                    - 'https://openalex.org/W2432717477'
+                    - 'https://openalex.org/W2434898965'
+                    - 'https://openalex.org/W2436711315'
+                    - 'https://openalex.org/W2439880944'
+                    - 'https://openalex.org/W2469266052'
+                    - 'https://openalex.org/W2507387536'
+                    - 'https://openalex.org/W2519108306'
+                    - 'https://openalex.org/W2525778437'
+                    - 'https://openalex.org/W2530372461'
+                    - 'https://openalex.org/W2530887700'
+                    - 'https://openalex.org/W2550182557'
+                    - 'https://openalex.org/W2552737632'
+                    - 'https://openalex.org/W2553347458'
+                    - 'https://openalex.org/W2560647685'
+                    - 'https://openalex.org/W2574978968'
+                    - 'https://openalex.org/W2578206533'
+                    - 'https://openalex.org/W2586907386'
+                    - 'https://openalex.org/W2588768352'
+                    - 'https://openalex.org/W2604086949'
+                    - 'https://openalex.org/W2606047872'
+                    - 'https://openalex.org/W2613603362'
+                    - 'https://openalex.org/W2694144765'
+                    - 'https://openalex.org/W2766736793'
+                    - 'https://openalex.org/W2787259794'
+                    - 'https://openalex.org/W2912225506'
+                    - 'https://openalex.org/W2914656440'
+                    - 'https://openalex.org/W2919115771'
+                    - 'https://openalex.org/W2949163329'
+                    - 'https://openalex.org/W2949247522'
+                    - 'https://openalex.org/W2949382160'
+                    - 'https://openalex.org/W2949405272'
+                    - 'https://openalex.org/W2949441595'
+                    - 'https://openalex.org/W2949624955'
+                    - 'https://openalex.org/W2950178297'
+                    - 'https://openalex.org/W2950527759'
+                    - 'https://openalex.org/W2950708852'
+                    - 'https://openalex.org/W2951008357'
+                    - 'https://openalex.org/W2951065015'
+                    - 'https://openalex.org/W2951107471'
+                    - 'https://openalex.org/W2951527505'
+                    - 'https://openalex.org/W2952115723'
+                    - 'https://openalex.org/W2952629144'
+                    - 'https://openalex.org/W2952915411'
+                    - 'https://openalex.org/W2962851944'
+                    - 'https://openalex.org/W2963907629'
+                    - 'https://openalex.org/W2964036520'
+                    - 'https://openalex.org/W3037881859'
+                    - 'https://openalex.org/W3121926921'
+                    - 'https://openalex.org/W4251009746'
+                    - 'https://openalex.org/W4251731575'
+                    - 'https://openalex.org/W4301630257'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4386782110'
+                    - 'https://openalex.org/W4383560353'
+                    - 'https://openalex.org/W4378831103'
+                    - 'https://openalex.org/W2978368159'
+                    - 'https://openalex.org/W2958964573'
+                    - 'https://openalex.org/W1988997331'
+                    - 'https://openalex.org/W1940423692'
+                    - 'https://openalex.org/W1779974355'
+                    - 'https://openalex.org/W1593495836'
+                    - 'https://openalex.org/W1533907798'
+    'The hippocampus and memory: insights from spatial processing': &ref_4
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1038/nrn2335'
+                title: 'The hippocampus and memory: insights from spatial processing'
+                abstract: null
+                concepts:
+                    - memory and neural mechanisms
+                    - neuroscience and neuropharmacology research
+                    - neuroinflammation and neurodegeneration mechanisms
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - neurology
+                    - hippocampus
+                    - episodic memory
+                    - neuroscience
+                    - hippocampal formation
+                    - spatial memory
+                    - cognitive science
+                    - psychology
+                    - cognitive psychology
+                    - computer science
+                    - cognition
+                    - working memory
+                year: 2008
+                authorNames:
+                    - Chris M. Bird
+                    - Neil Burgess
+                link: 'https://doi.org/10.1038/nrn2335'
+                pdfLink: null
+                citationCount: 961
+                citedAlexIds:
+                    - 'https://openalex.org/W1480844456'
+                    - 'https://openalex.org/W1503404806'
+                    - 'https://openalex.org/W1508276986'
+                    - 'https://openalex.org/W1516636262'
+                    - 'https://openalex.org/W1543878663'
+                    - 'https://openalex.org/W1580700358'
+                    - 'https://openalex.org/W1598800837'
+                    - 'https://openalex.org/W1619178479'
+                    - 'https://openalex.org/W1655416104'
+                    - 'https://openalex.org/W1720866381'
+                    - 'https://openalex.org/W1737672083'
+                    - 'https://openalex.org/W1840705577'
+                    - 'https://openalex.org/W1883094066'
+                    - 'https://openalex.org/W1896376703'
+                    - 'https://openalex.org/W1966711088'
+                    - 'https://openalex.org/W1967634682'
+                    - 'https://openalex.org/W1969735301'
+                    - 'https://openalex.org/W1969972069'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W1970929159'
+                    - 'https://openalex.org/W1971765679'
+                    - 'https://openalex.org/W1973728925'
+                    - 'https://openalex.org/W1974581725'
+                    - 'https://openalex.org/W1975898250'
+                    - 'https://openalex.org/W1976921223'
+                    - 'https://openalex.org/W1978749275'
+                    - 'https://openalex.org/W1980759147'
+                    - 'https://openalex.org/W1982298223'
+                    - 'https://openalex.org/W1983044979'
+                    - 'https://openalex.org/W1984407673'
+                    - 'https://openalex.org/W1985056536'
+                    - 'https://openalex.org/W1988751593'
+                    - 'https://openalex.org/W1993281814'
+                    - 'https://openalex.org/W1993521400'
+                    - 'https://openalex.org/W1995681526'
+                    - 'https://openalex.org/W1998962623'
+                    - 'https://openalex.org/W2001788447'
+                    - 'https://openalex.org/W2004005178'
+                    - 'https://openalex.org/W2006021801'
+                    - 'https://openalex.org/W2006484759'
+                    - 'https://openalex.org/W2006603160'
+                    - 'https://openalex.org/W2012235010'
+                    - 'https://openalex.org/W2016943722'
+                    - 'https://openalex.org/W2018302286'
+                    - 'https://openalex.org/W2018376701'
+                    - 'https://openalex.org/W2022232361'
+                    - 'https://openalex.org/W2022856253'
+                    - 'https://openalex.org/W2024096332'
+                    - 'https://openalex.org/W2028727099'
+                    - 'https://openalex.org/W2030396712'
+                    - 'https://openalex.org/W2031694597'
+                    - 'https://openalex.org/W2032446828'
+                    - 'https://openalex.org/W2032563801'
+                    - 'https://openalex.org/W2032724628'
+                    - 'https://openalex.org/W2036773579'
+                    - 'https://openalex.org/W2037623544'
+                    - 'https://openalex.org/W2041374893'
+                    - 'https://openalex.org/W2047057213'
+                    - 'https://openalex.org/W2048130805'
+                    - 'https://openalex.org/W2048205984'
+                    - 'https://openalex.org/W2050379054'
+                    - 'https://openalex.org/W2052154927'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2061922686'
+                    - 'https://openalex.org/W2062867249'
+                    - 'https://openalex.org/W2064864838'
+                    - 'https://openalex.org/W2065120830'
+                    - 'https://openalex.org/W2067761057'
+                    - 'https://openalex.org/W2069329569'
+                    - 'https://openalex.org/W2069566702'
+                    - 'https://openalex.org/W2073055671'
+                    - 'https://openalex.org/W2073840350'
+                    - 'https://openalex.org/W2074706635'
+                    - 'https://openalex.org/W2078047435'
+                    - 'https://openalex.org/W2079082269'
+                    - 'https://openalex.org/W2079390801'
+                    - 'https://openalex.org/W2082149624'
+                    - 'https://openalex.org/W2083504765'
+                    - 'https://openalex.org/W2084177189'
+                    - 'https://openalex.org/W2084629122'
+                    - 'https://openalex.org/W2085894775'
+                    - 'https://openalex.org/W2087064277'
+                    - 'https://openalex.org/W2088127707'
+                    - 'https://openalex.org/W2088382964'
+                    - 'https://openalex.org/W2088963917'
+                    - 'https://openalex.org/W2095902410'
+                    - 'https://openalex.org/W2097723313'
+                    - 'https://openalex.org/W2098712419'
+                    - 'https://openalex.org/W2099538204'
+                    - 'https://openalex.org/W2099630522'
+                    - 'https://openalex.org/W2100377190'
+                    - 'https://openalex.org/W2100491115'
+                    - 'https://openalex.org/W2101295242'
+                    - 'https://openalex.org/W2103352646'
+                    - 'https://openalex.org/W2103692957'
+                    - 'https://openalex.org/W2104939199'
+                    - 'https://openalex.org/W2105173605'
+                    - 'https://openalex.org/W2106164503'
+                    - 'https://openalex.org/W2109502784'
+                    - 'https://openalex.org/W2109558135'
+                    - 'https://openalex.org/W2109764924'
+                    - 'https://openalex.org/W2113273079'
+                    - 'https://openalex.org/W2114786345'
+                    - 'https://openalex.org/W2116524658'
+                    - 'https://openalex.org/W2117513851'
+                    - 'https://openalex.org/W2119051448'
+                    - 'https://openalex.org/W2119835435'
+                    - 'https://openalex.org/W2121338043'
+                    - 'https://openalex.org/W2121653348'
+                    - 'https://openalex.org/W2123341385'
+                    - 'https://openalex.org/W2127963272'
+                    - 'https://openalex.org/W2129358136'
+                    - 'https://openalex.org/W2129789527'
+                    - 'https://openalex.org/W2132687414'
+                    - 'https://openalex.org/W2133710058'
+                    - 'https://openalex.org/W2134170969'
+                    - 'https://openalex.org/W2139131080'
+                    - 'https://openalex.org/W2142437226'
+                    - 'https://openalex.org/W2144225695'
+                    - 'https://openalex.org/W2144853937'
+                    - 'https://openalex.org/W2145405131'
+                    - 'https://openalex.org/W2145409044'
+                    - 'https://openalex.org/W2146008820'
+                    - 'https://openalex.org/W2146367411'
+                    - 'https://openalex.org/W2149233763'
+                    - 'https://openalex.org/W2149437240'
+                    - 'https://openalex.org/W2152220402'
+                    - 'https://openalex.org/W2153353690'
+                    - 'https://openalex.org/W2154384688'
+                    - 'https://openalex.org/W2154521931'
+                    - 'https://openalex.org/W2155318807'
+                    - 'https://openalex.org/W2155547196'
+                    - 'https://openalex.org/W2156229706'
+                    - 'https://openalex.org/W2158506047'
+                    - 'https://openalex.org/W2160623437'
+                    - 'https://openalex.org/W2166720769'
+                    - 'https://openalex.org/W2169771266'
+                    - 'https://openalex.org/W2170972933'
+                    - 'https://openalex.org/W2410446460'
+                    - 'https://openalex.org/W2798794376'
+                    - 'https://openalex.org/W4238424379'
+                    - 'https://openalex.org/W4246868999'
+                    - 'https://openalex.org/W4249505947'
+                    - 'https://openalex.org/W4250877397'
+                    - 'https://openalex.org/W644076287'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4385683675'
+                    - 'https://openalex.org/W4310945375'
+                    - 'https://openalex.org/W4289525035'
+                    - 'https://openalex.org/W2391750868'
+                    - 'https://openalex.org/W2090370544'
+                    - 'https://openalex.org/W2068251402'
+                    - 'https://openalex.org/W2061706623'
+                    - 'https://openalex.org/W2011290724'
+                    - 'https://openalex.org/W17166845'
+                    - 'https://openalex.org/W1681464763'
+    'The proactive brain: using analogies and associations to generate predictions': &ref_5
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1016/j.tics.2007.05.005'
+                title: 'The proactive brain: using analogies and associations to generate predictions'
+                abstract: null
+                concepts:
+                    - action observation and synchronization
+                    - embodied and extended cognition
+                    - child and animal learning development
+                    - social psychology
+                    - cognitive neuroscience
+                    - developmental and educational psychology
+                    - psychology
+                    - cognitive science
+                    - cognitive psychology
+                    - neuroscience
+                year: 2007
+                authorNames:
+                    - Moshe Bar
+                link: 'https://doi.org/10.1016/j.tics.2007.05.005'
+                pdfLink: null
+                citationCount: 861
+                citedAlexIds:
+                    - 'https://openalex.org/W1504499192'
+                    - 'https://openalex.org/W1566135517'
+                    - 'https://openalex.org/W1583309920'
+                    - 'https://openalex.org/W1591720146'
+                    - 'https://openalex.org/W1639252749'
+                    - 'https://openalex.org/W167244583'
+                    - 'https://openalex.org/W1968372229'
+                    - 'https://openalex.org/W1970185999'
+                    - 'https://openalex.org/W1982562790'
+                    - 'https://openalex.org/W1984651059'
+                    - 'https://openalex.org/W1986209830'
+                    - 'https://openalex.org/W1986787497'
+                    - 'https://openalex.org/W1991362484'
+                    - 'https://openalex.org/W2002081439'
+                    - 'https://openalex.org/W2005391856'
+                    - 'https://openalex.org/W2009016507'
+                    - 'https://openalex.org/W2009120241'
+                    - 'https://openalex.org/W2014405071'
+                    - 'https://openalex.org/W2020424391'
+                    - 'https://openalex.org/W2026041851'
+                    - 'https://openalex.org/W2027264797'
+                    - 'https://openalex.org/W2031322127'
+                    - 'https://openalex.org/W2032723973'
+                    - 'https://openalex.org/W2036167211'
+                    - 'https://openalex.org/W2038346953'
+                    - 'https://openalex.org/W2046779660'
+                    - 'https://openalex.org/W2052419000'
+                    - 'https://openalex.org/W2064029491'
+                    - 'https://openalex.org/W2067393309'
+                    - 'https://openalex.org/W2077611535'
+                    - 'https://openalex.org/W2086045526'
+                    - 'https://openalex.org/W2089884446'
+                    - 'https://openalex.org/W2094385401'
+                    - 'https://openalex.org/W2098580305'
+                    - 'https://openalex.org/W2098699616'
+                    - 'https://openalex.org/W2099334376'
+                    - 'https://openalex.org/W2099679614'
+                    - 'https://openalex.org/W2099915326'
+                    - 'https://openalex.org/W2102022426'
+                    - 'https://openalex.org/W2109209832'
+                    - 'https://openalex.org/W2109884388'
+                    - 'https://openalex.org/W2112913959'
+                    - 'https://openalex.org/W2113466552'
+                    - 'https://openalex.org/W2114786345'
+                    - 'https://openalex.org/W2115095583'
+                    - 'https://openalex.org/W2115381388'
+                    - 'https://openalex.org/W2118895150'
+                    - 'https://openalex.org/W2119885245'
+                    - 'https://openalex.org/W2122249653'
+                    - 'https://openalex.org/W2127629438'
+                    - 'https://openalex.org/W2127958135'
+                    - 'https://openalex.org/W2129849327'
+                    - 'https://openalex.org/W2130987742'
+                    - 'https://openalex.org/W2131045394'
+                    - 'https://openalex.org/W2131153050'
+                    - 'https://openalex.org/W2131352719'
+                    - 'https://openalex.org/W2131416538'
+                    - 'https://openalex.org/W2132003317'
+                    - 'https://openalex.org/W2134170969'
+                    - 'https://openalex.org/W2134927309'
+                    - 'https://openalex.org/W2139853076'
+                    - 'https://openalex.org/W2147513688'
+                    - 'https://openalex.org/W2148398483'
+                    - 'https://openalex.org/W2151428784'
+                    - 'https://openalex.org/W2152738667'
+                    - 'https://openalex.org/W2153079047'
+                    - 'https://openalex.org/W2153109382'
+                    - 'https://openalex.org/W2158211182'
+                    - 'https://openalex.org/W2159318475'
+                    - 'https://openalex.org/W2162010696'
+                    - 'https://openalex.org/W2165800163'
+                    - 'https://openalex.org/W2166693783'
+                    - 'https://openalex.org/W2169269081'
+                    - 'https://openalex.org/W2171775221'
+                    - 'https://openalex.org/W2175268987'
+                    - 'https://openalex.org/W2287077337'
+                    - 'https://openalex.org/W2798445359'
+                    - 'https://openalex.org/W3088842588'
+                    - 'https://openalex.org/W4231299465'
+                    - 'https://openalex.org/W4237434670'
+                    - 'https://openalex.org/W4244342249'
+                    - 'https://openalex.org/W4255025828'
+                relatedAlexIds:
+                    - 'https://openalex.org/W2931662336'
+                    - 'https://openalex.org/W2769102919'
+                    - 'https://openalex.org/W2765597752'
+                    - 'https://openalex.org/W2748952813'
+                    - 'https://openalex.org/W2134894512'
+                    - 'https://openalex.org/W2085372204'
+                    - 'https://openalex.org/W2083375246'
+                    - 'https://openalex.org/W2077865380'
+                    - 'https://openalex.org/W2067108088'
+                    - 'https://openalex.org/W2053487507'
+    Exploring the impact of artificial intelligence on teaching and learning in higher education: &ref_6
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1186/s41039-017-0062-8'
+                title: Exploring the impact of artificial intelligence on teaching and learning in higher education
+                abstract: null
+                concepts:
+                    - online learning and analytics
+                    - computer science applications
+                    - emerging technologies
+                    - higher education
+                    - educational technology
+                    - order (exchange)
+                    - mathematics education
+                    - computer science
+                    - knowledge management
+                    - engineering ethics
+                    - psychology
+                    - artificial intelligence
+                    - engineering
+                    - political science
+                    - business
+                    - finance
+                    - law
+                year: 2017
+                authorNames:
+                    - Ştefan Popenici
+                    - Sharon Kerr
+                link: 'https://doi.org/10.1186/s41039-017-0062-8'
+                pdfLink: 'https://telrp.springeropen.com/track/pdf/10.1186/s41039-017-0062-8'
+                citationCount: 923
+                citedAlexIds:
+                    - 'https://openalex.org/W1003239748'
+                    - 'https://openalex.org/W138176140'
+                    - 'https://openalex.org/W1907319447'
+                    - 'https://openalex.org/W2008126434'
+                    - 'https://openalex.org/W202799293'
+                    - 'https://openalex.org/W2120323688'
+                    - 'https://openalex.org/W2122410182'
+                    - 'https://openalex.org/W2132876794'
+                    - 'https://openalex.org/W2146798017'
+                    - 'https://openalex.org/W2165044314'
+                    - 'https://openalex.org/W2198804821'
+                    - 'https://openalex.org/W2202477112'
+                    - 'https://openalex.org/W2469088836'
+                    - 'https://openalex.org/W2479896915'
+                    - 'https://openalex.org/W2480159269'
+                    - 'https://openalex.org/W2480645629'
+                    - 'https://openalex.org/W2481175116'
+                    - 'https://openalex.org/W2506282302'
+                    - 'https://openalex.org/W2568477524'
+                    - 'https://openalex.org/W2589759783'
+                    - 'https://openalex.org/W2728330217'
+                    - 'https://openalex.org/W2900153312'
+                    - 'https://openalex.org/W2908761755'
+                    - 'https://openalex.org/W2971763496'
+                    - 'https://openalex.org/W3021909058'
+                    - 'https://openalex.org/W3157172840'
+                    - 'https://openalex.org/W565930629'
+                    - 'https://openalex.org/W770058630'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4242487945'
+                    - 'https://openalex.org/W3187932560'
+                    - 'https://openalex.org/W2937627726'
+                    - 'https://openalex.org/W2888684455'
+                    - 'https://openalex.org/W2607489503'
+                    - 'https://openalex.org/W2071405093'
+                    - 'https://openalex.org/W2070954791'
+                    - 'https://openalex.org/W2064041898'
+                    - 'https://openalex.org/W1993144966'
+                    - 'https://openalex.org/W1540979460'
+    Stalking the elusive "vividness" effect.: &ref_7
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1037/0033-295x.89.2.155'
+                title: Stalking the elusive "vividness" effect.
+                abstract: null
+                concepts:
+                    - decision-making and behavioral economics
+                    - psychology of social influence
+                    - media influence and health
+                    - general decision sciences
+                    - sociology and political science
+                    - literature and literary theory
+                    - stalking
+                    - psychology
+                    - cognitive psychology
+                    - criminology
+                year: 1982
+                authorNames:
+                    - Shelley E. Taylor
+                    - Suzanne C. Thompson
+                link: 'https://doi.org/10.1037/0033-295x.89.2.155'
+                pdfLink: null
+                citationCount: 420
+                citedAlexIds:
+                    - 'https://openalex.org/W1491771820'
+                    - 'https://openalex.org/W1539307042'
+                    - 'https://openalex.org/W1547208614'
+                    - 'https://openalex.org/W1555806226'
+                    - 'https://openalex.org/W158727920'
+                    - 'https://openalex.org/W1597581526'
+                    - 'https://openalex.org/W1673801049'
+                    - 'https://openalex.org/W1964671529'
+                    - 'https://openalex.org/W1965010987'
+                    - 'https://openalex.org/W1966415976'
+                    - 'https://openalex.org/W1970838020'
+                    - 'https://openalex.org/W1977577119'
+                    - 'https://openalex.org/W1979200294'
+                    - 'https://openalex.org/W1979368930'
+                    - 'https://openalex.org/W1982024342'
+                    - 'https://openalex.org/W1987703825'
+                    - 'https://openalex.org/W1987930784'
+                    - 'https://openalex.org/W1989227334'
+                    - 'https://openalex.org/W1989453145'
+                    - 'https://openalex.org/W1999347136'
+                    - 'https://openalex.org/W2000885538'
+                    - 'https://openalex.org/W2002617436'
+                    - 'https://openalex.org/W2005852998'
+                    - 'https://openalex.org/W2006546769'
+                    - 'https://openalex.org/W2006596739'
+                    - 'https://openalex.org/W2016856220'
+                    - 'https://openalex.org/W2018507865'
+                    - 'https://openalex.org/W2019921558'
+                    - 'https://openalex.org/W2021389006'
+                    - 'https://openalex.org/W2023232169'
+                    - 'https://openalex.org/W2025253330'
+                    - 'https://openalex.org/W2026737422'
+                    - 'https://openalex.org/W2027108131'
+                    - 'https://openalex.org/W2031944965'
+                    - 'https://openalex.org/W2035131384'
+                    - 'https://openalex.org/W2035235203'
+                    - 'https://openalex.org/W2035472222'
+                    - 'https://openalex.org/W2035782089'
+                    - 'https://openalex.org/W2042276900'
+                    - 'https://openalex.org/W2046220915'
+                    - 'https://openalex.org/W2054069419'
+                    - 'https://openalex.org/W2055638258'
+                    - 'https://openalex.org/W2057188882'
+                    - 'https://openalex.org/W2059368466'
+                    - 'https://openalex.org/W2065957735'
+                    - 'https://openalex.org/W2066057850'
+                    - 'https://openalex.org/W2067669929'
+                    - 'https://openalex.org/W2074395913'
+                    - 'https://openalex.org/W2075832312'
+                    - 'https://openalex.org/W2078168357'
+                    - 'https://openalex.org/W2080143245'
+                    - 'https://openalex.org/W2083635292'
+                    - 'https://openalex.org/W2084956852'
+                    - 'https://openalex.org/W2088227622'
+                    - 'https://openalex.org/W2088455876'
+                    - 'https://openalex.org/W2089151524'
+                    - 'https://openalex.org/W2091329716'
+                    - 'https://openalex.org/W2098181550'
+                    - 'https://openalex.org/W2116573651'
+                    - 'https://openalex.org/W2117808319'
+                    - 'https://openalex.org/W2130005959'
+                    - 'https://openalex.org/W2132357473'
+                    - 'https://openalex.org/W2137324586'
+                    - 'https://openalex.org/W2143291771'
+                    - 'https://openalex.org/W2157989419'
+                    - 'https://openalex.org/W2158368891'
+                    - 'https://openalex.org/W2161264813'
+                    - 'https://openalex.org/W2163129881'
+                    - 'https://openalex.org/W2163451579'
+                    - 'https://openalex.org/W2168158137'
+                    - 'https://openalex.org/W2180342593'
+                    - 'https://openalex.org/W2216843799'
+                    - 'https://openalex.org/W2314282904'
+                    - 'https://openalex.org/W2319859818'
+                    - 'https://openalex.org/W2320276202'
+                    - 'https://openalex.org/W599495262'
+                    - 'https://openalex.org/W950060475'
+                    - 'https://openalex.org/W983370272'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4379033749'
+                    - 'https://openalex.org/W4323974954'
+                    - 'https://openalex.org/W4321096723'
+                    - 'https://openalex.org/W4248690040'
+                    - 'https://openalex.org/W4234750539'
+                    - 'https://openalex.org/W2748952813'
+                    - 'https://openalex.org/W2508746186'
+                    - 'https://openalex.org/W2097005545'
+                    - 'https://openalex.org/W2030131999'
+                    - 'https://openalex.org/W1783590445'
+    A Bayesian account of 'hysteria': &ref_8
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1093/brain/aws129'
+                title: A Bayesian account of 'hysteria'
+                abstract: null
+                concepts:
+                    - psychosomatic disorders and their treatments
+                    - mental health and psychiatry
+                    - neurology and historical studies
+                    - psychiatry and mental health
+                    - philosophy
+                    - neurology
+                    - percept
+                    - medically unexplained symptoms
+                    - neurological disorders
+                    - psychology
+                    - inference
+                    - cognitive psychology
+                    - sensory system
+                    - cognition
+                    - bayesian inference
+                    - perception
+                    - attribution
+                    - embodied cognition
+                    - causal inference
+                    - neuroscience
+                    - bayesian probability
+                    - social psychology
+                    - computer science
+                    - artificial intelligence
+                    - medicine
+                    - pathology
+                year: 2012
+                authorNames:
+                    - Mark J. Edwards
+                    - Rick A. Adams
+                    - Harriet R. Brown
+                    - Isabel Pareés
+                    - Karl J. Friston
+                link: 'https://doi.org/10.1093/brain/aws129'
+                pdfLink: 'https://academic.oup.com/brain/article-pdf/135/11/3495/754693/aws129.pdf'
+                citationCount: 651
+                citedAlexIds:
+                    - 'https://openalex.org/W1504499192'
+                    - 'https://openalex.org/W1511223926'
+                    - 'https://openalex.org/W1530985111'
+                    - 'https://openalex.org/W1568288778'
+                    - 'https://openalex.org/W1590049883'
+                    - 'https://openalex.org/W1592305992'
+                    - 'https://openalex.org/W1594772576'
+                    - 'https://openalex.org/W1641311894'
+                    - 'https://openalex.org/W1922825104'
+                    - 'https://openalex.org/W1963591396'
+                    - 'https://openalex.org/W1965258567'
+                    - 'https://openalex.org/W1966773376'
+                    - 'https://openalex.org/W1968465678'
+                    - 'https://openalex.org/W1971712503'
+                    - 'https://openalex.org/W1977924239'
+                    - 'https://openalex.org/W1984450594'
+                    - 'https://openalex.org/W1985841309'
+                    - 'https://openalex.org/W1986934952'
+                    - 'https://openalex.org/W1991362484'
+                    - 'https://openalex.org/W1991687015'
+                    - 'https://openalex.org/W1991771434'
+                    - 'https://openalex.org/W1995994726'
+                    - 'https://openalex.org/W1996612256'
+                    - 'https://openalex.org/W1998451692'
+                    - 'https://openalex.org/W2001119614'
+                    - 'https://openalex.org/W2002253472'
+                    - 'https://openalex.org/W2004213638'
+                    - 'https://openalex.org/W2004948712'
+                    - 'https://openalex.org/W2006895661'
+                    - 'https://openalex.org/W2009372896'
+                    - 'https://openalex.org/W2010039000'
+                    - 'https://openalex.org/W2011459890'
+                    - 'https://openalex.org/W2012176677'
+                    - 'https://openalex.org/W2018618764'
+                    - 'https://openalex.org/W2018699045'
+                    - 'https://openalex.org/W2020320000'
+                    - 'https://openalex.org/W2021384751'
+                    - 'https://openalex.org/W2021922951'
+                    - 'https://openalex.org/W2029825960'
+                    - 'https://openalex.org/W2029844654'
+                    - 'https://openalex.org/W2031405962'
+                    - 'https://openalex.org/W2035510594'
+                    - 'https://openalex.org/W2035560864'
+                    - 'https://openalex.org/W2040649258'
+                    - 'https://openalex.org/W2043074725'
+                    - 'https://openalex.org/W2046590632'
+                    - 'https://openalex.org/W2049306666'
+                    - 'https://openalex.org/W2050857794'
+                    - 'https://openalex.org/W2056168842'
+                    - 'https://openalex.org/W2056356589'
+                    - 'https://openalex.org/W2057507123'
+                    - 'https://openalex.org/W2057521973'
+                    - 'https://openalex.org/W2061637033'
+                    - 'https://openalex.org/W2062997574'
+                    - 'https://openalex.org/W2068437287'
+                    - 'https://openalex.org/W2069109519'
+                    - 'https://openalex.org/W2074054991'
+                    - 'https://openalex.org/W2075344157'
+                    - 'https://openalex.org/W2078732813'
+                    - 'https://openalex.org/W2081299070'
+                    - 'https://openalex.org/W2082888856'
+                    - 'https://openalex.org/W2083320503'
+                    - 'https://openalex.org/W2085989895'
+                    - 'https://openalex.org/W2086806649'
+                    - 'https://openalex.org/W2087068919'
+                    - 'https://openalex.org/W2088948720'
+                    - 'https://openalex.org/W2088966156'
+                    - 'https://openalex.org/W2092412673'
+                    - 'https://openalex.org/W2093417020'
+                    - 'https://openalex.org/W2093459270'
+                    - 'https://openalex.org/W2094141426'
+                    - 'https://openalex.org/W2096666421'
+                    - 'https://openalex.org/W2096962395'
+                    - 'https://openalex.org/W2098250334'
+                    - 'https://openalex.org/W2098580305'
+                    - 'https://openalex.org/W2101330236'
+                    - 'https://openalex.org/W2104049715'
+                    - 'https://openalex.org/W2104675992'
+                    - 'https://openalex.org/W2105518147'
+                    - 'https://openalex.org/W2108512314'
+                    - 'https://openalex.org/W2109292724'
+                    - 'https://openalex.org/W2114775081'
+                    - 'https://openalex.org/W2116519983'
+                    - 'https://openalex.org/W2119253897'
+                    - 'https://openalex.org/W2121164149'
+                    - 'https://openalex.org/W2121505345'
+                    - 'https://openalex.org/W2125906304'
+                    - 'https://openalex.org/W2126955565'
+                    - 'https://openalex.org/W2127958135'
+                    - 'https://openalex.org/W2129606376'
+                    - 'https://openalex.org/W2130195834'
+                    - 'https://openalex.org/W2132731877'
+                    - 'https://openalex.org/W2136412413'
+                    - 'https://openalex.org/W2138336681'
+                    - 'https://openalex.org/W2139096330'
+                    - 'https://openalex.org/W2140863829'
+                    - 'https://openalex.org/W2141175801'
+                    - 'https://openalex.org/W2142598369'
+                    - 'https://openalex.org/W2146187035'
+                    - 'https://openalex.org/W2147008239'
+                    - 'https://openalex.org/W2147013577'
+                    - 'https://openalex.org/W2151259821'
+                    - 'https://openalex.org/W2154663637'
+                    - 'https://openalex.org/W2157421035'
+                    - 'https://openalex.org/W2158462347'
+                    - 'https://openalex.org/W2158741274'
+                    - 'https://openalex.org/W2159543989'
+                    - 'https://openalex.org/W2169951193'
+                    - 'https://openalex.org/W2169973997'
+                    - 'https://openalex.org/W2170253837'
+                    - 'https://openalex.org/W2172187797'
+                    - 'https://openalex.org/W2219528871'
+                    - 'https://openalex.org/W2314966214'
+                    - 'https://openalex.org/W2410559424'
+                    - 'https://openalex.org/W2615531356'
+                    - 'https://openalex.org/W2751379301'
+                    - 'https://openalex.org/W3083113686'
+                    - 'https://openalex.org/W3197445846'
+                    - 'https://openalex.org/W4230900352'
+                    - 'https://openalex.org/W4233964674'
+                    - 'https://openalex.org/W4234176787'
+                    - 'https://openalex.org/W4243635291'
+                    - 'https://openalex.org/W4248391875'
+                    - 'https://openalex.org/W4250466374'
+                relatedAlexIds:
+                    - 'https://openalex.org/W783654334'
+                    - 'https://openalex.org/W3006928808'
+                    - 'https://openalex.org/W2380179524'
+                    - 'https://openalex.org/W2346090952'
+                    - 'https://openalex.org/W2328454535'
+                    - 'https://openalex.org/W2192888808'
+                    - 'https://openalex.org/W2113439187'
+                    - 'https://openalex.org/W2067901665'
+                    - 'https://openalex.org/W1985601989'
+                    - 'https://openalex.org/W1978337133'
+    'The cognitive neuroscience of constructive memory: remembering the past and imagining the future': &ref_9
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-13T22:15:14.131Z'
+                query: affordance based encoder imagination prediction
+                searchEngine: openAlex
+            events:
+                added: '2024-12-13T22:15:14.133Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref: {}
+            openAlex:
+                doi: 'https://doi.org/10.1098/rstb.2007.2087'
+                title: 'The cognitive neuroscience of constructive memory: remembering the past and imagining the future'
+                abstract: null
+                concepts:
+                    - memory and neural mechanisms
+                    - memory processes and influences
+                    - cognitive functions and memory
+                    - cognitive neuroscience
+                    - experimental and cognitive psychology
+                    - constructive
+                    - reconstructive memory
+                    - episodic memory
+                    - cognitive science
+                    - cognitive psychology
+                    - neuropsychology
+                    - cognition
+                    - neuroimaging
+                    - psychology
+                    - illusion
+                    - functional neuroimaging
+                    - process (computing)
+                    - neuroscience
+                    - computer science
+                    - explicit memory
+                    - operating system
+                year: 2007
+                authorNames:
+                    - Daniel L. Schacter
+                    - Donna Rose Addis
+                link: 'https://doi.org/10.1098/rstb.2007.2087'
+                pdfLink: 'https://europepmc.org/articles/pmc2429996?pdf=render'
+                citationCount: 1310
+                citedAlexIds:
+                    - 'https://openalex.org/W14662478'
+                    - 'https://openalex.org/W1482240718'
+                    - 'https://openalex.org/W1495254462'
+                    - 'https://openalex.org/W1519522181'
+                    - 'https://openalex.org/W1520377904'
+                    - 'https://openalex.org/W1534024588'
+                    - 'https://openalex.org/W1558731210'
+                    - 'https://openalex.org/W1590740539'
+                    - 'https://openalex.org/W1608694002'
+                    - 'https://openalex.org/W1766884834'
+                    - 'https://openalex.org/W1965151993'
+                    - 'https://openalex.org/W1965191725'
+                    - 'https://openalex.org/W1965929030'
+                    - 'https://openalex.org/W1966326035'
+                    - 'https://openalex.org/W1968435558'
+                    - 'https://openalex.org/W1971765679'
+                    - 'https://openalex.org/W1975614740'
+                    - 'https://openalex.org/W1977354344'
+                    - 'https://openalex.org/W1982382805'
+                    - 'https://openalex.org/W1982713570'
+                    - 'https://openalex.org/W1983533969'
+                    - 'https://openalex.org/W1984421321'
+                    - 'https://openalex.org/W1988041663'
+                    - 'https://openalex.org/W1991447582'
+                    - 'https://openalex.org/W1994566358'
+                    - 'https://openalex.org/W2000626574'
+                    - 'https://openalex.org/W2000944130'
+                    - 'https://openalex.org/W2002992607'
+                    - 'https://openalex.org/W2004005178'
+                    - 'https://openalex.org/W2004068703'
+                    - 'https://openalex.org/W2004857428'
+                    - 'https://openalex.org/W2009332548'
+                    - 'https://openalex.org/W2010931158'
+                    - 'https://openalex.org/W2013284556'
+                    - 'https://openalex.org/W2021551576'
+                    - 'https://openalex.org/W2028306442'
+                    - 'https://openalex.org/W2030904014'
+                    - 'https://openalex.org/W2031721331'
+                    - 'https://openalex.org/W2037418422'
+                    - 'https://openalex.org/W2039114272'
+                    - 'https://openalex.org/W2040510271'
+                    - 'https://openalex.org/W2046071456'
+                    - 'https://openalex.org/W2047057213'
+                    - 'https://openalex.org/W2048004597'
+                    - 'https://openalex.org/W2054486203'
+                    - 'https://openalex.org/W2054734057'
+                    - 'https://openalex.org/W2056684605'
+                    - 'https://openalex.org/W2057227973'
+                    - 'https://openalex.org/W2057490938'
+                    - 'https://openalex.org/W2060958074'
+                    - 'https://openalex.org/W2068530826'
+                    - 'https://openalex.org/W2077395534'
+                    - 'https://openalex.org/W2078047435'
+                    - 'https://openalex.org/W2079405082'
+                    - 'https://openalex.org/W2084260707'
+                    - 'https://openalex.org/W2089315399'
+                    - 'https://openalex.org/W2089598890'
+                    - 'https://openalex.org/W2090413272'
+                    - 'https://openalex.org/W2095047429'
+                    - 'https://openalex.org/W2096890672'
+                    - 'https://openalex.org/W2097868335'
+                    - 'https://openalex.org/W2098699616'
+                    - 'https://openalex.org/W209928482'
+                    - 'https://openalex.org/W2099915326'
+                    - 'https://openalex.org/W2100081468'
+                    - 'https://openalex.org/W2100377190'
+                    - 'https://openalex.org/W2100640939'
+                    - 'https://openalex.org/W2102858622'
+                    - 'https://openalex.org/W2104128137'
+                    - 'https://openalex.org/W2104558964'
+                    - 'https://openalex.org/W2105350921'
+                    - 'https://openalex.org/W2107627409'
+                    - 'https://openalex.org/W2112981329'
+                    - 'https://openalex.org/W2114786345'
+                    - 'https://openalex.org/W2117207767'
+                    - 'https://openalex.org/W2119051448'
+                    - 'https://openalex.org/W2122910753'
+                    - 'https://openalex.org/W2123233961'
+                    - 'https://openalex.org/W2125891438'
+                    - 'https://openalex.org/W2126113523'
+                    - 'https://openalex.org/W2128121980'
+                    - 'https://openalex.org/W2129789527'
+                    - 'https://openalex.org/W2130410346'
+                    - 'https://openalex.org/W2130984701'
+                    - 'https://openalex.org/W2131864009'
+                    - 'https://openalex.org/W2132348440'
+                    - 'https://openalex.org/W2132374609'
+                    - 'https://openalex.org/W2132845259'
+                    - 'https://openalex.org/W2134170969'
+                    - 'https://openalex.org/W2138393229'
+                    - 'https://openalex.org/W2140355088'
+                    - 'https://openalex.org/W2140696527'
+                    - 'https://openalex.org/W2141180889'
+                    - 'https://openalex.org/W2143070840'
+                    - 'https://openalex.org/W2143153295'
+                    - 'https://openalex.org/W2144217930'
+                    - 'https://openalex.org/W2144225695'
+                    - 'https://openalex.org/W2146059294'
+                    - 'https://openalex.org/W2150418066'
+                    - 'https://openalex.org/W2151428784'
+                    - 'https://openalex.org/W2152643323'
+                    - 'https://openalex.org/W2158975100'
+                    - 'https://openalex.org/W2160338477'
+                    - 'https://openalex.org/W2163146688'
+                    - 'https://openalex.org/W2166245738'
+                    - 'https://openalex.org/W2166560424'
+                    - 'https://openalex.org/W2166654574'
+                    - 'https://openalex.org/W2168782888'
+                    - 'https://openalex.org/W2169944173'
+                    - 'https://openalex.org/W2170256757'
+                    - 'https://openalex.org/W2178637311'
+                    - 'https://openalex.org/W2407054226'
+                    - 'https://openalex.org/W2478443986'
+                    - 'https://openalex.org/W2502971911'
+                    - 'https://openalex.org/W2995502876'
+                    - 'https://openalex.org/W4229577680'
+                    - 'https://openalex.org/W4230957748'
+                    - 'https://openalex.org/W4233119913'
+                    - 'https://openalex.org/W4234477066'
+                    - 'https://openalex.org/W4234769365'
+                    - 'https://openalex.org/W4237348377'
+                    - 'https://openalex.org/W4247364158'
+                    - 'https://openalex.org/W4248841079'
+                    - 'https://openalex.org/W4249986166'
+                    - 'https://openalex.org/W4285719527'
+                    - 'https://openalex.org/W597766098'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4296086445'
+                    - 'https://openalex.org/W4253079298'
+                    - 'https://openalex.org/W4213205778'
+                    - 'https://openalex.org/W3203152986'
+                    - 'https://openalex.org/W2781947660'
+                    - 'https://openalex.org/W2604759967'
+                    - 'https://openalex.org/W254576933'
+                    - 'https://openalex.org/W2158002445'
+                    - 'https://openalex.org/W1706473'
+                    - 'https://openalex.org/W118817889'
 discoveryAttempts:
+    -
+        query: affordance based encoder imagination prediction
+        dateTime: '2024-12-13T22:15:13.790Z'
+        searchEngine: openAlex
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: 'Whatever next? Predictive brains, situated agents, and the future of cognitive science'
+                link: *ref_0
+            -
+                hadBeenSeenBefore: false
+                title: Disjuncture and Difference in the Global Cultural Economy
+                link: *ref_1
+            -
+                hadBeenSeenBefore: false
+                title: 'Principal warps: thin-plate splines and the decomposition of deformations'
+                link: *ref_2
+            -
+                hadBeenSeenBefore: false
+                title: Neuroscience-Inspired Artificial Intelligence
+                link: *ref_3
+            -
+                hadBeenSeenBefore: false
+                title: 'The hippocampus and memory: insights from spatial processing'
+                link: *ref_4
+            -
+                hadBeenSeenBefore: false
+                title: 'The proactive brain: using analogies and associations to generate predictions'
+                link: *ref_5
+            -
+                hadBeenSeenBefore: false
+                title: Exploring the impact of artificial intelligence on teaching and learning in higher education
+                link: *ref_6
+            -
+                hadBeenSeenBefore: false
+                title: Stalking the elusive "vividness" effect.
+                link: *ref_7
+            -
+                hadBeenSeenBefore: false
+                title: A Bayesian account of 'hysteria'
+                link: *ref_8
+            -
+                hadBeenSeenBefore: false
+                title: 'The cognitive neuroscience of constructive memory: remembering the past and imagining the future'
+                link: *ref_9
     -
         query: ' agent driven affect based perception machine learning -emotion'
         dateTime: '2024-12-13T20:06:54.724Z'
@@ -1170,43 +3081,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception'
-                link: *ref_0
+                link: *ref_10
             -
                 hadBeenSeenBefore: false
                 title: Multi-Agent Active Perception Based on Reinforcement Learning and POMDP
-                link: *ref_1
+                link: *ref_11
             -
                 hadBeenSeenBefore: false
                 title: Mutual influence between language and perception in multi-agent communication games
-                link: *ref_2
+                link: *ref_12
             -
                 hadBeenSeenBefore: false
                 title: 'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness'
-                link: *ref_3
+                link: *ref_13
             -
                 hadBeenSeenBefore: false
                 title: Why and how to study the impact of perception on language emergence in artificial agents
-                link: *ref_4
+                link: *ref_14
             -
                 hadBeenSeenBefore: false
                 title: Interaction Algorithm Effect on Human Experience with Reinforcement Learning
-                link: *ref_5
+                link: *ref_15
             -
                 hadBeenSeenBefore: false
                 title: 'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues'
-                link: *ref_6
+                link: *ref_16
             -
                 hadBeenSeenBefore: false
                 title: Research on autonomous driving decision-making strategies based deep reinforcement learning
-                link: *ref_7
+                link: *ref_17
             -
                 hadBeenSeenBefore: false
                 title: Finding and visualizing weaknesses of deep reinforcement learning agents
-                link: *ref_8
+                link: *ref_18
             -
                 hadBeenSeenBefore: false
                 title: Simulation-based reinforcement learning for real-world autonomous driving
-                link: *ref_9
+                link: *ref_19
     -
         query: affordance based encoder imagination prediction
         date: null
@@ -1216,40 +3127,40 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Visual Affordance Prediction for Guiding Robot Exploration
-                link: *ref_10
+                link: *ref_20
             -
                 hadBeenSeenBefore: false
                 title: 'RAIL: Robot Affordance Imagination with Large Language Models'
-                link: *ref_11
+                link: *ref_21
             -
                 hadBeenSeenBefore: false
                 title: Affordance-Based Goal Imagination for Embodied AI Agents
-                link: *ref_12
+                link: *ref_22
             -
                 hadBeenSeenBefore: false
                 title: Learning to Anticipate Egocentric Actions by Imagination
-                link: *ref_13
+                link: *ref_23
             -
                 hadBeenSeenBefore: false
                 title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
-                link: *ref_14
+                link: *ref_24
             -
                 hadBeenSeenBefore: false
                 title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
-                link: *ref_15
+                link: *ref_25
             -
                 hadBeenSeenBefore: false
                 title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
-                link: *ref_16
+                link: *ref_26
             -
                 hadBeenSeenBefore: false
                 title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
-                link: *ref_17
+                link: *ref_27
             -
                 hadBeenSeenBefore: false
                 title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
-                link: *ref_18
+                link: *ref_28
             -
                 hadBeenSeenBefore: false
                 title: Learning affordances in object-centric generative models
-                link: *ref_19
+                link: *ref_29
