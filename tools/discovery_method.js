@@ -1,4 +1,4 @@
-import DateTime from "https://deno.land/x/good@1.13.4.0/date.js"
+import DateTime from "https://deno.land/x/good@1.13.5.0/date.js"
 export class DiscoveryMethod {
     constructor({
         query,

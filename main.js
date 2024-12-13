@@ -1,21 +1,24 @@
-import { zip, enumerate, count, permute, combinations, wrapAroundGet } from "https://deno.land/x/good@1.13.4.0/array.js"
+import { zip, enumerate, count, permute, combinations, wrapAroundGet } from "https://deno.land/x/good@1.13.5.0/array.js"
 // import { FileSystem } from "https://deno.land/x/quickr@0.6.51/main/file_system.js"
 // import $ from "https://deno.land/x/dax@0.39.2/mod.ts"
-import { capitalize, indent, toCamelCase, digitsToEnglishArray, toPascalCase, toKebabCase, toSnakeCase, toRepresentation, toString, regex, findAll, iterativelyFindAll, escapeRegexMatch, escapeRegexReplace, extractFirst, isValidIdentifier, removeCommonPrefix, didYouMean } from "https://deno.land/x/good@1.13.4.0/string.js"
+import { capitalize, indent, toCamelCase, digitsToEnglishArray, toPascalCase, toKebabCase, toSnakeCase, toRepresentation, toString, regex, findAll, iterativelyFindAll, escapeRegexMatch, escapeRegexReplace, extractFirst, isValidIdentifier, removeCommonPrefix, didYouMean } from "https://deno.land/x/good@1.13.5.0/string.js"
 import { FileSystem, glob } from "https://deno.land/x/quickr@0.6.73/main/file_system.js"
 import { run, hasCommand, throwIfFails, zipInto, mergeInto, returnAsString, Timeout, Env, Cwd, Stdin, Stdout, Stderr, Out, Overwrite, AppendTo, } from "https://deno.land/x/quickr@0.6.73/main/run.js"
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
 import { OperatingSystem } from "https://deno.land/x/quickr@0.6.73/main/operating_system.js"
 import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
 import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@0.0.3.5/deno.js'
-import DateTime from "https://deno.land/x/good@1.13.4.0/date.js"
-import { parseArgs, flag, required, initialValue } from "https://deno.land/x/good@1.13.4.0/flattened/parse_args.js" 
+import DateTime from "https://deno.land/x/good@1.13.5.0/date.js"
+import { parseArgs, flag, required, initialValue } from "https://deno.land/x/good@1.13.5.0/flattened/parse_args.js" 
+import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranked_compare.js" 
 
 import { version } from "./tools/version.js"
 import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap } from "./tools/input_tools.js"  
 import { searchOptions, title2Doi } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
+
+// TODO: relevence score of search query
 
 const posixShellEscape = (string)=>"'"+string.replace(/'/g, `'"'"'`)+"'"
 const clearScreen = ()=>console.log('\x1B[2J')
@@ -80,7 +83,7 @@ const storageObject = createStorageObject(cacheItemPath)
         activeProject.keywords = activeProject.keywords || {}
         // console.log(`active project is: `,cyan(storageObject.activeProjectPath))
         for (let each of Object.values(activeProject.references)) {
-            each.publisherInfo = each.publisherInfo.replace(/�|…/g,"").trim()
+            each.publisherInfo = (each.publisherInfo||"").replace(/�|…/g,"").trim()
             // for papers added manually
             if (!each.doi) {
                 // this is pretty slow so we do it in the background
@@ -104,15 +107,15 @@ const storageObject = createStorageObject(cacheItemPath)
 
     function getReferenceStatusCounts() {
         const counts = {
-            'unseen-title': 0,
-            'unclear-title': 0,
-            'skipped-title': 0,
-            'relevent-title': 0,
-            'relevent-abstract': 0,
-            'super-relevent-abstract': 0,
-            'irrelevent-title': 0,
-            'partialy-irrelevent-abstract': 0,
-            'irrelevent-abstract': 0,
+            'unseen|title': 0,
+            'unclear|title': 0,
+            'skipped|title': 0,
+            'relevent|title': 0,
+            'relevent|abstract': 0,
+            'super-relevent|abstract': 0,
+            'irrelevent|title': 0,
+            'partialy-irrelevent|abstract': 0,
+            'irrelevent|abstract': 0,
         }
         const references = Object.values(activeProject.references)
         const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
@@ -169,6 +172,70 @@ const storageObject = createStorageObject(cacheItemPath)
             }
         }
         return reset``+text
+    }
+
+    function titleSorter(reverse) {
+        const score = (each)=>{
+            let scoreList = [0,0,0]
+
+            //
+            // keyword count
+            //
+            activeProject.keywords.positive = activeProject.keywords.positive || []
+            activeProject.keywords.negative = activeProject.keywords.negative || []
+            activeProject.keywords.neutral = activeProject.keywords.neutral || []
+            activeProject.keywords.positive = activeProject.keywords.positive.map(each=>each.toLowerCase())
+            activeProject.keywords.negative = activeProject.keywords.negative.map(each=>each.toLowerCase())
+            activeProject.keywords.neutral = activeProject.keywords.neutral.map(each=>each.toLowerCase())
+            const goodKeywords = activeProject.keywords.positive
+            const badKeywords = activeProject.keywords.negative
+            const neuralKeywords = activeProject.keywords.neutral
+            let index = -1
+            for (let char of each.title) {
+                index++
+                if (!each.title.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
+                    const remaining = each.title.slice(index,).toLowerCase()
+                    let matching
+                    // FIXME: need to sort by length of keyword 
+                    if (goodKeywords.some(each=>(remaining.startsWith(matching=each)))) {
+                        scoreList[0] += 1
+                        index += matching.length
+                    } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
+                        scoreList[0] -= 1
+                        index += matching.length
+                    } else if (neuralKeywords.some(each=>remaining.startsWith(matching=each))) {
+                        index += matching.length
+                    }
+                }
+            }
+            
+            // 
+            // publisher
+            // 
+            const publisherRanking = activeProject.publisherRanking||[]
+            scoreList[1] += Math.max(publisherRanking.map(
+                (eachPublisher,index)=>(
+                    each.publisherInfo.toLowerCase().includes(eachPublisher.toLowerCase())
+                    || (each.link||"").toLowerCase().includes(eachPublisher.toLowerCase())
+                )?index+1:0
+            ))
+            
+            // 
+            // year (currently gets added to keyword score)
+            // 
+            scoreList[0] += (each.possibleYear-0||0)
+            
+            return scoreList
+        }
+        // const activeReferences = references.filter(each=>each.resumeStatus == whatKind)
+        // for (let each of activeReferences) {
+        //     console.debug(`each.title, score(each) is:`,highlightKeywords(each.title), score(each))
+        // }
+        if (reverse) {
+            return (b,a)=>rankedCompare(score(b),score(a))
+        } else {
+            return (a,b)=>rankedCompare(score(b),score(a))
+        }
     }
 // 
 // main loop
@@ -238,14 +305,14 @@ mainLoop: while (true) {
                 addedReferences++
                 activeProject.references[each.title] = each
                 unseenReferences[each.title] = each
-                each.resumeStatus = "unseen-title"
+                each.resumeStatus = "unseen|title"
                 each.events = each.events || {}
                 each.events["added"] =  each.events["added"] || new DateTime().toISOString()
             }
         }
         activeProject.discoveryAttempts.unshift(discoveryMethod)
         await saveProject()
-        prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen-title")}\n(press enter to continue)\n`)
+        prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
     } else if (whichAction == "change project") {
         const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
         let project = await selectOne({
@@ -300,11 +367,11 @@ mainLoop: while (true) {
             // 
             if (whatKind == "nothing (quit)") {
                 continue mainLoop
-            } else if (whatKind == "unseen-title" || whatKind == "skipped-title") {
+            } else if (whatKind == "unseen|title" || whatKind == "skipped|title") {
                 console.log(cyan`\ng=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
-                nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind)) {
+                nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(titleSorter())) {
                     // TODO: highlight good and bad keywords
-                    console.log(`${cyan`title: `}${highlightKeywords(each.title)}`)
+                    console.log(`${cyan`title: (${each.possibleYear}) `}${highlightKeywords(each.title)}`)
                     for await (let { name: keyName, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
                         if (keyName == "q" || (ctrl && keyName == "c")) {
                             console.log(cyan`quit`)
@@ -321,14 +388,14 @@ mainLoop: while (true) {
                         } else {
                             if (keyName == "g") {
                                 console.log(green`✅ relevent`)
-                                each.resumeStatus = "relevent-title"
+                                each.resumeStatus = "relevent|title"
                                 each.relevanceStages.push("title")
                             } else if (keyName == "u") {
                                 console.log(magenta`❔ unclear`)
-                                each.resumeStatus = "unclear-title"
+                                each.resumeStatus = "unclear|title"
                             } else if (keyName == "b") {
                                 console.log(red`❌ irrelevent`)
-                                each.resumeStatus = "irrelevent-title"
+                                each.resumeStatus = "irrelevent|title"
                                 each.reasonsNotRelevant.push("title")
                             } else {
                                 console.log(`unrecognized key: ${keyName}`)
@@ -341,7 +408,7 @@ mainLoop: while (true) {
                     }
                 }
                 console.log(`\n🎉 finished reviewing ${whatKind}! 🎉\n`)
-            } else if (whatKind == "relevent-title") {
+            } else if (whatKind.endsWith("|title")) {
                 let quit = { title: "quit", }
                 let activeReferences
                 nextReferenceLoop: while (1) {
@@ -352,6 +419,7 @@ mainLoop: while (true) {
                         continue reviewLoop
                     }
                     // TODO: sort by publisher and year, allow ranking publishers
+                    activeReferences.sort(titleSorter())
                     const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${highlightKeywords(each.title)}`), each]))
                     const active = await selectOne({
                         message: "Which title do you want to explore?",
@@ -362,39 +430,41 @@ mainLoop: while (true) {
                     if (active == quit) {
                         continue mainLoop
                     }
-                    // TODO: add filtering words that could be fetched here
-                    // TODO: wget the result into a file
-                    // TODO: if it's a pdf, download it
+                    // TODO: fetch the webpage and attempt parsing some of it
                     await OperatingSystem.openUrl(active.link||active.pdfLink)
                     if (!active.abstract) {
                         active.abstract = await askForParagraph(reset`paste in the abstract (press enter twice to submit)`)
+                        active.events = active.events || {}
+                        active.events["saw abstract"] =  active.events["saw abstract"] || new DateTime().toISOString()
+                        saveProject()
                     }
-                    if (active.pdfLink) {
+                    if (active.pdfLink && !active.pdfWasDownloaded) {
                         const downloadPath = FileSystem.parentPath(storageObject.activeProjectPath) + "/pdfs/"+active.title+".pdf"
-                        if (await Console.askFor.yesNo(`want me to download the pdf for you?\n` + cyan(downloadPath))+"\n") {
+                        if (await Console.askFor.yesNo(reset`want me to download the pdf for you?\n` + cyan(downloadPath))+"\n\n") {
                             FileSystem.write({
                                 path: downloadPath,
-                                data: fetch(active.pdfLink).then(each=>each.arrayBuffer()).catch(error=>`error: ${error}`),
+                                data: await fetch(active.pdfLink).then(each=>each.arrayBuffer().then(buffer=>new Uint8Array(buffer))).catch(error=>`error: ${error}`),
                             }).then(()=>{
                                 active.pdfWasDownloaded = true
+                                saveProject()
                             })
                         }
                     }
-                    console.log(`abstract:\n\n${highlightKeywords(wordWrap(active.abstract, 80))}\n`)
-                    // TODO: highlight good and bad keywords
+                    console.log(`\nabstract:\n\n${highlightKeywords(wordWrap(active.abstract, 80))}\n`)
                     const choice = await selectOne({
                         message: "abstract was",
                         options: [
                             "irrelevent",
                             "slightly-irrelevent",
                             "unclear",
+                            "appendix",
                             "relevent",
                             "super-relevent",
                         ],
                     })
                     active.relevanceStages = active.relevanceStages || [ ]
                     active.reasonsNotRelevant = active.reasonsNotRelevant || []
-                    active.resumeStatus = `${choice}:abstract`
+                    active.resumeStatus = `${choice}|abstract`
                     if (choice == "irrelevent" || choice == "slightly-irrelevent") {
                         active.reasonsNotRelevant.push("abstract")
                     }

@@ -9,8 +9,15 @@ keywords:
     - task
     - egocentric
     - emergent
+    - ecological
+    - ecology
+    - self-supervised
+    - percept
+    - unsupervised
+    - visual cortex
   negative:
     - large language model
+    - language model
     - llm
     - supervised
     - label
@@ -24,10 +31,17 @@ keywords:
     - unseen
     - embedding
     - latent
+    - multimodal
+    - behavior
+    - mice
+    - mouse
+    - animal
+    - biolog
+    - primate
 references:
   Visual affordance prediction for guiding robot exploration: &ref_20
     title: Visual affordance prediction for guiding robot exploration
-    resumeStatus: relevent-abstract
+    resumeStatus: relevent|abstract
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -55,7 +69,7 @@ references:
     doi: 10.1109/icra48891.2023.10161288
   'RAIL: Robot Affordance Imagination with Large Language Models': &ref_21
     title: 'RAIL: Robot Affordance Imagination with Large Language Models'
-    resumeStatus: unclear-title
+    resumeStatus: unclear|title
     reasonsNotRelevant: []
     relevanceStages: []
     possibleYear: '1936'
@@ -81,7 +95,7 @@ references:
       saw title: '2024-12-12T16:30:58.343Z'
   Affordance-Based Goal Imagination for Embodied AI Agents: &ref_22
     title: Affordance-Based Goal Imagination for Embodied AI Agents
-    resumeStatus: irrelevent-abstract
+    resumeStatus: irrelevent|abstract
     reasonsNotRelevant:
       - abstract
     relevanceStages:
@@ -110,7 +124,7 @@ references:
     doi: 10.1109/icdl61372.2024.10644764
   Learning to anticipate egocentric actions by imagination: &ref_23
     title: Learning to anticipate egocentric actions by imagination
-    resumeStatus: unclear-title
+    resumeStatus: unclear|title
     reasonsNotRelevant: []
     relevanceStages: []
     possibleYear: '2020'
@@ -137,7 +151,7 @@ references:
     doi: 10.1109/tip.2020.3040521
   Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_24
     title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
-    resumeStatus: relevent-abstract
+    resumeStatus: relevent|abstract
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -167,10 +181,11 @@ references:
     abstract: '     In this paper we explore the richness of information captured by the latent space of a vision-based generative model. The model combines unsupervised generative learning with a task-based performance predictor to learn and to exploit task-relevant object affordances given visual observations from a reaching task, involving a scenario and a stick-like tool. While the learned embedding of the generative model captures factors of variation in 3D tool geometry (e.g. length, width, and shape), the performance predictor identifies sub-manifolds of the embedding that correlate with task success. Within a variety of scenarios, we demonstrate that traversing the latent space via backpropagation from the performance predictor allows us to imagine tools appropriate for the task at hand. Our results indicate that affordances-like the utility for reaching-are encoded along smooth trajectories in latent space. Accessing these emergent affordances by considering only high-level performance criteria (such as task success) enables an agent to manipulate tool geometries in a targeted and deliberate way. '
   What can i do here? learning new skills by imagining visual affordances: &ref_25
     title: What can i do here? learning new skills by imagining visual affordances
-    resumeStatus: relevent-title
+    resumeStatus: super-relevent|abstract
     reasonsNotRelevant: []
     relevanceStages:
       - title
+      - abstract
     possibleYear: '2021'
     notesConsideredRelevent: null
     notesCustomKeywords: []
@@ -191,13 +206,17 @@ references:
     publisherInfo: '2021 IEEE International, 2021'
     events:
       saw title: '2024-12-12T21:40:37.271Z'
+      saw abstract: '2024-12-13T00:50:28.321Z'
     doi: 10.1109/icra48506.2021.9561692
+    abstract: 'A generalist robot equipped with learned skills must be able to perform many tasks in many different environments. However, zero-shot generalization to new settings is not always possible. When the robot encounters a new environment or object, it may need to finetune some of its previously learned skills to accommodate this change. But crucially, previously learned behaviors and models should still be suitable to accelerate this relearning. In this paper, we aim to study how generative models of possible outcomes can allow a robot to learn visual representations of affordances, so that the robot can sample potentially possible outcomes in new situations, and then further train its policy to achieve those outcomes. In effect, prior data is used to learn what kinds of outcomes may be possible, such that when the robot encounters an unfamiliar setting, it can sample potential outcomes from its model, attempt to reach them, and thereby update both its skills and its outcome model. We show that this approach can be used to train goal-conditioned policies that operate on raw image inputs, and can rapidly learn to manipulate new objects via our proposed affordance-directed exploration scheme.'
+    pdfWasDownloaded: true
   'Learning to act properly: Predicting and explaining affordances from images': &ref_26
     title: 'Learning to act properly: Predicting and explaining affordances from images'
-    resumeStatus: relevent-title
+    resumeStatus: relevent|abstract
     reasonsNotRelevant: []
     relevanceStages:
       - title
+      - abstract
     possibleYear: '2018'
     notesConsideredRelevent: null
     notesCustomKeywords: []
@@ -218,10 +237,13 @@ references:
     publisherInfo: 'Proceedings of the IEEE, 2018'
     events:
       saw title: '2024-12-12T21:41:04.424Z'
+      saw abstract: '2024-12-13T00:59:40.912Z'
     doi: 10.1109/cvpr.2018.00108
+    abstract: ' We address the problem of affordance reasoning in diverse scenes that appear in the real world. Affordances relate the agent’s actions to their effects when taken on the surrounding objects. In our work, we take the egocentric view of the scene, and aim to reason about action-object affordances that respect both the physical world as well as the social norms imposed by the society. We also aim to teach artificial agents why some actions should not be taken in certain situations, and what would likely happen if these actions would be taken. We collect a new dataset that builds upon ADE20k, referred to as ADE-Affordance, which containing annotations enabling such rich visual reasoning. We propose a model that exploits Graph Neural Networks to propagate contextual information from the scene in order to perform detailed affordance reasoning about each object. Our model is showcased through various ablation studies, pointing to successes and challenges in this complex task.'
+    pdfWasDownloaded: true
   Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_27
     title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
-    resumeStatus: relevent-title
+    resumeStatus: relevent|title
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -250,7 +272,7 @@ references:
       saw title: '2024-12-12T21:41:38.912Z'
   'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_28
     title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
-    resumeStatus: relevent-title
+    resumeStatus: relevent|title
     reasonsNotRelevant: []
     relevanceStages:
       - title
@@ -277,10 +299,11 @@ references:
     doi: 10.18653/v1/2024.conll-1.27
   Learning affordances in object-centric generative models: &ref_29
     title: Learning affordances in object-centric generative models
-    resumeStatus: relevent-title
+    resumeStatus: relevent|abstract
     reasonsNotRelevant: []
     relevanceStages:
       - title
+      - abstract
     possibleYear: '2020'
     notesConsideredRelevent: null
     notesCustomKeywords: []
@@ -303,10 +326,14 @@ references:
     publisherInfo: '2020'
     events:
       saw title: '2024-12-12T21:43:33.262Z'
+      saw abstract: '2024-12-13T00:54:58.419Z'
+    abstract: 'Given visual observations of a reaching task together with a stick-like tool, we propose a novel approach that learns to exploit task-relevant object affordances by combining generative modelling with a task-based performance predictor. The embedding learned by the generative model captures the factors of variation in object geometry, e.g. length, width, and configuration. The performance predictor identifies sub-manifolds correlated with task success in a weakly supervised manner. Using a 3D simulation environment, we demonstrate that traversing the latent space in this task-driven way results in appropriate tool geometries for the task at hand. Our results suggest that affordances are encoded along smooth trajectories in the learned latent space. Given only high-level performance criteria (such as task success), accessing these emergent affordances via gradient descent enables the agent to manipulate learned object geometries in a targeted and deliberate way. '
+    pdfWasDownloaded: true
   Applications of machine learning to ecological modelling: &ref_10
     title: Applications of machine learning to ecological modelling
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2001'
     notesConsideredRelevent: null
@@ -326,11 +353,13 @@ references:
     publisherInfo: 'Ecological modelling, 2001'
     events:
       added: '2024-12-12T23:32:47.064Z'
+      saw title: '2024-12-13T00:33:53.566Z'
     doi: 10.1016/s0304-3800(01)00316-7
   'Machine learning in landscape ecological analysis: a review of recent approaches': &ref_11
     title: 'Machine learning in landscape ecological analysis: a review of recent approaches'
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2022'
     notesConsideredRelevent: null
@@ -352,10 +381,11 @@ references:
     publisherInfo: 'Ecology, 2022'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:33:00.529Z'
     doi: 10.1007/s10980-021-01366-9
   'Study becomes insight: ecological learning from machine learning': &ref_12
     title: 'Study becomes insight: ecological learning from machine learning'
-    resumeStatus: unseen-title
+    resumeStatus: unclear|title
     reasonsNotRelevant: []
     relevanceStages: []
     possibleYear: '2021'
@@ -379,11 +409,13 @@ references:
     publisherInfo: 'Methods in Ecology, 2021'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:33:26.466Z'
     doi: 10.1111/2041-210x.13686
   Machine learning and deep learning—A review for ecologists: &ref_13
     title: Machine learning and deep learning—A review for ecologists
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2023'
     notesConsideredRelevent: null
@@ -404,11 +436,13 @@ references:
     publisherInfo: 'Methods in Ecology and Evolution, 2023'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:33:15.907Z'
     doi: 10.1111/2041-210x.14061
   A review of supervised machine learning algorithms and their applications to ecological data: &ref_14
     title: A review of supervised machine learning algorithms and their applications to ecological data
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2012'
     notesConsideredRelevent: null
@@ -430,11 +464,13 @@ references:
     publisherInfo: 'Ecological Modelling, 2012'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:33:48.798Z'
     doi: 10.1016/j.ecolmodel.2012.03.001
   'Application of machine-learning methods in forest ecology: recent progress and future challenges': &ref_15
     title: 'Application of machine-learning methods in forest ecology: recent progress and future challenges'
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2018'
     notesConsideredRelevent: null
@@ -457,11 +493,13 @@ references:
     publisherInfo: 'Environmental, 2018'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:33:41.241Z'
     doi: 10.1139/er-2018-0034
   Machine learning of poorly predictable ecological data: &ref_16
     title: Machine learning of poorly predictable ecological data
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2006'
     notesConsideredRelevent: null
@@ -483,11 +521,13 @@ references:
     publisherInfo: 'Ecological Modelling, 2006'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:33:51.950Z'
     doi: 10.1016/j.ecolmodel.2005.11.015
   Deep learning as a tool for ecology and evolution: &ref_17
     title: Deep learning as a tool for ecology and evolution
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2022'
     notesConsideredRelevent: null
@@ -509,11 +549,13 @@ references:
     publisherInfo: 'Methods in Ecology, 2022'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:33:18.070Z'
     doi: 10.32942/osf.io/nt3as
   Towards machine learning of predictive models from ecological data: &ref_18
     title: Towards machine learning of predictive models from ecological data
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2014'
     notesConsideredRelevent: null
@@ -535,11 +577,13 @@ references:
     publisherInfo: 'Conference, ILP 2014, 2015'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:33:44.390Z'
     doi: 10.1007/978-3-319-23708-4_11
   'Machine learning in marine ecology: an overview of techniques and applications': &ref_19
     title: 'Machine learning in marine ecology: an overview of techniques and applications'
-    resumeStatus: unseen-title
-    reasonsNotRelevant: []
+    resumeStatus: irrelevent|title
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     possibleYear: '2023'
     notesConsideredRelevent: null
@@ -561,12 +605,15 @@ references:
     publisherInfo: 'ICES Journal of, 2023'
     events:
       added: '2024-12-12T23:32:47.065Z'
+      saw title: '2024-12-13T00:32:12.720Z'
   Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation: &ref_0
-    resumeStatus: unseen-title
+    resumeStatus: super-relevent|abstract
     possibleYear: '2023'
-    doi: null
+    doi: 10.1101/2021.06.16.448730
     reasonsNotRelevant: []
-    relevanceStages: []
+    relevanceStages:
+      - title
+      - abstract
     cites: null
     isCitedBy: null
     discoveryMethod: null
@@ -589,10 +636,12 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:30:51.400Z'
+    abstract: 'Studies of the mouse visual system have revealed a variety of visual brain areas that are thought to support a multitude of behavioral capacities, ranging from stimulus-reward associations, to goal-directed navigation, and object-centric discriminations. However, an overall understanding of the mouse’s visual cortex, and how it supports a range of behaviors, remains unknown. Here, we take a computational approach to help address these questions, providing a high-fidelity quantitative model of mouse visual cortex and identifying key structural and functional principles underlying that model’s success. Structurally, we find that a comparatively shallow network structure with a low-resolution input is optimal for modeling mouse visual cortex. Our main finding is functional—that models trained with task-agnostic, self-supervised objective functions based on the concept of contrastive embeddings are much better matches to mouse cortex, than models trained on supervised objectives or alternative self-supervised methods. This result is very much unlike in primates where prior work showed that the two were roughly equivalent, naturally leading us to ask the question of why these self-supervised objectives are better matches than supervised ones in mouse. To this end, we show that the self-supervised, contrastive objective builds a general-purpose visual representation that enables the system to achieve better transfer on out-of-distribution visual scene understanding and reward-based navigation tasks. Our results suggest that mouse visual cortex is a low-resolution, shallow network that makes best use of the mouse’s limited resources to create a light-weight, general-purpose visual system—in contrast to the deep, high-resolution, and more categorization-dominated visual system of primates.'
   'Decoding the brain: From neural representations to mechanistic models': &ref_1
-    resumeStatus: unseen-title
+    resumeStatus: unclear|title
     possibleYear: '2024'
-    doi: null
+    doi: 10.1016/j.cell.2024.08.051
     reasonsNotRelevant: []
     relevanceStages: []
     cites: null
@@ -618,11 +667,13 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:32:20.239Z'
   Unsupervised learning of mid-level visual representations: &ref_2
-    resumeStatus: unseen-title
+    resumeStatus: irrelevent|title
     possibleYear: '2024'
-    doi: null
-    reasonsNotRelevant: []
+    doi: 10.1016/j.conb.2023.102834
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     cites: null
     isCitedBy: null
@@ -646,11 +697,13 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:31:08.609Z'
   Multimodal deep learning model unveils behavioral dynamics of V1 activity in freely moving mice: &ref_3
-    resumeStatus: unseen-title
+    resumeStatus: irrelevent|title
     possibleYear: '2024'
-    doi: null
-    reasonsNotRelevant: []
+    doi: 10.1101/2023.05.30.542912
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     cites: null
     isCitedBy: null
@@ -675,11 +728,13 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:32:42.659Z'
   Integrating statistical and machine learning approaches for neural classification: &ref_4
-    resumeStatus: unseen-title
+    resumeStatus: irrelevent|title
     possibleYear: '2022'
-    doi: null
-    reasonsNotRelevant: []
+    doi: 10.1109/access.2022.3221436
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     cites: null
     isCitedBy: null
@@ -703,12 +758,14 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:33:37.080Z'
   Top-down perceptual inference shaping the activity of early visual cortex: &ref_5
-    resumeStatus: unseen-title
+    resumeStatus: relevent|title
     possibleYear: '2023'
-    doi: null
+    doi: 10.1101/2023.11.29.569262
     reasonsNotRelevant: []
-    relevanceStages: []
+    relevanceStages:
+      - title
     cites: null
     isCitedBy: null
     discoveryMethod: null
@@ -731,11 +788,13 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:31:25.585Z'
   Population encoding of stimulus features along the visual hierarchy: &ref_6
-    resumeStatus: unseen-title
+    resumeStatus: irrelevent|title
     possibleYear: '2024'
-    doi: null
-    reasonsNotRelevant: []
+    doi: 10.1073/pnas.2317773121
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     cites: null
     isCitedBy: null
@@ -759,8 +818,9 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:32:51.107Z'
   'Integrative, Embodied Agents to Reverse-Engineer Natural Intelligence': &ref_7
-    resumeStatus: unseen-title
+    resumeStatus: unclear|title
     possibleYear: '2024'
     doi: null
     reasonsNotRelevant: []
@@ -775,7 +835,7 @@ references:
     citationId: null
     multiArticleId: '15381445104070421971'
     citedByLink: null
-    publisherInfo: null
+    publisherInfo: ''
     title: 'Integrative, Embodied Agents to Reverse-Engineer Natural Intelligence'
     notesConsideredRelevent: null
     notesCustomKeywords: []
@@ -785,11 +845,13 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:13:04.397Z'
   Heterogeneous orientation tuning in the primary visual cortex of mice diverges from Gabor-like receptive fields in primates: &ref_8
-    resumeStatus: unseen-title
+    resumeStatus: irrelevent|title
     possibleYear: '2024'
-    doi: null
-    reasonsNotRelevant: []
+    doi: 10.1016/j.celrep.2024.114639
+    reasonsNotRelevant:
+      - title
     relevanceStages: []
     cites: null
     isCitedBy: null
@@ -814,8 +876,9 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:32:06.511Z'
   Self-supervised learning facilitates neural representation structures that can be unsupervisedly aligned to human behaviors: &ref_9
-    resumeStatus: unseen-title
+    resumeStatus: unclear|title
     possibleYear: '2024'
     doi: null
     reasonsNotRelevant: []
@@ -842,6 +905,7 @@ references:
     notesCites: []
     events:
       added: '2024-12-12T23:45:35.827Z'
+      saw title: '2024-12-13T00:30:37.491Z'
 discoveryAttempts:
   - query: ecologically-general representation machine learning
     date: 12/12/2024
