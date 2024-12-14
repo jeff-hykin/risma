@@ -85,7 +85,11 @@ export class Reference {
                 },
             })
         }
-
+        
+        this._ = {}
+        for (const [key, value] of Object.entries(this.accordingTo.$manuallyEntered)) {
+            this._[key] = this[key]
+        }
     }
     toYAML() {
         // const output = {...this}

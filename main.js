@@ -20,9 +20,8 @@ import { versionSort, versionToList, executeConversation } from "./tools/misc.js
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
 
+// TODO: make sorter and keywords real time editable
 // TODO: make relevence score of discoveryMethod, list most helpful searches
-// TODO: put keywords into a settings section
-// TODO: make something for related work discovery
 // TODO: find a way to add info to a manually entered reference
 
 // done: have a better system for sorting
@@ -115,7 +114,6 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         }
         // console.log(`active project is: `,cyan(storageObject.activeProjectPath))
         for (let each of Object.values(activeProject.references)) {
-            each.publisherInfo = (each.publisherInfo||"").replace(/�|…/g,"").trim()
             // for papers added manually
             if (!each.doi) {
                 // this is pretty slow so we do it in the background
@@ -506,7 +504,7 @@ mainLoop: while (true) {
                                 each.resumeStatus = "irrelevent|title"
                                 each.reasonsNotRelevant.push("title")
                             } else {
-                                console.log(`\runrecognized key: ${keyName}`)
+                                console.log(`\runrecognized key: ${keyName}                                `)
                                 continue
                             }
                             await saveProject()

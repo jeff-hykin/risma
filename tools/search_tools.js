@@ -1311,15 +1311,15 @@ export const searchOptions = {
                                 let probablyAuthorsElement = titleElement.nextElementSibling
                                 if (probablyAuthorsElement && probablyAuthorsElement.innerText.match(/.+-.+-/)) {
                                     // let probablyAuthorLinks = [...probablyAuthorsElement.querySelectorAll("a")]
-                                    let pieces = probablyAuthorsElement.innerText.replace(/…|�/g,"").split("-")
+                                    let pieces = probablyAuthorsElement.innerText.split("-")
                                     let source = pieces.at(-1).trim()
                                     let publishInstanceInfo = pieces.at(-2)||""
                                     let authorInfoString = pieces.slice(0,-2).join("-") // join is just to be defensive, should be 1 item
-                                    articleObject.authorNames = authorInfoString.split(",").map(each=>each.trim())
+                                    articleObject.authorNames = authorInfoString.split(",").map(each=>each.replace(/…|�/g,"").trim())
                                     let year
                                     // yep sadly this code will break in the year 2100
-                                    if (year = publishInstanceInfo.match(/((?:20|19)(?:\d\d))/)) {
-                                        articleObject.year = year[0]
+                                    if (year = publishInstanceInfo.match(/, ?((?:20|19)(?:\d\d))/)) {
+                                        articleObject.year = year[0]-0
                                     }
                                     if (publishInstanceInfo) {
                                         articleObject.publisherInfo = publishInstanceInfo.trim().replace(/�|…/g,"")

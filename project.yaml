@@ -6,6 +6,11 @@ settings:
                 currentScoreList[0] -= numberOfBadKeywordsIn(reference.title)
                 currentScoreList[1] += numberOfNeutralKeywordsIn(reference.title)
                 // currentScoreList[0] -= ("Video Database")
+                
+                // needs at least one
+                if (numberOfGoodKeywordsIn(reference.title) == 0) {
+                    currentScoreList[0] -= 10
+                }
             }
         firstByYear: |
             (reference, currentScoreList, {keywords, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
@@ -13,6 +18,7 @@ settings:
                 currentScoreList[0] *= yearNumber > 2020 ? 2 : 1
                 currentScoreList[0] *= yearNumber > 2010 ? 1.5 : 1
                 currentScoreList[0] += yearNumber < 2010 ? -5 : 0
+                currentScoreList[0] += yearNumber < 2000 ? 5 : 0 // basically an error getting the year
             }
         thenByPublisher: |
             (reference, currentScoreList, {keywords, settings, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
@@ -73,7 +79,7 @@ settings:
             - biolog
             - primate
 references:
-    Visual Affordance Prediction for Guiding Robot Exploration: &ref_72
+    Visual Affordance Prediction for Guiding Robot Exploration: &ref_154
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -103,7 +109,7 @@ references:
                 title: Visual Affordance Prediction for Guiding Robot Exploration
                 subtitle: null
                 abstract: null
-                authorNames:
+                authorNames: &ref_0
                     - Homanga Bharadhwaj
                     - Abhinav Gupta
                     - Shubham Tulsiani
@@ -146,13 +152,22 @@ references:
                 multiArticleId: '15979805052095820058'
                 citedByLink: 'https://scholar.google.com//scholar?cites=15979805052095820058&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: '2023 IEEE International, 2023'
-                year: '2023'
+                year: 2023
+        _:
+            title: Visual Affordance Prediction for Guiding Robot Exploration
+            doi: 10.1109/icra48891.2023.10161288
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_0
+            link: 'https://ieeexplore.ieee.org/abstract/document/10161288/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/10160211/10160212/10161288.pdf'
+            cites: null
+            citedBy: null
         score:
             - 6
             - 2
             - 0
-        publisherInfo: ''
-    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_73
+    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_155
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -181,7 +196,7 @@ references:
                 doi: null
             googleScholar:
                 title: 'RAIL: Robot Affordance Imagination with Large Language Models'
-                authorNames:
+                authorNames: &ref_1
                     - C Zhang
                     - X Meng
                     - D Qi
@@ -192,13 +207,22 @@ references:
                 multiArticleId: '8172269612940938567'
                 citedByLink: 'https://scholar.google.com//scholar?cites=8172269612940938567&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'arXiv preprint arXiv:2403.19369, 2024'
-                year: '1936'
+                year: 2024
+        _:
+            title: 'RAIL: Robot Affordance Imagination with Large Language Models'
+            doi: null
+            year: 2024
+            publisherFlags: null
+            authorNames: *ref_1
+            link: 'https://arxiv.org/abs/2403.19369'
+            pdfLink: 'https://arxiv.org/pdf/2403.19369'
+            cites: null
+            citedBy: null
         score:
-            - -3
+            - 2
             - 0
             - 0
-        publisherInfo: ''
-    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_74
+    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_156
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -228,7 +252,7 @@ references:
                 title: Affordance-Based Goal Imagination for Embodied AI Agents
                 subtitle: null
                 abstract: null
-                authorNames:
+                authorNames: &ref_2
                     - Victor Aregbede
                     - Savitha Sam Abraham
                     - Andreas Persson
@@ -271,13 +295,22 @@ references:
                 multiArticleId: null
                 citedByLink: null
                 publisherInfo: 'on Development and, 2024'
-                year: '2024'
+                year: 2024
+        _:
+            title: Affordance-Based Goal Imagination for Embodied AI Agents
+            doi: 10.1109/icdl61372.2024.10644764
+            year: 2024
+            publisherFlags: null
+            authorNames: *ref_2
+            link: 'https://ieeexplore.ieee.org/abstract/document/10644764/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel8/10644131/10644157/10644764.pdf'
+            cites: null
+            citedBy: null
         score:
             - 12
             - 0
             - 0
-        publisherInfo: ''
-    Learning to Anticipate Egocentric Actions by Imagination: &ref_75
+    Learning to Anticipate Egocentric Actions by Imagination: &ref_157
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -306,7 +339,7 @@ references:
                 title: Learning to Anticipate Egocentric Actions by Imagination
                 subtitle: null
                 abstract: null
-                authorNames:
+                authorNames: &ref_3
                     - Yu Wu
                     - Linchao Zhu
                     - Xiaohan Wang
@@ -373,13 +406,22 @@ references:
                 multiArticleId: '6012752103031775791'
                 citedByLink: 'https://scholar.google.com//scholar?cites=6012752103031775791&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'IEEE Transactions on, 2020'
-                year: '2020'
+                year: 2020
+        _:
+            title: Learning to Anticipate Egocentric Actions by Imagination
+            doi: 10.1109/tip.2020.3040521
+            year: 2021
+            publisherFlags: null
+            authorNames: *ref_3
+            link: 'https://ieeexplore.ieee.org/abstract/document/9280353/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/83/9263394/09280353.pdf'
+            cites: null
+            citedBy: null
         score:
             - 6
             - 1
             - 0
-        publisherInfo: ''
-    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_76
+    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_158
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -409,7 +451,7 @@ references:
                 doi: null
             googleScholar:
                 title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
-                authorNames:
+                authorNames: &ref_4
                     - Y Wu
                     - S Kasewa
                     - O Groth
@@ -421,13 +463,22 @@ references:
                 multiArticleId: '1893778644382906900'
                 citedByLink: 'https://scholar.google.com//scholar?cites=1893778644382906900&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'arXiv preprint arXiv, 2019'
-                year: '2019'
+                year: 2019
+        _:
+            title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
+            doi: null
+            year: 2019
+            publisherFlags: null
+            authorNames: *ref_4
+            link: 'https://arxiv.org/abs/1909.13561'
+            pdfLink: 'https://arxiv.org/pdf/1909.13561'
+            cites: null
+            citedBy: null
         score:
             - 4.5
             - 0
             - 0
-        publisherInfo: ''
-    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_77
+    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_159
         notes:
             resumeStatus: super-relevent|abstract
             comment: ''
@@ -459,7 +510,7 @@ references:
                 title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
                 subtitle: null
                 abstract: null
-                authorNames:
+                authorNames: &ref_5
                     - Alexander Khazatsky
                     - Ashvin Nair
                     - Daniel Jing
@@ -488,13 +539,22 @@ references:
                 multiArticleId: '15430638141641676250'
                 citedByLink: 'https://scholar.google.com//scholar?cites=15430638141641676250&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: '2021 IEEE International, 2021'
-                year: '2021'
+                year: 2021
+        _:
+            title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
+            doi: 10.1109/icra48506.2021.9561692
+            year: 2021
+            publisherFlags: null
+            authorNames: *ref_5
+            link: 'https://ieeexplore.ieee.org/abstract/document/9561692/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/9560720/9560666/09561692.pdf'
+            cites: null
+            citedBy: null
         score:
             - 6
             - 2
             - 0
-        publisherInfo: ''
-    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_78
+    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_160
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -523,7 +583,7 @@ references:
                 title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
                 subtitle: null
                 abstract: null
-                authorNames:
+                authorNames: &ref_6
                     - Ching-Yao Chuang
                     - Jiaman Li
                     - Antonio Torralba
@@ -561,13 +621,22 @@ references:
                 multiArticleId: '9413040909214203914'
                 citedByLink: 'https://scholar.google.com//scholar?cites=9413040909214203914&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Proceedings of the IEEE, 2018'
-                year: '2018'
+                year: 2018
+        _:
+            title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
+            doi: 10.1109/cvpr.2018.00108
+            year: 2018
+            publisherFlags: null
+            authorNames: *ref_6
+            link: 'http://openaccess.thecvf.com/content_cvpr_2018/html/Chuang_Learning_to_Act_CVPR_2018_paper.html'
+            pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2018/papers/Chuang_Learning_to_Act_CVPR_2018_paper.pdf'
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 2
             - 0
-        publisherInfo: ''
-    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_79
+    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_161
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -597,7 +666,7 @@ references:
                 doi: null
             googleScholar:
                 title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
-                authorNames:
+                authorNames: &ref_7
                     - Y Wu
                     - S Kasewa
                     - O Groth
@@ -610,13 +679,22 @@ references:
                 multiArticleId: null
                 citedByLink: 'https://scholar.google.com//scholar?cites=2961549995427504858&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: null
-                year: '2019'
+                year: 2019
+        _:
+            title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
+            doi: null
+            year: 2019
+            publisherFlags: null
+            authorNames: *ref_7
+            link: 'https://openreview.net/forum?id=BkeyOxrYwH'
+            pdfLink: 'https://openreview.net/pdf?id=BkeyOxrYwH'
+            cites: null
+            citedBy: null
         score:
             - 6
             - 0
             - 0
-        publisherInfo: ''
-    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_80
+    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_162
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -646,7 +724,7 @@ references:
                 title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
                 subtitle: null
                 abstract: null
-                authorNames:
+                authorNames: &ref_8
                     - Sayantan Adak
                     - Daivik Agrawal
                     - Animesh Mukherjee
@@ -669,13 +747,22 @@ references:
                 multiArticleId: null
                 citedByLink: null
                 publisherInfo: 'Proceedings of the 28th, 2024'
-                year: '2024'
+                year: 2024
+        _:
+            title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
+            doi: 10.18653/v1/2024.conll-1.27
+            year: 2024
+            publisherFlags: null
+            authorNames: *ref_8
+            link: 'https://aclanthology.org/2024.conll-1.27/'
+            pdfLink: 'https://aclanthology.org/2024.conll-1.27.pdf'
+            cites: null
+            citedBy: null
         score:
             - 0
             - 1
             - 0
-        publisherInfo: ''
-    Learning affordances in object-centric generative models: &ref_81
+    Learning affordances in object-centric generative models: &ref_163
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -704,7 +791,7 @@ references:
                 doi: null
             googleScholar:
                 title: Learning affordances in object-centric generative models
-                authorNames:
+                authorNames: &ref_9
                     - Y Wu
                     - S Kasewa
                     - O Groth
@@ -716,13 +803,22 @@ references:
                 multiArticleId: '7478229689628350853'
                 citedByLink: 'https://scholar.google.com//scholar?cites=7478229689628350853&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: null
-                year: '2020'
+                year: 2020
+        _:
+            title: Learning affordances in object-centric generative models
+            doi: null
+            year: 2020
+            publisherFlags: null
+            authorNames: *ref_9
+            link: 'https://ora.ox.ac.uk/objects/uuid:003cbbd9-a3aa-42e7-8e2d-bcc6b22db89a'
+            pdfLink: 'https://ora.ox.ac.uk/objects/uuid:003cbbd9-a3aa-42e7-8e2d-bcc6b22db89a/download_file?safe_filename=OOL_7.pdf&file_format=pdf&type_of_work=Conference+item'
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 2
             - 0
-        publisherInfo: ''
-    'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception': &ref_62
+    'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception': &ref_144
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -751,7 +847,7 @@ references:
                 doi: 10.1109/iv55156.2024.10588865
             googleScholar:
                 title: 'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception'
-                authorNames:
+                authorNames: &ref_10
                     - Y Yuan
                     - M Sester
                 pdfLink: 'https://arxiv.org/pdf/2404.18617'
@@ -760,13 +856,22 @@ references:
                 multiArticleId: '14674823755777045882'
                 citedByLink: null
                 publisherInfo: 'arXiv preprint arXiv:2404.18617, 2024'
-                year: '2024'
+                year: 2024
+        _:
+            title: 'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception'
+            doi: 10.1109/iv55156.2024.10588865
+            year: 2024
+            publisherFlags: null
+            authorNames: *ref_10
+            link: 'https://arxiv.org/abs/2404.18617'
+            pdfLink: 'https://arxiv.org/pdf/2404.18617'
+            cites: null
+            citedBy: null
         score:
             - 6
             - 1
             - 0
-        publisherInfo: ''
-    Multi-Agent Active Perception Based on Reinforcement Learning and POMDP: &ref_63
+    Multi-Agent Active Perception Based on Reinforcement Learning and POMDP: &ref_145
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -795,7 +900,7 @@ references:
                 doi: 10.1109/access.2024.3383544
             googleScholar:
                 title: Multi-Agent Active Perception Based on Reinforcement Learning and POMDP
-                authorNames:
+                authorNames: &ref_11
                     - T Selimović
                     - M Peti
                     - S Bogdan
@@ -805,13 +910,22 @@ references:
                 multiArticleId: '13114516728628612025'
                 citedByLink: null
                 publisherInfo: 'IEEE Access, 2024'
-                year: '2024'
+                year: 2024
+        _:
+            title: Multi-Agent Active Perception Based on Reinforcement Learning and POMDP
+            doi: 10.1109/access.2024.3383544
+            year: 2024
+            publisherFlags: null
+            authorNames: *ref_11
+            link: 'https://ieeexplore.ieee.org/abstract/document/10486889/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/6287639/6514899/10486889.pdf'
+            cites: null
+            citedBy: null
         score:
             - 0
             - 1
             - 0
-        publisherInfo: ''
-    Mutual influence between language and perception in multi-agent communication games: &ref_64
+    Mutual influence between language and perception in multi-agent communication games: &ref_146
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -841,7 +955,7 @@ references:
                 title: Mutual influence between language and perception in multi-agent communication games
                 subtitle: null
                 abstract: 'Language interfaces with many other cognitive domains. This paper explores how interactions at these interfaces can be studied with deep learning methods, focusing on the relation between language emergence and visual perception. To model the emergence of language, a sender and a receiver agent are trained on a reference game. The agents are implemented as deep neural networks, with dedicated vision and language modules. Motivated by the mutual influence between language and perception in cognition, we apply systematic manipulations to the agents’ (i) visual representations, to analyze the effects on emergent communication, and (ii) communication protocols, to analyze the effects on visual representations. Our analyses show that perceptual biases shape semantic categorization and communicative content. Conversely, if the communication protocol partitions object space along certain attributes, agents learn to represent visual information about these attributes more accurately, and the representations of communication partners align. Finally, an evolutionary analysis suggests that visual representations may be shaped in part to facilitate the communication of environmentally relevant distinctions. Aside from accounting for co-adaptation effects between language and perception, our results point out ways to modulate and improve visual representation learning and emergent communication in artificial agents.'
-                authorNames:
+                authorNames: &ref_12
                     - Xenia Ohmer
                     - Michael Marino
                     - Michael Franke
@@ -922,13 +1036,22 @@ references:
                 multiArticleId: '5350802694831905244'
                 citedByLink: 'https://scholar.google.com//scholar?cites=5350802694831905244&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'PLOS Computational, 2022'
-                year: '2022'
+                year: 2022
+        _:
+            title: Mutual influence between language and perception in multi-agent communication games
+            doi: 10.1371/journal.pcbi.1010658
+            year: 2022
+            publisherFlags: null
+            authorNames: *ref_12
+            link: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010658'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
             - -3
             - 0
             - 0
-        publisherInfo: ''
-    'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness': &ref_65
+    'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness': &ref_147
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -958,7 +1081,7 @@ references:
                 doi: 10.1038/s42256-023-00720-7
             googleScholar:
                 title: 'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness'
-                authorNames:
+                authorNames: &ref_13
                     - P Pataranutaporn
                     - R Liu
                     - E Finn
@@ -969,13 +1092,22 @@ references:
                 multiArticleId: '14041336950901741464'
                 citedByLink: 'https://scholar.google.com//scholar?cites=14041336950901741464&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Nature Machine Intelligence, 2023'
-                year: '2023'
+                year: 2023
+        _:
+            title: 'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness'
+            doi: 10.1038/s42256-023-00720-7
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_13
+            link: 'https://www.nature.com/articles/s42256-023-00720-7'
+            pdfLink: 'https://dspace.mit.edu/bitstream/handle/1721.1/152316/NMI_AI_beholder_Final-Unformatted%5B85%5D.pdf?sequence=1&isAllowed=y&utm_source=nationaltribune&utm_medium=nationaltribune&utm_campaign=news'
+            cites: null
+            citedBy: null
         score:
-            - -6
+            - -36
             - 0
             - 0
-        publisherInfo: ''
-    Why and how to study the impact of perception on language emergence in artificial agents: &ref_66
+    Why and how to study the impact of perception on language emergence in artificial agents: &ref_148
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -1004,7 +1136,7 @@ references:
                 doi: null
             googleScholar:
                 title: Why and how to study the impact of perception on language emergence in artificial agents
-                authorNames:
+                authorNames: &ref_14
                     - X Ohmer
                     - M Marino
                     - M Franke
@@ -1014,13 +1146,22 @@ references:
                 multiArticleId: '2179981516739486040'
                 citedByLink: 'https://scholar.google.com//scholar?cites=2179981516739486040&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Proceedings of the Annual, 2021'
-                year: '2021'
+                year: 2021
+        _:
+            title: Why and how to study the impact of perception on language emergence in artificial agents
+            doi: null
+            year: 2021
+            publisherFlags: null
+            authorNames: *ref_14
+            link: 'https://escholarship.org/uc/item/6p82v6st'
+            pdfLink: 'https://escholarship.org/content/qt6p82v6st/qt6p82v6st.pdf'
+            cites: null
+            citedBy: null
         score:
             - 3
             - 0
             - 0
-        publisherInfo: ''
-    Interaction Algorithm Effect on Human Experience with Reinforcement Learning: &ref_67
+    Interaction Algorithm Effect on Human Experience with Reinforcement Learning: &ref_149
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -1050,7 +1191,7 @@ references:
                 title: Interaction Algorithm Effect on Human Experience with Reinforcement Learning
                 subtitle: null
                 abstract: 'A goal of interactive machine learning (IML) is to enable people with no specialized training to intuitively teach intelligent agents how to perform tasks. Toward achieving that goal, we are studying how the design of the interaction method for a Bayesian Q-Learning algorithm impacts aspects of the human’s experience of teaching the agent using human-centric metrics such as frustration in addition to traditional ML performance metrics. This study investigated two methods of natural language instruction: critique and action advice. We conducted a human-in-the-loop experiment in which people trained two agents with different teaching methods but, unknown to each participant, the same underlying reinforcement learning algorithm. The results show an agent that learns from action advice creates a better user experience compared to an agent that learns from binary critique in terms of frustration, perceived performance, transparency, immediacy, and perceived intelligence. We identified nine main characteristics of an IML algorithm’s design that impact the human’s experience with the agent, including using human instructions about the future, compliance with input, empowerment, transparency, immediacy, a deterministic interaction, the complexity of the instructions, accuracy of the speech recognition software, and the robust and flexible nature of the interaction algorithm.'
-                authorNames:
+                authorNames: &ref_15
                     - Samantha Krening
                     - Karen M. Feigh
                 year: 2018
@@ -1089,13 +1230,22 @@ references:
                 multiArticleId: '15452678659896386539'
                 citedByLink: 'https://scholar.google.com//scholar?cites=15452678659896386539&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Robot Interaction, 2018'
-                year: '2018'
+                year: 2018
+        _:
+            title: Interaction Algorithm Effect on Human Experience with Reinforcement Learning
+            doi: 10.1145/3277904
+            year: 2018
+            publisherFlags: null
+            authorNames: *ref_15
+            link: 'https://dl.acm.org/doi/abs/10.1145/3277904'
+            pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3277904'
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues': &ref_68
+    'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues': &ref_150
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -1125,7 +1275,7 @@ references:
                 doi: 10.1016/j.array.2021.100057
             googleScholar:
                 title: 'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues'
-                authorNames:
+                authorNames: &ref_16
                     - A Gupta
                     - A Anpalagan
                     - L Guan
@@ -1136,13 +1286,22 @@ references:
                 multiArticleId: '2507582518469208253'
                 citedByLink: 'https://scholar.google.com//scholar?cites=2507582518469208253&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'Array, 2021'
-                year: '2021'
+                year: 2021
+        _:
+            title: 'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues'
+            doi: 10.1016/j.array.2021.100057
+            year: 2021
+            publisherFlags: null
+            authorNames: *ref_16
+            link: 'https://www.sciencedirect.com/science/article/pii/S2590005621000059'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
             - 3
             - 1
             - 0
-        publisherInfo: ''
-    Research on autonomous driving decision-making strategies based deep reinforcement learning: &ref_69
+    Research on autonomous driving decision-making strategies based deep reinforcement learning: &ref_151
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -1172,7 +1331,7 @@ references:
                 doi: 10.1145/3697467.3697643
             googleScholar:
                 title: Research on autonomous driving decision-making strategies based deep reinforcement learning
-                authorNames:
+                authorNames: &ref_17
                     - Z Wang
                     - H Yan
                     - C Wei
@@ -1184,18 +1343,28 @@ references:
                 multiArticleId: '1006030502322123597'
                 citedByLink: 'https://scholar.google.com//scholar?cites=1006030502322123597&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'and Machine Learning, 2024'
-                year: '2024'
+                year: 2024
+        _:
+            title: Research on autonomous driving decision-making strategies based deep reinforcement learning
+            doi: 10.1145/3697467.3697643
+            year: 2024
+            publisherFlags: null
+            authorNames: *ref_17
+            link: 'https://dl.acm.org/doi/abs/10.1145/3697467.3697643'
+            pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3697467.3697643'
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -33
             - 1
             - 0
-        publisherInfo: ''
-    Finding and visualizing weaknesses of deep reinforcement learning agents: &ref_70
+    Finding and visualizing weaknesses of deep reinforcement learning agents: &ref_152
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: irrelevent|title
             comment: ''
             reasonsRelevant: []
-            reasonsNotRelevant: []
+            reasonsNotRelevant:
+                - title
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
@@ -1203,6 +1372,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
+                sawTitle: '2024-12-14T00:37:31.126Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -1218,7 +1388,7 @@ references:
                 doi: null
             googleScholar:
                 title: Finding and visualizing weaknesses of deep reinforcement learning agents
-                authorNames:
+                authorNames: &ref_18
                     - C Rupprecht
                     - C Ibrahim
                     - CJ Pal
@@ -1228,13 +1398,22 @@ references:
                 multiArticleId: '11518984940352760452'
                 citedByLink: 'https://scholar.google.com//scholar?cites=11518984940352760452&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'arXiv preprint arXiv:1904.01318, 2019'
-                year: '1904'
+                year: 2019
+        _:
+            title: Finding and visualizing weaknesses of deep reinforcement learning agents
+            doi: null
+            year: 2019
+            publisherFlags: null
+            authorNames: *ref_18
+            link: 'https://arxiv.org/abs/1904.01318'
+            pdfLink: 'https://arxiv.org/pdf/1904.01318'
+            cites: null
+            citedBy: null
         score:
-            - -4
+            - 1
             - 2
             - 0
-        publisherInfo: ''
-    Simulation-based reinforcement learning for real-world autonomous driving: &ref_71
+    Simulation-based reinforcement learning for real-world autonomous driving: &ref_153
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1262,7 +1441,7 @@ references:
                 doi: 10.1109/icra40945.2020.9196730
             googleScholar:
                 title: Simulation-based reinforcement learning for real-world autonomous driving
-                authorNames:
+                authorNames: &ref_19
                     - B Osiński
                     - A Jakubowski
                     - P Zięcina
@@ -1272,13 +1451,22 @@ references:
                 multiArticleId: '18072154790906392218'
                 citedByLink: 'https://scholar.google.com//scholar?cites=18072154790906392218&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: 'on robotics and, 2020'
-                year: '2020'
+                year: 2020
+        _:
+            title: Simulation-based reinforcement learning for real-world autonomous driving
+            doi: 10.1109/icra40945.2020.9196730
+            year: 2020
+            publisherFlags: null
+            authorNames: *ref_19
+            link: 'https://ieeexplore.ieee.org/abstract/document/9196730/'
+            pdfLink: 'https://arxiv.org/pdf/1911.12905'
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -16.5
             - 1
             - 0
-        publisherInfo: ''
-    'Whatever next? Predictive brains, situated agents, and the future of cognitive science': &ref_52
+    'Whatever next? Predictive brains, situated agents, and the future of cognitive science': &ref_134
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -1323,7 +1511,7 @@ references:
                     - neuroscience
                     - artificial intelligence
                 year: 2013
-                authorNames:
+                authorNames: &ref_20
                     - Andy Clark
                 link: 'https://doi.org/10.1017/s0140525x12000477'
                 pdfLink: 'https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33542C736E17E3D1D44E8D03BE5F4CD9/S0140525X12000477a.pdf/div-class-title-whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science-div.pdf'
@@ -1724,12 +1912,21 @@ references:
                     - 'https://openalex.org/W1974622901'
                     - 'https://openalex.org/W1601337804'
                     - 'https://openalex.org/W1600697036'
+        _:
+            title: 'Whatever next? Predictive brains, situated agents, and the future of cognitive science'
+            doi: 'https://doi.org/10.1017/s0140525x12000477'
+            year: 2013
+            publisherFlags: null
+            authorNames: *ref_20
+            link: 'https://doi.org/10.1017/s0140525x12000477'
+            pdfLink: 'https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33542C736E17E3D1D44E8D03BE5F4CD9/S0140525X12000477a.pdf/div-class-title-whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science-div.pdf'
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 1
             - 0
-        publisherInfo: ''
-    Disjuncture and Difference in the Global Cultural Economy: &ref_53
+    Disjuncture and Difference in the Global Cultural Economy: &ref_135
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1769,7 +1966,7 @@ references:
                     - sociology
                     - economics
                 year: 1990
-                authorNames:
+                authorNames: &ref_21
                     - Arjun Appadurai
                 link: 'https://doi.org/10.1215/08992363-2-2-1'
                 pdfLink: null
@@ -1821,12 +2018,21 @@ references:
                     - 'https://openalex.org/W1549310245'
                     - 'https://openalex.org/W1527813328'
                     - 'https://openalex.org/W1502198272'
+        _:
+            title: Disjuncture and Difference in the Global Cultural Economy
+            doi: 'https://doi.org/10.1215/08992363-2-2-1'
+            year: 1990
+            publisherFlags: null
+            authorNames: *ref_21
+            link: 'https://doi.org/10.1215/08992363-2-2-1'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -10
             - 0
             - 0
-        publisherInfo: ''
-    'Principal warps: thin-plate splines and the decomposition of deformations': &ref_54
+    'Principal warps: thin-plate splines and the decomposition of deformations': &ref_136
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1873,7 +2079,7 @@ references:
                     - ecology
                     - operating system
                 year: 1989
-                authorNames:
+                authorNames: &ref_22
                     - Fred L. Bookstein
                 link: 'https://doi.org/10.1109/34.24792'
                 pdfLink: null
@@ -1912,12 +2118,21 @@ references:
                     - 'https://openalex.org/W2112208972'
                     - 'https://openalex.org/W2056912418'
                     - 'https://openalex.org/W2033213769'
+        _:
+            title: 'Principal warps: thin-plate splines and the decomposition of deformations'
+            doi: 'https://doi.org/10.1109/34.24792'
+            year: 1989
+            publisherFlags: null
+            authorNames: *ref_22
+            link: 'https://doi.org/10.1109/34.24792'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -10
             - 0
             - 0
-        publisherInfo: ''
-    Neuroscience-Inspired Artificial Intelligence: &ref_55
+    Neuroscience-Inspired Artificial Intelligence: &ref_137
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1966,7 +2181,7 @@ references:
                     - mathematics
                     - pure mathematics
                 year: 2017
-                authorNames:
+                authorNames: &ref_23
                     - Demis Hassabis
                     - Dharshan Kumaran
                     - Christopher Summerfield
@@ -2169,12 +2384,21 @@ references:
                     - 'https://openalex.org/W1779974355'
                     - 'https://openalex.org/W1593495836'
                     - 'https://openalex.org/W1533907798'
+        _:
+            title: Neuroscience-Inspired Artificial Intelligence
+            doi: 'https://doi.org/10.1016/j.neuron.2017.06.011'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_23
+            link: 'https://doi.org/10.1016/j.neuron.2017.06.011'
+            pdfLink: 'http://www.cell.com/article/S0896627317305093/pdf'
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    'The hippocampus and memory: insights from spatial processing': &ref_56
+    'The hippocampus and memory: insights from spatial processing': &ref_138
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2222,7 +2446,7 @@ references:
                     - cognition
                     - working memory
                 year: 2008
-                authorNames:
+                authorNames: &ref_24
                     - Chris M. Bird
                     - Neil Burgess
                 link: 'https://doi.org/10.1038/nrn2335'
@@ -2385,12 +2609,21 @@ references:
                     - 'https://openalex.org/W2011290724'
                     - 'https://openalex.org/W17166845'
                     - 'https://openalex.org/W1681464763'
+        _:
+            title: 'The hippocampus and memory: insights from spatial processing'
+            doi: 'https://doi.org/10.1038/nrn2335'
+            year: 2008
+            publisherFlags: null
+            authorNames: *ref_24
+            link: 'https://doi.org/10.1038/nrn2335'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -15
             - 0
             - 0
-        publisherInfo: ''
-    'The proactive brain: using analogies and associations to generate predictions': &ref_57
+    'The proactive brain: using analogies and associations to generate predictions': &ref_139
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2431,7 +2664,7 @@ references:
                     - cognitive psychology
                     - neuroscience
                 year: 2007
-                authorNames:
+                authorNames: &ref_25
                     - Moshe Bar
                 link: 'https://doi.org/10.1016/j.tics.2007.05.005'
                 pdfLink: null
@@ -2530,17 +2763,27 @@ references:
                     - 'https://openalex.org/W2077865380'
                     - 'https://openalex.org/W2067108088'
                     - 'https://openalex.org/W2053487507'
+        _:
+            title: 'The proactive brain: using analogies and associations to generate predictions'
+            doi: 'https://doi.org/10.1016/j.tics.2007.05.005'
+            year: 2007
+            publisherFlags: null
+            authorNames: *ref_25
+            link: 'https://doi.org/10.1016/j.tics.2007.05.005'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    Exploring the impact of artificial intelligence on teaching and learning in higher education: &ref_58
+    Exploring the impact of artificial intelligence on teaching and learning in higher education: &ref_140
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: irrelevent|title
             comment: ''
             reasonsRelevant: []
-            reasonsNotRelevant: []
+            reasonsNotRelevant:
+                - title
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
@@ -2548,6 +2791,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
+                sawTitle: '2024-12-14T00:00:37.161Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -2583,7 +2827,7 @@ references:
                     - finance
                     - law
                 year: 2017
-                authorNames:
+                authorNames: &ref_26
                     - Ştefan Popenici
                     - Sharon Kerr
                 link: 'https://doi.org/10.1186/s41039-017-0062-8'
@@ -2629,12 +2873,21 @@ references:
                     - 'https://openalex.org/W2064041898'
                     - 'https://openalex.org/W1993144966'
                     - 'https://openalex.org/W1540979460'
+        _:
+            title: Exploring the impact of artificial intelligence on teaching and learning in higher education
+            doi: 'https://doi.org/10.1186/s41039-017-0062-8'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_26
+            link: 'https://doi.org/10.1186/s41039-017-0062-8'
+            pdfLink: 'https://telrp.springeropen.com/track/pdf/10.1186/s41039-017-0062-8'
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    Stalking the elusive "vividness" effect.: &ref_59
+    Stalking the elusive "vividness" effect.: &ref_141
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2675,7 +2928,7 @@ references:
                     - cognitive psychology
                     - criminology
                 year: 1982
-                authorNames:
+                authorNames: &ref_27
                     - Shelley E. Taylor
                     - Suzanne C. Thompson
                 link: 'https://doi.org/10.1037/0033-295x.89.2.155'
@@ -2771,12 +3024,21 @@ references:
                     - 'https://openalex.org/W2097005545'
                     - 'https://openalex.org/W2030131999'
                     - 'https://openalex.org/W1783590445'
+        _:
+            title: Stalking the elusive "vividness" effect.
+            doi: 'https://doi.org/10.1037/0033-295x.89.2.155'
+            year: 1982
+            publisherFlags: null
+            authorNames: *ref_27
+            link: 'https://doi.org/10.1037/0033-295x.89.2.155'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -10
             - 0
             - 0
-        publisherInfo: ''
-    A Bayesian account of 'hysteria': &ref_60
+    A Bayesian account of 'hysteria': &ref_142
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2833,7 +3095,7 @@ references:
                     - medicine
                     - pathology
                 year: 2012
-                authorNames:
+                authorNames: &ref_28
                     - Mark J. Edwards
                     - Rick A. Adams
                     - Harriet R. Brown
@@ -2978,14 +3240,23 @@ references:
                     - 'https://openalex.org/W2067901665'
                     - 'https://openalex.org/W1985601989'
                     - 'https://openalex.org/W1978337133'
+        _:
+            title: A Bayesian account of 'hysteria'
+            doi: 'https://doi.org/10.1093/brain/aws129'
+            year: 2012
+            publisherFlags: null
+            authorNames: *ref_28
+            link: 'https://doi.org/10.1093/brain/aws129'
+            pdfLink: 'https://academic.oup.com/brain/article-pdf/135/11/3495/754693/aws129.pdf'
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    'The cognitive neuroscience of constructive memory: remembering the past and imagining the future': &ref_61
+    'The cognitive neuroscience of constructive memory: remembering the past and imagining the future': &ref_143
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -2996,6 +3267,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
+                sawTitle: '2024-12-14T00:38:35.563Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -3035,7 +3307,7 @@ references:
                     - explicit memory
                     - operating system
                 year: 2007
-                authorNames:
+                authorNames: &ref_29
                     - Daniel L. Schacter
                     - Donna Rose Addis
                 link: 'https://doi.org/10.1098/rstb.2007.2087'
@@ -3179,12 +3451,21 @@ references:
                     - 'https://openalex.org/W2158002445'
                     - 'https://openalex.org/W1706473'
                     - 'https://openalex.org/W118817889'
+        _:
+            title: 'The cognitive neuroscience of constructive memory: remembering the past and imagining the future'
+            doi: 'https://doi.org/10.1098/rstb.2007.2087'
+            year: 2007
+            publisherFlags: null
+            authorNames: *ref_29
+            link: 'https://doi.org/10.1098/rstb.2007.2087'
+            pdfLink: 'https://europepmc.org/articles/pmc2429996?pdf=render'
+            cites: null
+            citedBy: null
         score:
             - -4
             - 0
             - 0
-        publisherInfo: ''
-    Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet: &ref_0
+    Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet: &ref_82
         notes:
             comment: ''
             customKeywords: []
@@ -3231,7 +3512,7 @@ references:
                     - sociology
                     - anthropology
                 year: 2023
-                authorNames:
+                authorNames: &ref_30
                     - Gonzalo Martínez
                     - Lauren Watson
                     - Pedro Reviriego
@@ -3254,12 +3535,21 @@ references:
                     - 'https://openalex.org/W1967909251'
                     - 'https://openalex.org/W1517876498'
                 openAlexId: W4380551139
+        _:
+            title: Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet
+            doi: 'https://doi.org/10.48550/arxiv.2306.06130'
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_30
+            link: 'https://arxiv.org/abs/2306.06130'
+            pdfLink: 'http://arxiv.org/pdf/2306.06130'
+            cites: null
+            citedBy: null
         score:
+            - -30
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    A Comprehensive Review of the Latest Advancements in Large Generative AI Models: &ref_1
+    A Comprehensive Review of the Latest Advancements in Large Generative AI Models: &ref_83
         notes:
             comment: ''
             customKeywords: []
@@ -3307,7 +3597,7 @@ references:
                     - set (abstract data type)
                     - aerospace engineering
                 year: 2023
-                authorNames:
+                authorNames: &ref_31
                     - Satyam Kumar
                     - Dayima Musharaf
                     - Seerat Musharaf
@@ -3336,12 +3626,21 @@ references:
                     - 'https://openalex.org/W2967848559'
                     - 'https://openalex.org/W2280377497'
                 openAlexId: W4387506531
+        _:
+            title: A Comprehensive Review of the Latest Advancements in Large Generative AI Models
+            doi: 'https://doi.org/10.1007/978-3-031-45121-8_9'
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_31
+            link: 'https://doi.org/10.1007/978-3-031-45121-8_9'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -30
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors': &ref_2
+    'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors': &ref_84
         notes:
             comment: ''
             customKeywords: []
@@ -3389,7 +3688,7 @@ references:
                     - geometry
                     - epistemology
                 year: 2023
-                authorNames:
+                authorNames: &ref_32
                     - Cristian Meo
                     - Anirudh Goyal
                     - Justin Dauwels
@@ -3409,12 +3708,21 @@ references:
                     - 'https://openalex.org/W1967909251'
                     - 'https://openalex.org/W1517876498'
                 openAlexId: W4365211920
+        _:
+            title: 'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors'
+            doi: 'https://doi.org/10.48550/arxiv.2304.04103'
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_32
+            link: 'https://arxiv.org/abs/2304.04103'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -30
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Are generative approaches to ZSAR a look in the right direction?: &ref_3
+    Are generative approaches to ZSAR a look in the right direction?: &ref_85
         notes:
             comment: ''
             customKeywords: []
@@ -3462,7 +3770,7 @@ references:
                     - economics
                     - operating system
                 year: 2023
-                authorNames:
+                authorNames: &ref_33
                     - Zhihui Zhang
                 link: 'https://doi.org/10.31219/osf.io/ncyqb'
                 pdfLink: 'https://osf.io/ncyqb/download'
@@ -3489,12 +3797,21 @@ references:
                     - 'https://openalex.org/W1967909251'
                     - 'https://openalex.org/W1517876498'
                 openAlexId: W4317695495
+        _:
+            title: Are generative approaches to ZSAR a look in the right direction?
+            doi: 'https://doi.org/10.31219/osf.io/ncyqb'
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_33
+            link: 'https://doi.org/10.31219/osf.io/ncyqb'
+            pdfLink: 'https://osf.io/ncyqb/download'
+            cites: null
+            citedBy: null
         score:
+            - -30
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Improving image generative models with human interactions: &ref_4
+    Improving image generative models with human interactions: &ref_86
         notes:
             comment: ''
             customKeywords: []
@@ -3545,7 +3862,7 @@ references:
                     - biology
                     - programming language
                 year: 2017
-                authorNames:
+                authorNames: &ref_34
                     - Andrew K. Lampinen
                     - David R. So
                     - Douglas Eck
@@ -3566,12 +3883,21 @@ references:
                     - 'https://openalex.org/W2967848559'
                     - 'https://openalex.org/W2280377497'
                 openAlexId: W4299831724
+        _:
+            title: Improving image generative models with human interactions
+            doi: 'https://doi.org/10.48550/arxiv.1709.10459'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_34
+            link: 'https://arxiv.org/abs/1709.10459'
+            pdfLink: 'http://arxiv.org/pdf/1709.10459'
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay: &ref_5
+    Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay: &ref_87
         notes:
             comment: ''
             customKeywords: []
@@ -3624,7 +3950,7 @@ references:
                     - operations management
                     - literature
                 year: 2021
-                authorNames:
+                authorNames: &ref_35
                     - Yoojin Choi
                     - Mostafa El‐Khamy
                     - Jungwon Lee
@@ -3644,12 +3970,21 @@ references:
                     - 'https://openalex.org/W1967909251'
                     - 'https://openalex.org/W1517876498'
                 openAlexId: W4287117424
+        _:
+            title: Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay
+            doi: 'https://doi.org/10.48550/arxiv.2106.09835'
+            year: 2021
+            publisherFlags: null
+            authorNames: *ref_35
+            link: 'https://arxiv.org/abs/2106.09835'
+            pdfLink: 'http://arxiv.org/pdf/2106.09835'
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -30
             - 1
             - 0
-        publisherInfo: ''
-    'Generative Model for Person Re-Identification: A Review': &ref_6
+    'Generative Model for Person Re-Identification: A Review': &ref_88
         notes:
             comment: ''
             customKeywords: []
@@ -3696,7 +4031,7 @@ references:
                     - botany
                     - biology
                 year: 2020
-                authorNames:
+                authorNames: &ref_36
                     - Zhong Zhang
                     - Tongzhen Si
                     - Shuang Liu
@@ -3732,12 +4067,21 @@ references:
                     - 'https://openalex.org/W2093104230'
                     - 'https://openalex.org/W1493875009'
                 openAlexId: W3014948380
+        _:
+            title: 'Generative Model for Person Re-Identification: A Review'
+            doi: 'https://doi.org/10.1007/978-981-13-9409-6_174'
+            year: 2020
+            publisherFlags: null
+            authorNames: *ref_36
+            link: 'https://doi.org/10.1007/978-981-13-9409-6_174'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Deep Dexterous Grasping of Novel Objects from a Single View.: &ref_7
+    Deep Dexterous Grasping of Novel Objects from a Single View.: &ref_89
         notes:
             comment: ''
             customKeywords: []
@@ -3787,7 +4131,7 @@ references:
                     - operations management
                     - programming language
                 year: 2019
-                authorNames:
+                authorNames: &ref_37
                     - Ümit Ruşen Aktaş
                     - Chao Zhao
                     - Marek Kopicki
@@ -3867,12 +4211,21 @@ references:
                     - 'https://openalex.org/W2205950488'
                     - 'https://openalex.org/W1967407878'
                 openAlexId: W2967848559
+        _:
+            title: Deep Dexterous Grasping of Novel Objects from a Single View.
+            doi: null
+            year: 2019
+            publisherFlags: null
+            authorNames: *ref_37
+            link: 'http://export.arxiv.org/pdf/1908.04293'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    How generative encodings fare on less regular problems: &ref_8
+    How generative encodings fare on less regular problems: &ref_90
         notes:
             comment: ''
             customKeywords: []
@@ -3924,7 +4277,7 @@ references:
                     - law
                     - biology
                 year: 2008
-                authorNames:
+                authorNames: &ref_38
                     - Jeff Clune
                     - Charles Ofria
                     - Robert T. Pennock
@@ -3948,12 +4301,21 @@ references:
                     - 'https://openalex.org/W3014948380'
                     - 'https://openalex.org/W2967848559'
                 openAlexId: W2087346071
+        _:
+            title: How generative encodings fare on less regular problems
+            doi: 'https://doi.org/10.1145/1389095.1389263'
+            year: 2008
+            publisherFlags: null
+            authorNames: *ref_38
+            link: 'https://doi.org/10.1145/1389095.1389263'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -15
             - 0
             - 0
-        publisherInfo: ''
-    The Developing Person Through the Life Span: &ref_9
+    The Developing Person Through the Life Span: &ref_91
         notes:
             comment: ''
             customKeywords: []
@@ -4001,7 +4363,7 @@ references:
                     - personality
                     - psychoanalysis
                 year: 1983
-                authorNames:
+                authorNames: &ref_39
                     - Kathleen Stassen Berger
                 link: 'http://ci.nii.ac.jp/ncid/BB0883857X'
                 pdfLink: null
@@ -4029,12 +4391,21 @@ references:
                     - 'https://openalex.org/W1562208008'
                     - 'https://openalex.org/W1520083769'
                 openAlexId: W1496514346
+        _:
+            title: The Developing Person Through the Life Span
+            doi: null
+            year: 1983
+            publisherFlags: null
+            authorNames: *ref_39
+            link: 'http://ci.nii.ac.jp/ncid/BB0883857X'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -10
             - 0
             - 0
-        publisherInfo: ''
-    Relative Entropy Policy Search: &ref_10
+    Relative Entropy Policy Search: &ref_92
         notes:
             comment: ''
             customKeywords: []
@@ -4088,7 +4459,7 @@ references:
                     - biology
                     - geography
                 year: 2010
-                authorNames:
+                authorNames: &ref_40
                     - Jan Peters
                     - Katharina Mülling
                     - Yasemin Altün
@@ -4131,17 +4502,27 @@ references:
                     - 'https://openalex.org/W2086519370'
                     - 'https://openalex.org/W2028665553'
                 openAlexId: W1499669280
+        _:
+            title: Relative Entropy Policy Search
+            doi: 'https://doi.org/10.1609/aaai.v24i1.7727'
+            year: 2010
+            publisherFlags: null
+            authorNames: *ref_40
+            link: 'https://doi.org/10.1609/aaai.v24i1.7727'
+            pdfLink: 'https://ojs.aaai.org/index.php/AAAI/article/download/7727/7588'
+            cites: null
+            citedBy: null
         score:
+            - -10
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Playing Atari with Deep Reinforcement Learning: &ref_11
+    Playing Atari with Deep Reinforcement Learning: &ref_93
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            resumeStatus: irrelevent|title
+            reasonsNotRelevant:
+                - title
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
@@ -4149,6 +4530,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2024-12-14T00:00:42.090Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4192,7 +4574,7 @@ references:
                     - biology
                     - structural engineering
                 year: 2013
-                authorNames:
+                authorNames: &ref_41
                     - Volodymyr Mnih
                     - Koray Kavukcuoglu
                     - David Silver
@@ -4216,24 +4598,35 @@ references:
                     - 'https://openalex.org/W2136202932'
                     - 'https://openalex.org/W2025663273'
                 openAlexId: W4298857966
+        _:
+            title: Playing Atari with Deep Reinforcement Learning
+            doi: 'https://doi.org/10.48550/arxiv.1312.5602'
+            year: 2013
+            publisherFlags: null
+            authorNames: *ref_41
+            link: 'https://arxiv.org/abs/1312.5602'
+            pdfLink: 'http://arxiv.org/pdf/1312.5602'
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    The Ecological Approach to Visual Perception: &ref_12
+    The Ecological Approach to Visual Perception: &ref_94
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             reasonsNotRelevant: []
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
                 query: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2024-12-14T00:31:03.263Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4266,7 +4659,7 @@ references:
                     - biology
                     - neuroscience
                 year: 1980
-                authorNames:
+                authorNames: &ref_42
                     - Marc H. Bornstein
                     - James J. Gibson
                 link: 'https://doi.org/10.2307/429816'
@@ -4285,12 +4678,21 @@ references:
                     - 'https://openalex.org/W1940320388'
                     - 'https://openalex.org/W105296515'
                 openAlexId: W1933657216
+        _:
+            title: The Ecological Approach to Visual Perception
+            doi: 'https://doi.org/10.2307/429816'
+            year: 1980
+            publisherFlags: null
+            authorNames: *ref_42
+            link: 'https://doi.org/10.2307/429816'
+            pdfLink: 'https://pq-static-content.proquest.com/collateral/media2/documents/ebookcentral-dda.pdf'
+            cites: null
+            citedBy: null
         score:
-            - -3
+            - 2
             - 1
             - 0
-        publisherInfo: ''
-    Auto-Encoding Variational Bayes: &ref_13
+    Auto-Encoding Variational Bayes: &ref_95
         notes:
             comment: ''
             customKeywords: []
@@ -4341,7 +4743,7 @@ references:
                     - statistics
                     - mathematical analysis
                 year: 2014
-                authorNames:
+                authorNames: &ref_43
                     - Diederik P. Kingma
                     - Max Welling
                 link: null
@@ -4387,12 +4789,21 @@ references:
                 openAlexId: W1959608418
             crossref:
                 doi: 10.61603/ceas.v2i1.33
+        _:
+            title: Auto-Encoding Variational Bayes
+            doi: 10.61603/ceas.v2i1.33
+            year: 2014
+            publisherFlags: null
+            authorNames: *ref_43
+            link: null
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Biped dynamic walking using reinforcement learning: &ref_14
+    Biped dynamic walking using reinforcement learning: &ref_96
         notes:
             comment: ''
             customKeywords: []
@@ -4447,7 +4858,7 @@ references:
                     - economics
                     - visual arts
                 year: 1997
-                authorNames:
+                authorNames: &ref_44
                     - Hamid Benbrahim
                     - Judy A. Franklin
                 link: 'https://doi.org/10.1016/s0921-8890(97)00043-2'
@@ -4518,12 +4929,21 @@ references:
                     - 'https://openalex.org/W2031695474'
                     - 'https://openalex.org/W1585007175'
                 openAlexId: W1994923984
+        _:
+            title: Biped dynamic walking using reinforcement learning
+            doi: 'https://doi.org/10.1016/s0921-8890(97)00043-2'
+            year: 1997
+            publisherFlags: null
+            authorNames: *ref_44
+            link: 'https://doi.org/10.1016/s0921-8890(97)00043-2'
+            pdfLink: 'https://scholars.unh.edu/cgi/viewcontent.cgi?article=2925&context=dissertation'
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -10
             - 1
             - 0
-        publisherInfo: ''
-    Active learning of inverse models with intrinsically motivated goal exploration in robots: &ref_15
+    Active learning of inverse models with intrinsically motivated goal exploration in robots: &ref_97
         notes:
             comment: ''
             customKeywords: []
@@ -4571,7 +4991,7 @@ references:
                     - algorithm
                     - economics
                 year: 2012
-                authorNames:
+                authorNames: &ref_45
                     - Adrien Baranès
                     - Pierre‐Yves Oudeyer
                 link: 'https://doi.org/10.1016/j.robot.2012.05.008'
@@ -4730,12 +5150,21 @@ references:
                     - 'https://openalex.org/W154868527'
                     - 'https://openalex.org/W1494268238'
                 openAlexId: W2004303440
+        _:
+            title: Active learning of inverse models with intrinsically motivated goal exploration in robots
+            doi: 'https://doi.org/10.1016/j.robot.2012.05.008'
+            year: 2012
+            publisherFlags: null
+            authorNames: *ref_45
+            link: 'https://doi.org/10.1016/j.robot.2012.05.008'
+            pdfLink: 'https://inria.hal.science/hal-00788440/document'
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 1
             - 0
-        publisherInfo: ''
-    GAN（Generative Adversarial Nets）: &ref_16
+    GAN（Generative Adversarial Nets）: &ref_98
         notes:
             comment: ''
             customKeywords: []
@@ -4773,7 +5202,7 @@ references:
                     - generative grammar
                     - computer science
                 year: 2017
-                authorNames:
+                authorNames: &ref_46
                     - Ian Goodfellow
                     - Jean Pouget-Abadie
                     - Mehdi Mirza
@@ -4832,12 +5261,21 @@ references:
                     - 'https://openalex.org/W3017161950'
                     - 'https://openalex.org/W2901368259'
                 openAlexId: W2099471712
+        _:
+            title: GAN（Generative Adversarial Nets）
+            doi: 'https://doi.org/10.3156/jsoft.29.5_177_2'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_46
+            link: 'https://doi.org/10.3156/jsoft.29.5_177_2'
+            pdfLink: 'https://www.jstage.jst.go.jp/article/jsoft/29/5/29_177_2/_pdf'
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    'PILCO: A Model-Based and Data-Efficient Approach to Policy Search': &ref_17
+    'PILCO: A Model-Based and Data-Efficient Approach to Policy Search': &ref_99
         notes:
             comment: ''
             customKeywords: []
@@ -4886,7 +5324,7 @@ references:
                     - database
                     - operating system
                 year: 2011
-                authorNames:
+                authorNames: &ref_47
                     - Marc Peter Deisenroth
                     - Carl Edward Rasmussen
                 link: 'http://ai.cs.washington.edu/www/media/papers/tmpjVKffX.pdf'
@@ -4940,12 +5378,21 @@ references:
                     - 'https://openalex.org/W1757796397'
                     - 'https://openalex.org/W1746819321'
                 openAlexId: W2140135625
+        _:
+            title: 'PILCO: A Model-Based and Data-Efficient Approach to Policy Search'
+            doi: null
+            year: 2011
+            publisherFlags: null
+            authorNames: *ref_47
+            link: 'http://ai.cs.washington.edu/www/media/papers/tmpjVKffX.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Machine learning for fast quadrupedal locomotion: &ref_18
+    Machine learning for fast quadrupedal locomotion: &ref_100
         notes:
             comment: ''
             customKeywords: []
@@ -4991,7 +5438,7 @@ references:
                     - medicine
                     - anatomy
                 year: 2004
-                authorNames:
+                authorNames: &ref_48
                     - Nate Kohl
                     - Peter Stone
                 link: 'http://homepage.psy.utexas.edu/HomePage/Class/Psy394U/Hayhoe/cognitive%20science%202007/stone/stoneAAAI04.pdf'
@@ -5037,12 +5484,21 @@ references:
                     - 'https://openalex.org/W1483589'
                     - 'https://openalex.org/W101458385'
                 openAlexId: W2153192722
+        _:
+            title: Machine learning for fast quadrupedal locomotion
+            doi: null
+            year: 2004
+            publisherFlags: null
+            authorNames: *ref_48
+            link: 'http://homepage.psy.utexas.edu/HomePage/Class/Psy394U/Hayhoe/cognitive%20science%202007/stone/stoneAAAI04.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -5
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    End-to-End Training of Deep Visuomotor Policies: &ref_19
+    End-to-End Training of Deep Visuomotor Policies: &ref_101
         notes:
             comment: ''
             customKeywords: []
@@ -5099,7 +5555,7 @@ references:
                     - aerospace engineering
                     - thermodynamics
                 year: 2015
-                authorNames:
+                authorNames: &ref_49
                     - Sergey Levine
                     - Chelsea Finn
                     - Trevor Darrell
@@ -5200,12 +5656,21 @@ references:
                     - 'https://openalex.org/W3029198973'
                     - 'https://openalex.org/W2951211570'
                 openAlexId: W2155007355
+        _:
+            title: End-to-End Training of Deep Visuomotor Policies
+            doi: 'https://doi.org/10.48550/arxiv.1504.00702'
+            year: 2015
+            publisherFlags: null
+            authorNames: *ref_49
+            link: 'https://arxiv.org/abs/1504.00702'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    ImageNet Classification with Deep Convolutional Neural Networks: &ref_20
+    ImageNet Classification with Deep Convolutional Neural Networks: &ref_102
         notes:
             comment: ''
             customKeywords: []
@@ -5257,7 +5722,7 @@ references:
                     - sociology
                     - anthropology
                 year: 2012
-                authorNames:
+                authorNames: &ref_50
                     - Alex Krizhevsky
                     - Ilya Sutskever
                     - Geoffrey E. Hinton
@@ -5312,12 +5777,21 @@ references:
                 openAlexId: W2163605009
             crossref:
                 doi: 10.1145/3065386
+        _:
+            title: ImageNet Classification with Deep Convolutional Neural Networks
+            doi: 10.1145/3065386
+            year: 2012
+            publisherFlags: null
+            authorNames: *ref_50
+            link: 'http://books.nips.cc/papers/files/nips25/NIPS2012_0534.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Policy Search for Motor Primitives in Robotics: &ref_21
+    Policy Search for Motor Primitives in Robotics: &ref_103
         notes:
             comment: ''
             customKeywords: []
@@ -5372,7 +5846,7 @@ references:
                     - biology
                     - geography
                 year: 2013
-                authorNames:
+                authorNames: &ref_51
                     - Jens Kober
                     - Jan Peters
                 link: 'https://doi.org/10.1007/978-3-319-03194-1_4'
@@ -5445,17 +5919,27 @@ references:
                     - 'https://openalex.org/W2165180011'
                     - 'https://openalex.org/W2126211886'
                 openAlexId: W2167117957
+        _:
+            title: Policy Search for Motor Primitives in Robotics
+            doi: 'https://doi.org/10.1007/978-3-319-03194-1_4'
+            year: 2013
+            publisherFlags: null
+            authorNames: *ref_51
+            link: 'https://doi.org/10.1007/978-3-319-03194-1_4'
+            pdfLink: 'https://link.springer.com/content/pdf/10.1007%2Fs10994-010-5223-6.pdf'
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 0
             - 0
-        publisherInfo: ''
-    Learning structured output representation using deep conditional generative models: &ref_22
+    Learning structured output representation using deep conditional generative models: &ref_104
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            resumeStatus: irrelevent|title
+            reasonsNotRelevant:
+                - title
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
@@ -5463,6 +5947,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2024-12-14T00:05:47.660Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5506,7 +5991,7 @@ references:
                     - political science
                     - law
                 year: 2015
-                authorNames:
+                authorNames: &ref_52
                     - Kihyuk Sohn
                     - Xinchen Yan
                     - Honglak Lee
@@ -5576,12 +6061,21 @@ references:
                     - 'https://openalex.org/W1909320841'
                     - 'https://openalex.org/W1901129140'
                 openAlexId: W2188365844
+        _:
+            title: Learning structured output representation using deep conditional generative models
+            doi: null
+            year: 2015
+            publisherFlags: null
+            authorNames: *ref_52
+            link: null
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    Mastering the game of Go with deep neural networks and tree search: &ref_23
+    Mastering the game of Go with deep neural networks and tree search: &ref_105
         notes:
             comment: ''
             customKeywords: []
@@ -5638,7 +6132,7 @@ references:
                     - political science
                     - law
                 year: 2016
-                authorNames:
+                authorNames: &ref_53
                     - David Silver
                     - Aja Huang
                     - Chris J. Maddison
@@ -5738,12 +6232,21 @@ references:
                     - 'https://openalex.org/W2257979135'
                     - 'https://openalex.org/W2188928203'
                 openAlexId: W2257979135
+        _:
+            title: Mastering the game of Go with deep neural networks and tree search
+            doi: 'https://doi.org/10.1038/nature16961'
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_53
+            link: 'https://doi.org/10.1038/nature16961'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Conditional Image Generation with PixelCNN Decoders: &ref_24
+    Conditional Image Generation with PixelCNN Decoders: &ref_106
         notes:
             comment: ''
             customKeywords: []
@@ -5790,7 +6293,7 @@ references:
                     - social science
                     - sociology
                 year: 2016
-                authorNames:
+                authorNames: &ref_54
                     - Aäron van den Oord
                     - Nal Kalchbrenner
                     - Oriol Vinyals
@@ -5845,16 +6348,25 @@ references:
                     - 'https://openalex.org/W2951211570'
                     - 'https://openalex.org/W2669956259'
                 openAlexId: W2963636093
+        _:
+            title: Conditional Image Generation with PixelCNN Decoders
+            doi: 'https://doi.org/10.48550/arxiv.1606.05328'
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_54
+            link: 'https://arxiv.org/abs/1606.05328'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    The ecological approach: &ref_25
+    The ecological approach: &ref_107
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             reasonsNotRelevant: []
             reasonsRelevant: []
             discoveryMethod:
@@ -5863,6 +6375,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2024-12-14T00:38:06.826Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5884,7 +6397,7 @@ references:
                     - geography
                     - biology
                 year: 1982
-                authorNames:
+                authorNames: &ref_55
                     - Richard P. Schaedel
                     - David Henige
                 link: 'https://doi.org/10.1017/cbo9780511572715.004'
@@ -5903,17 +6416,27 @@ references:
                     - 'https://openalex.org/W2341665333'
                     - 'https://openalex.org/W2026941487'
                 openAlexId: W2494546173
+        _:
+            title: The ecological approach
+            doi: 'https://doi.org/10.1017/cbo9780511572715.004'
+            year: 1982
+            publisherFlags: null
+            authorNames: *ref_55
+            link: 'https://doi.org/10.1017/cbo9780511572715.004'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -4
+            - 1
             - 0
             - 0
-        publisherInfo: ''
-    '#Exploration: a study of count-based exploration for deep reinforcement learning': &ref_26
+    '#Exploration: a study of count-based exploration for deep reinforcement learning': &ref_108
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            resumeStatus: irrelevent|title
+            reasonsNotRelevant:
+                - title
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
@@ -5921,6 +6444,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2024-12-14T00:05:51.719Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5957,7 +6481,7 @@ references:
                     - computer security
                     - operating system
                 year: 2017
-                authorNames:
+                authorNames: &ref_56
                     - Haoran Tang
                     - Rein Houthooft
                     - Davis Foote
@@ -6028,12 +6552,21 @@ references:
                     - 'https://openalex.org/W1771410628'
                     - 'https://openalex.org/W1757796397'
                 openAlexId: W2561776174
+        _:
+            title: '#Exploration: a study of count-based exploration for deep reinforcement learning'
+            doi: null
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_56
+            link: null
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning': &ref_27
+    'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning': &ref_109
         notes:
             comment: ''
             customKeywords: []
@@ -6088,7 +6621,7 @@ references:
                     - quantum mechanics
                     - economics
                 year: 2016
-                authorNames:
+                authorNames: &ref_57
                     - Yan Duan
                     - John Schulman
                     - Xi Chen
@@ -6117,17 +6650,27 @@ references:
                     - 'https://openalex.org/W187740018'
                     - 'https://openalex.org/W1626977535'
                 openAlexId: W2578206533
+        _:
+            title: 'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning'
+            doi: 'https://doi.org/10.48550/arxiv.1611.02779'
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_57
+            link: 'https://arxiv.org/abs/1611.02779'
+            pdfLink: 'http://arxiv.org/pdf/1611.02779'
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 2
             - 0
-        publisherInfo: ''
-    Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks: &ref_28
+    Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks: &ref_110
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            resumeStatus: irrelevent|title
+            reasonsNotRelevant:
+                - title
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
@@ -6135,6 +6678,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2024-12-14T00:07:12.801Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -6180,7 +6724,7 @@ references:
                     - optics
                     - economics
                 year: 2017
-                authorNames:
+                authorNames: &ref_58
                     - Chelsea Finn
                     - Pieter Abbeel
                     - Sergey Levine
@@ -6232,12 +6776,21 @@ references:
                     - 'https://openalex.org/W2891227010'
                     - 'https://openalex.org/W2138720691'
                 openAlexId: W2604763608
+        _:
+            title: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
+            doi: 'https://doi.org/10.48550/arxiv.1703.03400'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_58
+            link: 'https://arxiv.org/abs/1703.03400'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    Automatic Goal Generation for Reinforcement Learning Agents: &ref_29
+    Automatic Goal Generation for Reinforcement Learning Agents: &ref_111
         notes:
             comment: ''
             customKeywords: []
@@ -6290,7 +6843,7 @@ references:
                     - biology
                     - programming language
                 year: 2018
-                authorNames:
+                authorNames: &ref_59
                     - Carlos Florensa
                     - David Held
                     - Xinyang Geng
@@ -6321,12 +6874,21 @@ references:
                     - 'https://openalex.org/W1777239053'
                     - 'https://openalex.org/W1771410628'
                 openAlexId: W2963293881
+        _:
+            title: Automatic Goal Generation for Reinforcement Learning Agents
+            doi: null
+            year: 2018
+            publisherFlags: null
+            authorNames: *ref_59
+            link: 'http://proceedings.mlr.press/v80/florensa18a/florensa18a.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 1
             - 0
-        publisherInfo: ''
-    Information theoretic MPC for model-based reinforcement learning: &ref_30
+    Information theoretic MPC for model-based reinforcement learning: &ref_112
         notes:
             comment: ''
             customKeywords: []
@@ -6382,7 +6944,7 @@ references:
                     - psychotherapist
                     - mechanical engineering
                 year: 2017
-                authorNames:
+                authorNames: &ref_60
                     - Grady Williams
                     - Nolan Wagener
                     - Brian Goldfain
@@ -6435,12 +6997,21 @@ references:
                     - 'https://openalex.org/W1977906818'
                     - 'https://openalex.org/W1522139108'
                 openAlexId: W2738778707
+        _:
+            title: Information theoretic MPC for model-based reinforcement learning
+            doi: 'https://doi.org/10.1109/icra.2017.7989202'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_60
+            link: 'https://doi.org/10.1109/icra.2017.7989202'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    Data-Efficient Hierarchical Reinforcement Learning: &ref_31
+    Data-Efficient Hierarchical Reinforcement Learning: &ref_113
         notes:
             comment: ''
             customKeywords: []
@@ -6493,7 +7064,7 @@ references:
                     - psychotherapist
                     - operating system
                 year: 2018
-                authorNames:
+                authorNames: &ref_61
                     - Ofir Nachum
                     - Shixiang Gu
                     - Honglak Lee
@@ -6524,12 +7095,21 @@ references:
                     - 'https://openalex.org/W2108535023'
                     - 'https://openalex.org/W1592847719'
                 openAlexId: W2950614095
+        _:
+            title: Data-Efficient Hierarchical Reinforcement Learning
+            doi: null
+            year: 2018
+            publisherFlags: null
+            authorNames: *ref_61
+            link: 'http://export.arxiv.org/pdf/1805.08296'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    Visual Reinforcement Learning with Imagined Goals: &ref_32
+    Visual Reinforcement Learning with Imagined Goals: &ref_114
         notes:
             comment: ''
             customKeywords: []
@@ -6588,7 +7168,7 @@ references:
                     - biology
                     - programming language
                 year: 2018
-                authorNames:
+                authorNames: &ref_62
                     - Ashvin Nair
                     - Vitchyr H. Pong
                     - Murtaza Dalal
@@ -6621,12 +7201,21 @@ references:
                     - 'https://openalex.org/W1757796397'
                     - 'https://openalex.org/W1594201624'
                 openAlexId: W2964342357
+        _:
+            title: Visual Reinforcement Learning with Imagined Goals
+            doi: null
+            year: 2018
+            publisherFlags: null
+            authorNames: *ref_62
+            link: 'https://arxiv.org/pdf/1807.04742.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 2
             - 0
-        publisherInfo: ''
-    'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding': &ref_33
+    'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding': &ref_115
         notes:
             comment: ''
             customKeywords: []
@@ -6668,7 +7257,7 @@ references:
                     - voltage
                     - meteorology
                 year: 2018
-                authorNames:
+                authorNames: &ref_63
                     - Jacob Devlin
                     - Ming‐Wei Chang
                     - Kenton Lee
@@ -6744,12 +7333,21 @@ references:
                     - 'https://openalex.org/W2233261550'
                     - 'https://openalex.org/W2001405890'
                 openAlexId: W2896457183
+        _:
+            title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
+            doi: 'https://doi.org/10.48550/arxiv.1810.04805'
+            year: 2018
+            publisherFlags: null
+            authorNames: *ref_63
+            link: 'https://arxiv.org/abs/1810.04805'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - -1.5
+            - -16.5
             - 1
             - 0
-        publisherInfo: ''
-    Unsupervised Control Through Non-Parametric Discriminative Rewards: &ref_34
+    Unsupervised Control Through Non-Parametric Discriminative Rewards: &ref_116
         notes:
             comment: ''
             customKeywords: []
@@ -6807,7 +7405,7 @@ references:
                     - programming language
                     - operating system
                 year: 2018
-                authorNames:
+                authorNames: &ref_64
                     - David Warde-Farley
                     - Tom Van de Wiele
                     - Tejas Kulkarni
@@ -6830,12 +7428,21 @@ references:
                     - 'https://openalex.org/W2153315159'
                     - 'https://openalex.org/W2126211886'
                 openAlexId: W4289242739
+        _:
+            title: Unsupervised Control Through Non-Parametric Discriminative Rewards
+            doi: 'https://doi.org/10.48550/arxiv.1811.11359'
+            year: 2018
+            publisherFlags: null
+            authorNames: *ref_64
+            link: 'https://arxiv.org/abs/1811.11359'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 0
             - 0
-        publisherInfo: ''
-    Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables: &ref_35
+    Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables: &ref_117
         notes:
             comment: ''
             customKeywords: []
@@ -6882,7 +7489,7 @@ references:
                     - chromatography
                     - biology
                 year: 2019
-                authorNames:
+                authorNames: &ref_65
                     - Kate Rakelly
                     - Aurick Zhou
                     - Deirdre Quillen
@@ -6904,12 +7511,21 @@ references:
                     - 'https://openalex.org/W2138720691'
                     - 'https://openalex.org/W2031695474'
                 openAlexId: W2952526277
+        _:
+            title: Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables
+            doi: 'https://doi.org/10.48550/arxiv.1903.08254'
+            year: 2019
+            publisherFlags: null
+            authorNames: *ref_65
+            link: 'https://arxiv.org/abs/1903.08254'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning': &ref_36
+    '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning': &ref_118
         notes:
             comment: ''
             customKeywords: []
@@ -6963,7 +7579,7 @@ references:
                     - epistemology
                     - operating system
                 year: 2016
-                authorNames:
+                authorNames: &ref_66
                     - Haoran Tang
                     - Rein Houthooft
                     - Davis Foote
@@ -7019,12 +7635,21 @@ references:
                     - 'https://openalex.org/W113683524'
                     - 'https://openalex.org/W103652678'
                 openAlexId: W2949475445
+        _:
+            title: '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning'
+            doi: 'https://doi.org/10.48550/arxiv.1611.04717'
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_66
+            link: 'https://arxiv.org/abs/1611.04717'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    Adversarial Feature Learning: &ref_37
+    Adversarial Feature Learning: &ref_119
         notes:
             comment: ''
             customKeywords: []
@@ -7082,7 +7707,7 @@ references:
                     - programming language
                     - operating system
                 year: 2016
-                authorNames:
+                authorNames: &ref_67
                     - Jeff Donahue
                     - Philipp Krähenbühl
                     - Trevor Darrell
@@ -7102,135 +7727,21 @@ references:
                     - 'https://openalex.org/W2616125534'
                     - 'https://openalex.org/W2146310005'
                 openAlexId: W4294568686
+        _:
+            title: Adversarial Feature Learning
+            doi: 'https://doi.org/10.48550/arxiv.1605.09782'
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_67
+            link: 'https://arxiv.org/abs/1605.09782'
+            pdfLink: 'http://arxiv.org/pdf/1605.09782'
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    undefined:
-        notes:
-            comment: ''
-            customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
-            reasonsRelevant: []
-            discoveryMethod:
-                dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
-                searchEngine: openAlex
-            events:
-                added: '2024-12-13T23:31:34.557Z'
-        accordingTo:
-            $manuallyEntered:
-                title: null
-                doi: null
-                year: null
-                publisherFlags: null
-                authorNames: null
-                link: null
-                pdfLink: null
-                cites: null
-                citedBy: null
-            openAlex:
-                doi: 'https://doi.org/10.18653/v1/n19-1423'
-                title: null
-                abstract: null
-                concepts:
-                    - natural language processing
-                    - statistical machine translation and natural language processing
-                    - computational text analysis in social sciences
-                    - artificial intelligence
-                    - general social sciences
-                    - computational text analysis
-                    - multilingual neural machine translation
-                    - part-of-speech tagging
-                    - machine translation
-                    - language modeling
-                    - computational linguistics
-                    - computer science
-                    - linguistics
-                    - library science
-                    - philosophy
-                year: 2019
-                authorNames:
-                    - Jacob Devlin
-                    - Ming‐Wei Chang
-                    - Kenton Lee
-                    - Kristina Toutanova
-                link: 'https://doi.org/10.18653/v1/n19-1423'
-                pdfLink: null
-                citationCount: 30611
-                citedAlexIds:
-                    - 'https://openalex.org/W131533222'
-                    - 'https://openalex.org/W1486649854'
-                    - 'https://openalex.org/W1566289585'
-                    - 'https://openalex.org/W1599016936'
-                    - 'https://openalex.org/W1840435438'
-                    - 'https://openalex.org/W2025768430'
-                    - 'https://openalex.org/W2108598243'
-                    - 'https://openalex.org/W2117130368'
-                    - 'https://openalex.org/W2121227244'
-                    - 'https://openalex.org/W2130903752'
-                    - 'https://openalex.org/W2131462252'
-                    - 'https://openalex.org/W2131744502'
-                    - 'https://openalex.org/W2144578941'
-                    - 'https://openalex.org/W2149933564'
-                    - 'https://openalex.org/W2153579005'
-                    - 'https://openalex.org/W2158108973'
-                    - 'https://openalex.org/W2158139315'
-                    - 'https://openalex.org/W2170973209'
-                    - 'https://openalex.org/W2250539671'
-                    - 'https://openalex.org/W2251939518'
-                    - 'https://openalex.org/W2270070752'
-                    - 'https://openalex.org/W2396767181'
-                    - 'https://openalex.org/W2413794162'
-                    - 'https://openalex.org/W2462831000'
-                    - 'https://openalex.org/W2507974895'
-                    - 'https://openalex.org/W2551396370'
-                    - 'https://openalex.org/W2610858497'
-                    - 'https://openalex.org/W2784823820'
-                    - 'https://openalex.org/W2880875857'
-                    - 'https://openalex.org/W2888329843'
-                    - 'https://openalex.org/W2891602716'
-                    - 'https://openalex.org/W2897076808'
-                    - 'https://openalex.org/W2951714314'
-                    - 'https://openalex.org/W2962718483'
-                    - 'https://openalex.org/W2962739339'
-                    - 'https://openalex.org/W2962808855'
-                    - 'https://openalex.org/W2963026768'
-                    - 'https://openalex.org/W2963088785'
-                    - 'https://openalex.org/W2963159690'
-                    - 'https://openalex.org/W2963339397'
-                    - 'https://openalex.org/W2963403868'
-                    - 'https://openalex.org/W2963563735'
-                    - 'https://openalex.org/W2963564796'
-                    - 'https://openalex.org/W2963644595'
-                    - 'https://openalex.org/W2963748441'
-                    - 'https://openalex.org/W2963756346'
-                    - 'https://openalex.org/W2963804993'
-                    - 'https://openalex.org/W2963846996'
-                    - 'https://openalex.org/W2963918774'
-                    - 'https://openalex.org/W2978670439'
-                    - 'https://openalex.org/W3098057198'
-                    - 'https://openalex.org/W3104033643'
-                relatedAlexIds:
-                    - 'https://openalex.org/W639578494'
-                    - 'https://openalex.org/W4253963317'
-                    - 'https://openalex.org/W2999524681'
-                    - 'https://openalex.org/W2960118423'
-                    - 'https://openalex.org/W2626427369'
-                    - 'https://openalex.org/W2184062094'
-                    - 'https://openalex.org/W2050562287'
-                    - 'https://openalex.org/W2018451868'
-                    - 'https://openalex.org/W1614506583'
-                    - 'https://openalex.org/W1248106622'
-                openAlexId: W2963341956
-        score:
-            - 0
-            - 0
-            - 0
-        publisherInfo: ''
-    Curiosity-Driven Exploration by Self-Supervised Prediction: &ref_38
+    Curiosity-Driven Exploration by Self-Supervised Prediction: &ref_120
         notes:
             comment: ''
             customKeywords: []
@@ -7280,7 +7791,7 @@ references:
                     - philosophy
                     - operating system
                 year: 2017
-                authorNames:
+                authorNames: &ref_68
                     - Deepak Pathak
                     - Pulkit Agrawal
                     - Alexei A. Efros
@@ -7313,12 +7824,21 @@ references:
                     - 'https://openalex.org/W2123270665'
                     - 'https://openalex.org/W2060310955'
                 openAlexId: W2963523627
+        _:
+            title: Curiosity-Driven Exploration by Self-Supervised Prediction
+            doi: 'https://doi.org/10.1109/cvprw.2017.70'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_68
+            link: 'https://doi.org/10.1109/cvprw.2017.70'
+            pdfLink: 'https://arxiv.org/pdf/1705.05363'
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 1
             - 0
-        publisherInfo: ''
-    'VIME: Variational Information Maximizing Exploration': &ref_39
+    'VIME: Variational Information Maximizing Exploration': &ref_121
         notes:
             comment: ''
             customKeywords: []
@@ -7367,7 +7887,7 @@ references:
                     - database
                     - geography
                 year: 2016
-                authorNames:
+                authorNames: &ref_69
                     - Rein Houthooft
                     - Xi Chen
                     - Yan Duan
@@ -7400,12 +7920,21 @@ references:
                     - 'https://openalex.org/W1771410628'
                     - 'https://openalex.org/W172298727'
                 openAlexId: W2963639957
+        _:
+            title: 'VIME: Variational Information Maximizing Exploration'
+            doi: null
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_69
+            link: 'https://papers.nips.cc/paper/2016/file/abd815286ba1007abfbb8415b83ae2cf-Paper.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Neural Discrete Representation Learning: &ref_40
+    Neural Discrete Representation Learning: &ref_122
         notes:
             comment: ''
             customKeywords: []
@@ -7470,7 +7999,7 @@ references:
                     - econometrics
                     - operating system
                 year: 2017
-                authorNames:
+                authorNames: &ref_70
                     - Aäron van den Oord
                     - Oriol Vinyals
                     - Koray Kavukcuoglu
@@ -7490,12 +8019,21 @@ references:
                     - 'https://openalex.org/W2891059443'
                     - 'https://openalex.org/W2770818364'
                 openAlexId: W2963799213
+        _:
+            title: Neural Discrete Representation Learning
+            doi: 'https://doi.org/10.48550/arxiv.1711.00937'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_70
+            link: 'https://arxiv.org/abs/1711.00937'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 1
             - 0
-        publisherInfo: ''
-    Hindsight Experience Replay: &ref_41
+    Hindsight Experience Replay: &ref_123
         notes:
             comment: ''
             customKeywords: []
@@ -7545,7 +8083,7 @@ references:
                     - arithmetic
                     - systems engineering
                 year: 2017
-                authorNames:
+                authorNames: &ref_71
                     - Marcin Andrychowicz
                     - Filip Wolski
                     - Alex Ray
@@ -7572,12 +8110,21 @@ references:
                     - 'https://openalex.org/W1512434910'
                     - 'https://openalex.org/W1492315459'
                 openAlexId: W4300799055
+        _:
+            title: Hindsight Experience Replay
+            doi: 'https://doi.org/10.48550/arxiv.1707.01495'
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_71
+            link: 'https://arxiv.org/abs/1707.01495'
+            pdfLink: 'http://arxiv.org/pdf/1707.01495'
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    'Learning to poke by poking: experiential learning of intuitive physics': &ref_42
+    'Learning to poke by poking: experiential learning of intuitive physics': &ref_124
         notes:
             comment: ''
             customKeywords: []
@@ -7629,7 +8176,7 @@ references:
                     - programming language
                     - operating system
                 year: 2016
-                authorNames:
+                authorNames: &ref_72
                     - Pulkit Agrawal
                     - Ashvin Nair
                     - Pieter Abbeel
@@ -7692,12 +8239,21 @@ references:
                     - 'https://openalex.org/W2059100041'
                     - 'https://openalex.org/W1861492603'
                 openAlexId: W2964112890
+        _:
+            title: 'Learning to poke by poking: experiential learning of intuitive physics'
+            doi: null
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_72
+            link: 'https://proceedings.neurips.cc/paper/2016/file/c203d8a151612acf12457e4d67635a95-Paper.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 2
             - 0
-        publisherInfo: ''
-    End-to-end training of deep visuomotor policies: &ref_43
+    End-to-end training of deep visuomotor policies: &ref_125
         notes:
             comment: ''
             customKeywords: []
@@ -7753,7 +8309,7 @@ references:
                     - biology
                     - aerospace engineering
                 year: 2016
-                authorNames:
+                authorNames: &ref_73
                     - Sergey Levine
                     - Chelsea Finn
                     - Trevor Darrell
@@ -7870,12 +8426,21 @@ references:
                     - 'https://openalex.org/W1771410628'
                     - 'https://openalex.org/W1757796397'
                 openAlexId: W2964161785
+        _:
+            title: End-to-end training of deep visuomotor policies
+            doi: null
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_73
+            link: 'http://rll.berkeley.edu/RSS2015-BlueSky-Shakey/Levine-ShakeyWS-2015.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Learning Latent Plans from Play: &ref_44
+    Learning Latent Plans from Play: &ref_126
         notes:
             comment: ''
             customKeywords: []
@@ -7913,7 +8478,7 @@ references:
                     - computer science
                     - business
                 year: 2019
-                authorNames:
+                authorNames: &ref_74
                     - Corey Lynch
                     - Mohi Khansari
                     - Ted Xiao
@@ -7937,12 +8502,21 @@ references:
                     - 'https://openalex.org/W2350741829'
                     - 'https://openalex.org/W2001405890'
                 openAlexId: W3031840745
+        _:
+            title: Learning Latent Plans from Play
+            doi: 'https://doi.org/10.48550/arxiv.1903.01973'
+            year: 2019
+            publisherFlags: null
+            authorNames: *ref_74
+            link: 'https://arxiv.org/abs/1903.01973'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 2
             - 0
-        publisherInfo: ''
-    Contextual Imagined Goals for Self-Supervised Robotic Learning: &ref_45
+    Contextual Imagined Goals for Self-Supervised Robotic Learning: &ref_127
         notes:
             comment: ''
             customKeywords: []
@@ -7981,7 +8555,7 @@ references:
                     - psychology
                     - human–computer interaction
                 year: 2019
-                authorNames:
+                authorNames: &ref_75
                     - Ashvin Nair
                     - Shikhar Bahl
                     - Alexander Khazatsky
@@ -8004,12 +8578,21 @@ references:
                     - 'https://openalex.org/W2350741829'
                     - 'https://openalex.org/W2001405890'
                 openAlexId: W3032077725
+        _:
+            title: Contextual Imagined Goals for Self-Supervised Robotic Learning
+            doi: 'https://doi.org/10.48550/arxiv.1910.11670'
+            year: 2019
+            publisherFlags: null
+            authorNames: *ref_75
+            link: 'https://arxiv.org/abs/1910.11670'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
             - 4.5
             - 1
             - 0
-        publisherInfo: ''
-    'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets': &ref_46
+    'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets': &ref_128
         notes:
             comment: ''
             customKeywords: []
@@ -8065,7 +8648,7 @@ references:
                     - operating system
                     - geography
                 year: 2021
-                authorNames:
+                authorNames: &ref_76
                     - Ashvin Nair
                     - Murtaza Dalal
                     - Abhishek Gupta
@@ -8156,12 +8739,21 @@ references:
                     - 'https://openalex.org/W192920577'
                     - 'https://openalex.org/W1757796397'
                 openAlexId: W3034786558
+        _:
+            title: 'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets'
+            doi: null
+            year: 2021
+            publisherFlags: null
+            authorNames: *ref_76
+            link: 'http://export.arxiv.org/pdf/2006.09359'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -30
             - 1
             - 0
-        publisherInfo: ''
-    'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning': &ref_47
+    'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning': &ref_129
         notes:
             comment: ''
             customKeywords: []
@@ -8214,7 +8806,7 @@ references:
                     - quantum mechanics
                     - programming language
                 year: 2020
-                authorNames:
+                authorNames: &ref_77
                     - Vitchyr H. Pong
                     - Murtaza Dalal
                     - Steven Lin
@@ -8247,12 +8839,21 @@ references:
                     - 'https://openalex.org/W2158782408'
                     - 'https://openalex.org/W2145339207'
                 openAlexId: W3035717769
+        _:
+            title: 'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning'
+            doi: null
+            year: 2020
+            publisherFlags: null
+            authorNames: *ref_77
+            link: 'http://arxiv.org/pdf/1903.03698.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
             - 1.5
             - 1
             - 0
-        publisherInfo: ''
-    The developing person through the life span: &ref_48
+    The developing person through the life span: &ref_130
         notes:
             comment: ''
             customKeywords: []
@@ -8291,7 +8892,7 @@ references:
                     - engineering
                     - structural engineering
                 year: 2017
-                authorNames:
+                authorNames: &ref_78
                     - David G. Myers
                 link: 'https://openlibrary.org/books/OL59478M/The_developing_person_through_the_life_span'
                 pdfLink: null
@@ -8319,12 +8920,21 @@ references:
                     - 'https://openalex.org/W1527715885'
                     - 'https://openalex.org/W1506495629'
                 openAlexId: W3040958108
+        _:
+            title: The developing person through the life span
+            doi: null
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_78
+            link: 'https://openlibrary.org/books/OL59478M/The_developing_person_through_the_life_span'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Generative Adversarial Nets: &ref_49
+    Generative Adversarial Nets: &ref_131
         notes:
             comment: ''
             customKeywords: []
@@ -8378,7 +8988,7 @@ references:
                     - quantum mechanics
                     - detector
                 year: 2023
-                authorNames:
+                authorNames: &ref_79
                     - Raphael Labaca-Castro
                 link: 'https://doi.org/10.1007/978-3-658-40442-0_9'
                 pdfLink: null
@@ -8396,12 +9006,21 @@ references:
                     - 'https://openalex.org/W2618858825'
                     - 'https://openalex.org/W2554314924'
                 openAlexId: W4320013936
+        _:
+            title: Generative Adversarial Nets
+            doi: 'https://doi.org/10.1007/978-3-658-40442-0_9'
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_79
+            link: 'https://doi.org/10.1007/978-3-658-40442-0_9'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -30
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Universal Value Function Approximators: &ref_50
+    Universal Value Function Approximators: &ref_132
         notes:
             comment: ''
             customKeywords: []
@@ -8462,7 +9081,7 @@ references:
                     - programming language
                     - thermodynamics
                 year: 2015
-                authorNames:
+                authorNames: &ref_80
                     - Tom Schaul
                     - Daniel Horgan
                     - Karol Gregor
@@ -8517,12 +9136,21 @@ references:
                     - 'https://openalex.org/W1757796397'
                     - 'https://openalex.org/W1594201624'
                 openAlexId: W567721252
+        _:
+            title: Universal Value Function Approximators
+            doi: null
+            year: 2015
+            publisherFlags: null
+            authorNames: *ref_80
+            link: 'http://proceedings.mlr.press/v37/schaul15.pdf'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
+            - -15
             - 0
             - 0
-            - 0
-        publisherInfo: ''
-    Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models: &ref_51
+    Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models: &ref_133
         notes:
             comment: ''
             customKeywords: []
@@ -8565,7 +9193,7 @@ references:
                     - psychology
                     - social psychology
                 year: 2015
-                authorNames:
+                authorNames: &ref_81
                     - Bradly C. Stadie
                     - Sergey Levine
                     - Pieter Abbeel
@@ -8601,11 +9229,20 @@ references:
                     - 'https://openalex.org/W3046775127'
                     - 'https://openalex.org/W2961085424'
                 openAlexId: W779494576
+        _:
+            title: Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models
+            doi: 'https://doi.org/10.48550/arxiv.1507.00814'
+            year: 2015
+            publisherFlags: null
+            authorNames: *ref_81
+            link: 'https://arxiv.org/abs/1507.00814'
+            pdfLink: null
+            cites: null
+            citedBy: null
         score:
-            - 0
+            - -15
             - 2
             - 0
-        publisherInfo: ''
 discoveryAttempts:
     -
         query: null
@@ -8616,155 +9253,155 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet
-                link: *ref_0
+                link: *ref_82
             -
                 hadBeenSeenBefore: false
                 title: A Comprehensive Review of the Latest Advancements in Large Generative AI Models
-                link: *ref_1
+                link: *ref_83
             -
                 hadBeenSeenBefore: false
                 title: 'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors'
-                link: *ref_2
+                link: *ref_84
             -
                 hadBeenSeenBefore: false
                 title: Are generative approaches to ZSAR a look in the right direction?
-                link: *ref_3
+                link: *ref_85
             -
                 hadBeenSeenBefore: false
                 title: Improving image generative models with human interactions
-                link: *ref_4
+                link: *ref_86
             -
                 hadBeenSeenBefore: false
                 title: Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay
-                link: *ref_5
+                link: *ref_87
             -
                 hadBeenSeenBefore: false
                 title: 'Generative Model for Person Re-Identification: A Review'
-                link: *ref_6
+                link: *ref_88
             -
                 hadBeenSeenBefore: false
                 title: Deep Dexterous Grasping of Novel Objects from a Single View.
-                link: *ref_7
+                link: *ref_89
             -
                 hadBeenSeenBefore: false
                 title: How generative encodings fare on less regular problems
-                link: *ref_8
+                link: *ref_90
             -
                 hadBeenSeenBefore: false
                 title: The Developing Person Through the Life Span
-                link: *ref_9
+                link: *ref_91
             -
                 hadBeenSeenBefore: false
                 title: Relative Entropy Policy Search
-                link: *ref_10
+                link: *ref_92
             -
                 hadBeenSeenBefore: false
                 title: Playing Atari with Deep Reinforcement Learning
-                link: *ref_11
+                link: *ref_93
             -
                 hadBeenSeenBefore: false
                 title: The Ecological Approach to Visual Perception
-                link: *ref_12
+                link: *ref_94
             -
                 hadBeenSeenBefore: false
                 title: Auto-Encoding Variational Bayes
-                link: *ref_13
+                link: *ref_95
             -
                 hadBeenSeenBefore: false
                 title: Biped dynamic walking using reinforcement learning
-                link: *ref_14
+                link: *ref_96
             -
                 hadBeenSeenBefore: false
                 title: Active learning of inverse models with intrinsically motivated goal exploration in robots
-                link: *ref_15
+                link: *ref_97
             -
                 hadBeenSeenBefore: false
                 title: GAN（Generative Adversarial Nets）
-                link: *ref_16
+                link: *ref_98
             -
                 hadBeenSeenBefore: false
                 title: 'PILCO: A Model-Based and Data-Efficient Approach to Policy Search'
-                link: *ref_17
+                link: *ref_99
             -
                 hadBeenSeenBefore: false
                 title: Machine learning for fast quadrupedal locomotion
-                link: *ref_18
+                link: *ref_100
             -
                 hadBeenSeenBefore: false
                 title: End-to-End Training of Deep Visuomotor Policies
-                link: *ref_19
+                link: *ref_101
             -
                 hadBeenSeenBefore: false
                 title: ImageNet Classification with Deep Convolutional Neural Networks
-                link: *ref_20
+                link: *ref_102
             -
                 hadBeenSeenBefore: false
                 title: Policy Search for Motor Primitives in Robotics
-                link: *ref_21
+                link: *ref_103
             -
                 hadBeenSeenBefore: false
                 title: Learning structured output representation using deep conditional generative models
-                link: *ref_22
+                link: *ref_104
             -
                 hadBeenSeenBefore: false
                 title: Mastering the game of Go with deep neural networks and tree search
-                link: *ref_23
+                link: *ref_105
             -
                 hadBeenSeenBefore: false
                 title: Conditional Image Generation with PixelCNN Decoders
-                link: *ref_24
+                link: *ref_106
             -
                 hadBeenSeenBefore: false
                 title: The ecological approach
-                link: *ref_25
+                link: *ref_107
             -
                 hadBeenSeenBefore: false
                 title: '#Exploration: a study of count-based exploration for deep reinforcement learning'
-                link: *ref_26
+                link: *ref_108
             -
                 hadBeenSeenBefore: false
                 title: 'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning'
-                link: *ref_27
+                link: *ref_109
             -
                 hadBeenSeenBefore: false
                 title: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
-                link: *ref_28
+                link: *ref_110
             -
                 hadBeenSeenBefore: false
                 title: Automatic Goal Generation for Reinforcement Learning Agents
-                link: *ref_29
+                link: *ref_111
             -
                 hadBeenSeenBefore: false
                 title: Information theoretic MPC for model-based reinforcement learning
-                link: *ref_30
+                link: *ref_112
             -
                 hadBeenSeenBefore: false
                 title: Data-Efficient Hierarchical Reinforcement Learning
-                link: *ref_31
+                link: *ref_113
             -
                 hadBeenSeenBefore: false
                 title: Visual Reinforcement Learning with Imagined Goals
-                link: *ref_32
+                link: *ref_114
             -
                 hadBeenSeenBefore: false
                 title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
-                link: *ref_33
+                link: *ref_115
             -
                 hadBeenSeenBefore: false
                 title: Unsupervised Control Through Non-Parametric Discriminative Rewards
-                link: *ref_34
+                link: *ref_116
             -
                 hadBeenSeenBefore: false
                 title: Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables
-                link: *ref_35
+                link: *ref_117
             -
                 hadBeenSeenBefore: false
                 title: '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning'
-                link: *ref_36
+                link: *ref_118
             -
                 hadBeenSeenBefore: false
                 title: Adversarial Feature Learning
-                link: *ref_37
+                link: *ref_119
             -
                 hadBeenSeenBefore: false
                 title: null
@@ -8772,59 +9409,59 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Curiosity-Driven Exploration by Self-Supervised Prediction
-                link: *ref_38
+                link: *ref_120
             -
                 hadBeenSeenBefore: false
                 title: 'VIME: Variational Information Maximizing Exploration'
-                link: *ref_39
+                link: *ref_121
             -
                 hadBeenSeenBefore: false
                 title: Neural Discrete Representation Learning
-                link: *ref_40
+                link: *ref_122
             -
                 hadBeenSeenBefore: false
                 title: Hindsight Experience Replay
-                link: *ref_41
+                link: *ref_123
             -
                 hadBeenSeenBefore: false
                 title: 'Learning to poke by poking: experiential learning of intuitive physics'
-                link: *ref_42
+                link: *ref_124
             -
                 hadBeenSeenBefore: false
                 title: End-to-end training of deep visuomotor policies
-                link: *ref_43
+                link: *ref_125
             -
                 hadBeenSeenBefore: false
                 title: Learning Latent Plans from Play
-                link: *ref_44
+                link: *ref_126
             -
                 hadBeenSeenBefore: false
                 title: Contextual Imagined Goals for Self-Supervised Robotic Learning
-                link: *ref_45
+                link: *ref_127
             -
                 hadBeenSeenBefore: false
                 title: 'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets'
-                link: *ref_46
+                link: *ref_128
             -
                 hadBeenSeenBefore: false
                 title: 'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning'
-                link: *ref_47
+                link: *ref_129
             -
                 hadBeenSeenBefore: false
                 title: The developing person through the life span
-                link: *ref_48
+                link: *ref_130
             -
                 hadBeenSeenBefore: false
                 title: Generative Adversarial Nets
-                link: *ref_49
+                link: *ref_131
             -
                 hadBeenSeenBefore: false
                 title: Universal Value Function Approximators
-                link: *ref_50
+                link: *ref_132
             -
                 hadBeenSeenBefore: false
                 title: Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models
-                link: *ref_51
+                link: *ref_133
     -
         query: affordance based encoder imagination prediction
         dateTime: '2024-12-13T22:15:13.790Z'
@@ -8833,43 +9470,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'Whatever next? Predictive brains, situated agents, and the future of cognitive science'
-                link: *ref_52
+                link: *ref_134
             -
                 hadBeenSeenBefore: false
                 title: Disjuncture and Difference in the Global Cultural Economy
-                link: *ref_53
+                link: *ref_135
             -
                 hadBeenSeenBefore: false
                 title: 'Principal warps: thin-plate splines and the decomposition of deformations'
-                link: *ref_54
+                link: *ref_136
             -
                 hadBeenSeenBefore: false
                 title: Neuroscience-Inspired Artificial Intelligence
-                link: *ref_55
+                link: *ref_137
             -
                 hadBeenSeenBefore: false
                 title: 'The hippocampus and memory: insights from spatial processing'
-                link: *ref_56
+                link: *ref_138
             -
                 hadBeenSeenBefore: false
                 title: 'The proactive brain: using analogies and associations to generate predictions'
-                link: *ref_57
+                link: *ref_139
             -
                 hadBeenSeenBefore: false
                 title: Exploring the impact of artificial intelligence on teaching and learning in higher education
-                link: *ref_58
+                link: *ref_140
             -
                 hadBeenSeenBefore: false
                 title: Stalking the elusive "vividness" effect.
-                link: *ref_59
+                link: *ref_141
             -
                 hadBeenSeenBefore: false
                 title: A Bayesian account of 'hysteria'
-                link: *ref_60
+                link: *ref_142
             -
                 hadBeenSeenBefore: false
                 title: 'The cognitive neuroscience of constructive memory: remembering the past and imagining the future'
-                link: *ref_61
+                link: *ref_143
     -
         query: ' agent driven affect based perception machine learning -emotion'
         dateTime: '2024-12-13T20:06:54.724Z'
@@ -8878,43 +9515,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception'
-                link: *ref_62
+                link: *ref_144
             -
                 hadBeenSeenBefore: false
                 title: Multi-Agent Active Perception Based on Reinforcement Learning and POMDP
-                link: *ref_63
+                link: *ref_145
             -
                 hadBeenSeenBefore: false
                 title: Mutual influence between language and perception in multi-agent communication games
-                link: *ref_64
+                link: *ref_146
             -
                 hadBeenSeenBefore: false
                 title: 'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness'
-                link: *ref_65
+                link: *ref_147
             -
                 hadBeenSeenBefore: false
                 title: Why and how to study the impact of perception on language emergence in artificial agents
-                link: *ref_66
+                link: *ref_148
             -
                 hadBeenSeenBefore: false
                 title: Interaction Algorithm Effect on Human Experience with Reinforcement Learning
-                link: *ref_67
+                link: *ref_149
             -
                 hadBeenSeenBefore: false
                 title: 'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues'
-                link: *ref_68
+                link: *ref_150
             -
                 hadBeenSeenBefore: false
                 title: Research on autonomous driving decision-making strategies based deep reinforcement learning
-                link: *ref_69
+                link: *ref_151
             -
                 hadBeenSeenBefore: false
                 title: Finding and visualizing weaknesses of deep reinforcement learning agents
-                link: *ref_70
+                link: *ref_152
             -
                 hadBeenSeenBefore: false
                 title: Simulation-based reinforcement learning for real-world autonomous driving
-                link: *ref_71
+                link: *ref_153
     -
         query: affordance based encoder imagination prediction
         date: null
@@ -8924,40 +9561,40 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Visual Affordance Prediction for Guiding Robot Exploration
-                link: *ref_72
+                link: *ref_154
             -
                 hadBeenSeenBefore: false
                 title: 'RAIL: Robot Affordance Imagination with Large Language Models'
-                link: *ref_73
+                link: *ref_155
             -
                 hadBeenSeenBefore: false
                 title: Affordance-Based Goal Imagination for Embodied AI Agents
-                link: *ref_74
+                link: *ref_156
             -
                 hadBeenSeenBefore: false
                 title: Learning to Anticipate Egocentric Actions by Imagination
-                link: *ref_75
+                link: *ref_157
             -
                 hadBeenSeenBefore: false
                 title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
-                link: *ref_76
+                link: *ref_158
             -
                 hadBeenSeenBefore: false
                 title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
-                link: *ref_77
+                link: *ref_159
             -
                 hadBeenSeenBefore: false
                 title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
-                link: *ref_78
+                link: *ref_160
             -
                 hadBeenSeenBefore: false
                 title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
-                link: *ref_79
+                link: *ref_161
             -
                 hadBeenSeenBefore: false
                 title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
-                link: *ref_80
+                link: *ref_162
             -
                 hadBeenSeenBefore: false
                 title: Learning affordances in object-centric generative models
-                link: *ref_81
+                link: *ref_163
