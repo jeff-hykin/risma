@@ -103,8 +103,9 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
             activeProject.references[key] = new Reference(value)
             try {
                 activeProject.references[key].score = score(activeProject.references[key])
+                activeProject.references[key].scoreString = activeProject.references[key].score.join("|")
             } catch (error) {
-                
+                console.debug(`score error is:`,error)
             }
         }
         for (let eachDiscoveryAttempt of activeProject.discoveryAttempts) {
@@ -135,7 +136,6 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
             
         }
     }
-    await loadProject()
     
     const saveProject = async ()=>{
         // fixup references
@@ -313,6 +313,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
 // 
 // main loop
 // 
+await loadProject()
 mainLoop: while (true) {
     showProjectStatus()
     const whichAction = await selectOne({
