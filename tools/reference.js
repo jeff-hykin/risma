@@ -25,10 +25,6 @@ export class Reference {
         },
         ...other
     }={}) {
-        if (arguments[0] instanceof Reference) {
-            Object.assign(this,arguments[0])
-            return
-        }
         allReferences.push(this)
         this.notes = notes
         this.accordingTo = { $manuallyEntered: {}, ...accordingTo }
@@ -57,7 +53,7 @@ export class Reference {
             ...Object.fromEntries(Object.keys(this.accordingTo.$manuallyEntered).concat(commonKeys).map(each=>[each,this.accordingTo.$manuallyEntered[each]])),
         }
         let thingsToDefine = []
-        for (const key of ["title","doi","year","publisherFlags","authorNames","link","pdfLink","cites","citedBy","sources"]) {
+        for (const key of commonKeys) {
             let value = this[key]
             if (["accordingTo","notes"].includes(key)) {
                 continue

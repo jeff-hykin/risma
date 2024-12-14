@@ -40,7 +40,7 @@ export async function title2Doi(title, { cacheObject, onUpdateCache=_=>0,}={}) {
     try {
         htmlResult = await fetch(url).then(result=>result.text())
     } catch (error) {
-        console.debug(`error when getting ${url} is:`,error)
+        // console.debug(`error when getting ${url} is:`,error)
         return null
     }
     const document = new DOMParser().parseFromString(
@@ -1365,7 +1365,7 @@ export const searchOptions = {
                             const linkElement = [...eachArticleElement.querySelectorAll("a")].filter(each=>each.innerText.match(/cited by (\d+)/i))[0]
                             if (linkElement) {
                                 articleObject.linkToCitedBy = getHref(linkElement)
-                                articleObject.citedByCount = linkElement.innerText.match(/cited by (\d+)/i)[1]
+                                articleObject.citedByCount = linkElement.innerText.match(/cited by (\d+)/i)[1]-0
                             }
                         } catch (error) {
                         }

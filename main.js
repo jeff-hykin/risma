@@ -141,6 +141,12 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         // fixup references
         for (const [key, value] of Object.entries(activeProject.references)) {
             activeProject.references[key] = new Reference(value)
+            try {
+                activeProject.references[key].score = score(activeProject.references[key])
+                activeProject.references[key].scoreString = activeProject.references[key].score.join("|")
+            } catch (error) {
+                console.debug(`score error is:`,error)
+            }
         }
         // fixup links
         for (let eachDiscoveryAttempt of activeProject.discoveryAttempts) {
@@ -148,6 +154,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
                 each.link = activeProject.references[each.title]
             }
         }
+        Reference.beforeSave()
         await FileSystem.write({path: storageObject.activeProjectPath, data: yaml.stringify(activeProject,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
     }
 
@@ -271,7 +278,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         // 
         // evaluate user-defined scoring functions
         // 
-        let scoreList = [0,0,0]
+        let scoreList = [0,0,0,0,0]
         for (const [key, value] of Object.entries(activeProject.settings.scoreGivers||{})) {
             try {
                 const func = eval(value)
@@ -416,8 +423,9 @@ mainLoop: while (true) {
             }
         }
         activeProject.discoveryAttempts.push(discoveryMethod)
-        Reference.beforeSave()
-        await saveProject()
+        for (const each of Object.values(unseenReferences).sort(referenceSorter())) {
+            console.log(`${score(each)}  ${highlightKeywords(each.title)}`)
+        }
         prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
     } else if (whichAction == "change project") {
         const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
@@ -529,7 +537,7 @@ mainLoop: while (true) {
                     activeReferences.sort(referenceSorter())
                     const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${highlightKeywords(each.title)}`), each]))
                     const active = await selectOne({
-                        message: "Which title do you want to explore?",
+                        message: "which title do you want to explore?",
                         options: colorObject,
                         optionDescriptions: activeReferences.map(each=>cyan`${each.year}`),
                         descriptionHighlighter: dim,
@@ -682,6 +690,7 @@ mainLoop: while (true) {
             break 
         }
     } else if (whichAction == "exit") {
+        await saveProject()
         break mainLoop
     } else if (whichAction == "explore references") {
         throw Error(`not implemented yet`)
