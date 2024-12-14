@@ -124,7 +124,7 @@ settings:
             - biolog
             - primate
 references:
-    Visual Affordance Prediction for Guiding Robot Exploration: &ref_209
+    Visual Affordance Prediction for Guiding Robot Exploration: &ref_219
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -134,7 +134,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -213,7 +213,7 @@ references:
             - 2
             - 0
         scoreString: 6|2|0
-    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_210
+    'RAIL: Robot Affordance Imagination with Large Language Models': &ref_220
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -222,7 +222,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -269,7 +269,7 @@ references:
             - 0
             - 0
         scoreString: 6|0|0
-    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_211
+    Affordance-Based Goal Imagination for Embodied AI Agents: &ref_221
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -279,7 +279,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -358,7 +358,7 @@ references:
             - 0
             - 0
         scoreString: 12|0|0
-    Learning to Anticipate Egocentric Actions by Imagination: &ref_212
+    Learning to Anticipate Egocentric Actions by Imagination: &ref_222
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -367,7 +367,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -470,7 +470,7 @@ references:
             - 1
             - 0
         scoreString: 6|1|0
-    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_213
+    Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_223
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -480,7 +480,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -528,7 +528,7 @@ references:
             - 0
             - 0
         scoreString: 4.5|0|0
-    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_214
+    What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_224
         notes:
             resumeStatus: super-relevent|abstract
             comment: ''
@@ -539,7 +539,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -605,7 +605,7 @@ references:
             - 2
             - 0
         scoreString: 6|2|0
-    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_215
+    'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_225
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -614,7 +614,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -688,7 +688,7 @@ references:
             - 2
             - 0
         scoreString: 1.5|2|0
-    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_216
+    Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_226
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -698,7 +698,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -747,7 +747,7 @@ references:
             - 0
             - 0
         scoreString: 6|0|0
-    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_217
+    'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_227
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -757,7 +757,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -816,7 +816,7 @@ references:
             - 1
             - 0
         scoreString: 0|1|0
-    Learning affordances in object-centric generative models: &ref_218
+    Learning affordances in object-centric generative models: &ref_228
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -825,7 +825,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T18:27:21.952Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T18:27:32.072Z'
@@ -873,7 +873,7 @@ references:
             - 2
             - 0
         scoreString: 1.5|2|0
-    'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception': &ref_199
+    'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception': &ref_209
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -882,7 +882,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.467Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -927,7 +927,7 @@ references:
             - 1
             - 0
         scoreString: 6|1|0
-    Multi-Agent Active Perception Based on Reinforcement Learning and POMDP: &ref_200
+    Multi-Agent Active Perception Based on Reinforcement Learning and POMDP: &ref_210
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -936,7 +936,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -982,7 +982,7 @@ references:
             - 1
             - 0
         scoreString: 0|1|0
-    Mutual influence between language and perception in multi-agent communication games: &ref_201
+    Mutual influence between language and perception in multi-agent communication games: &ref_211
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -992,7 +992,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -1109,7 +1109,7 @@ references:
             - 0
             - 0
         scoreString: '-3|0|0'
-    'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness': &ref_202
+    'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness': &ref_212
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -1119,7 +1119,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -1166,7 +1166,7 @@ references:
             - 0
             - 0
         scoreString: '-36|0|0'
-    Why and how to study the impact of perception on language emergence in artificial agents: &ref_203
+    Why and how to study the impact of perception on language emergence in artificial agents: &ref_213
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -1175,7 +1175,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -1221,7 +1221,7 @@ references:
             - 0
             - 0
         scoreString: 3|0|0
-    Interaction Algorithm Effect on Human Experience with Reinforcement Learning: &ref_204
+    Interaction Algorithm Effect on Human Experience with Reinforcement Learning: &ref_214
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -1231,7 +1231,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -1306,7 +1306,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues': &ref_205
+    'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues': &ref_215
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -1316,7 +1316,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -1363,7 +1363,7 @@ references:
             - 1
             - 0
         scoreString: 3|1|0
-    Research on autonomous driving decision-making strategies based deep reinforcement learning: &ref_206
+    Research on autonomous driving decision-making strategies based deep reinforcement learning: &ref_216
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -1373,7 +1373,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -1421,7 +1421,7 @@ references:
             - 1
             - 0
         scoreString: '-33|1|0'
-    Finding and visualizing weaknesses of deep reinforcement learning agents: &ref_207
+    Finding and visualizing weaknesses of deep reinforcement learning agents: &ref_217
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -1431,7 +1431,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -1477,7 +1477,7 @@ references:
             - 2
             - 0
         scoreString: 1.5|2|0
-    Simulation-based reinforcement learning for real-world autonomous driving: &ref_208
+    Simulation-based reinforcement learning for real-world autonomous driving: &ref_218
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1486,7 +1486,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T20:06:55.468Z'
-                query: ' agent driven affect based perception machine learning -emotion'
+                originalQuery: ' agent driven affect based perception machine learning -emotion'
                 searchEngine: googleScholar
             events:
                 added: '2024-12-13T20:07:00.834Z'
@@ -1531,7 +1531,7 @@ references:
             - 1
             - 0
         scoreString: '-16.5|1|0'
-    'Whatever next? Predictive brains, situated agents, and the future of cognitive science': &ref_111
+    'Whatever next? Predictive brains, situated agents, and the future of cognitive science': &ref_121
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -1540,7 +1540,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -1992,7 +1992,7 @@ references:
             - 1
             - 0
         scoreString: 1.5|1|0
-    Disjuncture and Difference in the Global Cultural Economy: &ref_190
+    Disjuncture and Difference in the Global Cultural Economy: &ref_200
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2001,7 +2001,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -2099,7 +2099,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    'Principal warps: thin-plate splines and the decomposition of deformations': &ref_191
+    'Principal warps: thin-plate splines and the decomposition of deformations': &ref_201
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2108,7 +2108,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -2200,7 +2200,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    Neuroscience-Inspired Artificial Intelligence: &ref_192
+    Neuroscience-Inspired Artificial Intelligence: &ref_202
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2209,7 +2209,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -2467,7 +2467,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    'The hippocampus and memory: insights from spatial processing': &ref_193
+    'The hippocampus and memory: insights from spatial processing': &ref_203
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2476,7 +2476,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -2693,7 +2693,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    'The proactive brain: using analogies and associations to generate predictions': &ref_194
+    'The proactive brain: using analogies and associations to generate predictions': &ref_204
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2702,7 +2702,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -2848,7 +2848,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Exploring the impact of artificial intelligence on teaching and learning in higher education: &ref_195
+    Exploring the impact of artificial intelligence on teaching and learning in higher education: &ref_205
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -2858,7 +2858,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -2959,7 +2959,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Stalking the elusive "vividness" effect.: &ref_196
+    Stalking the elusive "vividness" effect.: &ref_206
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2968,7 +2968,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -3111,7 +3111,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    A Bayesian account of 'hysteria': &ref_197
+    A Bayesian account of 'hysteria': &ref_207
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3120,7 +3120,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -3328,7 +3328,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    'The cognitive neuroscience of constructive memory: remembering the past and imagining the future': &ref_198
+    'The cognitive neuroscience of constructive memory: remembering the past and imagining the future': &ref_208
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -3337,7 +3337,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-13T22:15:14.131Z'
-                query: affordance based encoder imagination prediction
+                originalQuery: affordance based encoder imagination prediction
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T22:15:14.133Z'
@@ -3540,7 +3540,7 @@ references:
             - 0
             - 0
         scoreString: '-4|0|0'
-    Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet: &ref_139
+    Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet: &ref_149
         notes:
             comment: ''
             customKeywords: []
@@ -3549,7 +3549,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -3625,7 +3625,7 @@ references:
             - 0
             - 0
         scoreString: '-30|0|0'
-    A Comprehensive Review of the Latest Advancements in Large Generative AI Models: &ref_140
+    A Comprehensive Review of the Latest Advancements in Large Generative AI Models: &ref_150
         notes:
             comment: ''
             customKeywords: []
@@ -3634,7 +3634,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -3717,7 +3717,7 @@ references:
             - 0
             - 0
         scoreString: '-30|0|0'
-    'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors': &ref_141
+    'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors': &ref_151
         notes:
             comment: ''
             customKeywords: []
@@ -3726,7 +3726,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -3800,7 +3800,7 @@ references:
             - 0
             - 0
         scoreString: '-30|0|0'
-    Are generative approaches to ZSAR a look in the right direction?: &ref_142
+    Are generative approaches to ZSAR a look in the right direction?: &ref_152
         notes:
             comment: ''
             customKeywords: []
@@ -3809,7 +3809,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -3890,7 +3890,7 @@ references:
             - 0
             - 0
         scoreString: '-30|0|0'
-    Improving image generative models with human interactions: &ref_143
+    Improving image generative models with human interactions: &ref_153
         notes:
             comment: ''
             customKeywords: []
@@ -3899,7 +3899,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -3977,7 +3977,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay: &ref_144
+    Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay: &ref_154
         notes:
             comment: ''
             customKeywords: []
@@ -3987,7 +3987,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4065,7 +4065,7 @@ references:
             - 1
             - 0
         scoreString: '-30|1|0'
-    'Generative Model for Person Re-Identification: A Review': &ref_145
+    'Generative Model for Person Re-Identification: A Review': &ref_155
         notes:
             comment: ''
             customKeywords: []
@@ -4074,7 +4074,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4163,7 +4163,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Deep Dexterous Grasping of Novel Objects from a Single View.: &ref_146
+    Deep Dexterous Grasping of Novel Objects from a Single View.: &ref_156
         notes:
             comment: ''
             customKeywords: []
@@ -4172,7 +4172,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4308,7 +4308,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    How generative encodings fare on less regular problems: &ref_147
+    How generative encodings fare on less regular problems: &ref_157
         notes:
             comment: ''
             customKeywords: []
@@ -4317,7 +4317,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4399,7 +4399,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    The Developing Person Through the Life Span: &ref_148
+    The Developing Person Through the Life Span: &ref_158
         notes:
             comment: ''
             customKeywords: []
@@ -4408,7 +4408,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4490,7 +4490,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    Relative Entropy Policy Search: &ref_149
+    Relative Entropy Policy Search: &ref_159
         notes:
             comment: ''
             customKeywords: []
@@ -4499,7 +4499,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4602,7 +4602,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    Playing Atari with Deep Reinforcement Learning: &ref_150
+    Playing Atari with Deep Reinforcement Learning: &ref_160
         notes:
             comment: ''
             customKeywords: []
@@ -4612,7 +4612,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4699,7 +4699,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    The Ecological Approach to Visual Perception: &ref_129
+    The Ecological Approach to Visual Perception: &ref_139
         notes:
             comment: ''
             customKeywords: []
@@ -4709,7 +4709,7 @@ references:
                 - title
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4780,7 +4780,7 @@ references:
             - 1
             - 0
         scoreString: 2|1|0
-    Auto-Encoding Variational Bayes: &ref_151
+    Auto-Encoding Variational Bayes: &ref_161
         notes:
             comment: ''
             customKeywords: []
@@ -4789,7 +4789,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -4892,7 +4892,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Biped dynamic walking using reinforcement learning: &ref_152
+    Biped dynamic walking using reinforcement learning: &ref_162
         notes:
             comment: ''
             customKeywords: []
@@ -4901,7 +4901,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -5033,7 +5033,7 @@ references:
             - 1
             - 0
         scoreString: '-10|1|0'
-    Active learning of inverse models with intrinsically motivated goal exploration in robots: &ref_153
+    Active learning of inverse models with intrinsically motivated goal exploration in robots: &ref_163
         notes:
             comment: ''
             customKeywords: []
@@ -5043,7 +5043,7 @@ references:
                 - title
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -5255,7 +5255,7 @@ references:
             - 1
             - 0
         scoreString: 1.5|1|0
-    GAN（Generative Adversarial Nets）: &ref_154
+    GAN（Generative Adversarial Nets）: &ref_164
         notes:
             comment: ''
             customKeywords: []
@@ -5264,7 +5264,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -5367,7 +5367,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    'PILCO: A Model-Based and Data-Efficient Approach to Policy Search': &ref_155
+    'PILCO: A Model-Based and Data-Efficient Approach to Policy Search': &ref_165
         notes:
             comment: ''
             customKeywords: []
@@ -5376,7 +5376,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -5485,7 +5485,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Machine learning for fast quadrupedal locomotion: &ref_156
+    Machine learning for fast quadrupedal locomotion: &ref_166
         notes:
             comment: ''
             customKeywords: []
@@ -5494,7 +5494,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -5592,7 +5592,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    End-to-End Training of Deep Visuomotor Policies: &ref_157
+    End-to-End Training of Deep Visuomotor Policies: &ref_167
         notes:
             comment: ''
             customKeywords: []
@@ -5601,7 +5601,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -5765,7 +5765,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    ImageNet Classification with Deep Convolutional Neural Networks: &ref_158
+    ImageNet Classification with Deep Convolutional Neural Networks: &ref_168
         notes:
             comment: ''
             customKeywords: []
@@ -5774,7 +5774,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -5887,7 +5887,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Policy Search for Motor Primitives in Robotics: &ref_159
+    Policy Search for Motor Primitives in Robotics: &ref_169
         notes:
             comment: ''
             customKeywords: []
@@ -5897,7 +5897,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6030,7 +6030,7 @@ references:
             - 0
             - 0
         scoreString: 1.5|0|0
-    Learning structured output representation using deep conditional generative models: &ref_160
+    Learning structured output representation using deep conditional generative models: &ref_170
         notes:
             comment: ''
             customKeywords: []
@@ -6040,7 +6040,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6173,7 +6173,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Mastering the game of Go with deep neural networks and tree search: &ref_161
+    Mastering the game of Go with deep neural networks and tree search: &ref_171
         notes:
             comment: ''
             customKeywords: []
@@ -6182,7 +6182,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6345,7 +6345,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Conditional Image Generation with PixelCNN Decoders: &ref_162
+    Conditional Image Generation with PixelCNN Decoders: &ref_172
         notes:
             comment: ''
             customKeywords: []
@@ -6354,7 +6354,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6462,7 +6462,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    The ecological approach: &ref_163
+    The ecological approach: &ref_173
         notes:
             comment: ''
             customKeywords: []
@@ -6471,7 +6471,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6531,7 +6531,7 @@ references:
             - 0
             - 0
         scoreString: 1|0|0
-    '#Exploration: a study of count-based exploration for deep reinforcement learning': &ref_164
+    '#Exploration: a study of count-based exploration for deep reinforcement learning': &ref_174
         notes:
             comment: ''
             customKeywords: []
@@ -6541,7 +6541,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6668,7 +6668,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning': &ref_165
+    'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning': &ref_175
         notes:
             comment: ''
             customKeywords: []
@@ -6678,7 +6678,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6767,7 +6767,7 @@ references:
             - 2
             - 0
         scoreString: '-15|2|0'
-    Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks: &ref_166
+    Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks: &ref_176
         notes:
             comment: ''
             customKeywords: []
@@ -6777,7 +6777,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6894,7 +6894,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Automatic Goal Generation for Reinforcement Learning Agents: &ref_167
+    Automatic Goal Generation for Reinforcement Learning Agents: &ref_177
         notes:
             comment: ''
             customKeywords: []
@@ -6904,7 +6904,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -6993,7 +6993,7 @@ references:
             - 1
             - 0
         scoreString: 1.5|1|0
-    Information theoretic MPC for model-based reinforcement learning: &ref_168
+    Information theoretic MPC for model-based reinforcement learning: &ref_178
         notes:
             comment: ''
             customKeywords: []
@@ -7002,7 +7002,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7117,7 +7117,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Data-Efficient Hierarchical Reinforcement Learning: &ref_169
+    Data-Efficient Hierarchical Reinforcement Learning: &ref_179
         notes:
             comment: ''
             customKeywords: []
@@ -7126,7 +7126,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7216,7 +7216,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Visual Reinforcement Learning with Imagined Goals: &ref_170
+    Visual Reinforcement Learning with Imagined Goals: &ref_180
         notes:
             comment: ''
             customKeywords: []
@@ -7225,7 +7225,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7323,7 +7323,7 @@ references:
             - 2
             - 0
         scoreString: 1.5|2|0
-    'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding': &ref_171
+    'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding': &ref_181
         notes:
             comment: ''
             customKeywords: []
@@ -7332,7 +7332,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7456,7 +7456,7 @@ references:
             - 1
             - 0
         scoreString: '-16.5|1|0'
-    Unsupervised Control Through Non-Parametric Discriminative Rewards: &ref_172
+    Unsupervised Control Through Non-Parametric Discriminative Rewards: &ref_182
         notes:
             comment: ''
             customKeywords: []
@@ -7466,7 +7466,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7552,7 +7552,7 @@ references:
             - 0
             - 0
         scoreString: 1.5|0|0
-    Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables: &ref_173
+    Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables: &ref_183
         notes:
             comment: ''
             customKeywords: []
@@ -7561,7 +7561,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7636,7 +7636,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning': &ref_174
+    '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning': &ref_184
         notes:
             comment: ''
             customKeywords: []
@@ -7645,7 +7645,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7761,7 +7761,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Adversarial Feature Learning: &ref_175
+    Adversarial Feature Learning: &ref_185
         notes:
             comment: ''
             customKeywords: []
@@ -7770,7 +7770,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7854,7 +7854,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Curiosity-Driven Exploration by Self-Supervised Prediction: &ref_176
+    Curiosity-Driven Exploration by Self-Supervised Prediction: &ref_186
         notes:
             comment: ''
             customKeywords: []
@@ -7863,7 +7863,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -7952,7 +7952,7 @@ references:
             - 1
             - 0
         scoreString: 1.5|1|0
-    'VIME: Variational Information Maximizing Exploration': &ref_177
+    'VIME: Variational Information Maximizing Exploration': &ref_187
         notes:
             comment: ''
             customKeywords: []
@@ -7961,7 +7961,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8049,7 +8049,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Neural Discrete Representation Learning: &ref_178
+    Neural Discrete Representation Learning: &ref_188
         notes:
             comment: ''
             customKeywords: []
@@ -8058,7 +8058,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8149,7 +8149,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    Hindsight Experience Replay: &ref_179
+    Hindsight Experience Replay: &ref_189
         notes:
             comment: ''
             customKeywords: []
@@ -8158,7 +8158,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8241,7 +8241,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    'Learning to poke by poking: experiential learning of intuitive physics': &ref_180
+    'Learning to poke by poking: experiential learning of intuitive physics': &ref_190
         notes:
             comment: ''
             customKeywords: []
@@ -8251,7 +8251,7 @@ references:
                 - title
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8371,7 +8371,7 @@ references:
             - 2
             - 0
         scoreString: '-15|2|0'
-    End-to-end training of deep visuomotor policies: &ref_181
+    End-to-end training of deep visuomotor policies: &ref_191
         notes:
             comment: ''
             customKeywords: []
@@ -8380,7 +8380,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8559,7 +8559,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Learning Latent Plans from Play: &ref_182
+    Learning Latent Plans from Play: &ref_192
         notes:
             comment: ''
             customKeywords: []
@@ -8568,7 +8568,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8636,7 +8636,7 @@ references:
             - 2
             - 0
         scoreString: '-15|2|0'
-    Contextual Imagined Goals for Self-Supervised Robotic Learning: &ref_183
+    Contextual Imagined Goals for Self-Supervised Robotic Learning: &ref_193
         notes:
             comment: ''
             customKeywords: []
@@ -8646,7 +8646,7 @@ references:
                 - title
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8713,7 +8713,7 @@ references:
             - 1
             - 0
         scoreString: 4.5|1|0
-    'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets': &ref_184
+    'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets': &ref_194
         notes:
             comment: ''
             customKeywords: []
@@ -8723,7 +8723,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8875,7 +8875,7 @@ references:
             - 1
             - 0
         scoreString: '-30|1|0'
-    'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning': &ref_185
+    'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning': &ref_195
         notes:
             comment: ''
             customKeywords: []
@@ -8885,7 +8885,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -8976,7 +8976,7 @@ references:
             - 1
             - 0
         scoreString: 1.5|1|0
-    The developing person through the life span: &ref_186
+    The developing person through the life span: &ref_196
         notes:
             comment: ''
             customKeywords: []
@@ -8985,7 +8985,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -9058,7 +9058,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Generative Adversarial Nets: &ref_187
+    Generative Adversarial Nets: &ref_197
         notes:
             comment: ''
             customKeywords: []
@@ -9067,7 +9067,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -9145,7 +9145,7 @@ references:
             - 0
             - 0
         scoreString: '-30|0|0'
-    Universal Value Function Approximators: &ref_188
+    Universal Value Function Approximators: &ref_198
         notes:
             comment: ''
             customKeywords: []
@@ -9154,7 +9154,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -9276,7 +9276,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models: &ref_189
+    Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models: &ref_199
         notes:
             comment: ''
             customKeywords: []
@@ -9286,7 +9286,7 @@ references:
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
-                query: null
+                originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
@@ -9370,7 +9370,7 @@ references:
             - 2
             - 0
         scoreString: '-15|2|0'
-    Experience and Education: &ref_130
+    Experience and Education: &ref_140
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -9379,7 +9379,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
@@ -9440,7 +9440,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    Mahalanobis distance-based classifiers are able to recognize EEG patterns by using few EEG electrodes: &ref_131
+    Mahalanobis distance-based classifiers are able to recognize EEG patterns by using few EEG electrodes: &ref_141
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -9449,7 +9449,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
@@ -9549,7 +9549,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Metahistory. The Historical Imagination in Nineteenth-Century Europe.: &ref_132
+    Metahistory. The Historical Imagination in Nineteenth-Century Europe.: &ref_142
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -9559,7 +9559,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
@@ -9627,7 +9627,7 @@ references:
             - 0
             - 0
         scoreString: 1|0|0
-    'Techniques of Neutralization: A Theory of Delinquency': &ref_133
+    'Techniques of Neutralization: A Theory of Delinquency': &ref_143
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -9636,7 +9636,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
@@ -9702,7 +9702,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    The temporality of the landscape: &ref_134
+    The temporality of the landscape: &ref_144
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -9711,7 +9711,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
@@ -9836,19 +9836,21 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    'Ralph Ellison, James Baldwin, and the Liberal Imagination': &ref_135
+    'Ralph Ellison, James Baldwin, and the Liberal Imagination': &ref_145
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: irrelevent|title
             comment: ''
             reasonsRelevant: []
-            reasonsNotRelevant: []
+            reasonsNotRelevant:
+                - title
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
+                sawTitle: '2024-12-14T01:08:45.341Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -9960,7 +9962,7 @@ references:
             - 0
             - 0
         scoreString: '-4|0|0'
-    The New Mobilities Paradigm: &ref_136
+    The New Mobilities Paradigm: &ref_146
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -9969,7 +9971,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
@@ -10152,7 +10154,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Crowdsourcing as a Model for Problem Solving: &ref_137
+    Crowdsourcing as a Model for Problem Solving: &ref_147
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -10161,7 +10163,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
@@ -10271,7 +10273,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    How many memory systems are there?: &ref_138
+    How many memory systems are there?: &ref_148
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -10280,7 +10282,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:48:21.650Z'
-                query: imagination based affordance recognition
+                originalQuery: imagination based affordance recognition
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:48:22.693Z'
@@ -10434,7 +10436,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    'Artificial intelligence: A modern approach': &ref_120
+    'Artificial intelligence: A modern approach': &ref_130
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -10443,7 +10445,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -10518,7 +10520,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    'ANFIS: adaptive-network-based fuzzy inference system': &ref_121
+    'ANFIS: adaptive-network-based fuzzy inference system': &ref_131
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -10527,7 +10529,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -10660,7 +10662,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    Induction of decision trees: &ref_122
+    Induction of decision trees: &ref_132
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -10669,7 +10671,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -10762,7 +10764,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -10862,7 +10864,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    'Data mining and knowledge discovery: making sense out of data': &ref_123
+    'Data mining and knowledge discovery: making sense out of data': &ref_133
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -10871,7 +10873,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -10960,7 +10962,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    'Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI': &ref_124
+    'Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI': &ref_134
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -10969,7 +10971,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -11582,7 +11584,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    'Machine learning: Trends, perspectives, and prospects': &ref_125
+    'Machine learning: Trends, perspectives, and prospects': &ref_135
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -11591,7 +11593,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -11703,7 +11705,7 @@ references:
             - 1
             - 0
         scoreString: '-15|1|0'
-    From Data Mining to Knowledge Discovery in Databases: &ref_126
+    From Data Mining to Knowledge Discovery in Databases: &ref_136
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -11712,7 +11714,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -11850,7 +11852,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    'High-performance medicine: the convergence of human and artificial intelligence': &ref_127
+    'High-performance medicine: the convergence of human and artificial intelligence': &ref_137
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -11859,7 +11861,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -12115,7 +12117,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    The vision of autonomic computing: &ref_128
+    The vision of autonomic computing: &ref_138
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -12124,7 +12126,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:49:38.054Z'
-                query: utility based representation learning AI
+                originalQuery: utility based representation learning AI
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:49:38.998Z'
@@ -12216,7 +12218,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Human agency in social cognitive theory.: &ref_110
+    Human agency in social cognitive theory.: &ref_120
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -12225,7 +12227,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -12369,7 +12371,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    Technology affordances: &ref_112
+    Technology affordances: &ref_122
         notes:
             resumeStatus: irrelevent|title
             comment: ''
@@ -12379,7 +12381,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -12464,7 +12466,7 @@ references:
             - 0
             - 0
         scoreString: 1|0|0
-    'Being there: putting brain, body, and world together again': &ref_113
+    'Being there: putting brain, body, and world together again': &ref_123
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -12473,7 +12475,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -12727,7 +12729,7 @@ references:
             - 0
             - 0
         scoreString: '-10|0|0'
-    Intrinsic Motivation Systems for Autonomous Mental Development: &ref_114
+    Intrinsic Motivation Systems for Autonomous Mental Development: &ref_124
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -12736,7 +12738,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -12904,7 +12906,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Activity theory as a framework for designing constructivist learning environments: &ref_115
+    Activity theory as a framework for designing constructivist learning environments: &ref_125
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -12913,7 +12915,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -13046,7 +13048,7 @@ references:
             - 1
             - 0
         scoreString: '-10|1|0'
-    'The myth of language universals: Language diversity and its importance for cognitive science': &ref_116
+    'The myth of language universals: Language diversity and its importance for cognitive science': &ref_126
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -13055,7 +13057,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -13592,7 +13594,7 @@ references:
             - 0
             - 0
         scoreString: '-17|0|0'
-    What is Technological Pedagogical Content Knowledge (TPACK)?: &ref_117
+    What is Technological Pedagogical Content Knowledge (TPACK)?: &ref_127
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -13601,7 +13603,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -13705,7 +13707,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Explanation and Understanding: &ref_118
+    Explanation and Understanding: &ref_128
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -13714,7 +13716,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -13987,7 +13989,7 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
-    Geographic Object-Based Image Analysis – Towards a new paradigm: &ref_119
+    Geographic Object-Based Image Analysis – Towards a new paradigm: &ref_129
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -13996,7 +13998,7 @@ references:
             customKeywords: []
             discoveryMethod:
                 dateTime: '2024-12-14T00:50:50.924Z'
-                query: ecological affordance based object perception machine learning
+                originalQuery: ecological affordance based object perception machine learning
                 searchEngine: openAlex
             events:
                 added: '2024-12-14T00:50:52.087Z'
@@ -14174,6 +14176,517 @@ references:
             - 0
             - 0
         scoreString: '-15|0|0'
+    A survey of visual affordance recognition based on deep learning: &ref_229
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/tbdata.2023.3291558
+            googleScholar:
+                title: A survey of visual affordance recognition based on deep learning
+                authorNames: &ref_110
+                    - D Chen
+                    - D Kong
+                    - J Li
+                    - S Wang
+                pdfLink: null
+                link: 'https://ieeexplore.ieee.org/abstract/document/10171410/'
+                citationId: '2819040255177116931'
+                multiArticleId: '2819040255177116931'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2819040255177116931&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: 'IEEE Transactions on Big, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2819040255177116931&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '14'
+        _:
+            title: A survey of visual affordance recognition based on deep learning
+            doi: null
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_110
+            link: 'https://ieeexplore.ieee.org/abstract/document/10171410/'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    'Affordancenet: An end-to-end deep learning approach for object affordance detection': &ref_230
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/icra.2018.8460902
+            googleScholar:
+                title: 'Affordancenet: An end-to-end deep learning approach for object affordance detection'
+                authorNames: &ref_111
+                    - TT Do
+                    - A Nguyen
+                    - I Reid
+                pdfLink: 'https://arxiv.org/pdf/1709.07326'
+                link: 'https://ieeexplore.ieee.org/abstract/document/8460902/'
+                citationId: '1465475766093395209'
+                multiArticleId: '1465475766093395209'
+                citedByLink: 'https://scholar.google.com//scholar?cites=1465475766093395209&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: '2018 IEEE international conference, 2018'
+                year: 2018
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=1465475766093395209&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '332'
+        _:
+            title: 'Affordancenet: An end-to-end deep learning approach for object affordance detection'
+            doi: null
+            year: 2018
+            publisherFlags: null
+            authorNames: *ref_111
+            link: 'https://ieeexplore.ieee.org/abstract/document/8460902/'
+            pdfLink: 'https://arxiv.org/pdf/1709.07326'
+            cites: null
+            citedBy: null
+    Deep affordance-grounded sensorimotor object recognition: &ref_231
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/cvpr.2017.13
+            googleScholar:
+                title: Deep affordance-grounded sensorimotor object recognition
+                authorNames: &ref_112
+                    - S Thermos
+                    - GT Papadopoulos
+                pdfLink: 'http://openaccess.thecvf.com/content_cvpr_2017/papers/Thermos_Deep_Affordance-Grounded_Sensorimotor_CVPR_2017_paper.pdf'
+                link: 'http://openaccess.thecvf.com/content_cvpr_2017/html/Thermos_Deep_Affordance-Grounded_Sensorimotor_CVPR_2017_paper.html'
+                citationId: '17109228179352852115'
+                multiArticleId: '17109228179352852115'
+                citedByLink: 'https://scholar.google.com//scholar?cites=17109228179352852115&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the, 2017'
+                year: 2017
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=17109228179352852115&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '42'
+        _:
+            title: Deep affordance-grounded sensorimotor object recognition
+            doi: null
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_112
+            link: 'http://openaccess.thecvf.com/content_cvpr_2017/html/Thermos_Deep_Affordance-Grounded_Sensorimotor_CVPR_2017_paper.html'
+            pdfLink: 'http://openaccess.thecvf.com/content_cvpr_2017/papers/Thermos_Deep_Affordance-Grounded_Sensorimotor_CVPR_2017_paper.pdf'
+            cites: null
+            citedBy: null
+    'Recent advances of deep robotic affordance learning: a reinforcement learning perspective': &ref_232
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/tcds.2023.3277288
+            googleScholar:
+                title: 'Recent advances of deep robotic affordance learning: a reinforcement learning perspective'
+                authorNames: &ref_113
+                    - X Yang
+                    - Z Ji
+                    - J Wu
+                    - YK Lai
+                pdfLink: 'https://arxiv.org/pdf/2303.05344'
+                link: 'https://ieeexplore.ieee.org/abstract/document/10128147/'
+                citationId: '13466662132551045768'
+                multiArticleId: '13466662132551045768'
+                citedByLink: 'https://scholar.google.com//scholar?cites=13466662132551045768&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: 'IEEE Transactions on Cognitive, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13466662132551045768&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '14'
+        _:
+            title: 'Recent advances of deep robotic affordance learning: a reinforcement learning perspective'
+            doi: null
+            year: 2023
+            publisherFlags: null
+            authorNames: *ref_113
+            link: 'https://ieeexplore.ieee.org/abstract/document/10128147/'
+            pdfLink: 'https://arxiv.org/pdf/2303.05344'
+            cites: null
+            citedBy: null
+    Detecting object affordances with convolutional neural networks: &ref_233
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/iros.2016.7759429
+            googleScholar:
+                title: Detecting object affordances with convolutional neural networks
+                authorNames: &ref_114
+                    - A Nguyen
+                    - D Kanoulas
+                    - DG Caldwell
+                pdfLink: 'https://discovery.ucl.ac.uk/id/eprint/10083222/1/P9__Nguyen_Kanoulas_Caldwell_Tsagarakis__2016__Detecting_Object_Affordances_with_Convolutional_Neural_Networks.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/7759429/'
+                citationId: '11281200002076545118'
+                multiArticleId: '11281200002076545118'
+                citedByLink: 'https://scholar.google.com//scholar?cites=11281200002076545118&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: '2016 IEEE/RSJ, 2016'
+                year: 2016
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=11281200002076545118&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '222'
+        _:
+            title: Detecting object affordances with convolutional neural networks
+            doi: null
+            year: 2016
+            publisherFlags: null
+            authorNames: *ref_114
+            link: 'https://ieeexplore.ieee.org/abstract/document/7759429/'
+            pdfLink: 'https://discovery.ucl.ac.uk/id/eprint/10083222/1/P9__Nguyen_Kanoulas_Caldwell_Tsagarakis__2016__Detecting_Object_Affordances_with_Convolutional_Neural_Networks.pdf'
+            cites: null
+            citedBy: null
+    'Visual affordance and function understanding: A survey': &ref_234
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: 'Visual affordance and function understanding: A survey'
+                authorNames: &ref_115
+                    - M Hassanin
+                    - S Khan
+                    - M Tahtali
+                pdfLink: 'https://arxiv.org/pdf/1807.06775'
+                link: 'https://dl.acm.org/doi/abs/10.1145/3446370'
+                citationId: '18034897463254765785'
+                multiArticleId: '18034897463254765785'
+                citedByLink: 'https://scholar.google.com//scholar?cites=18034897463254765785&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: 'ACM Computing Surveys (CSUR), 2021'
+                year: 2021
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=18034897463254765785&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '157'
+        _:
+            title: 'Visual affordance and function understanding: A survey'
+            doi: null
+            year: 2021
+            publisherFlags: null
+            authorNames: *ref_115
+            link: 'https://dl.acm.org/doi/abs/10.1145/3446370'
+            pdfLink: 'https://arxiv.org/pdf/1807.06775'
+            cites: null
+            citedBy: null
+    Learning predictive features in affordance based robotic perception systems: &ref_235
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/iros.2006.281720
+            googleScholar:
+                title: Learning predictive features in affordance based robotic perception systems
+                authorNames: &ref_116
+                    - G Fritz
+                    - L Paletta
+                    - R Breithaupt
+                    - E Rome
+                pdfLink: 'https://cdn.aaai.org/Workshops/2006/WS-06-03/WS06-03-010.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/4058970/'
+                citationId: '4974327148509950855'
+                multiArticleId: '4974327148509950855'
+                citedByLink: 'https://scholar.google.com//scholar?cites=4974327148509950855&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: '2006 IEEE/RSJ, 2006'
+                year: 2006
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=4974327148509950855&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '53'
+        _:
+            title: Learning predictive features in affordance based robotic perception systems
+            doi: null
+            year: 2006
+            publisherFlags: null
+            authorNames: *ref_116
+            link: 'https://ieeexplore.ieee.org/abstract/document/4058970/'
+            pdfLink: 'https://cdn.aaai.org/Workshops/2006/WS-06-03/WS06-03-010.pdf'
+            cites: null
+            citedBy: null
+    Object-based affordances detection with convolutional neural networks and dense conditional random fields: &ref_236
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/iros.2017.8206484
+            googleScholar:
+                title: Object-based affordances detection with convolutional neural networks and dense conditional random fields
+                authorNames: &ref_117
+                    - A Nguyen
+                    - D Kanoulas
+                    - DG Caldwell
+                pdfLink: 'https://www.csc.liv.ac.uk/~anguyen/assets/pdfs/2017_IROS_CRFSeg.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/8206484/'
+                citationId: '10913983989962456861'
+                multiArticleId: '10913983989962456861'
+                citedByLink: 'https://scholar.google.com//scholar?cites=10913983989962456861&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: '2017 IEEE/RSJ, 2017'
+                year: 2017
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=10913983989962456861&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '190'
+        _:
+            title: Object-based affordances detection with convolutional neural networks and dense conditional random fields
+            doi: null
+            year: 2017
+            publisherFlags: null
+            authorNames: *ref_117
+            link: 'https://ieeexplore.ieee.org/abstract/document/8206484/'
+            pdfLink: 'https://www.csc.liv.ac.uk/~anguyen/assets/pdfs/2017_IROS_CRFSeg.pdf'
+            cites: null
+            citedBy: null
+    Visual learning of affordance based cues: &ref_237
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1007/11840541_5
+            googleScholar:
+                title: Visual learning of affordance based cues
+                authorNames: &ref_118
+                    - G Fritz
+                    - L Paletta
+                    - M Kumar
+                    - G Dorffner
+                pdfLink: null
+                link: 'https://link.springer.com/chapter/10.1007/11840541_5'
+                citationId: '6657194331498325234'
+                multiArticleId: '6657194331498325234'
+                citedByLink: 'https://scholar.google.com//scholar?cites=6657194331498325234&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: 'From Animals to Animats, 2006'
+                year: 2006
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=6657194331498325234&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '38'
+        _:
+            title: Visual learning of affordance based cues
+            doi: null
+            year: 2006
+            publisherFlags: null
+            authorNames: *ref_118
+            link: 'https://link.springer.com/chapter/10.1007/11840541_5'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    Soft-assembled human–machine perceptual systems: &ref_238
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2024-12-14T01:09:45.867Z'
+                originalQuery: ecological affordance based object perception machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2024-12-14T01:09:54.442Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1177/1059712319847129
+            googleScholar:
+                title: Soft-assembled human–machine perceptual systems
+                authorNames: &ref_119
+                    - LH Favela
+                pdfLink: null
+                link: 'https://journals.sagepub.com/doi/abs/10.1177/1059712319847129'
+                citationId: '9425055751424123376'
+                multiArticleId: '9425055751424123376'
+                citedByLink: 'https://scholar.google.com//scholar?cites=9425055751424123376&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                publisherInfo: 'Adaptive Behavior, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=9425055751424123376&as_sdt=40000005&sciodt=0,22&hl=en&oe=ASCII'
+                citedByCount: '12'
+        _:
+            title: Soft-assembled human–machine perceptual systems
+            doi: null
+            year: 2019
+            publisherFlags: null
+            authorNames: *ref_119
+            link: 'https://journals.sagepub.com/doi/abs/10.1177/1059712319847129'
+            pdfLink: null
+            cites: null
+            citedBy: null
 discoveryAttempts:
     -
         query: ecological affordance based object perception machine learning
@@ -14183,43 +14696,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Human agency in social cognitive theory.
-                link: *ref_110
+                link: *ref_120
             -
                 hadBeenSeenBefore: true
                 title: 'Whatever next? Predictive brains, situated agents, and the future of cognitive science'
-                link: *ref_111
+                link: *ref_121
             -
                 hadBeenSeenBefore: false
                 title: Technology affordances
-                link: *ref_112
+                link: *ref_122
             -
                 hadBeenSeenBefore: false
                 title: 'Being there: putting brain, body, and world together again'
-                link: *ref_113
+                link: *ref_123
             -
                 hadBeenSeenBefore: false
                 title: Intrinsic Motivation Systems for Autonomous Mental Development
-                link: *ref_114
+                link: *ref_124
             -
                 hadBeenSeenBefore: false
                 title: Activity theory as a framework for designing constructivist learning environments
-                link: *ref_115
+                link: *ref_125
             -
                 hadBeenSeenBefore: false
                 title: 'The myth of language universals: Language diversity and its importance for cognitive science'
-                link: *ref_116
+                link: *ref_126
             -
                 hadBeenSeenBefore: false
                 title: What is Technological Pedagogical Content Knowledge (TPACK)?
-                link: *ref_117
+                link: *ref_127
             -
                 hadBeenSeenBefore: false
                 title: Explanation and Understanding
-                link: *ref_118
+                link: *ref_128
             -
                 hadBeenSeenBefore: false
                 title: Geographic Object-Based Image Analysis – Towards a new paradigm
-                link: *ref_119
+                link: *ref_129
     -
         query: utility based representation learning AI
         dateTime: '2024-12-14T00:49:38.054Z'
@@ -14228,15 +14741,15 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'Artificial intelligence: A modern approach'
-                link: *ref_120
+                link: *ref_130
             -
                 hadBeenSeenBefore: false
                 title: 'ANFIS: adaptive-network-based fuzzy inference system'
-                link: *ref_121
+                link: *ref_131
             -
                 hadBeenSeenBefore: false
                 title: Induction of decision trees
-                link: *ref_122
+                link: *ref_132
             -
                 hadBeenSeenBefore: false
                 title: null
@@ -14244,27 +14757,27 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'Data mining and knowledge discovery: making sense out of data'
-                link: *ref_123
+                link: *ref_133
             -
                 hadBeenSeenBefore: false
                 title: 'Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI'
-                link: *ref_124
+                link: *ref_134
             -
                 hadBeenSeenBefore: false
                 title: 'Machine learning: Trends, perspectives, and prospects'
-                link: *ref_125
+                link: *ref_135
             -
                 hadBeenSeenBefore: false
                 title: From Data Mining to Knowledge Discovery in Databases
-                link: *ref_126
+                link: *ref_136
             -
                 hadBeenSeenBefore: false
                 title: 'High-performance medicine: the convergence of human and artificial intelligence'
-                link: *ref_127
+                link: *ref_137
             -
                 hadBeenSeenBefore: false
                 title: The vision of autonomic computing
-                link: *ref_128
+                link: *ref_138
     -
         query: imagination based affordance recognition
         dateTime: '2024-12-14T00:48:21.650Z'
@@ -14273,43 +14786,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: true
                 title: The Ecological Approach to Visual Perception
-                link: *ref_129
+                link: *ref_139
             -
                 hadBeenSeenBefore: false
                 title: Experience and Education
-                link: *ref_130
+                link: *ref_140
             -
                 hadBeenSeenBefore: false
                 title: Mahalanobis distance-based classifiers are able to recognize EEG patterns by using few EEG electrodes
-                link: *ref_131
+                link: *ref_141
             -
                 hadBeenSeenBefore: false
                 title: Metahistory. The Historical Imagination in Nineteenth-Century Europe.
-                link: *ref_132
+                link: *ref_142
             -
                 hadBeenSeenBefore: false
                 title: 'Techniques of Neutralization: A Theory of Delinquency'
-                link: *ref_133
+                link: *ref_143
             -
                 hadBeenSeenBefore: false
                 title: The temporality of the landscape
-                link: *ref_134
+                link: *ref_144
             -
                 hadBeenSeenBefore: false
                 title: 'Ralph Ellison, James Baldwin, and the Liberal Imagination'
-                link: *ref_135
+                link: *ref_145
             -
                 hadBeenSeenBefore: false
                 title: The New Mobilities Paradigm
-                link: *ref_136
+                link: *ref_146
             -
                 hadBeenSeenBefore: false
                 title: Crowdsourcing as a Model for Problem Solving
-                link: *ref_137
+                link: *ref_147
             -
                 hadBeenSeenBefore: false
                 title: How many memory systems are there?
-                link: *ref_138
+                link: *ref_148
     -
         query: null
         dateTime: '2024-12-13T23:31:19.230Z'
@@ -14319,155 +14832,155 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet
-                link: *ref_139
-            -
-                hadBeenSeenBefore: false
-                title: A Comprehensive Review of the Latest Advancements in Large Generative AI Models
-                link: *ref_140
-            -
-                hadBeenSeenBefore: false
-                title: 'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors'
-                link: *ref_141
-            -
-                hadBeenSeenBefore: false
-                title: Are generative approaches to ZSAR a look in the right direction?
-                link: *ref_142
-            -
-                hadBeenSeenBefore: false
-                title: Improving image generative models with human interactions
-                link: *ref_143
-            -
-                hadBeenSeenBefore: false
-                title: Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay
-                link: *ref_144
-            -
-                hadBeenSeenBefore: false
-                title: 'Generative Model for Person Re-Identification: A Review'
-                link: *ref_145
-            -
-                hadBeenSeenBefore: false
-                title: Deep Dexterous Grasping of Novel Objects from a Single View.
-                link: *ref_146
-            -
-                hadBeenSeenBefore: false
-                title: How generative encodings fare on less regular problems
-                link: *ref_147
-            -
-                hadBeenSeenBefore: false
-                title: The Developing Person Through the Life Span
-                link: *ref_148
-            -
-                hadBeenSeenBefore: false
-                title: Relative Entropy Policy Search
                 link: *ref_149
             -
                 hadBeenSeenBefore: false
-                title: Playing Atari with Deep Reinforcement Learning
+                title: A Comprehensive Review of the Latest Advancements in Large Generative AI Models
                 link: *ref_150
             -
                 hadBeenSeenBefore: false
-                title: The Ecological Approach to Visual Perception
-                link: *ref_129
-            -
-                hadBeenSeenBefore: false
-                title: Auto-Encoding Variational Bayes
+                title: 'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors'
                 link: *ref_151
             -
                 hadBeenSeenBefore: false
-                title: Biped dynamic walking using reinforcement learning
+                title: Are generative approaches to ZSAR a look in the right direction?
                 link: *ref_152
             -
                 hadBeenSeenBefore: false
-                title: Active learning of inverse models with intrinsically motivated goal exploration in robots
+                title: Improving image generative models with human interactions
                 link: *ref_153
             -
                 hadBeenSeenBefore: false
-                title: GAN（Generative Adversarial Nets）
+                title: Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay
                 link: *ref_154
             -
                 hadBeenSeenBefore: false
-                title: 'PILCO: A Model-Based and Data-Efficient Approach to Policy Search'
+                title: 'Generative Model for Person Re-Identification: A Review'
                 link: *ref_155
             -
                 hadBeenSeenBefore: false
-                title: Machine learning for fast quadrupedal locomotion
+                title: Deep Dexterous Grasping of Novel Objects from a Single View.
                 link: *ref_156
             -
                 hadBeenSeenBefore: false
-                title: End-to-End Training of Deep Visuomotor Policies
+                title: How generative encodings fare on less regular problems
                 link: *ref_157
             -
                 hadBeenSeenBefore: false
-                title: ImageNet Classification with Deep Convolutional Neural Networks
+                title: The Developing Person Through the Life Span
                 link: *ref_158
             -
                 hadBeenSeenBefore: false
-                title: Policy Search for Motor Primitives in Robotics
+                title: Relative Entropy Policy Search
                 link: *ref_159
             -
                 hadBeenSeenBefore: false
-                title: Learning structured output representation using deep conditional generative models
+                title: Playing Atari with Deep Reinforcement Learning
                 link: *ref_160
             -
                 hadBeenSeenBefore: false
-                title: Mastering the game of Go with deep neural networks and tree search
+                title: The Ecological Approach to Visual Perception
+                link: *ref_139
+            -
+                hadBeenSeenBefore: false
+                title: Auto-Encoding Variational Bayes
                 link: *ref_161
             -
                 hadBeenSeenBefore: false
-                title: Conditional Image Generation with PixelCNN Decoders
+                title: Biped dynamic walking using reinforcement learning
                 link: *ref_162
             -
                 hadBeenSeenBefore: false
-                title: The ecological approach
+                title: Active learning of inverse models with intrinsically motivated goal exploration in robots
                 link: *ref_163
             -
                 hadBeenSeenBefore: false
-                title: '#Exploration: a study of count-based exploration for deep reinforcement learning'
+                title: GAN（Generative Adversarial Nets）
                 link: *ref_164
             -
                 hadBeenSeenBefore: false
-                title: 'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning'
+                title: 'PILCO: A Model-Based and Data-Efficient Approach to Policy Search'
                 link: *ref_165
             -
                 hadBeenSeenBefore: false
-                title: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
+                title: Machine learning for fast quadrupedal locomotion
                 link: *ref_166
             -
                 hadBeenSeenBefore: false
-                title: Automatic Goal Generation for Reinforcement Learning Agents
+                title: End-to-End Training of Deep Visuomotor Policies
                 link: *ref_167
             -
                 hadBeenSeenBefore: false
-                title: Information theoretic MPC for model-based reinforcement learning
+                title: ImageNet Classification with Deep Convolutional Neural Networks
                 link: *ref_168
             -
                 hadBeenSeenBefore: false
-                title: Data-Efficient Hierarchical Reinforcement Learning
+                title: Policy Search for Motor Primitives in Robotics
                 link: *ref_169
             -
                 hadBeenSeenBefore: false
-                title: Visual Reinforcement Learning with Imagined Goals
+                title: Learning structured output representation using deep conditional generative models
                 link: *ref_170
             -
                 hadBeenSeenBefore: false
-                title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
+                title: Mastering the game of Go with deep neural networks and tree search
                 link: *ref_171
             -
                 hadBeenSeenBefore: false
-                title: Unsupervised Control Through Non-Parametric Discriminative Rewards
+                title: Conditional Image Generation with PixelCNN Decoders
                 link: *ref_172
             -
                 hadBeenSeenBefore: false
-                title: Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables
+                title: The ecological approach
                 link: *ref_173
             -
                 hadBeenSeenBefore: false
-                title: '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning'
+                title: '#Exploration: a study of count-based exploration for deep reinforcement learning'
                 link: *ref_174
             -
                 hadBeenSeenBefore: false
-                title: Adversarial Feature Learning
+                title: 'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning'
                 link: *ref_175
+            -
+                hadBeenSeenBefore: false
+                title: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
+                link: *ref_176
+            -
+                hadBeenSeenBefore: false
+                title: Automatic Goal Generation for Reinforcement Learning Agents
+                link: *ref_177
+            -
+                hadBeenSeenBefore: false
+                title: Information theoretic MPC for model-based reinforcement learning
+                link: *ref_178
+            -
+                hadBeenSeenBefore: false
+                title: Data-Efficient Hierarchical Reinforcement Learning
+                link: *ref_179
+            -
+                hadBeenSeenBefore: false
+                title: Visual Reinforcement Learning with Imagined Goals
+                link: *ref_180
+            -
+                hadBeenSeenBefore: false
+                title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
+                link: *ref_181
+            -
+                hadBeenSeenBefore: false
+                title: Unsupervised Control Through Non-Parametric Discriminative Rewards
+                link: *ref_182
+            -
+                hadBeenSeenBefore: false
+                title: Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables
+                link: *ref_183
+            -
+                hadBeenSeenBefore: false
+                title: '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning'
+                link: *ref_184
+            -
+                hadBeenSeenBefore: false
+                title: Adversarial Feature Learning
+                link: *ref_185
             -
                 hadBeenSeenBefore: false
                 title: null
@@ -14475,59 +14988,59 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Curiosity-Driven Exploration by Self-Supervised Prediction
-                link: *ref_176
-            -
-                hadBeenSeenBefore: false
-                title: 'VIME: Variational Information Maximizing Exploration'
-                link: *ref_177
-            -
-                hadBeenSeenBefore: false
-                title: Neural Discrete Representation Learning
-                link: *ref_178
-            -
-                hadBeenSeenBefore: false
-                title: Hindsight Experience Replay
-                link: *ref_179
-            -
-                hadBeenSeenBefore: false
-                title: 'Learning to poke by poking: experiential learning of intuitive physics'
-                link: *ref_180
-            -
-                hadBeenSeenBefore: false
-                title: End-to-end training of deep visuomotor policies
-                link: *ref_181
-            -
-                hadBeenSeenBefore: false
-                title: Learning Latent Plans from Play
-                link: *ref_182
-            -
-                hadBeenSeenBefore: false
-                title: Contextual Imagined Goals for Self-Supervised Robotic Learning
-                link: *ref_183
-            -
-                hadBeenSeenBefore: false
-                title: 'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets'
-                link: *ref_184
-            -
-                hadBeenSeenBefore: false
-                title: 'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning'
-                link: *ref_185
-            -
-                hadBeenSeenBefore: false
-                title: The developing person through the life span
                 link: *ref_186
             -
                 hadBeenSeenBefore: false
-                title: Generative Adversarial Nets
+                title: 'VIME: Variational Information Maximizing Exploration'
                 link: *ref_187
             -
                 hadBeenSeenBefore: false
-                title: Universal Value Function Approximators
+                title: Neural Discrete Representation Learning
                 link: *ref_188
             -
                 hadBeenSeenBefore: false
-                title: Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models
+                title: Hindsight Experience Replay
                 link: *ref_189
+            -
+                hadBeenSeenBefore: false
+                title: 'Learning to poke by poking: experiential learning of intuitive physics'
+                link: *ref_190
+            -
+                hadBeenSeenBefore: false
+                title: End-to-end training of deep visuomotor policies
+                link: *ref_191
+            -
+                hadBeenSeenBefore: false
+                title: Learning Latent Plans from Play
+                link: *ref_192
+            -
+                hadBeenSeenBefore: false
+                title: Contextual Imagined Goals for Self-Supervised Robotic Learning
+                link: *ref_193
+            -
+                hadBeenSeenBefore: false
+                title: 'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets'
+                link: *ref_194
+            -
+                hadBeenSeenBefore: false
+                title: 'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning'
+                link: *ref_195
+            -
+                hadBeenSeenBefore: false
+                title: The developing person through the life span
+                link: *ref_196
+            -
+                hadBeenSeenBefore: false
+                title: Generative Adversarial Nets
+                link: *ref_197
+            -
+                hadBeenSeenBefore: false
+                title: Universal Value Function Approximators
+                link: *ref_198
+            -
+                hadBeenSeenBefore: false
+                title: Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models
+                link: *ref_199
     -
         query: affordance based encoder imagination prediction
         dateTime: '2024-12-13T22:15:13.790Z'
@@ -14536,43 +15049,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'Whatever next? Predictive brains, situated agents, and the future of cognitive science'
-                link: *ref_111
+                link: *ref_121
             -
                 hadBeenSeenBefore: false
                 title: Disjuncture and Difference in the Global Cultural Economy
-                link: *ref_190
+                link: *ref_200
             -
                 hadBeenSeenBefore: false
                 title: 'Principal warps: thin-plate splines and the decomposition of deformations'
-                link: *ref_191
+                link: *ref_201
             -
                 hadBeenSeenBefore: false
                 title: Neuroscience-Inspired Artificial Intelligence
-                link: *ref_192
+                link: *ref_202
             -
                 hadBeenSeenBefore: false
                 title: 'The hippocampus and memory: insights from spatial processing'
-                link: *ref_193
+                link: *ref_203
             -
                 hadBeenSeenBefore: false
                 title: 'The proactive brain: using analogies and associations to generate predictions'
-                link: *ref_194
+                link: *ref_204
             -
                 hadBeenSeenBefore: false
                 title: Exploring the impact of artificial intelligence on teaching and learning in higher education
-                link: *ref_195
+                link: *ref_205
             -
                 hadBeenSeenBefore: false
                 title: Stalking the elusive "vividness" effect.
-                link: *ref_196
+                link: *ref_206
             -
                 hadBeenSeenBefore: false
                 title: A Bayesian account of 'hysteria'
-                link: *ref_197
+                link: *ref_207
             -
                 hadBeenSeenBefore: false
                 title: 'The cognitive neuroscience of constructive memory: remembering the past and imagining the future'
-                link: *ref_198
+                link: *ref_208
     -
         query: ' agent driven affect based perception machine learning -emotion'
         dateTime: '2024-12-13T20:06:54.724Z'
@@ -14581,43 +15094,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception'
-                link: *ref_199
+                link: *ref_209
             -
                 hadBeenSeenBefore: false
                 title: Multi-Agent Active Perception Based on Reinforcement Learning and POMDP
-                link: *ref_200
+                link: *ref_210
             -
                 hadBeenSeenBefore: false
                 title: Mutual influence between language and perception in multi-agent communication games
-                link: *ref_201
+                link: *ref_211
             -
                 hadBeenSeenBefore: false
                 title: 'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness'
-                link: *ref_202
+                link: *ref_212
             -
                 hadBeenSeenBefore: false
                 title: Why and how to study the impact of perception on language emergence in artificial agents
-                link: *ref_203
+                link: *ref_213
             -
                 hadBeenSeenBefore: false
                 title: Interaction Algorithm Effect on Human Experience with Reinforcement Learning
-                link: *ref_204
+                link: *ref_214
             -
                 hadBeenSeenBefore: false
                 title: 'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues'
-                link: *ref_205
+                link: *ref_215
             -
                 hadBeenSeenBefore: false
                 title: Research on autonomous driving decision-making strategies based deep reinforcement learning
-                link: *ref_206
+                link: *ref_216
             -
                 hadBeenSeenBefore: false
                 title: Finding and visualizing weaknesses of deep reinforcement learning agents
-                link: *ref_207
+                link: *ref_217
             -
                 hadBeenSeenBefore: false
                 title: Simulation-based reinforcement learning for real-world autonomous driving
-                link: *ref_208
+                link: *ref_218
     -
         query: affordance based encoder imagination prediction
         date: null
@@ -14627,40 +15140,85 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Visual Affordance Prediction for Guiding Robot Exploration
-                link: *ref_209
+                link: *ref_219
             -
                 hadBeenSeenBefore: false
                 title: 'RAIL: Robot Affordance Imagination with Large Language Models'
-                link: *ref_210
+                link: *ref_220
             -
                 hadBeenSeenBefore: false
                 title: Affordance-Based Goal Imagination for Embodied AI Agents
-                link: *ref_211
+                link: *ref_221
             -
                 hadBeenSeenBefore: false
                 title: Learning to Anticipate Egocentric Actions by Imagination
-                link: *ref_212
+                link: *ref_222
             -
                 hadBeenSeenBefore: false
                 title: Imagine that! Leveraging emergent affordances for 3d tool synthesis
-                link: *ref_213
+                link: *ref_223
             -
                 hadBeenSeenBefore: false
                 title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
-                link: *ref_214
+                link: *ref_224
             -
                 hadBeenSeenBefore: false
                 title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
-                link: *ref_215
+                link: *ref_225
             -
                 hadBeenSeenBefore: false
                 title: Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks
-                link: *ref_216
+                link: *ref_226
             -
                 hadBeenSeenBefore: false
                 title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
-                link: *ref_217
+                link: *ref_227
             -
                 hadBeenSeenBefore: false
                 title: Learning affordances in object-centric generative models
-                link: *ref_218
+                link: *ref_228
+    -
+        query: ecological affordance based object perception machine learning
+        dateTime: '2024-12-14T01:09:45.867Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: A survey of visual affordance recognition based on deep learning
+                link: *ref_229
+            -
+                hadBeenSeenBefore: false
+                title: 'Affordancenet: An end-to-end deep learning approach for object affordance detection'
+                link: *ref_230
+            -
+                hadBeenSeenBefore: false
+                title: Deep affordance-grounded sensorimotor object recognition
+                link: *ref_231
+            -
+                hadBeenSeenBefore: false
+                title: 'Recent advances of deep robotic affordance learning: a reinforcement learning perspective'
+                link: *ref_232
+            -
+                hadBeenSeenBefore: false
+                title: Detecting object affordances with convolutional neural networks
+                link: *ref_233
+            -
+                hadBeenSeenBefore: false
+                title: 'Visual affordance and function understanding: A survey'
+                link: *ref_234
+            -
+                hadBeenSeenBefore: false
+                title: Learning predictive features in affordance based robotic perception systems
+                link: *ref_235
+            -
+                hadBeenSeenBefore: false
+                title: Object-based affordances detection with convolutional neural networks and dense conditional random fields
+                link: *ref_236
+            -
+                hadBeenSeenBefore: false
+                title: Visual learning of affordance based cues
+                link: *ref_237
+            -
+                hadBeenSeenBefore: false
+                title: Soft-assembled human–machine perceptual systems
+                link: *ref_238

@@ -353,7 +353,7 @@ mainLoop: while (true) {
                 reasonsRelevant: [],
                 reasonsNotRelevant: [],
                 customKeywords: [],
-                discoveryMethod: { dateTime: discoveryMethod.dateTime, query: discoveryMethod.query, searchEngine: discoveryMethod.searchEngine },
+                discoveryMethod: { dateTime: discoveryMethod.dateTime, originalQuery: discoveryMethod.query, searchEngine: discoveryMethod.searchEngine },
                 events: {},
             },
             accordingTo: {
@@ -415,7 +415,7 @@ mainLoop: while (true) {
                 each.events["added"] =  each.events["added"] || new DateTime().toISOString()
             }
         }
-        activeProject.discoveryAttempts.unshift(discoveryMethod)
+        activeProject.discoveryAttempts.push(discoveryMethod)
         await saveProject()
         prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
     } else if (whichAction == "change project") {
@@ -672,7 +672,7 @@ mainLoop: while (true) {
                             active.notes.alreadyConnectedTo.push(title)
                         }
                     }
-                    activeProject.discoveryAttempts.unshift(discoveryMethod)
+                    activeProject.discoveryAttempts.push(discoveryMethod)
                     await saveProject()
                     prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
                 }
