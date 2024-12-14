@@ -14579,9 +14579,10 @@ references:
         scoreString: '-15|0|0'
     A survey of visual affordance recognition based on deep learning: &ref_109
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -14590,6 +14591,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2024-12-14T01:09:54.442Z'
+                sawTitle: '2024-12-14T01:13:12.079Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -14640,9 +14642,10 @@ references:
         scoreString: 3|2|0
     'Affordancenet: An end-to-end deep learning approach for object affordance detection': &ref_110
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -14651,6 +14654,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2024-12-14T01:09:54.442Z'
+                sawTitle: '2024-12-14T01:13:14.220Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -14710,6 +14714,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2024-12-14T01:09:54.442Z'
+                sawTitle: '2024-12-14T01:13:27.122Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -14878,9 +14883,10 @@ references:
         scoreString: 1.5|0|0
     'Visual affordance and function understanding: A survey': &ref_114
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -14889,6 +14895,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2024-12-14T01:09:54.442Z'
+                sawTitle: '2024-12-14T01:13:22.148Z'
         accordingTo:
             $manuallyEntered:
                 title: null

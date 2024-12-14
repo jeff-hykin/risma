@@ -416,6 +416,7 @@ mainLoop: while (true) {
             }
         }
         activeProject.discoveryAttempts.push(discoveryMethod)
+        Reference.beforeSave()
         await saveProject()
         prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
     } else if (whichAction == "change project") {

@@ -788,7 +788,7 @@ export async function getRelatedArticles(reference, onProgress) {
         await getOpenAlexData(each).then(each=>{
             if (!relatedArticles[each.title]) {
                 relatedArticles[each.title] = new Reference()
-                relatedArticles[each.title].discoveryMethod = { dateTime: discoveryMethod.dateTime, query: discoveryMethod.query, searchEngine: discoveryMethod.searchEngine }
+                relatedArticles[each.title].discoveryMethod = { dateTime: discoveryMethod.dateTime, originallyWasRelatedTo: discoveryMethod.title, searchEngine: discoveryMethod.searchEngine }
             }
             relatedArticles[each.title].accordingTo = relatedArticles[each.title].accordingTo || {}
             relatedArticles[each.title].accordingTo.openAlex = openAlexToSimpleFormat(each)
@@ -1318,8 +1318,10 @@ export const searchOptions = {
                                     articleObject.authorNames = authorInfoString.split(",").map(each=>each.replace(/…|�/g,"").trim())
                                     let year
                                     // yep sadly this code will break in the year 2100
-                                    if (year = publishInstanceInfo.match(/, ?((?:20|19)(?:\d\d))/)) {
-                                        articleObject.year = year[0]-0
+                                    if (year = publishInstanceInfo.match(/\b((?:20|19)(?:\d\d))$/)) {
+                                        articleObject.year = year[1]-0
+                                    } else if (year = publishInstanceInfo.match(/, ?((?:20|19)(?:\d\d))/)) {
+                                        articleObject.year = year[1]-0
                                     }
                                     if (publishInstanceInfo) {
                                         articleObject.publisherInfo = publishInstanceInfo.trim().replace(/�|…/g,"")
