@@ -20,7 +20,7 @@ import { versionSort, versionToList, executeConversation } from "./tools/misc.js
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
 
-// TODO: make sorter and keywords real time editable
+// TODO: make sorter and keywords real time editable (reload from file)
 // TODO: make relevence score of discoveryMethod, list most helpful searches
 // TODO: find a way to add info to a manually entered reference
 

@@ -1,11 +1,24 @@
 goal: What problems have been solved in relation to the problem of affordance based perception?
 notes:
-    - 'include invisible gorilla; Louise Stark and Kevin louise stark, kevin bowyer  aliamonis at UMaryland (25yrs ago) citations in textbook'
-    -
-        changes in understanding:
-            - non-supervised
-            - dynamic categorization
-            - POV
+    - my evolving poorly-worded research question:
+        - what is the state of:
+            - agent based
+            - active task-specific (ex; invisble gorilla side effect)
+            - egocentric (ex; where the agent could sit, not where a human could sit)
+            - affordance (categories based on what is possible)
+            - unsurpervised (dynamic categorization, including development of new categories)
+            - object perception
+        - what is outside the scope / irrelevent but allowed:
+            - multi-modal input
+    - tasks:
+        - active task: find affordance based that does some kind of visual filtering based on the active objective (requires multi-task agent)
+        - other:
+            - 'look up Louise Stark (Kevin louise stark, kevin bowyer) aliamonis at UMaryland (25yrs ago) citations in textbook'
+            - start forming groups of related papers
+    - changes in understanding:
+            - non-supervised is important and not as common
+            - dynamic categorization is rare but important
+            - POV is important and not discussed much
             - actor based affordance recognition
             - kind of appathetic towards segmentation
             - kind of appathetic towards reasoning
