@@ -32,7 +32,10 @@ import { Reference } from "./tools/reference.js"
     // specific author included
 
 const posixShellEscape = (string)=>"'"+string.replace(/'/g, `'"'"'`)+"'"
-const clearScreen = ()=>console.log('\x1B[2J')
+const clearScreen = ()=>{
+    console.log('\n'.repeat(Deno.consoleSize().rows))
+    // console.log('\x1B[2J')
+}
 
 const argsInfo = parseArgs({
     rawArgs: Deno.args,
@@ -95,6 +98,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         activeProject = await FileSystem.read(storageObject.activeProjectPath) || JSON.stringify(defaultObject)
         activeProject = yaml.parse(activeProject)
         if (!activeProject.discoveryAttempts || !activeProject.references) {
+            console.warn(`Active project ${green(JSON.stringify(storageObject.activeProjectPath))}\ndoesn't seem to have core fields`)
             activeProject = defaultObject
         }
         activeProject.settings = activeProject.settings || {}
@@ -154,7 +158,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
                 each.link = activeProject.references[each.title]
             }
         }
-        Reference.beforeSave()
+        await Reference.beforeSave()
         await FileSystem.write({path: storageObject.activeProjectPath, data: yaml.stringify(activeProject,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
     }
 
@@ -298,7 +302,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
                 throw error
             }
         }
-        if (Object.values(activeProject.settings.scoreGivers).length == 0) {
+        if (Object.values(activeProject?.settings?.scoreGivers||{}).length == 0) {
             // use year (currently gets added to keyword score)
             scoreList[0] += (each.year-0||0)
         }
@@ -426,6 +430,7 @@ mainLoop: while (true) {
         for (const each of Object.values(unseenReferences).sort(referenceSorter())) {
             console.log(`${score(each)}  ${highlightKeywords(each.title)}`)
         }
+        await saveProject()
         prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
     } else if (whichAction == "change project") {
         const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
@@ -435,7 +440,7 @@ mainLoop: while (true) {
         })
         if (project == "<new project>") {
             storageObject.activeProjectPath = FileSystem.makeAbsolutePath(await askForFilePath(`What is the path to the yaml file? (if what you enter doesn't exist, I'll create it)`,))
-            let name = (await Console.askFor.line(`What is a good name for this project? (empty will use date)`)) || new DateTime().date
+            let name = (await Console.askFor.line(`What is a good nickname for this project? (empty will use date)`)) || new DateTime().date
             storageObject.previouslyActiveProjectPaths[name] = storageObject.activeProjectPath
             await loadProject()
         } else {
@@ -514,7 +519,7 @@ mainLoop: while (true) {
                                 each.resumeStatus = "irrelevent|title"
                                 each.reasonsNotRelevant.push("title")
                             } else {
-                                console.log(`\runrecognized key: ${keyName}                                `)
+                                console.log(`\nunrecognized key: ${keyName}                                `)
                                 continue
                             }
                             await saveProject()
@@ -681,6 +686,7 @@ mainLoop: while (true) {
                             active.notes.alreadyConnectedTo.push(title)
                         }
                     }
+                    console.debug(`discoveryMethod is:`,discoveryMethod)
                     activeProject.discoveryAttempts.push(discoveryMethod)
                     await saveProject()
                     prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
