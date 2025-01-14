@@ -152,6 +152,7 @@ settings:
             - animal
             - biolog
             - primate
+            - attention
 references:
     Visual Affordance Prediction for Guiding Robot Exploration: &ref_99
         notes:
