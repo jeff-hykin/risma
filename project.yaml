@@ -1,21 +1,31 @@
 goal: What problems have been solved in relation to the problem of affordance based perception?
 notes:
-    - my evolving poorly-worded research question:
-        - what is the state of:
-            - agent based
-            - active task-specific (ex; invisble gorilla side effect)
-            - egocentric (ex; where the agent could sit, not where a human could sit)
-            - affordance (categories based on what is possible)
-            - unsurpervised (dynamic categorization, including development of new categories)
-            - object perception
-        - what is outside the scope / irrelevent but allowed:
-            - multi-modal input
-    - tasks:
-        - active task: find affordance based that does some kind of visual filtering based on the active objective (requires multi-task agent)
-        - other:
-            - 'look up Louise Stark (Kevin louise stark, kevin bowyer) aliamonis at UMaryland (25yrs ago) citations in textbook'
-            - start forming groups of related papers
-    - changes in understanding:
+    -
+        my evolving poorly-worded research question:
+            -
+                what is the state of:
+                    - agent based
+                    - active task-specific (ex; invisble gorilla side effect)
+                    - 'egocentric (ex; where the agent could sit, not where a human could sit)'
+                    - affordance (categories based on what is possible)
+                    - 'unsurpervised (dynamic categorization, including development of new categories)'
+                    - object perception
+            -
+                what is outside the scope / irrelevent but allowed:
+                    - multi-modal input
+    -
+        tasks:
+            -
+                active task: find affordance based that does some kind of visual filtering based on the active objective (requires multi-task agent)
+            -
+                other:
+                    - Professor Kevin Bowyer
+                    -
+                        Professor Louise Stark: 'Professor Stark received her Ph.D. in Computer Science & Engineering from the University of South Florida and is currently with the Department of Electrical and Computer Engineering at the University of the Pacific. She also maintains a courtesy appointment with the Department of Computer Science & Engineering at USF and serves on the committees of two Ph.D. students at USF (Melanie Sutton and Adam Hoover), both of whom are past REU program participants. Professor Stark spends a portion of each summer as a visiting researcher at USF. She will help to supervise REU participants, give part of the summer short course and generally serve as a role model for female REU participants. Professor Stark''s work has been supported by the NSF and the Air Force Office of Scientific Research, as well as other institutions. Professor Stark received the Eberhardt Teacher/Scholar Award from UoP in 1994. Professor Stark has served on the program committee of several major conferences, served as guest editor for a special issue of the International Journal of Pattern Recognition and Image Processing and is an Associate Editor of the journal Pattern Recognition.'
+                    - 'look up Louise Stark (Kevin louise stark, kevin bowyer) aliamonis at UMaryland (25yrs ago) citations in textbook'
+                    - start forming groups of related papers
+    -
+        changes in understanding:
             - non-supervised is important and not as common
             - dynamic categorization is rare but important
             - POV is important and not discussed much
@@ -110,6 +120,8 @@ settings:
             - object detection
             - proprioception
             - represent
+            - selective attention
+            - inattentional blindness
         negative:
             - large language model
             - language model
@@ -3726,8 +3738,9 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            resumeStatus: irrelevent|title
+            reasonsNotRelevant:
+                - title
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
@@ -3735,6 +3748,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2025-01-14T18:49:46.137Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -8498,15 +8512,17 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             reasonsNotRelevant: []
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
                 originalQuery: null
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2025-01-14T18:27:36.197Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -15740,7 +15756,7 @@ references:
             citedBy: null
     Joint representation learning for top-n recommendation with heterogeneous information sources: &ref_123
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -15751,6 +15767,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2024-12-14T01:17:14.473Z'
+                sawTitle: '2025-01-14T18:28:54.683Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -16130,6 +16147,1128 @@ references:
                 - J Zeng
             link: 'https://www.nature.com/articles/s41467-023-43214-1'
             pdfLink: null
+            cites: null
+            citedBy: null
+    'Learning to act properly: Predicting and explaining affordances from images': &ref_129
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:34:29.490Z'
+                originalQuery: context dependant affordances machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:34:33.087Z'
+                sawTitle: '2025-01-14T18:35:53.808Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/cvpr.2018.00108
+            googleScholar:
+                title: 'Learning to act properly: Predicting and explaining affordances from images'
+                authorNames:
+                    - CY Chuang
+                    - J Li
+                    - A Torralba
+                pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2018/papers/Chuang_Learning_to_Act_CVPR_2018_paper.pdf'
+                link: 'http://openaccess.thecvf.com/content_cvpr_2018/html/Chuang_Learning_to_Act_CVPR_2018_paper.html'
+                citationId: '9413040909214203914'
+                multiArticleId: '9413040909214203914'
+                citedByLink: 'https://scholar.google.com//scholar?cites=9413040909214203914&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the IEEE, 2018'
+                year: 2018
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=9413040909214203914&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 113
+        score:
+            - 1
+            - 151.5
+            - 2
+            - 2018
+            - 0
+        scoreString: 1|151.5|2|2018|0
+        _:
+            title: 'Learning to act properly: Predicting and explaining affordances from images'
+            doi: 10.1109/cvpr.2018.00108
+            year: 2018
+            publisherFlags: null
+            authorNames:
+                - CY Chuang
+                - J Li
+                - A Torralba
+            link: 'http://openaccess.thecvf.com/content_cvpr_2018/html/Chuang_Learning_to_Act_CVPR_2018_paper.html'
+            pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2018/papers/Chuang_Learning_to_Act_CVPR_2018_paper.pdf'
+            cites: null
+            citedBy: null
+    Training agents with interactive reinforcement learning and contextual affordances: &ref_130
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:34:29.490Z'
+                originalQuery: context dependant affordances machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:34:33.087Z'
+                sawTitle: '2025-01-14T18:35:09.761Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/tcds.2016.2543839
+            googleScholar:
+                title: Training agents with interactive reinforcement learning and contextual affordances
+                authorNames:
+                    - F Cruz
+                    - S Magg
+                    - C Weber
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/7274989/7422051/07458195.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/7458195/'
+                citationId: '1853457213954925348'
+                multiArticleId: '1853457213954925348'
+                citedByLink: 'https://scholar.google.com//scholar?cites=1853457213954925348&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'IEEE Transactions on, 2016'
+                year: 2016
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=1853457213954925348&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 110
+        score:
+            - 1
+            - 153
+            - 1
+            - 2016
+            - 0
+        scoreString: 1|153|1|2016|0
+        _:
+            title: Training agents with interactive reinforcement learning and contextual affordances
+            doi: 10.1109/tcds.2016.2543839
+            year: 2016
+            publisherFlags: null
+            authorNames:
+                - F Cruz
+                - S Magg
+                - C Weber
+            link: 'https://ieeexplore.ieee.org/abstract/document/7458195/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/7274989/7422051/07458195.pdf'
+            cites: null
+            citedBy: null
+    Affordance as context: &ref_131
+        notes:
+            resumeStatus: irrelevent|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant:
+                - title
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:34:29.490Z'
+                originalQuery: context dependant affordances machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:34:33.087Z'
+                sawTitle: '2025-01-14T18:37:05.169Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1016/j.intcom.2005.04.003
+            googleScholar:
+                title: Affordance as context
+                authorNames:
+                    - P Turner
+                pdfLink: null
+                link: 'https://academic.oup.com/iwc/article-abstract/17/6/787/677792'
+                citationId: '8296422957197231910'
+                multiArticleId: '8296422957197231910'
+                citedByLink: 'https://scholar.google.com//scholar?cites=8296422957197231910&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Interacting with computers, 2005'
+                year: 2005
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=8296422957197231910&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 216
+        score:
+            - 1
+            - 96
+            - 0
+            - 2005
+            - 0
+        scoreString: 1|96|0|2005|0
+        _:
+            title: Affordance as context
+            doi: 10.1016/j.intcom.2005.04.003
+            year: 2005
+            publisherFlags: null
+            authorNames:
+                - P Turner
+            link: 'https://academic.oup.com/iwc/article-abstract/17/6/787/677792'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    Conditional affordance learning for driving in urban environments: &ref_132
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:34:29.490Z'
+                originalQuery: context dependant affordances machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:34:33.087Z'
+                sawTitle: '2025-01-14T18:36:08.406Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Conditional affordance learning for driving in urban environments
+                authorNames:
+                    - A Sauer
+                    - N Savinov
+                    - A Geiger
+                pdfLink: 'http://proceedings.mlr.press/v87/sauer18a/sauer18a.pdf'
+                link: 'https://proceedings.mlr.press/v87/sauer18a.html'
+                citationId: '6169039130210721704'
+                multiArticleId: '6169039130210721704'
+                citedByLink: 'https://scholar.google.com//scholar?cites=6169039130210721704&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Conference on robot learning, 2018'
+                year: 2018
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=6169039130210721704&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 237
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2018
+            - 0
+        scoreString: 1|151.5|1|2018|0
+        _:
+            title: Conditional affordance learning for driving in urban environments
+            doi: null
+            year: 2018
+            publisherFlags: null
+            authorNames:
+                - A Sauer
+                - N Savinov
+                - A Geiger
+            link: 'https://proceedings.mlr.press/v87/sauer18a.html'
+            pdfLink: 'http://proceedings.mlr.press/v87/sauer18a/sauer18a.pdf'
+            cites: null
+            citedBy: null
+    Learning grasp affordance reasoning through semantic relations: &ref_133
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:34:29.490Z'
+                originalQuery: context dependant affordances machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:34:33.087Z'
+                sawTitle: '2025-01-14T18:36:00.692Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/lra.2019.2933815
+            googleScholar:
+                title: Learning grasp affordance reasoning through semantic relations
+                authorNames:
+                    - P Ardn
+                    - E Pairet
+                    - RPA Petrick
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/7083369/7339444/08790777.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/8790777/'
+                citationId: '8011533238519066783'
+                multiArticleId: '8011533238519066783'
+                citedByLink: 'https://scholar.google.com//scholar?cites=8011533238519066783&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'IEEE Robotics and, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=8011533238519066783&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 59
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2019
+            - 0
+        scoreString: 1|151.5|1|2019|0
+        _:
+            title: Learning grasp affordance reasoning through semantic relations
+            doi: 10.1109/lra.2019.2933815
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - P Ardn
+                - E Pairet
+                - RPA Petrick
+            link: 'https://ieeexplore.ieee.org/abstract/document/8790777/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/7083369/7339444/08790777.pdf'
+            cites: null
+            citedBy: null
+    'Mobile data-driven language learning: Affordances and learners'' perception': &ref_134
+        notes:
+            resumeStatus: irrelevent|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant:
+                - title
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:34:29.490Z'
+                originalQuery: context dependant affordances machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:34:33.087Z'
+                sawTitle: '2025-01-14T18:35:42.640Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: 'Mobile data-driven language learning: Affordances and learners'' perception'
+                authorNames:
+                    - P Prez-Paredes
+                    - CO Guillamn
+                    - J Van de Vyver
+                pdfLink: null
+                link: 'https://www.sciencedirect.com/science/article/pii/S0346251X18308625'
+                citationId: '9200814181583636782'
+                multiArticleId: '9200814181583636782'
+                citedByLink: 'https://scholar.google.com//scholar?cites=9200814181583636782&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'System, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=9200814181583636782&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 69
+        score:
+            - 1
+            - 151.5
+            - 2
+            - 2019
+            - 0
+        scoreString: 1|151.5|2|2019|0
+        _:
+            title: 'Mobile data-driven language learning: Affordances and learners'' perception'
+            doi: null
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - P Prez-Paredes
+                - CO Guillamn
+                - J Van de Vyver
+            link: 'https://www.sciencedirect.com/science/article/pii/S0346251X18308625'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    Categorization of Affordances and Prediction of Future Object Interactions using Qualitative Spatial Relations: &ref_135
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:34:29.490Z'
+                originalQuery: context dependant affordances machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:34:33.087Z'
+                sawTitle: '2025-01-14T18:36:49.105Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Categorization of Affordances and Prediction of Future Object Interactions using Qualitative Spatial Relations
+                authorNames:
+                    - A Toumpa
+                pdfLink: 'https://etheses.whiterose.ac.uk/33571/1/Alexia_Toumpa_PhD_Thesis_WhiteRose.pdf'
+                link: 'https://etheses.whiterose.ac.uk/33571/'
+                citationId: null
+                multiArticleId: '5721094204919753245'
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2016
+            - 0
+        scoreString: 1|151.5|1|2016|0
+        _:
+            title: Categorization of Affordances and Prediction of Future Object Interactions using Qualitative Spatial Relations
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames:
+                - A Toumpa
+            link: 'https://etheses.whiterose.ac.uk/33571/'
+            pdfLink: 'https://etheses.whiterose.ac.uk/33571/1/Alexia_Toumpa_PhD_Thesis_WhiteRose.pdf'
+            cites: null
+            citedBy: null
+    Context and deep learning design: &ref_136
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:34:29.490Z'
+                originalQuery: context dependant affordances machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:34:33.087Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1016/j.compedu.2012.06.007
+            googleScholar:
+                title: Context and deep learning design
+                authorNames:
+                    - T Boyle
+                    - A Ravenscroft
+                pdfLink: null
+                link: 'https://www.sciencedirect.com/science/article/pii/S0360131512001492'
+                citationId: '7889179532128428362'
+                multiArticleId: '7889179532128428362'
+                citedByLink: 'https://scholar.google.com//scholar?cites=7889179532128428362&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Computers & Education, 2012'
+                year: 2012
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=7889179532128428362&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 68
+        score:
+            - 0
+            - 135
+            - 1
+            - 2012
+            - 0
+        scoreString: 0|135|1|2012|0
+        _:
+            title: Context and deep learning design
+            doi: 10.1016/j.compedu.2012.06.007
+            year: 2012
+            publisherFlags: null
+            authorNames:
+                - T Boyle
+                - A Ravenscroft
+            link: 'https://www.sciencedirect.com/science/article/pii/S0360131512001492'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    Attention-privileged reinforcement learning: &ref_137
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:49:34.716Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Attention-privileged reinforcement learning
+                authorNames:
+                    - S Salter
+                    - D Rao
+                    - M Wulfmeier
+                pdfLink: 'https://proceedings.mlr.press/v155/salter21a/salter21a.pdf'
+                link: 'https://proceedings.mlr.press/v155/salter21a.html'
+                citationId: '12251812591802030155'
+                multiArticleId: '12251812591802030155'
+                citedByLink: 'https://scholar.google.com//scholar?cites=12251812591802030155&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'on Robot Learning, 2021'
+                year: 2021
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=12251812591802030155&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 18
+        score:
+            - 0
+            - 270
+            - 1
+            - 2021
+            - 0
+        scoreString: 0|270|1|2021|0
+        _:
+            title: Attention-privileged reinforcement learning
+            doi: null
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - S Salter
+                - D Rao
+                - M Wulfmeier
+            link: 'https://proceedings.mlr.press/v155/salter21a.html'
+            pdfLink: 'https://proceedings.mlr.press/v155/salter21a/salter21a.pdf'
+            cites: null
+            citedBy: null
+    Online learning of task-driven object-based visual attention control: &ref_138
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:49:17.751Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1016/j.imavis.2009.10.006
+            googleScholar:
+                title: Online learning of task-driven object-based visual attention control
+                authorNames:
+                    - A Borji
+                    - MN Ahmadabadi
+                    - BN Araabi
+                pdfLink: null
+                link: 'https://www.sciencedirect.com/science/article/pii/S0262885609002224'
+                citationId: '3088923490048523831'
+                multiArticleId: '3088923490048523831'
+                citedByLink: 'https://scholar.google.com//scholar?cites=3088923490048523831&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Image and Vision, 2010'
+                year: 2010
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=3088923490048523831&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 86
+        score:
+            - 1
+            - 101
+            - 2
+            - 2010
+            - 0
+        scoreString: 1|101|2|2010|0
+        _:
+            title: Online learning of task-driven object-based visual attention control
+            doi: 10.1016/j.imavis.2009.10.006
+            year: 2010
+            publisherFlags: null
+            authorNames:
+                - A Borji
+                - MN Ahmadabadi
+                - BN Araabi
+            link: 'https://www.sciencedirect.com/science/article/pii/S0262885609002224'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    The persistence of value-driven attention capture is task-dependent: &ref_139
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:46:58.733Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.31234/osf.io/967k8
+            googleScholar:
+                title: The persistence of value-driven attention capture is task-dependent
+                authorNames:
+                    - AE Milner
+                    - MH MacLean
+                    - B Giesbrecht
+                pdfLink: null
+                link: 'https://link.springer.com/article/10.3758/s13414-022-02621-0'
+                citationId: '1249690841010481234'
+                multiArticleId: '1249690841010481234'
+                citedByLink: 'https://scholar.google.com//scholar?cites=1249690841010481234&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Attention, Perception, &, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=1249690841010481234&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 11
+        score:
+            - 1
+            - 303
+            - 0
+            - 2023
+            - 0
+        scoreString: 1|303|0|2023|0
+        _:
+            title: The persistence of value-driven attention capture is task-dependent
+            doi: 10.31234/osf.io/967k8
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - AE Milner
+                - MH MacLean
+                - B Giesbrecht
+            link: 'https://link.springer.com/article/10.3758/s13414-022-02621-0'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    Computational task offloading algorithm based on deep reinforcement learning and multi-task dependency: &ref_140
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:46:30.785Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1016/j.tcs.2024.114462
+            googleScholar:
+                title: Computational task offloading algorithm based on deep reinforcement learning and multi-task dependency
+                authorNames:
+                    - X Zhang
+                    - T Lin
+                    - CK Lin
+                    - Z Chen
+                    - H Cheng
+                pdfLink: null
+                link: 'https://www.sciencedirect.com/science/article/pii/S030439752400077X'
+                citationId: '1050242733407391562'
+                multiArticleId: null
+                citedByLink: 'https://scholar.google.com//scholar?cites=1050242733407391562&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Theoretical Computer Science, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=1050242733407391562&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 2
+        score:
+            - 1
+            - 306
+            - 1
+            - 2024
+            - 0
+        scoreString: 1|306|1|2024|0
+        _:
+            title: Computational task offloading algorithm based on deep reinforcement learning and multi-task dependency
+            doi: 10.1016/j.tcs.2024.114462
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - X Zhang
+                - T Lin
+                - CK Lin
+                - Z Chen
+                - H Cheng
+            link: 'https://www.sciencedirect.com/science/article/pii/S030439752400077X'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    Pay attention!-robustifying a deep visuomotor policy through task-focused visual attention: &ref_141
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:49:04.750Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Pay attention!-robustifying a deep visuomotor policy through task-focused visual attention
+                authorNames:
+                    - P Abolghasemi
+                    - A Mazaheri
+                pdfLink: 'https://openaccess.thecvf.com/content_CVPR_2019/papers/Abolghasemi_Pay_Attention_-_Robustifying_a_Deep_Visuomotor_Policy_Through_Task-Focused_CVPR_2019_paper.pdf'
+                link: 'http://openaccess.thecvf.com/content_CVPR_2019/html/Abolghasemi_Pay_Attention_-_Robustifying_a_Deep_Visuomotor_Policy_Through_Task-Focused_CVPR_2019_paper.html'
+                citationId: '14783116583079944055'
+                multiArticleId: '14783116583079944055'
+                citedByLink: 'https://scholar.google.com//scholar?cites=14783116583079944055&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=14783116583079944055&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 30
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2019
+            - 0
+        scoreString: 1|151.5|1|2019|0
+        _:
+            title: Pay attention!-robustifying a deep visuomotor policy through task-focused visual attention
+            doi: null
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - P Abolghasemi
+                - A Mazaheri
+            link: 'http://openaccess.thecvf.com/content_CVPR_2019/html/Abolghasemi_Pay_Attention_-_Robustifying_a_Deep_Visuomotor_Policy_Through_Task-Focused_CVPR_2019_paper.html'
+            pdfLink: 'https://openaccess.thecvf.com/content_CVPR_2019/papers/Abolghasemi_Pay_Attention_-_Robustifying_a_Deep_Visuomotor_Policy_Through_Task-Focused_CVPR_2019_paper.pdf'
+            cites: null
+            citedBy: null
+    Visual spatial attention and proprioceptive data-driven reinforcement learning for robust peg-in-hole task under variable conditions: &ref_142
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:46:40.275Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/lra.2023.3243526
+            googleScholar:
+                title: Visual spatial attention and proprioceptive data-driven reinforcement learning for robust peg-in-hole task under variable conditions
+                authorNames:
+                    - AY Yasutomi
+                    - H Ichiwara
+                    - H Ito
+                    - H Mori
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/7083369/7339444/10040732.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/10040732/'
+                citationId: '16595434728416300511'
+                multiArticleId: '16595434728416300511'
+                citedByLink: 'https://scholar.google.com//scholar?cites=16595434728416300511&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'IEEE Robotics and, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=16595434728416300511&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 18
+        score:
+            - 1
+            - 303
+            - 2
+            - 2023
+            - 0
+        scoreString: 1|303|2|2023|0
+        _:
+            title: Visual spatial attention and proprioceptive data-driven reinforcement learning for robust peg-in-hole task under variable conditions
+            doi: 10.1109/lra.2023.3243526
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - AY Yasutomi
+                - H Ichiwara
+                - H Ito
+                - H Mori
+            link: 'https://ieeexplore.ieee.org/abstract/document/10040732/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/7083369/7339444/10040732.pdf'
+            cites: null
+            citedBy: null
+    Predicting gaze in egocentric video by learning task-dependent attention transition: &ref_143
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:47:49.759Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1007/978-3-030-01225-0_46
+            googleScholar:
+                title: Predicting gaze in egocentric video by learning task-dependent attention transition
+                authorNames:
+                    - Y Huang
+                    - M Cai
+                    - Z Li
+                    - Y Sato
+                pdfLink: 'https://openaccess.thecvf.com/content_ECCV_2018/papers/Huang_Predicting_Gaze_in_ECCV_2018_paper.pdf'
+                link: 'http://openaccess.thecvf.com/content_ECCV_2018/html/Huang_Predicting_Gaze_in_ECCV_2018_paper.html'
+                citationId: '1151610918319195215'
+                multiArticleId: '1151610918319195215'
+                citedByLink: 'https://scholar.google.com//scholar?cites=1151610918319195215&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the European, 2018'
+                year: 2018
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=1151610918319195215&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 154
+        score:
+            - 1
+            - 153
+            - 2
+            - 2018
+            - 0
+        scoreString: 1|153|2|2018|0
+        _:
+            title: Predicting gaze in egocentric video by learning task-dependent attention transition
+            doi: 10.1007/978-3-030-01225-0_46
+            year: 2018
+            publisherFlags: null
+            authorNames:
+                - Y Huang
+                - M Cai
+                - Z Li
+                - Y Sato
+            link: 'http://openaccess.thecvf.com/content_ECCV_2018/html/Huang_Predicting_Gaze_in_ECCV_2018_paper.html'
+            pdfLink: 'https://openaccess.thecvf.com/content_ECCV_2018/papers/Huang_Predicting_Gaze_in_ECCV_2018_paper.pdf'
+            cites: null
+            citedBy: null
+    Solving a tool-based interaction task using deep reinforcement learning with visual attention: &ref_144
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:48:49.313Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1007/978-3-030-19642-4_23
+            googleScholar:
+                title: Solving a tool-based interaction task using deep reinforcement learning with visual attention
+                authorNames:
+                    - S Fleer
+                    - H Ritter- Advances in Self
+                pdfLink: null
+                link: 'https://link.springer.com/chapter/10.1007/978-3-030-19642-4_23'
+                citationId: '11665260238349593708'
+                multiArticleId: '11665260238349593708'
+                citedByLink: 'https://scholar.google.com//scholar?cites=11665260238349593708&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Organizing Maps, Learning Vector, 2020'
+                year: 2020
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=11665260238349593708&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 2
+        score:
+            - 1
+            - 151.5
+            - 2
+            - 2020
+            - 0
+        scoreString: 1|151.5|2|2020|0
+        _:
+            title: Solving a tool-based interaction task using deep reinforcement learning with visual attention
+            doi: 10.1007/978-3-030-19642-4_23
+            year: 2020
+            publisherFlags: null
+            authorNames:
+                - S Fleer
+                - H Ritter- Advances in Self
+            link: 'https://link.springer.com/chapter/10.1007/978-3-030-19642-4_23'
+            pdfLink: null
+            cites: null
+            citedBy: null
+    Multi-task reinforcement learning in humans: &ref_145
+        notes:
+            resumeStatus: irrelevent|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant:
+                - title
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:46:43.426Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1038/s41562-020-01035-y
+            googleScholar:
+                title: Multi-task reinforcement learning in humans
+                authorNames:
+                    - MS Tomov
+                    - E Schulz
+                    - SJ Gershman
+                pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2019/10/22/815332.full.pdf'
+                link: 'https://www.nature.com/articles/s41562-020-01035-y'
+                citationId: '14589018692074515644'
+                multiArticleId: '14589018692074515644'
+                citedByLink: 'https://scholar.google.com//scholar?cites=14589018692074515644&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Nature Human Behaviour, 2021'
+                year: 2021
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=14589018692074515644&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 66
+        score:
+            - 1
+            - 303
+            - 1
+            - 2021
+            - 0
+        scoreString: 1|303|1|2021|0
+        _:
+            title: Multi-task reinforcement learning in humans
+            doi: 10.1038/s41562-020-01035-y
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - MS Tomov
+                - E Schulz
+                - SJ Gershman
+            link: 'https://www.nature.com/articles/s41562-020-01035-y'
+            pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2019/10/22/815332.full.pdf'
+            cites: null
+            citedBy: null
+    Probabilistic learning of task-specific visual attention: &ref_146
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-14T18:42:41.859Z'
+                originalQuery: 'Task-Dependent Attention in Reinforcement Learning '
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-14T18:42:47.820Z'
+                sawTitle: '2025-01-14T18:48:57.945Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+            crossref:
+                doi: 10.1109/cvpr.2012.6247710
+            googleScholar:
+                title: Probabilistic learning of task-specific visual attention
+                authorNames:
+                    - A Borji
+                    - DN Sihite
+                    - L Itti
+                pdfLink: 'http://ilab.usc.edu/publications/doc/Borji_etal12cvpr.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/6247710/'
+                citationId: '6744663262178196992'
+                multiArticleId: '6744663262178196992'
+                citedByLink: 'https://scholar.google.com//scholar?cites=6744663262178196992&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: '2012 IEEE Conference on computer, 2012'
+                year: 2012
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=6744663262178196992&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 154
+        score:
+            - 1
+            - 151.5
+            - 2
+            - 2012
+            - 0
+        scoreString: 1|151.5|2|2012|0
+        _:
+            title: Probabilistic learning of task-specific visual attention
+            doi: 10.1109/cvpr.2012.6247710
+            year: 2012
+            publisherFlags: null
+            authorNames:
+                - A Borji
+                - DN Sihite
+                - L Itti
+            link: 'https://ieeexplore.ieee.org/abstract/document/6247710/'
+            pdfLink: 'http://ilab.usc.edu/publications/doc/Borji_etal12cvpr.pdf'
             cites: null
             citedBy: null
 discoveryAttempts:
@@ -16712,3 +17851,93 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: A knowledge-guided pre-training framework for improving molecular representation learning
                 link: *ref_128
+    -
+        query: context dependant affordances machine learning
+        dateTime: '2025-01-14T18:34:29.490Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: 'Learning to act properly: Predicting and explaining affordances from images'
+                link: *ref_129
+            -
+                hadBeenSeenBefore: false
+                title: Training agents with interactive reinforcement learning and contextual affordances
+                link: *ref_130
+            -
+                hadBeenSeenBefore: false
+                title: Affordance as context
+                link: *ref_131
+            -
+                hadBeenSeenBefore: false
+                title: Conditional affordance learning for driving in urban environments
+                link: *ref_132
+            -
+                hadBeenSeenBefore: true
+                title: Object-based affordances detection with convolutional neural networks and dense conditional random fields
+                link: *ref_116
+            -
+                hadBeenSeenBefore: false
+                title: Learning grasp affordance reasoning through semantic relations
+                link: *ref_133
+            -
+                hadBeenSeenBefore: true
+                title: 'Visual affordance and function understanding: A survey'
+                link: *ref_114
+            -
+                hadBeenSeenBefore: false
+                title: 'Mobile data-driven language learning: Affordances and learners'' perception'
+                link: *ref_134
+            -
+                hadBeenSeenBefore: false
+                title: Categorization of Affordances and Prediction of Future Object Interactions using Qualitative Spatial Relations
+                link: *ref_135
+            -
+                hadBeenSeenBefore: false
+                title: Context and deep learning design
+                link: *ref_136
+    -
+        query: 'Task-Dependent Attention in Reinforcement Learning '
+        dateTime: '2025-01-14T18:42:41.859Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Attention-privileged reinforcement learning
+                link: *ref_137
+            -
+                hadBeenSeenBefore: false
+                title: Online learning of task-driven object-based visual attention control
+                link: *ref_138
+            -
+                hadBeenSeenBefore: false
+                title: The persistence of value-driven attention capture is task-dependent
+                link: *ref_139
+            -
+                hadBeenSeenBefore: false
+                title: Computational task offloading algorithm based on deep reinforcement learning and multi-task dependency
+                link: *ref_140
+            -
+                hadBeenSeenBefore: false
+                title: Pay attention!-robustifying a deep visuomotor policy through task-focused visual attention
+                link: *ref_141
+            -
+                hadBeenSeenBefore: false
+                title: Visual spatial attention and proprioceptive data-driven reinforcement learning for robust peg-in-hole task under variable conditions
+                link: *ref_142
+            -
+                hadBeenSeenBefore: false
+                title: Predicting gaze in egocentric video by learning task-dependent attention transition
+                link: *ref_143
+            -
+                hadBeenSeenBefore: false
+                title: Solving a tool-based interaction task using deep reinforcement learning with visual attention
+                link: *ref_144
+            -
+                hadBeenSeenBefore: false
+                title: Multi-task reinforcement learning in humans
+                link: *ref_145
+            -
+                hadBeenSeenBefore: false
+                title: Probabilistic learning of task-specific visual attention
+                link: *ref_146
