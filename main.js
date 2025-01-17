@@ -260,7 +260,7 @@ mainLoop: while (true) {
             }
         }
         activeProject.discoveryAttempts.push(discoveryMethod)
-        for (const each of Object.values(unseenReferences).sort(referenceSorter())) {
+        for (const each of Object.values(unseenReferences).sort(referenceSorter({project: activeProject}))) {
             console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
         }
         await saveProject({activeProject, path: storageObject.activeProjectPath})
@@ -321,7 +321,7 @@ mainLoop: while (true) {
                 continue mainLoop
             } else if (whatKind == "unseen|title" || whatKind == "skipped|title") {
                 console.log(cyan`\nCONTROLS: g=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
-                nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(referenceSorter())) {
+                nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(referenceSorter({project: activeProject}))) {
                     // TODO: highlight good and bad keywords
                     let message = `${cyan`(${each?.year}, ${score(each, activeProject)}) `}${highlightKeywords(each.title)}: `
                     write(message)
@@ -372,7 +372,7 @@ mainLoop: while (true) {
                         continue reviewLoop
                     }
                     // TODO: sort by publisher and year, allow ranking publishers
-                    activeReferences.sort(referenceSorter())
+                    activeReferences.sort(referenceSorter({project: activeProject}))
                     const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${highlightKeywords(each.title)}`), each]))
                     const active = await selectOne({
                         message: "which title do you want to explore?",
@@ -479,7 +479,7 @@ mainLoop: while (true) {
                         prompt(`finished getting references for ${whatKind}! (press enter to continue)`)
                         continue mainLoop
                     }
-                    activeReferences.sort(referenceSorter())
+                    activeReferences.sort(referenceSorter({project: activeProject}))
                     const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${highlightKeywords(each.title)}`), each]))
                     const active = await selectOne({
                         message: "Which title do you want to explore related work of?",

@@ -154,15 +154,15 @@ export const score = (each, project)=>{
     return scoreList
 }
 
-export function referenceSorter(reverse) {
+export function referenceSorter({reverse, project}) {
     // const activeReferences = references.filter(each=>each.resumeStatus == whatKind)
     // for (let each of activeReferences) {
     //     console.debug(`each.title, score(each) is:`,highlightKeywords(each.title), score(each))
     // }
     if (reverse) {
-        return (b,a)=>rankedCompare(score(b, activeProject),score(a, activeProject))
+        return (b,a)=>rankedCompare(score(b, project),score(a, project))
     } else {
-        return (a,b)=>rankedCompare(score(b, activeProject),score(a, activeProject))
+        return (a,b)=>rankedCompare(score(b, project),score(a, project))
     }
 }
 
