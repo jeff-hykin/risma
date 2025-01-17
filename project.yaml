@@ -5397,8 +5397,9 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            resumeStatus: irrelevent|title
+            reasonsNotRelevant:
+                - title
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
@@ -5406,6 +5407,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2025-01-17T17:47:48.195Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5487,8 +5489,9 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            resumeStatus: irrelevent|title
+            reasonsNotRelevant:
+                - title
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
@@ -5496,6 +5499,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2025-01-17T17:48:18.615Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -9053,7 +9057,7 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             reasonsNotRelevant: []
             reasonsRelevant: []
             discoveryMethod:
@@ -9062,6 +9066,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2025-01-17T17:48:42.353Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -9528,7 +9533,7 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             reasonsNotRelevant: []
             reasonsRelevant: []
             discoveryMethod:
@@ -9537,6 +9542,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2025-01-17T17:48:34.838Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -11177,8 +11183,9 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            resumeStatus: irrelevent|title
+            reasonsNotRelevant:
+                - title
             reasonsRelevant: []
             discoveryMethod:
                 dateTime: '2024-12-13T23:31:19.230Z'
@@ -11186,6 +11193,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2024-12-13T23:31:34.557Z'
+                sawTitle: '2025-01-17T17:48:20.649Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -25430,6 +25438,1661 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    Visual features and their own optical flow: &ref_174
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:27:41.644Z'
+                originalQuery: machine learning for optical flow affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:27:49.560Z'
+                sawTitle: '2025-01-17T17:46:56.372Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.3389/frai.2021.768516
+            googleScholar:
+                title: Visual features and their own optical flow
+                authorNames:
+                    - A Betti
+                    - G Boccignone
+                    - L Faggi
+                    - M Gori
+                pdfLink: null
+                link: 'https://www.frontiersin.org/articles/10.3389/frai.2021.768516/full'
+                citationId: '14594142823911137921'
+                multiArticleId: '14594142823911137921'
+                citedByLink: 'https://scholar.google.com//scholar?cites=14594142823911137921&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'in Artificial Intelligence, 2021'
+                year: 2021
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=14594142823911137921&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 2
+        score:
+            - 1
+            - 303
+            - 1
+            - 2021
+            - 0
+        scoreString: 1|303|1|2021|0
+        _:
+            title: Visual features and their own optical flow
+            doi: 10.3389/frai.2021.768516
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - A Betti
+                - G Boccignone
+                - L Faggi
+                - M Gori
+            link: 'https://www.frontiersin.org/articles/10.3389/frai.2021.768516/full'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    A deep learning approach to object affordance segmentation: &ref_175
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:27:41.644Z'
+                originalQuery: machine learning for optical flow affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:27:49.560Z'
+                sawTitle: '2025-01-17T17:45:54.908Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/icassp40776.2020.9054167
+            googleScholar:
+                title: A deep learning approach to object affordance segmentation
+                authorNames:
+                    - S Thermos
+                    - P Daras- ICASSP 2020
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/9040208/9052899/09054167.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/9054167/'
+                citationId: '13195100407265405987'
+                multiArticleId: '13195100407265405987'
+                citedByLink: 'https://scholar.google.com//scholar?cites=13195100407265405987&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: '2020 IEEE, 2020'
+                year: 2020
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13195100407265405987&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 17
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2020
+            - 0
+        scoreString: 1|151.5|1|2020|0
+        _:
+            title: A deep learning approach to object affordance segmentation
+            doi: 10.1109/icassp40776.2020.9054167
+            year: 2020
+            publisherFlags: null
+            authorNames:
+                - S Thermos
+                - P Daras- ICASSP 2020
+            link: 'https://ieeexplore.ieee.org/abstract/document/9054167/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/9040208/9052899/09054167.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    'Enhancing object, action, and effect recognition using probabilistic affordances': &ref_176
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:27:41.644Z'
+                originalQuery: machine learning for optical flow affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:27:49.560Z'
+                sawTitle: '2025-01-17T17:46:08.624Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1177/1059712319839057
+            googleScholar:
+                title: 'Enhancing object, action, and effect recognition using probabilistic affordances'
+                authorNames:
+                    - E Jaramillo-Cabrera
+                    - EF Morales
+                pdfLink: null
+                link: 'https://journals.sagepub.com/doi/abs/10.1177/1059712319839057'
+                citationId: '1616842311142843761'
+                multiArticleId: '1616842311142843761'
+                citedByLink: 'https://scholar.google.com//scholar?cites=1616842311142843761&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Adaptive, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=1616842311142843761&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 6
+        score:
+            - 1
+            - 151.5
+            - 0
+            - 2019
+            - 0
+        scoreString: 1|151.5|0|2019|0
+        _:
+            title: 'Enhancing object, action, and effect recognition using probabilistic affordances'
+            doi: 10.1177/1059712319839057
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - E Jaramillo-Cabrera
+                - EF Morales
+            link: 'https://journals.sagepub.com/doi/abs/10.1177/1059712319839057'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    Reinforcement learning of predictive features in affordance perception: &ref_177
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:27:41.644Z'
+                originalQuery: machine learning for optical flow affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:27:49.560Z'
+                sawTitle: '2025-01-17T17:46:16.015Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1007/978-3-540-77915-5_6
+            googleScholar:
+                title: Reinforcement learning of predictive features in affordance perception
+                authorNames:
+                    - L Paletta
+                    - G Fritz- Towards Affordance
+                pdfLink: null
+                link: 'https://link.springer.com/chapter/10.1007/978-3-540-77915-5_6'
+                citationId: '8895054161019449876'
+                multiArticleId: '8895054161019449876'
+                citedByLink: 'https://scholar.google.com//scholar?cites=8895054161019449876&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Based Robot Control, 2008'
+                year: 2008
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=8895054161019449876&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 12
+        score:
+            - 1
+            - 97
+            - 2
+            - 2008
+            - 0
+        scoreString: 1|97|2|2008|0
+        _:
+            title: Reinforcement learning of predictive features in affordance perception
+            doi: 10.1007/978-3-540-77915-5_6
+            year: 2008
+            publisherFlags: null
+            authorNames:
+                - L Paletta
+                - G Fritz- Towards Affordance
+            link: 'https://link.springer.com/chapter/10.1007/978-3-540-77915-5_6'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    Joint object affordance reasoning and segmentation in rgb-d videos: &ref_178
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:27:41.644Z'
+                originalQuery: machine learning for optical flow affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:27:49.560Z'
+                sawTitle: '2025-01-17T17:45:30.038Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/access.2021.3090471
+            googleScholar:
+                title: Joint object affordance reasoning and segmentation in rgb-d videos
+                authorNames:
+                    - S Thermos
+                    - G Potamianos
+                    - P Daras
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/6287639/6514899/09459755.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/9459755/'
+                citationId: '2914820409684714787'
+                multiArticleId: '2914820409684714787'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2914820409684714787&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'IEEE Access, 2021'
+                year: 2021
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2914820409684714787&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 10
+        score:
+            - 1
+            - 303
+            - 0
+            - 2021
+            - 0
+        scoreString: 1|303|0|2021|0
+        _:
+            title: Joint object affordance reasoning and segmentation in rgb-d videos
+            doi: 10.1109/access.2021.3090471
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - S Thermos
+                - G Potamianos
+                - P Daras
+            link: 'https://ieeexplore.ieee.org/abstract/document/9459755/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/6287639/6514899/09459755.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Bayesian deep learning for affordance segmentation in images: &ref_179
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:27:41.644Z'
+                originalQuery: machine learning for optical flow affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:27:49.560Z'
+                sawTitle: '2025-01-17T17:44:39.837Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/icra48891.2023.10160606
+            googleScholar:
+                title: Bayesian deep learning for affordance segmentation in images
+                authorNames:
+                    - L Mur-Labadia
+                    - R Martinez-Cantin
+                pdfLink: 'https://ieeexplore.ieee.org/iel7/10160211/10160212/10160606.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/10160606/'
+                citationId: '1151284186368935343'
+                multiArticleId: '1151284186368935343'
+                citedByLink: 'https://scholar.google.com//scholar?cites=1151284186368935343&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'on Robotics and, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=1151284186368935343&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 11
+        score:
+            - 1
+            - 303
+            - 1
+            - 2023
+            - 0
+        scoreString: 1|303|1|2023|0
+        _:
+            title: Bayesian deep learning for affordance segmentation in images
+            doi: 10.1109/icra48891.2023.10160606
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - L Mur-Labadia
+                - R Martinez-Cantin
+            link: 'https://ieeexplore.ieee.org/abstract/document/10160606/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel7/10160211/10160212/10160606.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Context-based affordance segmentation from 2D images for robot actions: &ref_180
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:27:41.644Z'
+                originalQuery: machine learning for optical flow affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:27:49.560Z'
+                sawTitle: '2025-01-17T17:45:37.213Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1016/j.robot.2019.05.005
+            googleScholar:
+                title: Context-based affordance segmentation from 2D images for robot actions
+                authorNames:
+                    - T Lueddecke
+                    - T Kulvicius
+                    - F Woergoetter
+                pdfLink: null
+                link: 'https://www.sciencedirect.com/science/article/pii/S0921889018309990'
+                citationId: '5367276595225124923'
+                multiArticleId: '5367276595225124923'
+                citedByLink: 'https://scholar.google.com//scholar?cites=5367276595225124923&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Robotics and Autonomous, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=5367276595225124923&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 23
+        score:
+            - 1
+            - 153
+            - 0
+            - 2019
+            - 0
+        scoreString: 1|153|0|2019|0
+        _:
+            title: Context-based affordance segmentation from 2D images for robot actions
+            doi: 10.1016/j.robot.2019.05.005
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - T Lueddecke
+                - T Kulvicius
+                - F Woergoetter
+            link: 'https://www.sciencedirect.com/science/article/pii/S0921889018309990'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    'Machine learning plus optical flow: a simple and sensitive method to detect cardioactive drugs': &ref_181
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:47:22.027Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1038/srep11817
+            googleScholar:
+                title: 'Machine learning plus optical flow: a simple and sensitive method to detect cardioactive drugs'
+                authorNames:
+                    - EK Lee
+                    - YK Kurokawa
+                    - R Tu
+                    - SC George
+                    - M Khine
+                pdfLink: null
+                link: 'https://www.nature.com/articles/srep11817'
+                citationId: '2108567875621767420'
+                multiArticleId: '2108567875621767420'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2108567875621767420&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Scientific reports, 2015'
+                year: 2015
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2108567875621767420&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 52
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2015
+            - 0
+        scoreString: 1|151.5|1|2015|0
+        _:
+            title: 'Machine learning plus optical flow: a simple and sensitive method to detect cardioactive drugs'
+            doi: 10.1038/srep11817
+            year: 2015
+            publisherFlags: null
+            authorNames:
+                - EK Lee
+                - YK Kurokawa
+                - R Tu
+                - SC George
+                - M Khine
+            link: 'https://www.nature.com/articles/srep11817'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    On the spatial statistics of optical flow: &ref_182
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:47:47.898Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/iccv.2005.180
+            googleScholar:
+                title: On the spatial statistics of optical flow
+                authorNames:
+                    - S Roth
+                    - MJ Black
+                pdfLink: 'https://link.springer.com/content/pdf/10.1007/s11263-006-0016-x.pdf'
+                link: 'https://link.springer.com/article/10.1007/s11263-006-0016-x'
+                citationId: '16159094483958543635'
+                multiArticleId: '16159094483958543635'
+                citedByLink: 'https://scholar.google.com//scholar?cites=16159094483958543635&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'International Journal of Computer Vision, 2007'
+                year: 2007
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=16159094483958543635&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 383
+        score:
+            - 1
+            - 96
+            - 0
+            - 2007
+            - 0
+        scoreString: 1|96|0|2007|0
+        _:
+            title: On the spatial statistics of optical flow
+            doi: 10.1109/iccv.2005.180
+            year: 2007
+            publisherFlags: null
+            authorNames:
+                - S Roth
+                - MJ Black
+            link: 'https://link.springer.com/article/10.1007/s11263-006-0016-x'
+            pdfLink: 'https://link.springer.com/content/pdf/10.1007/s11263-006-0016-x.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    'Flownet: Learning optical flow with convolutional networks': &ref_183
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:47:27.082Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/iccv.2015.316
+            googleScholar:
+                title: 'Flownet: Learning optical flow with convolutional networks'
+                authorNames:
+                    - P Fischer
+                    - A Dosovitskiy
+                    - E Ilg
+                    - P Husser
+                pdfLink: 'https://arxiv.org/pdf/1504.06852'
+                link: 'http://openaccess.thecvf.com/content_iccv_2015/html/Dosovitskiy_FlowNet_Learning_Optical_ICCV_2015_paper.html'
+                citationId: '4399198863370102461'
+                multiArticleId: '4399198863370102461'
+                citedByLink: 'https://scholar.google.com//scholar?cites=4399198863370102461&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'arXiv preprint arXiv, 2015'
+                year: 2015
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=4399198863370102461&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 754
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2015
+            - 0
+        scoreString: 1|151.5|1|2015|0
+        _:
+            title: 'Flownet: Learning optical flow with convolutional networks'
+            doi: 10.1109/iccv.2015.316
+            year: 2015
+            publisherFlags: null
+            authorNames:
+                - P Fischer
+                - A Dosovitskiy
+                - E Ilg
+                - P Husser
+            link: 'http://openaccess.thecvf.com/content_iccv_2015/html/Dosovitskiy_FlowNet_Learning_Optical_ICCV_2015_paper.html'
+            pdfLink: 'https://arxiv.org/pdf/1504.06852'
+            cites: null
+            citedBy: null
+            abstract: null
+    Learning optical flow: &ref_184
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:47:43.028Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Learning optical flow
+                authorNames:
+                    - D Sun
+                    - S Roth
+                    - JP Lewis
+                    - MJ Black- 12
+                pdfLink: 'https://www.researchgate.net/profile/Michael-Black-18/publication/221303868_Learning_Optical_Flow/links/0fcfd512d21f68779a000000/Learning-Optical-Flow.pdf'
+                link: 'https://link.springer.com/chapter/10.1007/978-3-540-88690-7_7'
+                citationId: '12628563045908321649'
+                multiArticleId: '12628563045908321649'
+                citedByLink: 'https://scholar.google.com//scholar?cites=12628563045908321649&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: '18, 2008, Proceedings, Part III 10, 2008'
+                year: 2008
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=12628563045908321649&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 382
+        score:
+            - 1
+            - 96
+            - 1
+            - 2008
+            - 0
+        scoreString: 1|96|1|2008|0
+        _:
+            title: Learning optical flow
+            doi: null
+            year: 2008
+            publisherFlags: null
+            authorNames:
+                - D Sun
+                - S Roth
+                - JP Lewis
+                - MJ Black- 12
+            link: 'https://link.springer.com/chapter/10.1007/978-3-540-88690-7_7'
+            pdfLink: 'https://www.researchgate.net/profile/Michael-Black-18/publication/221303868_Learning_Optical_Flow/links/0fcfd512d21f68779a000000/Learning-Optical-Flow.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Deep recurrent optical flow learning for particle image velocimetry data: &ref_185
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:47:02.267Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1038/s42256-021-00369-0
+            googleScholar:
+                title: Deep recurrent optical flow learning for particle image velocimetry data
+                authorNames:
+                    - C Lagemann
+                    - K Lagemann
+                    - S Mukherjee
+                pdfLink: null
+                link: 'https://www.nature.com/articles/s42256-021-00369-0'
+                citationId: '4865096663143435141'
+                multiArticleId: '4865096663143435141'
+                citedByLink: 'https://scholar.google.com//scholar?cites=4865096663143435141&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Nature Machine, 2021'
+                year: 2021
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=4865096663143435141&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 95
+        score:
+            - 1
+            - 303
+            - 1
+            - 2021
+            - 0
+        scoreString: 1|303|1|2021|0
+        _:
+            title: Deep recurrent optical flow learning for particle image velocimetry data
+            doi: 10.1038/s42256-021-00369-0
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - C Lagemann
+                - K Lagemann
+                - S Mukherjee
+            link: 'https://www.nature.com/articles/s42256-021-00369-0'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    Learning a confidence measure for optical flow: &ref_186
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:47:33.875Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/tpami.2012.171
+            googleScholar:
+                title: Learning a confidence measure for optical flow
+                authorNames:
+                    - O Mac Aodha
+                    - A Humayun
+                    - M Pollefeys
+                pdfLink: 'https://ieeexplore.ieee.org/iel5/34/4359286/06261321.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/6261321/'
+                citationId: '10581522520390319576'
+                multiArticleId: '10581522520390319576'
+                citedByLink: 'https://scholar.google.com//scholar?cites=10581522520390319576&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'analysis and machine, 2012'
+                year: 2012
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=10581522520390319576&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 130
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2012
+            - 0
+        scoreString: 1|151.5|1|2012|0
+        _:
+            title: Learning a confidence measure for optical flow
+            doi: 10.1109/tpami.2012.171
+            year: 2012
+            publisherFlags: null
+            authorNames:
+                - O Mac Aodha
+                - A Humayun
+                - M Pollefeys
+            link: 'https://ieeexplore.ieee.org/abstract/document/6261321/'
+            pdfLink: 'https://ieeexplore.ieee.org/iel5/34/4359286/06261321.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Leaf-movement-based growth prediction model using optical flow analysis and machine learning in plant factory: &ref_187
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:47:11.066Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.3389/fpls.2019.00227
+            googleScholar:
+                title: Leaf-movement-based growth prediction model using optical flow analysis and machine learning in plant factory
+                authorNames:
+                    - S Nagano
+                    - S Moriyuki
+                    - K Wakamori
+                    - H Mineno
+                pdfLink: null
+                link: 'https://www.frontiersin.org/articles/10.3389/fpls.2019.00227/full'
+                citationId: '6876416753089210927'
+                multiArticleId: '6876416753089210927'
+                citedByLink: 'https://scholar.google.com//scholar?cites=6876416753089210927&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Frontiers in plant, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=6876416753089210927&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 50
+        score:
+            - 1
+            - 151.5
+            - 2
+            - 2019
+            - 0
+        scoreString: 1|151.5|2|2019|0
+        _:
+            title: Leaf-movement-based growth prediction model using optical flow analysis and machine learning in plant factory
+            doi: 10.3389/fpls.2019.00227
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - S Nagano
+                - S Moriyuki
+                - K Wakamori
+                - H Mineno
+            link: 'https://www.frontiersin.org/articles/10.3389/fpls.2019.00227/full'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    'Flownet 2.0: Evolution of optical flow estimation with deep networks': &ref_188
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:47:41.151Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/cvpr.2017.179
+            googleScholar:
+                title: 'Flownet 2.0: Evolution of optical flow estimation with deep networks'
+                authorNames:
+                    - E Ilg
+                    - N Mayer
+                    - T Saikia
+                    - M Keuper
+                pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2017/papers/Ilg_FlowNet_2.0_Evolution_CVPR_2017_paper.pdf'
+                link: 'http://openaccess.thecvf.com/content_cvpr_2017/html/Ilg_FlowNet_2.0_Evolution_CVPR_2017_paper.html'
+                citationId: '10327949235117821487'
+                multiArticleId: '10327949235117821487'
+                citedByLink: 'https://scholar.google.com//scholar?cites=10327949235117821487&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the, 2017'
+                year: 2017
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=10327949235117821487&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 3930
+        score:
+            - 1
+            - 151.5
+            - 0
+            - 2017
+            - 0
+        scoreString: 1|151.5|0|2017|0
+        _:
+            title: 'Flownet 2.0: Evolution of optical flow estimation with deep networks'
+            doi: 10.1109/cvpr.2017.179
+            year: 2017
+            publisherFlags: null
+            authorNames:
+                - E Ilg
+                - N Mayer
+                - T Saikia
+                - M Keuper
+            link: 'http://openaccess.thecvf.com/content_cvpr_2017/html/Ilg_FlowNet_2.0_Evolution_CVPR_2017_paper.html'
+            pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2017/papers/Ilg_FlowNet_2.0_Evolution_CVPR_2017_paper.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Scheduling with machine-learning-based flow detection for packet-switched optical data center networks: &ref_189
+        notes:
+            resumeStatus: irrelevent|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant:
+                - title
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:12.002Z'
+                originalQuery: machine learning for optical flow
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:19.353Z'
+                sawTitle: '2025-01-17T17:48:48.663Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1364/jocn.10.000365
+            googleScholar:
+                title: Scheduling with machine-learning-based flow detection for packet-switched optical data center networks
+                authorNames:
+                    - L Wang
+                    - X Wang
+                    - M Tornatore
+                    - KJ Kim
+                pdfLink: null
+                link: 'https://opg.optica.org/abstract.cfm?uri=jocn-10-4-365'
+                citationId: '13172603304148311875'
+                multiArticleId: '13172603304148311875'
+                citedByLink: 'https://scholar.google.com//scholar?cites=13172603304148311875&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Journal of Optical, 2018'
+                year: 2018
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13172603304148311875&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 57
+        score:
+            - 0
+            - 135
+            - 1
+            - 2018
+            - 0
+        scoreString: 0|135|1|2018|0
+        _:
+            title: Scheduling with machine-learning-based flow detection for packet-switched optical data center networks
+            doi: 10.1364/jocn.10.000365
+            year: 2018
+            publisherFlags: null
+            authorNames:
+                - L Wang
+                - X Wang
+                - M Tornatore
+                - KJ Kim
+            link: 'https://opg.optica.org/abstract.cfm?uri=jocn-10-4-365'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    Rethinking affordance: &ref_190
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:46:10.942Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.70064/mt.v3i1.966
+            googleScholar:
+                title: Rethinking affordance
+                authorNames:
+                    - A Scarlett
+                    - M Zeilinger
+                pdfLink: 'https://rke.abertay.ac.uk/files/17329869/Zeilinger_RethinkingAffordance_Published_2019.pdf'
+                link: 'https://rke.abertay.ac.uk/files/17329869/Zeilinger_RethinkingAffordance_Published_2019.pdf'
+                citationId: '7525425764402934640'
+                multiArticleId: '7525425764402934640'
+                citedByLink: 'https://scholar.google.com//scholar?cites=7525425764402934640&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Media Theory, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=7525425764402934640&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 38
+        score:
+            - 1
+            - 151.5
+            - 0
+            - 2019
+            - 0
+        scoreString: 1|151.5|0|2019|0
+        _:
+            title: Rethinking affordance
+            doi: 10.70064/mt.v3i1.966
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - A Scarlett
+                - M Zeilinger
+            link: 'https://rke.abertay.ac.uk/files/17329869/Zeilinger_RethinkingAffordance_Published_2019.pdf'
+            pdfLink: 'https://rke.abertay.ac.uk/files/17329869/Zeilinger_RethinkingAffordance_Published_2019.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    What can i do here? a theory of affordances in reinforcement learning: &ref_191
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:46:00.413Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: What can i do here? a theory of affordances in reinforcement learning
+                authorNames:
+                    - K Khetarpal
+                    - Z Ahmed
+                    - G Comanici
+                pdfLink: 'http://proceedings.mlr.press/v119/khetarpal20a/khetarpal20a.pdf'
+                link: 'https://proceedings.mlr.press/v119/khetarpal20a.html'
+                citationId: '2336774470554893443'
+                multiArticleId: '2336774470554893443'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2336774470554893443&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Machine Learning, 2020'
+                year: 2020
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2336774470554893443&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 77
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2020
+            - 0
+        scoreString: 1|151.5|1|2020|0
+        _:
+            title: What can i do here? a theory of affordances in reinforcement learning
+            doi: null
+            year: 2020
+            publisherFlags: null
+            authorNames:
+                - K Khetarpal
+                - Z Ahmed
+                - G Comanici
+            link: 'https://proceedings.mlr.press/v119/khetarpal20a.html'
+            pdfLink: 'http://proceedings.mlr.press/v119/khetarpal20a/khetarpal20a.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Rethinking Affordances for Human–Machine Communication Research: &ref_192
+        notes:
+            resumeStatus: irrelevent|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant:
+                - title
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:45:19.688Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.4135/9781529782783.n34
+            googleScholar:
+                title: Rethinking Affordances for Human–Machine Communication Research
+                authorNames:
+                    - P Nagy
+                    - G Neff- The SAGE handbook of human
+                pdfLink: 'https://www.researchgate.net/profile/Peter-Nagy-18/publication/360453494_Rethinking_Affordances_for_Human-Machine_Communication_Research/links/62773ac92f9ccf58eb3700c4/Rethinking-Affordances-for-Human-Machine-Communication-Research.pdf'
+                link: 'https://www.torrossa.com/gs/resourceProxy?an=5543084&publisher=FZ7200#page=320'
+                citationId: '14903799301670362992'
+                multiArticleId: '14903799301670362992'
+                citedByLink: 'https://scholar.google.com//scholar?cites=14903799301670362992&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'machine, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=14903799301670362992&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 10
+        score:
+            - 1
+            - 303
+            - 0
+            - 2023
+            - 0
+        scoreString: 1|303|0|2023|0
+        _:
+            title: Rethinking Affordances for Human–Machine Communication Research
+            doi: 10.4135/9781529782783.n34
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - P Nagy
+                - G Neff- The SAGE handbook of human
+            link: 'https://www.torrossa.com/gs/resourceProxy?an=5543084&publisher=FZ7200#page=320'
+            pdfLink: 'https://www.researchgate.net/profile/Peter-Nagy-18/publication/360453494_Rethinking_Affordances_for_Human-Machine_Communication_Research/links/62773ac92f9ccf58eb3700c4/Rethinking-Affordances-for-Human-Machine-Communication-Research.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Machines on mission possible: &ref_193
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1038/s42256-019-0034-3
+            googleScholar:
+                title: Machines on mission possible
+                authorNames:
+                    - J Hsu
+                pdfLink: 'https://commons.trincoll.edu/isep/files/2019/03/AffordanceNewsFeature.pdf'
+                link: 'https://www.nature.com/articles/s42256-019-0034-3'
+                citationId: '17134566514227448798'
+                multiArticleId: '17134566514227448798'
+                citedByLink: 'https://scholar.google.com//scholar?cites=17134566514227448798&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Nature Machine Intelligence, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=17134566514227448798&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 8
+        score:
+            - 0
+            - 135
+            - 0
+            - 2019
+            - 0
+        scoreString: 0|135|0|2019|0
+        _:
+            title: Machines on mission possible
+            doi: 10.1038/s42256-019-0034-3
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - J Hsu
+            link: 'https://www.nature.com/articles/s42256-019-0034-3'
+            pdfLink: 'https://commons.trincoll.edu/isep/files/2019/03/AffordanceNewsFeature.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Gibson's affordances and Turing's theory of computation: &ref_194
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:46:18.831Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1207/s15326969eco1403_3
+            googleScholar:
+                title: Gibson's affordances and Turing's theory of computation
+                authorNames:
+                    - AJ Wells
+                pdfLink: 'https://www.tandfonline.com/doi/pdf/10.1207/S15326969ECO1403_3'
+                link: 'https://www.tandfonline.com/doi/abs/10.1207/S15326969ECO1403_3'
+                citationId: '2195820797172617950'
+                multiArticleId: '2195820797172617950'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2195820797172617950&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Ecological psychology, 2002'
+                year: 2002
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2195820797172617950&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 157
+        score:
+            - 1
+            - 97
+            - 0
+            - 2002
+            - 0
+        scoreString: 1|97|0|2002|0
+        _:
+            title: Gibson's affordances and Turing's theory of computation
+            doi: 10.1207/s15326969eco1403_3
+            year: 2002
+            publisherFlags: null
+            authorNames:
+                - AJ Wells
+            link: 'https://www.tandfonline.com/doi/abs/10.1207/S15326969ECO1403_3'
+            pdfLink: 'https://www.tandfonline.com/doi/pdf/10.1207/S15326969ECO1403_3'
+            cites: null
+            citedBy: null
+            abstract: null
+    'From Turing to Gibson: Implications of Affordances for the Sciences of Organisms': &ref_195
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:43:52.998Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: 'From Turing to Gibson: Implications of Affordances for the Sciences of Organisms'
+                authorNames:
+                    - M Mangalam
+                    - L Barrett
+                pdfLink: null
+                link: 'https://www.taylorfrancis.com/chapters/edit/10.4324/9781003396536-18/turing-gibson-madhur-mangalam-louise-barrett-dorothy-fragaszy'
+                citationId: '5993535214215709786'
+                multiArticleId: '5993535214215709786'
+                citedByLink: 'https://scholar.google.com//scholar?cites=5993535214215709786&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'of Gibson''s Affordances for, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=5993535214215709786&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 1
+        score:
+            - 1
+            - 306
+            - 0
+            - 2024
+            - 0
+        scoreString: 1|306|0|2024|0
+        _:
+            title: 'From Turing to Gibson: Implications of Affordances for the Sciences of Organisms'
+            doi: null
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - M Mangalam
+                - L Barrett
+            link: 'https://www.taylorfrancis.com/chapters/edit/10.4324/9781003396536-18/turing-gibson-madhur-mangalam-louise-barrett-dorothy-fragaszy'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    '''Affordances'' for Machine Learning': &ref_196
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:44:46.425Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: '''Affordances'' for Machine Learning'
+                authorNames:
+                    - JL Davis
+                pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3593013.3594000'
+                link: 'https://dl.acm.org/doi/abs/10.1145/3593013.3594000'
+                citationId: '6545951210724510416'
+                multiArticleId: '6545951210724510416'
+                citedByLink: 'https://scholar.google.com//scholar?cites=6545951210724510416&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the 2023 ACM Conference on Fairness, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=6545951210724510416&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 12
+        score:
+            - 1
+            - 303
+            - 1
+            - 2023
+            - 0
+        scoreString: 1|303|1|2023|0
+        _:
+            title: '''Affordances'' for Machine Learning'
+            doi: null
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - JL Davis
+            link: 'https://dl.acm.org/doi/abs/10.1145/3593013.3594000'
+            pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3593013.3594000'
+            cites: null
+            citedBy: null
+            abstract: null
+    'Representations, affordances, and interactive systems': &ref_197
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:44:25.465Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.3390/mti5050023
+            googleScholar:
+                title: 'Representations, affordances, and interactive systems'
+                authorNames:
+                    - R Rowe
+                pdfLink: null
+                link: 'https://www.mdpi.com/2414-4088/5/5/23'
+                citationId: '14116939452758779614'
+                multiArticleId: '14116939452758779614'
+                citedByLink: 'https://scholar.google.com//scholar?cites=14116939452758779614&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Multimodal Technologies and Interaction, 2021'
+                year: 2021
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=14116939452758779614&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 5
+        score:
+            - 1
+            - 306
+            - 0
+            - 2021
+            - 0
+        scoreString: 1|306|0|2021|0
+        _:
+            title: 'Representations, affordances, and interactive systems'
+            doi: 10.3390/mti5050023
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - R Rowe
+            link: 'https://www.mdpi.com/2414-4088/5/5/23'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    'FROM TURING TO GIBSON: IMPLICATIONS OF AFFORDANCES': &ref_198
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:45:44.941Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: 'FROM TURING TO GIBSON: IMPLICATIONS OF AFFORDANCES'
+                authorNames:
+                    - M Mangalam
+                    - L Barrett
+                    - DM Fragaszy
+                pdfLink: 'https://www.researchgate.net/profile/Madhur-Mangalam/publication/371950120_From_Turing_to_Gibson_Implications_of_affordances_for_the_sciences_of_organisms/links/65cb7004790074549783afed/From-Turing-to-Gibson-Implications-of-affordances-for-the-sciences-of-organisms.pdf'
+                link: 'https://www.researchgate.net/profile/Madhur-Mangalam/publication/371950120_From_Turing_to_Gibson_Implications_of_affordances_for_the_sciences_of_organisms/links/65cb7004790074549783afed/From-Turing-to-Gibson-Implications-of-affordances-for-the-sciences-of-organisms.pdf'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 153
+            - 0
+            - 2016
+            - 0
+        scoreString: 1|153|0|2016|0
+        _:
+            title: 'FROM TURING TO GIBSON: IMPLICATIONS OF AFFORDANCES'
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames:
+                - M Mangalam
+                - L Barrett
+                - DM Fragaszy
+            link: 'https://www.researchgate.net/profile/Madhur-Mangalam/publication/371950120_From_Turing_to_Gibson_Implications_of_affordances_for_the_sciences_of_organisms/links/65cb7004790074549783afed/From-Turing-to-Gibson-Implications-of-affordances-for-the-sciences-of-organisms.pdf'
+            pdfLink: 'https://www.researchgate.net/profile/Madhur-Mangalam/publication/371950120_From_Turing_to_Gibson_Implications_of_affordances_for_the_sciences_of_organisms/links/65cb7004790074549783afed/From-Turing-to-Gibson-Implications-of-affordances-for-the-sciences-of-organisms.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Gibson's affordances.: &ref_199
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-17T17:28:37.796Z'
+                originalQuery: machine learning gibson affordance
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-17T17:28:46.865Z'
+                sawTitle: '2025-01-17T17:45:48.439Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            googleScholar:
+                title: Gibson's affordances.
+                authorNames:
+                    - JG Greeno
+                pdfLink: 'https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=1649eba81f5ee5490322969798af8b82feb8a5db'
+                link: 'https://psycnet.apa.org/record/1994-28169-001'
+                citationId: '10096019059398227810'
+                multiArticleId: '10096019059398227810'
+                citedByLink: 'https://scholar.google.com//scholar?cites=10096019059398227810&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: null
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=10096019059398227810&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 1564
+        score:
+            - 1
+            - 153
+            - 0
+            - 2016
+            - 0
+        scoreString: 1|153|0|2016|0
+        _:
+            title: Gibson's affordances.
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames:
+                - JG Greeno
+            link: 'https://psycnet.apa.org/record/1994-28169-001'
+            pdfLink: 'https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=1649eba81f5ee5490322969798af8b82feb8a5db'
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: ecological affordance based object perception machine learning
@@ -26218,3 +27881,138 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: Function-Based Object Recognition for Multiple Object Categories
                 link: *ref_173
+    -
+        query: machine learning for optical flow affordance
+        dateTime: '2025-01-17T17:27:41.644Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: true
+                title: A survey of visual affordance recognition based on deep learning
+                link: *ref_109
+            -
+                hadBeenSeenBefore: false
+                title: Visual features and their own optical flow
+                link: *ref_174
+            -
+                hadBeenSeenBefore: false
+                title: A deep learning approach to object affordance segmentation
+                link: *ref_175
+            -
+                hadBeenSeenBefore: true
+                title: Visual learning of affordance based cues
+                link: *ref_117
+            -
+                hadBeenSeenBefore: false
+                title: 'Enhancing object, action, and effect recognition using probabilistic affordances'
+                link: *ref_176
+            -
+                hadBeenSeenBefore: false
+                title: Reinforcement learning of predictive features in affordance perception
+                link: *ref_177
+            -
+                hadBeenSeenBefore: false
+                title: Joint object affordance reasoning and segmentation in rgb-d videos
+                link: *ref_178
+            -
+                hadBeenSeenBefore: false
+                title: Bayesian deep learning for affordance segmentation in images
+                link: *ref_179
+            -
+                hadBeenSeenBefore: true
+                title: Learning predictive features in affordance based robotic perception systems
+                link: *ref_115
+            -
+                hadBeenSeenBefore: false
+                title: Context-based affordance segmentation from 2D images for robot actions
+                link: *ref_180
+    -
+        query: machine learning for optical flow
+        dateTime: '2025-01-17T17:28:12.002Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: 'Machine learning plus optical flow: a simple and sensitive method to detect cardioactive drugs'
+                link: *ref_181
+            -
+                hadBeenSeenBefore: false
+                title: On the spatial statistics of optical flow
+                link: *ref_182
+            -
+                hadBeenSeenBefore: false
+                title: 'Flownet: Learning optical flow with convolutional networks'
+                link: *ref_183
+            -
+                hadBeenSeenBefore: false
+                title: Learning optical flow
+                link: *ref_184
+            -
+                hadBeenSeenBefore: true
+                title: 'Flownet: Learning optical flow with convolutional networks'
+                link: *ref_183
+            -
+                hadBeenSeenBefore: false
+                title: Deep recurrent optical flow learning for particle image velocimetry data
+                link: *ref_185
+            -
+                hadBeenSeenBefore: false
+                title: Learning a confidence measure for optical flow
+                link: *ref_186
+            -
+                hadBeenSeenBefore: false
+                title: Leaf-movement-based growth prediction model using optical flow analysis and machine learning in plant factory
+                link: *ref_187
+            -
+                hadBeenSeenBefore: false
+                title: 'Flownet 2.0: Evolution of optical flow estimation with deep networks'
+                link: *ref_188
+            -
+                hadBeenSeenBefore: false
+                title: Scheduling with machine-learning-based flow detection for packet-switched optical data center networks
+                link: *ref_189
+    -
+        query: machine learning gibson affordance
+        dateTime: '2025-01-17T17:28:37.796Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Rethinking affordance
+                link: *ref_190
+            -
+                hadBeenSeenBefore: false
+                title: What can i do here? a theory of affordances in reinforcement learning
+                link: *ref_191
+            -
+                hadBeenSeenBefore: false
+                title: Rethinking Affordances for Human–Machine Communication Research
+                link: *ref_192
+            -
+                hadBeenSeenBefore: false
+                title: Machines on mission possible
+                link: *ref_193
+            -
+                hadBeenSeenBefore: false
+                title: Gibson's affordances and Turing's theory of computation
+                link: *ref_194
+            -
+                hadBeenSeenBefore: false
+                title: 'From Turing to Gibson: Implications of Affordances for the Sciences of Organisms'
+                link: *ref_195
+            -
+                hadBeenSeenBefore: false
+                title: '''Affordances'' for Machine Learning'
+                link: *ref_196
+            -
+                hadBeenSeenBefore: false
+                title: 'Representations, affordances, and interactive systems'
+                link: *ref_197
+            -
+                hadBeenSeenBefore: false
+                title: 'FROM TURING TO GIBSON: IMPLICATIONS OF AFFORDANCES'
+                link: *ref_198
+            -
+                hadBeenSeenBefore: false
+                title: Gibson's affordances.
+                link: *ref_199
