@@ -325,7 +325,7 @@ mainLoop: while (true) {
                 console.log(cyan`\nCONTROLS: g=relevent (good), s=super relevent, b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
                 nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(referenceSorter({project: activeProject}))) {
                     // TODO: highlight good and bad keywords
-                    let message = `${cyan`${score(each, activeProject)} (${each?.year})`}${highlightKeywords(each.title)}: `
+                    let message = `${cyan`${score(each, activeProject)} (${each?.year}) `}${highlightKeywords(each.title)}: `
                     write(message)
                     each.reasonsNotRelevant = each.reasonsNotRelevant || []
                     each.reasonsRelevant = each.reasonsRelevant || []
