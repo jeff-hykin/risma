@@ -18,6 +18,8 @@ under construction research lit review tool
 yq -e '[ .references.[] | ._.title ]' project.yaml
 # get all titles that are not yet reviewed
 yq -e '[ .references.[] | select(.notes.resumeStatus == "unseen|title") | [._.title, .score] ]' project.yaml
+# get abstracts for all relevent titles
+yq -e '[ .references.[] | select(.notes.resumeStatus == "relevent|title") | ._.abstract ]' project.yaml
 
 # 
 # run main
