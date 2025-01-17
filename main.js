@@ -553,7 +553,9 @@ mainLoop: while (true) {
                     // TODO: fetch the webpage and attempt parsing some of it
                     await OperatingSystem.openUrl(active.link||active.pdfLink)
                     if (!active.abstract) {
-                        active.abstract = await askForParagraph(reset`paste in the abstract (press enter twice to submit)`)
+                        active.accordingTo = active.accordingTo || {}
+                        active.accordingTo.$manuallyEntered = active.accordingTo.$manuallyEntered || {}
+                        active.accordingTo.$manuallyEntered.abstract = await askForParagraph(reset`paste in the abstract (press enter twice to submit)`)
                         active.events = active.events || {}
                         active.events["sawAbstract"] =  active.events["sawAbstract"] || new DateTime().toISOString()
                         saveProject()
@@ -666,8 +668,8 @@ mainLoop: while (true) {
                             console.debug(`title is:`,title)
                             each.title = title
                         }
-                        activeProject.references[title] = each
                         const hadBeenSeenBefore = !!activeProject.references[title]
+                        activeProject.references[title] = each
                         discoveryMethod.referenceLinks.push({
                             hadBeenSeenBefore,
                             title: title,
