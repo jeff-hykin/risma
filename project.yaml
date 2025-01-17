@@ -182,6 +182,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 title: Visual Affordance Prediction for Guiding Robot Exploration
                 subtitle: null
@@ -230,6 +231,85 @@ references:
                 citedByLink: 'https://scholar.google.com//scholar?cites=15979805052095820058&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 publisherInfo: '2023 IEEE International, 2023'
                 year: 2023
+            openAlex:
+                doi: 'https://doi.org/10.1109/icra48891.2023.10161288'
+                title: Visual Affordance Prediction for Guiding Robot Exploration
+                abstract: null
+                concepts:
+                    - robot manipulation and learning
+                    - advanced vision and imaging
+                    - image and object detection techniques
+                    - control and systems engineering
+                    - computer vision and pattern recognition
+                    - affordance
+                    - computer science
+                    - robot
+                    - human–computer interaction
+                    - artificial intelligence
+                year: 2023
+                authorNames:
+                    - Homanga Bharadhwaj
+                    - Abhinav Gupta
+                    - Shubham Tulsiani
+                link: 'https://doi.org/10.1109/icra48891.2023.10161288'
+                pdfLink: 'https://arxiv.org/pdf/2305.17783'
+                citationCount: 8
+                citedAlexIds:
+                    - 'https://openalex.org/W1524842461'
+                    - 'https://openalex.org/W1933657216'
+                    - 'https://openalex.org/W1960578971'
+                    - 'https://openalex.org/W2032293070'
+                    - 'https://openalex.org/W2188365844'
+                    - 'https://openalex.org/W2201912979'
+                    - 'https://openalex.org/W2612034718'
+                    - 'https://openalex.org/W2625366777'
+                    - 'https://openalex.org/W2823112946'
+                    - 'https://openalex.org/W2895453875'
+                    - 'https://openalex.org/W2908390575'
+                    - 'https://openalex.org/W2952716587'
+                    - 'https://openalex.org/W2953469440'
+                    - 'https://openalex.org/W2962770929'
+                    - 'https://openalex.org/W2962785568'
+                    - 'https://openalex.org/W2962793481'
+                    - 'https://openalex.org/W2962793652'
+                    - 'https://openalex.org/W2963049618'
+                    - 'https://openalex.org/W2963073614'
+                    - 'https://openalex.org/W2963523627'
+                    - 'https://openalex.org/W2963799213'
+                    - 'https://openalex.org/W2964067469'
+                    - 'https://openalex.org/W2980216391'
+                    - 'https://openalex.org/W2983465317'
+                    - 'https://openalex.org/W3003651690'
+                    - 'https://openalex.org/W3006227479'
+                    - 'https://openalex.org/W3032077725'
+                    - 'https://openalex.org/W3034445277'
+                    - 'https://openalex.org/W3035574324'
+                    - 'https://openalex.org/W3035622854'
+                    - 'https://openalex.org/W3035717769'
+                    - 'https://openalex.org/W3089793705'
+                    - 'https://openalex.org/W3104898494'
+                    - 'https://openalex.org/W3120441392'
+                    - 'https://openalex.org/W3180355996'
+                    - 'https://openalex.org/W3207837114'
+                    - 'https://openalex.org/W3207908209'
+                    - 'https://openalex.org/W4287251598'
+                    - 'https://openalex.org/W4287686848'
+                    - 'https://openalex.org/W4287994983'
+                    - 'https://openalex.org/W4288349972'
+                    - 'https://openalex.org/W4300799055'
+                    - 'https://openalex.org/W4301206121'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4391375266'
+                    - 'https://openalex.org/W3089455568'
+                    - 'https://openalex.org/W3049116993'
+                    - 'https://openalex.org/W2899084033'
+                    - 'https://openalex.org/W2748952813'
+                    - 'https://openalex.org/W2417026147'
+                    - 'https://openalex.org/W2346831895'
+                    - 'https://openalex.org/W2248634132'
+                    - 'https://openalex.org/W1972718289'
+                    - 'https://openalex.org/W1791514435'
+                openAlexId: W4383108856
         score:
             - 1
             - 306
@@ -250,6 +330,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel7/10160211/10160212/10161288.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'RAIL: Robot Affordance Imagination with Large Language Models': &ref_100
         notes:
             resumeStatus: unclear|title
@@ -275,6 +356,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -312,6 +394,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/2403.19369'
             cites: null
             citedBy: null
+            abstract: null
     Affordance-Based Goal Imagination for Embodied AI Agents: &ref_101
         notes:
             resumeStatus: relevent|abstract
@@ -340,6 +423,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 title: Affordance-Based Goal Imagination for Embodied AI Agents
                 subtitle: null
@@ -410,6 +494,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel8/10644131/10644157/10644764.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Learning to Anticipate Egocentric Actions by Imagination: &ref_102
         notes:
             resumeStatus: unclear|title
@@ -435,6 +520,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 title: Learning to Anticipate Egocentric Actions by Imagination
                 subtitle: null
@@ -529,6 +615,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel7/83/9263394/09280353.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Imagine that! Leveraging emergent affordances for 3d tool synthesis: &ref_103
         notes:
             resumeStatus: relevent|title
@@ -555,6 +642,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -594,6 +682,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/1909.13561'
             cites: null
             citedBy: null
+            abstract: null
     What Can I Do Here? Learning New Skills by Imagining Visual Affordances: &ref_104
         notes:
             resumeStatus: super-relevent|abstract
@@ -622,6 +711,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 title: What Can I Do Here? Learning New Skills by Imagining Visual Affordances
                 subtitle: null
@@ -677,6 +767,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel7/9560720/9560666/09561692.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'Learning to Act Properly: Predicting and Explaining Affordances from Images': &ref_105
         notes:
             resumeStatus: unclear|title
@@ -702,6 +793,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 title: 'Learning to Act Properly: Predicting and Explaining Affordances from Images'
                 subtitle: null
@@ -766,6 +858,7 @@ references:
             pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2018/papers/Chuang_Learning_to_Act_CVPR_2018_paper.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Imagine that! leveraging emergent affordances for tool synthesis in reaching tasks: &ref_106
         notes:
             resumeStatus: relevent|title
@@ -792,6 +885,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -833,6 +927,7 @@ references:
             pdfLink: 'https://openreview.net/pdf?id=BkeyOxrYwH'
             cites: null
             citedBy: null
+            abstract: null
     'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text': &ref_107
         notes:
             resumeStatus: relevent|title
@@ -859,6 +954,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 title: 'Text2Afford: Probing Object Affordance Prediction abilities of Language Models solely from Text'
                 subtitle: null
@@ -908,6 +1004,7 @@ references:
             pdfLink: 'https://aclanthology.org/2024.conll-1.27.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Learning affordances in object-centric generative models: &ref_108
         notes:
             resumeStatus: unclear|title
@@ -933,6 +1030,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -972,6 +1070,7 @@ references:
             pdfLink: 'https://ora.ox.ac.uk/objects/uuid:003cbbd9-a3aa-42e7-8e2d-bcc6b22db89a/download_file?safe_filename=OOL_7.pdf&file_format=pdf&type_of_work=Conference+item'
             cites: null
             citedBy: null
+            abstract: null
     'CoSense3D: an Agent-based Efficient Learning Framework for Collective Perception': &ref_89
         notes:
             resumeStatus: unclear|title
@@ -997,6 +1096,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/iv55156.2024.10588865
             googleScholar:
@@ -1030,6 +1130,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/2404.18617'
             cites: null
             citedBy: null
+            abstract: null
     Multi-Agent Active Perception Based on Reinforcement Learning and POMDP: &ref_90
         notes:
             resumeStatus: unclear|title
@@ -1055,6 +1156,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/access.2024.3383544
             googleScholar:
@@ -1090,6 +1192,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel7/6287639/6514899/10486889.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Mutual influence between language and perception in multi-agent communication games: &ref_91
         notes:
             resumeStatus: irrelevent|title
@@ -1116,6 +1219,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 title: Mutual influence between language and perception in multi-agent communication games
                 subtitle: null
@@ -1223,6 +1327,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: 'Language interfaces with many other cognitive domains. This paper explores how interactions at these interfaces can be studied with deep learning methods, focusing on the relation between language emergence and visual perception. To model the emergence of language, a sender and a receiver agent are trained on a reference game. The agents are implemented as deep neural networks, with dedicated vision and language modules. Motivated by the mutual influence between language and perception in cognition, we apply systematic manipulations to the agents’ (i) visual representations, to analyze the effects on emergent communication, and (ii) communication protocols, to analyze the effects on visual representations. Our analyses show that perceptual biases shape semantic categorization and communicative content. Conversely, if the communication protocol partitions object space along certain attributes, agents learn to represent visual information about these attributes more accurately, and the representations of communication partners align. Finally, an evolutionary analysis suggests that visual representations may be shaped in part to facilitate the communication of environmentally relevant distinctions. Aside from accounting for co-adaptation effects between language and perception, our results point out ways to modulate and improve visual representation learning and emergent communication in artificial agents.'
     'Influencing human–AI interaction by priming beliefs about AI can increase perceived trustworthiness, empathy and effectiveness': &ref_92
         notes:
             resumeStatus: irrelevent|title
@@ -1249,6 +1354,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1038/s42256-023-00720-7
             googleScholar:
@@ -1286,6 +1392,7 @@ references:
             pdfLink: 'https://dspace.mit.edu/bitstream/handle/1721.1/152316/NMI_AI_beholder_Final-Unformatted%5B85%5D.pdf?sequence=1&isAllowed=y&utm_source=nationaltribune&utm_medium=nationaltribune&utm_campaign=news'
             cites: null
             citedBy: null
+            abstract: null
     Why and how to study the impact of perception on language emergence in artificial agents: &ref_93
         notes:
             resumeStatus: unclear|title
@@ -1311,6 +1418,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -1346,6 +1454,7 @@ references:
             pdfLink: 'https://escholarship.org/content/qt6p82v6st/qt6p82v6st.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Interaction Algorithm Effect on Human Experience with Reinforcement Learning: &ref_94
         notes:
             resumeStatus: irrelevent|title
@@ -1372,6 +1481,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 title: Interaction Algorithm Effect on Human Experience with Reinforcement Learning
                 subtitle: null
@@ -1435,6 +1545,7 @@ references:
             pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3277904'
             cites: null
             citedBy: null
+            abstract: 'A goal of interactive machine learning (IML) is to enable people with no specialized training to intuitively teach intelligent agents how to perform tasks. Toward achieving that goal, we are studying how the design of the interaction method for a Bayesian Q-Learning algorithm impacts aspects of the human’s experience of teaching the agent using human-centric metrics such as frustration in addition to traditional ML performance metrics. This study investigated two methods of natural language instruction: critique and action advice. We conducted a human-in-the-loop experiment in which people trained two agents with different teaching methods but, unknown to each participant, the same underlying reinforcement learning algorithm. The results show an agent that learns from action advice creates a better user experience compared to an agent that learns from binary critique in terms of frustration, perceived performance, transparency, immediacy, and perceived intelligence. We identified nine main characteristics of an IML algorithm’s design that impact the human’s experience with the agent, including using human instructions about the future, compliance with input, empowerment, transparency, immediacy, a deterministic interaction, the complexity of the instructions, accuracy of the speech recognition software, and the robust and flexible nature of the interaction algorithm.'
     'Deep learning for object detection and scene perception in self-driving cars: Survey, challenges, and open issues': &ref_95
         notes:
             resumeStatus: irrelevent|title
@@ -1461,6 +1572,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1016/j.array.2021.100057
             googleScholar:
@@ -1498,6 +1610,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Research on autonomous driving decision-making strategies based deep reinforcement learning: &ref_96
         notes:
             resumeStatus: irrelevent|title
@@ -1524,6 +1637,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1145/3697467.3697643
             googleScholar:
@@ -1563,6 +1677,7 @@ references:
             pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3697467.3697643'
             cites: null
             citedBy: null
+            abstract: null
     Finding and visualizing weaknesses of deep reinforcement learning agents: &ref_97
         notes:
             resumeStatus: irrelevent|title
@@ -1589,6 +1704,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -1624,6 +1740,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/1904.01318'
             cites: null
             citedBy: null
+            abstract: null
     Simulation-based reinforcement learning for real-world autonomous driving: &ref_98
         notes:
             resumeStatus: unseen|title
@@ -1648,6 +1765,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/icra40945.2020.9196730
             googleScholar:
@@ -1683,6 +1801,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/1911.12905'
             cites: null
             citedBy: null
+            abstract: null
     'Whatever next? Predictive brains, situated agents, and the future of cognitive science': &ref_1
         notes:
             resumeStatus: unclear|title
@@ -1708,6 +1827,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1017/s0140525x12000477'
@@ -2147,6 +2267,7 @@ references:
             pdfLink: 'https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33542C736E17E3D1D44E8D03BE5F4CD9/S0140525X12000477a.pdf/div-class-title-whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science-div.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Disjuncture and Difference in the Global Cultural Economy: &ref_80
         notes:
             resumeStatus: irrelevent|title
@@ -2173,6 +2294,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1215/08992363-2-2-1'
@@ -2259,6 +2381,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Principal warps: thin-plate splines and the decomposition of deformations': &ref_81
         notes:
             resumeStatus: irrelevent|title
@@ -2285,6 +2408,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1109/34.24792'
@@ -2365,6 +2489,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Neuroscience-Inspired Artificial Intelligence: &ref_82
         notes:
             resumeStatus: unseen|title
@@ -2389,6 +2514,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1016/j.neuron.2017.06.011'
@@ -2638,6 +2764,7 @@ references:
             pdfLink: 'http://www.cell.com/article/S0896627317305093/pdf'
             cites: null
             citedBy: null
+            abstract: null
     'The hippocampus and memory: insights from spatial processing': &ref_83
         notes:
             resumeStatus: unseen|title
@@ -2662,6 +2789,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1038/nrn2335'
@@ -2868,6 +2996,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'The proactive brain: using analogies and associations to generate predictions': &ref_84
         notes:
             resumeStatus: unseen|title
@@ -2892,6 +3021,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1016/j.tics.2007.05.005'
@@ -3026,6 +3156,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Exploring the impact of artificial intelligence on teaching and learning in higher education: &ref_85
         notes:
             resumeStatus: irrelevent|title
@@ -3052,6 +3183,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1186/s41039-017-0062-8'
@@ -3141,6 +3273,7 @@ references:
             pdfLink: 'https://telrp.springeropen.com/track/pdf/10.1186/s41039-017-0062-8'
             cites: null
             citedBy: null
+            abstract: null
     Stalking the elusive "vividness" effect.: &ref_86
         notes:
             resumeStatus: unseen|title
@@ -3165,6 +3298,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1037/0033-295x.89.2.155'
@@ -3297,6 +3431,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     A Bayesian account of 'hysteria': &ref_87
         notes:
             resumeStatus: unseen|title
@@ -3321,6 +3456,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1093/brain/aws129'
@@ -3521,6 +3657,7 @@ references:
             pdfLink: 'https://academic.oup.com/brain/article-pdf/135/11/3495/754693/aws129.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'The cognitive neuroscience of constructive memory: remembering the past and imagining the future': &ref_88
         notes:
             resumeStatus: unclear|title
@@ -3546,6 +3683,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1098/rstb.2007.2087'
@@ -3737,6 +3875,7 @@ references:
             pdfLink: 'https://europepmc.org/articles/pmc2429996?pdf=render'
             cites: null
             citedBy: null
+            abstract: null
     Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet: &ref_29
         notes:
             comment: ''
@@ -3763,6 +3902,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.2306.06130'
                 title: Towards Understanding the Interplay of Generative Artificial Intelligence and the Internet
@@ -3832,6 +3972,7 @@ references:
             pdfLink: 'http://arxiv.org/pdf/2306.06130'
             cites: null
             citedBy: null
+            abstract: null
     A Comprehensive Review of the Latest Advancements in Large Generative AI Models: &ref_30
         notes:
             comment: ''
@@ -3858,6 +3999,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1007/978-3-031-45121-8_9'
                 title: A Comprehensive Review of the Latest Advancements in Large Generative AI Models
@@ -3932,6 +4074,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors': &ref_31
         notes:
             comment: ''
@@ -3956,6 +4099,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.2304.04103'
                 title: 'TC-VAE: Uncovering Out-of-Distribution Data Generative Factors'
@@ -4020,6 +4164,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Are generative approaches to ZSAR a look in the right direction?: &ref_32
         notes:
             comment: ''
@@ -4044,6 +4189,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.31219/osf.io/ncyqb'
                 title: Are generative approaches to ZSAR a look in the right direction?
@@ -4113,6 +4259,7 @@ references:
             pdfLink: 'https://osf.io/ncyqb/download'
             cites: null
             citedBy: null
+            abstract: null
     Improving image generative models with human interactions: &ref_33
         notes:
             comment: ''
@@ -4137,6 +4284,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1709.10459'
                 title: Improving image generative models with human interactions
@@ -4206,6 +4354,7 @@ references:
             pdfLink: 'http://arxiv.org/pdf/1709.10459'
             cites: null
             citedBy: null
+            abstract: null
     Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay: &ref_34
         notes:
             comment: ''
@@ -4232,6 +4381,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.2106.09835'
                 title: Dual-Teacher Class-Incremental Learning With Data-Free Generative Replay
@@ -4299,6 +4449,7 @@ references:
             pdfLink: 'http://arxiv.org/pdf/2106.09835'
             cites: null
             citedBy: null
+            abstract: null
     'Generative Model for Person Re-Identification: A Review': &ref_35
         notes:
             comment: ''
@@ -4323,6 +4474,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1007/978-981-13-9409-6_174'
                 title: 'Generative Model for Person Re-Identification: A Review'
@@ -4402,6 +4554,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Deep Dexterous Grasping of Novel Objects from a Single View.: &ref_36
         notes:
             comment: ''
@@ -4426,6 +4579,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Deep Dexterous Grasping of Novel Objects from a Single View.
@@ -4554,6 +4708,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     How generative encodings fare on less regular problems: &ref_37
         notes:
             comment: ''
@@ -4578,6 +4733,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1145/1389095.1389263'
                 title: How generative encodings fare on less regular problems
@@ -4650,6 +4806,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     The Developing Person Through the Life Span: &ref_38
         notes:
             comment: ''
@@ -4674,6 +4831,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: The Developing Person Through the Life Span
@@ -4744,6 +4902,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Relative Entropy Policy Search: &ref_39
         notes:
             comment: ''
@@ -4770,6 +4929,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1609/aaai.v24i1.7727'
                 title: Relative Entropy Policy Search
@@ -4863,6 +5023,7 @@ references:
             pdfLink: 'https://ojs.aaai.org/index.php/AAAI/article/download/7727/7588'
             cites: null
             citedBy: null
+            abstract: null
     Playing Atari with Deep Reinforcement Learning: &ref_40
         notes:
             comment: ''
@@ -4889,6 +5050,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1312.5602'
                 title: Playing Atari with Deep Reinforcement Learning
@@ -4969,6 +5131,7 @@ references:
             pdfLink: 'http://arxiv.org/pdf/1312.5602'
             cites: null
             citedBy: null
+            abstract: null
     The Ecological Approach to Visual Perception: &ref_19
         notes:
             comment: ''
@@ -4995,6 +5158,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.2307/429816'
                 title: The Ecological Approach to Visual Perception
@@ -5054,6 +5218,7 @@ references:
             pdfLink: 'https://pq-static-content.proquest.com/collateral/media2/documents/ebookcentral-dda.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Auto-Encoding Variational Bayes: &ref_41
         notes:
             comment: ''
@@ -5078,6 +5243,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Auto-Encoding Variational Bayes
@@ -5170,6 +5336,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Biped dynamic walking using reinforcement learning: &ref_42
         notes:
             comment: ''
@@ -5196,6 +5363,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1016/s0921-8890(97)00043-2'
                 title: Biped dynamic walking using reinforcement learning
@@ -5317,6 +5485,7 @@ references:
             pdfLink: 'https://scholars.unh.edu/cgi/viewcontent.cgi?article=2925&context=dissertation'
             cites: null
             citedBy: null
+            abstract: null
     Active learning of inverse models with intrinsically motivated goal exploration in robots: &ref_43
         notes:
             comment: ''
@@ -5343,6 +5512,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1016/j.robot.2012.05.008'
                 title: Active learning of inverse models with intrinsically motivated goal exploration in robots
@@ -5543,6 +5713,7 @@ references:
             pdfLink: 'https://inria.hal.science/hal-00788440/document'
             cites: null
             citedBy: null
+            abstract: null
     GAN（Generative Adversarial Nets）: &ref_44
         notes:
             comment: ''
@@ -5567,6 +5738,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.3156/jsoft.29.5_177_2'
                 title: GAN（Generative Adversarial Nets）
@@ -5665,6 +5837,7 @@ references:
             pdfLink: 'https://www.jstage.jst.go.jp/article/jsoft/29/5/29_177_2/_pdf'
             cites: null
             citedBy: null
+            abstract: null
     'PILCO: A Model-Based and Data-Efficient Approach to Policy Search': &ref_45
         notes:
             comment: ''
@@ -5689,6 +5862,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: 'PILCO: A Model-Based and Data-Efficient Approach to Policy Search'
@@ -5787,6 +5961,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Machine learning for fast quadrupedal locomotion: &ref_46
         notes:
             comment: ''
@@ -5811,6 +5986,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Machine learning for fast quadrupedal locomotion
@@ -5898,6 +6074,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     End-to-End Training of Deep Visuomotor Policies: &ref_47
         notes:
             comment: ''
@@ -5922,6 +6099,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1504.00702'
                 title: End-to-End Training of Deep Visuomotor Policies
@@ -6077,6 +6255,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     ImageNet Classification with Deep Convolutional Neural Networks: &ref_48
         notes:
             comment: ''
@@ -6101,6 +6280,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: ImageNet Classification with Deep Convolutional Neural Networks
@@ -6204,6 +6384,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Policy Search for Motor Primitives in Robotics: &ref_49
         notes:
             comment: ''
@@ -6230,6 +6411,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1007/978-3-319-03194-1_4'
                 title: Policy Search for Motor Primitives in Robotics
@@ -6351,6 +6533,7 @@ references:
             pdfLink: 'https://link.springer.com/content/pdf/10.1007%2Fs10994-010-5223-6.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Learning structured output representation using deep conditional generative models: &ref_50
         notes:
             comment: ''
@@ -6377,6 +6560,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Learning structured output representation using deep conditional generative models
@@ -6499,6 +6683,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Mastering the game of Go with deep neural networks and tree search: &ref_51
         notes:
             comment: ''
@@ -6523,6 +6708,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1038/nature16961'
                 title: Mastering the game of Go with deep neural networks and tree search
@@ -6693,6 +6879,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Conditional Image Generation with PixelCNN Decoders: &ref_52
         notes:
             comment: ''
@@ -6717,6 +6904,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1606.05328'
                 title: Conditional Image Generation with PixelCNN Decoders
@@ -6818,6 +7006,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     The ecological approach: &ref_53
         notes:
             comment: ''
@@ -6843,6 +7032,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1017/cbo9780511572715.004'
                 title: The ecological approach
@@ -6891,6 +7081,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     '#Exploration: a study of count-based exploration for deep reinforcement learning': &ref_54
         notes:
             comment: ''
@@ -6917,6 +7108,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: '#Exploration: a study of count-based exploration for deep reinforcement learning'
@@ -7039,6 +7231,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning': &ref_55
         notes:
             comment: ''
@@ -7065,6 +7258,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1611.02779'
                 title: 'RL$^2$: Fast Reinforcement Learning via Slow Reinforcement Learning'
@@ -7146,6 +7340,7 @@ references:
             pdfLink: 'http://arxiv.org/pdf/1611.02779'
             cites: null
             citedBy: null
+            abstract: null
     Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks: &ref_56
         notes:
             comment: ''
@@ -7172,6 +7367,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1703.03400'
                 title: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
@@ -7278,6 +7474,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Automatic Goal Generation for Reinforcement Learning Agents: &ref_57
         notes:
             comment: ''
@@ -7304,6 +7501,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Automatic Goal Generation for Reinforcement Learning Agents
@@ -7383,6 +7581,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Information theoretic MPC for model-based reinforcement learning: &ref_58
         notes:
             comment: ''
@@ -7407,6 +7606,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/icra.2017.7989202'
                 title: Information theoretic MPC for model-based reinforcement learning
@@ -7516,6 +7716,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Data-Efficient Hierarchical Reinforcement Learning: &ref_59
         notes:
             comment: ''
@@ -7540,6 +7741,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Data-Efficient Hierarchical Reinforcement Learning
@@ -7621,6 +7823,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Visual Reinforcement Learning with Imagined Goals: &ref_60
         notes:
             comment: ''
@@ -7646,6 +7849,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Visual Reinforcement Learning with Imagined Goals
@@ -7736,6 +7940,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding': &ref_61
         notes:
             comment: ''
@@ -7760,6 +7965,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1810.04805'
                 title: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
@@ -7875,6 +8081,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Unsupervised Control Through Non-Parametric Discriminative Rewards: &ref_62
         notes:
             comment: ''
@@ -7901,6 +8108,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1811.11359'
                 title: Unsupervised Control Through Non-Parametric Discriminative Rewards
@@ -7979,6 +8187,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables: &ref_63
         notes:
             comment: ''
@@ -8003,6 +8212,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1903.08254'
                 title: Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables
@@ -8070,6 +8280,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning': &ref_64
         notes:
             comment: ''
@@ -8094,6 +8305,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1611.04717'
                 title: '#Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning'
@@ -8206,6 +8418,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Adversarial Feature Learning: &ref_65
         notes:
             comment: ''
@@ -8230,6 +8443,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1605.09782'
                 title: Adversarial Feature Learning
@@ -8304,6 +8518,7 @@ references:
             pdfLink: 'http://arxiv.org/pdf/1605.09782'
             cites: null
             citedBy: null
+            abstract: null
     Curiosity-Driven Exploration by Self-Supervised Prediction: &ref_66
         notes:
             comment: ''
@@ -8329,6 +8544,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/cvprw.2017.70'
                 title: Curiosity-Driven Exploration by Self-Supervised Prediction
@@ -8408,6 +8624,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/1705.05363'
             cites: null
             citedBy: null
+            abstract: null
     'VIME: Variational Information Maximizing Exploration': &ref_67
         notes:
             comment: ''
@@ -8432,6 +8649,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: 'VIME: Variational Information Maximizing Exploration'
@@ -8513,6 +8731,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Neural Discrete Representation Learning: &ref_68
         notes:
             comment: ''
@@ -8539,6 +8758,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1711.00937'
                 title: Neural Discrete Representation Learning
@@ -8620,6 +8840,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Hindsight Experience Replay: &ref_69
         notes:
             comment: ''
@@ -8644,6 +8865,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1707.01495'
                 title: Hindsight Experience Replay
@@ -8724,6 +8946,7 @@ references:
             pdfLink: 'http://arxiv.org/pdf/1707.01495'
             cites: null
             citedBy: null
+            abstract: null
     'Learning to poke by poking: experiential learning of intuitive physics': &ref_70
         notes:
             comment: ''
@@ -8750,6 +8973,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: 'Learning to poke by poking: experiential learning of intuitive physics'
@@ -8861,6 +9085,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     End-to-end training of deep visuomotor policies: &ref_71
         notes:
             comment: ''
@@ -8885,6 +9110,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: End-to-end training of deep visuomotor policies
@@ -9055,6 +9281,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Learning Latent Plans from Play: &ref_72
         notes:
             comment: ''
@@ -9080,6 +9307,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1903.01973'
                 title: Learning Latent Plans from Play
@@ -9141,6 +9369,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Contextual Imagined Goals for Self-Supervised Robotic Learning: &ref_73
         notes:
             comment: ''
@@ -9167,6 +9396,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1910.11670'
                 title: Contextual Imagined Goals for Self-Supervised Robotic Learning
@@ -9226,6 +9456,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets': &ref_74
         notes:
             comment: ''
@@ -9252,6 +9483,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: 'AWAC: Accelerating Online Reinforcement Learning with Offline Datasets'
@@ -9394,6 +9626,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning': &ref_75
         notes:
             comment: ''
@@ -9420,6 +9653,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: 'Skew-Fit: State-Covering Self-Supervised Reinforcement Learning'
@@ -9503,6 +9737,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     The developing person through the life span: &ref_76
         notes:
             comment: ''
@@ -9527,6 +9762,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: The developing person through the life span
@@ -9588,6 +9824,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Generative Adversarial Nets: &ref_77
         notes:
             comment: ''
@@ -9612,6 +9849,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1007/978-3-658-40442-0_9'
                 title: Generative Adversarial Nets
@@ -9678,6 +9916,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Universal Value Function Approximators: &ref_78
         notes:
             comment: ''
@@ -9702,6 +9941,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Universal Value Function Approximators
@@ -9815,6 +10055,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models: &ref_79
         notes:
             comment: ''
@@ -9841,6 +10082,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.48550/arxiv.1507.00814'
                 title: Incentivizing Exploration In Reinforcement Learning With Deep Predictive Models
@@ -9914,6 +10156,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Experience and Education: &ref_20
         notes:
             resumeStatus: irrelevent|title
@@ -9940,6 +10183,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1080/00131728609335764'
@@ -9989,6 +10233,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Mahalanobis distance-based classifiers are able to recognize EEG patterns by using few EEG electrodes: &ref_21
         notes:
             resumeStatus: unseen|title
@@ -10013,6 +10258,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1109/iembs.2001.1019019'
@@ -10109,6 +10355,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Metahistory. The Historical Imagination in Nineteenth-Century Europe.: &ref_22
         notes:
             resumeStatus: irrelevent|title
@@ -10135,6 +10382,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.2307/2504605'
@@ -10191,6 +10439,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Techniques of Neutralization: A Theory of Delinquency': &ref_23
         notes:
             resumeStatus: unseen|title
@@ -10215,6 +10464,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.2307/2089195'
@@ -10270,6 +10520,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     The temporality of the landscape: &ref_24
         notes:
             resumeStatus: irrelevent|title
@@ -10296,6 +10547,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1080/00438243.1993.9980235'
@@ -10409,6 +10661,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Ralph Ellison, James Baldwin, and the Liberal Imagination': &ref_25
         notes:
             resumeStatus: irrelevent|title
@@ -10435,6 +10688,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1353/arq.2004.0020'
@@ -10538,6 +10792,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     The New Mobilities Paradigm: &ref_26
         notes:
             resumeStatus: unseen|title
@@ -10562,6 +10817,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1068/a37268'
@@ -10734,6 +10990,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Crowdsourcing as a Model for Problem Solving: &ref_27
         notes:
             resumeStatus: unseen|title
@@ -10758,6 +11015,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1177/1354856507084420'
@@ -10856,6 +11114,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     How many memory systems are there?: &ref_28
         notes:
             resumeStatus: unseen|title
@@ -10880,6 +11139,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1037/0003-066x.40.4.385'
@@ -11022,6 +11282,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Artificial intelligence: A modern approach': &ref_10
         notes:
             resumeStatus: irrelevent|title
@@ -11048,6 +11309,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1016/0004-3702(96)00007-0'
@@ -11111,6 +11373,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'ANFIS: adaptive-network-based fuzzy inference system': &ref_11
         notes:
             resumeStatus: irrelevent|title
@@ -11137,6 +11400,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1109/21.256541'
@@ -11258,6 +11522,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Induction of decision trees: &ref_12
         notes:
             resumeStatus: irrelevent|title
@@ -11284,6 +11549,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1007/bf00116251'
@@ -11356,6 +11622,7 @@ references:
             pdfLink: 'https://link.springer.com/content/pdf/10.1007/BF00116251.pdf'
             cites: null
             citedBy: null
+            abstract: null
     undefined:
         notes:
             resumeStatus: unseen|title
@@ -11381,6 +11648,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1023/a:1022643204877'
@@ -11469,6 +11737,7 @@ references:
             pdfLink: 'https://link.springer.com/content/pdf/10.1023%2FA%3A1022643204877.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'Data mining and knowledge discovery: making sense out of data': &ref_13
         notes:
             resumeStatus: irrelevent|title
@@ -11495,6 +11764,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1109/64.539013'
@@ -11572,6 +11842,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI': &ref_14
         notes:
             resumeStatus: unseen|title
@@ -11596,6 +11867,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1016/j.inffus.2019.12.012'
@@ -12208,6 +12480,7 @@ references:
             pdfLink: 'https://bird.bcamath.org/bitstream/20.500.11824/1166/1/24.%20main.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'Machine learning: Trends, perspectives, and prospects': &ref_15
         notes:
             resumeStatus: unseen|title
@@ -12232,6 +12505,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1126/science.aaa8415'
@@ -12333,6 +12607,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     From Data Mining to Knowledge Discovery in Databases: &ref_16
         notes:
             resumeStatus: irrelevent|title
@@ -12359,6 +12634,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1609/aimag.v17i3.1230'
@@ -12487,6 +12763,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'High-performance medicine: the convergence of human and artificial intelligence': &ref_17
         notes:
             resumeStatus: unseen|title
@@ -12511,6 +12788,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1038/s41591-018-0300-7'
@@ -12755,6 +13033,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     The vision of autonomic computing: &ref_18
         notes:
             resumeStatus: unseen|title
@@ -12779,6 +13058,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1109/mc.2003.1160055'
@@ -12860,6 +13140,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Human agency in social cognitive theory.: &ref_0
         notes:
             resumeStatus: irrelevent|title
@@ -12886,6 +13167,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1037/0003-066x.44.9.1175'
@@ -13018,6 +13300,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Technology affordances: &ref_2
         notes:
             resumeStatus: irrelevent|title
@@ -13044,6 +13327,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1145/108844.108856'
@@ -13116,6 +13400,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Being there: putting brain, body, and world together again': &ref_3
         notes:
             resumeStatus: irrelevent|title
@@ -13142,6 +13427,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.5860/choice.34-6204'
@@ -13383,6 +13669,7 @@ references:
             pdfLink: 'http://cdn.preterhuman.net/texts/unsorted2/Andy Clark - Being There (Putting Brain, Body and World Together).pdf'
             cites: null
             citedBy: null
+            abstract: null
     Intrinsic Motivation Systems for Autonomous Mental Development: &ref_4
         notes:
             resumeStatus: unseen|title
@@ -13407,6 +13694,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1109/tevc.2006.890271'
@@ -13565,6 +13853,7 @@ references:
             pdfLink: 'https://inria.hal.science/hal-00793610/document'
             cites: null
             citedBy: null
+            abstract: null
     Activity theory as a framework for designing constructivist learning environments: &ref_5
         notes:
             resumeStatus: unclear|title
@@ -13590,6 +13879,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1007/bf02299477'
@@ -13712,6 +14002,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'The myth of language universals: Language diversity and its importance for cognitive science': &ref_6
         notes:
             resumeStatus: unseen|title
@@ -13736,6 +14027,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1017/s0140525x0999094x'
@@ -14262,6 +14554,7 @@ references:
             pdfLink: 'https://www.cambridge.org/core/services/aop-cambridge-core/content/view/25D362A6566FCA4F51054D1C41104654/S0140525X0999094Xa.pdf/div-class-title-the-myth-of-language-universals-language-diversity-and-its-importance-for-cognitive-science-div.pdf'
             cites: null
             citedBy: null
+            abstract: null
     What is Technological Pedagogical Content Knowledge (TPACK)?: &ref_7
         notes:
             resumeStatus: unseen|title
@@ -14286,6 +14579,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1177/002205741319300303'
@@ -14380,6 +14674,7 @@ references:
             pdfLink: 'https://revistas.unc.edu.ar/index.php/vesc/article/download/11552/11983'
             cites: null
             citedBy: null
+            abstract: null
     Explanation and Understanding: &ref_8
         notes:
             resumeStatus: unseen|title
@@ -14404,6 +14699,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1146/annurev.psych.57.102904.190100'
@@ -14665,6 +14961,7 @@ references:
             pdfLink: 'https://europepmc.org/articles/pmc3034737?pdf=render'
             cites: null
             citedBy: null
+            abstract: null
     Geographic Object-Based Image Analysis – Towards a new paradigm: &ref_9
         notes:
             resumeStatus: unseen|title
@@ -14689,6 +14986,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref: {}
             openAlex:
                 doi: 'https://doi.org/10.1016/j.isprsjprs.2013.09.014'
@@ -14865,6 +15163,7 @@ references:
             pdfLink: 'https://dspace.library.uu.nl/bitstream/handle/1874/301561/blaschke_geographic_2014.pdf?sequence=1&isAllowed=y'
             cites: null
             citedBy: null
+            abstract: null
     A survey of visual affordance recognition based on deep learning: &ref_109
         notes:
             resumeStatus: super-relevent|abstract
@@ -14893,6 +15192,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/tbdata.2023.3291558
             googleScholar:
@@ -14932,6 +15232,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Affordancenet: An end-to-end deep learning approach for object affordance detection': &ref_110
         notes:
             resumeStatus: relevent|title
@@ -14958,6 +15259,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/icra.2018.8460902
             googleScholar:
@@ -14995,6 +15297,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/1709.07326'
             cites: null
             citedBy: null
+            abstract: null
     Deep affordance-grounded sensorimotor object recognition: &ref_111
         notes:
             resumeStatus: relevent|title
@@ -15021,6 +15324,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/cvpr.2017.13
             googleScholar:
@@ -15056,6 +15360,7 @@ references:
             pdfLink: 'http://openaccess.thecvf.com/content_cvpr_2017/papers/Thermos_Deep_Affordance-Grounded_Sensorimotor_CVPR_2017_paper.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'Recent advances of deep robotic affordance learning: a reinforcement learning perspective': &ref_112
         notes:
             resumeStatus: super-relevent|abstract
@@ -15084,6 +15389,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/tcds.2023.3277288
             googleScholar:
@@ -15123,6 +15429,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/2303.05344'
             cites: null
             citedBy: null
+            abstract: null
     Detecting object affordances with convolutional neural networks: &ref_113
         notes:
             resumeStatus: relevent|title
@@ -15149,6 +15456,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/iros.2016.7759429
             googleScholar:
@@ -15186,6 +15494,7 @@ references:
             pdfLink: 'https://discovery.ucl.ac.uk/id/eprint/10083222/1/P9__Nguyen_Kanoulas_Caldwell_Tsagarakis__2016__Detecting_Object_Affordances_with_Convolutional_Neural_Networks.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'Visual affordance and function understanding: A survey': &ref_114
         notes:
             resumeStatus: relevent|abstract
@@ -15214,6 +15523,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -15251,6 +15561,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/1807.06775'
             cites: null
             citedBy: null
+            abstract: null
     Learning predictive features in affordance based robotic perception systems: &ref_115
         notes:
             resumeStatus: super-relevent|abstract
@@ -15309,6 +15620,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/iros.2006.281720
             googleScholar:
@@ -15348,6 +15660,7 @@ references:
             pdfLink: 'https://cdn.aaai.org/Workshops/2006/WS-06-03/WS06-03-010.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Object-based affordances detection with convolutional neural networks and dense conditional random fields: &ref_116
         notes:
             resumeStatus: relevent|title
@@ -15374,6 +15687,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/iros.2017.8206484
             googleScholar:
@@ -15411,6 +15725,7 @@ references:
             pdfLink: 'https://www.csc.liv.ac.uk/~anguyen/assets/pdfs/2017_IROS_CRFSeg.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Visual learning of affordance based cues: &ref_117
         notes:
             resumeStatus: relevent|title
@@ -15437,6 +15752,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1007/11840541_5
             googleScholar:
@@ -15476,6 +15792,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Soft-assembled human–machine perceptual systems: &ref_118
         notes:
             resumeStatus: relevent|title
@@ -15502,6 +15819,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1177/1059712319847129
             googleScholar:
@@ -15535,6 +15853,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Enhancing discrete choice models with representation learning: &ref_119
         notes:
             resumeStatus: irrelevent|title
@@ -15561,6 +15880,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1016/j.trb.2020.08.006
             googleScholar:
@@ -15598,6 +15918,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/1812.09747'
             cites: null
             citedBy: null
+            abstract: null
     'Deep representation learning: Fundamentals, technologies, applications, and open challenges': &ref_120
         notes:
             resumeStatus: irrelevent|abstract
@@ -15626,6 +15947,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/access.2023.3335196
             googleScholar:
@@ -15663,6 +15985,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel7/6287639/6514899/10323465.pdf'
             cites: null
             citedBy: null
+            abstract: null
     A Survey of Trustworthy Representation Learning Across Domains: &ref_121
         notes:
             resumeStatus: irrelevent|abstract
@@ -15691,6 +16014,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1145/3657301
             googleScholar:
@@ -15734,6 +16058,7 @@ references:
             pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3657301'
             cites: null
             citedBy: null
+            abstract: null
     Costs and benefits of fair representation learning: &ref_122
         notes:
             resumeStatus: irrelevent|title
@@ -15760,6 +16085,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1145/3306618.3317964
             googleScholar:
@@ -15797,6 +16123,7 @@ references:
             pdfLink: 'http://www.aies-conference.com/2019/wp-content/papers/main/AIES-19_paper_56.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Joint representation learning for top-n recommendation with heterogeneous information sources: &ref_123
         notes:
             resumeStatus: unclear|title
@@ -15822,6 +16149,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1145/3132847.3132892
             googleScholar:
@@ -15861,6 +16189,7 @@ references:
             pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3132847.3132892'
             cites: null
             citedBy: null
+            abstract: null
     'Autoencoder-based representation learning and its application in intelligent fault diagnosis: A review': &ref_124
         notes:
             resumeStatus: irrelevent|title
@@ -15887,6 +16216,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1016/j.measurement.2021.110460
             googleScholar:
@@ -15926,6 +16256,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Human representation learning: &ref_125
         notes:
             resumeStatus: relevent|title
@@ -15952,6 +16283,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -15989,6 +16321,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Multibench: Multiscale benchmarks for multimodal representation learning': &ref_126
         notes:
             resumeStatus: irrelevent|title
@@ -16015,6 +16348,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -16056,6 +16390,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     An empirical investigation of representation learning for imitation: &ref_127
         notes:
             resumeStatus: irrelevent|title
@@ -16082,6 +16417,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -16123,6 +16459,7 @@ references:
             pdfLink: 'https://arxiv.org/pdf/2205.07886'
             cites: null
             citedBy: null
+            abstract: null
     A knowledge-guided pre-training framework for improving molecular representation learning: &ref_128
         notes:
             resumeStatus: irrelevent|title
@@ -16149,6 +16486,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1038/s41467-023-43214-1
             googleScholar:
@@ -16192,6 +16530,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Learning to act properly: Predicting and explaining affordances from images': &ref_129
         notes:
             resumeStatus: relevent|title
@@ -16218,6 +16557,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/cvpr.2018.00108
             googleScholar:
@@ -16255,6 +16595,7 @@ references:
             pdfLink: 'https://openaccess.thecvf.com/content_cvpr_2018/papers/Chuang_Learning_to_Act_CVPR_2018_paper.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Training agents with interactive reinforcement learning and contextual affordances: &ref_130
         notes:
             resumeStatus: relevent|title
@@ -16281,6 +16622,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/tcds.2016.2543839
             googleScholar:
@@ -16318,6 +16660,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel7/7274989/7422051/07458195.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Affordance as context: &ref_131
         notes:
             resumeStatus: irrelevent|title
@@ -16344,6 +16687,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1016/j.intcom.2005.04.003
             googleScholar:
@@ -16377,6 +16721,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Conditional affordance learning for driving in urban environments: &ref_132
         notes:
             resumeStatus: relevent|title
@@ -16403,6 +16748,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -16440,6 +16786,7 @@ references:
             pdfLink: 'http://proceedings.mlr.press/v87/sauer18a/sauer18a.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Learning grasp affordance reasoning through semantic relations: &ref_133
         notes:
             resumeStatus: relevent|title
@@ -16466,6 +16813,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/lra.2019.2933815
             googleScholar:
@@ -16503,6 +16851,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel7/7083369/7339444/08790777.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'Mobile data-driven language learning: Affordances and learners'' perception': &ref_134
         notes:
             resumeStatus: irrelevent|title
@@ -16529,6 +16878,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -16566,6 +16916,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Categorization of Affordances and Prediction of Future Object Interactions using Qualitative Spatial Relations: &ref_135
         notes:
             resumeStatus: relevent|title
@@ -16592,6 +16943,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -16622,6 +16974,7 @@ references:
             pdfLink: 'https://etheses.whiterose.ac.uk/33571/1/Alexia_Toumpa_PhD_Thesis_WhiteRose.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Context and deep learning design: &ref_136
         notes:
             resumeStatus: unseen|title
@@ -16646,6 +16999,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1016/j.compedu.2012.06.007
             googleScholar:
@@ -16681,6 +17035,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Attention-privileged reinforcement learning: &ref_137
         notes:
             resumeStatus: relevent|title
@@ -16707,6 +17062,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -16744,6 +17100,7 @@ references:
             pdfLink: 'https://proceedings.mlr.press/v155/salter21a/salter21a.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Online learning of task-driven object-based visual attention control: &ref_138
         notes:
             resumeStatus: relevent|title
@@ -16770,6 +17127,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1016/j.imavis.2009.10.006
             googleScholar:
@@ -16807,6 +17165,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     The persistence of value-driven attention capture is task-dependent: &ref_139
         notes:
             resumeStatus: relevent|title
@@ -16833,6 +17192,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.31234/osf.io/967k8
             googleScholar:
@@ -16870,6 +17230,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Computational task offloading algorithm based on deep reinforcement learning and multi-task dependency: &ref_140
         notes:
             resumeStatus: unclear|title
@@ -16895,6 +17256,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1016/j.tcs.2024.114462
             googleScholar:
@@ -16936,6 +17298,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Pay attention!-robustifying a deep visuomotor policy through task-focused visual attention: &ref_141
         notes:
             resumeStatus: relevent|title
@@ -16962,6 +17325,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: null
             googleScholar:
@@ -16997,6 +17361,7 @@ references:
             pdfLink: 'https://openaccess.thecvf.com/content_CVPR_2019/papers/Abolghasemi_Pay_Attention_-_Robustifying_a_Deep_Visuomotor_Policy_Through_Task-Focused_CVPR_2019_paper.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Visual spatial attention and proprioceptive data-driven reinforcement learning for robust peg-in-hole task under variable conditions: &ref_142
         notes:
             resumeStatus: irrelevent|abstract
@@ -17025,6 +17390,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/lra.2023.3243526
             googleScholar:
@@ -17064,6 +17430,7 @@ references:
             pdfLink: 'https://ieeexplore.ieee.org/iel7/7083369/7339444/10040732.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Predicting gaze in egocentric video by learning task-dependent attention transition: &ref_143
         notes:
             resumeStatus: relevent|title
@@ -17090,6 +17457,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1007/978-3-030-01225-0_46
             googleScholar:
@@ -17129,6 +17497,7 @@ references:
             pdfLink: 'https://openaccess.thecvf.com/content_ECCV_2018/papers/Huang_Predicting_Gaze_in_ECCV_2018_paper.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Solving a tool-based interaction task using deep reinforcement learning with visual attention: &ref_144
         notes:
             resumeStatus: relevent|title
@@ -17155,6 +17524,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1007/978-3-030-19642-4_23
             googleScholar:
@@ -17190,6 +17560,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Multi-task reinforcement learning in humans: &ref_145
         notes:
             resumeStatus: irrelevent|title
@@ -17216,6 +17587,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1038/s41562-020-01035-y
             googleScholar:
@@ -17253,6 +17625,7 @@ references:
             pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2019/10/22/815332.full.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Probabilistic learning of task-specific visual attention: &ref_146
         notes:
             resumeStatus: relevent|title
@@ -17279,6 +17652,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             crossref:
                 doi: 10.1109/cvpr.2012.6247710
             googleScholar:
@@ -17316,6 +17690,7 @@ references:
             pdfLink: 'http://ilab.usc.edu/publications/doc/Borji_etal12cvpr.pdf'
             cites: null
             citedBy: null
+            abstract: null
     'Anticipation in architectural experience: a computational neurophenomenology for architecture?': &ref_147
         notes:
             comment: ''
@@ -17340,6 +17715,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: 'Anticipation in architectural experience: a computational neurophenomenology for architecture?'
@@ -17470,6 +17846,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Estimating and Influencing User Mental Models of a Robot's Perceptual Capabilities: &ref_148
         notes:
             comment: ''
@@ -17496,6 +17873,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1145/3371382.3378392'
                 title: Estimating and Influencing User Mental Models of a Robot's Perceptual Capabilities
@@ -17571,6 +17949,7 @@ references:
             pdfLink: 'https://dl.acm.org/doi/pdf/10.1145/3371382.3378392'
             cites: null
             citedBy: null
+            abstract: null
     Affordance matching from the shared information in multi-robot: &ref_149
         notes:
             comment: ''
@@ -17597,6 +17976,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/robio.2015.7414625'
                 title: Affordance matching from the shared information in multi-robot
@@ -17694,6 +18074,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Dynamic full-body interactions in virtual reality: &ref_150
         notes:
             comment: ''
@@ -17718,6 +18099,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.17077/etd.l0467tkx'
                 title: Dynamic full-body interactions in virtual reality
@@ -17784,6 +18166,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Learning affordance for semantic robots using ontology approach: &ref_151
         notes:
             comment: ''
@@ -17810,6 +18193,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/iros.2008.4651193'
                 title: Learning affordance for semantic robots using ontology approach
@@ -17894,6 +18278,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Using learned affordances for robotic behavior development: &ref_152
         notes:
             comment: ''
@@ -17920,6 +18305,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/robot.2008.4543794'
                 title: Using learned affordances for robotic behavior development
@@ -18001,6 +18387,7 @@ references:
             pdfLink: 'https://open.metu.edu.tr/bitstream/handle/11511/38871/index.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Exploring sketching for robot collaboration: &ref_153
         notes:
             comment: ''
@@ -18027,6 +18414,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1145/1957656.1957736'
                 title: Exploring sketching for robot collaboration
@@ -18092,6 +18480,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'How People Talk with Robots: Designing Dialogue to Reduce User Uncertainty': &ref_154
         notes:
             comment: ''
@@ -18118,6 +18507,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1609/aimag.v32i4.2377'
                 title: 'How People Talk with Robots: Designing Dialogue to Reduce User Uncertainty'
@@ -18203,6 +18593,7 @@ references:
             pdfLink: 'https://onlinelibrary.wiley.com/doi/pdfdirect/10.1609/aimag.v32i4.2377'
             cites: null
             citedBy: null
+            abstract: null
     Does It Help a Robot Navigate to Call Navigability an Affordance?: &ref_155
         notes:
             comment: ''
@@ -18228,6 +18619,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1007/978-3-540-77915-5_2'
                 title: Does It Help a Robot Navigate to Call Navigability an Affordance?
@@ -18317,6 +18709,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Using a SOFM to learn Object Affordances: &ref_156
         notes:
             comment: ''
@@ -18342,6 +18735,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Using a SOFM to learn Object Affordances
@@ -18417,6 +18811,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Programs for Machine Learning: &ref_157
         notes:
             comment: ''
@@ -18441,6 +18836,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Programs for Machine Learning
@@ -18518,6 +18914,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Purposive and qualitative active vision: &ref_158
         notes:
             comment: ''
@@ -18542,6 +18939,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/icpr.1990.118128'
                 title: Purposive and qualitative active vision
@@ -18635,6 +19033,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Cognition and reality: Principles and implications of cognitive psychology': &ref_159
         notes:
             comment: ''
@@ -18659,6 +19058,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: 'Cognition and reality: Principles and implications of cognitive psychology'
@@ -18720,6 +19120,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Modeling parietal–premotor interactions in primate control of grasping: &ref_160
         notes:
             comment: ''
@@ -18744,6 +19145,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1016/s0893-6080(98)00047-1'
                 title: Modeling parietal–premotor interactions in primate control of grasping
@@ -18865,6 +19267,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Motor facilitation following action observation: A behavioural study in prehensile action': &ref_161
         notes:
             comment: ''
@@ -18889,6 +19292,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1016/s0278-2626(03)00210-0'
                 title: 'Motor facilitation following action observation: A behavioural study in prehensile action'
@@ -19006,6 +19410,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Visual pathways for object-oriented action and object recognition: functional anatomy with PET': &ref_162
         notes:
             comment: ''
@@ -19030,6 +19435,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1093/cercor/7.1.77'
                 title: 'Visual pathways for object-oriented action and object recognition: functional anatomy with PET'
@@ -19138,6 +19544,7 @@ references:
             pdfLink: 'https://academic.oup.com/cercor/article-pdf/7/1/77/9752559/070077.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Learning about objects through action - initial steps towards artificial cognition: &ref_163
         notes:
             comment: ''
@@ -19162,6 +19569,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/robot.2003.1242073'
                 title: Learning about objects through action - initial steps towards artificial cognition
@@ -19246,6 +19654,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'C4.5: Programs for Machine Learning': &ref_164
         notes:
             comment: ''
@@ -19270,6 +19679,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: 'C4.5: Programs for Machine Learning'
@@ -19339,6 +19749,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Behavior-Grounded Representation of Tool Affordances: &ref_165
         notes:
             comment: ''
@@ -19365,6 +19776,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/robot.2005.1570580'
                 title: Behavior-Grounded Representation of Tool Affordances
@@ -19443,6 +19855,7 @@ references:
             pdfLink: 'http://www.cc.gatech.edu/ai/robot-lab/online-publications/StoytchevICRA2005.pdf'
             cites: null
             citedBy: null
+            abstract: null
     Recognition by Functional Parts: &ref_166
         notes:
             comment: ''
@@ -19467,6 +19880,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1006/cviu.1995.1048'
                 title: Recognition by Functional Parts
@@ -19558,6 +19972,7 @@ references:
             pdfLink: 'https://scholarship.libraries.rutgers.edu/esploro/fulltext/technicalDocumentation/Recognition-by-functional-parts/991031549945804646?repId=12643389170004646&mId=13643536740004646&institution=01RUT_INST'
             cites: null
             citedBy: null
+            abstract: null
     Distinctive Image Features from Scale-Invariant Keypoints: &ref_167
         notes:
             comment: ''
@@ -19582,6 +19997,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1023/b:visi.0000029664.99615.94'
                 title: Distinctive Image Features from Scale-Invariant Keypoints
@@ -19689,6 +20105,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Interactive Recognition and Representation of Functionality: &ref_168
         notes:
             comment: ''
@@ -19715,6 +20132,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1006/cviu.1995.1050'
                 title: Interactive Recognition and Representation of Functionality
@@ -19809,6 +20227,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Function-Based Generic Recognition for Multiple Object Categories: &ref_169
         notes:
             comment: ''
@@ -19833,6 +20252,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1006/ciun.1994.1001'
                 title: Function-Based Generic Recognition for Multiple Object Categories
@@ -19895,6 +20315,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Learning prospective pick and place behavior: &ref_170
         notes:
             comment: ''
@@ -19919,6 +20340,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1109/devlrn.2002.1011865'
                 title: Learning prospective pick and place behavior
@@ -19998,6 +20420,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     'Exploratory Behavior in the Development of Perceiving, Acting, and the Acquiring of Knowledge': &ref_171
         notes:
             comment: ''
@@ -20022,6 +20445,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1146/annurev.ps.39.020188.000245'
                 title: 'Exploratory Behavior in the Development of Perceiving, Acting, and the Acquiring of Knowledge'
@@ -20112,6 +20536,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Cognition and reality: &ref_172
         notes:
             comment: ''
@@ -20136,6 +20561,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: null
                 title: Cognition and reality
@@ -20192,6 +20618,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
     Function-Based Object Recognition for Multiple Object Categories: &ref_173
         notes:
             comment: ''
@@ -20216,6 +20643,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
+                abstract: null
             openAlex:
                 doi: 'https://doi.org/10.1142/9789812797919_0037'
                 title: Function-Based Object Recognition for Multiple Object Categories
@@ -20275,6 +20703,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: ecological affordance based object perception machine learning
