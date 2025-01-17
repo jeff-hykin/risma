@@ -1,4 +1,9 @@
 # 
+# custom
+# 
+pdfs/
+
+# 
 # standard
 # 
 **/*.do_not_sync
