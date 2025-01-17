@@ -7,6 +7,10 @@ import { distance } from "../subrepos/cliffy/_utils/distance.ts"
 import { isValidPathStringForFilePosix } from "https://deno.land/x/good@1.13.4.3/flattened/is_valid_path_string_for_file_posix.js"
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
 
+export const clearScreen = ()=>{
+    console.log('\n'.repeat(Deno.consoleSize().rows))
+    // console.log('\x1B[2J')
+}
 
 const segmenter = new Intl.Segmenter()
 // not sure how well this handles emojis

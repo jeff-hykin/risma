@@ -14,11 +14,12 @@ import { parseArgs, flag, required, initialValue } from "https://deno.land/x/goo
 import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranked_compare.js" 
 
 import { version } from "./tools/version.js"
-import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write } from "./tools/input_tools.js"  
+import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write, clearScreen } from "./tools/input_tools.js"  
 import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData, openAlexToSimpleFormat } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
+import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, } from "./tools/project_tools.js"
 
 // TODO: make sorter and keywords real time editable (reload from file)
 // TODO: make relevence score of discoveryMethod, list most helpful searches
@@ -30,11 +31,6 @@ import { Reference } from "./tools/reference.js"
     // publication year
     // keyword combos
     // specific author included
-
-const clearScreen = ()=>{
-    console.log('\n'.repeat(Deno.consoleSize().rows))
-    // console.log('\x1B[2J')
-}
 
 const argsInfo = parseArgs({
     rawArgs: Deno.args,
@@ -82,66 +78,6 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         }
     }
     let activeProject
-    const loadProject = async (path) => {
-        let project
-        const defaultObject = {
-            settings: {
-                keywords: {
-                    positive: [],
-                    negative: [],
-                    neutral: [],
-                },
-            },
-            references: {},
-            discoveryAttempts: [],
-        }
-        project = await FileSystem.read(path) || JSON.stringify(defaultObject)
-        project = yaml.parse(project)
-        if (!project.discoveryAttempts || !project.references) {
-            console.warn(`Active project ${green(JSON.stringify(path))}\ndoesn't seem to have core fields`)
-            project = defaultObject
-        }
-        project.settings = project.settings || {}
-        project.settings.keywords = project.settings.keywords || {}
-        for (const [key, value] of Object.entries(project.references)) {
-            project.references[key] = new Reference(value)
-            try {
-                project.references[key].score = score(project.references[key], project)
-                project.references[key].scoreString = project.references[key].score.join("|")
-            } catch (error) {
-                console.debug(`score error is:`,error)
-            }
-        }
-        for (let eachDiscoveryAttempt of project.discoveryAttempts) {
-            for (let each of eachDiscoveryAttempt.referenceLinks) {
-                each.link = project.references[each.title]
-            }
-        }
-        return project
-    }
-    
-    const saveProject = async (project)=>{
-        const projectToSave = structuredClone(project)
-        // fixup references
-        for (const [key, value] of Object.entries(projectToSave.references)) {
-            projectToSave.references[key] = new Reference(value)
-            try {
-                projectToSave.references[key].score = score(projectToSave.references[key], activeProject)
-                projectToSave.references[key].scoreString = projectToSave.references[key].score.join("|")
-            } catch (error) {
-                console.debug(`score error is:`,error)
-            }
-        }
-        // fixup links
-        for (let eachDiscoveryAttempt of projectToSave.discoveryAttempts) {
-            for (let each of eachDiscoveryAttempt.referenceLinks) {
-                each.link = projectToSave.references[each.title]
-            }
-        }
-        await Reference.beforeSave()
-        await FileSystem.write({path: storageObject.activeProjectPath, data: yaml.stringify(projectToSave,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
-    }
-
     function getReferenceStatusCounts() {
         const counts = {
             'unseen|title': 0,
@@ -216,101 +152,11 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         return reset``+text
     }
 
-    const score = (each, project)=>{
-        project = project || activeProject // TODO: remove
-        //
-        // keyword count
-        //
-        const keywords = project.settings.keywords
-        keywords.positive = keywords.positive || []
-        keywords.negative = keywords.negative || []
-        keywords.neutral = keywords.neutral || []
-        keywords.positive = keywords.positive.map(each=>each.toLowerCase())
-        keywords.negative = keywords.negative.map(each=>each.toLowerCase())
-        keywords.neutral = keywords.neutral.map(each=>each.toLowerCase())
-        const goodKeywords = keywords.positive
-        const badKeywords = keywords.negative
-        const neutralKeywords = keywords.neutral
-        function getKeywordCount(title) {
-            if (!title) {
-                return {good: 0, bad: 0, neutral: 0}
-            }
-            let numberOfGoodKeywords = 0
-            let numberOfBadKeywords = 0
-            let numberOfNeutralKeywords = 0
-            let index = -1
-            for (let char of title) {
-                index++
-                if (!title.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
-                    const remaining = title.slice(index,).toLowerCase()
-                    let matching
-                    // FIXME: need to sort by length of keyword 
-                    if (goodKeywords.some(each=>(remaining.startsWith(matching=each)))) {
-                        numberOfGoodKeywords++
-                        index += matching.length
-                    } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
-                        numberOfBadKeywords++
-                        index += matching.length
-                    } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
-                        numberOfNeutralKeywords++
-                        index += matching.length
-                    }
-                }
-            }
-            return {good: numberOfGoodKeywords, bad: numberOfBadKeywords, neutral: numberOfNeutralKeywords}
-        }
-        
-        // 
-        // evaluate user-defined scoring functions
-        // 
-        let scoreList = [0,0,0,0,0]
-        for (const [key, value] of Object.entries(project.settings.scoreGivers||{})) {
-            try {
-                const func = eval(value)
-                func(
-                    each,
-                    scoreList,
-                    {
-                        keywords,
-                        settings: project.settings,
-                        numberOfGoodKeywordsIn: (title)=>getKeywordCount(title).good,
-                        numberOfBadKeywordsIn: (title)=>getKeywordCount(title).bad,
-                        numberOfNeutralKeywordsIn: (title)=>getKeywordCount(title).neutral,
-                    }
-                )
-            } catch (error) {
-                console.debug(`\nerror when calculating score with ${key}() for `, value)
-                throw error
-            }
-        }
-        if (Object.values(project?.settings?.scoreGivers||{}).length == 0) {
-            // use year (currently gets added to keyword score)
-            scoreList[0] += (each.year-0||0)
-        }
-        
-        return scoreList
-    }
-
-    function referenceSorter(reverse) {
-        // const activeReferences = references.filter(each=>each.resumeStatus == whatKind)
-        // for (let each of activeReferences) {
-        //     console.debug(`each.title, score(each) is:`,highlightKeywords(each.title), score(each))
-        // }
-        if (reverse) {
-            return (b,a)=>rankedCompare(score(b, activeProject),score(a, activeProject))
-        } else {
-            return (a,b)=>rankedCompare(score(b, activeProject),score(a, activeProject))
-        }
-    }
-
-    function sortReferencesByDate(references) {
-        return references.sort((a,b)=>new Date(b?.notes?.events?.added).getTime()-new Date(a?.notes?.events?.added).getTime())
-    }
 // 
 // main loop
 // 
 activeProject = await loadProject(storageObject.activeProjectPath)
-await saveProject(activeProject) // immediately format
+await saveProject({activeProject, path: storageObject.activeProjectPath}) // immediately format
 mainLoop: while (true) {
     showProjectStatus()
     const whichAction = await selectOne({
@@ -417,7 +263,7 @@ mainLoop: while (true) {
         for (const each of Object.values(unseenReferences).sort(referenceSorter())) {
             console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
         }
-        await saveProject(activeProject)
+        await saveProject({activeProject, path: storageObject.activeProjectPath})
         prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
     } else if (whichAction == "change project") {
         const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
@@ -454,7 +300,7 @@ mainLoop: while (true) {
             })
             activeProject.settings.keywords[kind] = activeProject.settings.keywords[kind].filter(each=>!onesToDelete.includes(each))
         }
-        saveProject(activeProject)
+        saveProject({activeProject, path: storageObject.activeProjectPath})
     } else if (whichAction == "review references") {
         reviewLoop: while (true) {
             const references = Object.values(activeProject.references)
@@ -488,7 +334,7 @@ mainLoop: while (true) {
                         each.reasonsRelevant = each.reasonsRelevant || []
                         each.events = each.events || {}
                         each.events["sawTitle"] =  each.events["sawTitle"] || new DateTime().toISOString()
-                        saveProject(activeProject)
+                        saveProject({activeProject, path: storageObject.activeProjectPath})
                         const maxTagLength = 23
                         if (keyName == "n") {
                             console.log(`\r${cyan`⏺  skipped`}`.padEnd(maxTagLength), message)
@@ -509,7 +355,7 @@ mainLoop: while (true) {
                                 console.log(`\nunrecognized key: ${keyName}                                `)
                                 continue
                             }
-                            await saveProject(activeProject)
+                            await saveProject({activeProject, path: storageObject.activeProjectPath})
                         }
                         break
                     }
@@ -521,7 +367,7 @@ mainLoop: while (true) {
                 nextReferenceLoop: while (1) {
                     activeReferences = references.filter(each=>each.resumeStatus == whatKind).concat([quit])
                     if (activeReferences.length == 1) {
-                        await saveProject(activeProject)
+                        await saveProject({activeProject, path: storageObject.activeProjectPath})
                         prompt(`finished reviewing ${whatKind}! (press enter to continue)`)
                         continue reviewLoop
                     }
@@ -545,7 +391,7 @@ mainLoop: while (true) {
                         active.accordingTo.$manuallyEntered.abstract = await askForParagraph(reset`paste in the abstract (press enter twice to submit)`)
                         active.events = active.events || {}
                         active.events["sawAbstract"] =  active.events["sawAbstract"] || new DateTime().toISOString()
-                        saveProject(activeProject)
+                        saveProject({activeProject, path: storageObject.activeProjectPath})
                     }
                     if (active.pdfLink && !active.pdfWasDownloaded) {
                         const downloadPath = FileSystem.parentPath(storageObject.activeProjectPath) + "/pdfs/"+active.title+".pdf"
@@ -555,7 +401,7 @@ mainLoop: while (true) {
                                 data: await fetch(active.pdfLink).then(each=>each.arrayBuffer().then(buffer=>new Uint8Array(buffer))).catch(error=>`error: ${error}`),
                             }).then(()=>{
                                 active.pdfWasDownloaded = true
-                                saveProject(activeProject)
+                                saveProject({activeProject, path: storageObject.activeProjectPath})
                             })
                         }
                     }
@@ -580,7 +426,7 @@ mainLoop: while (true) {
                     if (choice == "relevent" || choice == "super-relevent") {
                         active.reasonsRelevant.push("abstract")
                     }
-                    saveProject(activeProject)
+                    saveProject({activeProject, path: storageObject.activeProjectPath})
                 }
             } else {
                 let quit = { title: "quit", }
@@ -588,7 +434,7 @@ mainLoop: while (true) {
                 nextReferenceLoop: while (1) {
                     activeReferences = [quit].concat(references.filter(each=>each.resumeStatus == whatKind))
                     if (activeReferences.length == 1) {
-                        await saveProject(activeProject)
+                        await saveProject({activeProject, path: storageObject.activeProjectPath})
                         prompt(`finished reviewing ${whatKind}! (press enter to continue)`)
                         continue reviewLoop
                     }
@@ -629,7 +475,7 @@ mainLoop: while (true) {
                 nextReferenceLoop: while (1) {
                     activeReferences = references.filter(each=>each.resumeStatus == whatKind).concat([quit])
                     if (activeReferences.length == 1) {
-                        await saveProject(activeProject)
+                        await saveProject({activeProject, path: storageObject.activeProjectPath})
                         prompt(`finished getting references for ${whatKind}! (press enter to continue)`)
                         continue mainLoop
                     }
@@ -677,7 +523,7 @@ mainLoop: while (true) {
                     }
                     console.debug(`discoveryMethod is:`,discoveryMethod)
                     activeProject.discoveryAttempts.push(discoveryMethod)
-                    await saveProject(activeProject)
+                    await saveProject({activeProject, path: storageObject.activeProjectPath})
                     prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
                 }
             }
@@ -696,14 +542,14 @@ mainLoop: while (true) {
             async (mention)=>{
                 let index = -1
                 for (let each of referencesToScan) {
-                    // this has to be done because saveProject(activeProject) refreshes activeProject
+                    // this has to be done because saveProject({activeProject, path: storageObject.activeProjectPath}) refreshes activeProject
                     each = activeProject.references[each.title]
                     index++
                     await mention(`getting ${index+1} of ${referencesToScan.length}`)
                     try {
                         each.accordingTo.openAlex = openAlexToSimpleFormat(await getOpenAlexData(each.doi))
                         // wait a bit to avoid hitting rate limit
-                        await saveProject(activeProject)
+                        await saveProject({activeProject, path: storageObject.activeProjectPath})
                         await new Promise(r=>setTimeout(r,1000))
                     } catch (error) {
                         await mention(`getting ${index+1} of ${referencesToScan.length}: hit error ${error}`)
@@ -716,7 +562,7 @@ mainLoop: while (true) {
             async (mention)=>{
                 let index = -1
                 for (let each of referencesNoDoi) {
-                    // this has to be done because saveProject(activeProject) refreshes activeProject
+                    // this has to be done because saveProject({activeProject, path: storageObject.activeProjectPath}) refreshes activeProject
                     each = activeProject.references[each.title]
                     index++
                     await mention(`getting ${index+1} of ${referencesNoDoi.length}`)
@@ -725,7 +571,7 @@ mainLoop: while (true) {
                         each.accordingTo = each.accordingTo || {}
                         each.accordingTo.crossref = each.accordingTo.crossref || {}
                         each.accordingTo.crossref.doi = doi
-                        await saveProject(activeProject)
+                        await saveProject({activeProject, path: storageObject.activeProjectPath})
                     } catch (error) {
                         await mention(`getting ${index+1} of ${referencesNoDoi.length}: hit error ${error}`)
                         await new Promise(r=>setTimeout(r,2000))
@@ -739,14 +585,14 @@ mainLoop: while (true) {
             async (mention)=>{
                 let index = -1
                 for (let each of lingeringReferences) {
-                    // this has to be done because saveProject(activeProject) refreshes activeProject
+                    // this has to be done because saveProject({activeProject, path: storageObject.activeProjectPath}) refreshes activeProject
                     each = activeProject.references[each.title]
                     index++
                     await mention(`getting ${index+1} of ${lingeringReferences.length}`)
                     try {
                         each.accordingTo.openAlex = openAlexToSimpleFormat(await getOpenAlexData(each.doi))
                         // wait a bit to avoid hitting rate limit
-                        await saveProject(activeProject)
+                        await saveProject({activeProject, path: storageObject.activeProjectPath})
                         await new Promise(r=>setTimeout(r,1000))
                     } catch (error) {
                         await mention(`getting ${index+1} of ${lingeringReferences.length}: hit error ${error}`)
@@ -755,10 +601,10 @@ mainLoop: while (true) {
                 }
             }
         )
-        saveProject(activeProject)
+        saveProject({activeProject, path: storageObject.activeProjectPath})
         console.log(`data added`)
     } else if (whichAction == "exit") {
-        await saveProject(activeProject)
+        await saveProject({activeProject, path: storageObject.activeProjectPath})
         break mainLoop
     } else if (whichAction == "explore references") {
         throw Error(`not implemented yet`)
