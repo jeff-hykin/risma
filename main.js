@@ -374,8 +374,9 @@ mainLoop: while (true) {
             } else if (whatKind.endsWith("|title")) {
                 let quit = { title: "quit", }
                 let activeReferences
+                let skippedReferences = []
                 nextReferenceLoop: while (1) {
-                    activeReferences = references.filter(each=>each.resumeStatus == whatKind).concat([quit])
+                    activeReferences = references.filter(each=>each.resumeStatus == whatKind && !skippedReferences.includes(each.title)).concat([quit])
                     if (activeReferences.length == 1) {
                         await saveProject({activeProject, path: storageObject.activeProjectPath})
                         prompt(`finished reviewing ${whatKind}! (press enter to continue)`)
@@ -387,7 +388,7 @@ mainLoop: while (true) {
                     let active = await selectOne({
                         message: "which title do you want to explore?",
                         options: colorObject,
-                        optionDescriptions: activeReferences.map(each=>cyan`${each.year}`),
+                        optionDescriptions: activeReferences.map(each=>cyan`${each.year}, ${each.abstract?"📜":""}`),
                         descriptionHighlighter: dim,
                     })
                     active = activeProject.references[active.title]
@@ -395,22 +396,33 @@ mainLoop: while (true) {
                         continue mainLoop
                     }
                     // TODO: fetch the webpage and attempt parsing some of it
-                    await OperatingSystem.openUrl(active.link||active.pdfLink)
                     if (!active.abstract) {
+                        await OperatingSystem.openUrl(active.link||active.pdfLink)
                         activeProject = await loadProject(storageObject.activeProjectPath)
                         references = Object.values(activeProject.references)
                         active = activeProject.references[active.title]
-
                         active.accordingTo = active.accordingTo || {}
                         active.accordingTo.$manuallyEntered = active.accordingTo.$manuallyEntered || {}
                         active.accordingTo.$manuallyEntered.abstract = await askForParagraph(reset`paste in the abstract (press enter 3 times to submit)`)
                         active.events = active.events || {}
-                        active.events["sawAbstract"] =  active.events["sawAbstract"] || new DateTime().toISOString()
                         saveProject({activeProject, path: storageObject.activeProjectPath})
                     }
+                    console.log(`\nabstract:\n\n${highlightKeywords(wordWrap(active.abstract, 80))}\n`)
+                    const choice = await selectOne({
+                        message: "abstract was",
+                        options: [
+                            "(skip question)",
+                            "irrelevent",
+                            "slightly-irrelevent",
+                            "unclear",
+                            "appendix",
+                            "relevent",
+                            "super-relevent",
+                        ],
+                    })
                     if (active.pdfLink && !active.pdfWasDownloaded) {
                         const downloadPath = FileSystem.parentPath(storageObject.activeProjectPath) + "/pdfs/"+active.title+".pdf"
-                        if (await Console.askFor.yesNo(reset`want me to download the pdf for you?\n` + cyan(downloadPath))+"\n\n") {
+                        if (await Console.askFor.yesNo(reset`want me to download the pdf for you?\n` + cyan(downloadPath))) {
                             FileSystem.write({
                                 path: downloadPath,
                                 data: await fetch(active.pdfLink).then(each=>each.arrayBuffer().then(buffer=>new Uint8Array(buffer))).catch(error=>`error: ${error}`),
@@ -423,21 +435,15 @@ mainLoop: while (true) {
                             })
                         }
                     }
-                    console.log(`\nabstract:\n\n${highlightKeywords(wordWrap(active.abstract, 80))}\n`)
-                    const choice = await selectOne({
-                        message: "abstract was",
-                        options: [
-                            "irrelevent",
-                            "slightly-irrelevent",
-                            "unclear",
-                            "appendix",
-                            "relevent",
-                            "super-relevent",
-                        ],
-                    })
+                    if (choice == "(skip question)" || choice.length == 0) {
+                        skippedReferences.push(active.title)
+                        continue nextReferenceLoop
+                    }
                     activeProject = await loadProject(storageObject.activeProjectPath)
                     references = Object.values(activeProject.references)
                     active = activeProject.references[active.title]
+                    active.events = active.events || {}
+                    active.events["sawAbstract"] =  active.events["sawAbstract"] || new DateTime().toISOString()
                     active.reasonsRelevant = active.reasonsRelevant || [ ]
                     active.reasonsNotRelevant = active.reasonsNotRelevant || []
                     active.resumeStatus = `${choice}|abstract`
