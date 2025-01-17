@@ -321,6 +321,10 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
             return (a,b)=>rankedCompare(score(b),score(a))
         }
     }
+
+    function sortReferencesByDate(references) {
+        return .sort((a,b)=>new Date(b?.notes?.events?.added).getTime()-new Date(a?.notes?.events?.added).getTime())
+    }
 // 
 // main loop
 // 
@@ -699,7 +703,7 @@ mainLoop: while (true) {
             break 
         }
     } else if (whichAction == "autofill data") {
-        const references = Object.values(activeProject.references)
+        const references = sortReferencesByDate(Object.values(activeProject.references))
         const referencesNoDoi = references.filter(each=>!each.doi)
         const referencesToScan = references.filter(each=>each.doi&&(!each.accordingTo?.openAlex))
         console.log(`${references.length} references`)
