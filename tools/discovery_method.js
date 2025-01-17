@@ -5,7 +5,7 @@ export class DiscoveryMethod {
         dateTime,
         searchEngine,
         referenceLinks=[],
-        score=0,
+        score=NaN,
         ...other
     }) {
         Object.assign(this,{
