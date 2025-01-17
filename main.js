@@ -19,7 +19,7 @@ import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, ge
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
-import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, } from "./tools/project_tools.js"
+import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, rateDiscoveryAttempts } from "./tools/project_tools.js"
 
 // TODO: make sorter and keywords real time editable (reload from file)
 // TODO: make relevence score of discoveryMethod, list most helpful searches
@@ -84,6 +84,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
             'unclear|title': 0,
             'skipped|title': 0,
             'relevent|title': 0,
+            'super-relevent|title': 0,
             'relevent|abstract': 0,
             'super-relevent|abstract': 0,
             'irrelevent|title': 0,
@@ -169,6 +170,7 @@ mainLoop: while (true) {
             "modify keywords",
             "explore references",
             "autofill data",
+            "score the discovery attempts",
             "exit",
         ],
     })
@@ -290,7 +292,7 @@ mainLoop: while (true) {
                 "neutral",
             ],
         })
-        const keywords = (await askForParagraph(`list keyterms to add, one per line, press enter twice to submit list`)).split("\n").map(each=>each.trim()).filter(each=>each.length>0)
+        const keywords = (await askForParagraph(`list keyterms to add, one per line, press enter 3 times to submit list`)).split("\n").map(each=>each.trim()).filter(each=>each.length>0)
         const possibleForDelete = [...activeProject.settings.keywords[kind]]
         activeProject.settings.keywords[kind].push(...keywords)
         if (await Console.askFor.yesNo(`delete some keywords? (y/n)`)) {
@@ -303,7 +305,7 @@ mainLoop: while (true) {
         saveProject({activeProject, path: storageObject.activeProjectPath})
     } else if (whichAction == "review references") {
         reviewLoop: while (true) {
-            const references = Object.values(activeProject.references)
+            let references = Object.values(activeProject.references)
             const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
             const counts = getReferenceStatusCounts()
             
@@ -320,21 +322,25 @@ mainLoop: while (true) {
             if (whatKind == "nothing (quit)") {
                 continue mainLoop
             } else if (whatKind == "unseen|title" || whatKind == "skipped|title") {
-                console.log(cyan`\nCONTROLS: g=relevent (good), b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
+                console.log(cyan`\nCONTROLS: g=relevent (good), s=super relevent, b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
                 nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(referenceSorter({project: activeProject}))) {
                     // TODO: highlight good and bad keywords
-                    let message = `${cyan`(${each?.year}, ${score(each, activeProject)}) `}${highlightKeywords(each.title)}: `
+                    let message = `${cyan`${score(each, activeProject)} (${each?.year})`}${highlightKeywords(each.title)}: `
                     write(message)
+                    each.reasonsNotRelevant = each.reasonsNotRelevant || []
+                    each.reasonsRelevant = each.reasonsRelevant || []
+                    each.events = each.events || {}
+                    each.events["sawTitle"] =  each.events["sawTitle"] || new DateTime().toISOString()
+                    await saveProject({activeProject, path: storageObject.activeProjectPath})
                     for await (let { name: keyName, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
+                        activeProject = await loadProject(storageObject.activeProjectPath)
+                        // to handle live reloading of data
+                        each = activeProject.references[each.title]
+                        
                         if (keyName == "q" || (ctrl && keyName == "c")) {
                             console.log(cyan`quit`)
                             continue reviewLoop
                         }
-                        each.reasonsNotRelevant = each.reasonsNotRelevant || []
-                        each.reasonsRelevant = each.reasonsRelevant || []
-                        each.events = each.events || {}
-                        each.events["sawTitle"] =  each.events["sawTitle"] || new DateTime().toISOString()
-                        saveProject({activeProject, path: storageObject.activeProjectPath})
                         const maxTagLength = 23
                         if (keyName == "n") {
                             console.log(`\r${cyan`⏺  skipped`}`.padEnd(maxTagLength), message)
@@ -343,6 +349,10 @@ mainLoop: while (true) {
                             if (keyName == "g") {
                                 console.log(`\r${green`✅ relevent`}`.padEnd(maxTagLength), message)
                                 each.resumeStatus = "relevent|title"
+                                each.reasonsRelevant.push("title")
+                            } else if (keyName == "s") {
+                                console.log(`\r${green`⭐️ super  `}`.padEnd(maxTagLength), message)
+                                each.resumeStatus = "super-relevent|title"
                                 each.reasonsRelevant.push("title")
                             } else if (keyName == "u") {
                                 console.log(`\r${magenta`❔ unclear`}`.padEnd(maxTagLength), message)
@@ -374,21 +384,26 @@ mainLoop: while (true) {
                     // TODO: sort by publisher and year, allow ranking publishers
                     activeReferences.sort(referenceSorter({project: activeProject}))
                     const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${highlightKeywords(each.title)}`), each]))
-                    const active = await selectOne({
+                    let active = await selectOne({
                         message: "which title do you want to explore?",
                         options: colorObject,
                         optionDescriptions: activeReferences.map(each=>cyan`${each.year}`),
                         descriptionHighlighter: dim,
                     })
-                    if (active == quit) {
+                    active = activeProject.references[active.title]
+                    if (active == quit || !active) {
                         continue mainLoop
                     }
                     // TODO: fetch the webpage and attempt parsing some of it
                     await OperatingSystem.openUrl(active.link||active.pdfLink)
                     if (!active.abstract) {
+                        activeProject = await loadProject(storageObject.activeProjectPath)
+                        references = Object.values(activeProject.references)
+                        active = activeProject.references[active.title]
+
                         active.accordingTo = active.accordingTo || {}
                         active.accordingTo.$manuallyEntered = active.accordingTo.$manuallyEntered || {}
-                        active.accordingTo.$manuallyEntered.abstract = await askForParagraph(reset`paste in the abstract (press enter twice to submit)`)
+                        active.accordingTo.$manuallyEntered.abstract = await askForParagraph(reset`paste in the abstract (press enter 3 times to submit)`)
                         active.events = active.events || {}
                         active.events["sawAbstract"] =  active.events["sawAbstract"] || new DateTime().toISOString()
                         saveProject({activeProject, path: storageObject.activeProjectPath})
@@ -399,7 +414,10 @@ mainLoop: while (true) {
                             FileSystem.write({
                                 path: downloadPath,
                                 data: await fetch(active.pdfLink).then(each=>each.arrayBuffer().then(buffer=>new Uint8Array(buffer))).catch(error=>`error: ${error}`),
-                            }).then(()=>{
+                            }).then(async ()=>{
+                                activeProject = await loadProject(storageObject.activeProjectPath)
+                                references = Object.values(activeProject.references)
+                                active = activeProject.references[active.title]
                                 active.pdfWasDownloaded = true
                                 saveProject({activeProject, path: storageObject.activeProjectPath})
                             })
@@ -417,6 +435,9 @@ mainLoop: while (true) {
                             "super-relevent",
                         ],
                     })
+                    activeProject = await loadProject(storageObject.activeProjectPath)
+                    references = Object.values(activeProject.references)
+                    active = activeProject.references[active.title]
                     active.reasonsRelevant = active.reasonsRelevant || [ ]
                     active.reasonsNotRelevant = active.reasonsNotRelevant || []
                     active.resumeStatus = `${choice}|abstract`
@@ -502,7 +523,6 @@ mainLoop: while (true) {
                             each.title = title
                         }
                         const hadBeenSeenBefore = !!activeProject.references[title]
-                        activeProject.references[title] = each
                         discoveryMethod.referenceLinks.push({
                             hadBeenSeenBefore,
                             title: title,
@@ -603,6 +623,18 @@ mainLoop: while (true) {
         )
         saveProject({activeProject, path: storageObject.activeProjectPath})
         console.log(`data added`)
+    } else if (whichAction == "score the discovery attempts") {
+        rateDiscoveryAttempts(activeProject.discoveryAttempts)
+        activeProject.discoveryAttempts = activeProject.discoveryAttempts.map(each=>new DiscoveryMethod(each))
+        await saveProject({activeProject, path: storageObject.activeProjectPath})
+        const sorted = [...activeProject.discoveryAttempts].map(each=>new DiscoveryMethod(each))
+        sorted.sort((a,b)=>b.score-a.score)
+        console.log(`sorted:`)
+        for (let each of sorted) {
+            console.log(`    ${red(each.score)}: ${cyan(each.query||each.wasRelatedTo)}`)
+        }
+        prompt("")
+        break mainLoop
     } else if (whichAction == "exit") {
         await saveProject({activeProject, path: storageObject.activeProjectPath})
         break mainLoop

@@ -169,3 +169,40 @@ export function referenceSorter({reverse, project}) {
 export function sortReferencesByDate(references) {
     return references.sort((a,b)=>new Date(b?.notes?.events?.added).getTime()-new Date(a?.notes?.events?.added).getTime())
 }
+
+export function scoreDiscoveryAttempt(discoveryAttempt) {
+    let sum = 0
+    let count = 0
+    for (let each of discoveryAttempt.referenceLinks) {
+        each = each.link
+        if (!each || each.resumeStatus == "unseen|title") {
+            continue
+        } else {
+            count++
+            if (each.resumeStatus == "relevent|title") {
+                sum += 1
+            } else if (each.resumeStatus == "super-relevent|title") {
+                sum += 3
+            } else if (each.resumeStatus == "irrelevent|title") {
+                sum -= 1
+            } else if (each.resumeStatus == "relevent|abstract") {
+                sum += 4
+            } else if (each.resumeStatus == "super-relevent|abstract") {
+                sum += 10
+            } else if (each.resumeStatus == "appendix|abstract") {
+                sum += 0.5
+            } else if (each.resumeStatus == "slightly-irrelevent|abstract") {
+                sum -= 2
+            } else if (each.resumeStatus == "irrelevent|abstract") {
+                sum -= 3
+            }
+        }
+    }
+    return (sum / count)||0
+}
+
+export function rateDiscoveryAttempts(discoveryAttempts) {
+    for (let each of discoveryAttempts) {
+        each.score = scoreDiscoveryAttempt(each)
+    }
+}

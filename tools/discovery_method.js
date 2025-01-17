@@ -5,10 +5,12 @@ export class DiscoveryMethod {
         dateTime,
         searchEngine,
         referenceLinks=[],
+        score=0,
         ...other
     }) {
         Object.assign(this,{
             query,
+            score,
             dateTime,
             searchEngine,
             ...other,
