@@ -187,10 +187,11 @@ export const withSpinner = async (taskName, func) => {
     const baseLength = spinnerWidth + terminalStringLength(taskName)
     const mention = (message)=>{
         const maxWidth = Deno.consoleSize().columns
-        let appendedMessage = yellow`: ${message}`.toString()
+        let appendedMessage = yellow`: ${message||""}`.toString()
         const thisWidth = baseLength + terminalStringLength(appendedMessage)
-        // pad out rest of line to cover up previous messages
-        appendedMessage = appendedMessage + " ".repeat(Math.max(0, maxWidth - thisWidth)) + "\r"
+        // note the front padding will get overwritten by the next spinner printout
+        // the end of the line is padded out to cover up the previous message(s)
+        appendedMessage = "\r" + " ".repeat(spinnerWidth) + taskName + appendedMessage + " ".repeat(Math.max(0, maxWidth - thisWidth)) + "\r"
         write(appendedMessage)
     }
     terminalSpinner.start()
