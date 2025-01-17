@@ -15,7 +15,7 @@ import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranke
 
 import { version } from "./tools/version.js"
 import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write } from "./tools/input_tools.js"  
-import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData } from "./tools/search_tools.js"
+import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData, openAlexToSimpleFormat } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
@@ -336,6 +336,7 @@ mainLoop: while (true) {
             "change project",
             "modify keywords",
             "explore references",
+            "autofill data",
             "exit",
         ],
     })
@@ -697,6 +698,79 @@ mainLoop: while (true) {
             
             break 
         }
+    } else if (whichAction == "autofill data") {
+        const references = Object.values(activeProject.references)
+        const referencesNoDoi = references.filter(each=>!each.doi)
+        const referencesToScan = references.filter(each=>each.doi&&(!each.accordingTo?.openAlex))
+        console.log(`${references.length} references`)
+        console.log(`   ${referencesToScan.length} with doi but no openAlex data`)
+        console.log(`   ${referencesNoDoi.length} without doi`)
+        console.log(`   `)
+        await withSpinner("getting openAlex info",
+            async (mention)=>{
+                let index = -1
+                for (let each of referencesToScan) {
+                    // this has to be done because saveProject() refreshes activeProject
+                    each = activeProject.references[each.title]
+                    index++
+                    await mention(`getting ${index+1} of ${referencesToScan.length}`)
+                    try {
+                        each.accordingTo.openAlex = openAlexToSimpleFormat(await getOpenAlexData(each.doi))
+                        // wait a bit to avoid hitting rate limit
+                        await saveProject()
+                        await new Promise(r=>setTimeout(r,1000))
+                    } catch (error) {
+                        await mention(`getting ${index+1} of ${referencesToScan.length}: hit error ${error}`)
+                        await new Promise(r=>setTimeout(r,2000))
+                    }
+                }
+            }
+        )
+        await withSpinner("attempting to get doi's for articles missing one",
+            async (mention)=>{
+                let index = -1
+                for (let each of referencesNoDoi) {
+                    // this has to be done because saveProject() refreshes activeProject
+                    each = activeProject.references[each.title]
+                    index++
+                    await mention(`getting ${index+1} of ${referencesNoDoi.length}`)
+                    try {
+                        let doi = await title2Doi(each.title)
+                        each.accordingTo = each.accordingTo || {}
+                        each.accordingTo.crossref = each.accordingTo.crossref || {}
+                        each.accordingTo.crossref.doi = doi
+                        await saveProject()
+                    } catch (error) {
+                        await mention(`getting ${index+1} of ${referencesNoDoi.length}: hit error ${error}`)
+                        await new Promise(r=>setTimeout(r,2000))
+                    }
+                }
+            }
+        )
+        // lingering articles
+        const lingeringReferences = referencesNoDoi.filter(each=>each.doi)
+        await withSpinner("getting remaining articles info",
+            async (mention)=>{
+                let index = -1
+                for (let each of lingeringReferences) {
+                    // this has to be done because saveProject() refreshes activeProject
+                    each = activeProject.references[each.title]
+                    index++
+                    await mention(`getting ${index+1} of ${lingeringReferences.length}`)
+                    try {
+                        each.accordingTo.openAlex = openAlexToSimpleFormat(await getOpenAlexData(each.doi))
+                        // wait a bit to avoid hitting rate limit
+                        await saveProject()
+                        await new Promise(r=>setTimeout(r,1000))
+                    } catch (error) {
+                        await mention(`getting ${index+1} of ${lingeringReferences.length}: hit error ${error}`)
+                        await new Promise(r=>setTimeout(r,2000))
+                    }
+                }
+            }
+        )
+        saveProject()
+        console.log(`data added`)
     } else if (whichAction == "exit") {
         await saveProject()
         break mainLoop
