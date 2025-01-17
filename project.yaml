@@ -122,6 +122,8 @@ settings:
             - represent
             - selective attention
             - inattentional blindness
+            - gibson
+            - optical flow
         negative:
             - large language model
             - language model
