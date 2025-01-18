@@ -1210,10 +1210,24 @@ export const searchOptions = {
         //         }
         //     ]
         async urlToListOfResults(url) {
-
             let htmlResult
             const baseUrl = new URL(url).origin
             const getHref = (element)=>element.getAttribute("href").startsWith("/")?`${baseUrl}/${element.getAttribute("href")}`:element.getAttribute("href")
+            
+            // 
+            // avoid hitting rate limit
+            // 
+            const thresholdTime = this.urlToListOfResults.lastFetchTime.getTime() + this.urlToListOfResults.waitTime
+            const now = new Date().getTime()
+            const needToWait = thresholdTime - now
+            if (needToWait > 0) {
+                await new Promise(r=>setTimeout(r, needToWait))
+            }
+            this.urlToListOfResults.lastFetchTime = new Date()
+            
+            // 
+            // fetch
+            // 
             try {
                 htmlResult = await fetch(new URL(url)).then(result=>result.text())
             } catch (error) {
@@ -1431,7 +1445,7 @@ export const searchOptions = {
             }
             return articles
         },
-        async chronologicalSearch(
+        async *chronologicalSearch(
             query, {
                 timeDelay=200,
                 yearRanges=[
@@ -1471,13 +1485,16 @@ export const searchOptions = {
         ) {
             const output = new Map()
             for (let [startYear, endYear] of yearRanges) {
-                output.set(key, await this.urlToListOfResults(`https://scholar.google.com/scholar?q=${encodeURIComponent(query)}&hl=en&as_sdt=0%2C44&as_ylo=${startYear}&as_yhi=${endYear}`))
-                await new Promise(r=>setTimeout(r,timeDelay))
+                yield [
+                    [startYear, endYear],
+                    await this.urlToListOfResults(`https://scholar.google.com/scholar?q=${encodeURIComponent(query)}&hl=en&as_sdt=0%2C44&as_ylo=${startYear}&as_yhi=${endYear}`),
+                ]
             }
-            return output
         },
     },
     // "science-direct": {
     // },
     
 }
+searchOptions.googleScholar.urlToListOfResults.lastFetchTime = new Date()
+searchOptions.googleScholar.urlToListOfResults.waitTime = 1000
