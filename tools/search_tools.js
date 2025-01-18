@@ -903,7 +903,8 @@ export const searchOptions = {
             // 	]
             // }
         },
-        async urlToListOfResults(url, discoveryMethod) {
+        async urlToListOfResults(url) {
+
             const baseUrl = new URL(url).origin
             try {
                 return jsonFetch(url).then(
@@ -1197,7 +1198,8 @@ export const searchOptions = {
         //             publisherInfo: " Media Theory, 2019 "
         //         }
         //     ]
-        async urlToListOfResults(url, discoveryMethod) {
+        async urlToListOfResults(url) {
+
             let htmlResult
             const baseUrl = new URL(url).origin
             const getHref = (element)=>element.getAttribute("href").startsWith("/")?`${baseUrl}/${element.getAttribute("href")}`:element.getAttribute("href")
@@ -1417,6 +1419,51 @@ export const searchOptions = {
                 console.error(`Error while trying to extract links from search ${error}`)
             }
             return articles
+        },
+        async chronologicalSearch(
+            query, {
+                timeDelay=200,
+                yearRanges=[
+                    [1995, 1995,],
+                    [1996, 1996,],
+                    [1997, 1997,],
+                    [1998, 1998,],
+                    [1999, 1999,],
+                    [2000, 2000,],
+                    [2001, 2001,],
+                    [2002, 2002,],
+                    [2003, 2003,],
+                    [2004, 2004,],
+                    [2005, 2005,],
+                    [2006, 2006,],
+                    [2007, 2007,],
+                    [2008, 2008,],
+                    [2009, 2009,],
+                    [2010, 2010,],
+                    [2011, 2011,],
+                    [2012, 2012,],
+                    [2013, 2013,],
+                    [2014, 2014,],
+                    [2015, 2015,],
+                    [2016, 2016,],
+                    [2017, 2017,],
+                    [2018, 2018,],
+                    [2019, 2019,],
+                    [2020, 2020,],
+                    [2021, 2021,],
+                    [2022, 2022,],
+                    [2023, 2023,],
+                    [2024, 2024,],
+                    [2025, 2025,],
+                ],
+            }={},
+        ) {
+            const output = new Map()
+            for (let [startYear, endYear] of yearRanges) {
+                output.set(key, await this.urlToListOfResults(`https://scholar.google.com/scholar?q=${encodeURIComponent(query)}&hl=en&as_sdt=0%2C44&as_ylo=${startYear}&as_yhi=${endYear}`))
+                await new Promise(r=>setTimeout(r,timeDelay))
+            }
+            return output
         },
     },
     // "science-direct": {
