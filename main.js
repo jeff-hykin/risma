@@ -14,7 +14,7 @@ import { parseArgs, flag, required, initialValue } from "https://deno.land/x/goo
 import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranked_compare.js" 
 
 import { version } from "./tools/version.js"
-import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write, clearScreen } from "./tools/input_tools.js"  
+import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write, clearScreen, Number } from "./tools/input_tools.js"  
 import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData, openAlexToSimpleFormat } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
@@ -212,7 +212,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
             searchEngine: searchEngineName,
             ...otherData,
         })
-        const references = await resultsPromise.then(all=>all.map(each=>new Reference({
+        const references = await Promise.resolve(resultsPromise).then(all=>all.map(each=>new Reference({
             title: each.title,
             notes: {
                 resumeStatus: "unseen|title",
@@ -680,23 +680,61 @@ mainLoop: while (true) {
         //     message: "which engine?",
         //     options: Object.keys(searchOptions),
         // })
-        // const searchEngine = searchOptions[searchEngineName]
-        // const query = await Console.askFor.line(cyan`What's the search query?`)
-        // const {references, newReferences, discoveryMethod} = await withSpinner("searching",
-        //     ()=>getSearchResults({
-        //         query, 
-        //         resultsPromise: searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query)}`), 
-        //         searchEngineName,
-        //         project: activeProject,
-        //         otherData: {},
-        //         getFullData: true,
-        //     })
-        // )
-        // for (const each of newReferences.sort(referenceSorter({project: activeProject}))) {
-        //     console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
-        // }
-        // await saveProject({activeProject, path: storageObject.activeProjectPath})
-        // prompt(`\n\n${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
+        const searchEngineName = "googleScholar"
+        const searchEngine = searchOptions[searchEngineName]
+        const query = await Console.askFor.line(cyan`What's the search query?`)
+        const startYear = await Number.prompt({
+            message: "Start year (oldest paper date)",
+            min: 1900,
+            max: new Date().getFullYear(),
+            float: false,
+            suggestions: [
+                new Date().getFullYear(),
+                new Date().getFullYear()-1,
+                new Date().getFullYear()-5,
+                new Date().getFullYear()-10,
+            ],
+        })
+        const endYear = await Number.prompt({
+            message: "End year (newest paper date)",
+            min: startYear,
+            max: new Date().getFullYear(),
+            float: false,
+            suggestions: [
+                new Date().getFullYear(),
+                new Date().getFullYear()-1,
+                new Date().getFullYear()-5,
+                new Date().getFullYear()-10,
+            ].filter(each=>each>startYear),
+        })
+        // iterate the ranges
+        for await (
+            const [yearRange, references] of searchEngine.chronologicalSearch(
+                query, {
+                    timeDelay: 0,
+                    yearRanges: count({start: startYear, end: endYear}).map(each=>[each,each]),
+                },
+            )
+        ) {
+            const { newReferences, discoveryMethod} = await withSpinner(`searching ${yearRange[0]} to ${yearRange[1]}`,
+                ()=>getSearchResults({
+                    query, 
+                    resultsPromise: references,
+                    searchEngineName,
+                    project: activeProject,
+                    otherData: {
+                        yearRange: yearRange,
+                    },
+                    getFullData: false,
+                })
+            )
+            for (const each of newReferences.sort(referenceSorter({project: activeProject}))) {
+                console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
+            }
+            await saveProject({activeProject, path: storageObject.activeProjectPath})
+            console.log(`\n\n${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}`)
+        }
+        prompt(`\nchronologial sort complete\n(press enter to continue)`)
     } else if (whichAction == "score the discovery attempts") {
         rateDiscoveryAttempts(activeProject.discoveryAttempts, activeProject)
         activeProject.discoveryAttempts = activeProject.discoveryAttempts.map(each=>new DiscoveryMethod(each))
