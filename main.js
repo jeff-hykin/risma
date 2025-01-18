@@ -153,6 +153,119 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         return reset``+text
     }
 
+    async function addReference(reference, {project, getFullData=true}) {
+        const existingReference = project.references[reference.title]
+        const hadBeenSeenBefore = !!existingReference
+        if (!hadBeenSeenBefore) {
+            if (!(reference instanceof Reference)) {
+                reference = new Reference(reference)
+            }
+            reference.accordingTo = reference.accordingTo || {}
+            
+            reference.resumeStatus = "unseen|title"
+            reference.events = reference.events || {}
+            reference.events["added"] =  reference.events["added"] || new DateTime().toISOString()
+            project.references[reference.title] = reference
+            
+            if (getFullData) {
+                if (!reference?.doi) {
+                    try {
+                        reference.accordingTo.crossref = { doi: await title2Doi(reference.title) }
+                    } catch (error) {
+                    }
+                }
+                if (reference.doi) {
+                    let promises = []
+                    // Crossref
+                    if (Object.keys(reference.accordingTo.crossref||{}).length > 1) { // doi is sometimes the only thing, and we want more info
+                        promises.push((async ()=>{
+                            try {
+                                reference.accordingTo.crossref = crossrefToSimpleFormat(
+                                    await doiToCrossrefInfo(reference.doi, { cacheObject: crossrefCacheObject, })
+                                )
+                            } catch (error) {
+                            }
+                        })())
+                    }
+                    // OpenAlex
+                    if (Object.keys(reference.accordingTo.openAlex||{}).length == 0) {
+                        promises.push((async ()=>{
+                            try {
+                                reference.accordingTo.openAlex = openAlexToSimpleFormat(await getOpenAlexData(reference.doi))
+                            } catch (error) {
+                            }
+                        })())
+                    }
+                    await Promise.all(promises)
+                }
+            }
+            return {hadBeenSeenBefore, reference}
+        }
+        return {hadBeenSeenBefore, reference: existingReference}
+    }
+    
+    // NOTE: does mutate project
+    async function getSearchResults({query, resultsPromise, otherData={}, searchEngineName, getFullData=true, project }) {
+        const discoveryMethod = new DiscoveryMethod({
+            query,
+            dateTime: new Date().toISOString(),
+            searchEngine: searchEngineName,
+            ...otherData,
+        })
+        const references = await resultsPromise.then(all=>all.map(each=>new Reference({
+            title: each.title,
+            notes: {
+                resumeStatus: "unseen|title",
+                comment: "",
+                reasonsRelevant: [],
+                reasonsNotRelevant: [],
+                customKeywords: [],
+                discoveryMethod: { dateTime: discoveryMethod.dateTime, originalQuery: discoveryMethod.query, searchEngine: discoveryMethod.searchEngine },
+                events: {},
+            },
+            accordingTo: {
+                crossref: {},
+                openAlex: {},
+                openAlex: {},
+                [searchEngineName]: each,
+            },
+        })))
+        let count = 0
+        let newReferences = []
+        await withSpinner("processing",
+            (mention)=>Promise.all(references.map(async each=>{
+                const { hadBeenSeenBefore } = await addReference(each, {project, getFullData})
+                discoveryMethod.referenceLinks.push({
+                    hadBeenSeenBefore,
+                    title: each.title,
+                    // link to object directly rather than spread so that yaml will make it a anchor to it
+                    link: each,
+                })
+                if (!hadBeenSeenBefore) {
+                    newReferences.push(each)
+                }
+                count++
+                mention(`got ${count} of ${references.length}`)
+            }))
+        )
+        project.discoveryAttempts.push(discoveryMethod)
+        // example references: [
+        //         Reference {
+        //             title: "RAIL: Robot Affordance Imagination with Large Language Models",
+        //             year: "1936",
+        //             discoveryMethod: undefined,
+        //             authorNames: [ "C Zhang", "X Meng", "D Qi", "GS Chirikjian�" ],
+        //             pdfLink: "https://scholar.google.com/https://arxiv.org/pdf/2403.19369",
+        //             link: "https://scholar.google.com/https://arxiv.org/abs/2403.19369",
+        //             citationId: "8172269612940938567",
+        //             multiArticleId: "8172269612940938567",
+        //             citedByLink: "https://scholar.google.com//scholar?cites=8172269612940938567&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII",
+        //             publisherInfo: " arXiv preprint arXiv:2403.19369, 2024 "
+        //         },
+        // ]
+        return {references, newReferences, discoveryMethod}
+    }
+
 // 
 // main loop
 // 
@@ -171,6 +284,7 @@ mainLoop: while (true) {
             "explore references",
             "autofill data",
             "score the discovery attempts",
+            "chronological search",
             "exit",
         ],
     })
@@ -184,89 +298,21 @@ mainLoop: while (true) {
         })
         const searchEngine = searchOptions[searchEngineName]
         const query = await Console.askFor.line(cyan`What's the search query?`)
-        const discoveryMethod = new DiscoveryMethod({
-            query,
-            dateTime: new Date().toISOString(),
-            searchEngine: searchEngineName,
-        })
-        const references = await withSpinner("searching",
-            ()=>searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query)}`)
-        ).then(all=>all.map(each=>new Reference({
-            title: each.title,
-            notes: {
-                resumeStatus: "unseen|title",
-                comment: "",
-                reasonsRelevant: [],
-                reasonsNotRelevant: [],
-                customKeywords: [],
-                discoveryMethod: { dateTime: discoveryMethod.dateTime, originalQuery: discoveryMethod.query, searchEngine: discoveryMethod.searchEngine },
-                events: {},
-            },
-            accordingTo: {
-                crossref: {},
-                [searchEngineName]: each,
-            },
-        })))
-        let count = 0
-        await withSpinner("getting full data for each result",
-            (mention)=>Promise.all(references.map(async each=>{
-                if (!each?.doi) {
-                    try {
-                        each.accordingTo.crossref = { doi: await title2Doi(each.title) }
-                    } catch (error) {
-                    }
-                }
-                if (each.doi) {
-                    try {
-                        each.accordingTo.crossref = crossrefToSimpleFormat(
-                            await doiToCrossrefInfo(each.doi, { cacheObject: crossrefCacheObject, })
-                        )
-                    } catch (error) {
-                    }
-                }
-                count++
-                mention(`got ${count} of ${references.length}`)
-            }))
-        )
-        // example references: [
-        //         Reference {
-        //             title: "RAIL: Robot Affordance Imagination with Large Language Models",
-        //             year: "1936",
-        //             discoveryMethod: undefined,
-        //             authorNames: [ "C Zhang", "X Meng", "D Qi", "GS Chirikjian�" ],
-        //             pdfLink: "https://scholar.google.com/https://arxiv.org/pdf/2403.19369",
-        //             link: "https://scholar.google.com/https://arxiv.org/abs/2403.19369",
-        //             citationId: "8172269612940938567",
-        //             multiArticleId: "8172269612940938567",
-        //             citedByLink: "https://scholar.google.com//scholar?cites=8172269612940938567&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII",
-        //             publisherInfo: " arXiv preprint arXiv:2403.19369, 2024 "
-        //         },
-        // ]
-        let unseenReferences = {}
-        let addedReferences = 0
-        for (let each of references) {
-            const hadBeenSeenBefore = !!activeProject.references[each.title]
-            discoveryMethod.referenceLinks.push({
-                hadBeenSeenBefore,
-                title: each.title,
-                // link to object directly rather than spread so that yaml will make it a anchor to it
-                link: each,
+        const {references, newReferences, discoveryMethod} = await withSpinner("searching",
+            ()=>getSearchResults({
+                query, 
+                resultsPromise: searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query)}`), 
+                searchEngineName,
+                project: activeProject,
+                otherData: {},
+                getFullData: true,
             })
-            if (!hadBeenSeenBefore) {
-                addedReferences++
-                activeProject.references[each.title] = each
-                unseenReferences[each.title] = each
-                each.resumeStatus = "unseen|title"
-                each.events = each.events || {}
-                each.events["added"] =  each.events["added"] || new DateTime().toISOString()
-            }
-        }
-        activeProject.discoveryAttempts.push(discoveryMethod)
-        for (const each of Object.values(unseenReferences).sort(referenceSorter({project: activeProject}))) {
+        )
+        for (const each of newReferences.sort(referenceSorter({project: activeProject}))) {
             console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
         }
         await saveProject({activeProject, path: storageObject.activeProjectPath})
-        prompt(`\n\nAdded ${cyan(addedReferences)} references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
+        prompt(`\n\n${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
     } else if (whichAction == "change project") {
         const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
         let project = await selectOne({
@@ -351,7 +397,7 @@ mainLoop: while (true) {
                                 each.resumeStatus = "relevent|title"
                                 each.reasonsRelevant.push("title")
                             } else if (keyName == "s") {
-                                console.log(`\r${green`⭐️ super  `}`.padEnd(maxTagLength), message)
+                                console.log(`\r${green`⭐️ super   `}`.padEnd(maxTagLength), message)
                                 each.resumeStatus = "super-relevent|title"
                                 each.reasonsRelevant.push("title")
                             } else if (keyName == "u") {
@@ -521,7 +567,7 @@ mainLoop: while (true) {
                         (mention)=>getRelatedArticles(active, (index,total)=>mention(`got ${index} of ${total}`))
                     )
                     let addedReferences = 0
-                    let unseenReferences = {}
+                    let newReferences = {}
                     for (const [title, each] of Object.entries(relatedArticles)) {
                         if (!each.title) {
                             console.debug(`each is:`,each)
@@ -538,7 +584,7 @@ mainLoop: while (true) {
                         if (!hadBeenSeenBefore) {
                             addedReferences++
                             activeProject.references[title] = each
-                            unseenReferences[title] = each
+                            newReferences[title] = each
                             each.resumeStatus = "unseen|title"
                             each.events = each.events || {}
                             each.events["added"] =  each.events["added"] || new DateTime().toISOString()
@@ -629,6 +675,8 @@ mainLoop: while (true) {
         )
         saveProject({activeProject, path: storageObject.activeProjectPath})
         console.log(`data added`)
+    } else if (whichAction == "chronological search") {
+
     } else if (whichAction == "score the discovery attempts") {
         rateDiscoveryAttempts(activeProject.discoveryAttempts)
         activeProject.discoveryAttempts = activeProject.discoveryAttempts.map(each=>new DiscoveryMethod(each))
