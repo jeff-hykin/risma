@@ -1221,7 +1221,7 @@ export const searchOptions = {
             const now = new Date().getTime()
             const needToWait = thresholdTime - now
             if (needToWait > 0) {
-                await new Promise(r=>setTimeout(r, needToWait))
+                await new Promise(r=>setTimeout(r, needToWait * (Math.random()+1))))
             }
             this.urlToListOfResults.lastFetchTime = new Date()
             
@@ -1494,7 +1494,6 @@ export const searchOptions = {
     },
     // "science-direct": {
     // },
-    
 }
 searchOptions.googleScholar.urlToListOfResults.lastFetchTime = new Date()
-searchOptions.googleScholar.urlToListOfResults.waitTime = 1000
+searchOptions.googleScholar.urlToListOfResults.waitTime = 5000 // google is picky and defensive
