@@ -205,7 +205,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
     }
     
     // NOTE: does mutate project
-    async function getSearchResults({query, resultsPromise, otherData={}, searchEngineName, getFullData=true, project }) {
+    async function getSearchResults({query, resultsPromise, otherData={}, searchEngineName, getFullData=true, project, message="processing " }) {
         const discoveryMethod = new DiscoveryMethod({
             query,
             dateTime: new Date().toISOString(),
@@ -232,7 +232,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         })))
         let count = 0
         let newReferences = []
-        await withSpinner("processing",
+        await withSpinner(message,
             (mention)=>Promise.all(references.map(async each=>{
                 const { hadBeenSeenBefore } = await addReference(each, {project, getFullData})
                 discoveryMethod.referenceLinks.push({
@@ -707,6 +707,8 @@ mainLoop: while (true) {
                 new Date().getFullYear()-10,
             ].filter(each=>each>startYear),
         })
+        const discoveryObjects = []
+        const chronoGroupId = new Date().getTime()
         // iterate the ranges
         for await (
             const [yearRange, references] of searchEngine.chronologicalSearch(
@@ -716,24 +718,46 @@ mainLoop: while (true) {
                 },
             )
         ) {
-            const { newReferences, discoveryMethod} = await withSpinner(`searching ${yearRange[0]} to ${yearRange[1]}`,
-                ()=>getSearchResults({
-                    query, 
-                    resultsPromise: references,
-                    searchEngineName,
-                    project: activeProject,
-                    otherData: {
-                        yearRange: yearRange,
-                    },
-                    getFullData: false,
-                })
-            )
+            console.log(yearRange)
+            const { newReferences, discoveryMethod} = await getSearchResults({
+                query, 
+                resultsPromise: references,
+                searchEngineName,
+                project: activeProject,
+                otherData: {
+                    yearRange: yearRange,
+                    chronoGroupId,
+                },
+                getFullData: true,
+                message: `searching ${yearRange[0]} to ${yearRange[1]}`,
+            })
+            discoveryObjects.push(discoveryMethod)
             for (const each of newReferences.sort(referenceSorter({project: activeProject}))) {
                 console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
             }
             await saveProject({activeProject, path: storageObject.activeProjectPath})
             console.log(`\n\n${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}`)
         }
+
+        // 
+        // rate by year
+        // 
+        rateDiscoveryAttempts(activeProject.discoveryAttempts, activeProject)
+        activeProject.discoveryAttempts = activeProject.discoveryAttempts.map(each=>new DiscoveryMethod(each))
+        await saveProject({activeProject, path: storageObject.activeProjectPath})
+        discoveryObjects.sort((a,b)=>eval(b.score)-eval(a.score))
+        for (let { yearRange, score, referenceLinks } of discoveryObjects) {
+            console.log(yellow`${yearRange[0]} to ${yearRange[1]}: `, red`${score}`)
+            for (const each of referenceLinks) {
+                console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
+            }
+        }
+        console.log(``)
+        console.log(query)
+        for (let { yearRange, score, referenceLinks } of discoveryObjects) {
+            console.log(yellow`    ${yearRange[0]} to ${yearRange[1]}: `, red`${score}`)
+        }
+        console.log(``)
         prompt(`\nchronologial sort complete\n(press enter to continue)`)
     } else if (whichAction == "score the discovery attempts") {
         rateDiscoveryAttempts(activeProject.discoveryAttempts, activeProject)
