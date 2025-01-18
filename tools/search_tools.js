@@ -749,6 +749,15 @@ export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0
         urlOrDoi = `https://api.openalex.org/works/https://doi.org/${urlOrDoi}`
     }
     if (!cacheObject[urlOrDoi]) {
+        // avoid hitting rate limit
+        const thresholdTime = getOpenAlexData.lastFetchTime.getTime() + getOpenAlexData.waitTime
+        const now = new Date().getTime()
+        const needToWait = thresholdTime - now
+        if (needToWait > 0) {
+            await new Promise(r=>setTimeout(r, needToWait))
+        }
+        getOpenAlexData.lastFetchTime = new Date()
+
         const result = await fetch(urlOrDoi)
         if (result.ok) {
             let output = (await result.json())
@@ -763,6 +772,8 @@ export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0
     return cacheObject[urlOrDoi]
 }
 getOpenAlexData.cache = {}
+getOpenAlexData.lastFetchTime = new Date()
+getOpenAlexData.waitTime = 500
 
 /**
  * @example
