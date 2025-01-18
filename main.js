@@ -130,7 +130,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         const badKeywords = keywords.negative
         const neutralKeywords = keywords.neutral
         let index = -1
-        for (let char of text) {
+        for (let char of (text||"")) {
             index++
             if (!text.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
                 const remaining = text.slice(index,).toLowerCase()
