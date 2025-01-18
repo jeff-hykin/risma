@@ -9,13 +9,10 @@ const htmlWrap = function(code) {
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-
-    <div id="plotly-plot" style="height: 500px; width: 100%;"></div>
-
+    <div id="plotly-plot" style="height: 95vh; width: 95vw;"></div>
     <script>
         ${code}
     </script>
-
 </body>
 </html>
 `
