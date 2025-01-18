@@ -1221,7 +1221,7 @@ export const searchOptions = {
             const now = new Date().getTime()
             const needToWait = thresholdTime - now
             if (needToWait > 0) {
-                await new Promise(r=>setTimeout(r, needToWait * (Math.random()+1))))
+                await new Promise(r=>setTimeout(r, needToWait * (Math.random()+1)))
             }
             this.urlToListOfResults.lastFetchTime = new Date()
             
