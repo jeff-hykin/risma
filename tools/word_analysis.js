@@ -119,7 +119,7 @@ export const boringWords = [
     "should",
     "us",
 ]
-const relevantWords = [
+export const relevantWords = [
     'affordance',
     'learning',
     'based',
@@ -283,6 +283,13 @@ export function getPairedFrequencyNoInnerDuplicates(listOfStrings, {excludeWords
         each=>[...new Set(getTerms(each, {excludeWords}))]
     ).map(
         each=>[...zipShort(each,each.slice(1))].map(each=>each.join(" "))
+    ).flat(2)
+    return frequencyCount(pairs, {sort:1})
+}
+
+export function getWordFrequencyNoInnerDuplicates(listOfStrings, {excludeWords=boringWords}={}) {
+    var pairs = listOfStrings.flat(Infinity).map(
+        each=>[...new Set(getTerms(each, {excludeWords}))]
     ).flat(2)
     return frequencyCount(pairs, {sort:1})
 }

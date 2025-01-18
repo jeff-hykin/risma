@@ -178,5 +178,50 @@ for (let group of chronoGroup) {
         }
     }
 }
-console.debug(`termScorePerYear is:`,termScorePerYear)
-FileSystem.write({path:`./plot.html`, data:linePlot(termScorePerYear, {xAxisName:"year"})})
+
+for (const [key, value] of Object.entries(termScorePerYear)) {
+    if (key=="year") {
+        continue
+    }
+    if (eval(value.join("+")) < 10) {
+        delete termScorePerYear[key]
+    }
+}
+
+import { DataFrame, Series } from "https://esm.sh/data-forge@1.10.2?dev"
+var df = new DataFrame({
+    columns: termScorePerYear,
+})
+var series = df.groupBy((each)=>each.year-(each.year%3))
+var o
+var t
+var r
+var flattened = series.map(each=>{
+    let totals = t = {}
+    for (let eachRow of each) {
+        r = eachRow
+        for (const [key, value] of Object.entries(eachRow)) {
+            if (key == "year") {
+                totals[key] = value
+            } else {
+                totals[key] = (totals[key] || 0) + value
+            }
+        }
+    }
+    for (const [key, value] of Object.entries(totals)) {
+        totals[key] = [value]
+    }
+    let output = o = new DataFrame({
+        columns: totals,
+    })
+    return output
+})
+// [...flattened].map(x=>x.toCSV())
+DataFrame.merge([...flattened])
+var ddf = DataFrame.concat([...flattened]) // vertical
+var dataForPlotting = Object.fromEntries(ddf.getColumnNames().map(each=>[each, ddf.getSeries(each).toArray()]))
+
+
+// console.debug(`termScorePerYear is:`,dataForPlotting)
+await FileSystem.write({path:`./plot.html`, data:linePlot(dataForPlotting, {xAxisName:"year"})})
+OperatingSystem.openUrl(`file://${FileSystem.makeAbsolutePath("./plot.html")}`)
