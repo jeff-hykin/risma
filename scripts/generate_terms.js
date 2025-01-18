@@ -7,20 +7,21 @@ import { run, hasCommand, throwIfFails, zipInto, mergeInto, returnAsString, Time
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.6.73/main/console.js"
 import { OperatingSystem } from "https://deno.land/x/quickr@0.6.73/main/operating_system.js"
 // import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
-import * as yaml from "./tools/yaml.js"
+import * as yaml from "../tools/yaml.js"
 import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@0.0.3.5/deno.js'
 import DateTime from "https://deno.land/x/good@1.13.5.0/date.js"
 import { parseArgs, flag, required, initialValue } from "https://deno.land/x/good@1.13.5.0/flattened/parse_args.js" 
 import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranked_compare.js" 
 
-import { version } from "./tools/version.js"
-import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write, clearScreen } from "./tools/input_tools.js"  
-import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData, openAlexToSimpleFormat } from "./tools/search_tools.js"
-import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
-import { DiscoveryMethod } from "./tools/discovery_method.js"
-import { Reference } from "./tools/reference.js"
-import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, } from "./tools/project_tools.js"
+import { version } from "../tools/version.js"
+import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write, clearScreen } from "../tools/input_tools.js"  
+import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData, openAlexToSimpleFormat } from "../tools/search_tools.js"
+import { versionSort, versionToList, executeConversation } from "../tools/misc.js"
+import { DiscoveryMethod } from "../tools/discovery_method.js"
+import { Reference } from "../tools/reference.js"
+import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, } from "../tools/project_tools.js"
 import { zipShort } from "https://deno.land/x/good@1.13.1.0/flattened/zip_short.js"
+import { frequencyCount } from "https://esm.sh/gh/jeff-hykin/good-js@1.14.2.0/source/flattened/frequency_count.js"
 
 const options = { cachePath: `${FileSystem.home}/.cache/risma/` }
 
@@ -121,12 +122,11 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         return reset``+text
     }
 
-// 
-// main loop
-// 
+
 activeProject = await loadProject(storageObject.activeProjectPath)
+
 var refs = Object.values(activeProject.references)
-var rrefs = refs.filter(each=>each.notes.resumeStatus.includes("relevent"))
+var rrefs = refs.filter(each=>each.notes.resumeStatus.match(/\brelevent\b/))
 var abs = rrefs.filter(each=>each.abstract).map(each=>each.abstract)
 var c = ["the",
 "be",
@@ -243,10 +243,7 @@ var c = ["the",
 "is",
 "should",
 "us",].map(each=>each.toLowerCase())
-var pairs = abs.map(each=>each.replace(/-/g,"").toLowerCase().split(/\s+/g).filter(each=>each.length && !c.includes(each))).map(each=>[...zipShort(each,each.slice(1))].map(each=>each.join(" "))).flat(10)
-var l =  [...new Set(Object.values(activeProject.references).map(each=>each.accordingTo?.openAlex?.concepts).flat(19))]
-// import { frequencyCount } from "/Users/jeffhykin/repos/good-js/source/flattened/frequency_count.js"
-import { frequencyCount } from "https://esm.sh/gh/jeff-hykin/good-js@1.14.2.0/source/flattened/frequency_count.js"
-// var terms = Object.values(activeProject.references).filter(each=>each.notes.resumeStatus.includes("super-relevent")).map(each=>each.accordingTo?.openAlex?.concepts).flat(19)
 
-// FileSystem.write({data: vals.join("\n"), path:"conceptss.txt"})
+var pairs = abs.map(each=>each.replace(/-/g," ").toLowerCase().split(/\s+/g).filter(each=>each.length && !c.includes(each))).map(each=>[...zipShort(each,each.slice(1))].map(each=>each.join(" "))).flat(10)
+var f = frequencyCount(pairs, {sort:1})
+console.debug(`terms is:`,f)

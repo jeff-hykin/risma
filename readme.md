@@ -20,6 +20,10 @@ yq -e '[ .references.[] | ._.title ]' project.yaml
 yq -e '[ .references.[] | select(.notes.resumeStatus == "unseen|title") | [._.title, .score] ]' project.yaml
 # get abstracts for all relevent titles
 yq -e '[ .references.[] | select(.notes.resumeStatus == "relevent|title") | ._.abstract ]' project.yaml
+# sort by year and get papers and titles
+yq -e '[ .references.[] | select(.notes.resumeStatus == "super-relevent|abstract") | { title: ._.title, year: ._.year } ] | sort_by(.year)' project.yaml
+# sort by year and get papers and titles as a list of lists
+yq -e '[ .references.[] | select(.notes.resumeStatus == "super-relevent|abstract") | [._.title, ._.year ] ] | sort_by(.[1])' project.yaml
 
 # 
 # run main
