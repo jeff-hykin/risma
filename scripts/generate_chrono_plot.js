@@ -131,7 +131,8 @@ var discoverys = activeProject.discoveryAttempts
 
 
 // 
-import { getPairedFrequency, getPairedFrequencyNoInnerDuplicates } from "../tools/word_analysis.js"
+import { getPairedFrequency, getPairedFrequencyNoInnerDuplicates, getWordFrequencyNoInnerDuplicates, relevantWords } from "../tools/word_analysis.js"
+import { linePlot } from "../tools/plot.js"
 
 var chronoGroup = discoverys.filter(each=>each.chronoGroupId == 1737218769289)
 var allTitles = chronoGroup.map(each=>each.referenceLinks.map(each=>each.title)).flat(Infinity)
@@ -152,8 +153,11 @@ for (const [title, count] of freqPairs.entries()) {
 // group into values over time
 // 
 var years = chronoGroup.map(each=>each.yearRange)
-var termScorePerYear = Object.fromEntries(relevantTerms.map(each=>[each, []]))
-termScorePerYear.year = {}
+var termScorePerYear = {
+    year: [],
+    ...Object.fromEntries(relevantTerms.map(each=>[each, years.map(each=>0)])),
+    ...Object.fromEntries(relevantWords.map(each=>[each, years.map(each=>0)])),
+}
 var index = -1
 for (let group of chronoGroup) {
     index++
@@ -167,5 +171,12 @@ for (let group of chronoGroup) {
             termScorePerYear[key][index] = value
         }
     }
+    freq = getWordFrequencyNoInnerDuplicates(titles)
+    for (const [key, value] of freq.entries()) {
+        if (termScorePerYear[key]) {
+            termScorePerYear[key][index] = value
+        }
+    }
 }
 console.debug(`termScorePerYear is:`,termScorePerYear)
+FileSystem.write({path:`./plot.html`, data:linePlot(termScorePerYear, {xAxisName:"year"})})
