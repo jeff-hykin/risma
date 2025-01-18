@@ -3,6 +3,8 @@ import { zipShort } from "https://deno.land/x/good@1.13.1.0/flattened/zip_short.
 import { frequencyCount } from "https://esm.sh/gh/jeff-hykin/good-js@1.14.2.0/source/flattened/frequency_count.js"
 
 export const boringWords = [
+    "theory",
+    "model",
     "the",
     "be",
     "to",

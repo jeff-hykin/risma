@@ -183,7 +183,7 @@ for (const [key, value] of Object.entries(termScorePerYear)) {
     if (key=="year") {
         continue
     }
-    if (eval(value.join("+")) < 10) {
+    if (eval(value.join("+")) < 13) {
         delete termScorePerYear[key]
     }
 }
