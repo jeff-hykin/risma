@@ -676,13 +676,33 @@ mainLoop: while (true) {
         saveProject({activeProject, path: storageObject.activeProjectPath})
         console.log(`data added`)
     } else if (whichAction == "chronological search") {
-
+        // const searchEngineName = await selectOne({
+        //     message: "which engine?",
+        //     options: Object.keys(searchOptions),
+        // })
+        // const searchEngine = searchOptions[searchEngineName]
+        // const query = await Console.askFor.line(cyan`What's the search query?`)
+        // const {references, newReferences, discoveryMethod} = await withSpinner("searching",
+        //     ()=>getSearchResults({
+        //         query, 
+        //         resultsPromise: searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query)}`), 
+        //         searchEngineName,
+        //         project: activeProject,
+        //         otherData: {},
+        //         getFullData: true,
+        //     })
+        // )
+        // for (const each of newReferences.sort(referenceSorter({project: activeProject}))) {
+        //     console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
+        // }
+        // await saveProject({activeProject, path: storageObject.activeProjectPath})
+        // prompt(`\n\n${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
     } else if (whichAction == "score the discovery attempts") {
-        rateDiscoveryAttempts(activeProject.discoveryAttempts)
+        rateDiscoveryAttempts(activeProject.discoveryAttempts, activeProject)
         activeProject.discoveryAttempts = activeProject.discoveryAttempts.map(each=>new DiscoveryMethod(each))
         await saveProject({activeProject, path: storageObject.activeProjectPath})
         const sorted = [...activeProject.discoveryAttempts].map(each=>new DiscoveryMethod(each))
-        sorted.sort((a,b)=>b.score-a.score)
+        sorted.sort((a,b)=>eval(b.score)-eval(a.score))
         console.log(`sorted:`)
         for (let each of sorted) {
             console.log(`    ${red(each.score)}: ${cyan(each.query||each.wasRelatedTo)}`)

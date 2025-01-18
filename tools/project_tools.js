@@ -170,13 +170,22 @@ export function sortReferencesByDate(references) {
     return references.sort((a,b)=>new Date(b?.notes?.events?.added).getTime()-new Date(a?.notes?.events?.added).getTime())
 }
 
-export function scoreDiscoveryAttempt(discoveryAttempt) {
+export function scoreDiscoveryAttempt(discoveryAttempt, project) {
     let sum = 0
     let count = 0
     for (let each of discoveryAttempt.referenceLinks) {
         each = each.link
-        if (!each || each.resumeStatus == "unseen|title") {
+        if (!each) {
             continue
+        } else if (each.resumeStatus == "unseen|title") {
+            const title = each.title.toLowerCase()
+            const notASingleGoodKeyword = !project.settings.keywords.positive.some(keyword=>title.includes(keyword.toLowerCase()))
+            if (notASingleGoodKeyword) {
+                count++
+                sum -= 2
+            } else {
+                // ignore it (needs to be manually rated before contributing to the score)
+            }
         } else {
             count++
             if (each.resumeStatus == "relevent|title") {
@@ -198,11 +207,11 @@ export function scoreDiscoveryAttempt(discoveryAttempt) {
             }
         }
     }
-    return (sum / count)||0
+    return `${sum}/${count}`
 }
 
-export function rateDiscoveryAttempts(discoveryAttempts) {
+export function rateDiscoveryAttempts(discoveryAttempts, project) {
     for (let each of discoveryAttempts) {
-        each.score = scoreDiscoveryAttempt(each)
+        each.score = scoreDiscoveryAttempt(each, project)
     }
 }
