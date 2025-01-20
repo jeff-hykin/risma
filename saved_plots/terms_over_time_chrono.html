@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plotly Line Plot</title>
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plotly-plot" style="height: 95vh; width: 95vw;"></div>
+    <script>
+        
+        var d = {"year":[1997,2000,2003,2006,2009,2012,2015,2018,2021,2024,2025],"affordance based":[0,0,0,3,7,2,2,2,1,0,0],"affordance":[1,3,2,7,12,7,10,17,18,20,1],"learning":[3,2,2,3,10,10,9,8,14,9,7],"based":[0,1,5,4,7,2,6,6,6,5,3],"object":[1,0,1,4,2,5,9,7,6,5,1],"ecological":[9,9,9,4,3,1,4,3,3,2,0],"perception":[7,2,3,7,3,4,2,1,3,5,2],"visual":[2,0,0,1,1,2,1,1,6,6,1],"deep":[0,0,0,0,0,0,1,3,8,4,3],"human":[1,0,4,0,0,2,3,2,0,2,0],"action":[1,0,1,2,3,2,2,1,0,1,0]}
+        
+        var traces = []
+        for (const [key, value] of Object.entries(d)) {
+            if (key == "year") {
+                continue
+            }
+            traces.push({
+                x: d["year"],
+                y: value,
+                mode: 'lines',
+                name: key,
+                // line: {color: 'blue'}
+            })
+        }
+        
+        // Layout configuration
+        var layout = {
+            title: 'Simple Line Plot',
+            xaxis: {
+                title: "year"
+            },
+            yaxis: {
+                title: 'Y Axis'
+            }
+        }
+
+        // Plot the chart
+        Plotly.newPlot('plotly-plot', traces, layout);
+    
+    </script>
+</body>
+</html>
