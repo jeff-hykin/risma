@@ -734,14 +734,46 @@ mainLoop: while (true) {
         rateDiscoveryAttempts(activeProject.discoveryAttempts, activeProject)
         activeProject.discoveryAttempts = activeProject.discoveryAttempts.map(each=>new DiscoveryMethod(each))
         await saveProject({activeProject, path: storageObject.activeProjectPath})
-        const sorted = [...activeProject.discoveryAttempts].map(each=>new DiscoveryMethod(each))
-        sorted.sort((a,b)=>eval(b.score)-eval(a.score))
+        let attempts = [...activeProject.discoveryAttempts]
+        let chronoGroupIds = [...new Set(attempts.map(each=>each.chronoGroupId))].filter(each=>each)
+        let sortedList = attempts.filter(each=>!each.chronoGroupId).map(each=>new DiscoveryMethod(each))
+        for (let chronoGroupId of chronoGroupIds) {
+            let entry = {
+                group: true,
+            }
+            sortedList.push(entry)
+            entry.ranges = []
+            for (let each of attempts.filter(each=>each.chronoGroupId == chronoGroupId)) {
+                entry.query = each.query
+                entry.wasRelatedTo = each.wasRelatedTo
+                entry.ranges.push({
+                    range: each.yearRange[0]+" to "+each.yearRange[1],
+                    score: each.score,
+                })
+            }
+            if (!entry.wasRelatedTo) {
+                delete entry.wasRelatedTo
+            }
+            entry.ranges.sort((a,b)=>eval(b.score)-eval(a.score))
+            let chronoGroup = attempts.filter(each=>each.chronoGroupId == chronoGroupId)
+            // rate group with highest score
+            entry.score = chronoGroup.sort((a,b)=>eval(b.score)-eval(a.score))[0].score
+        }
+        sortedList.sort((a,b)=>eval(b.score)-eval(a.score))
         console.log(`sorted:`)
-        for (let each of sorted) {
-            console.log(`    ${red(each.score)}: ${cyan(each.query||each.wasRelatedTo)}`)
+        for (let each of sortedList) {
+            if (each.group) {
+                console.log(`    ${red(each.score)}: ${cyan(each.query||each.wasRelatedTo)}`)
+                for (let { range, score } of each.ranges) {
+                    console.log(`        ${cyan(range)}: ${red(score)}`)
+                }
+                continue
+            } else {
+                console.log(`    ${red(each.score)}: ${cyan(each.query||each.wasRelatedTo)}`)
+            }
         }
         prompt("")
-        break mainLoop
+        continue mainLoop
     } else if (whichAction == "exit") {
         await saveProject({activeProject, path: storageObject.activeProjectPath})
         break mainLoop
