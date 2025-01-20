@@ -48,7 +48,7 @@ var withAbstracts = false
                     let lastElement = children.at(-1)
                     if (lastElement && lastElement.innerText.match(/\b\d{4}$/)) {
                         publicationTimeString = lastElement.innerText
-                        year = lastElement.innerText.split(/\s/).at(-1)
+                        year = lastElement.innerText.split(/\s/).at(-1)-0
                     }
                 }
                 if (publicationTimeString) {
