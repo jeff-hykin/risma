@@ -24,6 +24,8 @@ yq -e '[ .references.[] | select(.notes.resumeStatus == "relevent|title") | ._.a
 yq -e '[ .references.[] | select(.notes.resumeStatus == "super-relevent|abstract") | { title: ._.title, year: ._.year } ] | sort_by(.year)' project.yaml
 # sort by year and get papers and titles as a list of lists
 yq -e '[ .references.[] | select(.notes.resumeStatus == "super-relevent|abstract") | [._.title, ._.year ] ] | sort_by(.[1])' project.yaml
+# find all searches and sort by year
+yq -e '[ .discoveryAttempts.[] | select(.query == "ecological affordance based object perception machine learning") | select(.yearRange) | [.yearRange[0], .score ] ] | sort_by(.[1])' project.yaml
 
 # 
 # run main
