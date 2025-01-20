@@ -1540,3 +1540,17 @@ export async function autofillDataFor(reference, {crossrefCacheObject, openAlexC
     }
     return reference
 }
+
+export async function relatedWorkIncludes({source, }, refChecker) {
+    let reference = await autofillDataFor(source)
+    if (reference.accordingTo?.openAlex?.citedAlexIds instanceof Array) {
+        for (let citedAlexId of reference.accordingTo.openAlex.citedAlexIds) {
+            let citedWork = openAlexToSimpleFormat(await getOpenAlexData(citedAlexId))
+            if (citedWork) {
+                if (await refChecker(citedWork)) {
+                    return true
+                }
+            }
+        }
+    }
+}

@@ -26,8 +26,8 @@ export class Reference {
         ...other
     }={}) {
         allReferences.push(this)
-        this.notes = notes
-        this.accordingTo = { $manuallyEntered: {}, ...accordingTo }
+        this.notes = notes||{}
+        this.accordingTo = { $manuallyEntered: {}, ...(accordingTo||{}) }
         const commonKeys = ["title","doi","year","publisherFlags","authorNames","link","pdfLink","cites","citedBy","abstract"]
         
         // pretend note properties are top level

@@ -150,7 +150,7 @@ for (const [title, count] of freqPairs.entries()) {
     }
     relevantTerms.push(title)
 }
-console.debug(`relevantWords is:`,relevantWords)
+
 // 
 // group into values over time
 // 
