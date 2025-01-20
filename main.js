@@ -15,7 +15,7 @@ import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranke
 
 import { version } from "./tools/version.js"
 import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write, clearScreen, Number } from "./tools/input_tools.js"  
-import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData, openAlexToSimpleFormat } from "./tools/search_tools.js"
+import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData, openAlexToSimpleFormat, autofillDataFor } from "./tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
@@ -168,36 +168,7 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
             project.references[reference.title] = reference
             
             if (getFullData) {
-                if (!reference?.doi) {
-                    try {
-                        reference.accordingTo.crossref = { doi: await title2Doi(reference.title) }
-                    } catch (error) {
-                    }
-                }
-                if (reference.doi) {
-                    let promises = []
-                    // Crossref
-                    if (Object.keys(reference.accordingTo.crossref||{}).length > 1) { // doi is sometimes the only thing, and we want more info
-                        promises.push((async ()=>{
-                            try {
-                                reference.accordingTo.crossref = crossrefToSimpleFormat(
-                                    await doiToCrossrefInfo(reference.doi, { cacheObject: crossrefCacheObject, })
-                                )
-                            } catch (error) {
-                            }
-                        })())
-                    }
-                    // OpenAlex
-                    if (Object.keys(reference.accordingTo.openAlex||{}).length == 0) {
-                        promises.push((async ()=>{
-                            try {
-                                reference.accordingTo.openAlex = openAlexToSimpleFormat(await getOpenAlexData(reference.doi))
-                            } catch (error) {
-                            }
-                        })())
-                    }
-                    await Promise.all(promises)
-                }
+                await autofillDataFor(reference)
             }
             return {hadBeenSeenBefore, reference}
         }

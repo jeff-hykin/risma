@@ -1497,3 +1497,46 @@ export const searchOptions = {
 }
 searchOptions.googleScholar.urlToListOfResults.lastFetchTime = new Date()
 searchOptions.googleScholar.urlToListOfResults.waitTime = 5000 // google is picky and defensive
+
+
+export async function autofillDataFor(reference, {crossrefCacheObject, openAlexCacheObject, }={}) {
+    // make it a proper object
+    if (!(reference instanceof Reference)) {
+        reference = new Reference(reference)
+    }
+    
+    // get DOI
+        // try to get it from crossref
+        if (!reference.doi && reference.title) {
+            reference.accordingTo = reference.accordingTo || {}
+            reference.accordingTo.crossref = reference.accordingTo.crossref || {}
+            reference.accordingTo.crossref.doi = await title2Doi(reference.title)
+        }
+    
+    // get data
+    if (reference.doi) {
+        let promises = []
+        // Crossref
+        if (Object.keys(reference.accordingTo.crossref||{}).length > 1) { // doi is sometimes the only thing, and we want more info
+            promises.push((async ()=>{
+                try {
+                    reference.accordingTo.crossref = crossrefToSimpleFormat(
+                        await doiToCrossrefInfo(reference.doi, { cacheObject: crossrefCacheObject, })
+                    )
+                } catch (error) {
+                }
+            })())
+        }
+        // OpenAlex
+        if (Object.keys(reference.accordingTo.openAlex||{}).length == 0) {
+            promises.push((async ()=>{
+                try {
+                    reference.accordingTo.openAlex = openAlexToSimpleFormat(await getOpenAlexData(reference.doi, { cacheObject: openAlexCacheObject, }))
+                } catch (error) {
+                }
+            })())
+        }
+        await Promise.all(promises)
+    }
+    return reference
+}
