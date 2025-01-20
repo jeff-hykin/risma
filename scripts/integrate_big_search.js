@@ -183,5 +183,8 @@ for (const [title, ref] of Object.entries(newRefs)) {
             added: now.toISOString(),
         }
     }
+    if (activeProject.references[title].accordingTo?.scienceDirect?.year) {
+        activeProject.references[title].accordingTo.scienceDirect.year = activeProject.references[title].accordingTo.scienceDirect.year-0
+    }
 }
-saveProject({activeProject, path: storageObject.activeProjectPath})
+saveProject(  {activeProject, path: storageObject.activeProjectPath})
