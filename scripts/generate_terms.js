@@ -127,123 +127,57 @@ activeProject = await loadProject(storageObject.activeProjectPath)
 
 var refs = Object.values(activeProject.references)
 var rrefs = refs.filter(each=>each.notes.resumeStatus.match(/\brelevent\b/))
-var abs = rrefs.filter(each=>each.abstract).map(each=>each.abstract)
-var c = ["the",
-"be",
-"to",
-"of",
-"and",
-"a",
-"in",
-"that",
-"have",
-"I",
-"it",
-"for",
-"not",
-"on",
-"with",
-"he",
-"as",
-"you",
-"do",
-"at",
-"this",
-"but",
-"his",
-"by",
-"from",
-"they",
-"we",
-"say",
-"her",
-"she",
-"or",
-"an",
-"will",
-"my",
-"one",
-"all",
-"would",
-"there",
-"their",
-"what",
-"so",
-"up",
-"out",
-"if",
-"about",
-"who",
-"get",
-"which",
-"go",
-"me",
-"when",
-"make",
-"can",
-"like",
-"time",
-"no",
-"just",
-"him",
-"know",
-"take",
-"people",
-"into",
-"year",
-"your",
-"good",
-"some",
-"could",
-"them",
-"see",
-"other",
-"than",
-"then",
-"now",
-"look",
-"only",
-"come",
-"its",
-"over",
-"think",
-"also",
-"back",
-"after",
-"use",
-"two",
-"how",
-"our",
-"work",
-"first",
-"well",
-"way",
-"even",
-"new",
-"want",
-"because",
-"any",
-"these",
-"give",
-"day",
-"most",
-"are",
-"data",
-"approach",
-"show",
-"using",
-"method",
-"where",
-"has",
-"was",
-"very",
-"must",
-"need",
-"were",
-"is",
-"should",
-"us",].map(each=>each.toLowerCase())
+var discoverys = activeProject.discoveryAttempts
 
-var pairs = abs.map(each=>each.replace(/-/g," ").toLowerCase().split(/\s+/g).filter(each=>each.length && !c.includes(each))).map(each=>[...zipShort(each,each.slice(1))].map(each=>each.join(" "))).flat(10)
-var f = frequencyCount(pairs, {sort:1})
-console.debug(`terms is:`,f)
+
+// 
+import { getPairedFrequency, getPairedFrequencyNoInnerDuplicates, getWordFrequencyNoInnerDuplicates, getWordFrequency, relevantWords, getTerms } from "../tools/word_analysis.js"
+import { linePlot } from "../tools/plot.js"
+
+let refGroup = refs
+
+var allTitles = refGroup.map(each=>each.title).flat(Infinity)
+var allAbstracts = refGroup.map(each=>each.abstract).filter(each=>each).flat(Infinity)
+var allStrings = allTitles.concat(allAbstracts).filter(each=>each)
+
+var singleWordFreq = getWordFrequency(allStrings)
+var totalWords = getTerms(allStrings.join(" ")).length
+var numberOfUniqueWords = singleWordFreq.size
+var probabilityOfWord = (word)=>singleWordFreq.get(word)/totalWords
+var averageProbabilityOfWord = 1/numberOfUniqueWords
+var scoreOfWord = (word)=>probabilityOfWord(word)/averageProbabilityOfWord
+
+// 
+// get relevant terms list
+// 
+var pairsFreq = getPairedFrequency(allStrings)
+// var numberOfUniquePairs = numberOfUniqueWords * numberOfUniqueWords 
+var numberOfUniquePairs = numberOfUniqueWords * 2 // wrong (in terms of probability) but useful for mixing terms and singular words
+var totalPairs = totalWords - 1 //  "a b c d" => "a b" "b c" "c d"
+var probabilityOfPair = (pair)=>pairsFreq.get(pair)/totalPairs
+var averageProbabilityOfPair = 1/numberOfUniquePairs
+var scoreOfPair = (pair)=>probabilityOfPair(pair)/averageProbabilityOfPair
+
+// 
+// score them
+// 
+var scoredTerms = []
+for (const [key, value] of singleWordFreq.entries()) {
+    scoredTerms.push([key, scoreOfWord(key)])
+}
+for (const [term, count] of pairsFreq.entries()) {
+    let [word1, word2] = term.split(" ")
+    let probabilityOfNotGettingWord1 = 1-probabilityOfWord(word1)
+    let probabilityOfNotGettingWord2 = 1-probabilityOfWord(word2)
+    let probabilityOfNotGettingPair = probabilityOfNotGettingWord1*probabilityOfNotGettingWord2
+    let probabilityOfGettingPair = 1-probabilityOfNotGettingPair
+    let expectedFrequencyOfPair = 1/probabilityOfGettingPair // zipf's law
+    
+    // more freq is good
+    // using rare words is better
+    scoredTerms.push([term, scoreOfPair(term)])
+}
+scoredTerms.sort((a,b)=>b[1]-a[1])
+for (let [term, score] of scoredTerms.slice(0,100)) {
+    console.debug(`${cyan(term)}: ${score}`)
+}
