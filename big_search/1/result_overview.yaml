@@ -1,0 +1,93 @@
+total: 8466
+years:
+    2025: 159
+    2024: 748
+    2023: 608
+    2022: 592
+    2021: 570
+    2020: 461
+    2019: 367
+    2018: 345
+    2017: 311
+    2016: 285
+    2015: 263
+    2014: 235
+    2013: 258
+    2012: 187
+    2011: 197
+    2010: 193
+    2009: 146
+    2008: 147
+    2007: 140
+    2006: 136
+    2005: 134
+    2004: 128
+    2003: 118
+    2002: 101
+    2001: 101
+article type:
+    review articles: 2375
+    research articles: 8464
+    encyclopedia: 233
+    book chapters: 1706
+    conference abstracts: 2
+    book reviews: 12
+    case reports: 15
+    conference info: 5
+    correspondence: 10
+    data articles: 1
+    discussion: 47
+    editorials: 22
+    errata: 2
+    mini reviews: 69
+    news: 1
+    practice guidelines: 6
+    product reviews: 2
+    replication studies: 2
+    short communications: 176
+    software publications: 1
+    other: 92
+publication title:
+    vision research: 289
+    neuropsychologia: 121
+    cognition: 117
+    neuroimage: 95
+    geochimica et cosmochimica acta: 92
+    acta psychologica: 81
+    advances in psychology: 75
+    icarus: 67
+    optics communications: 66
+    optics and lasers in engineering: 65
+    science of the total environment: 64
+    journal of experimental child psychology: 63
+    brain research: 58
+    infant behavior and development: 50
+    neuroscience: 42
+    neuron: 42
+    cell reports: 42
+    neurocomputing: 41
+    additive manufacturing: 41
+    iscience: 41
+    medical image analysis: 39
+    expert systems with applications: 38
+    advances in space research: 38
+    ultramicroscopy: 37
+    behavioural brain research: 36
+subject areas:
+    neuroscience: 1737
+    medicine and dentistry: 1579
+    engineering: 1361
+    computer science: 1079
+    psychology: 1041
+    biochemistry genetics and molecular biology: 895
+    physics and astronomy: 889
+    materials science: 783
+    environmental science: 656
+    agricultural and biological sciences: 647
+languages:
+    english: 8460
+    french: 4
+    german: 1
+    spanish: 1
+access type:
+    open access & open archive: 2015

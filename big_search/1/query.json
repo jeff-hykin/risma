@@ -1,0 +1,13 @@
+{
+    "query": "object detection",
+    "dateTime": "2025-01-20T17:19:43.690Z",
+    "searchEngine": "scienceDirect",
+    "filters": {
+        "references": "Gibson",
+        "article type": {
+            "research article": true,
+            "data article": true,
+            "software publications": true,
+        }
+    }
+}
