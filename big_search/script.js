@@ -56,9 +56,7 @@ var withAbstracts = false
                 }
             }
             newData[title] = {
-                notes: {},
                 accordingTo:{
-                    $manuallyEntered: {},
                     scienceDirect: {
                         link: downloadLink?.href,
                         title,

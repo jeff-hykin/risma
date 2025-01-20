@@ -142,7 +142,6 @@ var query = {
     query: "object detection",
     dateTime: '2025-01-20T17:19:43.690Z',
     searchEngine: "scienceDirect",
-    chronoGroupId: 1737218769289,
     filters: {
         references: "Gibson",
         "article type": {
@@ -156,7 +155,16 @@ var query = {
     ],
 }
 const now = new Date()
-for (const [title, ref] of Object.entries(newRefs)) {
+for (let [title, ref] of Object.entries(newRefs)) {
+    // add basic fields
+    ref = {
+        notes: {},
+        ...ref,
+        accordingTo: {
+            $manuallyEntered: {},
+            ...ref.accordingTo,
+        }
+    }
     let refLink = {
         hadBeenSeenBefore: false,
         title,
@@ -187,4 +195,4 @@ for (const [title, ref] of Object.entries(newRefs)) {
         activeProject.references[title].accordingTo.scienceDirect.year = activeProject.references[title].accordingTo.scienceDirect.year-0
     }
 }
-saveProject(  {activeProject, path: storageObject.activeProjectPath})
+saveProject({activeProject, path: storageObject.activeProjectPath})
