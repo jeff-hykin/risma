@@ -38,6 +38,17 @@ export async function title2Doi(title, { cacheObject, onUpdateCache=_=>0,}={}) {
     const getHref = (element)=>element.getAttribute("href").startsWith("/")?`${baseUrl}/${element.getAttribute("href")}`:element.getAttribute("href")
     let htmlResult
     try {
+        let needToWait
+        do {
+            // avoid hitting rate limit
+            const thresholdTime = title2Doi.lastFetchTime.getTime() + title2Doi.waitTime
+            const now = new Date().getTime()
+            needToWait = thresholdTime - now
+            if (needToWait > 0) {
+                await new Promise(r=>setTimeout(r, needToWait))
+            }
+        } while (needToWait > 0)
+        title2Doi.lastFetchTime = new Date()
         htmlResult = await fetch(url).then(result=>result.text())
     } catch (error) {
         // console.debug(`error when getting ${url} is:`,error)
@@ -66,10 +77,24 @@ export async function title2Doi(title, { cacheObject, onUpdateCache=_=>0,}={}) {
     return null
 }
 title2Doi.cache = {}
+title2Doi.lastFetchTime = new Date()
+title2Doi.waitTime = 100
 
 export async function doiToCrossrefInfo(doi, { cacheObject, onUpdateCache=_=>0,}={}) {
     cacheObject = cacheObject||doiToCrossrefInfo.cache
     if (!cacheObject[doi]) {
+        let needToWait
+        do {
+            // avoid hitting rate limit
+            const thresholdTime = doiToCrossrefInfo.lastFetchTime.getTime() + doiToCrossrefInfo.waitTime
+            const now = new Date().getTime()
+            needToWait = thresholdTime - now
+            if (needToWait > 0) {
+                await new Promise(r=>setTimeout(r, needToWait))
+            }
+        } while (needToWait > 0)
+        doiToCrossrefInfo.lastFetchTime = new Date()
+
         let url = `https://api.crossref.org/works/${doi}`
         const result = await fetch(url)
         if (result.ok) {
@@ -738,7 +763,8 @@ export async function doiToCrossrefInfo(doi, { cacheObject, onUpdateCache=_=>0,}
     // }
 }
 doiToCrossrefInfo.cache = {}
-
+doiToCrossrefInfo.lastFetchTime = new Date()
+doiToCrossrefInfo.waitTime = 100
 /**
  * this exists mostly for caching
  */
@@ -775,7 +801,7 @@ export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0
 }
 getOpenAlexData.cache = {}
 getOpenAlexData.lastFetchTime = new Date()
-getOpenAlexData.waitTime = 5000
+getOpenAlexData.waitTime = 500
 
 /**
  * @example
@@ -1520,7 +1546,11 @@ export async function autofillDataFor(reference, {crossrefCacheObject, openAlexC
         if (!reference.doi && reference.title) {
             reference.accordingTo = reference.accordingTo || {}
             reference.accordingTo.crossref = reference.accordingTo.crossref || {}
-            reference.accordingTo.crossref.doi = await title2Doi(reference.title)
+            try {
+                reference.accordingTo.crossref.doi = await title2Doi(reference.title)
+            } catch (error) {
+                
+            }
         }
     
     // get data
