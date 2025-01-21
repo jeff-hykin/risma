@@ -1,15 +1,5 @@
 let allReferences = []
 export class Reference {
-    static beforeSave() {
-        for (let each of allReferences) {
-            each._ = {}
-            for (const [key, value] of Object.entries(each.accordingTo.$manuallyEntered)) {
-                // structuredClone is needed to preserve references in the yaml
-                // this _ field only exists to make it easier to query the yaml
-                each._[key] = structuredClone(each[key])
-            }
-        }
-    }
     constructor({
         notes={
             comment:"",
@@ -25,7 +15,6 @@ export class Reference {
         },
         ...other
     }={}) {
-        allReferences.push(this)
         this.notes = notes||{}
         this.accordingTo = { $manuallyEntered: {}, ...(accordingTo||{}) }
         const commonKeys = ["title","doi","year","publisherFlags","authorNames","link","pdfLink","cites","citedBy","abstract"]
@@ -92,6 +81,14 @@ export class Reference {
                     this.accordingTo.$manuallyEntered[key] = value
                 },
             })
+        }
+    }
+    beforeSave() {
+        this._ = {}
+        for (const [key, value] of Object.entries(this.accordingTo.$manuallyEntered)) {
+            // structuredClone is needed to preserve references in the yaml
+            // this _ field only exists to make it easier to query the yaml
+            this._[key] = structuredClone(this[key])
         }
     }
 }

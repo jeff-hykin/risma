@@ -57,7 +57,7 @@ export const loadProject = async (path) => {
     return project
 }
 
-export const saveProject = async ({activeProject, path})=>{
+export const saveProject = ({activeProject, path})=>{
     const projectToSave = structuredClone(activeProject)
     // fixup references
     for (const [key, value] of Object.entries(projectToSave.references)) {
@@ -75,8 +75,10 @@ export const saveProject = async ({activeProject, path})=>{
             each.link = projectToSave.references[each.title]
         }
     }
-    await Reference.beforeSave()
-    await FileSystem.write({path, data: yaml.stringify(projectToSave,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
+    for (const [key, value] of Object.entries(projectToSave.references)) {
+        value.beforeSave()
+    }
+    return FileSystem.write({path, data: yaml.stringify(projectToSave,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
 }
 
 export const score = (each, project)=>{
