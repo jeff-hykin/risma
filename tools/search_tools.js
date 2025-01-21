@@ -760,8 +760,6 @@ export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0
             }
         } while (needToWait > 0)
         getOpenAlexData.lastFetchTime = new Date()
-        await new Promise(r=>setTimeout(r,100))
-        return null
         const result = await fetch(urlOrDoi)
         if (result.ok) {
             let output = (await result.json())
