@@ -124,10 +124,12 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         return reset``+text
     }
 
-activeProject = await loadProject(storageObject.activeProjectPath)
+var projectPath = storageObject.activeProjectPath
+var projectPath = "/Users/jeffhykin/repos/risma/data/big_search/5/project.yaml"
+activeProject = await loadProject(projectPath)
 
 var refs = Object.values(activeProject.references)
-var rrefs = refs.filter(each=>each.notes.resumeStatus.match(/\brelevent\b/))
+var rrefs = refs.filter(each=>(each?.notes?.resumeStatus||"").match(/\brelevent\b/))
 var discoverys = activeProject.discoveryAttempts
 
 
@@ -171,7 +173,7 @@ const ask = async (q, each)=>{
         activeProject.references[each.title].notes.questionnaire[q] = answer
         break
     }
-    saveProject({ activeProject, path: storageObject.activeProjectPath})
+    saveProject({ activeProject, path: projectPath})
     return answer
 }
 
