@@ -81,6 +81,49 @@ export const saveProject = ({activeProject, path})=>{
     return FileSystem.write({path, data: yaml.stringify(projectToSave,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
 }
 
+//
+// keyword count
+//
+export function getKeywordCount(title, project) {
+    const keywords = project.settings.keywords
+    keywords.positive = keywords.positive || []
+    keywords.negative = keywords.negative || []
+    keywords.neutral = keywords.neutral || []
+    keywords.positive = keywords.positive.map(each=>each.toLowerCase())
+    keywords.negative = keywords.negative.map(each=>each.toLowerCase())
+    keywords.neutral = keywords.neutral.map(each=>each.toLowerCase())
+
+    const goodKeywords = keywords.positive
+    const badKeywords = keywords.negative
+    const neutralKeywords = keywords.neutral
+    if (!title) {
+        return {good: 0, bad: 0, neutral: 0}
+    }
+    let numberOfGoodKeywords = 0
+    let numberOfBadKeywords = 0
+    let numberOfNeutralKeywords = 0
+    let index = -1
+    for (let char of title) {
+        index++
+        if (!title.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
+            const remaining = title.slice(index,).toLowerCase()
+            let matching
+            // FIXME: need to sort by length of keyword 
+            if (goodKeywords.some(each=>(remaining.startsWith(matching=each)))) {
+                numberOfGoodKeywords++
+                index += matching.length
+            } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
+                numberOfBadKeywords++
+                index += matching.length
+            } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
+                numberOfNeutralKeywords++
+                index += matching.length
+            }
+        }
+    }
+    return {good: numberOfGoodKeywords, bad: numberOfBadKeywords, neutral: numberOfNeutralKeywords}
+}
+
 export const score = (each, project)=>{
     project = project || activeProject // TODO: remove
     //
@@ -96,34 +139,6 @@ export const score = (each, project)=>{
     const goodKeywords = keywords.positive
     const badKeywords = keywords.negative
     const neutralKeywords = keywords.neutral
-    function getKeywordCount(title) {
-        if (!title) {
-            return {good: 0, bad: 0, neutral: 0}
-        }
-        let numberOfGoodKeywords = 0
-        let numberOfBadKeywords = 0
-        let numberOfNeutralKeywords = 0
-        let index = -1
-        for (let char of title) {
-            index++
-            if (!title.slice(0,index).match(/[a-zA-Z0-9_]$/)) {
-                const remaining = title.slice(index,).toLowerCase()
-                let matching
-                // FIXME: need to sort by length of keyword 
-                if (goodKeywords.some(each=>(remaining.startsWith(matching=each)))) {
-                    numberOfGoodKeywords++
-                    index += matching.length
-                } else if (badKeywords.some(each=>remaining.startsWith(matching=each))) {
-                    numberOfBadKeywords++
-                    index += matching.length
-                } else if (neutralKeywords.some(each=>remaining.startsWith(matching=each))) {
-                    numberOfNeutralKeywords++
-                    index += matching.length
-                }
-            }
-        }
-        return {good: numberOfGoodKeywords, bad: numberOfBadKeywords, neutral: numberOfNeutralKeywords}
-    }
     
     // 
     // evaluate user-defined scoring functions
@@ -138,9 +153,9 @@ export const score = (each, project)=>{
                 {
                     keywords,
                     settings: project.settings,
-                    numberOfGoodKeywordsIn: (title)=>getKeywordCount(title).good,
-                    numberOfBadKeywordsIn: (title)=>getKeywordCount(title).bad,
-                    numberOfNeutralKeywordsIn: (title)=>getKeywordCount(title).neutral,
+                    numberOfGoodKeywordsIn: (title)=>getKeywordCount(title, project).good,
+                    numberOfBadKeywordsIn: (title)=>getKeywordCount(title, project).bad,
+                    numberOfNeutralKeywordsIn: (title)=>getKeywordCount(title, project).neutral,
                 }
             )
         } catch (error) {
