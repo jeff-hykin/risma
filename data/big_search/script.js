@@ -1,4 +1,4 @@
-var withAbstracts = false
+var withAbstracts = true
 ;((async ()=>{
     var $$ = (...args)=>[...document.querySelectorAll(...args)]
     var newData = {}
@@ -78,10 +78,24 @@ var withAbstracts = false
         }
         console.log(`JSON.stringify(newData,0,4) is:`,JSON.stringify(newData,0,4))
         
+        const neededNumberOfResults = 100
+        // always click the 100
+        for (let each of $$('a[data-aa-region="srp-pagination-options"]')) {
+            if (each.innerText.match(`${neededNumberOfResults}`)) {
+                each.click()
+                await new Promise(r=>setTimeout(r,5000))
+                break
+            }
+        }
         let nextButton = document.querySelector(".pagination-link.next-link")
         if (nextButton) {
             nextButton.children[0].click()
-            console.log(`next page ${++pageNumber}`)
+            await new Promise(r=>setTimeout(r,500))
+            while ($$(".result-item-content").length < neededNumberOfResults) {
+                await new Promise(r=>setTimeout(r,100))
+                console.log(`waiting for more results`)
+            }
+            console.log(`next page ${++pageNumber} ... ${$$("#srp-pagination").at(0)?.innerText} results`)
             await new Promise(r=>setTimeout(r,2000))
             continue
         }
