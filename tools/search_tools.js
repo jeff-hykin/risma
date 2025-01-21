@@ -801,7 +801,7 @@ export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0
 }
 getOpenAlexData.cache = {}
 getOpenAlexData.lastFetchTime = new Date()
-getOpenAlexData.waitTime = 500
+getOpenAlexData.waitTime = 2000
 
 /**
  * @example
@@ -1593,5 +1593,6 @@ export async function relatedWorkIncludes({source, }, refChecker) {
                 }
             }
         }
+        return false
     }
 }
