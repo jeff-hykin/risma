@@ -749,15 +749,19 @@ export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0
         urlOrDoi = `https://api.openalex.org/works/https://doi.org/${urlOrDoi}`
     }
     if (!cacheObject[urlOrDoi]) {
-        // avoid hitting rate limit
-        const thresholdTime = getOpenAlexData.lastFetchTime.getTime() + getOpenAlexData.waitTime
-        const now = new Date().getTime()
-        const needToWait = thresholdTime - now
-        if (needToWait > 0) {
-            await new Promise(r=>setTimeout(r, needToWait))
-        }
+        let needToWait
+        do {
+            // avoid hitting rate limit
+            const thresholdTime = getOpenAlexData.lastFetchTime.getTime() + getOpenAlexData.waitTime
+            const now = new Date().getTime()
+            needToWait = thresholdTime - now
+            if (needToWait > 0) {
+                await new Promise(r=>setTimeout(r, needToWait))
+            }
+        } while (needToWait > 0)
         getOpenAlexData.lastFetchTime = new Date()
-
+        await new Promise(r=>setTimeout(r,100))
+        return null
         const result = await fetch(urlOrDoi)
         if (result.ok) {
             let output = (await result.json())
@@ -773,7 +777,7 @@ export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0
 }
 getOpenAlexData.cache = {}
 getOpenAlexData.lastFetchTime = new Date()
-getOpenAlexData.waitTime = 500
+getOpenAlexData.waitTime = 5000
 
 /**
  * @example
@@ -1217,12 +1221,15 @@ export const searchOptions = {
             // 
             // avoid hitting rate limit
             // 
-            const thresholdTime = this.urlToListOfResults.lastFetchTime.getTime() + this.urlToListOfResults.waitTime
-            const now = new Date().getTime()
-            const needToWait = thresholdTime - now
-            if (needToWait > 0) {
-                await new Promise(r=>setTimeout(r, needToWait * (Math.random()+1)))
-            }
+            let needToWait
+            do {
+                const thresholdTime = this.urlToListOfResults.lastFetchTime.getTime() + this.urlToListOfResults.waitTime
+                const now = new Date().getTime()
+                needToWait = thresholdTime - now
+                if (needToWait > 0) {
+                    await new Promise(r=>setTimeout(r, needToWait * (Math.random()+1)))
+                }
+            } while (needToWait > 0)
             this.urlToListOfResults.lastFetchTime = new Date()
             
             // 
@@ -1499,7 +1506,12 @@ searchOptions.googleScholar.urlToListOfResults.lastFetchTime = new Date()
 searchOptions.googleScholar.urlToListOfResults.waitTime = 5000 // google is picky and defensive
 
 
+let ramCache = new Map()
 export async function autofillDataFor(reference, {crossrefCacheObject, openAlexCacheObject, }={}) {
+    const original = reference
+    if (ramCache.has(reference)) {
+        return ramCache.get(reference)
+    }
     // make it a proper object
     if (!(reference instanceof Reference)) {
         reference = new Reference(reference)
@@ -1538,6 +1550,7 @@ export async function autofillDataFor(reference, {crossrefCacheObject, openAlexC
         }
         await Promise.all(promises)
     }
+    ramCache.set(original, reference)
     return reference
 }
 
