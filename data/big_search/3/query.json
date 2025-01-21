@@ -1,5 +1,6 @@
 {
     "query": "(perception OR object (detection OR recognition OR interaction OR manipulation)) (embodied OR agent OR robot OR egocentric) (learning) -collaboration -telepresence",
+    "url": "https://www.sciencedirect.com/search?references=Gibson&qs=%28perception%20OR%20object%20%28detection%20OR%20recognition%20OR%20interaction%20OR%20manipulation%29%29%20%28embodied%20OR%20agent%20OR%20robot%20OR%20egocentric%20OR%20sensorimotor%29%20-telepresence%20-collaboration&subjectAreas=2200%2C1700",
     "dateTime": "2025-01-20T17:19:43.690Z",
     "searchEngine": "scienceDirect",
     "filters": {

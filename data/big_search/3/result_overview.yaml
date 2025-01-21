@@ -1,0 +1,79 @@
+total: 2173
+years:
+    2025: 44
+    2024: 215
+    2023: 140
+    2022: 151
+    2021: 143
+    2020: 114
+    2019: 95
+    2018: 78
+    2017: 63
+    2016: 70
+    2015: 67
+    2014: 46
+    2013: 66
+    2012: 54
+    2011: 47
+    2010: 57
+    2009: 63
+    2008: 48
+    2007: 43
+    2006: 36
+    2005: 30
+    2004: 34
+    2003: 28
+    2002: 27
+    2001: 20
+
+article type:
+    review articles: 1144
+    research articles: 2173
+    encyclopedia: 62
+    book chapters: 418
+    book reviews: 4
+    correspondence: 1
+    discussion: 13
+    editorials: 8
+    mini reviews: 26
+    practice guidelines: 1
+    short communications: 48
+    other: 9
+
+publication title:
+    behavioural brain research: 65
+    pharmacology biochemistry and behavior: 61
+    brain research: 60
+    neuroscience: 58
+    journal of memory and language: 46
+    robotics and autonomous systems: 41
+    cognitive psychology: 36
+    acta psychologica: 34
+    computers in human behavior: 33
+    cognitive systems research: 31
+    european journal of pharmacology: 30
+    neuropsychologia: 28
+    progress in neuro-psychopharmacology and biological psychiatry: 27
+    infant behavior and development: 27
+    neuroimage: 26
+    neuropharmacology: 25
+    neurocomputing: 25
+    vision research: 24
+    physiology & behavior: 20
+    neuroscience & biobehavioral reviews: 20
+    experimental neurology: 18
+    brain behavior and immunity: 18
+    neuron: 16
+    additive manufacturing: 16
+    animal behaviour: 15
+subject areas:
+    neuroscience: 1252
+    engineering: 630
+    computer science: 616
+language:
+    english: 2171
+    spanish: 1
+    french: 1
+
+access type:
+    open access & open archive: 446
