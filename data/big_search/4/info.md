@@ -84,3 +84,5 @@ Show less
 Access type
 Open access & Open archive (14,157)
 Clear all filters"
+
+NOTE: abstracts stopped about page 58 of 60 I believe
