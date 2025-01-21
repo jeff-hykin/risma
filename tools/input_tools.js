@@ -1,5 +1,6 @@
 import { zip, enumerate, count, permute, combinations, wrapAroundGet } from "https://deno.land/x/good@1.5.1.0/array.js"
 import { Input } from "../subrepos/cliffy/prompt/input.ts"
+export { Input } from "../subrepos/cliffy/prompt/input.ts"
 export { Number } from "../subrepos/cliffy/prompt/number.ts"
 import { Checkbox } from "../subrepos/cliffy/prompt/checkbox.ts"
 import { parse } from "../subrepos/cliffy/keycode/mod.ts"
