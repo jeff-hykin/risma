@@ -145,11 +145,11 @@ await Promise.all(refs.map(async (each)=>{
     q = each?.notes?.questionnaire
     if (q?.["cites Gibson"] !== true && q?.["cites Gibson"] !== false) {
         each = await autofillDataFor(each)
-        q = each.notes.questionnaire = {...each?.notes?.questionnaire}
+        activeProject.references[each.title].notes.questionnaire = {...each?.notes?.questionnaire}
         if (!each.accordingTo?.openAlex?.citedAlexIds) {
-            q["cites Gibson"] = null // unknown
+            activeProject.references[each.title].notes.questionnaire["cites Gibson"] = null // unknown
         } else {
-            q["cites Gibson"] = await relatedWorkIncludes({source: each, }, (reference)=>reference.authorNames.some(eachAuthor=>(
+            activeProject.references[each.title].notes.questionnaire["cites Gibson"] = await relatedWorkIncludes({source: each, }, (reference)=>reference.authorNames.some(eachAuthor=>(
                 !["Jason Gibson"].includes(eachAuthor) && eachAuthor.match(/\bGibson\b/) && eachAuthor.match(/\bJ(ames (J)?|J)\b/)
             )))
             write(`${index} of ${refs.length}: saving ${index}\r`)
