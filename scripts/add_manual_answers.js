@@ -172,6 +172,7 @@ const ask = async (q, each)=>{
         break
     }
     saveProject({ activeProject, path: storageObject.activeProjectPath})
+    return answer
 }
 
 for (let each of shuffle(refs)) {
@@ -183,6 +184,7 @@ for (let each of shuffle(refs)) {
     each.notes = each.notes || {}
     each.notes.questionnaire = each.notes.questionnaire || {}
     let q
+    let answer
     let questionnaire = each.notes.questionnaire
     // 
     // automated filters
@@ -197,10 +199,102 @@ for (let each of shuffle(refs)) {
     console.log(``)
     console.log(`abstract:\n${highlightKeywords(each.abstract||"missing")}`)
     console.log(``)
-    // await OperatingSystem.openUrl(each.link||each.pdfLink)
-    if (questionnaire[q="is the reference related to a machine with perception that was learned over time?"] == null) {
-        await ask(q, each)
+    
+    q="is the reference related to a machine with perception that was learned over time?"
+    if (questionnaire[q] == null) {
+        answer = await ask(q, each)
     }
+    if (!answer) { continue }
+    
+    q="does the paper propose a method for perception?"
+    if (questionnaire[q] == null) {
+        answer = await ask(q, each)
+    }
+    if (!answer) { continue }
+    
+    // q="is the problem being solved related to general spatial awareness?"
+    // if (questionnaire[q] == null) {
+    //     answer = await ask(q, each)
+    // }
+    
+    q="what is the perceptual data?"
+    if (questionnaire[q] == null) {
+        answer = await ask(q, each)
+    }
+    
+    q="is the primary method supervised learning?"
+    if (questionnaire[q] == null) {
+        answer = await ask(q, each)
+    }
+    if (!answer) { continue }
+    
+    q="is the approach embodied in some way?"
+    if (questionnaire[q] == null) {
+        answer = await ask(q, each)
+    }
+    
+    if (answer) {
+        q="was there a virtual agent?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+
+        q="was there a physical agent?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+        
+        q="if it was a standard robot what was the name?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+        
+        q="what actions was the agent capable of?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+        
+        q="did the study include multiple tasks?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+        
+        q="what was the general algorithm(s) being used?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+        
+        q="was the learning off-policy?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+
+        q="is it possible that changing the task of the agent would change what the agent perceived, when given training time with the environment?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+        
+        q="is it possible that changing the task of the agent would change what the agent perceived, even without training time in the environment?"
+        if (questionnaire[q] == null) {
+            answer = await ask(q, each)
+        }
+    }
+    
+    // q="what was the metric of success?"
+    // if (questionnaire[q] == null) {
+    //     answer = await ask(q, each)
+    // }
+    // if (!answer) { continue }
+
+
+    // q="what was the metric of success?"
+    // if (questionnaire[q] == null) {
+    //     answer = await ask(q, each)
+    // }
+    // if (!answer) { continue }
+    
+
+
     // if (questionnaire[q="is it a methods paper?"] == null) {
     //     activeProject.references[each.title].notes.questionnaire[q] = await Console.askFor.line(q)
     // }
