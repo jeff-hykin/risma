@@ -1,0 +1,95 @@
+includes perception and/or interaction:
+    - object detection
+    - object affordance
+    - object recognition
+    - object interaction
+    - object manipulation
+    - perception
+    - vision
+    - visual
+    - segmentation
+    - sensorimotor
+    - rgb
+    - scene understanding
+    - optical flow
+    - flow scene
+    - affordance segmentation
+    - environment stimuli
+    - environment affordance
+    - 3d environment
+    - perceptual awareness
+    - socially aware
+    - grouned representation
+    - representation learning
+    - visually grounded
+    - contextual awareness
+
+whole-scene perception:
+    - scene understanding
+    - learning scene
+    - scene recognition
+    - semantic scene
+    - scene semantics
+    - scene segmentation
+    - scene perception
+    - environmental perception
+    - emulated
+    - simulated
+    - contextual
+    - situated
+    - real world
+    - real-world
+    - scene parsing
+
+something with a body:
+    - embodied
+    - egocentric
+    - agent
+    - action
+    - robot
+    - uav
+    - ugv
+    - situated
+    - animal
+    - mouse
+    - rat
+    - cat
+    - dog
+
+something that learns:
+    - learn
+    - learning
+    - machine learning
+    - dynamic
+    - unseen
+    - plasticity
+    - unsupervised
+    - self-supervised
+    - reinforcement
+    - deep learning
+    - rl
+    - ml
+    - online learning
+    - neural network
+    - convolutional network
+    - cnn
+    - rnn
+    - transformer
+    - lstm
+    - autoencoder
+    - bayesian
+    - markov
+    - hmm
+    - hhmm
+    - neuroscience inspired
+    - q learning
+    - policy gradient
+    - ppo
+    - ddpg
+    - dqn
+    - gan
+    - actor-critic
+    - maml
+    - evolutionary algorithm    
+    - genetic algorithm
+    - mcmc

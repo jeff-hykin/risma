@@ -1,0 +1,85 @@
+
+total: 2,173
+Years
+2025 (44)
+2024 (215)
+2023 (140)
+2022 (151)
+2021 (143)
+2020 (114)
+2019 (95)
+2018 (78)
+2017 (63)
+2016 (70)
+2015 (67)
+2014 (46)
+2013 (66)
+2012 (54)
+2011 (47)
+2010 (57)
+2009 (63)
+2008 (48)
+2007 (43)
+2006 (36)
+2005 (30)
+2004 (34)
+2003 (28)
+2002 (27)
+2001 (20)
+Custom range
+Show less
+
+Article type
+Review articles (1,144)
+Research articles (2,173)
+Encyclopedia (62)
+Book chapters (418)
+Book reviews (4)
+Correspondence (1)
+Discussion (13)
+Editorials (8)
+Mini reviews (26)
+Practice guidelines (1)
+Short communications (48)
+Other (9)
+Show less
+
+Publication title
+Behavioural Brain Research (65)
+Pharmacology Biochemistry and Behavior (61)
+Brain Research (60)
+Neuroscience (58)
+Journal of Memory and Language (46)
+Robotics and Autonomous Systems (41)
+Cognitive Psychology (36)
+Acta Psychologica (34)
+Computers in Human Behavior (33)
+Cognitive Systems Research (31)
+European Journal of Pharmacology (30)
+Neuropsychologia (28)
+Progress in Neuro-Psychopharmacology and Biological Psychiatry (27)
+Infant Behavior and Development (27)
+NeuroImage (26)
+Neuropharmacology (25)
+Neurocomputing (25)
+Vision Research (24)
+Physiology & Behavior (20)
+Neuroscience & Biobehavioral Reviews (20)
+Experimental Neurology (18)
+Brain, Behavior, and Immunity (18)
+Neuron (16)
+Additive Manufacturing (16)
+Animal Behaviour (15)
+Show less
+
+Subject areas
+Neuroscience (1,252)
+Engineering (630)
+Computer Science (616)
+Languages
+beta
+English (2,171)
+Spanish (1)
+French (1)
+Access type
+Open access & Open archive (446)

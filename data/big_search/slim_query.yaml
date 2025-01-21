@@ -1,0 +1,38 @@
+includes perception and/or interaction:
+    - object (recognition OR interaction OR manipulation)
+    - perception
+    # - visual
+    # - sensorimotor
+    # - scene understanding
+    # - optical flow
+    # - environment affordance
+    # - representation learning
+
+# whole-scene perception:
+#     - scene
+#     - environmental
+#     - emulated
+#     - simulated
+#     - contextual
+#     - situated
+#     - real world
+
+something with a body:
+    - embodied
+    # - egocentric
+    - agent
+    # - action
+    - robot
+
+something that learns:
+    - learning
+#     - dynamic
+#     - unseen
+#     - plasticity
+#     - unsupervised
+#     - self-supervised
+#     - reinforcement
+#     - deep learning
+#     - neural network
+#     - rl
+#     - ml

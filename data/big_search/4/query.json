@@ -1,0 +1,13 @@
+{
+    "query": "(perception OR object (detection OR recognition OR interaction OR manipulation)) (embodied OR agent OR robot OR egocentric OR sensorimotor) -collaboration -telepresence",
+    "dateTime": "2025-01-20T17:19:43.690Z",
+    "searchEngine": "scienceDirect",
+    "filters": {
+        "references": "Gibson",
+        "article type": {
+            "research article": true,
+        },
+        "subject areas": {
+        }
+    }
+}
