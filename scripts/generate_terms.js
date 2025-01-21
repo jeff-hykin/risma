@@ -163,7 +163,7 @@ var scoreOfPair = (pair)=>probabilityOfPair(pair)/averageProbabilityOfPair
 // 
 var scoredTerms = []
 for (const [key, value] of singleWordFreq.entries()) {
-    scoredTerms.push([key, scoreOfWord(key)])
+    scoredTerms.push([key, scoreOfWord(key), singleWordFreq.get(key)])
 }
 for (const [term, count] of pairsFreq.entries()) {
     let [word1, word2] = term.split(" ")
@@ -175,9 +175,9 @@ for (const [term, count] of pairsFreq.entries()) {
     
     // more freq is good
     // using rare words is better
-    scoredTerms.push([term, scoreOfPair(term)])
+    scoredTerms.push([term, scoreOfPair(term), pairsFreq.get(term)])
 }
 scoredTerms.sort((a,b)=>b[1]-a[1])
-for (let [term, score] of scoredTerms.slice(0,100)) {
-    console.debug(`${cyan(term)}: ${score}`)
+for (let [term, score, freq] of scoredTerms.slice(0,)) {
+    console.debug(`${(term)}: ${score}, ${freq}`)
 }
