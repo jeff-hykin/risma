@@ -114,6 +114,7 @@ settings:
             - grid cell
             - head direction
             - border cell
+            - place cell
             - bvc
             - boundary vector cell
             - multidimensional continuous attractor
@@ -126,6 +127,8 @@ settings:
             - neuromorphic
             - plasticity
             - hebbian
+            - spatial
+            - navigation
         negative:
             - large language model
             - language model
@@ -150,6 +153,7 @@ settings:
             - sustainability
         neutral:
             - deep learning
+            - machine learning
             - synaptic
             - burst
             - memory
@@ -514,11 +518,11 @@ references:
                 citedByCount: 2
         score:
             - 1
-            - 306
+            - 309
             - 0
             - 2022
             - 0
-        scoreString: 1|306|0|2022|0
+        scoreString: 1|309|0|2022|0
         _:
             title: 'NeoSLAM: Neural object SLAM for loop closure and navigation'
             doi: null
@@ -1429,12 +1433,12 @@ references:
                 citedByLink: null
                 publisherInfo: null
         score:
-            - 0
-            - 135
+            - 1
+            - 151.5
             - 0
             - 2016
             - 0
-        scoreString: 0|135|0|2016|0
+        scoreString: 1|151.5|0|2016|0
         _:
             title: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective
             doi: null
@@ -1648,12 +1652,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=16986739301937314197&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 2
         score:
-            - 0
-            - 270
+            - 1
+            - 303
             - 0
             - 2023
             - 0
-        scoreString: 0|270|0|2023|0
+        scoreString: 1|303|0|2023|0
         _:
             title: 'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective'
             doi: 10.5772/intechopen.110450
@@ -4374,8 +4378,9 @@ references:
     Spiking Neural Networks for Scalable Visual Place Recognition: &ref_45
         notes:
             resumeStatus: super-relevent|title
-            comment: ''
+            comment: dissertation paper that cites NeuroSLAM
             reasonsRelevant:
+                - fullText
                 - title
             reasonsNotRelevant: []
             customKeywords: []
@@ -5640,12 +5645,12 @@ references:
                 citedByLink: null
                 publisherInfo: null
         score:
-            - 0
-            - 270
+            - 1
+            - 303
             - 0
             - 2023
             - 0
-        scoreString: 0|270|0|2023|0
+        scoreString: 1|303|0|2023|0
         _:
             title: 'Neural Networks for Navigation: From Connections to Computations'
             doi: 10.1146/annurev-neuro-110920-032645
@@ -5661,7 +5666,7 @@ references:
     'NeuroSLAM: a brain-inspired SLAM system for 3D environments': &ref_3
         notes:
             resumeStatus: super-relevent|title
-            comment: ''
+            comment: this is one I read
             reasonsRelevant:
                 - title
             reasonsNotRelevant: []
@@ -6003,11 +6008,11 @@ references:
                 citedByCount: 3
         score:
             - 1
-            - 151.5
+            - 154.5
             - 0
             - 2020
             - 0
-        scoreString: 1|151.5|0|2020|0
+        scoreString: 1|154.5|0|2020|0
         _:
             title: Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation
             doi: 10.1109/iscas45731.2020.9180441
