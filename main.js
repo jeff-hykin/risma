@@ -269,15 +269,18 @@ mainLoop: while (true) {
         })
         const searchEngine = searchOptions[searchEngineName]
         const query = await Console.askFor.line(cyan`What's the search query?`)
-        const {references, newReferences, discoveryMethod} = await withSpinner("searching",
-            ()=>getSearchResults({
-                query, 
-                resultsPromise: searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query)}`), 
-                searchEngineName,
-                project: activeProject,
-                otherData: {},
-                getFullData: true,
+        const {references, newReferences, discoveryMethod} = await getSearchResults({
+            query, 
+            resultsPromise: searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query)}`), 
+            searchEngineName,
+            project: activeProject,
+            otherData: {},
+            getFullData: true,
+            message: `searching ...`,
             })
+            })
+        )
+        })
         )
         for (const each of newReferences.sort(referenceSorter({project: activeProject}))) {
             console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
