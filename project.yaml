@@ -1466,6 +1466,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:28:07.373Z'
+                sawTitle: '2025-01-29T16:27:13.454Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4377,6 +4378,7 @@ references:
             abstract: null
     Spiking Neural Networks for Scalable Visual Place Recognition: &ref_45
         notes:
+            isFavorite: true
             resumeStatus: super-relevent|title
             comment: dissertation paper that cites NeuroSLAM
             reasonsRelevant:
@@ -5665,6 +5667,7 @@ references:
             abstract: null
     'NeuroSLAM: a brain-inspired SLAM system for 3D environments': &ref_3
         notes:
+            isFavorite: true
             resumeStatus: super-relevent|title
             comment: this is one I read
             reasonsRelevant:
@@ -6409,6 +6412,2132 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    Computational mechanisms underlying cortical responses to the affordance properties of visual scenes: &ref_57
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.357Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1371/journal.pcbi.1006111
+            openAlex:
+                doi: 'https://doi.org/10.1371/journal.pcbi.1006111'
+                title: Computational mechanisms underlying cortical responses to the affordance properties of visual scenes
+                abstract: null
+                concepts:
+                    - face recognition and perception
+                    - visual perception and processing mechanisms
+                    - neural dynamics and brain function
+                    - cognitive neuroscience
+                    - affordance
+                    - feed forward
+                    - convolutional neural network
+                    - computer science
+                    - artificial intelligence
+                    - set (abstract data type)
+                    - visual cortex
+                    - deep learning
+                    - pattern recognition (psychology)
+                    - neuroscience
+                    - computer vision
+                    - psychology
+                    - human–computer interaction
+                    - control engineering
+                    - engineering
+                    - programming language
+                year: 2018
+                authorNames:
+                    - Michael Bonner
+                    - Russell A. Epstein
+                link: 'https://doi.org/10.1371/journal.pcbi.1006111'
+                pdfLink: 'https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006111&type=printable'
+                citationCount: 85
+                citedAlexIds:
+                    - 'https://openalex.org/W1190887536'
+                    - 'https://openalex.org/W1427877061'
+                    - 'https://openalex.org/W144689751'
+                    - 'https://openalex.org/W1597739853'
+                    - 'https://openalex.org/W1619178479'
+                    - 'https://openalex.org/W1715013381'
+                    - 'https://openalex.org/W1825675169'
+                    - 'https://openalex.org/W1849277567'
+                    - 'https://openalex.org/W1899185266'
+                    - 'https://openalex.org/W1933717971'
+                    - 'https://openalex.org/W1976389138'
+                    - 'https://openalex.org/W1976486816'
+                    - 'https://openalex.org/W1979755816'
+                    - 'https://openalex.org/W1983670299'
+                    - 'https://openalex.org/W1993901699'
+                    - 'https://openalex.org/W1994750275'
+                    - 'https://openalex.org/W2014228787'
+                    - 'https://openalex.org/W2029985196'
+                    - 'https://openalex.org/W2040036684'
+                    - 'https://openalex.org/W2046675171'
+                    - 'https://openalex.org/W2047084856'
+                    - 'https://openalex.org/W2057307785'
+                    - 'https://openalex.org/W2058616551'
+                    - 'https://openalex.org/W2061515192'
+                    - 'https://openalex.org/W2062118960'
+                    - 'https://openalex.org/W2084404187'
+                    - 'https://openalex.org/W2092253781'
+                    - 'https://openalex.org/W2096735923'
+                    - 'https://openalex.org/W2097795807'
+                    - 'https://openalex.org/W2107417492'
+                    - 'https://openalex.org/W2108489623'
+                    - 'https://openalex.org/W2119513601'
+                    - 'https://openalex.org/W2120699549'
+                    - 'https://openalex.org/W2121483365'
+                    - 'https://openalex.org/W2122822577'
+                    - 'https://openalex.org/W2127522740'
+                    - 'https://openalex.org/W2132172482'
+                    - 'https://openalex.org/W2134670479'
+                    - 'https://openalex.org/W2138111878'
+                    - 'https://openalex.org/W2149194912'
+                    - 'https://openalex.org/W2149933564'
+                    - 'https://openalex.org/W2153633111'
+                    - 'https://openalex.org/W2156406284'
+                    - 'https://openalex.org/W2162950292'
+                    - 'https://openalex.org/W2163605009'
+                    - 'https://openalex.org/W2176287621'
+                    - 'https://openalex.org/W2187089797'
+                    - 'https://openalex.org/W2274405424'
+                    - 'https://openalex.org/W2322151797'
+                    - 'https://openalex.org/W2328322609'
+                    - 'https://openalex.org/W2341036120'
+                    - 'https://openalex.org/W2346159085'
+                    - 'https://openalex.org/W2412480261'
+                    - 'https://openalex.org/W2495332208'
+                    - 'https://openalex.org/W2529188297'
+                    - 'https://openalex.org/W2529781924'
+                    - 'https://openalex.org/W2564487272'
+                    - 'https://openalex.org/W2586591890'
+                    - 'https://openalex.org/W2607416176'
+                    - 'https://openalex.org/W2622826443'
+                    - 'https://openalex.org/W2779304466'
+                    - 'https://openalex.org/W2789332809'
+                    - 'https://openalex.org/W2919115771'
+                    - 'https://openalex.org/W2952003010'
+                    - 'https://openalex.org/W2952237357'
+                    - 'https://openalex.org/W4299518610'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4226493464'
+                    - 'https://openalex.org/W3133861977'
+                    - 'https://openalex.org/W3103566983'
+                    - 'https://openalex.org/W3049116993'
+                    - 'https://openalex.org/W2951211570'
+                    - 'https://openalex.org/W2346831895'
+                    - 'https://openalex.org/W2248634132'
+                    - 'https://openalex.org/W1972718289'
+                    - 'https://openalex.org/W1791514435'
+                    - 'https://openalex.org/W1541884709'
+                openAlexId: W2951209071
+            googleScholar:
+                title: Computational mechanisms underlying cortical responses to the affordance properties of visual scenes
+                authorNames:
+                    - MF Bonner
+                    - RA Epstein
+                pdfLink: null
+                link: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006111'
+                citationId: '4101665178534889460'
+                multiArticleId: '4101665178534889460'
+                citedByLink: 'https://scholar.google.com//scholar?cites=4101665178534889460&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'PLoS computational biology, 2018'
+                year: 2018
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=4101665178534889460&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 92
+        score:
+            - 1
+            - 153
+            - 1
+            - 2018
+            - 0
+        scoreString: 1|153|1|2018|0
+        _:
+            title: Computational mechanisms underlying cortical responses to the affordance properties of visual scenes
+            doi: 10.1371/journal.pcbi.1006111
+            year: 2018
+            publisherFlags: null
+            authorNames:
+                - Michael Bonner
+                - Russell A. Epstein
+            link: 'https://doi.org/10.1371/journal.pcbi.1006111'
+            pdfLink: 'https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006111&type=printable'
+            cites: null
+            citedBy: null
+            abstract: null
+    Coding of navigational affordances in the human visual system: &ref_55
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.357Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1073/pnas.1618228114
+            openAlex:
+                doi: 'https://doi.org/10.1073/pnas.1618228114'
+                title: Coding of navigational affordances in the human visual system
+                abstract: null
+                concepts:
+                    - visual perception and processing mechanisms
+                    - visual attention and saliency detection
+                    - gaze tracking and assistive technology
+                    - cognitive neuroscience
+                    - computer vision and pattern recognition
+                    - human-computer interaction
+                    - affordance
+                    - coding (social sciences)
+                    - computer science
+                    - human–computer interaction
+                    - sociology
+                    - social science
+                year: 2017
+                authorNames:
+                    - Michael Bonner
+                    - Russell A. Epstein
+                link: 'https://doi.org/10.1073/pnas.1618228114'
+                pdfLink: 'https://www.pnas.org/content/pnas/114/18/4793.full.pdf'
+                citationCount: 179
+                citedAlexIds:
+                    - 'https://openalex.org/W1566135517'
+                    - 'https://openalex.org/W1580568969'
+                    - 'https://openalex.org/W1619178479'
+                    - 'https://openalex.org/W1933717971'
+                    - 'https://openalex.org/W1976389138'
+                    - 'https://openalex.org/W1976680174'
+                    - 'https://openalex.org/W1983670299'
+                    - 'https://openalex.org/W1994750275'
+                    - 'https://openalex.org/W2025637906'
+                    - 'https://openalex.org/W2029985196'
+                    - 'https://openalex.org/W2032822243'
+                    - 'https://openalex.org/W2044305824'
+                    - 'https://openalex.org/W2045302518'
+                    - 'https://openalex.org/W2048631316'
+                    - 'https://openalex.org/W2049672605'
+                    - 'https://openalex.org/W2074394981'
+                    - 'https://openalex.org/W2077116199'
+                    - 'https://openalex.org/W2081136143'
+                    - 'https://openalex.org/W2082627290'
+                    - 'https://openalex.org/W2082940604'
+                    - 'https://openalex.org/W2084404187'
+                    - 'https://openalex.org/W2084850449'
+                    - 'https://openalex.org/W2096735923'
+                    - 'https://openalex.org/W2106514696'
+                    - 'https://openalex.org/W2107417492'
+                    - 'https://openalex.org/W2108244344'
+                    - 'https://openalex.org/W2111480039'
+                    - 'https://openalex.org/W2115113692'
+                    - 'https://openalex.org/W2118125647'
+                    - 'https://openalex.org/W2119513601'
+                    - 'https://openalex.org/W2119630138'
+                    - 'https://openalex.org/W2125607983'
+                    - 'https://openalex.org/W2127522740'
+                    - 'https://openalex.org/W2132041417'
+                    - 'https://openalex.org/W2135957164'
+                    - 'https://openalex.org/W2138790588'
+                    - 'https://openalex.org/W2149496207'
+                    - 'https://openalex.org/W2152179757'
+                    - 'https://openalex.org/W2154141654'
+                    - 'https://openalex.org/W2166151625'
+                    - 'https://openalex.org/W2239228331'
+                    - 'https://openalex.org/W2285512150'
+                    - 'https://openalex.org/W2303105441'
+                    - 'https://openalex.org/W2341036120'
+                    - 'https://openalex.org/W2411701945'
+                    - 'https://openalex.org/W2495332208'
+                    - 'https://openalex.org/W2990138404'
+                    - 'https://openalex.org/W4231543308'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4391375266'
+                    - 'https://openalex.org/W3089455568'
+                    - 'https://openalex.org/W3049116993'
+                    - 'https://openalex.org/W2899084033'
+                    - 'https://openalex.org/W2748952813'
+                    - 'https://openalex.org/W2417026147'
+                    - 'https://openalex.org/W2346831895'
+                    - 'https://openalex.org/W2248634132'
+                    - 'https://openalex.org/W1972718289'
+                    - 'https://openalex.org/W1791514435'
+                openAlexId: W2607416176
+            googleScholar:
+                title: Coding of navigational affordances in the human visual system
+                authorNames:
+                    - MF Bonner
+                    - RA Epstein
+                pdfLink: null
+                link: 'https://www.pnas.org/doi/abs/10.1073/pnas.1618228114'
+                citationId: '9902914677706957867'
+                multiArticleId: '9902914677706957867'
+                citedByLink: 'https://scholar.google.com//scholar?cites=9902914677706957867&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Proceedings of the National, 2017'
+                year: 2017
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=9902914677706957867&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 187
+        score:
+            - 1
+            - 153
+            - 2
+            - 2017
+            - 0
+        scoreString: 1|153|2|2017|0
+        _:
+            title: Coding of navigational affordances in the human visual system
+            doi: 10.1073/pnas.1618228114
+            year: 2017
+            publisherFlags: null
+            authorNames:
+                - Michael Bonner
+                - Russell A. Epstein
+            link: 'https://doi.org/10.1073/pnas.1618228114'
+            pdfLink: 'https://www.pnas.org/content/pnas/114/18/4793.full.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    'Ecological approaches to perceptual learning: learning to perceive and perceiving as learning': &ref_58
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.357Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1177/1059712319854687
+            openAlex:
+                doi: 'https://doi.org/10.1177/1059712319854687'
+                title: 'Ecological approaches to perceptual learning: learning to perceive and perceiving as learning'
+                abstract: null
+                concepts:
+                    - embodied and extended cognition
+                    - child and animal learning development
+                    - action observation and synchronization
+                    - cognitive neuroscience
+                    - developmental and educational psychology
+                    - social psychology
+                    - affordance
+                    - ecological psychology
+                    - enactivism
+                    - perceptual learning
+                    - perception
+                    - cognitive science
+                    - psychology
+                    - learning theory
+                    - context (archaeology)
+                    - experiential learning
+                    - ecology
+                    - cognitive psychology
+                    - artificial intelligence
+                    - computer science
+                    - geography
+                    - autopoiesis
+                    - archaeology
+                    - biology
+                    - mathematics education
+                    - neuroscience
+                year: 2019
+                authorNames:
+                    - Ágnes Szokolszky
+                    - Catherine Y. Read
+                    - Zsolt Palatinus
+                    - Kinga Palatinus
+                link: 'https://doi.org/10.1177/1059712319854687'
+                pdfLink: null
+                citationCount: 39
+                citedAlexIds:
+                    - 'https://openalex.org/W124600047'
+                    - 'https://openalex.org/W1421246344'
+                    - 'https://openalex.org/W1482656806'
+                    - 'https://openalex.org/W1489822490'
+                    - 'https://openalex.org/W1500287723'
+                    - 'https://openalex.org/W1510855880'
+                    - 'https://openalex.org/W1523194215'
+                    - 'https://openalex.org/W1541753613'
+                    - 'https://openalex.org/W1578056686'
+                    - 'https://openalex.org/W1602650938'
+                    - 'https://openalex.org/W1634667895'
+                    - 'https://openalex.org/W1882211786'
+                    - 'https://openalex.org/W1902366942'
+                    - 'https://openalex.org/W191304700'
+                    - 'https://openalex.org/W1933657216'
+                    - 'https://openalex.org/W1940974336'
+                    - 'https://openalex.org/W1948209394'
+                    - 'https://openalex.org/W1965720415'
+                    - 'https://openalex.org/W1969786034'
+                    - 'https://openalex.org/W1971254679'
+                    - 'https://openalex.org/W1971306141'
+                    - 'https://openalex.org/W1975025984'
+                    - 'https://openalex.org/W1975030957'
+                    - 'https://openalex.org/W1979868561'
+                    - 'https://openalex.org/W1986345213'
+                    - 'https://openalex.org/W1989752188'
+                    - 'https://openalex.org/W1989959169'
+                    - 'https://openalex.org/W1992903142'
+                    - 'https://openalex.org/W2000329865'
+                    - 'https://openalex.org/W2002533929'
+                    - 'https://openalex.org/W2006844439'
+                    - 'https://openalex.org/W2009522788'
+                    - 'https://openalex.org/W2012502916'
+                    - 'https://openalex.org/W2015402463'
+                    - 'https://openalex.org/W2019803559'
+                    - 'https://openalex.org/W2022883494'
+                    - 'https://openalex.org/W2023182894'
+                    - 'https://openalex.org/W2023730779'
+                    - 'https://openalex.org/W2024469452'
+                    - 'https://openalex.org/W2026855223'
+                    - 'https://openalex.org/W2026913377'
+                    - 'https://openalex.org/W2030382829'
+                    - 'https://openalex.org/W2031680600'
+                    - 'https://openalex.org/W2032332194'
+                    - 'https://openalex.org/W2032621648'
+                    - 'https://openalex.org/W2032817120'
+                    - 'https://openalex.org/W2035480180'
+                    - 'https://openalex.org/W2036879421'
+                    - 'https://openalex.org/W2039453008'
+                    - 'https://openalex.org/W2042360893'
+                    - 'https://openalex.org/W2042431468'
+                    - 'https://openalex.org/W2043560397'
+                    - 'https://openalex.org/W2044238301'
+                    - 'https://openalex.org/W2045826227'
+                    - 'https://openalex.org/W2049378583'
+                    - 'https://openalex.org/W2050373104'
+                    - 'https://openalex.org/W2051328763'
+                    - 'https://openalex.org/W2053284419'
+                    - 'https://openalex.org/W2054147631'
+                    - 'https://openalex.org/W2055212734'
+                    - 'https://openalex.org/W2056685091'
+                    - 'https://openalex.org/W2058438701'
+                    - 'https://openalex.org/W2059535491'
+                    - 'https://openalex.org/W2059802549'
+                    - 'https://openalex.org/W2061680350'
+                    - 'https://openalex.org/W2062585183'
+                    - 'https://openalex.org/W2064126107'
+                    - 'https://openalex.org/W2065973323'
+                    - 'https://openalex.org/W2068432276'
+                    - 'https://openalex.org/W2075967290'
+                    - 'https://openalex.org/W2076222850'
+                    - 'https://openalex.org/W2081688728'
+                    - 'https://openalex.org/W2087093695'
+                    - 'https://openalex.org/W2088799109'
+                    - 'https://openalex.org/W2092027016'
+                    - 'https://openalex.org/W2096255693'
+                    - 'https://openalex.org/W2103794982'
+                    - 'https://openalex.org/W2106299989'
+                    - 'https://openalex.org/W2111222319'
+                    - 'https://openalex.org/W2113669408'
+                    - 'https://openalex.org/W2126105264'
+                    - 'https://openalex.org/W2128246617'
+                    - 'https://openalex.org/W2128999478'
+                    - 'https://openalex.org/W2130200363'
+                    - 'https://openalex.org/W2130735402'
+                    - 'https://openalex.org/W2137396269'
+                    - 'https://openalex.org/W2144475403'
+                    - 'https://openalex.org/W2146025347'
+                    - 'https://openalex.org/W2147472103'
+                    - 'https://openalex.org/W2153296338'
+                    - 'https://openalex.org/W2153913929'
+                    - 'https://openalex.org/W2154563095'
+                    - 'https://openalex.org/W2157204889'
+                    - 'https://openalex.org/W2165295006'
+                    - 'https://openalex.org/W2167598792'
+                    - 'https://openalex.org/W2169767048'
+                    - 'https://openalex.org/W2171166666'
+                    - 'https://openalex.org/W2171725414'
+                    - 'https://openalex.org/W2174401281'
+                    - 'https://openalex.org/W2198337798'
+                    - 'https://openalex.org/W2296810109'
+                    - 'https://openalex.org/W2299943130'
+                    - 'https://openalex.org/W2301672795'
+                    - 'https://openalex.org/W2316652185'
+                    - 'https://openalex.org/W2326362034'
+                    - 'https://openalex.org/W2326588846'
+                    - 'https://openalex.org/W2333827055'
+                    - 'https://openalex.org/W2334021483'
+                    - 'https://openalex.org/W2334073445'
+                    - 'https://openalex.org/W2433928299'
+                    - 'https://openalex.org/W2441071767'
+                    - 'https://openalex.org/W2480976377'
+                    - 'https://openalex.org/W2482735776'
+                    - 'https://openalex.org/W2491967016'
+                    - 'https://openalex.org/W2492800838'
+                    - 'https://openalex.org/W2493894436'
+                    - 'https://openalex.org/W2495545726'
+                    - 'https://openalex.org/W2496843801'
+                    - 'https://openalex.org/W2498526915'
+                    - 'https://openalex.org/W2534098824'
+                    - 'https://openalex.org/W2584975604'
+                    - 'https://openalex.org/W2606289884'
+                    - 'https://openalex.org/W2607185907'
+                    - 'https://openalex.org/W2615828006'
+                    - 'https://openalex.org/W2678181971'
+                    - 'https://openalex.org/W2744220254'
+                    - 'https://openalex.org/W2761320311'
+                    - 'https://openalex.org/W2783012793'
+                    - 'https://openalex.org/W2788858177'
+                    - 'https://openalex.org/W2789251871'
+                    - 'https://openalex.org/W2789633685'
+                    - 'https://openalex.org/W2789993525'
+                    - 'https://openalex.org/W2790614923'
+                    - 'https://openalex.org/W2791529535'
+                    - 'https://openalex.org/W2794957743'
+                    - 'https://openalex.org/W2797024609'
+                    - 'https://openalex.org/W2803604660'
+                    - 'https://openalex.org/W2803921558'
+                    - 'https://openalex.org/W2805299791'
+                    - 'https://openalex.org/W2883638979'
+                    - 'https://openalex.org/W2887125346'
+                    - 'https://openalex.org/W2895688716'
+                    - 'https://openalex.org/W2902626600'
+                    - 'https://openalex.org/W2911106276'
+                    - 'https://openalex.org/W2943637402'
+                    - 'https://openalex.org/W35549288'
+                    - 'https://openalex.org/W4206205808'
+                    - 'https://openalex.org/W4212958480'
+                    - 'https://openalex.org/W4229552369'
+                    - 'https://openalex.org/W4229972507'
+                    - 'https://openalex.org/W4231563569'
+                    - 'https://openalex.org/W4231733324'
+                    - 'https://openalex.org/W4232084822'
+                    - 'https://openalex.org/W4235618087'
+                    - 'https://openalex.org/W4236711700'
+                    - 'https://openalex.org/W4239379746'
+                    - 'https://openalex.org/W4240159187'
+                    - 'https://openalex.org/W4241021152'
+                    - 'https://openalex.org/W4241805605'
+                    - 'https://openalex.org/W4243017464'
+                    - 'https://openalex.org/W4243599682'
+                    - 'https://openalex.org/W4243776133'
+                    - 'https://openalex.org/W4245200404'
+                    - 'https://openalex.org/W4246471995'
+                    - 'https://openalex.org/W4248169967'
+                    - 'https://openalex.org/W4248744448'
+                    - 'https://openalex.org/W4248912547'
+                    - 'https://openalex.org/W4251157158'
+                    - 'https://openalex.org/W4251180589'
+                    - 'https://openalex.org/W4252642026'
+                    - 'https://openalex.org/W4255500170'
+                    - 'https://openalex.org/W4255580453'
+                    - 'https://openalex.org/W4299541484'
+                    - 'https://openalex.org/W4299827326'
+                    - 'https://openalex.org/W4301141993'
+                    - 'https://openalex.org/W430531082'
+                    - 'https://openalex.org/W4315831380'
+                    - 'https://openalex.org/W4316086559'
+                    - 'https://openalex.org/W44671616'
+                    - 'https://openalex.org/W655095175'
+                    - 'https://openalex.org/W8157478'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4400867389'
+                    - 'https://openalex.org/W4213299552'
+                    - 'https://openalex.org/W3036026691'
+                    - 'https://openalex.org/W2911525282'
+                    - 'https://openalex.org/W2751263166'
+                    - 'https://openalex.org/W2584975604'
+                    - 'https://openalex.org/W2299943130'
+                    - 'https://openalex.org/W2091491717'
+                    - 'https://openalex.org/W2030326659'
+                    - 'https://openalex.org/W2029262927'
+                openAlexId: W2952732154
+            googleScholar:
+                title: 'Ecological approaches to perceptual learning: learning to perceive and perceiving as learning'
+                authorNames:
+                    - A Szokolszky
+                    - C Read
+                    - Z Palatinus
+                pdfLink: null
+                link: 'https://journals.sagepub.com/doi/abs/10.1177/1059712319854687'
+                citationId: '15161221384963029063'
+                multiArticleId: '15161221384963029063'
+                citedByLink: 'https://scholar.google.com//scholar?cites=15161221384963029063&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Adaptive, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=15161221384963029063&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 51
+        score:
+            - 1
+            - 153
+            - 3
+            - 2019
+            - 0
+        scoreString: 1|153|3|2019|0
+        _:
+            title: 'Ecological approaches to perceptual learning: learning to perceive and perceiving as learning'
+            doi: 10.1177/1059712319854687
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - Ágnes Szokolszky
+                - Catherine Y. Read
+                - Zsolt Palatinus
+                - Kinga Palatinus
+            link: 'https://doi.org/10.1177/1059712319854687'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    'Cortical mechanisms of action selection: the affordance competition hypothesis': &ref_56
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.357Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1017/cbo9780511731525.015
+            openAlex:
+                doi: 'https://doi.org/10.1017/cbo9780511731525.015'
+                title: 'Cortical mechanisms of action selection: the affordance competition hypothesis'
+                abstract: null
+                concepts:
+                    - neural and behavioral psychology studies
+                    - motor control and adaptation
+                    - neural dynamics and brain function
+                    - cognitive neuroscience
+                    - affordance
+                    - action selection
+                    - selection (genetic algorithm)
+                    - competition (biology)
+                    - action (physics)
+                    - cognitive science
+                    - neuroscience
+                    - psychology
+                    - cognitive psychology
+                    - computer science
+                    - communication
+                    - biology
+                    - artificial intelligence
+                    - ecology
+                    - physics
+                    - quantum mechanics
+                    - perception
+                year: 2011
+                authorNames:
+                    - Paul Cisek
+                link: 'https://doi.org/10.1017/cbo9780511731525.015'
+                pdfLink: null
+                citationCount: 8
+                citedAlexIds:
+                    - 'https://openalex.org/W1208410501'
+                    - 'https://openalex.org/W125273950'
+                    - 'https://openalex.org/W1490587639'
+                    - 'https://openalex.org/W1508060730'
+                    - 'https://openalex.org/W1526492552'
+                    - 'https://openalex.org/W1538246947'
+                    - 'https://openalex.org/W1545220219'
+                    - 'https://openalex.org/W1577296797'
+                    - 'https://openalex.org/W1589439850'
+                    - 'https://openalex.org/W1605547486'
+                    - 'https://openalex.org/W1654467375'
+                    - 'https://openalex.org/W1726188130'
+                    - 'https://openalex.org/W1754695201'
+                    - 'https://openalex.org/W1786747796'
+                    - 'https://openalex.org/W1794114838'
+                    - 'https://openalex.org/W1911623369'
+                    - 'https://openalex.org/W1933657216'
+                    - 'https://openalex.org/W1966132803'
+                    - 'https://openalex.org/W1966841546'
+                    - 'https://openalex.org/W1968159705'
+                    - 'https://openalex.org/W1970035964'
+                    - 'https://openalex.org/W1970445701'
+                    - 'https://openalex.org/W1970994015'
+                    - 'https://openalex.org/W1976707985'
+                    - 'https://openalex.org/W1977308918'
+                    - 'https://openalex.org/W1977821886'
+                    - 'https://openalex.org/W1979789877'
+                    - 'https://openalex.org/W1986866879'
+                    - 'https://openalex.org/W1991856297'
+                    - 'https://openalex.org/W1993594397'
+                    - 'https://openalex.org/W1996963384'
+                    - 'https://openalex.org/W1997290608'
+                    - 'https://openalex.org/W1998020836'
+                    - 'https://openalex.org/W1999135570'
+                    - 'https://openalex.org/W1999567494'
+                    - 'https://openalex.org/W2002325846'
+                    - 'https://openalex.org/W2005269174'
+                    - 'https://openalex.org/W2005722557'
+                    - 'https://openalex.org/W2006679062'
+                    - 'https://openalex.org/W2007827437'
+                    - 'https://openalex.org/W2008137931'
+                    - 'https://openalex.org/W2009076118'
+                    - 'https://openalex.org/W2011307332'
+                    - 'https://openalex.org/W2011561395'
+                    - 'https://openalex.org/W2011711856'
+                    - 'https://openalex.org/W2016455305'
+                    - 'https://openalex.org/W2016527110'
+                    - 'https://openalex.org/W2016991367'
+                    - 'https://openalex.org/W2017400341'
+                    - 'https://openalex.org/W2019239664'
+                    - 'https://openalex.org/W2019310225'
+                    - 'https://openalex.org/W2019371219'
+                    - 'https://openalex.org/W2023057624'
+                    - 'https://openalex.org/W2023149227'
+                    - 'https://openalex.org/W2023722569'
+                    - 'https://openalex.org/W2025220658'
+                    - 'https://openalex.org/W2025670690'
+                    - 'https://openalex.org/W2026153973'
+                    - 'https://openalex.org/W2026655354'
+                    - 'https://openalex.org/W2031170958'
+                    - 'https://openalex.org/W2031270561'
+                    - 'https://openalex.org/W2031650972'
+                    - 'https://openalex.org/W2032340480'
+                    - 'https://openalex.org/W2033513858'
+                    - 'https://openalex.org/W2035090004'
+                    - 'https://openalex.org/W2036691323'
+                    - 'https://openalex.org/W2039619955'
+                    - 'https://openalex.org/W2039858203'
+                    - 'https://openalex.org/W2041158559'
+                    - 'https://openalex.org/W2042907834'
+                    - 'https://openalex.org/W2044289133'
+                    - 'https://openalex.org/W2050234634'
+                    - 'https://openalex.org/W2054549571'
+                    - 'https://openalex.org/W2054702070'
+                    - 'https://openalex.org/W2055473086'
+                    - 'https://openalex.org/W2055863756'
+                    - 'https://openalex.org/W2056825554'
+                    - 'https://openalex.org/W2058467798'
+                    - 'https://openalex.org/W2066931620'
+                    - 'https://openalex.org/W2067450646'
+                    - 'https://openalex.org/W2068053898'
+                    - 'https://openalex.org/W2068251433'
+                    - 'https://openalex.org/W2070900790'
+                    - 'https://openalex.org/W2075662644'
+                    - 'https://openalex.org/W2075886315'
+                    - 'https://openalex.org/W2076860310'
+                    - 'https://openalex.org/W2077106910'
+                    - 'https://openalex.org/W2080632618'
+                    - 'https://openalex.org/W2081364575'
+                    - 'https://openalex.org/W2082627290'
+                    - 'https://openalex.org/W2083949372'
+                    - 'https://openalex.org/W2085376923'
+                    - 'https://openalex.org/W2086227193'
+                    - 'https://openalex.org/W2087809883'
+                    - 'https://openalex.org/W2093219980'
+                    - 'https://openalex.org/W2093677311'
+                    - 'https://openalex.org/W2096421807'
+                    - 'https://openalex.org/W2098686263'
+                    - 'https://openalex.org/W2101238942'
+                    - 'https://openalex.org/W2101254766'
+                    - 'https://openalex.org/W2102990987'
+                    - 'https://openalex.org/W2105257398'
+                    - 'https://openalex.org/W2107886772'
+                    - 'https://openalex.org/W2109715743'
+                    - 'https://openalex.org/W2109995759'
+                    - 'https://openalex.org/W2110945178'
+                    - 'https://openalex.org/W2111746164'
+                    - 'https://openalex.org/W2112497174'
+                    - 'https://openalex.org/W2113576610'
+                    - 'https://openalex.org/W2113809447'
+                    - 'https://openalex.org/W2114793478'
+                    - 'https://openalex.org/W2116723519'
+                    - 'https://openalex.org/W2117451014'
+                    - 'https://openalex.org/W2118615399'
+                    - 'https://openalex.org/W2118870549'
+                    - 'https://openalex.org/W2122066429'
+                    - 'https://openalex.org/W2122354249'
+                    - 'https://openalex.org/W2122666990'
+                    - 'https://openalex.org/W2123086804'
+                    - 'https://openalex.org/W2125107638'
+                    - 'https://openalex.org/W2125692118'
+                    - 'https://openalex.org/W2132003317'
+                    - 'https://openalex.org/W2136582516'
+                    - 'https://openalex.org/W2137255366'
+                    - 'https://openalex.org/W2138956231'
+                    - 'https://openalex.org/W2143037993'
+                    - 'https://openalex.org/W2143618279'
+                    - 'https://openalex.org/W2143740992'
+                    - 'https://openalex.org/W2144200546'
+                    - 'https://openalex.org/W2146264527'
+                    - 'https://openalex.org/W2146267034'
+                    - 'https://openalex.org/W2147379020'
+                    - 'https://openalex.org/W2148494739'
+                    - 'https://openalex.org/W2151103178'
+                    - 'https://openalex.org/W2151308847'
+                    - 'https://openalex.org/W2151783777'
+                    - 'https://openalex.org/W2154037056'
+                    - 'https://openalex.org/W2154409655'
+                    - 'https://openalex.org/W2156294889'
+                    - 'https://openalex.org/W2156567212'
+                    - 'https://openalex.org/W2160385588'
+                    - 'https://openalex.org/W2160796324'
+                    - 'https://openalex.org/W2160903697'
+                    - 'https://openalex.org/W2161438629'
+                    - 'https://openalex.org/W2161636626'
+                    - 'https://openalex.org/W2165162620'
+                    - 'https://openalex.org/W2168648043'
+                    - 'https://openalex.org/W2168815228'
+                    - 'https://openalex.org/W2170418363'
+                    - 'https://openalex.org/W2170638884'
+                    - 'https://openalex.org/W2171759921'
+                    - 'https://openalex.org/W2189256094'
+                    - 'https://openalex.org/W2211785584'
+                    - 'https://openalex.org/W2220854747'
+                    - 'https://openalex.org/W2279931900'
+                    - 'https://openalex.org/W2301893286'
+                    - 'https://openalex.org/W2320056548'
+                    - 'https://openalex.org/W2320865216'
+                    - 'https://openalex.org/W2333111770'
+                    - 'https://openalex.org/W2336152949'
+                    - 'https://openalex.org/W2397253692'
+                    - 'https://openalex.org/W2471670251'
+                    - 'https://openalex.org/W2493894436'
+                    - 'https://openalex.org/W2585198072'
+                    - 'https://openalex.org/W2727253164'
+                    - 'https://openalex.org/W2982472813'
+                    - 'https://openalex.org/W3134891636'
+                    - 'https://openalex.org/W4213334723'
+                    - 'https://openalex.org/W4240385474'
+                    - 'https://openalex.org/W4241653134'
+                    - 'https://openalex.org/W4245560018'
+                    - 'https://openalex.org/W4323284001'
+                    - 'https://openalex.org/W48147622'
+                    - 'https://openalex.org/W576881103'
+                    - 'https://openalex.org/W622878261'
+                relatedAlexIds:
+                    - 'https://openalex.org/W3049116993'
+                    - 'https://openalex.org/W2589081601'
+                    - 'https://openalex.org/W2346831895'
+                    - 'https://openalex.org/W2295809616'
+                    - 'https://openalex.org/W2248634132'
+                    - 'https://openalex.org/W2070708245'
+                    - 'https://openalex.org/W1972718289'
+                    - 'https://openalex.org/W1791514435'
+                    - 'https://openalex.org/W1541884709'
+                    - 'https://openalex.org/W1531064313'
+                openAlexId: W941650483
+            googleScholar:
+                title: 'Cortical mechanisms of action selection: the affordance competition hypothesis'
+                authorNames:
+                    - P Cisek
+                pdfLink: null
+                link: 'https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2007.2054'
+                citationId: '11107916366721797005'
+                multiArticleId: '11107916366721797005'
+                citedByLink: 'https://scholar.google.com//scholar?cites=11107916366721797005&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Transactions of the Royal Society B: Biological, 2007'
+                year: 2007
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=11107916366721797005&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 1358
+        score:
+            - 1
+            - 151.5
+            - 0
+            - 2011
+            - 0
+        scoreString: 1|151.5|0|2011|0
+        _:
+            title: 'Cortical mechanisms of action selection: the affordance competition hypothesis'
+            doi: 10.1017/cbo9780511731525.015
+            year: 2011
+            publisherFlags: null
+            authorNames:
+                - Paul Cisek
+            link: 'https://doi.org/10.1017/cbo9780511731525.015'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    The brain dynamics of architectural affordances during transition: &ref_53
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.357Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1038/s41598-021-82504-w
+            openAlex:
+                doi: 'https://doi.org/10.1038/s41598-021-82504-w'
+                title: The brain dynamics of architectural affordances during transition
+                abstract: null
+                concepts:
+                    - multisensory perception and integration
+                    - color perception and design
+                    - urban design and spatial analysis
+                    - experimental and cognitive psychology
+                    - social psychology
+                    - building and construction
+                    - affordance
+                    - dynamics
+                    - dynamics (music)
+                    - transition (genetics)
+                    - computer science
+                    - data science
+                    - human–computer interaction
+                    - cognitive science
+                    - psychology
+                    - biology
+                    - pedagogy
+                    - biochemistry
+                    - gene
+                year: 2021
+                authorNames:
+                    - Zakaria Djebbara
+                    - Lars Brorson Fich
+                    - Klaus Gramann
+                link: 'https://doi.org/10.1038/s41598-021-82504-w'
+                pdfLink: 'https://www.nature.com/articles/s41598-021-82504-w.pdf'
+                citationCount: 40
+                citedAlexIds:
+                    - 'https://openalex.org/W1418557530'
+                    - 'https://openalex.org/W1580568969'
+                    - 'https://openalex.org/W1594275312'
+                    - 'https://openalex.org/W1600617394'
+                    - 'https://openalex.org/W1603307924'
+                    - 'https://openalex.org/W1619178479'
+                    - 'https://openalex.org/W1632686212'
+                    - 'https://openalex.org/W1969139884'
+                    - 'https://openalex.org/W1971893369'
+                    - 'https://openalex.org/W1972328487'
+                    - 'https://openalex.org/W1973676211'
+                    - 'https://openalex.org/W1974506533'
+                    - 'https://openalex.org/W1979330140'
+                    - 'https://openalex.org/W1983083547'
+                    - 'https://openalex.org/W1991291458'
+                    - 'https://openalex.org/W1996197465'
+                    - 'https://openalex.org/W1998799290'
+                    - 'https://openalex.org/W2001002884'
+                    - 'https://openalex.org/W2025484736'
+                    - 'https://openalex.org/W2030913893'
+                    - 'https://openalex.org/W2032146992'
+                    - 'https://openalex.org/W2033422410'
+                    - 'https://openalex.org/W2035090004'
+                    - 'https://openalex.org/W2039196379'
+                    - 'https://openalex.org/W2045823207'
+                    - 'https://openalex.org/W2047616288'
+                    - 'https://openalex.org/W2048939758'
+                    - 'https://openalex.org/W2049907425'
+                    - 'https://openalex.org/W2051680570'
+                    - 'https://openalex.org/W2051850587'
+                    - 'https://openalex.org/W2052684349'
+                    - 'https://openalex.org/W2052998957'
+                    - 'https://openalex.org/W2054741347'
+                    - 'https://openalex.org/W2055473086'
+                    - 'https://openalex.org/W2056859676'
+                    - 'https://openalex.org/W2067393309'
+                    - 'https://openalex.org/W2072354681'
+                    - 'https://openalex.org/W2072574332'
+                    - 'https://openalex.org/W2073818363'
+                    - 'https://openalex.org/W2079164751'
+                    - 'https://openalex.org/W2082016079'
+                    - 'https://openalex.org/W2082259851'
+                    - 'https://openalex.org/W2082296183'
+                    - 'https://openalex.org/W2099432445'
+                    - 'https://openalex.org/W2103986045'
+                    - 'https://openalex.org/W2106654511'
+                    - 'https://openalex.org/W2107365776'
+                    - 'https://openalex.org/W2109995759'
+                    - 'https://openalex.org/W2114164418'
+                    - 'https://openalex.org/W2114319021'
+                    - 'https://openalex.org/W2117663940'
+                    - 'https://openalex.org/W2120940453'
+                    - 'https://openalex.org/W2125868297'
+                    - 'https://openalex.org/W2126117996'
+                    - 'https://openalex.org/W2127389037'
+                    - 'https://openalex.org/W2128495200'
+                    - 'https://openalex.org/W2129868883'
+                    - 'https://openalex.org/W2138488719'
+                    - 'https://openalex.org/W2141447814'
+                    - 'https://openalex.org/W2148209654'
+                    - 'https://openalex.org/W2148601705'
+                    - 'https://openalex.org/W2153017955'
+                    - 'https://openalex.org/W2157997973'
+                    - 'https://openalex.org/W2159799383'
+                    - 'https://openalex.org/W2159929956'
+                    - 'https://openalex.org/W2161362259'
+                    - 'https://openalex.org/W2162010696'
+                    - 'https://openalex.org/W2163694327'
+                    - 'https://openalex.org/W2169366712'
+                    - 'https://openalex.org/W2171204164'
+                    - 'https://openalex.org/W2171916839'
+                    - 'https://openalex.org/W2172513721'
+                    - 'https://openalex.org/W2344431521'
+                    - 'https://openalex.org/W2552810632'
+                    - 'https://openalex.org/W2604445312'
+                    - 'https://openalex.org/W2607416176'
+                    - 'https://openalex.org/W2766017389'
+                    - 'https://openalex.org/W2804164821'
+                    - 'https://openalex.org/W2804762947'
+                    - 'https://openalex.org/W2886189758'
+                    - 'https://openalex.org/W2903257354'
+                    - 'https://openalex.org/W2924088994'
+                    - 'https://openalex.org/W2949025125'
+                    - 'https://openalex.org/W2950747681'
+                    - 'https://openalex.org/W2951204993'
+                    - 'https://openalex.org/W2971464184'
+                    - 'https://openalex.org/W3090156323'
+                    - 'https://openalex.org/W4229580337'
+                relatedAlexIds:
+                    - 'https://openalex.org/W3049116993'
+                    - 'https://openalex.org/W2969867523'
+                    - 'https://openalex.org/W2589081601'
+                    - 'https://openalex.org/W2417026147'
+                    - 'https://openalex.org/W2346831895'
+                    - 'https://openalex.org/W2248634132'
+                    - 'https://openalex.org/W1972718289'
+                    - 'https://openalex.org/W1791514435'
+                    - 'https://openalex.org/W1559800691'
+                    - 'https://openalex.org/W1541884709'
+                openAlexId: W3126692660
+            googleScholar:
+                title: The brain dynamics of architectural affordances during transition
+                authorNames:
+                    - Z Djebbara
+                    - LB Fich
+                    - K Gramann
+                pdfLink: null
+                link: 'https://www.nature.com/articles/s41598-021-82504-w'
+                citationId: '17042967260542011016'
+                multiArticleId: '17042967260542011016'
+                citedByLink: 'https://scholar.google.com//scholar?cites=17042967260542011016&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Scientific reports, 2021'
+                year: 2021
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=17042967260542011016&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 42
+        score:
+            - 1
+            - 303
+            - 0
+            - 2021
+            - 0
+        scoreString: 1|303|0|2021|0
+        _:
+            title: The brain dynamics of architectural affordances during transition
+            doi: 10.1038/s41598-021-82504-w
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - Zakaria Djebbara
+                - Lars Brorson Fich
+                - Klaus Gramann
+            link: 'https://doi.org/10.1038/s41598-021-82504-w'
+            pdfLink: 'https://www.nature.com/articles/s41598-021-82504-w.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    'From active affordance to active inference: vertical integration of cognition in the cerebral cortex through dual subcortical control systems': &ref_52
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.358Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1093/cercor/bhad458
+            openAlex:
+                doi: 'https://doi.org/10.1093/cercor/bhad458'
+                title: 'From active affordance to active inference: vertical integration of cognition in the cerebral cortex through dual subcortical control systems'
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - memory and neural mechanisms
+                    - neuroscience and neuropharmacology research
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - limbic system
+                    - neuroscience
+                    - psychology
+                    - cognition
+                    - central nervous system
+                year: 2023
+                authorNames:
+                    - Phan Luu
+                    - Don M. Tucker
+                    - Karl Friston
+                link: 'https://doi.org/10.1093/cercor/bhad458'
+                pdfLink: null
+                citationCount: 6
+                citedAlexIds:
+                    - 'https://openalex.org/W1497878968'
+                    - 'https://openalex.org/W1505501368'
+                    - 'https://openalex.org/W1537353270'
+                    - 'https://openalex.org/W1564679236'
+                    - 'https://openalex.org/W1607052939'
+                    - 'https://openalex.org/W1607939528'
+                    - 'https://openalex.org/W1807979745'
+                    - 'https://openalex.org/W1821561312'
+                    - 'https://openalex.org/W1892914051'
+                    - 'https://openalex.org/W1933657216'
+                    - 'https://openalex.org/W1943762178'
+                    - 'https://openalex.org/W1964107328'
+                    - 'https://openalex.org/W1965200637'
+                    - 'https://openalex.org/W1971828085'
+                    - 'https://openalex.org/W1973845142'
+                    - 'https://openalex.org/W1977628053'
+                    - 'https://openalex.org/W1979732124'
+                    - 'https://openalex.org/W1983157554'
+                    - 'https://openalex.org/W1984725541'
+                    - 'https://openalex.org/W1987582054'
+                    - 'https://openalex.org/W1987762853'
+                    - 'https://openalex.org/W1988520084'
+                    - 'https://openalex.org/W1991002654'
+                    - 'https://openalex.org/W1992130395'
+                    - 'https://openalex.org/W1999359258'
+                    - 'https://openalex.org/W2001136156'
+                    - 'https://openalex.org/W2003777173'
+                    - 'https://openalex.org/W2004059952'
+                    - 'https://openalex.org/W2006258634'
+                    - 'https://openalex.org/W2007204765'
+                    - 'https://openalex.org/W2008327380'
+                    - 'https://openalex.org/W2013554506'
+                    - 'https://openalex.org/W2015770802'
+                    - 'https://openalex.org/W2017931574'
+                    - 'https://openalex.org/W2025603247'
+                    - 'https://openalex.org/W2026626196'
+                    - 'https://openalex.org/W2033422410'
+                    - 'https://openalex.org/W2034108533'
+                    - 'https://openalex.org/W2034450065'
+                    - 'https://openalex.org/W2035017467'
+                    - 'https://openalex.org/W2037234280'
+                    - 'https://openalex.org/W2038383441'
+                    - 'https://openalex.org/W2038591487'
+                    - 'https://openalex.org/W2040884624'
+                    - 'https://openalex.org/W2042676980'
+                    - 'https://openalex.org/W2043659972'
+                    - 'https://openalex.org/W2045321434'
+                    - 'https://openalex.org/W2046510061'
+                    - 'https://openalex.org/W2050864102'
+                    - 'https://openalex.org/W2059497732'
+                    - 'https://openalex.org/W2062325462'
+                    - 'https://openalex.org/W2062502916'
+                    - 'https://openalex.org/W2064065533'
+                    - 'https://openalex.org/W2064399227'
+                    - 'https://openalex.org/W2066349677'
+                    - 'https://openalex.org/W2067147530'
+                    - 'https://openalex.org/W2067551890'
+                    - 'https://openalex.org/W2069675394'
+                    - 'https://openalex.org/W2076421074'
+                    - 'https://openalex.org/W2076580309'
+                    - 'https://openalex.org/W2077436129'
+                    - 'https://openalex.org/W2078652531'
+                    - 'https://openalex.org/W2080087357'
+                    - 'https://openalex.org/W2080987963'
+                    - 'https://openalex.org/W2081402846'
+                    - 'https://openalex.org/W2082627290'
+                    - 'https://openalex.org/W2083141675'
+                    - 'https://openalex.org/W2084407425'
+                    - 'https://openalex.org/W2085155032'
+                    - 'https://openalex.org/W2086124986'
+                    - 'https://openalex.org/W2087963213'
+                    - 'https://openalex.org/W2088361748'
+                    - 'https://openalex.org/W2092874151'
+                    - 'https://openalex.org/W2094129176'
+                    - 'https://openalex.org/W2094342172'
+                    - 'https://openalex.org/W2095213890'
+                    - 'https://openalex.org/W2095596789'
+                    - 'https://openalex.org/W2096962395'
+                    - 'https://openalex.org/W2098580305'
+                    - 'https://openalex.org/W2103454939'
+                    - 'https://openalex.org/W2111947800'
+                    - 'https://openalex.org/W2111968444'
+                    - 'https://openalex.org/W2117726420'
+                    - 'https://openalex.org/W2119464603'
+                    - 'https://openalex.org/W2120079537'
+                    - 'https://openalex.org/W2120529907'
+                    - 'https://openalex.org/W2123611655'
+                    - 'https://openalex.org/W2125789251'
+                    - 'https://openalex.org/W2127048174'
+                    - 'https://openalex.org/W2128835192'
+                    - 'https://openalex.org/W2128918015'
+                    - 'https://openalex.org/W2129831698'
+                    - 'https://openalex.org/W2130759562'
+                    - 'https://openalex.org/W2132649719'
+                    - 'https://openalex.org/W2133947591'
+                    - 'https://openalex.org/W2134664339'
+                    - 'https://openalex.org/W2142449474'
+                    - 'https://openalex.org/W2147591492'
+                    - 'https://openalex.org/W2148764920'
+                    - 'https://openalex.org/W2151496011'
+                    - 'https://openalex.org/W2152294954'
+                    - 'https://openalex.org/W2157849519'
+                    - 'https://openalex.org/W2158377259'
+                    - 'https://openalex.org/W2158707833'
+                    - 'https://openalex.org/W2164158899'
+                    - 'https://openalex.org/W2166643977'
+                    - 'https://openalex.org/W2166843363'
+                    - 'https://openalex.org/W2168336873'
+                    - 'https://openalex.org/W2168415226'
+                    - 'https://openalex.org/W2169771257'
+                    - 'https://openalex.org/W2171385325'
+                    - 'https://openalex.org/W2176072479'
+                    - 'https://openalex.org/W2176367219'
+                    - 'https://openalex.org/W2216403645'
+                    - 'https://openalex.org/W2237059274'
+                    - 'https://openalex.org/W2259307792'
+                    - 'https://openalex.org/W2297642558'
+                    - 'https://openalex.org/W2341139506'
+                    - 'https://openalex.org/W2398047671'
+                    - 'https://openalex.org/W2504825448'
+                    - 'https://openalex.org/W2508644210'
+                    - 'https://openalex.org/W2508875940'
+                    - 'https://openalex.org/W2526571554'
+                    - 'https://openalex.org/W2547057105'
+                    - 'https://openalex.org/W2563109517'
+                    - 'https://openalex.org/W2593117719'
+                    - 'https://openalex.org/W260001327'
+                    - 'https://openalex.org/W2604970372'
+                    - 'https://openalex.org/W2623066203'
+                    - 'https://openalex.org/W2763143679'
+                    - 'https://openalex.org/W2763948711'
+                    - 'https://openalex.org/W2764001386'
+                    - 'https://openalex.org/W2765854052'
+                    - 'https://openalex.org/W2769704218'
+                    - 'https://openalex.org/W2776257264'
+                    - 'https://openalex.org/W2781668895'
+                    - 'https://openalex.org/W2800867538'
+                    - 'https://openalex.org/W2802421909'
+                    - 'https://openalex.org/W2892266804'
+                    - 'https://openalex.org/W2912916659'
+                    - 'https://openalex.org/W2913755732'
+                    - 'https://openalex.org/W2914186391'
+                    - 'https://openalex.org/W2928639725'
+                    - 'https://openalex.org/W2936987202'
+                    - 'https://openalex.org/W2959746613'
+                    - 'https://openalex.org/W2965472158'
+                    - 'https://openalex.org/W2971670524'
+                    - 'https://openalex.org/W2971932065'
+                    - 'https://openalex.org/W2973866007'
+                    - 'https://openalex.org/W2984094534'
+                    - 'https://openalex.org/W298629920'
+                    - 'https://openalex.org/W2996098579'
+                    - 'https://openalex.org/W3107369825'
+                    - 'https://openalex.org/W3136110947'
+                    - 'https://openalex.org/W3155071252'
+                    - 'https://openalex.org/W3171245619'
+                    - 'https://openalex.org/W3176197405'
+                    - 'https://openalex.org/W3179409925'
+                    - 'https://openalex.org/W3185445340'
+                    - 'https://openalex.org/W3200911162'
+                    - 'https://openalex.org/W3207558157'
+                    - 'https://openalex.org/W3210018673'
+                    - 'https://openalex.org/W3211640812'
+                    - 'https://openalex.org/W3212679942'
+                    - 'https://openalex.org/W4200056294'
+                    - 'https://openalex.org/W4200183753'
+                    - 'https://openalex.org/W4210913783'
+                    - 'https://openalex.org/W4290860729'
+                    - 'https://openalex.org/W4292714709'
+                    - 'https://openalex.org/W4295511970'
+                    - 'https://openalex.org/W4306250670'
+                    - 'https://openalex.org/W4307684321'
+                    - 'https://openalex.org/W4311758698'
+                    - 'https://openalex.org/W4312434338'
+                    - 'https://openalex.org/W4360602776'
+                    - 'https://openalex.org/W4366138589'
+                    - 'https://openalex.org/W49960269'
+                    - 'https://openalex.org/W565959668'
+                    - 'https://openalex.org/W571077117'
+                    - 'https://openalex.org/W576881103'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4391375266'
+                    - 'https://openalex.org/W4252527614'
+                    - 'https://openalex.org/W2931662336'
+                    - 'https://openalex.org/W2765597752'
+                    - 'https://openalex.org/W2748952813'
+                    - 'https://openalex.org/W2077865380'
+                    - 'https://openalex.org/W2057470835'
+                    - 'https://openalex.org/W203117159'
+                    - 'https://openalex.org/W184850041'
+                    - 'https://openalex.org/W1579135703'
+                openAlexId: W4389303340
+            googleScholar:
+                title: 'From active affordance to active inference: vertical integration of cognition in the cerebral cortex through dual subcortical control systems'
+                authorNames:
+                    - P Luu
+                    - DM Tucker
+                    - K Friston
+                pdfLink: null
+                link: 'https://academic.oup.com/cercor/article-abstract/34/1/bhad458/7457944'
+                citationId: '16360330819850064431'
+                multiArticleId: '16360330819850064431'
+                citedByLink: 'https://scholar.google.com//scholar?cites=16360330819850064431&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Cerebral Cortex, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=16360330819850064431&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 6
+        score:
+            - 1
+            - 303
+            - 0
+            - 2023
+            - 0
+        scoreString: 1|303|0|2023|0
+        _:
+            title: 'From active affordance to active inference: vertical integration of cognition in the cerebral cortex through dual subcortical control systems'
+            doi: 10.1093/cercor/bhad458
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - Phan Luu
+                - Don M. Tucker
+                - Karl Friston
+            link: 'https://doi.org/10.1093/cercor/bhad458'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation: &ref_51
+        notes:
+            isFavorite: true
+            resumeStatus: super-relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.358Z'
+                sawTitle: '2025-01-29T16:27:11.163Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1101/2021.06.16.448730
+            openAlex:
+                doi: 'https://doi.org/10.1101/2021.06.16.448730'
+                title: Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - neuroscience and neuropharmacology research
+                    - neuroinflammation and neurodegeneration mechanisms
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - neurology
+                    - visual objects
+                    - representation
+                    - visual cortex
+                    - computer science
+                    - categorization
+                    - cognitive neuroscience of visual object recognition
+                    - artificial intelligence
+                    - machine learning
+                    - representation (politics)
+                    - object (grammar)
+                    - psychology
+                    - neuroscience
+                    - perception
+                    - political science
+                    - law
+                    - politics
+                year: 2021
+                authorNames:
+                    - Aran Nayebi
+                    - Nathan C. L. Kong
+                    - Chengxu Zhuang
+                    - Justin L. Gardner
+                    - Anthony M. Norcia
+                    - Daniel Yamins
+                link: 'https://doi.org/10.1101/2021.06.16.448730'
+                pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2022/08/14/2021.06.16.448730.full.pdf'
+                citationCount: 11
+                citedAlexIds:
+                    - 'https://openalex.org/W114517082'
+                    - 'https://openalex.org/W1437335841'
+                    - 'https://openalex.org/W1512234833'
+                    - 'https://openalex.org/W1715013381'
+                    - 'https://openalex.org/W1903029394'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W1984578972'
+                    - 'https://openalex.org/W2001901429'
+                    - 'https://openalex.org/W2025520018'
+                    - 'https://openalex.org/W2032628202'
+                    - 'https://openalex.org/W2040036684'
+                    - 'https://openalex.org/W2047643928'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2058616551'
+                    - 'https://openalex.org/W2066071461'
+                    - 'https://openalex.org/W2084588382'
+                    - 'https://openalex.org/W2085989895'
+                    - 'https://openalex.org/W2092580449'
+                    - 'https://openalex.org/W2094450831'
+                    - 'https://openalex.org/W2098580305'
+                    - 'https://openalex.org/W2108598243'
+                    - 'https://openalex.org/W2116360511'
+                    - 'https://openalex.org/W2117940227'
+                    - 'https://openalex.org/W2121008432'
+                    - 'https://openalex.org/W2135238780'
+                    - 'https://openalex.org/W2143886954'
+                    - 'https://openalex.org/W2145889472'
+                    - 'https://openalex.org/W2146257965'
+                    - 'https://openalex.org/W2150412316'
+                    - 'https://openalex.org/W2156303437'
+                    - 'https://openalex.org/W2160654481'
+                    - 'https://openalex.org/W2163605009'
+                    - 'https://openalex.org/W2274405424'
+                    - 'https://openalex.org/W2286279415'
+                    - 'https://openalex.org/W2338467621'
+                    - 'https://openalex.org/W2345201999'
+                    - 'https://openalex.org/W2407986585'
+                    - 'https://openalex.org/W2412480261'
+                    - 'https://openalex.org/W2557270725'
+                    - 'https://openalex.org/W2563100679'
+                    - 'https://openalex.org/W2568734123'
+                    - 'https://openalex.org/W2569458742'
+                    - 'https://openalex.org/W2717347056'
+                    - 'https://openalex.org/W2737416093'
+                    - 'https://openalex.org/W2757910899'
+                    - 'https://openalex.org/W2785325870'
+                    - 'https://openalex.org/W2798991696'
+                    - 'https://openalex.org/W2800311957'
+                    - 'https://openalex.org/W2809940376'
+                    - 'https://openalex.org/W2811245934'
+                    - 'https://openalex.org/W2842511635'
+                    - 'https://openalex.org/W2892147425'
+                    - 'https://openalex.org/W2898929289'
+                    - 'https://openalex.org/W2949449018'
+                    - 'https://openalex.org/W2949489566'
+                    - 'https://openalex.org/W2951506741'
+                    - 'https://openalex.org/W2962867885'
+                    - 'https://openalex.org/W2963108696'
+                    - 'https://openalex.org/W2963463006'
+                    - 'https://openalex.org/W2970104209'
+                    - 'https://openalex.org/W2971293928'
+                    - 'https://openalex.org/W2972831213'
+                    - 'https://openalex.org/W2978664050'
+                    - 'https://openalex.org/W2982557070'
+                    - 'https://openalex.org/W2994737554'
+                    - 'https://openalex.org/W2998594809'
+                    - 'https://openalex.org/W3009561768'
+                    - 'https://openalex.org/W3034978746'
+                    - 'https://openalex.org/W3035524453'
+                    - 'https://openalex.org/W3048485349'
+                    - 'https://openalex.org/W3073499157'
+                    - 'https://openalex.org/W3094408775'
+                    - 'https://openalex.org/W3097116240'
+                    - 'https://openalex.org/W3107175997'
+                    - 'https://openalex.org/W3107668149'
+                    - 'https://openalex.org/W3118608800'
+                    - 'https://openalex.org/W3119948327'
+                    - 'https://openalex.org/W3132028004'
+                    - 'https://openalex.org/W3142226569'
+                    - 'https://openalex.org/W3171007011'
+                    - 'https://openalex.org/W3173685023'
+                    - 'https://openalex.org/W3193978033'
+                    - 'https://openalex.org/W3212185810'
+                    - 'https://openalex.org/W3215337369'
+                    - 'https://openalex.org/W3217316163'
+                    - 'https://openalex.org/W343636949'
+                    - 'https://openalex.org/W4284895573'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4379014468'
+                    - 'https://openalex.org/W4242099210'
+                    - 'https://openalex.org/W4211183178'
+                    - 'https://openalex.org/W3197963161'
+                    - 'https://openalex.org/W2158100814'
+                    - 'https://openalex.org/W2140151361'
+                    - 'https://openalex.org/W2122540908'
+                    - 'https://openalex.org/W2101216464'
+                    - 'https://openalex.org/W2008808038'
+                    - 'https://openalex.org/W1984891974'
+                openAlexId: W3195997287
+            googleScholar:
+                title: Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation
+                authorNames:
+                    - A Nayebi
+                    - NCL Kong
+                    - C Zhuang
+                pdfLink: null
+                link: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011506'
+                citationId: '2471520982509518470'
+                multiArticleId: '2471520982509518470'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2471520982509518470&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'PLOS Computational, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2471520982509518470&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 30
+        score:
+            - 1
+            - 306
+            - 3
+            - 2021
+            - 0
+        scoreString: 1|306|3|2021|0
+        _:
+            title: Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation
+            doi: 10.1101/2021.06.16.448730
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - Aran Nayebi
+                - Nathan C. L. Kong
+                - Chengxu Zhuang
+                - Justin L. Gardner
+                - Anthony M. Norcia
+                - Daniel Yamins
+            link: 'https://doi.org/10.1101/2021.06.16.448730'
+            pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2022/08/14/2021.06.16.448730.full.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    'Ecological models of human performance based on affordance, emotion and intuition': &ref_59
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.358Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1080/00140130303536
+            openAlex:
+                doi: 'https://doi.org/10.1080/00140130303536'
+                title: 'Ecological models of human performance based on affordance, emotion and intuition'
+                abstract: null
+                concepts:
+                    - cognitive science and mapping
+                    - complex systems and decision making
+                    - cognitive science and education research
+                    - artificial intelligence
+                    - management science and operations research
+                    - cognitive neuroscience
+                    - affordance
+                    - intuition
+                    - cognitive ergonomics
+                    - cognition
+                    - computer science
+                    - cognitive science
+                    - cognitive psychology
+                    - psychology
+                    - human–computer interaction
+                    - human factors and ergonomics
+                    - poison control
+                    - medicine
+                    - environmental health
+                    - neuroscience
+                year: 2003
+                authorNames:
+                    - Krystyna Gielo‐Perczak
+                    - Waldemar Karwowski
+                link: 'https://doi.org/10.1080/00140130303536'
+                pdfLink: null
+                citationCount: 10
+                citedAlexIds:
+                    - 'https://openalex.org/W1481340920'
+                    - 'https://openalex.org/W1485644305'
+                    - 'https://openalex.org/W1501162218'
+                    - 'https://openalex.org/W1518870462'
+                    - 'https://openalex.org/W1531574183'
+                    - 'https://openalex.org/W1541456364'
+                    - 'https://openalex.org/W1552815313'
+                    - 'https://openalex.org/W1581387623'
+                    - 'https://openalex.org/W1586829993'
+                    - 'https://openalex.org/W1593180035'
+                    - 'https://openalex.org/W1595833668'
+                    - 'https://openalex.org/W162533270'
+                    - 'https://openalex.org/W1627886265'
+                    - 'https://openalex.org/W1773440208'
+                    - 'https://openalex.org/W1787944530'
+                    - 'https://openalex.org/W182941180'
+                    - 'https://openalex.org/W189324328'
+                    - 'https://openalex.org/W1933657216'
+                    - 'https://openalex.org/W1967999528'
+                    - 'https://openalex.org/W1970832059'
+                    - 'https://openalex.org/W1984707416'
+                    - 'https://openalex.org/W1986166376'
+                    - 'https://openalex.org/W1987594475'
+                    - 'https://openalex.org/W1990973103'
+                    - 'https://openalex.org/W2000021810'
+                    - 'https://openalex.org/W2000430223'
+                    - 'https://openalex.org/W2005589402'
+                    - 'https://openalex.org/W2006633893'
+                    - 'https://openalex.org/W2011744492'
+                    - 'https://openalex.org/W2012201897'
+                    - 'https://openalex.org/W2016308650'
+                    - 'https://openalex.org/W2019058547'
+                    - 'https://openalex.org/W2023230298'
+                    - 'https://openalex.org/W2029111147'
+                    - 'https://openalex.org/W2029654180'
+                    - 'https://openalex.org/W2031132552'
+                    - 'https://openalex.org/W2034060885'
+                    - 'https://openalex.org/W2034076205'
+                    - 'https://openalex.org/W2041280856'
+                    - 'https://openalex.org/W2052470685'
+                    - 'https://openalex.org/W2063126359'
+                    - 'https://openalex.org/W2085224650'
+                    - 'https://openalex.org/W2091565679'
+                    - 'https://openalex.org/W2094273895'
+                    - 'https://openalex.org/W2096684870'
+                    - 'https://openalex.org/W2097180914'
+                    - 'https://openalex.org/W2103463156'
+                    - 'https://openalex.org/W2109652963'
+                    - 'https://openalex.org/W2123179704'
+                    - 'https://openalex.org/W2126701055'
+                    - 'https://openalex.org/W2137255366'
+                    - 'https://openalex.org/W2138493361'
+                    - 'https://openalex.org/W2139619358'
+                    - 'https://openalex.org/W2149709144'
+                    - 'https://openalex.org/W2157080893'
+                    - 'https://openalex.org/W2159733978'
+                    - 'https://openalex.org/W2159782386'
+                    - 'https://openalex.org/W2174896420'
+                    - 'https://openalex.org/W2258332190'
+                    - 'https://openalex.org/W2339343773'
+                    - 'https://openalex.org/W2414075952'
+                    - 'https://openalex.org/W2594750765'
+                    - 'https://openalex.org/W2616406963'
+                    - 'https://openalex.org/W2668384829'
+                    - 'https://openalex.org/W285935642'
+                    - 'https://openalex.org/W2970113856'
+                    - 'https://openalex.org/W3000391989'
+                    - 'https://openalex.org/W3009129436'
+                    - 'https://openalex.org/W357194671'
+                    - 'https://openalex.org/W41739160'
+                    - 'https://openalex.org/W4206511281'
+                    - 'https://openalex.org/W4230277160'
+                    - 'https://openalex.org/W4232382777'
+                    - 'https://openalex.org/W4235002915'
+                    - 'https://openalex.org/W4236529758'
+                    - 'https://openalex.org/W4241860762'
+                    - 'https://openalex.org/W4242671241'
+                    - 'https://openalex.org/W4247066124'
+                    - 'https://openalex.org/W4251528598'
+                    - 'https://openalex.org/W4301141993'
+                    - 'https://openalex.org/W4312851409'
+                    - 'https://openalex.org/W4320300817'
+                    - 'https://openalex.org/W4361752585'
+                    - 'https://openalex.org/W622878261'
+                    - 'https://openalex.org/W625180174'
+                    - 'https://openalex.org/W641003700'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4380792629'
+                    - 'https://openalex.org/W3108819970'
+                    - 'https://openalex.org/W2500440871'
+                    - 'https://openalex.org/W2478731188'
+                    - 'https://openalex.org/W2364906412'
+                    - 'https://openalex.org/W2129178665'
+                    - 'https://openalex.org/W2078907152'
+                    - 'https://openalex.org/W2040776459'
+                    - 'https://openalex.org/W2009199704'
+                    - 'https://openalex.org/W1973892897'
+                openAlexId: W2009199704
+            googleScholar:
+                title: 'Ecological models of human performance based on affordance, emotion and intuition'
+                authorNames:
+                    - K Gielo-Perczak
+                    - W Karwowski
+                pdfLink: null
+                link: 'https://www.tandfonline.com/doi/abs/10.1080/00140130303536'
+                citationId: '7244440195948960377'
+                multiArticleId: '7244440195948960377'
+                citedByLink: 'https://scholar.google.com//scholar?cites=7244440195948960377&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Ergonomics, 2003'
+                year: 2003
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=7244440195948960377&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 29
+        score:
+            - 1
+            - 97
+            - 1
+            - 2003
+            - 0
+        scoreString: 1|97|1|2003|0
+        _:
+            title: 'Ecological models of human performance based on affordance, emotion and intuition'
+            doi: 10.1080/00140130303536
+            year: 2003
+            publisherFlags: null
+            authorNames:
+                - Krystyna Gielo‐Perczak
+                - Waldemar Karwowski
+            link: 'https://doi.org/10.1080/00140130303536'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    Visual Learning of Affordance Based Cues: &ref_54
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.357Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1007/11840541_5
+            openAlex:
+                doi: 'https://doi.org/10.1007/11840541_5'
+                title: Visual Learning of Affordance Based Cues
+                abstract: null
+                concepts:
+                    - robot manipulation and learning
+                    - visual perception and processing mechanisms
+                    - advanced vision and imaging
+                    - control and systems engineering
+                    - cognitive neuroscience
+                    - computer vision and pattern recognition
+                    - affordance
+                    - relevance
+                    - feature (linguistics)
+                    - anticipation (artificial intelligence)
+                    - computer science
+                    - perception
+                    - human–computer interaction
+                    - relevance (law)
+                    - context (archaeology)
+                    - artificial intelligence
+                    - visual perception
+                    - robot
+                    - psychology
+                    - paleontology
+                    - linguistics
+                    - philosophy
+                    - neuroscience
+                    - political science
+                    - law
+                    - biology
+                year: 2006
+                authorNames:
+                    - Gerald Fritz
+                    - Lucas Paletta
+                    - Manish Kumar
+                    - Georg Dorffner
+                    - Ralph Breithaupt
+                    - Erich Rome
+                link: 'https://doi.org/10.1007/11840541_5'
+                pdfLink: null
+                citationCount: 12
+                citedAlexIds:
+                    - 'https://openalex.org/W1038901635'
+                    - 'https://openalex.org/W1684415682'
+                    - 'https://openalex.org/W1933657216'
+                    - 'https://openalex.org/W2009076118'
+                    - 'https://openalex.org/W2044102873'
+                    - 'https://openalex.org/W2071448417'
+                    - 'https://openalex.org/W2102783898'
+                    - 'https://openalex.org/W2125055259'
+                    - 'https://openalex.org/W2134831918'
+                    - 'https://openalex.org/W2136767371'
+                    - 'https://openalex.org/W2151103935'
+                    - 'https://openalex.org/W2156770905'
+                    - 'https://openalex.org/W2157231347'
+                    - 'https://openalex.org/W2159599017'
+                    - 'https://openalex.org/W2174401281'
+                    - 'https://openalex.org/W2322677917'
+                    - 'https://openalex.org/W4293209991'
+                relatedAlexIds:
+                    - 'https://openalex.org/W3049116993'
+                    - 'https://openalex.org/W2589081601'
+                    - 'https://openalex.org/W2346831895'
+                    - 'https://openalex.org/W2295809616'
+                    - 'https://openalex.org/W2248634132'
+                    - 'https://openalex.org/W2070708245'
+                    - 'https://openalex.org/W1972718289'
+                    - 'https://openalex.org/W1966542732'
+                    - 'https://openalex.org/W1791514435'
+                    - 'https://openalex.org/W1541884709'
+                openAlexId: W1776218722
+            googleScholar:
+                title: Visual learning of affordance based cues
+                authorNames:
+                    - G Fritz
+                    - L Paletta
+                    - M Kumar
+                    - G Dorffner
+                pdfLink: null
+                link: 'https://link.springer.com/chapter/10.1007/11840541_5'
+                citationId: '6657194331498325234'
+                multiArticleId: '6657194331498325234'
+                citedByLink: 'https://scholar.google.com//scholar?cites=6657194331498325234&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'From Animals to Animats, 2006'
+                year: 2006
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=6657194331498325234&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 38
+        score:
+            - 1
+            - 96
+            - 2
+            - 2006
+            - 0
+        scoreString: 1|96|2|2006|0
+        _:
+            title: Visual Learning of Affordance Based Cues
+            doi: 10.1007/11840541_5
+            year: 2006
+            publisherFlags: null
+            authorNames:
+                - Gerald Fritz
+                - Lucas Paletta
+                - Manish Kumar
+                - Georg Dorffner
+                - Ralph Breithaupt
+                - Erich Rome
+            link: 'https://doi.org/10.1007/11840541_5'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    'Tool and object affordances: An ecological eye-tracking study': &ref_50
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:26:29.992Z'
+                originalQuery: ecological affordance learning visual cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:26:30.357Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1016/j.bandc.2019.103582
+            openAlex:
+                doi: 'https://doi.org/10.1016/j.bandc.2019.103582'
+                title: 'Tool and object affordances: An ecological eye-tracking study'
+                abstract: null
+                concepts:
+                    - visual perception and processing mechanisms
+                    - neural and behavioral psychology studies
+                    - action observation and synchronization
+                    - cognitive neuroscience
+                    - social psychology
+                    - affordance
+                    - hammer
+                    - perception
+                    - psychology
+                    - fixation (population genetics)
+                    - context (archaeology)
+                    - action (physics)
+                    - cognitive psychology
+                    - object (grammar)
+                    - eye tracking
+                    - eye movement
+                    - visual perception
+                    - cognition
+                    - cognitive science
+                    - human–computer interaction
+                    - communication
+                    - computer science
+                    - artificial intelligence
+                    - neuroscience
+                    - engineering
+                    - paleontology
+                    - population
+                    - physics
+                    - demography
+                    - structural engineering
+                    - quantum mechanics
+                    - sociology
+                    - biology
+                year: 2019
+                authorNames:
+                    - Giovanni Federico
+                    - Maria A. Brandimonte
+                link: 'https://doi.org/10.1016/j.bandc.2019.103582'
+                pdfLink: null
+                citationCount: 52
+                citedAlexIds:
+                    - 'https://openalex.org/W106193021'
+                    - 'https://openalex.org/W1570804385'
+                    - 'https://openalex.org/W1580568969'
+                    - 'https://openalex.org/W1764153523'
+                    - 'https://openalex.org/W1933657216'
+                    - 'https://openalex.org/W1965735313'
+                    - 'https://openalex.org/W1967519938'
+                    - 'https://openalex.org/W1968316463'
+                    - 'https://openalex.org/W1970243396'
+                    - 'https://openalex.org/W1973092699'
+                    - 'https://openalex.org/W1974044296'
+                    - 'https://openalex.org/W1981410850'
+                    - 'https://openalex.org/W1985270055'
+                    - 'https://openalex.org/W1985957239'
+                    - 'https://openalex.org/W1987027832'
+                    - 'https://openalex.org/W1987252723'
+                    - 'https://openalex.org/W1990468088'
+                    - 'https://openalex.org/W1991143829'
+                    - 'https://openalex.org/W1993780147'
+                    - 'https://openalex.org/W1997570186'
+                    - 'https://openalex.org/W2000617596'
+                    - 'https://openalex.org/W2002229750'
+                    - 'https://openalex.org/W2006535382'
+                    - 'https://openalex.org/W2009800146'
+                    - 'https://openalex.org/W2010099873'
+                    - 'https://openalex.org/W2015016650'
+                    - 'https://openalex.org/W2021781432'
+                    - 'https://openalex.org/W2022123446'
+                    - 'https://openalex.org/W2027566210'
+                    - 'https://openalex.org/W2029457525'
+                    - 'https://openalex.org/W2030620644'
+                    - 'https://openalex.org/W2037988383'
+                    - 'https://openalex.org/W2042630421'
+                    - 'https://openalex.org/W2045543438'
+                    - 'https://openalex.org/W2046510061'
+                    - 'https://openalex.org/W2050092170'
+                    - 'https://openalex.org/W2050601893'
+                    - 'https://openalex.org/W2052267742'
+                    - 'https://openalex.org/W2055473086'
+                    - 'https://openalex.org/W2059043110'
+                    - 'https://openalex.org/W2069826682'
+                    - 'https://openalex.org/W2076207912'
+                    - 'https://openalex.org/W2076576536'
+                    - 'https://openalex.org/W2077116199'
+                    - 'https://openalex.org/W2079036675'
+                    - 'https://openalex.org/W2086402981'
+                    - 'https://openalex.org/W2087114659'
+                    - 'https://openalex.org/W2108223231'
+                    - 'https://openalex.org/W2113589953'
+                    - 'https://openalex.org/W2114753483'
+                    - 'https://openalex.org/W2115534188'
+                    - 'https://openalex.org/W2116308679'
+                    - 'https://openalex.org/W2116484132'
+                    - 'https://openalex.org/W2116990835'
+                    - 'https://openalex.org/W2117352571'
+                    - 'https://openalex.org/W2118615399'
+                    - 'https://openalex.org/W2125232104'
+                    - 'https://openalex.org/W2126203627'
+                    - 'https://openalex.org/W2126672489'
+                    - 'https://openalex.org/W2126821816'
+                    - 'https://openalex.org/W2127445969'
+                    - 'https://openalex.org/W2129208602'
+                    - 'https://openalex.org/W2129696008'
+                    - 'https://openalex.org/W2131440774'
+                    - 'https://openalex.org/W2131956332'
+                    - 'https://openalex.org/W2135331973'
+                    - 'https://openalex.org/W2136022845'
+                    - 'https://openalex.org/W2139198115'
+                    - 'https://openalex.org/W2143994726'
+                    - 'https://openalex.org/W2144764737'
+                    - 'https://openalex.org/W2148817380'
+                    - 'https://openalex.org/W2149989625'
+                    - 'https://openalex.org/W2150522844'
+                    - 'https://openalex.org/W2158575718'
+                    - 'https://openalex.org/W2159981327'
+                    - 'https://openalex.org/W2161777499'
+                    - 'https://openalex.org/W2162269770'
+                    - 'https://openalex.org/W2163370780'
+                    - 'https://openalex.org/W2165116114'
+                    - 'https://openalex.org/W2165353632'
+                    - 'https://openalex.org/W2167701867'
+                    - 'https://openalex.org/W2205514512'
+                    - 'https://openalex.org/W2224748451'
+                    - 'https://openalex.org/W2293885148'
+                    - 'https://openalex.org/W2320219884'
+                    - 'https://openalex.org/W2341282033'
+                    - 'https://openalex.org/W2472385446'
+                    - 'https://openalex.org/W2514274017'
+                    - 'https://openalex.org/W2556590024'
+                    - 'https://openalex.org/W2556809674'
+                    - 'https://openalex.org/W2599639919'
+                    - 'https://openalex.org/W2605988653'
+                    - 'https://openalex.org/W2740553348'
+                    - 'https://openalex.org/W2792598197'
+                    - 'https://openalex.org/W2899885232'
+                    - 'https://openalex.org/W2900395181'
+                    - 'https://openalex.org/W313851292'
+                    - 'https://openalex.org/W4206698690'
+                    - 'https://openalex.org/W4231152856'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4384434815'
+                    - 'https://openalex.org/W4206950173'
+                    - 'https://openalex.org/W2978078285'
+                    - 'https://openalex.org/W2958385752'
+                    - 'https://openalex.org/W2186236678'
+                    - 'https://openalex.org/W2113629050'
+                    - 'https://openalex.org/W1981014703'
+                    - 'https://openalex.org/W1975214622'
+                    - 'https://openalex.org/W1701036363'
+                    - 'https://openalex.org/W1561131412'
+                openAlexId: W2954389627
+            googleScholar:
+                title: 'Tool and object affordances: an ecological eye-tracking study'
+                authorNames:
+                    - G Federico
+                    - MA Brandimonte
+                pdfLink: null
+                link: 'https://www.sciencedirect.com/science/article/pii/S0278262619302039'
+                citationId: '18399907583271054524'
+                multiArticleId: '18399907583271054524'
+                citedByLink: 'https://scholar.google.com//scholar?cites=18399907583271054524&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Brain and cognition, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=18399907583271054524&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 58
+        score:
+            - 1
+            - 153
+            - 0
+            - 2019
+            - 0
+        scoreString: 1|153|0|2019|0
+        _:
+            title: 'Tool and object affordances: An ecological eye-tracking study'
+            doi: 10.1016/j.bandc.2019.103582
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - Giovanni Federico
+                - Maria A. Brandimonte
+            link: 'https://doi.org/10.1016/j.bandc.2019.103582'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: 'Neural Networks for Navigation: From Connections to Computations'
@@ -6678,3 +8807,49 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: A Closed-Loop Toolchain for Neural Network Simulations of Learning Autonomous Agents
                 link: *ref_49
+    -
+        query: ecological affordance learning visual cortex
+        score: .nan
+        dateTime: '2025-01-29T16:26:29.992Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: 'Tool and object affordances: An ecological eye-tracking study'
+                link: *ref_50
+            -
+                hadBeenSeenBefore: false
+                title: Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation
+                link: *ref_51
+            -
+                hadBeenSeenBefore: false
+                title: 'From active affordance to active inference: vertical integration of cognition in the cerebral cortex through dual subcortical control systems'
+                link: *ref_52
+            -
+                hadBeenSeenBefore: false
+                title: The brain dynamics of architectural affordances during transition
+                link: *ref_53
+            -
+                hadBeenSeenBefore: false
+                title: Visual Learning of Affordance Based Cues
+                link: *ref_54
+            -
+                hadBeenSeenBefore: false
+                title: Coding of navigational affordances in the human visual system
+                link: *ref_55
+            -
+                hadBeenSeenBefore: false
+                title: 'Cortical mechanisms of action selection: the affordance competition hypothesis'
+                link: *ref_56
+            -
+                hadBeenSeenBefore: false
+                title: Computational mechanisms underlying cortical responses to the affordance properties of visual scenes
+                link: *ref_57
+            -
+                hadBeenSeenBefore: false
+                title: 'Ecological approaches to perceptual learning: learning to perceive and perceiving as learning'
+                link: *ref_58
+            -
+                hadBeenSeenBefore: false
+                title: 'Ecological models of human performance based on affordance, emotion and intuition'
+                link: *ref_59
