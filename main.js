@@ -277,11 +277,7 @@ mainLoop: while (true) {
             otherData: {},
             getFullData: true,
             message: `searching ...`,
-            })
-            })
-        )
         })
-        )
         for (const each of newReferences.sort(referenceSorter({project: activeProject}))) {
             console.log(`${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
         }
