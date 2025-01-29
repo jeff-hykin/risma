@@ -1,5 +1,10 @@
 goal: Can we implement grid cells in software?
-notes: null
+notes:
+    categories:
+        - crossField
+        - spiking
+        - hebbianExplain
+        - navCellExplain
 manual_need_converting:
     Immense World:
         relevant: true
@@ -4380,6 +4385,7 @@ references:
     Spiking Neural Networks for Scalable Visual Place Recognition: &ref_45
         notes:
             isFavorite: true
+            category: crossField
             resumeStatus: super-relevent|title
             comment: dissertation paper that cites NeuroSLAM
             reasonsRelevant:
@@ -5669,6 +5675,7 @@ references:
     'NeuroSLAM: a brain-inspired SLAM system for 3D environments': &ref_3
         notes:
             isFavorite: true
+            category: crossField
             resumeStatus: super-relevent|title
             comment: this is one I read
             reasonsRelevant:
@@ -7786,6 +7793,7 @@ references:
     Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation: &ref_51
         notes:
             isFavorite: true
+            category: crossField
             resumeStatus: super-relevent|title
             comment: ''
             reasonsRelevant:
@@ -8539,6 +8547,204 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics: &ref_60
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T16:38:30.759Z'
+                originalQuery: Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T16:38:31.272Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/access.2021.3101290
+            openAlex:
+                doi: 'https://doi.org/10.1109/access.2021.3101290'
+                title: Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics
+                abstract: null
+                concepts:
+                    - advanced memory and neural computing
+                    - neural dynamics and brain function
+                    - neural networks and reservoir computing
+                    - electrical and electronic engineering
+                    - cognitive neuroscience
+                    - artificial intelligence
+                    - neuromorphic engineering
+                    - memristor
+                    - multistability
+                    - computer science
+                    - attractor
+                    - artificial neural network
+                    - nonlinear system
+                    - computation
+                    - algorithm
+                    - electronic engineering
+                    - physics
+                    - mathematics
+                    - engineering
+                    - mathematical analysis
+                    - quantum mechanics
+                year: 2021
+                authorNames:
+                    - Hongzhi You
+                    - Kunpeng Zhao
+                link: 'https://doi.org/10.1109/access.2021.3101290'
+                pdfLink: 'https://ieeexplore.ieee.org/ielx7/6287639/9312710/09502127.pdf'
+                citationCount: 2
+                citedAlexIds:
+                    - 'https://openalex.org/W1484977481'
+                    - 'https://openalex.org/W1528492376'
+                    - 'https://openalex.org/W1577223111'
+                    - 'https://openalex.org/W1682580435'
+                    - 'https://openalex.org/W1821468701'
+                    - 'https://openalex.org/W1884390770'
+                    - 'https://openalex.org/W191413725'
+                    - 'https://openalex.org/W1939596644'
+                    - 'https://openalex.org/W1963789865'
+                    - 'https://openalex.org/W1966055033'
+                    - 'https://openalex.org/W1975398991'
+                    - 'https://openalex.org/W1976748656'
+                    - 'https://openalex.org/W1977503502'
+                    - 'https://openalex.org/W1980372308'
+                    - 'https://openalex.org/W1980458471'
+                    - 'https://openalex.org/W1981837838'
+                    - 'https://openalex.org/W1986542309'
+                    - 'https://openalex.org/W1989512479'
+                    - 'https://openalex.org/W1993762087'
+                    - 'https://openalex.org/W2006286609'
+                    - 'https://openalex.org/W2008027377'
+                    - 'https://openalex.org/W2009309616'
+                    - 'https://openalex.org/W2014966184'
+                    - 'https://openalex.org/W2025603247'
+                    - 'https://openalex.org/W2029030701'
+                    - 'https://openalex.org/W2029374903'
+                    - 'https://openalex.org/W2034602202'
+                    - 'https://openalex.org/W2043161845'
+                    - 'https://openalex.org/W2047833046'
+                    - 'https://openalex.org/W2058582133'
+                    - 'https://openalex.org/W2064286037'
+                    - 'https://openalex.org/W2065286706'
+                    - 'https://openalex.org/W2076717401'
+                    - 'https://openalex.org/W2080207944'
+                    - 'https://openalex.org/W2092348893'
+                    - 'https://openalex.org/W2093946971'
+                    - 'https://openalex.org/W2098697949'
+                    - 'https://openalex.org/W2108550895'
+                    - 'https://openalex.org/W2112151839'
+                    - 'https://openalex.org/W2112669647'
+                    - 'https://openalex.org/W2118754672'
+                    - 'https://openalex.org/W2119101994'
+                    - 'https://openalex.org/W2122066429'
+                    - 'https://openalex.org/W2132937210'
+                    - 'https://openalex.org/W2135860340'
+                    - 'https://openalex.org/W2146025340'
+                    - 'https://openalex.org/W2148673368'
+                    - 'https://openalex.org/W2154323800'
+                    - 'https://openalex.org/W2158130856'
+                    - 'https://openalex.org/W2161983882'
+                    - 'https://openalex.org/W2162921217'
+                    - 'https://openalex.org/W2163288878'
+                    - 'https://openalex.org/W2164012213'
+                    - 'https://openalex.org/W2167237299'
+                    - 'https://openalex.org/W2167809052'
+                    - 'https://openalex.org/W2168462263'
+                    - 'https://openalex.org/W2168815228'
+                    - 'https://openalex.org/W2257198565'
+                    - 'https://openalex.org/W2486891081'
+                    - 'https://openalex.org/W2513698244'
+                    - 'https://openalex.org/W2549019458'
+                    - 'https://openalex.org/W2604190365'
+                    - 'https://openalex.org/W2605543710'
+                    - 'https://openalex.org/W2610861664'
+                    - 'https://openalex.org/W2726920196'
+                    - 'https://openalex.org/W2783525259'
+                    - 'https://openalex.org/W2795655975'
+                    - 'https://openalex.org/W2901404362'
+                    - 'https://openalex.org/W2908124316'
+                    - 'https://openalex.org/W2914117107'
+                    - 'https://openalex.org/W2940987568'
+                    - 'https://openalex.org/W2949199710'
+                    - 'https://openalex.org/W2951785971'
+                    - 'https://openalex.org/W2963248262'
+                    - 'https://openalex.org/W2964010909'
+                    - 'https://openalex.org/W2966081953'
+                    - 'https://openalex.org/W2976273560'
+                    - 'https://openalex.org/W2979058050'
+                    - 'https://openalex.org/W2984844508'
+                    - 'https://openalex.org/W2987341027'
+                    - 'https://openalex.org/W2990793844'
+                    - 'https://openalex.org/W2998606959'
+                    - 'https://openalex.org/W3002158022'
+                    - 'https://openalex.org/W3004874674'
+                    - 'https://openalex.org/W3034996691'
+                    - 'https://openalex.org/W3036078768'
+                    - 'https://openalex.org/W3036274064'
+                    - 'https://openalex.org/W3084308099'
+                    - 'https://openalex.org/W3101174122'
+                    - 'https://openalex.org/W3116307730'
+                    - 'https://openalex.org/W3124629440'
+                    - 'https://openalex.org/W3151328790'
+                    - 'https://openalex.org/W4231081240'
+                    - 'https://openalex.org/W4239006144'
+                    - 'https://openalex.org/W4253613142'
+                    - 'https://openalex.org/W60166153'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4308963954'
+                    - 'https://openalex.org/W3216045127'
+                    - 'https://openalex.org/W3115345361'
+                    - 'https://openalex.org/W3096320150'
+                    - 'https://openalex.org/W3035288648'
+                    - 'https://openalex.org/W3015125480'
+                    - 'https://openalex.org/W3005567669'
+                    - 'https://openalex.org/W2786467147'
+                    - 'https://openalex.org/W2784603025'
+                    - 'https://openalex.org/W2472607991'
+                openAlexId: W3187568315
+            googleScholar:
+                title: Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics
+                authorNames: null
+                pdfLink: null
+                link: 'https://ieeexplore.ieee.org/abstract/document/9502127/'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 303
+            - 1
+            - 2021
+            - 0
+        scoreString: 1|303|1|2021|0
+        _:
+            title: Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics
+            doi: 10.1109/access.2021.3101290
+            year: 2021
+            publisherFlags: null
+            authorNames:
+                - Hongzhi You
+                - Kunpeng Zhao
+            link: 'https://doi.org/10.1109/access.2021.3101290'
+            pdfLink: 'https://ieeexplore.ieee.org/ielx7/6287639/9312710/09502127.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: 'Neural Networks for Navigation: From Connections to Computations'
@@ -8854,3 +9060,13 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: 'Ecological models of human performance based on affordance, emotion and intuition'
                 link: *ref_59
+    -
+        query: Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics
+        score: .nan
+        dateTime: '2025-01-29T16:38:30.759Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics
+                link: *ref_60
