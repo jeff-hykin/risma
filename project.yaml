@@ -5,6 +5,9 @@ notes:
         - spiking
         - hebbianExplain
         - navCellExplain
+    narriative q & a:
+        - Did the NeuroSLAM paper use ring attractors?
+        - Is the multidimensional continuous attractor network (MD-CAN) (that NeuroSLAM uses) a good model of the ring attractor?
 manual_need_converting:
     Immense World:
         relevant: true
@@ -77,6 +80,9 @@ settings:
             }
     keywords:
         positive:
+            - head direction system
+            - landmark-stability
+            - landmark stability
             - affordance
             - embodied
             - imagin
@@ -8745,6 +8751,319 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    Optimal cue combination and landmark‐stability learning in the head direction system: &ref_61
+        notes:
+            category: navCellExplain
+            keyTags:
+                - ring attractor
+                - no-code
+                - visual landmarks
+            resumeStatus: unseen|title
+            comment: good explaination/visuals of ring attractor
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T17:03:14.371Z'
+                originalQuery: Optimal cue combination and landmark-stability learning in the head direction system
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T17:03:15.018Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1113/jp272945
+            openAlex:
+                doi: 'https://doi.org/10.1113/jp272945'
+                title: Optimal cue combination and landmark‐stability learning in the head direction system
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - memory and neural mechanisms
+                    - visual perception and processing mechanisms
+                    - cognitive neuroscience
+                    - landmark
+                    - computer science
+                    - attractor
+                    - sensory system
+                    - head (geology)
+                    - weighting
+                    - stability (learning theory)
+                    - reliability (semiconductor)
+                    - artificial intelligence
+                    - neuroscience
+                    - machine learning
+                    - mathematics
+                    - psychology
+                    - physics
+                    - biology
+                    - mathematical analysis
+                    - paleontology
+                    - power (physics)
+                    - quantum mechanics
+                    - acoustics
+                year: 2016
+                authorNames:
+                    - Kathryn J. Jeffery
+                    - Hector Page
+                    - Simon M. Stringer
+                link: 'https://doi.org/10.1113/jp272945'
+                pdfLink: 'https://physoc.onlinelibrary.wiley.com/doi/pdfdirect/10.1113/JP272945'
+                citationCount: 30
+                citedAlexIds:
+                    - 'https://openalex.org/W1503270516'
+                    - 'https://openalex.org/W1927777346'
+                    - 'https://openalex.org/W1945659063'
+                    - 'https://openalex.org/W1969090956'
+                    - 'https://openalex.org/W1979854755'
+                    - 'https://openalex.org/W1988699451'
+                    - 'https://openalex.org/W1990532346'
+                    - 'https://openalex.org/W1999349836'
+                    - 'https://openalex.org/W2023521517'
+                    - 'https://openalex.org/W2043554842'
+                    - 'https://openalex.org/W2048759415'
+                    - 'https://openalex.org/W2058313755'
+                    - 'https://openalex.org/W2061548342'
+                    - 'https://openalex.org/W2063440895'
+                    - 'https://openalex.org/W2072262638'
+                    - 'https://openalex.org/W2072322807'
+                    - 'https://openalex.org/W2074378911'
+                    - 'https://openalex.org/W2076504722'
+                    - 'https://openalex.org/W2082940604'
+                    - 'https://openalex.org/W2083866613'
+                    - 'https://openalex.org/W2113455609'
+                    - 'https://openalex.org/W2115168690'
+                    - 'https://openalex.org/W2118845307'
+                    - 'https://openalex.org/W2119630138'
+                    - 'https://openalex.org/W2126378748'
+                    - 'https://openalex.org/W2128084896'
+                    - 'https://openalex.org/W2129552190'
+                    - 'https://openalex.org/W2132003317'
+                    - 'https://openalex.org/W2133877521'
+                    - 'https://openalex.org/W2135576811'
+                    - 'https://openalex.org/W2145171938'
+                    - 'https://openalex.org/W2152691873'
+                    - 'https://openalex.org/W2152829138'
+                    - 'https://openalex.org/W2164012213'
+                    - 'https://openalex.org/W2165443127'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2168767109'
+                    - 'https://openalex.org/W2168829242'
+                    - 'https://openalex.org/W2260464130'
+                    - 'https://openalex.org/W2308000191'
+                    - 'https://openalex.org/W2462823111'
+                    - 'https://openalex.org/W4242553067'
+                    - 'https://openalex.org/W4243939430'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4243161226'
+                    - 'https://openalex.org/W2950647290'
+                    - 'https://openalex.org/W2620829895'
+                    - 'https://openalex.org/W2378111931'
+                    - 'https://openalex.org/W2356918560'
+                    - 'https://openalex.org/W2075089431'
+                    - 'https://openalex.org/W2057559274'
+                    - 'https://openalex.org/W2056853153'
+                    - 'https://openalex.org/W2005087563'
+                    - 'https://openalex.org/W1968481813'
+                openAlexId: W2479173824
+            googleScholar:
+                title: Optimal cue combination and landmark‐stability learning in the head direction system
+                authorNames: null
+                pdfLink: null
+                link: 'https://physoc.onlinelibrary.wiley.com/doi/abs/10.1113/JP272945'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2016
+            - 0
+        scoreString: 1|151.5|1|2016|0
+        _:
+            title: Optimal cue combination and landmark‐stability learning in the head direction system
+            doi: 10.1113/jp272945
+            year: 2016
+            publisherFlags: null
+            authorNames:
+                - Kathryn J. Jeffery
+                - Hector Page
+                - Simon M. Stringer
+            link: 'https://doi.org/10.1113/jp272945'
+            pdfLink: 'https://physoc.onlinelibrary.wiley.com/doi/pdfdirect/10.1113/JP272945'
+            cites: null
+            citedBy: null
+            abstract: null
+    Population dynamics of head-direction neurons during drift and reorientation: &ref_62
+        notes:
+            isFavorite: true
+            category: navCellExplain
+            keyTags:
+                - ring attractor
+                - no-code
+                - visual landmarks
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T17:09:05.967Z'
+                originalQuery: Population dynamics of head-direction neurons during drift and reorientation
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T17:09:07.000Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1038/s41586-023-05813-2
+            openAlex:
+                doi: 'https://doi.org/10.1038/s41586-023-05813-2'
+                title: Population dynamics of head-direction neurons during drift and reorientation
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - memory and neural mechanisms
+                    - neuroscience and neuropharmacology research
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - landmark
+                    - sensory cue
+                    - population
+                    - neuroscience
+                    - orientation (vector space)
+                    - psychology
+                    - physics
+                    - communication
+                    - computer science
+                    - artificial intelligence
+                    - geometry
+                    - mathematics
+                    - demography
+                    - sociology
+                year: 2023
+                authorNames:
+                    - Zaki Ajabi
+                    - Alexandra T. Keinath
+                    - Xue-Xin Wei
+                    - Mark P. Brandon
+                link: 'https://doi.org/10.1038/s41586-023-05813-2'
+                pdfLink: 'https://www.nature.com/articles/s41586-023-05813-2.pdf'
+                citationCount: 31
+                citedAlexIds:
+                    - 'https://openalex.org/W1503270516'
+                    - 'https://openalex.org/W1570751785'
+                    - 'https://openalex.org/W1807979745'
+                    - 'https://openalex.org/W1965070330'
+                    - 'https://openalex.org/W1968903256'
+                    - 'https://openalex.org/W1968907579'
+                    - 'https://openalex.org/W1991634433'
+                    - 'https://openalex.org/W2000214310'
+                    - 'https://openalex.org/W2008579006'
+                    - 'https://openalex.org/W2077374589'
+                    - 'https://openalex.org/W2078111923'
+                    - 'https://openalex.org/W2089586993'
+                    - 'https://openalex.org/W2094954027'
+                    - 'https://openalex.org/W2110161683'
+                    - 'https://openalex.org/W2115168690'
+                    - 'https://openalex.org/W2125497307'
+                    - 'https://openalex.org/W2131452460'
+                    - 'https://openalex.org/W2142038213'
+                    - 'https://openalex.org/W2146332281'
+                    - 'https://openalex.org/W2152829138'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2168829242'
+                    - 'https://openalex.org/W2231009150'
+                    - 'https://openalex.org/W2314288977'
+                    - 'https://openalex.org/W2326238228'
+                    - 'https://openalex.org/W2340258866'
+                    - 'https://openalex.org/W2397643408'
+                    - 'https://openalex.org/W2404947714'
+                    - 'https://openalex.org/W2442744734'
+                    - 'https://openalex.org/W2594714106'
+                    - 'https://openalex.org/W2595012769'
+                    - 'https://openalex.org/W2607382399'
+                    - 'https://openalex.org/W2610861664'
+                    - 'https://openalex.org/W2765649770'
+                    - 'https://openalex.org/W2808487092'
+                    - 'https://openalex.org/W2930741432'
+                    - 'https://openalex.org/W2949966526'
+                    - 'https://openalex.org/W2950205567'
+                    - 'https://openalex.org/W2950336521'
+                    - 'https://openalex.org/W2968451269'
+                    - 'https://openalex.org/W2980490281'
+                    - 'https://openalex.org/W2990686989'
+                    - 'https://openalex.org/W2991430622'
+                    - 'https://openalex.org/W2998606959'
+                    - 'https://openalex.org/W3026495316'
+                    - 'https://openalex.org/W4237004277'
+                    - 'https://openalex.org/W4242782161'
+                    - 'https://openalex.org/W4252767703'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4243161226'
+                    - 'https://openalex.org/W3093942970'
+                    - 'https://openalex.org/W2914609754'
+                    - 'https://openalex.org/W2502138317'
+                    - 'https://openalex.org/W2378111931'
+                    - 'https://openalex.org/W2057559274'
+                    - 'https://openalex.org/W2056853153'
+                    - 'https://openalex.org/W2030621225'
+                    - 'https://openalex.org/W2005087563'
+                    - 'https://openalex.org/W154958482'
+                openAlexId: W4353055589
+            googleScholar:
+                title: Population dynamics of head-direction neurons during drift and reorientation
+                authorNames: null
+                pdfLink: null
+                link: 'https://www.nature.com/articles/s41586-023-05813-2'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 0
+            - 270
+            - 0
+            - 2023
+            - 0
+        scoreString: 0|270|0|2023|0
+        _:
+            title: Population dynamics of head-direction neurons during drift and reorientation
+            doi: 10.1038/s41586-023-05813-2
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - Zaki Ajabi
+                - Alexandra T. Keinath
+                - Xue-Xin Wei
+                - Mark P. Brandon
+            link: 'https://doi.org/10.1038/s41586-023-05813-2'
+            pdfLink: 'https://www.nature.com/articles/s41586-023-05813-2.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: 'Neural Networks for Navigation: From Connections to Computations'
@@ -9070,3 +9389,23 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics
                 link: *ref_60
+    -
+        query: Optimal cue combination and landmark-stability learning in the head direction system
+        score: .nan
+        dateTime: '2025-01-29T17:03:14.371Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Optimal cue combination and landmark‐stability learning in the head direction system
+                link: *ref_61
+    -
+        query: Population dynamics of head-direction neurons during drift and reorientation
+        score: .nan
+        dateTime: '2025-01-29T17:09:05.967Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Population dynamics of head-direction neurons during drift and reorientation
+                link: *ref_62
