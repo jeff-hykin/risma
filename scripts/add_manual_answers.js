@@ -143,15 +143,16 @@ let questions = [...new Set(questionnaires.map(each=>Object.keys(each)).flat(Inf
 let answers = questionnaires.map(each=>Object.values(each)).flat(Infinity)
 let answerFreq = frequencyCount(answers, {sort:1})
 for (const [answer, count] of answerFreq.entries()) {
-    if (count < 1) {
+    if (count <= 1) {
         answerFreq.delete(answer)
     }
 }
-answers = [...answerFreq.keys()].map(each=>`${each}`)
+answers = [...answerFreq.keys()].map(each=>`${each}`).filter(each=>(each-1)!=(each-1))
 
 const ask = async (q, each)=>{
+    let answer
     while (true) {
-        let answer = (await Input.prompt({
+        answer = (await Input.prompt({
             message: q,
             list: true,
             info: true,
@@ -214,7 +215,7 @@ for (let each of shuffle(refs)) {
     }
     if (!answer) { continue }
     
-    // q="is the problem being solved related to general spatial awareness?"
+    // q ="is the problem being solved related to general spatial awareness?"
     // if (questionnaire[q] == null) {
     //     answer = await ask(q, each)
     // }
@@ -228,7 +229,7 @@ for (let each of shuffle(refs)) {
     if (questionnaire[q] == null) {
         answer = await ask(q, each)
     }
-    if (!answer) { continue }
+    if (answer) { continue }
     
     q="is the approach embodied in some way?"
     if (questionnaire[q] == null) {
@@ -282,14 +283,14 @@ for (let each of shuffle(refs)) {
         }
     }
     
-    // q="what was the metric of success?"
+    // q ="what was the metric of success?"
     // if (questionnaire[q] == null) {
     //     answer = await ask(q, each)
     // }
     // if (!answer) { continue }
 
 
-    // q="what was the metric of success?"
+    // q ="what was the metric of success?"
     // if (questionnaire[q] == null) {
     //     answer = await ask(q, each)
     // }

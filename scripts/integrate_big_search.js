@@ -123,8 +123,9 @@ getOpenAlexData.cache = createStorageObject(openAlexCachePath)
         return reset``+text
     }
 
-
-activeProject = await loadProject(storageObject.activeProjectPath)
+// var projectPath = storageObject.activeProjectPath
+var projectPath = "/Users/jeffhykin/repos/risma/data/big_search/5/project.yaml"
+activeProject = await loadProject(projectPath)
 
 var refs = Object.values(activeProject.references)
 var rrefs = refs.filter(each=>each.notes.resumeStatus.match(/\brelevent\b/))
@@ -136,8 +137,8 @@ var rrefs = rrefs.filter(each=>each.year)
 import { getPairedFrequency, getPairedFrequencyNoInnerDuplicates, getWordFrequencyNoInnerDuplicates, relevantWords } from "../tools/word_analysis.js"
 import { linePlot } from "../tools/plot.js"
 
-var searchStatistics = yaml.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/big_search/1/result_overview.yaml'))
-var newRefs = JSON.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/big_search/1/references.json'))
+var searchStatistics = yaml.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/data/big_search/5/result_overview.yaml'))
+var newRefs = JSON.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/data/big_search/5/references.json'))
 var query = {
     query: "object detection",
     dateTime: '2025-01-20T17:19:43.690Z',
@@ -195,4 +196,9 @@ for (let [title, ref] of Object.entries(newRefs)) {
         activeProject.references[title].accordingTo.scienceDirect.year = activeProject.references[title].accordingTo.scienceDirect.year-0
     }
 }
-saveProject({activeProject, path: storageObject.activeProjectPath})
+for (const [key, value] of Object.entries(activeProject.references)) {
+    if (!newRefs[key]) {
+        delete activeProject.references[key]
+    }
+}
+saveProject({activeProject, path: projectPath})
