@@ -347,6 +347,7 @@ mainLoop: while (true) {
                     each.reasonsRelevant = each.reasonsRelevant || []
                     each.events = each.events || {}
                     each.events["sawTitle"] =  each.events["sawTitle"] || new DateTime().toISOString()
+                    activeProject.references[each.title] = each // I don't know why/how this fixes anything, but I can confirm that it does
                     await saveProject({activeProject, path: storageObject.activeProjectPath})
                     for await (let { name: keyName, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
                         activeProject = await loadProject(storageObject.activeProjectPath)
