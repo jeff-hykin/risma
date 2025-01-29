@@ -91,7 +91,6 @@ settings:
             - visual cortex
             - object detection
             - proprioception
-            - represent
             - selective attention
             - inattentional blindness
             - simulation
@@ -112,6 +111,19 @@ settings:
             - spatio-temporal
             - environmental perception
             - locomotion
+            - grid cell
+            - head direction
+            - border cell
+            - bvc
+            - boundary vector cell
+            - multidimensional continuous attractor
+            - ring attractor
+            - spiking
+            - snn
+            - slam
+            - neuroslam
+            - vslam
+            - neuromorphic
         negative:
             - large language model
             - language model
@@ -135,6 +147,7 @@ settings:
             - environmentally sustainable
             - sustainability
         neutral:
+            - represent
             - human
             - framework
             - machine-learning
@@ -411,7 +424,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'NeuroSLAM: A brain-inspired SLAM system for 3D environments': &ref_7
+    'NeuroSLAM: A brain-inspired SLAM system for 3D environments': &ref_12
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -621,12 +634,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=15674891101043310192&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 97
         score:
-            - 0
-            - 135
+            - 1
+            - 153
             - 0
             - 2019
             - 0
-        scoreString: 0|135|0|2019|0
+        scoreString: 1|153|0|2019|0
         _:
             title: 'NeuroSLAM: a brain-inspired SLAM system for 3D environments'
             doi: 10.1007/s00422-019-00806-9
@@ -643,8 +656,8 @@ references:
             citedBy: null
             abstract: null
     'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W mixed-signal oscillator-based SLAM accelerator for edge robotics':
-        notes:
-            resumeStatus: unseen|title
+        notes: &ref_0
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -655,6 +668,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:26:59.208Z'
+                sawTitle: '2025-01-29T15:39:23.995Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -667,9 +681,9 @@ references:
                 cites: null
                 citedBy: null
                 abstract: null
-            crossref:
+            crossref: &ref_1
                 doi: 10.1109/jssc.2020.3028298
-            openAlex:
+            openAlex: &ref_2
                 doi: 'https://doi.org/10.1109/jssc.2020.3028298'
                 title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics'
                 abstract: null
@@ -750,7 +764,7 @@ references:
                     - 'https://openalex.org/W2166309310'
                     - 'https://openalex.org/W2067978743'
                 openAlexId: W3116307730
-            googleScholar:
+            googleScholar: &ref_3
                 title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W mixed-signal oscillator-based SLAM accelerator for edge robotics'
                 authorNames:
                     - JH Yoon
@@ -766,11 +780,11 @@ references:
                 citedByCount: 34
         score:
             - 1
-            - 151.5
+            - 154.5
             - 0
             - 2020
             - 0
-        scoreString: 1|151.5|0|2020|0
+        scoreString: 1|154.5|0|2020|0
         _:
             title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics'
             doi: 10.1109/jssc.2020.3028298
@@ -784,11 +798,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features': &ref_2
+    'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features': &ref_6
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -830,12 +845,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=2838146005186838613&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 4
         score:
-            - 0
-            - 273
+            - 1
+            - 309
             - 0
             - 2023
             - 0
-        scoreString: 0|273|0|2023|0
+        scoreString: 1|309|0|2023|0
         _:
             title: 'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features'
             doi: null
@@ -852,11 +867,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain': &ref_5
+    'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain': &ref_9
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -988,12 +1004,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=13197553707910522902&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 1
         score:
-            - 0
-            - 270
+            - 1
+            - 303
             - 0
             - 2024
             - 0
-        scoreString: 0|270|0|2024|0
+        scoreString: 1|303|0|2024|0
         _:
             title: 'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain'
             doi: 10.3390/s24041143
@@ -1009,9 +1025,9 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    31.1 a 65nm 8.79 TOPS/W 23.82 mW mixed-signal oscillator-based NeuroSLAM accelerator for applications in edge robotics: &ref_0
+    31.1 a 65nm 8.79 TOPS/W 23.82 mW mixed-signal oscillator-based NeuroSLAM accelerator for applications in edge robotics: &ref_4
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -1053,11 +1069,11 @@ references:
                 citedByCount: 13
         score:
             - 1
-            - 154.5
+            - 156
             - 0
             - 2020
             - 0
-        scoreString: 1|154.5|0|2020|0
+        scoreString: 1|156|0|2020|0
         _:
             title: 31.1 a 65nm 8.79 TOPS/W 23.82 mW mixed-signal oscillator-based NeuroSLAM accelerator for applications in edge robotics
             doi: null
@@ -1071,11 +1087,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'NeoSLAM: Neural object SLAM for loop closure and navigation': &ref_1
+    'NeoSLAM: Neural object SLAM for loop closure and navigation': &ref_5
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -1115,12 +1132,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=2472474949514220396&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 2
         score:
-            - 0
-            - 273
+            - 1
+            - 306
             - 0
             - 2022
             - 0
-        scoreString: 0|273|0|2022|0
+        scoreString: 1|306|0|2022|0
         _:
             title: 'NeoSLAM: Neural object SLAM for loop closure and navigation'
             doi: null
@@ -1244,12 +1261,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=13847853075165097858&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 3
         score:
-            - 0
-            - 135
+            - 1
+            - 151.5
             - 0
             - 2020
             - 0
-        scoreString: 0|135|0|2020|0
+        scoreString: 1|151.5|0|2020|0
         _:
             title: Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation
             doi: 10.1109/iscas45731.2020.9180441
@@ -1268,11 +1285,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    A Brain-inspired SLAM System Based on Keyframe Template Matching: &ref_3
+    A Brain-inspired SLAM System Based on Keyframe Template Matching: &ref_7
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -1365,12 +1383,12 @@ references:
                 publisherInfo: '2024 7th International, 2024'
                 year: 2024
         score:
-            - 0
-            - 270
+            - 1
+            - 303
             - 0
             - 2024
             - 0
-        scoreString: 0|270|0|2024|0
+        scoreString: 1|303|0|2024|0
         _:
             title: A Brain-inspired SLAM System Based on Keyframe Template Matching
             doi: 10.1109/isas61044.2024.10552602
@@ -1386,11 +1404,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Application of Event Cameras and Neuromorphic Computing to VSLAM: A Survey': &ref_4
+    'Application of Event Cameras and Neuromorphic Computing to VSLAM: A Survey': &ref_8
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -1399,6 +1418,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:26:59.209Z'
+                sawTitle: '2025-01-29T15:36:44.341Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -1678,11 +1698,11 @@ references:
                 citedByCount: 2
         score:
             - 1
-            - 303
+            - 309
             - 0
             - 2024
             - 0
-        scoreString: 1|303|0|2024|0
+        scoreString: 1|309|0|2024|0
         _:
             title: 'Application of Event Cameras and Neuromorphic Computing to VSLAM: A Survey'
             doi: 10.20944/preprints202405.1094.v1
@@ -1697,11 +1717,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Exploiting semantic information in a spiking neural SLAM system: &ref_6
+    Exploiting semantic information in a spiking neural SLAM system: &ref_11
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -1869,12 +1890,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=3920420586536630904&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 11
         score:
-            - 0
-            - 270
+            - 1
+            - 306
             - 1
             - 2023
             - 0
-        scoreString: 0|270|1|2023|0
+        scoreString: 1|306|1|2023|0
         _:
             title: Exploiting semantic information in a spiking neural SLAM system
             doi: 10.3389/fnins.2023.1190515
@@ -1890,7 +1911,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'The limits of min-max optimization algorithms: Convergence to spurious non-critical sets': &ref_8
+    'The limits of min-max optimization algorithms: Convergence to spurious non-critical sets': &ref_13
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1952,7 +1973,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    The first-principles prediction of two-dimensional indium-arsenide bilayers: &ref_10
+    The first-principles prediction of two-dimensional indium-arsenide bilayers: &ref_15
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2118,7 +2139,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective: &ref_11
+    Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective: &ref_16
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2179,7 +2200,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective': &ref_13
+    'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective': &ref_18
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2398,7 +2419,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Nanoscale graphene disk: a natural functionally graded material–how is Fourier''s law violated along radius direction of 2D disk': &ref_9
+    'Nanoscale graphene disk: a natural functionally graded material–how is Fourier''s law violated along radius direction of 2D disk': &ref_14
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2466,7 +2487,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Finite‐and infinite‐dimensional attractors for porous media equations: &ref_12
+    Finite‐and infinite‐dimensional attractors for porous media equations: &ref_17
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2528,7 +2549,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Transformer fault diagnosis based on the improved QPSO and random forest: &ref_14
+    Transformer fault diagnosis based on the improved QPSO and random forest: &ref_19
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2667,7 +2688,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Global and exponential attractors for 3‐D wave equations with displacement dependent damping: &ref_16
+    Global and exponential attractors for 3‐D wave equations with displacement dependent damping: &ref_21
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2800,7 +2821,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Constrained optimization assists deviated wellbore trajectory selection from families of quadratic and cubic Bezier curves: &ref_15
+    Constrained optimization assists deviated wellbore trajectory selection from families of quadratic and cubic Bezier curves: &ref_20
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2929,7 +2950,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Back to the continuous attractor: &ref_17
+    Back to the continuous attractor: &ref_22
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2993,7 +3014,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Deep learning delay coordinate dynamics for chaotic attractors from partial observable data: &ref_24
+    Deep learning delay coordinate dynamics for chaotic attractors from partial observable data: &ref_29
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3175,7 +3196,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Using machine learning to replicate chaotic attractors and calculate Lyapunov exponents from data: &ref_21
+    Using machine learning to replicate chaotic attractors and calculate Lyapunov exponents from data: &ref_26
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3509,7 +3530,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Using machine learning to predict catastrophes in dynamical systems: &ref_22
+    Using machine learning to predict catastrophes in dynamical systems: &ref_27
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3649,7 +3670,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Deep reconstruction of strange attractors from time series: &ref_19
+    Deep reconstruction of strange attractors from time series: &ref_24
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3709,7 +3730,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Machine Learning with Chaotic Strange Attractors: &ref_18
+    Machine Learning with Chaotic Strange Attractors: &ref_23
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3967,7 +3988,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Learning continuous chaotic attractors with a reservoir computer: &ref_23
+    Learning continuous chaotic attractors with a reservoir computer: &ref_28
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4137,7 +4158,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Attractor memory for long-term time series forecasting: A chaos perspective': &ref_20
+    'Attractor memory for long-term time series forecasting: A chaos perspective': &ref_25
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4207,7 +4228,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Persistent learning signals and working memory without continuous attractors: &ref_28
+    Persistent learning signals and working memory without continuous attractors: &ref_33
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4271,7 +4292,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Latent sdes on homogeneous spaces: &ref_25
+    Latent sdes on homogeneous spaces: &ref_30
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4335,7 +4356,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    A Multi-Branched Radial Basis Network Approach to Predicting Complex Chaotic Behaviours: &ref_26
+    A Multi-Branched Radial Basis Network Approach to Predicting Complex Chaotic Behaviours: &ref_31
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4393,7 +4414,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Stability analysis of chaotic systems in latent spaces: &ref_31
+    Stability analysis of chaotic systems in latent spaces: &ref_36
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4455,7 +4476,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Low-Dimensional Data-Driven Models for Forecasting and Control of Chaotic Dynamical Systems: &ref_30
+    Low-Dimensional Data-Driven Models for Forecasting and Control of Chaotic Dynamical Systems: &ref_35
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4512,11 +4533,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Self-supervised learning of representations for space generates multi-modular grid cells: &ref_27
+    Self-supervised learning of representations for space generates multi-modular grid cells: &ref_32
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -4525,6 +4547,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:30:53.079Z'
+                sawTitle: '2025-01-29T15:33:50.506Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4558,10 +4581,10 @@ references:
         score:
             - 1
             - 306
-            - 1
+            - 2
             - 2024
             - 0
-        scoreString: 1|306|1|2024|0
+        scoreString: 1|306|2|2024|0
         _:
             title: Self-supervised learning of representations for space generates multi-modular grid cells
             doi: null
@@ -4576,7 +4599,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Time series forecasting with quantum machine learning architectures: &ref_29
+    Time series forecasting with quantum machine learning architectures: &ref_34
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4638,7 +4661,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Dynamic adaptive graph convolutional transformer with broad learning system for multi-dimensional chaotic time series prediction: &ref_32
+    Dynamic adaptive graph convolutional transformer with broad learning system for multi-dimensional chaotic time series prediction: &ref_37
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4783,7 +4806,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Design and development of continuous-time recurrent neural networks evolution for cooperative distributed multi-agent systems: &ref_36
+    Design and development of continuous-time recurrent neural networks evolution for cooperative distributed multi-agent systems: &ref_41
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4840,11 +4863,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Efficient parameter calibration and real-time simulation of large-scale spiking neural networks with GeNN and NEST: &ref_38
+    Efficient parameter calibration and real-time simulation of large-scale spiking neural networks with GeNN and NEST: &ref_43
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -5061,11 +5085,11 @@ references:
                 citedByCount: 3
         score:
             - 1
-            - 303
+            - 306
             - 0
             - 2023
             - 0
-        scoreString: 1|303|0|2023|0
+        scoreString: 1|306|0|2023|0
         _:
             title: Efficient parameter calibration and real-time simulation of large-scale spiking neural networks with GeNN and NEST
             doi: 10.3389/fninf.2023.941696
@@ -5080,7 +5104,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Towards biologically plausible mechanisms of predictive learning: &ref_34
+    Towards biologically plausible mechanisms of predictive learning: &ref_39
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -5137,7 +5161,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Neuromorphic nanophotonic systems for artificial intelligence: &ref_33
+    Neuromorphic nanophotonic systems for artificial intelligence: &ref_38
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -5176,12 +5200,12 @@ references:
                 citedByLink: null
                 publisherInfo: null
         score:
-            - 0
-            - 135
+            - 1
+            - 151.5
             - 0
             - 2016
             - 0
-        scoreString: 0|135|0|2016|0
+        scoreString: 1|151.5|0|2016|0
         _:
             title: Neuromorphic nanophotonic systems for artificial intelligence
             doi: null
@@ -5194,11 +5218,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    A neuromorphic approach to obstacle avoidance in robot manipulation: &ref_35
+    A neuromorphic approach to obstacle avoidance in robot manipulation: &ref_40
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -5382,11 +5407,11 @@ references:
                 citedByCount: 1
         score:
             - 1
-            - 303
+            - 306
             - 0
             - 2024
             - 0
-        scoreString: 1|303|0|2024|0
+        scoreString: 1|306|0|2024|0
         _:
             title: A neuromorphic approach to obstacle avoidance in robot manipulation
             doi: 10.1177/02783649241284058
@@ -5402,7 +5427,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Predicci�n de ataques epil�pticos a partir de se�ales EEG utilizando una red neuronal pulsante neuroevolucionada: &ref_37
+    Predicci�n de ataques epil�pticos a partir de se�ales EEG utilizando una red neuronal pulsante neuroevolucionada: &ref_42
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -5459,11 +5484,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Spiking Neural Networks for Scalable Visual Place Recognition: &ref_40
+    Spiking Neural Networks for Scalable Visual Place Recognition: &ref_45
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -5816,12 +5842,12 @@ references:
                 citedByLink: null
                 publisherInfo: null
         score:
-            - 0
-            - 270
+            - 1
+            - 303
             - 1
             - 2024
             - 0
-        scoreString: 0|270|1|2024|0
+        scoreString: 1|303|1|2024|0
         _:
             title: Spiking Neural Networks for Scalable Visual Place Recognition
             doi: 10.5204/thesis.eprints.253913
@@ -5834,7 +5860,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Performance of spiking neural networks on event data for embedded automotive applications: &ref_41
+    Performance of spiking neural networks on event data for embedded automotive applications: &ref_46
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -5875,12 +5901,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=11837939164276189438&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 2
         score:
-            - 0
-            - 135
+            - 1
+            - 151.5
             - 0
             - 2016
             - 0
-        scoreString: 0|135|0|2016|0
+        scoreString: 1|151.5|0|2016|0
         _:
             title: Performance of spiking neural networks on event data for embedded automotive applications
             doi: null
@@ -5893,7 +5919,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Harnessing the Power of Voltage-dependent Synaptic Plasticity (VDSP): A Novel Paradigm for Unsupervised Learning in Neuromorphic Systems': &ref_39
+    'Harnessing the Power of Voltage-dependent Synaptic Plasticity (VDSP): A Novel Paradigm for Unsupervised Learning in Neuromorphic Systems': &ref_44
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -5906,6 +5932,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:32:09.413Z'
+                sawTitle: '2025-01-29T15:44:52.834Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5933,11 +5960,11 @@ references:
                 publisherInfo: diva
         score:
             - 1
-            - 151.5
+            - 153
             - 1
             - 2016
             - 0
-        scoreString: 1|151.5|1|2016|0
+        scoreString: 1|153|1|2016|0
         _:
             title: 'Harnessing the Power of Voltage-dependent Synaptic Plasticity (VDSP): A Novel Paradigm for Unsupervised Learning in Neuromorphic Systems'
             doi: null
@@ -5950,11 +5977,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Spiking neural networks and their applications: A review': &ref_43
+    'Spiking neural networks and their applications: A review': &ref_48
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -5996,11 +6024,11 @@ references:
                 citedByCount: 382
         score:
             - 1
-            - 303
+            - 306
             - 0
             - 2022
             - 0
-        scoreString: 1|303|0|2022|0
+        scoreString: 1|306|0|2022|0
         _:
             title: 'Spiking neural networks and their applications: A review'
             doi: null
@@ -6190,7 +6218,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Predictive learning by a burst-dependent learning rule: &ref_42
+    Predictive learning by a burst-dependent learning rule: &ref_47
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -6344,6 +6372,219 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics': &ref_10
+        notes: *ref_0
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref: *ref_1
+            openAlex: *ref_2
+            googleScholar: *ref_3
+        score:
+            - 1
+            - 154.5
+            - 0
+            - 2020
+            - 0
+        scoreString: 1|154.5|0|2020|0
+        _:
+            title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics'
+            doi: 10.1109/jssc.2020.3028298
+            year: 2020
+            publisherFlags: null
+            authorNames:
+                - Jong-Hyeok Yoon
+                - Arijit Raychowdhury
+            link: 'https://doi.org/10.1109/jssc.2020.3028298'
+            pdfLink: 'https://icsrl.ece.gatech.edu/files/2021/06/09222208.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    A Closed-Loop Toolchain for Neural Network Simulations of Learning Autonomous Agents: &ref_49
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T15:32:30.653Z'
+                originalQuery: BINDSnet "grid cells"
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T15:32:30.909Z'
+                sawTitle: '2025-01-29T15:43:58.704Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.3389/fncom.2019.00046
+            openAlex:
+                doi: 'https://doi.org/10.3389/fncom.2019.00046'
+                title: A Closed-Loop Toolchain for Neural Network Simulations of Learning Autonomous Agents
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - advanced memory and neural computing
+                    - reinforcement learning in robotics
+                    - cognitive neuroscience
+                    - electrical and electronic engineering
+                    - artificial intelligence
+                    - toolchain
+                    - benchmark (surveying)
+                    - hebbian theory
+                    - computational neuroscience
+                    - reinforcement learning
+                    - computer science
+                    - artificial neural network
+                    - machine learning
+                    - spiking neural network
+                    - software
+                    - geodesy
+                    - programming language
+                    - geography
+                year: 2019
+                authorNames:
+                    - Jakob Jordan
+                    - Philipp Weidel
+                    - Abigail Morrison
+                link: 'https://doi.org/10.3389/fncom.2019.00046'
+                pdfLink: 'https://www.frontiersin.org/articles/10.3389/fncom.2019.00046/pdf'
+                citationCount: 8
+                citedAlexIds:
+                    - 'https://openalex.org/W1548328233'
+                    - 'https://openalex.org/W1557517019'
+                    - 'https://openalex.org/W1595483645'
+                    - 'https://openalex.org/W1975372282'
+                    - 'https://openalex.org/W1983624302'
+                    - 'https://openalex.org/W1985623473'
+                    - 'https://openalex.org/W1994016657'
+                    - 'https://openalex.org/W2002332903'
+                    - 'https://openalex.org/W2010315297'
+                    - 'https://openalex.org/W2014824949'
+                    - 'https://openalex.org/W2020539709'
+                    - 'https://openalex.org/W2023015865'
+                    - 'https://openalex.org/W2048756013'
+                    - 'https://openalex.org/W2052788949'
+                    - 'https://openalex.org/W2054140453'
+                    - 'https://openalex.org/W2058099001'
+                    - 'https://openalex.org/W2065125569'
+                    - 'https://openalex.org/W2067982358'
+                    - 'https://openalex.org/W2069873783'
+                    - 'https://openalex.org/W2073813638'
+                    - 'https://openalex.org/W2087861759'
+                    - 'https://openalex.org/W2100495367'
+                    - 'https://openalex.org/W2100966900'
+                    - 'https://openalex.org/W2108598243'
+                    - 'https://openalex.org/W2109639508'
+                    - 'https://openalex.org/W2110798204'
+                    - 'https://openalex.org/W2113501460'
+                    - 'https://openalex.org/W2116577160'
+                    - 'https://openalex.org/W2117539524'
+                    - 'https://openalex.org/W2120432001'
+                    - 'https://openalex.org/W2123213117'
+                    - 'https://openalex.org/W2131600418'
+                    - 'https://openalex.org/W2145339207'
+                    - 'https://openalex.org/W2145749918'
+                    - 'https://openalex.org/W2155893237'
+                    - 'https://openalex.org/W2158782408'
+                    - 'https://openalex.org/W2160815625'
+                    - 'https://openalex.org/W2162933103'
+                    - 'https://openalex.org/W2163605009'
+                    - 'https://openalex.org/W2165061373'
+                    - 'https://openalex.org/W2167340365'
+                    - 'https://openalex.org/W2167490703'
+                    - 'https://openalex.org/W2255822949'
+                    - 'https://openalex.org/W2257979135'
+                    - 'https://openalex.org/W2282055800'
+                    - 'https://openalex.org/W2283674326'
+                    - 'https://openalex.org/W2310876337'
+                    - 'https://openalex.org/W2336242821'
+                    - 'https://openalex.org/W2531037093'
+                    - 'https://openalex.org/W2544804242'
+                    - 'https://openalex.org/W2581251857'
+                    - 'https://openalex.org/W2730274928'
+                    - 'https://openalex.org/W2787259794'
+                    - 'https://openalex.org/W2788296660'
+                    - 'https://openalex.org/W2811251090'
+                    - 'https://openalex.org/W2899771611'
+                    - 'https://openalex.org/W2947198853'
+                    - 'https://openalex.org/W2964043796'
+                    - 'https://openalex.org/W3102867118'
+                    - 'https://openalex.org/W3103266921'
+                    - 'https://openalex.org/W3118608800'
+                    - 'https://openalex.org/W3215149242'
+                    - 'https://openalex.org/W32403112'
+                    - 'https://openalex.org/W4214717370'
+                    - 'https://openalex.org/W4214775604'
+                    - 'https://openalex.org/W4242770316'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4299785512'
+                    - 'https://openalex.org/W3083683713'
+                    - 'https://openalex.org/W2912471387'
+                    - 'https://openalex.org/W2898418870'
+                    - 'https://openalex.org/W2792794651'
+                    - 'https://openalex.org/W2754711163'
+                    - 'https://openalex.org/W2183204832'
+                    - 'https://openalex.org/W2113117949'
+                    - 'https://openalex.org/W2112330540'
+                    - 'https://openalex.org/W2088600489'
+                openAlexId: W2964571680
+            googleScholar:
+                title: A closed-loop toolchain for neural network simulations of learning autonomous agents
+                authorNames:
+                    - J Jordan
+                    - P Weidel
+                    - A Morrison
+                pdfLink: null
+                link: 'https://www.frontiersin.org/articles/10.3389/fncom.2019.00046/full'
+                citationId: '8657538307717533129'
+                multiArticleId: '8657538307717533129'
+                citedByLink: 'https://scholar.google.com//scholar?cites=8657538307717533129&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Frontiers in computational, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=8657538307717533129&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 8
+        score:
+            - 1
+            - 153
+            - 1
+            - 2019
+            - 0
+        scoreString: 1|153|1|2019|0
+        _:
+            title: A Closed-Loop Toolchain for Neural Network Simulations of Learning Autonomous Agents
+            doi: 10.3389/fncom.2019.00046
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - Jakob Jordan
+                - Philipp Weidel
+                - Abigail Morrison
+            link: 'https://doi.org/10.3389/fncom.2019.00046'
+            pdfLink: 'https://www.frontiersin.org/articles/10.3389/fncom.2019.00046/pdf'
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: 'Neural Networks for Navigation: From Connections to Computations'
@@ -6364,11 +6605,11 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 31.1 a 65nm 8.79 TOPS/W 23.82 mW mixed-signal oscillator-based NeuroSLAM accelerator for applications in edge robotics
-                link: *ref_0
+                link: *ref_4
             -
                 hadBeenSeenBefore: false
                 title: 'NeoSLAM: Neural object SLAM for loop closure and navigation'
-                link: *ref_1
+                link: *ref_5
             -
                 hadBeenSeenBefore: false
                 title: 'NeuroSLAM: a brain-inspired SLAM system for 3D environments'
@@ -6376,7 +6617,7 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features'
-                link: *ref_2
+                link: *ref_6
             -
                 hadBeenSeenBefore: false
                 title: Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation
@@ -6384,23 +6625,23 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: A Brain-inspired SLAM System Based on Keyframe Template Matching
-                link: *ref_3
+                link: *ref_7
             -
                 hadBeenSeenBefore: false
                 title: 'Application of Event Cameras and Neuromorphic Computing to VSLAM: A Survey'
-                link: *ref_4
+                link: *ref_8
             -
                 hadBeenSeenBefore: false
                 title: 'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain'
-                link: *ref_5
+                link: *ref_9
             -
                 hadBeenSeenBefore: false
                 title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics'
-                link: null
+                link: *ref_10
             -
                 hadBeenSeenBefore: false
                 title: Exploiting semantic information in a spiking neural SLAM system
-                link: *ref_6
+                link: *ref_11
     -
         query: 'multidimensional continuous attractor MD-CAN '
         score: .nan
@@ -6410,43 +6651,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: true
                 title: 'NeuroSLAM: A brain-inspired SLAM system for 3D environments'
-                link: *ref_7
-            -
-                hadBeenSeenBefore: false
-                title: 'The limits of min-max optimization algorithms: Convergence to spurious non-critical sets'
-                link: *ref_8
-            -
-                hadBeenSeenBefore: false
-                title: 'Nanoscale graphene disk: a natural functionally graded material–how is Fourier''s law violated along radius direction of 2D disk'
-                link: *ref_9
-            -
-                hadBeenSeenBefore: false
-                title: The first-principles prediction of two-dimensional indium-arsenide bilayers
-                link: *ref_10
-            -
-                hadBeenSeenBefore: false
-                title: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective
-                link: *ref_11
-            -
-                hadBeenSeenBefore: false
-                title: Finite‐and infinite‐dimensional attractors for porous media equations
                 link: *ref_12
             -
                 hadBeenSeenBefore: false
-                title: 'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective'
+                title: 'The limits of min-max optimization algorithms: Convergence to spurious non-critical sets'
                 link: *ref_13
             -
                 hadBeenSeenBefore: false
-                title: Transformer fault diagnosis based on the improved QPSO and random forest
+                title: 'Nanoscale graphene disk: a natural functionally graded material–how is Fourier''s law violated along radius direction of 2D disk'
                 link: *ref_14
             -
                 hadBeenSeenBefore: false
-                title: Constrained optimization assists deviated wellbore trajectory selection from families of quadratic and cubic Bezier curves
+                title: The first-principles prediction of two-dimensional indium-arsenide bilayers
                 link: *ref_15
             -
                 hadBeenSeenBefore: false
-                title: Global and exponential attractors for 3‐D wave equations with displacement dependent damping
+                title: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective
                 link: *ref_16
+            -
+                hadBeenSeenBefore: false
+                title: Finite‐and infinite‐dimensional attractors for porous media equations
+                link: *ref_17
+            -
+                hadBeenSeenBefore: false
+                title: 'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective'
+                link: *ref_18
+            -
+                hadBeenSeenBefore: false
+                title: Transformer fault diagnosis based on the improved QPSO and random forest
+                link: *ref_19
+            -
+                hadBeenSeenBefore: false
+                title: Constrained optimization assists deviated wellbore trajectory selection from families of quadratic and cubic Bezier curves
+                link: *ref_20
+            -
+                hadBeenSeenBefore: false
+                title: Global and exponential attractors for 3‐D wave equations with displacement dependent damping
+                link: *ref_21
     -
         query: multidimensional continuous attractor machine learning
         score: .nan
@@ -6456,23 +6697,23 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Back to the continuous attractor
-                link: *ref_17
+                link: *ref_22
             -
                 hadBeenSeenBefore: false
                 title: Machine Learning with Chaotic Strange Attractors
-                link: *ref_18
+                link: *ref_23
             -
                 hadBeenSeenBefore: false
                 title: Deep reconstruction of strange attractors from time series
-                link: *ref_19
+                link: *ref_24
             -
                 hadBeenSeenBefore: false
                 title: 'Attractor memory for long-term time series forecasting: A chaos perspective'
-                link: *ref_20
+                link: *ref_25
             -
                 hadBeenSeenBefore: false
                 title: Using machine learning to replicate chaotic attractors and calculate Lyapunov exponents from data
-                link: *ref_21
+                link: *ref_26
             -
                 hadBeenSeenBefore: false
                 title: Reinforcement Learning and Attractor Neural Network Models of Associative Learning
@@ -6484,15 +6725,15 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Using machine learning to predict catastrophes in dynamical systems
-                link: *ref_22
+                link: *ref_27
             -
                 hadBeenSeenBefore: false
                 title: Learning continuous chaotic attractors with a reservoir computer
-                link: *ref_23
+                link: *ref_28
             -
                 hadBeenSeenBefore: false
                 title: Deep learning delay coordinate dynamics for chaotic attractors from partial observable data
-                link: *ref_24
+                link: *ref_29
     -
         query: multidimensional continuous attractor pytorch
         score: .nan
@@ -6502,43 +6743,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: true
                 title: Back to the continuous attractor
-                link: *ref_17
+                link: *ref_22
             -
                 hadBeenSeenBefore: true
                 title: 'Attractor memory for long-term time series forecasting: A chaos perspective'
-                link: *ref_20
-            -
-                hadBeenSeenBefore: false
-                title: Latent sdes on homogeneous spaces
                 link: *ref_25
             -
                 hadBeenSeenBefore: false
-                title: A Multi-Branched Radial Basis Network Approach to Predicting Complex Chaotic Behaviours
-                link: *ref_26
-            -
-                hadBeenSeenBefore: false
-                title: Self-supervised learning of representations for space generates multi-modular grid cells
-                link: *ref_27
-            -
-                hadBeenSeenBefore: false
-                title: Persistent learning signals and working memory without continuous attractors
-                link: *ref_28
-            -
-                hadBeenSeenBefore: false
-                title: Time series forecasting with quantum machine learning architectures
-                link: *ref_29
-            -
-                hadBeenSeenBefore: false
-                title: Low-Dimensional Data-Driven Models for Forecasting and Control of Chaotic Dynamical Systems
+                title: Latent sdes on homogeneous spaces
                 link: *ref_30
             -
                 hadBeenSeenBefore: false
-                title: Stability analysis of chaotic systems in latent spaces
+                title: A Multi-Branched Radial Basis Network Approach to Predicting Complex Chaotic Behaviours
                 link: *ref_31
             -
                 hadBeenSeenBefore: false
-                title: Dynamic adaptive graph convolutional transformer with broad learning system for multi-dimensional chaotic time series prediction
+                title: Self-supervised learning of representations for space generates multi-modular grid cells
                 link: *ref_32
+            -
+                hadBeenSeenBefore: false
+                title: Persistent learning signals and working memory without continuous attractors
+                link: *ref_33
+            -
+                hadBeenSeenBefore: false
+                title: Time series forecasting with quantum machine learning architectures
+                link: *ref_34
+            -
+                hadBeenSeenBefore: false
+                title: Low-Dimensional Data-Driven Models for Forecasting and Control of Chaotic Dynamical Systems
+                link: *ref_35
+            -
+                hadBeenSeenBefore: false
+                title: Stability analysis of chaotic systems in latent spaces
+                link: *ref_36
+            -
+                hadBeenSeenBefore: false
+                title: Dynamic adaptive graph convolutional transformer with broad learning system for multi-dimensional chaotic time series prediction
+                link: *ref_37
     -
         query: multidimensional continuous attractor "BINDSnet"
         score: .nan
@@ -6548,27 +6789,27 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Neuromorphic nanophotonic systems for artificial intelligence
-                link: *ref_33
+                link: *ref_38
             -
                 hadBeenSeenBefore: false
                 title: Towards biologically plausible mechanisms of predictive learning
-                link: *ref_34
+                link: *ref_39
             -
                 hadBeenSeenBefore: false
                 title: A neuromorphic approach to obstacle avoidance in robot manipulation
-                link: *ref_35
+                link: *ref_40
             -
                 hadBeenSeenBefore: false
                 title: Design and development of continuous-time recurrent neural networks evolution for cooperative distributed multi-agent systems
-                link: *ref_36
+                link: *ref_41
             -
                 hadBeenSeenBefore: false
                 title: Predicci�n de ataques epil�pticos a partir de se�ales EEG utilizando una red neuronal pulsante neuroevolucionada
-                link: *ref_37
+                link: *ref_42
             -
                 hadBeenSeenBefore: false
                 title: Efficient parameter calibration and real-time simulation of large-scale spiking neural networks with GeNN and NEST
-                link: *ref_38
+                link: *ref_43
     -
         query: BINDSnet "grid cell"
         score: .nan
@@ -6578,15 +6819,15 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'Harnessing the Power of Voltage-dependent Synaptic Plasticity (VDSP): A Novel Paradigm for Unsupervised Learning in Neuromorphic Systems'
-                link: *ref_39
+                link: *ref_44
             -
                 hadBeenSeenBefore: false
                 title: Spiking Neural Networks for Scalable Visual Place Recognition
-                link: *ref_40
+                link: *ref_45
             -
                 hadBeenSeenBefore: false
                 title: Performance of spiking neural networks on event data for embedded automotive applications
-                link: *ref_41
+                link: *ref_46
     -
         query: BINDSnet "grid cells"
         score: .nan
@@ -6596,20 +6837,20 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: true
                 title: Towards biologically plausible mechanisms of predictive learning
-                link: *ref_34
+                link: *ref_39
             -
                 hadBeenSeenBefore: true
                 title: Spiking Neural Networks for Scalable Visual Place Recognition
-                link: *ref_40
+                link: *ref_45
             -
                 hadBeenSeenBefore: false
                 title: Predictive learning by a burst-dependent learning rule
-                link: *ref_42
+                link: *ref_47
             -
                 hadBeenSeenBefore: false
                 title: 'Spiking neural networks and their applications: A review'
-                link: *ref_43
+                link: *ref_48
             -
                 hadBeenSeenBefore: false
                 title: A Closed-Loop Toolchain for Neural Network Simulations of Learning Autonomous Agents
-                link: null
+                link: *ref_49
