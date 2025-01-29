@@ -40,8 +40,16 @@ export const loadProject = async (path) => {
     }
     project.settings = project.settings || {}
     project.settings.keywords = project.settings.keywords || {}
-    for (const [key, value] of Object.entries(project.references)) {
-        project.references[key] = new Reference(value)
+    for (let [key, value] of Object.entries(project.references)) {
+        let ref = project.references[key] = new Reference(value)
+        // enforce that title is actually the title (seems some uppercase/lowercase bug is causing problems)
+        if (typeof ref.title == "string") {
+            if (ref.title != key) {
+                delete project.references[key]
+                key = ref.title
+                project.references[key] = ref
+            }
+        }
         try {
             project.references[key].score = score(project.references[key], project)
             project.references[key].scoreString = project.references[key].score.join("|")
