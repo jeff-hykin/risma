@@ -1455,6 +1455,7 @@ references:
             abstract: null
     'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective': &ref_16
         notes:
+            onReadingList: true
             resumeStatus: unseen|title
             comment: ''
             reasonsRelevant: []
