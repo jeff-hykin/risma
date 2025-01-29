@@ -124,6 +124,8 @@ settings:
             - neuroslam
             - vslam
             - neuromorphic
+            - plasticity
+            - hebbian
         negative:
             - large language model
             - language model
@@ -147,6 +149,10 @@ settings:
             - environmentally sustainable
             - sustainability
         neutral:
+            - deep learning
+            - synaptic
+            - burst
+            - memory
             - represent
             - human
             - framework
@@ -173,632 +179,7 @@ settings:
             - segmentation
             - depth
 references:
-    'Neural networks for navigation: From connections to computations':
-        notes:
-            resumeStatus: unseen|title
-            comment: ''
-            reasonsRelevant: []
-            reasonsNotRelevant: []
-            customKeywords: []
-            discoveryMethod:
-                dateTime: '2025-01-29T15:26:18.351Z'
-                originalQuery: 'Neural Networks for Navigation: From Connections to Computations'
-                searchEngine: googleScholar
-            events:
-                added: '2025-01-29T15:26:18.970Z'
-        accordingTo:
-            $manuallyEntered:
-                title: null
-                doi: null
-                year: null
-                publisherFlags: null
-                authorNames: null
-                link: null
-                pdfLink: null
-                cites: null
-                citedBy: null
-                abstract: null
-            crossref:
-                doi: 10.1146/annurev-neuro-110920-032645
-            openAlex:
-                doi: 'https://doi.org/10.1146/annurev-neuro-110920-032645'
-                title: 'Neural Networks for Navigation: From Connections to Computations'
-                abstract: null
-                concepts:
-                    - neurobiology and insect physiology research
-                    - photoreceptor and optogenetics research
-                    - neural dynamics and brain function
-                    - cellular and molecular neuroscience
-                    - cognitive neuroscience
-                    - hebbian theory
-                    - neuromodulation
-                    - connectomics
-                    - computational neuroscience
-                    - representation
-                    - connectome
-                    - neuroscience
-                    - computer science
-                    - attractor
-                    - sensory system
-                    - representation (politics)
-                    - set (abstract data type)
-                    - artificial intelligence
-                    - artificial neural network
-                    - psychology
-                    - functional connectivity
-                    - mathematical analysis
-                    - mathematics
-                    - stimulation
-                    - politics
-                    - political science
-                    - law
-                    - programming language
-                year: 2023
-                authorNames:
-                    - Rachel I. Wilson
-                link: 'https://doi.org/10.1146/annurev-neuro-110920-032645'
-                pdfLink: 'https://www.annualreviews.org/doi/pdf/10.1146/annurev-neuro-110920-032645'
-                citationCount: 11
-                citedAlexIds:
-                    - 'https://openalex.org/W1498436455'
-                    - 'https://openalex.org/W1503270516'
-                    - 'https://openalex.org/W1507999177'
-                    - 'https://openalex.org/W1528822345'
-                    - 'https://openalex.org/W1596586683'
-                    - 'https://openalex.org/W1807979745'
-                    - 'https://openalex.org/W1892958920'
-                    - 'https://openalex.org/W1904621031'
-                    - 'https://openalex.org/W1910429665'
-                    - 'https://openalex.org/W1963596662'
-                    - 'https://openalex.org/W1965518216'
-                    - 'https://openalex.org/W1968112225'
-                    - 'https://openalex.org/W1977364718'
-                    - 'https://openalex.org/W1982133166'
-                    - 'https://openalex.org/W1991539988'
-                    - 'https://openalex.org/W1995062437'
-                    - 'https://openalex.org/W2005885319'
-                    - 'https://openalex.org/W2006179270'
-                    - 'https://openalex.org/W2014495096'
-                    - 'https://openalex.org/W2017795070'
-                    - 'https://openalex.org/W2017932221'
-                    - 'https://openalex.org/W2019977544'
-                    - 'https://openalex.org/W2020997099'
-                    - 'https://openalex.org/W2021354435'
-                    - 'https://openalex.org/W2021629815'
-                    - 'https://openalex.org/W2028281435'
-                    - 'https://openalex.org/W2033073682'
-                    - 'https://openalex.org/W2035752417'
-                    - 'https://openalex.org/W2043369736'
-                    - 'https://openalex.org/W2045369561'
-                    - 'https://openalex.org/W2048643991'
-                    - 'https://openalex.org/W2052049836'
-                    - 'https://openalex.org/W2056128573'
-                    - 'https://openalex.org/W2069702518'
-                    - 'https://openalex.org/W2079228133'
-                    - 'https://openalex.org/W2079577312'
-                    - 'https://openalex.org/W2083890928'
-                    - 'https://openalex.org/W2083906231'
-                    - 'https://openalex.org/W2091544237'
-                    - 'https://openalex.org/W2092071089'
-                    - 'https://openalex.org/W2092421320'
-                    - 'https://openalex.org/W2094199090'
-                    - 'https://openalex.org/W2095087224'
-                    - 'https://openalex.org/W2104056735'
-                    - 'https://openalex.org/W2107677787'
-                    - 'https://openalex.org/W2110161683'
-                    - 'https://openalex.org/W2114590530'
-                    - 'https://openalex.org/W2118845307'
-                    - 'https://openalex.org/W2129552190'
-                    - 'https://openalex.org/W2132238259'
-                    - 'https://openalex.org/W2133917215'
-                    - 'https://openalex.org/W2136863984'
-                    - 'https://openalex.org/W2138260451'
-                    - 'https://openalex.org/W2149422514'
-                    - 'https://openalex.org/W2149432670'
-                    - 'https://openalex.org/W2153525021'
-                    - 'https://openalex.org/W2158683034'
-                    - 'https://openalex.org/W2159605081'
-                    - 'https://openalex.org/W2160905787'
-                    - 'https://openalex.org/W2164012213'
-                    - 'https://openalex.org/W2165443127'
-                    - 'https://openalex.org/W2167403166'
-                    - 'https://openalex.org/W2171637648'
-                    - 'https://openalex.org/W2173127365'
-                    - 'https://openalex.org/W2187333428'
-                    - 'https://openalex.org/W2219709225'
-                    - 'https://openalex.org/W2221454867'
-                    - 'https://openalex.org/W2238546778'
-                    - 'https://openalex.org/W2289037009'
-                    - 'https://openalex.org/W2382571936'
-                    - 'https://openalex.org/W2480327151'
-                    - 'https://openalex.org/W2587116049'
-                    - 'https://openalex.org/W2588048611'
-                    - 'https://openalex.org/W2594714106'
-                    - 'https://openalex.org/W2600383617'
-                    - 'https://openalex.org/W2603603923'
-                    - 'https://openalex.org/W2609307799'
-                    - 'https://openalex.org/W2610861664'
-                    - 'https://openalex.org/W2614915054'
-                    - 'https://openalex.org/W2618420889'
-                    - 'https://openalex.org/W2625462354'
-                    - 'https://openalex.org/W2626354520'
-                    - 'https://openalex.org/W2736783045'
-                    - 'https://openalex.org/W2764135343'
-                    - 'https://openalex.org/W2800545257'
-                    - 'https://openalex.org/W2858451488'
-                    - 'https://openalex.org/W2885788335'
-                    - 'https://openalex.org/W2888531822'
-                    - 'https://openalex.org/W2889759129'
-                    - 'https://openalex.org/W2890691917'
-                    - 'https://openalex.org/W2902800274'
-                    - 'https://openalex.org/W2911295867'
-                    - 'https://openalex.org/W2912908978'
-                    - 'https://openalex.org/W2945334021'
-                    - 'https://openalex.org/W2947312223'
-                    - 'https://openalex.org/W2947447667'
-                    - 'https://openalex.org/W2949890723'
-                    - 'https://openalex.org/W2952891726'
-                    - 'https://openalex.org/W2953339796'
-                    - 'https://openalex.org/W2953356325'
-                    - 'https://openalex.org/W2953398929'
-                    - 'https://openalex.org/W2963869135'
-                    - 'https://openalex.org/W2965707816'
-                    - 'https://openalex.org/W2970825820'
-                    - 'https://openalex.org/W2990686989'
-                    - 'https://openalex.org/W2991430622'
-                    - 'https://openalex.org/W2998606959'
-                    - 'https://openalex.org/W3004628581'
-                    - 'https://openalex.org/W3015110848'
-                    - 'https://openalex.org/W3030279718'
-                    - 'https://openalex.org/W3043725759'
-                    - 'https://openalex.org/W3044360663'
-                    - 'https://openalex.org/W3044458632'
-                    - 'https://openalex.org/W3047114056'
-                    - 'https://openalex.org/W3080736558'
-                    - 'https://openalex.org/W3084308099'
-                    - 'https://openalex.org/W3087133308'
-                    - 'https://openalex.org/W3112375501'
-                    - 'https://openalex.org/W3115566250'
-                    - 'https://openalex.org/W3128680190'
-                    - 'https://openalex.org/W31595650'
-                    - 'https://openalex.org/W3165096146'
-                    - 'https://openalex.org/W3193308888'
-                    - 'https://openalex.org/W3193998852'
-                    - 'https://openalex.org/W3198789381'
-                    - 'https://openalex.org/W3199336337'
-                    - 'https://openalex.org/W3200508686'
-                    - 'https://openalex.org/W3208266771'
-                    - 'https://openalex.org/W3216207052'
-                    - 'https://openalex.org/W4200363586'
-                    - 'https://openalex.org/W4200478016'
-                    - 'https://openalex.org/W4206184909'
-                    - 'https://openalex.org/W4213131875'
-                    - 'https://openalex.org/W4225711402'
-                    - 'https://openalex.org/W4243629783'
-                    - 'https://openalex.org/W4280545948'
-                    - 'https://openalex.org/W4282919408'
-                    - 'https://openalex.org/W4283156207'
-                    - 'https://openalex.org/W4286779704'
-                    - 'https://openalex.org/W4290702148'
-                    - 'https://openalex.org/W4293722883'
-                    - 'https://openalex.org/W4309228084'
-                    - 'https://openalex.org/W4309228910'
-                    - 'https://openalex.org/W4310483820'
-                relatedAlexIds:
-                    - 'https://openalex.org/W4386121835'
-                    - 'https://openalex.org/W4383823249'
-                    - 'https://openalex.org/W4306173854'
-                    - 'https://openalex.org/W3202828119'
-                    - 'https://openalex.org/W3004213178'
-                    - 'https://openalex.org/W2808304326'
-                    - 'https://openalex.org/W2470756147'
-                    - 'https://openalex.org/W2325816644'
-                    - 'https://openalex.org/W2300070222'
-                    - 'https://openalex.org/W2166886630'
-                openAlexId: W4383823249
-            googleScholar:
-                title: 'Neural networks for navigation: From connections to computations'
-                authorNames: null
-                pdfLink: null
-                link: 'https://www.annualreviews.org/content/journals/10.1146/annurev-neuro-110920-032645'
-                citationId: null
-                multiArticleId: null
-                citedByLink: null
-                publisherInfo: null
-        score:
-            - 0
-            - 270
-            - 0
-            - 2023
-            - 0
-        scoreString: 0|270|0|2023|0
-        _:
-            title: 'Neural Networks for Navigation: From Connections to Computations'
-            doi: 10.1146/annurev-neuro-110920-032645
-            year: 2023
-            publisherFlags: null
-            authorNames:
-                - Rachel I. Wilson
-            link: 'https://doi.org/10.1146/annurev-neuro-110920-032645'
-            pdfLink: 'https://www.annualreviews.org/doi/pdf/10.1146/annurev-neuro-110920-032645'
-            cites: null
-            citedBy: null
-            abstract: null
-    'NeuroSLAM: A brain-inspired SLAM system for 3D environments': &ref_12
-        notes:
-            resumeStatus: unseen|title
-            comment: ''
-            reasonsRelevant: []
-            reasonsNotRelevant: []
-            customKeywords: []
-            discoveryMethod:
-                dateTime: '2025-01-29T15:26:58.981Z'
-                originalQuery: NeuroSLAM
-                searchEngine: googleScholar
-            events:
-                added: '2025-01-29T15:26:59.208Z'
-        accordingTo:
-            $manuallyEntered:
-                title: null
-                doi: null
-                year: null
-                publisherFlags: null
-                authorNames: null
-                link: null
-                pdfLink: null
-                cites: null
-                citedBy: null
-                abstract: null
-            crossref:
-                doi: 10.1007/s00422-019-00806-9
-            openAlex:
-                doi: 'https://doi.org/10.1007/s00422-019-00806-9'
-                title: 'NeuroSLAM: a brain-inspired SLAM system for 3D environments'
-                abstract: null
-                concepts:
-                    - robotics and sensor-based localization
-                    - robotic path planning algorithms
-                    - advanced image and video retrieval techniques
-                    - aerospace engineering
-                    - computer vision and pattern recognition
-                    - path integration
-                    - sensory cue
-                    - representation
-                    - computer science
-                    - simultaneous localization and mapping
-                    - computer vision
-                    - artificial intelligence
-                    - representation (politics)
-                    - robot
-                    - mobile robot
-                    - politics
-                    - political science
-                    - law
-                year: 2019
-                authorNames:
-                    - Fangwen Yu
-                    - Jianga Shang
-                    - Youjian Hu
-                    - Michael Milford
-                link: 'https://doi.org/10.1007/s00422-019-00806-9'
-                pdfLink: 'https://eprints.qut.edu.au/198104/1/56922761.pdf'
-                citationCount: 81
-                citedAlexIds:
-                    - 'https://openalex.org/W1490092700'
-                    - 'https://openalex.org/W1512234833'
-                    - 'https://openalex.org/W1513286638'
-                    - 'https://openalex.org/W1530919911'
-                    - 'https://openalex.org/W1568089468'
-                    - 'https://openalex.org/W1612997784'
-                    - 'https://openalex.org/W1833770305'
-                    - 'https://openalex.org/W1968399385'
-                    - 'https://openalex.org/W1970504153'
-                    - 'https://openalex.org/W1970792572'
-                    - 'https://openalex.org/W1972671602'
-                    - 'https://openalex.org/W1995575564'
-                    - 'https://openalex.org/W2003512790'
-                    - 'https://openalex.org/W2005115267'
-                    - 'https://openalex.org/W2008936540'
-                    - 'https://openalex.org/W2024908906'
-                    - 'https://openalex.org/W2028980271'
-                    - 'https://openalex.org/W2030987944'
-                    - 'https://openalex.org/W2033771479'
-                    - 'https://openalex.org/W2038694110'
-                    - 'https://openalex.org/W2042498311'
-                    - 'https://openalex.org/W2052515926'
-                    - 'https://openalex.org/W2058853524'
-                    - 'https://openalex.org/W2062948987'
-                    - 'https://openalex.org/W2069479606'
-                    - 'https://openalex.org/W2082115891'
-                    - 'https://openalex.org/W2084588382'
-                    - 'https://openalex.org/W2086330526'
-                    - 'https://openalex.org/W2091790851'
-                    - 'https://openalex.org/W2108134361'
-                    - 'https://openalex.org/W2110405746'
-                    - 'https://openalex.org/W2112164532'
-                    - 'https://openalex.org/W2112669647'
-                    - 'https://openalex.org/W2119902363'
-                    - 'https://openalex.org/W2121013842'
-                    - 'https://openalex.org/W2121780146'
-                    - 'https://openalex.org/W2127987606'
-                    - 'https://openalex.org/W2132238259'
-                    - 'https://openalex.org/W2137348018'
-                    - 'https://openalex.org/W2143864104'
-                    - 'https://openalex.org/W2144824356'
-                    - 'https://openalex.org/W2147027939'
-                    - 'https://openalex.org/W2148820580'
-                    - 'https://openalex.org/W2149422514'
-                    - 'https://openalex.org/W2151290401'
-                    - 'https://openalex.org/W2152671441'
-                    - 'https://openalex.org/W2161338791'
-                    - 'https://openalex.org/W2163769923'
-                    - 'https://openalex.org/W2167403166'
-                    - 'https://openalex.org/W2168676389'
-                    - 'https://openalex.org/W2188375190'
-                    - 'https://openalex.org/W2195415230'
-                    - 'https://openalex.org/W2209696208'
-                    - 'https://openalex.org/W2239403525'
-                    - 'https://openalex.org/W2284029970'
-                    - 'https://openalex.org/W2285806732'
-                    - 'https://openalex.org/W2293661915'
-                    - 'https://openalex.org/W2333526516'
-                    - 'https://openalex.org/W2336067451'
-                    - 'https://openalex.org/W2411681238'
-                    - 'https://openalex.org/W2414782734'
-                    - 'https://openalex.org/W2464331557'
-                    - 'https://openalex.org/W2474281075'
-                    - 'https://openalex.org/W2479173824'
-                    - 'https://openalex.org/W2535286602'
-                    - 'https://openalex.org/W2535634543'
-                    - 'https://openalex.org/W2543128274'
-                    - 'https://openalex.org/W2564632156'
-                    - 'https://openalex.org/W2565755350'
-                    - 'https://openalex.org/W2594714106'
-                    - 'https://openalex.org/W2603076117'
-                    - 'https://openalex.org/W2613438563'
-                    - 'https://openalex.org/W2614122538'
-                    - 'https://openalex.org/W2745859992'
-                    - 'https://openalex.org/W2754759105'
-                    - 'https://openalex.org/W2763730878'
-                    - 'https://openalex.org/W2765084615'
-                    - 'https://openalex.org/W2766013930'
-                    - 'https://openalex.org/W2766334411'
-                    - 'https://openalex.org/W2768829067'
-                    - 'https://openalex.org/W2769720482'
-                    - 'https://openalex.org/W2770176163'
-                    - 'https://openalex.org/W2783185291'
-                    - 'https://openalex.org/W2787690100'
-                    - 'https://openalex.org/W2788563959'
-                    - 'https://openalex.org/W2788608285'
-                    - 'https://openalex.org/W2789471414'
-                    - 'https://openalex.org/W2789510920'
-                    - 'https://openalex.org/W2799742631'
-                    - 'https://openalex.org/W2800142021'
-                    - 'https://openalex.org/W2803770871'
-                    - 'https://openalex.org/W2805521962'
-                    - 'https://openalex.org/W2807015669'
-                    - 'https://openalex.org/W2807422051'
-                    - 'https://openalex.org/W2854632500'
-                    - 'https://openalex.org/W2883168056'
-                    - 'https://openalex.org/W2884962765'
-                    - 'https://openalex.org/W2886738861'
-                    - 'https://openalex.org/W2888728311'
-                    - 'https://openalex.org/W2889188277'
-                    - 'https://openalex.org/W2896052853'
-                    - 'https://openalex.org/W2897589056'
-                    - 'https://openalex.org/W2898667177'
-                    - 'https://openalex.org/W2900470927'
-                    - 'https://openalex.org/W2905245804'
-                    - 'https://openalex.org/W2908544477'
-                    - 'https://openalex.org/W2909157769'
-                    - 'https://openalex.org/W2913801227'
-                    - 'https://openalex.org/W2914557861'
-                    - 'https://openalex.org/W2914693969'
-                    - 'https://openalex.org/W2949496141'
-                    - 'https://openalex.org/W2951053953'
-                    - 'https://openalex.org/W3099039688'
-                    - 'https://openalex.org/W3102327032'
-                    - 'https://openalex.org/W3103648783'
-                    - 'https://openalex.org/W3104255671'
-                    - 'https://openalex.org/W3105489439'
-                    - 'https://openalex.org/W3105922581'
-                    - 'https://openalex.org/W3124420883'
-                    - 'https://openalex.org/W3238102'
-                    - 'https://openalex.org/W4297873189'
-                relatedAlexIds:
-                    - 'https://openalex.org/W3011454082'
-                    - 'https://openalex.org/W2769070896'
-                    - 'https://openalex.org/W2748561798'
-                    - 'https://openalex.org/W2736783045'
-                    - 'https://openalex.org/W2151273376'
-                    - 'https://openalex.org/W2148741637'
-                    - 'https://openalex.org/W2088610815'
-                    - 'https://openalex.org/W2084859108'
-                    - 'https://openalex.org/W2022736990'
-                    - 'https://openalex.org/W1675741018'
-                openAlexId: W2979058050
-            googleScholar:
-                title: 'NeuroSLAM: A brain-inspired SLAM system for 3D environments'
-                authorNames:
-                    - F Yu
-                    - J Shang
-                    - Y Hu
-                    - M Milford
-                pdfLink: 'https://eprints.qut.edu.au/198104/1/56922761.pdf;'
-                link: 'https://link.springer.com/article/10.1007/s00422-019-00806-9'
-                citationId: '15674891101043310192'
-                multiArticleId: '15674891101043310192'
-                citedByLink: 'https://scholar.google.com//scholar?cites=15674891101043310192&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                publisherInfo: 'Biological cybernetics, 2019'
-                year: 2019
-                linkToCitedBy: 'https://scholar.google.com//scholar?cites=15674891101043310192&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                citedByCount: 97
-        score:
-            - 1
-            - 153
-            - 0
-            - 2019
-            - 0
-        scoreString: 1|153|0|2019|0
-        _:
-            title: 'NeuroSLAM: a brain-inspired SLAM system for 3D environments'
-            doi: 10.1007/s00422-019-00806-9
-            year: 2019
-            publisherFlags: null
-            authorNames:
-                - Fangwen Yu
-                - Jianga Shang
-                - Youjian Hu
-                - Michael Milford
-            link: 'https://doi.org/10.1007/s00422-019-00806-9'
-            pdfLink: 'https://eprints.qut.edu.au/198104/1/56922761.pdf'
-            cites: null
-            citedBy: null
-            abstract: null
-    'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W mixed-signal oscillator-based SLAM accelerator for edge robotics':
-        notes: &ref_0
-            resumeStatus: unclear|title
-            comment: ''
-            reasonsRelevant: []
-            reasonsNotRelevant: []
-            customKeywords: []
-            discoveryMethod:
-                dateTime: '2025-01-29T15:26:58.981Z'
-                originalQuery: NeuroSLAM
-                searchEngine: googleScholar
-            events:
-                added: '2025-01-29T15:26:59.208Z'
-                sawTitle: '2025-01-29T15:39:23.995Z'
-        accordingTo:
-            $manuallyEntered:
-                title: null
-                doi: null
-                year: null
-                publisherFlags: null
-                authorNames: null
-                link: null
-                pdfLink: null
-                cites: null
-                citedBy: null
-                abstract: null
-            crossref: &ref_1
-                doi: 10.1109/jssc.2020.3028298
-            openAlex: &ref_2
-                doi: 'https://doi.org/10.1109/jssc.2020.3028298'
-                title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics'
-                abstract: null
-                concepts:
-                    - robotics and sensor-based localization
-                    - modular robots and swarm intelligence
-                    - underwater vehicles and communication systems
-                    - aerospace engineering
-                    - mechanical engineering
-                    - ocean engineering
-                    - neuromorphic engineering
-                    - tops
-                    - artificial intelligence
-                    - robotics
-                    - computer science
-                    - enhanced data rates for gsm evolution
-                    - computer vision
-                    - robot
-                    - simultaneous localization and mapping
-                    - power (physics)
-                    - artificial neural network
-                    - mobile robot
-                    - physics
-                    - optics
-                    - quantum mechanics
-                    - azimuth
-                year: 2020
-                authorNames:
-                    - Jong-Hyeok Yoon
-                    - Arijit Raychowdhury
-                link: 'https://doi.org/10.1109/jssc.2020.3028298'
-                pdfLink: null
-                citationCount: 24
-                citedAlexIds:
-                    - 'https://openalex.org/W1612997784'
-                    - 'https://openalex.org/W1677409904'
-                    - 'https://openalex.org/W1965569281'
-                    - 'https://openalex.org/W2005854391'
-                    - 'https://openalex.org/W2014556603'
-                    - 'https://openalex.org/W2053881289'
-                    - 'https://openalex.org/W2074540734'
-                    - 'https://openalex.org/W2079390801'
-                    - 'https://openalex.org/W2108136994'
-                    - 'https://openalex.org/W2112669647'
-                    - 'https://openalex.org/W2117228865'
-                    - 'https://openalex.org/W2118223742'
-                    - 'https://openalex.org/W2125736621'
-                    - 'https://openalex.org/W2151103935'
-                    - 'https://openalex.org/W2161338791'
-                    - 'https://openalex.org/W2164119118'
-                    - 'https://openalex.org/W2198527813'
-                    - 'https://openalex.org/W2216550548'
-                    - 'https://openalex.org/W2218842719'
-                    - 'https://openalex.org/W2561115355'
-                    - 'https://openalex.org/W2561845008'
-                    - 'https://openalex.org/W2738816079'
-                    - 'https://openalex.org/W2758772066'
-                    - 'https://openalex.org/W2798957270'
-                    - 'https://openalex.org/W2890660991'
-                    - 'https://openalex.org/W2903841424'
-                    - 'https://openalex.org/W2909935310'
-                    - 'https://openalex.org/W2922127512'
-                    - 'https://openalex.org/W2942395934'
-                    - 'https://openalex.org/W2970143800'
-                    - 'https://openalex.org/W3015712293'
-                    - 'https://openalex.org/W3048589487'
-                    - 'https://openalex.org/W3103648783'
-                    - 'https://openalex.org/W4246614213'
-                relatedAlexIds:
-                    - 'https://openalex.org/W4389237622'
-                    - 'https://openalex.org/W4245680303'
-                    - 'https://openalex.org/W4231398535'
-                    - 'https://openalex.org/W3108691306'
-                    - 'https://openalex.org/W2986579802'
-                    - 'https://openalex.org/W2811109569'
-                    - 'https://openalex.org/W2385933648'
-                    - 'https://openalex.org/W2381557761'
-                    - 'https://openalex.org/W2166309310'
-                    - 'https://openalex.org/W2067978743'
-                openAlexId: W3116307730
-            googleScholar: &ref_3
-                title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W mixed-signal oscillator-based SLAM accelerator for edge robotics'
-                authorNames:
-                    - JH Yoon
-                    - A Raychowdhury- IEEE Journal of Solid
-                pdfLink: 'https://icsrl.ece.gatech.edu/files/2021/06/09222208.pdf'
-                link: 'https://ieeexplore.ieee.org/abstract/document/9222208/'
-                citationId: '13007178913193955208'
-                multiArticleId: '13007178913193955208'
-                citedByLink: 'https://scholar.google.com//scholar?cites=13007178913193955208&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                publisherInfo: 'State, 2020'
-                year: 2020
-                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13007178913193955208&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                citedByCount: 34
-        score:
-            - 1
-            - 154.5
-            - 0
-            - 2020
-            - 0
-        scoreString: 1|154.5|0|2020|0
-        _:
-            title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics'
-            doi: 10.1109/jssc.2020.3028298
-            year: 2020
-            publisherFlags: null
-            authorNames:
-                - Jong-Hyeok Yoon
-                - Arijit Raychowdhury
-            link: 'https://doi.org/10.1109/jssc.2020.3028298'
-            pdfLink: 'https://icsrl.ece.gatech.edu/files/2021/06/09222208.pdf'
-            cites: null
-            citedBy: null
-            abstract: null
-    'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features': &ref_6
+    'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features': &ref_4
         notes:
             resumeStatus: super-relevent|title
             comment: ''
@@ -867,7 +248,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain': &ref_9
+    'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain': &ref_8
         notes:
             resumeStatus: super-relevent|title
             comment: ''
@@ -1025,7 +406,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    31.1 a 65nm 8.79 TOPS/W 23.82 mW mixed-signal oscillator-based NeuroSLAM accelerator for applications in edge robotics: &ref_4
+    31.1 a 65nm 8.79 TOPS/W 23.82 mW mixed-signal oscillator-based NeuroSLAM accelerator for applications in edge robotics: &ref_1
         notes:
             resumeStatus: unclear|title
             comment: ''
@@ -1087,7 +468,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'NeoSLAM: Neural object SLAM for loop closure and navigation': &ref_5
+    'NeoSLAM: Neural object SLAM for loop closure and navigation': &ref_2
         notes:
             resumeStatus: super-relevent|title
             comment: ''
@@ -1152,140 +533,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Velocity-tuned oscillators for NeuroSLAM and spatial navigation:
-        notes:
-            resumeStatus: unseen|title
-            comment: ''
-            reasonsRelevant: []
-            reasonsNotRelevant: []
-            customKeywords: []
-            discoveryMethod:
-                dateTime: '2025-01-29T15:26:58.981Z'
-                originalQuery: NeuroSLAM
-                searchEngine: googleScholar
-            events:
-                added: '2025-01-29T15:26:59.209Z'
-        accordingTo:
-            $manuallyEntered:
-                title: null
-                doi: null
-                year: null
-                publisherFlags: null
-                authorNames: null
-                link: null
-                pdfLink: null
-                cites: null
-                citedBy: null
-                abstract: null
-            crossref:
-                doi: 10.1109/iscas45731.2020.9180441
-            openAlex:
-                doi: 'https://doi.org/10.1109/iscas45731.2020.9180441'
-                title: Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation
-                abstract: null
-                concepts:
-                    - advanced memory and neural computing
-                    - memory and neural mechanisms
-                    - photoreceptor and optogenetics research
-                    - electrical and electronic engineering
-                    - cognitive neuroscience
-                    - cellular and molecular neuroscience
-                    - application-specific integrated circuit
-                    - voltage-controlled oscillator
-                    - computer science
-                    - interference (communication)
-                    - electronic engineering
-                    - chip
-                    - coding (social sciences)
-                    - engineering
-                    - telecommunications
-                    - electrical engineering
-                    - voltage
-                    - channel (broadcasting)
-                    - statistics
-                    - mathematics
-                year: 2020
-                authorNames:
-                    - Alia Nasrallah
-                    - Zhaoqi Chen
-                    - Milad Alemohammad
-                    - Ananya Balaji
-                    - Adam B. Cellon
-                    - Masanori Furuta
-                    - Ralph Etienne‐Cummings
-                link: 'https://doi.org/10.1109/iscas45731.2020.9180441'
-                pdfLink: null
-                citationCount: 3
-                citedAlexIds:
-                    - 'https://openalex.org/W1540763494'
-                    - 'https://openalex.org/W2021756236'
-                    - 'https://openalex.org/W2045353501'
-                    - 'https://openalex.org/W2067933183'
-                    - 'https://openalex.org/W207723284'
-                    - 'https://openalex.org/W2088469430'
-                    - 'https://openalex.org/W2107728273'
-                    - 'https://openalex.org/W2112164532'
-                    - 'https://openalex.org/W2121780146'
-                    - 'https://openalex.org/W2123213117'
-                    - 'https://openalex.org/W2150447451'
-                    - 'https://openalex.org/W2156640153'
-                    - 'https://openalex.org/W2161338791'
-                    - 'https://openalex.org/W2187424954'
-                    - 'https://openalex.org/W2756945303'
-                    - 'https://openalex.org/W2942617383'
-                relatedAlexIds:
-                    - 'https://openalex.org/W4388486464'
-                    - 'https://openalex.org/W3157583314'
-                    - 'https://openalex.org/W2902200568'
-                    - 'https://openalex.org/W2388316590'
-                    - 'https://openalex.org/W2380576078'
-                    - 'https://openalex.org/W2368609622'
-                    - 'https://openalex.org/W2261105975'
-                    - 'https://openalex.org/W2070109416'
-                    - 'https://openalex.org/W2040399070'
-                    - 'https://openalex.org/W1523213765'
-                openAlexId: W3089531964
-            googleScholar:
-                title: Velocity-tuned oscillators for NeuroSLAM and spatial navigation
-                authorNames:
-                    - A Nasrallah
-                    - Z Chen
-                    - M Alemohammad
-                pdfLink: null
-                link: 'https://ieeexplore.ieee.org/abstract/document/9180441/'
-                citationId: '13847853075165097858'
-                multiArticleId: null
-                citedByLink: 'https://scholar.google.com//scholar?cites=13847853075165097858&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                publisherInfo: 'on Circuits and, 2020'
-                year: 2020
-                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13847853075165097858&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                citedByCount: 3
-        score:
-            - 1
-            - 151.5
-            - 0
-            - 2020
-            - 0
-        scoreString: 1|151.5|0|2020|0
-        _:
-            title: Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation
-            doi: 10.1109/iscas45731.2020.9180441
-            year: 2020
-            publisherFlags: null
-            authorNames:
-                - Alia Nasrallah
-                - Zhaoqi Chen
-                - Milad Alemohammad
-                - Ananya Balaji
-                - Adam B. Cellon
-                - Masanori Furuta
-                - Ralph Etienne‐Cummings
-            link: 'https://doi.org/10.1109/iscas45731.2020.9180441'
-            pdfLink: null
-            cites: null
-            citedBy: null
-            abstract: null
-    A Brain-inspired SLAM System Based on Keyframe Template Matching: &ref_7
+    A Brain-inspired SLAM System Based on Keyframe Template Matching: &ref_6
         notes:
             resumeStatus: relevent|title
             comment: ''
@@ -1404,7 +652,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Application of Event Cameras and Neuromorphic Computing to VSLAM: A Survey': &ref_8
+    'Application of Event Cameras and Neuromorphic Computing to VSLAM: A Survey': &ref_7
         notes:
             resumeStatus: super-relevent|title
             comment: ''
@@ -1717,7 +965,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Exploiting semantic information in a spiking neural SLAM system: &ref_11
+    Exploiting semantic information in a spiking neural SLAM system: &ref_10
         notes:
             resumeStatus: super-relevent|title
             comment: ''
@@ -1911,7 +1159,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'The limits of min-max optimization algorithms: Convergence to spurious non-critical sets': &ref_13
+    'The limits of min-max optimization algorithms: Convergence to spurious non-critical sets': &ref_11
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1973,7 +1221,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    The first-principles prediction of two-dimensional indium-arsenide bilayers: &ref_15
+    The first-principles prediction of two-dimensional indium-arsenide bilayers: &ref_13
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -1986,6 +1234,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:28:07.373Z'
+                sawTitle: '2025-01-29T15:59:52.588Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -2139,7 +1388,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective: &ref_16
+    Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective: &ref_14
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2200,7 +1449,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective': &ref_18
+    'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective': &ref_16
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2419,7 +1668,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Nanoscale graphene disk: a natural functionally graded material–how is Fourier''s law violated along radius direction of 2D disk': &ref_14
+    'Nanoscale graphene disk: a natural functionally graded material–how is Fourier''s law violated along radius direction of 2D disk': &ref_12
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2487,7 +1736,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Finite‐and infinite‐dimensional attractors for porous media equations: &ref_17
+    Finite‐and infinite‐dimensional attractors for porous media equations: &ref_15
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2549,12 +1798,13 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Transformer fault diagnosis based on the improved QPSO and random forest: &ref_19
+    Transformer fault diagnosis based on the improved QPSO and random forest: &ref_17
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: irrelevent|title
             comment: ''
             reasonsRelevant: []
-            reasonsNotRelevant: []
+            reasonsNotRelevant:
+                - title
             customKeywords: []
             discoveryMethod:
                 dateTime: '2025-01-29T15:28:06.671Z'
@@ -2562,6 +1812,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:28:07.374Z'
+                sawTitle: '2025-01-29T15:58:09.022Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -2688,7 +1939,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Global and exponential attractors for 3‐D wave equations with displacement dependent damping: &ref_21
+    Global and exponential attractors for 3‐D wave equations with displacement dependent damping: &ref_19
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2821,7 +2072,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Constrained optimization assists deviated wellbore trajectory selection from families of quadratic and cubic Bezier curves: &ref_20
+    Constrained optimization assists deviated wellbore trajectory selection from families of quadratic and cubic Bezier curves: &ref_18
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -2950,7 +2201,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Back to the continuous attractor: &ref_22
+    Back to the continuous attractor: &ref_20
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3016,7 +2267,7 @@ references:
             abstract: null
     Deep learning delay coordinate dynamics for chaotic attractors from partial observable data: &ref_29
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -3027,6 +2278,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:29:44.032Z'
+                sawTitle: '2025-01-29T15:58:23.388Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -3196,7 +2448,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Using machine learning to replicate chaotic attractors and calculate Lyapunov exponents from data: &ref_26
+    Using machine learning to replicate chaotic attractors and calculate Lyapunov exponents from data: &ref_24
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3348,188 +2600,6 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Introduction to focus issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics':
-        notes:
-            resumeStatus: unseen|title
-            comment: ''
-            reasonsRelevant: []
-            reasonsNotRelevant: []
-            customKeywords: []
-            discoveryMethod:
-                dateTime: '2025-01-29T15:29:43.333Z'
-                originalQuery: multidimensional continuous attractor machine learning
-                searchEngine: googleScholar
-            events:
-                added: '2025-01-29T15:29:44.032Z'
-        accordingTo:
-            $manuallyEntered:
-                title: null
-                doi: null
-                year: null
-                publisherFlags: null
-                authorNames: null
-                link: null
-                pdfLink: null
-                cites: null
-                citedBy: null
-                abstract: null
-            crossref:
-                doi: 10.1063/5.0016505
-            openAlex:
-                doi: 'https://doi.org/10.1063/5.0016505'
-                title: 'Introduction to Focus Issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics'
-                abstract: null
-                concepts:
-                    - neural networks and applications
-                    - neural networks and reservoir computing
-                    - complex systems and time series analysis
-                    - artificial intelligence
-                    - economics and econometrics
-                    - dynamics
-                    - chaos (operating system)
-                    - focus (optics)
-                    - nonlinear system
-                    - computer science
-                    - dynamics (music)
-                    - physics
-                    - computer security
-                    - quantum mechanics
-                    - acoustics
-                    - optics
-                year: 2020
-                authorNames:
-                    - Yang Tang
-                    - Jürgen Kurths
-                    - Wei Lin
-                    - Edward Ott
-                    - Ljupčo Kocarev
-                link: 'https://doi.org/10.1063/5.0016505'
-                pdfLink: null
-                citationCount: 95
-                citedAlexIds:
-                    - 'https://openalex.org/W2959676983'
-                    - 'https://openalex.org/W2963604378'
-                    - 'https://openalex.org/W2972462960'
-                    - 'https://openalex.org/W2973400885'
-                    - 'https://openalex.org/W2976146814'
-                    - 'https://openalex.org/W2976902166'
-                    - 'https://openalex.org/W2977331641'
-                    - 'https://openalex.org/W2978109980'
-                    - 'https://openalex.org/W2978220519'
-                    - 'https://openalex.org/W2978795453'
-                    - 'https://openalex.org/W2979458970'
-                    - 'https://openalex.org/W2979527686'
-                    - 'https://openalex.org/W2979803764'
-                    - 'https://openalex.org/W2979877685'
-                    - 'https://openalex.org/W2980314983'
-                    - 'https://openalex.org/W2980385140'
-                    - 'https://openalex.org/W2981085430'
-                    - 'https://openalex.org/W2981104679'
-                    - 'https://openalex.org/W2981502672'
-                    - 'https://openalex.org/W2982029175'
-                    - 'https://openalex.org/W2982355089'
-                    - 'https://openalex.org/W2983283454'
-                    - 'https://openalex.org/W2983707015'
-                    - 'https://openalex.org/W2983777654'
-                    - 'https://openalex.org/W2985457377'
-                    - 'https://openalex.org/W2987123209'
-                    - 'https://openalex.org/W2987789896'
-                    - 'https://openalex.org/W2988203139'
-                    - 'https://openalex.org/W2988494807'
-                    - 'https://openalex.org/W2988607083'
-                    - 'https://openalex.org/W2989628193'
-                    - 'https://openalex.org/W2989833413'
-                    - 'https://openalex.org/W2990366675'
-                    - 'https://openalex.org/W2991799208'
-                    - 'https://openalex.org/W2992344932'
-                    - 'https://openalex.org/W2994753841'
-                    - 'https://openalex.org/W2994836491'
-                    - 'https://openalex.org/W2995327117'
-                    - 'https://openalex.org/W2995360081'
-                    - 'https://openalex.org/W2995590009'
-                    - 'https://openalex.org/W2995639804'
-                    - 'https://openalex.org/W2995866605'
-                    - 'https://openalex.org/W2996325614'
-                    - 'https://openalex.org/W2997092692'
-                    - 'https://openalex.org/W2997152685'
-                    - 'https://openalex.org/W2997405608'
-                    - 'https://openalex.org/W2997885830'
-                    - 'https://openalex.org/W2998821156'
-                    - 'https://openalex.org/W3000464944'
-                    - 'https://openalex.org/W3001184417'
-                    - 'https://openalex.org/W3002310157'
-                    - 'https://openalex.org/W3002873949'
-                    - 'https://openalex.org/W3004585728'
-                    - 'https://openalex.org/W3004922031'
-                    - 'https://openalex.org/W3004965094'
-                    - 'https://openalex.org/W3011771348'
-                    - 'https://openalex.org/W3012148092'
-                    - 'https://openalex.org/W3098780444'
-                    - 'https://openalex.org/W3098895744'
-                    - 'https://openalex.org/W3099217732'
-                    - 'https://openalex.org/W3099303176'
-                    - 'https://openalex.org/W3099548371'
-                    - 'https://openalex.org/W3100969891'
-                    - 'https://openalex.org/W3101003473'
-                    - 'https://openalex.org/W3101235239'
-                    - 'https://openalex.org/W3102233618'
-                    - 'https://openalex.org/W3102502580'
-                    - 'https://openalex.org/W3102718764'
-                    - 'https://openalex.org/W3103182427'
-                    - 'https://openalex.org/W3105263508'
-                    - 'https://openalex.org/W3105319366'
-                relatedAlexIds:
-                    - 'https://openalex.org/W4383267773'
-                    - 'https://openalex.org/W4251075027'
-                    - 'https://openalex.org/W4247599920'
-                    - 'https://openalex.org/W4243901518'
-                    - 'https://openalex.org/W3110439525'
-                    - 'https://openalex.org/W2393451533'
-                    - 'https://openalex.org/W2358131398'
-                    - 'https://openalex.org/W2320196587'
-                    - 'https://openalex.org/W2027932829'
-                    - 'https://openalex.org/W2012531322'
-                openAlexId: W3038114648
-            googleScholar:
-                title: 'Introduction to focus issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics'
-                authorNames:
-                    - Y Tang
-                    - J Kurths
-                    - W Lin
-                    - E Ott
-                    - L Kocarev
-                pdfLink: 'https://www.pik-potsdam.de/members/kurths/publikationen/2020/tang-2020-5-0016505.pdf'
-                link: 'https://pubs.aip.org/aip/cha/article/30/6/063151/1030253'
-                citationId: '14500170759193890373'
-                multiArticleId: '14500170759193890373'
-                citedByLink: 'https://scholar.google.com//scholar?cites=14500170759193890373&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                publisherInfo: 'Chaos: An Interdisciplinary, 2020'
-                year: 2020
-                linkToCitedBy: 'https://scholar.google.com//scholar?cites=14500170759193890373&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                citedByCount: 121
-        score:
-            - 0
-            - 135
-            - 1
-            - 2020
-            - 0
-        scoreString: 0|135|1|2020|0
-        _:
-            title: 'Introduction to Focus Issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics'
-            doi: 10.1063/5.0016505
-            year: 2020
-            publisherFlags: null
-            authorNames:
-                - Yang Tang
-                - Jürgen Kurths
-                - Wei Lin
-                - Edward Ott
-                - Ljupčo Kocarev
-            link: 'https://doi.org/10.1063/5.0016505'
-            pdfLink: 'https://www.pik-potsdam.de/members/kurths/publikationen/2020/tang-2020-5-0016505.pdf'
-            cites: null
-            citedBy: null
-            abstract: null
     Using machine learning to predict catastrophes in dynamical systems: &ref_27
         notes:
             resumeStatus: unseen|title
@@ -3670,7 +2740,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Deep reconstruction of strange attractors from time series: &ref_24
+    Deep reconstruction of strange attractors from time series: &ref_22
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -3730,9 +2800,9 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Machine Learning with Chaotic Strange Attractors: &ref_23
+    Machine Learning with Chaotic Strange Attractors: &ref_21
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -3743,6 +2813,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:29:44.032Z'
+                sawTitle: '2025-01-29T15:58:32.827Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -3792,205 +2863,9 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Reinforcement learning and attractor neural network models of associative learning:
-        notes:
-            resumeStatus: unseen|title
-            comment: ''
-            reasonsRelevant: []
-            reasonsNotRelevant: []
-            customKeywords: []
-            discoveryMethod:
-                dateTime: '2025-01-29T15:29:43.333Z'
-                originalQuery: multidimensional continuous attractor machine learning
-                searchEngine: googleScholar
-            events:
-                added: '2025-01-29T15:29:44.032Z'
-        accordingTo:
-            $manuallyEntered:
-                title: null
-                doi: null
-                year: null
-                publisherFlags: null
-                authorNames: null
-                link: null
-                pdfLink: null
-                cites: null
-                citedBy: null
-                abstract: null
-            crossref:
-                doi: 10.1007/978-3-030-16469-0_17
-            openAlex:
-                doi: 'https://doi.org/10.1007/978-3-030-16469-0_17'
-                title: Reinforcement Learning and Attractor Neural Network Models of Associative Learning
-                abstract: null
-                concepts:
-                    - neural dynamics and brain function
-                    - neural networks and applications
-                    - stochastic dynamics and bifurcation
-                    - cognitive neuroscience
-                    - artificial intelligence
-                    - statistical and nonlinear physics
-                    - reinforcement learning
-                    - computer science
-                    - attractor
-                    - generalization
-                    - artificial neural network
-                    - stability (learning theory)
-                    - content-addressable memory
-                    - property (philosophy)
-                    - machine learning
-                    - mathematics
-                    - mathematical analysis
-                    - philosophy
-                    - epistemology
-                year: 2019
-                authorNames:
-                    - Oussama H. Hamid
-                    - Jochen Braun
-                link: 'https://doi.org/10.1007/978-3-030-16469-0_17'
-                pdfLink: null
-                citationCount: 11
-                citedAlexIds:
-                    - 'https://openalex.org/W1178202497'
-                    - 'https://openalex.org/W1512746852'
-                    - 'https://openalex.org/W1520649049'
-                    - 'https://openalex.org/W1549998098'
-                    - 'https://openalex.org/W1581202840'
-                    - 'https://openalex.org/W1597739853'
-                    - 'https://openalex.org/W169931978'
-                    - 'https://openalex.org/W1702555102'
-                    - 'https://openalex.org/W1894358115'
-                    - 'https://openalex.org/W1898013618'
-                    - 'https://openalex.org/W1923344279'
-                    - 'https://openalex.org/W1965112813'
-                    - 'https://openalex.org/W1982494757'
-                    - 'https://openalex.org/W1988699227'
-                    - 'https://openalex.org/W1990404154'
-                    - 'https://openalex.org/W2000214310'
-                    - 'https://openalex.org/W2002288980'
-                    - 'https://openalex.org/W2004547450'
-                    - 'https://openalex.org/W2007267229'
-                    - 'https://openalex.org/W2012074763'
-                    - 'https://openalex.org/W2013140236'
-                    - 'https://openalex.org/W2015173963'
-                    - 'https://openalex.org/W2018523182'
-                    - 'https://openalex.org/W2019740215'
-                    - 'https://openalex.org/W2020055733'
-                    - 'https://openalex.org/W2024365408'
-                    - 'https://openalex.org/W2027600189'
-                    - 'https://openalex.org/W2029487195'
-                    - 'https://openalex.org/W2036338624'
-                    - 'https://openalex.org/W2037979274'
-                    - 'https://openalex.org/W2040124307'
-                    - 'https://openalex.org/W2043615441'
-                    - 'https://openalex.org/W2047125104'
-                    - 'https://openalex.org/W2065547152'
-                    - 'https://openalex.org/W2066947576'
-                    - 'https://openalex.org/W2068464941'
-                    - 'https://openalex.org/W2070732802'
-                    - 'https://openalex.org/W2074391612'
-                    - 'https://openalex.org/W2074870954'
-                    - 'https://openalex.org/W2076742285'
-                    - 'https://openalex.org/W2081030963'
-                    - 'https://openalex.org/W2083473390'
-                    - 'https://openalex.org/W2091789872'
-                    - 'https://openalex.org/W2096240659'
-                    - 'https://openalex.org/W2098020453'
-                    - 'https://openalex.org/W2100686511'
-                    - 'https://openalex.org/W2107726111'
-                    - 'https://openalex.org/W2115010184'
-                    - 'https://openalex.org/W2117726420'
-                    - 'https://openalex.org/W2119128116'
-                    - 'https://openalex.org/W2121863487'
-                    - 'https://openalex.org/W2124285588'
-                    - 'https://openalex.org/W2128084896'
-                    - 'https://openalex.org/W2129022756'
-                    - 'https://openalex.org/W2129386380'
-                    - 'https://openalex.org/W2132994929'
-                    - 'https://openalex.org/W2133993682'
-                    - 'https://openalex.org/W2135746467'
-                    - 'https://openalex.org/W2136469918'
-                    - 'https://openalex.org/W2137428998'
-                    - 'https://openalex.org/W2138749023'
-                    - 'https://openalex.org/W2145339207'
-                    - 'https://openalex.org/W2154446803'
-                    - 'https://openalex.org/W2160306025'
-                    - 'https://openalex.org/W2160340450'
-                    - 'https://openalex.org/W2161518694'
-                    - 'https://openalex.org/W2162459215'
-                    - 'https://openalex.org/W2165726932'
-                    - 'https://openalex.org/W2167087276'
-                    - 'https://openalex.org/W2167362547'
-                    - 'https://openalex.org/W2169323873'
-                    - 'https://openalex.org/W2169672250'
-                    - 'https://openalex.org/W2284856356'
-                    - 'https://openalex.org/W2346736747'
-                    - 'https://openalex.org/W2362143032'
-                    - 'https://openalex.org/W2460856624'
-                    - 'https://openalex.org/W2499073429'
-                    - 'https://openalex.org/W2603127499'
-                    - 'https://openalex.org/W2615223498'
-                    - 'https://openalex.org/W2752099845'
-                    - 'https://openalex.org/W2768419506'
-                    - 'https://openalex.org/W2963871073'
-                    - 'https://openalex.org/W3093243321'
-                    - 'https://openalex.org/W4214686098'
-                    - 'https://openalex.org/W4214717370'
-                    - 'https://openalex.org/W4214907476'
-                    - 'https://openalex.org/W422120042'
-                    - 'https://openalex.org/W4235391064'
-                    - 'https://openalex.org/W4246657221'
-                    - 'https://openalex.org/W4296159956'
-                    - 'https://openalex.org/W4307347247'
-                relatedAlexIds:
-                    - 'https://openalex.org/W3049714198'
-                    - 'https://openalex.org/W2960434112'
-                    - 'https://openalex.org/W2592279130'
-                    - 'https://openalex.org/W2525520510'
-                    - 'https://openalex.org/W2123827981'
-                    - 'https://openalex.org/W2091740652'
-                    - 'https://openalex.org/W2049158118'
-                    - 'https://openalex.org/W2036805113'
-                    - 'https://openalex.org/W2008149323'
-                    - 'https://openalex.org/W1999890237'
-                openAlexId: W2947867310
-            googleScholar:
-                title: Reinforcement learning and attractor neural network models of associative learning
-                authorNames:
-                    - OH Hamid
-                    - J Braun
-                pdfLink: null
-                link: 'https://link.springer.com/chapter/10.1007/978-3-030-16469-0_17'
-                citationId: '13083575867396975852'
-                multiArticleId: '13083575867396975852'
-                citedByLink: 'https://scholar.google.com//scholar?cites=13083575867396975852&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                publisherInfo: 'Computational Intelligence: 9th International Joint, 2019'
-                year: 2019
-                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13083575867396975852&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                citedByCount: 22
-        score:
-            - 0
-            - 135
-            - 2
-            - 2019
-            - 0
-        scoreString: 0|135|2|2019|0
-        _:
-            title: Reinforcement Learning and Attractor Neural Network Models of Associative Learning
-            doi: 10.1007/978-3-030-16469-0_17
-            year: 2019
-            publisherFlags: null
-            authorNames:
-                - Oussama H. Hamid
-                - Jochen Braun
-            link: 'https://doi.org/10.1007/978-3-030-16469-0_17'
-            pdfLink: null
-            cites: null
-            citedBy: null
-            abstract: null
     Learning continuous chaotic attractors with a reservoir computer: &ref_28
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -4001,6 +2876,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:29:44.032Z'
+                sawTitle: '2025-01-29T15:59:49.849Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4158,7 +3034,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'Attractor memory for long-term time series forecasting: A chaos perspective': &ref_25
+    'Attractor memory for long-term time series forecasting: A chaos perspective': &ref_23
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -4207,10 +3083,10 @@ references:
         score:
             - 0
             - 270
-            - 0
+            - 1
             - 2024
             - 0
-        scoreString: 0|270|0|2024|0
+        scoreString: 0|270|1|2024|0
         _:
             title: 'Attractor memory for long-term time series forecasting: A chaos perspective'
             doi: null
@@ -4230,9 +3106,10 @@ references:
             abstract: null
     Persistent learning signals and working memory without continuous attractors: &ref_33
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -4241,6 +3118,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:30:53.079Z'
+                sawTitle: '2025-01-29T15:58:35.928Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4274,10 +3152,10 @@ references:
         score:
             - 0
             - 270
-            - 1
+            - 2
             - 2023
             - 0
-        scoreString: 0|270|1|2023|0
+        scoreString: 0|270|2|2023|0
         _:
             title: Persistent learning signals and working memory without continuous attractors
             doi: null
@@ -4294,7 +3172,7 @@ references:
             abstract: null
     Latent sdes on homogeneous spaces: &ref_30
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -4305,6 +3183,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:30:53.079Z'
+                sawTitle: '2025-01-29T15:58:12.384Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4358,10 +3237,11 @@ references:
             abstract: null
     A Multi-Branched Radial Basis Network Approach to Predicting Complex Chaotic Behaviours: &ref_31
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: irrelevent|title
             comment: ''
             reasonsRelevant: []
-            reasonsNotRelevant: []
+            reasonsNotRelevant:
+                - title
             customKeywords: []
             discoveryMethod:
                 dateTime: '2025-01-29T15:30:52.288Z'
@@ -4369,6 +3249,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:30:53.079Z'
+                sawTitle: '2025-01-29T15:58:14.865Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4416,10 +3297,11 @@ references:
             abstract: null
     Stability analysis of chaotic systems in latent spaces: &ref_36
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: irrelevent|title
             comment: ''
             reasonsRelevant: []
-            reasonsNotRelevant: []
+            reasonsNotRelevant:
+                - title
             customKeywords: []
             discoveryMethod:
                 dateTime: '2025-01-29T15:30:52.288Z'
@@ -4427,6 +3309,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:30:53.079Z'
+                sawTitle: '2025-01-29T15:58:21.277Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4601,10 +3484,11 @@ references:
             abstract: null
     Time series forecasting with quantum machine learning architectures: &ref_34
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: irrelevent|title
             comment: ''
             reasonsRelevant: []
-            reasonsNotRelevant: []
+            reasonsNotRelevant:
+                - title
             customKeywords: []
             discoveryMethod:
                 dateTime: '2025-01-29T15:30:52.288Z'
@@ -4612,6 +3496,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:30:53.079Z'
+                sawTitle: '2025-01-29T15:57:49.330Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -4663,7 +3548,7 @@ references:
             abstract: null
     Dynamic adaptive graph convolutional transformer with broad learning system for multi-dimensional chaotic time series prediction: &ref_37
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -4674,6 +3559,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:30:53.079Z'
+                sawTitle: '2025-01-29T15:57:52.674Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5163,7 +4049,7 @@ references:
             abstract: null
     Neuromorphic nanophotonic systems for artificial intelligence: &ref_38
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -5174,6 +4060,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:31:26.946Z'
+                sawTitle: '2025-01-29T15:57:30.269Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5862,7 +4749,7 @@ references:
             abstract: null
     Performance of spiking neural networks on event data for embedded automotive applications: &ref_46
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -5873,6 +4760,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:32:09.413Z'
+                sawTitle: '2025-01-29T15:57:38.333Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5921,9 +4809,10 @@ references:
             abstract: null
     'Harnessing the Power of Voltage-dependent Synaptic Plasticity (VDSP): A Novel Paradigm for Unsupervised Learning in Neuromorphic Systems': &ref_44
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -5960,11 +4849,11 @@ references:
                 publisherInfo: diva
         score:
             - 1
-            - 153
-            - 1
+            - 154.5
+            - 2
             - 2016
             - 0
-        scoreString: 1|153|1|2016|0
+        scoreString: 1|154.5|2|2016|0
         _:
             title: 'Harnessing the Power of Voltage-dependent Synaptic Plasticity (VDSP): A Novel Paradigm for Unsupervised Learning in Neuromorphic Systems'
             doi: null
@@ -6044,183 +4933,9 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    A closed-loop toolchain for neural network simulations of learning autonomous agents:
-        notes:
-            resumeStatus: unseen|title
-            comment: ''
-            reasonsRelevant: []
-            reasonsNotRelevant: []
-            customKeywords: []
-            discoveryMethod:
-                dateTime: '2025-01-29T15:32:30.653Z'
-                originalQuery: BINDSnet "grid cells"
-                searchEngine: googleScholar
-            events:
-                added: '2025-01-29T15:32:30.909Z'
-        accordingTo:
-            $manuallyEntered:
-                title: null
-                doi: null
-                year: null
-                publisherFlags: null
-                authorNames: null
-                link: null
-                pdfLink: null
-                cites: null
-                citedBy: null
-                abstract: null
-            crossref:
-                doi: 10.3389/fncom.2019.00046
-            openAlex:
-                doi: 'https://doi.org/10.3389/fncom.2019.00046'
-                title: A Closed-Loop Toolchain for Neural Network Simulations of Learning Autonomous Agents
-                abstract: null
-                concepts:
-                    - neural dynamics and brain function
-                    - advanced memory and neural computing
-                    - reinforcement learning in robotics
-                    - cognitive neuroscience
-                    - electrical and electronic engineering
-                    - artificial intelligence
-                    - toolchain
-                    - benchmark (surveying)
-                    - hebbian theory
-                    - computational neuroscience
-                    - reinforcement learning
-                    - computer science
-                    - artificial neural network
-                    - machine learning
-                    - spiking neural network
-                    - software
-                    - geodesy
-                    - programming language
-                    - geography
-                year: 2019
-                authorNames:
-                    - Jakob Jordan
-                    - Philipp Weidel
-                    - Abigail Morrison
-                link: 'https://doi.org/10.3389/fncom.2019.00046'
-                pdfLink: 'https://www.frontiersin.org/articles/10.3389/fncom.2019.00046/pdf'
-                citationCount: 8
-                citedAlexIds:
-                    - 'https://openalex.org/W1548328233'
-                    - 'https://openalex.org/W1557517019'
-                    - 'https://openalex.org/W1595483645'
-                    - 'https://openalex.org/W1975372282'
-                    - 'https://openalex.org/W1983624302'
-                    - 'https://openalex.org/W1985623473'
-                    - 'https://openalex.org/W1994016657'
-                    - 'https://openalex.org/W2002332903'
-                    - 'https://openalex.org/W2010315297'
-                    - 'https://openalex.org/W2014824949'
-                    - 'https://openalex.org/W2020539709'
-                    - 'https://openalex.org/W2023015865'
-                    - 'https://openalex.org/W2048756013'
-                    - 'https://openalex.org/W2052788949'
-                    - 'https://openalex.org/W2054140453'
-                    - 'https://openalex.org/W2058099001'
-                    - 'https://openalex.org/W2065125569'
-                    - 'https://openalex.org/W2067982358'
-                    - 'https://openalex.org/W2069873783'
-                    - 'https://openalex.org/W2073813638'
-                    - 'https://openalex.org/W2087861759'
-                    - 'https://openalex.org/W2100495367'
-                    - 'https://openalex.org/W2100966900'
-                    - 'https://openalex.org/W2108598243'
-                    - 'https://openalex.org/W2109639508'
-                    - 'https://openalex.org/W2110798204'
-                    - 'https://openalex.org/W2113501460'
-                    - 'https://openalex.org/W2116577160'
-                    - 'https://openalex.org/W2117539524'
-                    - 'https://openalex.org/W2120432001'
-                    - 'https://openalex.org/W2123213117'
-                    - 'https://openalex.org/W2131600418'
-                    - 'https://openalex.org/W2145339207'
-                    - 'https://openalex.org/W2145749918'
-                    - 'https://openalex.org/W2155893237'
-                    - 'https://openalex.org/W2158782408'
-                    - 'https://openalex.org/W2160815625'
-                    - 'https://openalex.org/W2162933103'
-                    - 'https://openalex.org/W2163605009'
-                    - 'https://openalex.org/W2165061373'
-                    - 'https://openalex.org/W2167340365'
-                    - 'https://openalex.org/W2167490703'
-                    - 'https://openalex.org/W2255822949'
-                    - 'https://openalex.org/W2257979135'
-                    - 'https://openalex.org/W2282055800'
-                    - 'https://openalex.org/W2283674326'
-                    - 'https://openalex.org/W2310876337'
-                    - 'https://openalex.org/W2336242821'
-                    - 'https://openalex.org/W2531037093'
-                    - 'https://openalex.org/W2544804242'
-                    - 'https://openalex.org/W2581251857'
-                    - 'https://openalex.org/W2730274928'
-                    - 'https://openalex.org/W2787259794'
-                    - 'https://openalex.org/W2788296660'
-                    - 'https://openalex.org/W2811251090'
-                    - 'https://openalex.org/W2899771611'
-                    - 'https://openalex.org/W2947198853'
-                    - 'https://openalex.org/W2964043796'
-                    - 'https://openalex.org/W3102867118'
-                    - 'https://openalex.org/W3103266921'
-                    - 'https://openalex.org/W3118608800'
-                    - 'https://openalex.org/W3215149242'
-                    - 'https://openalex.org/W32403112'
-                    - 'https://openalex.org/W4214717370'
-                    - 'https://openalex.org/W4214775604'
-                    - 'https://openalex.org/W4242770316'
-                relatedAlexIds:
-                    - 'https://openalex.org/W4299785512'
-                    - 'https://openalex.org/W3083683713'
-                    - 'https://openalex.org/W2912471387'
-                    - 'https://openalex.org/W2898418870'
-                    - 'https://openalex.org/W2792794651'
-                    - 'https://openalex.org/W2754711163'
-                    - 'https://openalex.org/W2183204832'
-                    - 'https://openalex.org/W2113117949'
-                    - 'https://openalex.org/W2112330540'
-                    - 'https://openalex.org/W2088600489'
-                openAlexId: W2964571680
-            googleScholar:
-                title: A closed-loop toolchain for neural network simulations of learning autonomous agents
-                authorNames:
-                    - J Jordan
-                    - P Weidel
-                    - A Morrison
-                pdfLink: null
-                link: 'https://www.frontiersin.org/articles/10.3389/fncom.2019.00046/full'
-                citationId: '8657538307717533129'
-                multiArticleId: '8657538307717533129'
-                citedByLink: 'https://scholar.google.com//scholar?cites=8657538307717533129&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                publisherInfo: 'Frontiers in computational, 2019'
-                year: 2019
-                linkToCitedBy: 'https://scholar.google.com//scholar?cites=8657538307717533129&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
-                citedByCount: 8
-        score:
-            - 1
-            - 153
-            - 1
-            - 2019
-            - 0
-        scoreString: 1|153|1|2019|0
-        _:
-            title: A Closed-Loop Toolchain for Neural Network Simulations of Learning Autonomous Agents
-            doi: 10.3389/fncom.2019.00046
-            year: 2019
-            publisherFlags: null
-            authorNames:
-                - Jakob Jordan
-                - Philipp Weidel
-                - Abigail Morrison
-            link: 'https://doi.org/10.3389/fncom.2019.00046'
-            pdfLink: 'https://www.frontiersin.org/articles/10.3389/fncom.2019.00046/pdf'
-            cites: null
-            citedBy: null
-            abstract: null
     Predictive learning by a burst-dependent learning rule: &ref_47
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -6231,6 +4946,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:32:30.909Z'
+                sawTitle: '2025-01-29T15:58:01.718Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -6355,10 +5071,10 @@ references:
         score:
             - 0
             - 270
-            - 3
+            - 4
             - 2023
             - 0
-        scoreString: 0|270|3|2023|0
+        scoreString: 0|270|4|2023|0
         _:
             title: Predictive learning by a burst-dependent learning rule
             doi: 10.1016/j.nlm.2023.107826
@@ -6372,8 +5088,20 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics': &ref_10
-        notes: *ref_0
+    'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics': &ref_9
+        notes:
+            resumeStatus: unclear|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T15:26:58.981Z'
+                originalQuery: NeuroSLAM
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T15:26:59.208Z'
+                sawTitle: '2025-01-29T15:39:23.995Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -6386,9 +5114,103 @@ references:
                 cites: null
                 citedBy: null
                 abstract: null
-            crossref: *ref_1
-            openAlex: *ref_2
-            googleScholar: *ref_3
+            crossref:
+                doi: 10.1109/jssc.2020.3028298
+            openAlex:
+                doi: 'https://doi.org/10.1109/jssc.2020.3028298'
+                title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics'
+                abstract: null
+                concepts:
+                    - robotics and sensor-based localization
+                    - modular robots and swarm intelligence
+                    - underwater vehicles and communication systems
+                    - aerospace engineering
+                    - mechanical engineering
+                    - ocean engineering
+                    - neuromorphic engineering
+                    - tops
+                    - artificial intelligence
+                    - robotics
+                    - computer science
+                    - enhanced data rates for gsm evolution
+                    - computer vision
+                    - robot
+                    - simultaneous localization and mapping
+                    - power (physics)
+                    - artificial neural network
+                    - mobile robot
+                    - physics
+                    - optics
+                    - quantum mechanics
+                    - azimuth
+                year: 2020
+                authorNames:
+                    - Jong-Hyeok Yoon
+                    - Arijit Raychowdhury
+                link: 'https://doi.org/10.1109/jssc.2020.3028298'
+                pdfLink: null
+                citationCount: 24
+                citedAlexIds:
+                    - 'https://openalex.org/W1612997784'
+                    - 'https://openalex.org/W1677409904'
+                    - 'https://openalex.org/W1965569281'
+                    - 'https://openalex.org/W2005854391'
+                    - 'https://openalex.org/W2014556603'
+                    - 'https://openalex.org/W2053881289'
+                    - 'https://openalex.org/W2074540734'
+                    - 'https://openalex.org/W2079390801'
+                    - 'https://openalex.org/W2108136994'
+                    - 'https://openalex.org/W2112669647'
+                    - 'https://openalex.org/W2117228865'
+                    - 'https://openalex.org/W2118223742'
+                    - 'https://openalex.org/W2125736621'
+                    - 'https://openalex.org/W2151103935'
+                    - 'https://openalex.org/W2161338791'
+                    - 'https://openalex.org/W2164119118'
+                    - 'https://openalex.org/W2198527813'
+                    - 'https://openalex.org/W2216550548'
+                    - 'https://openalex.org/W2218842719'
+                    - 'https://openalex.org/W2561115355'
+                    - 'https://openalex.org/W2561845008'
+                    - 'https://openalex.org/W2738816079'
+                    - 'https://openalex.org/W2758772066'
+                    - 'https://openalex.org/W2798957270'
+                    - 'https://openalex.org/W2890660991'
+                    - 'https://openalex.org/W2903841424'
+                    - 'https://openalex.org/W2909935310'
+                    - 'https://openalex.org/W2922127512'
+                    - 'https://openalex.org/W2942395934'
+                    - 'https://openalex.org/W2970143800'
+                    - 'https://openalex.org/W3015712293'
+                    - 'https://openalex.org/W3048589487'
+                    - 'https://openalex.org/W3103648783'
+                    - 'https://openalex.org/W4246614213'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4389237622'
+                    - 'https://openalex.org/W4245680303'
+                    - 'https://openalex.org/W4231398535'
+                    - 'https://openalex.org/W3108691306'
+                    - 'https://openalex.org/W2986579802'
+                    - 'https://openalex.org/W2811109569'
+                    - 'https://openalex.org/W2385933648'
+                    - 'https://openalex.org/W2381557761'
+                    - 'https://openalex.org/W2166309310'
+                    - 'https://openalex.org/W2067978743'
+                openAlexId: W3116307730
+            googleScholar:
+                title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W mixed-signal oscillator-based SLAM accelerator for edge robotics'
+                authorNames:
+                    - JH Yoon
+                    - A Raychowdhury- IEEE Journal of Solid
+                pdfLink: 'https://icsrl.ece.gatech.edu/files/2021/06/09222208.pdf'
+                link: 'https://ieeexplore.ieee.org/abstract/document/9222208/'
+                citationId: '13007178913193955208'
+                multiArticleId: '13007178913193955208'
+                citedByLink: 'https://scholar.google.com//scholar?cites=13007178913193955208&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'State, 2020'
+                year: 2020
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13007178913193955208&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 34
         score:
             - 1
             - 154.5
@@ -6585,6 +5407,1003 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    'Neural Networks for Navigation: From Connections to Computations': &ref_0
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T15:26:18.351Z'
+                originalQuery: 'Neural Networks for Navigation: From Connections to Computations'
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T15:26:18.970Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1146/annurev-neuro-110920-032645
+            openAlex:
+                doi: 'https://doi.org/10.1146/annurev-neuro-110920-032645'
+                title: 'Neural Networks for Navigation: From Connections to Computations'
+                abstract: null
+                concepts:
+                    - neurobiology and insect physiology research
+                    - photoreceptor and optogenetics research
+                    - neural dynamics and brain function
+                    - cellular and molecular neuroscience
+                    - cognitive neuroscience
+                    - hebbian theory
+                    - neuromodulation
+                    - connectomics
+                    - computational neuroscience
+                    - representation
+                    - connectome
+                    - neuroscience
+                    - computer science
+                    - attractor
+                    - sensory system
+                    - representation (politics)
+                    - set (abstract data type)
+                    - artificial intelligence
+                    - artificial neural network
+                    - psychology
+                    - functional connectivity
+                    - mathematical analysis
+                    - mathematics
+                    - stimulation
+                    - politics
+                    - political science
+                    - law
+                    - programming language
+                year: 2023
+                authorNames:
+                    - Rachel I. Wilson
+                link: 'https://doi.org/10.1146/annurev-neuro-110920-032645'
+                pdfLink: 'https://www.annualreviews.org/doi/pdf/10.1146/annurev-neuro-110920-032645'
+                citationCount: 11
+                citedAlexIds:
+                    - 'https://openalex.org/W1498436455'
+                    - 'https://openalex.org/W1503270516'
+                    - 'https://openalex.org/W1507999177'
+                    - 'https://openalex.org/W1528822345'
+                    - 'https://openalex.org/W1596586683'
+                    - 'https://openalex.org/W1807979745'
+                    - 'https://openalex.org/W1892958920'
+                    - 'https://openalex.org/W1904621031'
+                    - 'https://openalex.org/W1910429665'
+                    - 'https://openalex.org/W1963596662'
+                    - 'https://openalex.org/W1965518216'
+                    - 'https://openalex.org/W1968112225'
+                    - 'https://openalex.org/W1977364718'
+                    - 'https://openalex.org/W1982133166'
+                    - 'https://openalex.org/W1991539988'
+                    - 'https://openalex.org/W1995062437'
+                    - 'https://openalex.org/W2005885319'
+                    - 'https://openalex.org/W2006179270'
+                    - 'https://openalex.org/W2014495096'
+                    - 'https://openalex.org/W2017795070'
+                    - 'https://openalex.org/W2017932221'
+                    - 'https://openalex.org/W2019977544'
+                    - 'https://openalex.org/W2020997099'
+                    - 'https://openalex.org/W2021354435'
+                    - 'https://openalex.org/W2021629815'
+                    - 'https://openalex.org/W2028281435'
+                    - 'https://openalex.org/W2033073682'
+                    - 'https://openalex.org/W2035752417'
+                    - 'https://openalex.org/W2043369736'
+                    - 'https://openalex.org/W2045369561'
+                    - 'https://openalex.org/W2048643991'
+                    - 'https://openalex.org/W2052049836'
+                    - 'https://openalex.org/W2056128573'
+                    - 'https://openalex.org/W2069702518'
+                    - 'https://openalex.org/W2079228133'
+                    - 'https://openalex.org/W2079577312'
+                    - 'https://openalex.org/W2083890928'
+                    - 'https://openalex.org/W2083906231'
+                    - 'https://openalex.org/W2091544237'
+                    - 'https://openalex.org/W2092071089'
+                    - 'https://openalex.org/W2092421320'
+                    - 'https://openalex.org/W2094199090'
+                    - 'https://openalex.org/W2095087224'
+                    - 'https://openalex.org/W2104056735'
+                    - 'https://openalex.org/W2107677787'
+                    - 'https://openalex.org/W2110161683'
+                    - 'https://openalex.org/W2114590530'
+                    - 'https://openalex.org/W2118845307'
+                    - 'https://openalex.org/W2129552190'
+                    - 'https://openalex.org/W2132238259'
+                    - 'https://openalex.org/W2133917215'
+                    - 'https://openalex.org/W2136863984'
+                    - 'https://openalex.org/W2138260451'
+                    - 'https://openalex.org/W2149422514'
+                    - 'https://openalex.org/W2149432670'
+                    - 'https://openalex.org/W2153525021'
+                    - 'https://openalex.org/W2158683034'
+                    - 'https://openalex.org/W2159605081'
+                    - 'https://openalex.org/W2160905787'
+                    - 'https://openalex.org/W2164012213'
+                    - 'https://openalex.org/W2165443127'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2171637648'
+                    - 'https://openalex.org/W2173127365'
+                    - 'https://openalex.org/W2187333428'
+                    - 'https://openalex.org/W2219709225'
+                    - 'https://openalex.org/W2221454867'
+                    - 'https://openalex.org/W2238546778'
+                    - 'https://openalex.org/W2289037009'
+                    - 'https://openalex.org/W2382571936'
+                    - 'https://openalex.org/W2480327151'
+                    - 'https://openalex.org/W2587116049'
+                    - 'https://openalex.org/W2588048611'
+                    - 'https://openalex.org/W2594714106'
+                    - 'https://openalex.org/W2600383617'
+                    - 'https://openalex.org/W2603603923'
+                    - 'https://openalex.org/W2609307799'
+                    - 'https://openalex.org/W2610861664'
+                    - 'https://openalex.org/W2614915054'
+                    - 'https://openalex.org/W2618420889'
+                    - 'https://openalex.org/W2625462354'
+                    - 'https://openalex.org/W2626354520'
+                    - 'https://openalex.org/W2736783045'
+                    - 'https://openalex.org/W2764135343'
+                    - 'https://openalex.org/W2800545257'
+                    - 'https://openalex.org/W2858451488'
+                    - 'https://openalex.org/W2885788335'
+                    - 'https://openalex.org/W2888531822'
+                    - 'https://openalex.org/W2889759129'
+                    - 'https://openalex.org/W2890691917'
+                    - 'https://openalex.org/W2902800274'
+                    - 'https://openalex.org/W2911295867'
+                    - 'https://openalex.org/W2912908978'
+                    - 'https://openalex.org/W2945334021'
+                    - 'https://openalex.org/W2947312223'
+                    - 'https://openalex.org/W2947447667'
+                    - 'https://openalex.org/W2949890723'
+                    - 'https://openalex.org/W2952891726'
+                    - 'https://openalex.org/W2953339796'
+                    - 'https://openalex.org/W2953356325'
+                    - 'https://openalex.org/W2953398929'
+                    - 'https://openalex.org/W2963869135'
+                    - 'https://openalex.org/W2965707816'
+                    - 'https://openalex.org/W2970825820'
+                    - 'https://openalex.org/W2990686989'
+                    - 'https://openalex.org/W2991430622'
+                    - 'https://openalex.org/W2998606959'
+                    - 'https://openalex.org/W3004628581'
+                    - 'https://openalex.org/W3015110848'
+                    - 'https://openalex.org/W3030279718'
+                    - 'https://openalex.org/W3043725759'
+                    - 'https://openalex.org/W3044360663'
+                    - 'https://openalex.org/W3044458632'
+                    - 'https://openalex.org/W3047114056'
+                    - 'https://openalex.org/W3080736558'
+                    - 'https://openalex.org/W3084308099'
+                    - 'https://openalex.org/W3087133308'
+                    - 'https://openalex.org/W3112375501'
+                    - 'https://openalex.org/W3115566250'
+                    - 'https://openalex.org/W3128680190'
+                    - 'https://openalex.org/W31595650'
+                    - 'https://openalex.org/W3165096146'
+                    - 'https://openalex.org/W3193308888'
+                    - 'https://openalex.org/W3193998852'
+                    - 'https://openalex.org/W3198789381'
+                    - 'https://openalex.org/W3199336337'
+                    - 'https://openalex.org/W3200508686'
+                    - 'https://openalex.org/W3208266771'
+                    - 'https://openalex.org/W3216207052'
+                    - 'https://openalex.org/W4200363586'
+                    - 'https://openalex.org/W4200478016'
+                    - 'https://openalex.org/W4206184909'
+                    - 'https://openalex.org/W4213131875'
+                    - 'https://openalex.org/W4225711402'
+                    - 'https://openalex.org/W4243629783'
+                    - 'https://openalex.org/W4280545948'
+                    - 'https://openalex.org/W4282919408'
+                    - 'https://openalex.org/W4283156207'
+                    - 'https://openalex.org/W4286779704'
+                    - 'https://openalex.org/W4290702148'
+                    - 'https://openalex.org/W4293722883'
+                    - 'https://openalex.org/W4309228084'
+                    - 'https://openalex.org/W4309228910'
+                    - 'https://openalex.org/W4310483820'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4386121835'
+                    - 'https://openalex.org/W4383823249'
+                    - 'https://openalex.org/W4306173854'
+                    - 'https://openalex.org/W3202828119'
+                    - 'https://openalex.org/W3004213178'
+                    - 'https://openalex.org/W2808304326'
+                    - 'https://openalex.org/W2470756147'
+                    - 'https://openalex.org/W2325816644'
+                    - 'https://openalex.org/W2300070222'
+                    - 'https://openalex.org/W2166886630'
+                openAlexId: W4383823249
+            googleScholar:
+                title: 'Neural networks for navigation: From connections to computations'
+                authorNames: null
+                pdfLink: null
+                link: 'https://www.annualreviews.org/content/journals/10.1146/annurev-neuro-110920-032645'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 0
+            - 270
+            - 0
+            - 2023
+            - 0
+        scoreString: 0|270|0|2023|0
+        _:
+            title: 'Neural Networks for Navigation: From Connections to Computations'
+            doi: 10.1146/annurev-neuro-110920-032645
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - Rachel I. Wilson
+            link: 'https://doi.org/10.1146/annurev-neuro-110920-032645'
+            pdfLink: 'https://www.annualreviews.org/doi/pdf/10.1146/annurev-neuro-110920-032645'
+            cites: null
+            citedBy: null
+            abstract: null
+    'NeuroSLAM: a brain-inspired SLAM system for 3D environments': &ref_3
+        notes:
+            resumeStatus: super-relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T15:26:58.981Z'
+                originalQuery: NeuroSLAM
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T15:26:59.208Z'
+                sawTitle: '2025-01-29T15:57:16.712Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1007/s00422-019-00806-9
+            openAlex:
+                doi: 'https://doi.org/10.1007/s00422-019-00806-9'
+                title: 'NeuroSLAM: a brain-inspired SLAM system for 3D environments'
+                abstract: null
+                concepts:
+                    - robotics and sensor-based localization
+                    - robotic path planning algorithms
+                    - advanced image and video retrieval techniques
+                    - aerospace engineering
+                    - computer vision and pattern recognition
+                    - path integration
+                    - sensory cue
+                    - representation
+                    - computer science
+                    - simultaneous localization and mapping
+                    - computer vision
+                    - artificial intelligence
+                    - representation (politics)
+                    - robot
+                    - mobile robot
+                    - politics
+                    - political science
+                    - law
+                year: 2019
+                authorNames:
+                    - Fangwen Yu
+                    - Jianga Shang
+                    - Youjian Hu
+                    - Michael Milford
+                link: 'https://doi.org/10.1007/s00422-019-00806-9'
+                pdfLink: 'https://eprints.qut.edu.au/198104/1/56922761.pdf'
+                citationCount: 81
+                citedAlexIds:
+                    - 'https://openalex.org/W1490092700'
+                    - 'https://openalex.org/W1512234833'
+                    - 'https://openalex.org/W1513286638'
+                    - 'https://openalex.org/W1530919911'
+                    - 'https://openalex.org/W1568089468'
+                    - 'https://openalex.org/W1612997784'
+                    - 'https://openalex.org/W1833770305'
+                    - 'https://openalex.org/W1968399385'
+                    - 'https://openalex.org/W1970504153'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W1972671602'
+                    - 'https://openalex.org/W1995575564'
+                    - 'https://openalex.org/W2003512790'
+                    - 'https://openalex.org/W2005115267'
+                    - 'https://openalex.org/W2008936540'
+                    - 'https://openalex.org/W2024908906'
+                    - 'https://openalex.org/W2028980271'
+                    - 'https://openalex.org/W2030987944'
+                    - 'https://openalex.org/W2033771479'
+                    - 'https://openalex.org/W2038694110'
+                    - 'https://openalex.org/W2042498311'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2058853524'
+                    - 'https://openalex.org/W2062948987'
+                    - 'https://openalex.org/W2069479606'
+                    - 'https://openalex.org/W2082115891'
+                    - 'https://openalex.org/W2084588382'
+                    - 'https://openalex.org/W2086330526'
+                    - 'https://openalex.org/W2091790851'
+                    - 'https://openalex.org/W2108134361'
+                    - 'https://openalex.org/W2110405746'
+                    - 'https://openalex.org/W2112164532'
+                    - 'https://openalex.org/W2112669647'
+                    - 'https://openalex.org/W2119902363'
+                    - 'https://openalex.org/W2121013842'
+                    - 'https://openalex.org/W2121780146'
+                    - 'https://openalex.org/W2127987606'
+                    - 'https://openalex.org/W2132238259'
+                    - 'https://openalex.org/W2137348018'
+                    - 'https://openalex.org/W2143864104'
+                    - 'https://openalex.org/W2144824356'
+                    - 'https://openalex.org/W2147027939'
+                    - 'https://openalex.org/W2148820580'
+                    - 'https://openalex.org/W2149422514'
+                    - 'https://openalex.org/W2151290401'
+                    - 'https://openalex.org/W2152671441'
+                    - 'https://openalex.org/W2161338791'
+                    - 'https://openalex.org/W2163769923'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2168676389'
+                    - 'https://openalex.org/W2188375190'
+                    - 'https://openalex.org/W2195415230'
+                    - 'https://openalex.org/W2209696208'
+                    - 'https://openalex.org/W2239403525'
+                    - 'https://openalex.org/W2284029970'
+                    - 'https://openalex.org/W2285806732'
+                    - 'https://openalex.org/W2293661915'
+                    - 'https://openalex.org/W2333526516'
+                    - 'https://openalex.org/W2336067451'
+                    - 'https://openalex.org/W2411681238'
+                    - 'https://openalex.org/W2414782734'
+                    - 'https://openalex.org/W2464331557'
+                    - 'https://openalex.org/W2474281075'
+                    - 'https://openalex.org/W2479173824'
+                    - 'https://openalex.org/W2535286602'
+                    - 'https://openalex.org/W2535634543'
+                    - 'https://openalex.org/W2543128274'
+                    - 'https://openalex.org/W2564632156'
+                    - 'https://openalex.org/W2565755350'
+                    - 'https://openalex.org/W2594714106'
+                    - 'https://openalex.org/W2603076117'
+                    - 'https://openalex.org/W2613438563'
+                    - 'https://openalex.org/W2614122538'
+                    - 'https://openalex.org/W2745859992'
+                    - 'https://openalex.org/W2754759105'
+                    - 'https://openalex.org/W2763730878'
+                    - 'https://openalex.org/W2765084615'
+                    - 'https://openalex.org/W2766013930'
+                    - 'https://openalex.org/W2766334411'
+                    - 'https://openalex.org/W2768829067'
+                    - 'https://openalex.org/W2769720482'
+                    - 'https://openalex.org/W2770176163'
+                    - 'https://openalex.org/W2783185291'
+                    - 'https://openalex.org/W2787690100'
+                    - 'https://openalex.org/W2788563959'
+                    - 'https://openalex.org/W2788608285'
+                    - 'https://openalex.org/W2789471414'
+                    - 'https://openalex.org/W2789510920'
+                    - 'https://openalex.org/W2799742631'
+                    - 'https://openalex.org/W2800142021'
+                    - 'https://openalex.org/W2803770871'
+                    - 'https://openalex.org/W2805521962'
+                    - 'https://openalex.org/W2807015669'
+                    - 'https://openalex.org/W2807422051'
+                    - 'https://openalex.org/W2854632500'
+                    - 'https://openalex.org/W2883168056'
+                    - 'https://openalex.org/W2884962765'
+                    - 'https://openalex.org/W2886738861'
+                    - 'https://openalex.org/W2888728311'
+                    - 'https://openalex.org/W2889188277'
+                    - 'https://openalex.org/W2896052853'
+                    - 'https://openalex.org/W2897589056'
+                    - 'https://openalex.org/W2898667177'
+                    - 'https://openalex.org/W2900470927'
+                    - 'https://openalex.org/W2905245804'
+                    - 'https://openalex.org/W2908544477'
+                    - 'https://openalex.org/W2909157769'
+                    - 'https://openalex.org/W2913801227'
+                    - 'https://openalex.org/W2914557861'
+                    - 'https://openalex.org/W2914693969'
+                    - 'https://openalex.org/W2949496141'
+                    - 'https://openalex.org/W2951053953'
+                    - 'https://openalex.org/W3099039688'
+                    - 'https://openalex.org/W3102327032'
+                    - 'https://openalex.org/W3103648783'
+                    - 'https://openalex.org/W3104255671'
+                    - 'https://openalex.org/W3105489439'
+                    - 'https://openalex.org/W3105922581'
+                    - 'https://openalex.org/W3124420883'
+                    - 'https://openalex.org/W3238102'
+                    - 'https://openalex.org/W4297873189'
+                relatedAlexIds:
+                    - 'https://openalex.org/W3011454082'
+                    - 'https://openalex.org/W2769070896'
+                    - 'https://openalex.org/W2748561798'
+                    - 'https://openalex.org/W2736783045'
+                    - 'https://openalex.org/W2151273376'
+                    - 'https://openalex.org/W2148741637'
+                    - 'https://openalex.org/W2088610815'
+                    - 'https://openalex.org/W2084859108'
+                    - 'https://openalex.org/W2022736990'
+                    - 'https://openalex.org/W1675741018'
+                openAlexId: W2979058050
+            googleScholar:
+                title: 'NeuroSLAM: A brain-inspired SLAM system for 3D environments'
+                authorNames:
+                    - F Yu
+                    - J Shang
+                    - Y Hu
+                    - M Milford
+                pdfLink: 'https://eprints.qut.edu.au/198104/1/56922761.pdf;'
+                link: 'https://link.springer.com/article/10.1007/s00422-019-00806-9'
+                citationId: '15674891101043310192'
+                multiArticleId: '15674891101043310192'
+                citedByLink: 'https://scholar.google.com//scholar?cites=15674891101043310192&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Biological cybernetics, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=15674891101043310192&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 97
+        score:
+            - 1
+            - 153
+            - 0
+            - 2019
+            - 0
+        scoreString: 1|153|0|2019|0
+        _:
+            title: 'NeuroSLAM: a brain-inspired SLAM system for 3D environments'
+            doi: 10.1007/s00422-019-00806-9
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - Fangwen Yu
+                - Jianga Shang
+                - Youjian Hu
+                - Michael Milford
+            link: 'https://doi.org/10.1007/s00422-019-00806-9'
+            pdfLink: 'https://eprints.qut.edu.au/198104/1/56922761.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation: &ref_5
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T15:26:58.981Z'
+                originalQuery: NeuroSLAM
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T15:26:59.209Z'
+                sawTitle: '2025-01-29T15:57:20.971Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/iscas45731.2020.9180441
+            openAlex:
+                doi: 'https://doi.org/10.1109/iscas45731.2020.9180441'
+                title: Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation
+                abstract: null
+                concepts:
+                    - advanced memory and neural computing
+                    - memory and neural mechanisms
+                    - photoreceptor and optogenetics research
+                    - electrical and electronic engineering
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - application-specific integrated circuit
+                    - voltage-controlled oscillator
+                    - computer science
+                    - interference (communication)
+                    - electronic engineering
+                    - chip
+                    - coding (social sciences)
+                    - engineering
+                    - telecommunications
+                    - electrical engineering
+                    - voltage
+                    - channel (broadcasting)
+                    - statistics
+                    - mathematics
+                year: 2020
+                authorNames:
+                    - Alia Nasrallah
+                    - Zhaoqi Chen
+                    - Milad Alemohammad
+                    - Ananya Balaji
+                    - Adam B. Cellon
+                    - Masanori Furuta
+                    - Ralph Etienne‐Cummings
+                link: 'https://doi.org/10.1109/iscas45731.2020.9180441'
+                pdfLink: null
+                citationCount: 3
+                citedAlexIds:
+                    - 'https://openalex.org/W1540763494'
+                    - 'https://openalex.org/W2021756236'
+                    - 'https://openalex.org/W2045353501'
+                    - 'https://openalex.org/W2067933183'
+                    - 'https://openalex.org/W207723284'
+                    - 'https://openalex.org/W2088469430'
+                    - 'https://openalex.org/W2107728273'
+                    - 'https://openalex.org/W2112164532'
+                    - 'https://openalex.org/W2121780146'
+                    - 'https://openalex.org/W2123213117'
+                    - 'https://openalex.org/W2150447451'
+                    - 'https://openalex.org/W2156640153'
+                    - 'https://openalex.org/W2161338791'
+                    - 'https://openalex.org/W2187424954'
+                    - 'https://openalex.org/W2756945303'
+                    - 'https://openalex.org/W2942617383'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4388486464'
+                    - 'https://openalex.org/W3157583314'
+                    - 'https://openalex.org/W2902200568'
+                    - 'https://openalex.org/W2388316590'
+                    - 'https://openalex.org/W2380576078'
+                    - 'https://openalex.org/W2368609622'
+                    - 'https://openalex.org/W2261105975'
+                    - 'https://openalex.org/W2070109416'
+                    - 'https://openalex.org/W2040399070'
+                    - 'https://openalex.org/W1523213765'
+                openAlexId: W3089531964
+            googleScholar:
+                title: Velocity-tuned oscillators for NeuroSLAM and spatial navigation
+                authorNames:
+                    - A Nasrallah
+                    - Z Chen
+                    - M Alemohammad
+                pdfLink: null
+                link: 'https://ieeexplore.ieee.org/abstract/document/9180441/'
+                citationId: '13847853075165097858'
+                multiArticleId: null
+                citedByLink: 'https://scholar.google.com//scholar?cites=13847853075165097858&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'on Circuits and, 2020'
+                year: 2020
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13847853075165097858&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 3
+        score:
+            - 1
+            - 151.5
+            - 0
+            - 2020
+            - 0
+        scoreString: 1|151.5|0|2020|0
+        _:
+            title: Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation
+            doi: 10.1109/iscas45731.2020.9180441
+            year: 2020
+            publisherFlags: null
+            authorNames:
+                - Alia Nasrallah
+                - Zhaoqi Chen
+                - Milad Alemohammad
+                - Ananya Balaji
+                - Adam B. Cellon
+                - Masanori Furuta
+                - Ralph Etienne‐Cummings
+            link: 'https://doi.org/10.1109/iscas45731.2020.9180441'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    'Introduction to Focus Issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics': &ref_26
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T15:29:43.333Z'
+                originalQuery: multidimensional continuous attractor machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T15:29:44.032Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1063/5.0016505
+            openAlex:
+                doi: 'https://doi.org/10.1063/5.0016505'
+                title: 'Introduction to Focus Issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics'
+                abstract: null
+                concepts:
+                    - neural networks and applications
+                    - neural networks and reservoir computing
+                    - complex systems and time series analysis
+                    - artificial intelligence
+                    - economics and econometrics
+                    - dynamics
+                    - chaos (operating system)
+                    - focus (optics)
+                    - nonlinear system
+                    - computer science
+                    - dynamics (music)
+                    - physics
+                    - computer security
+                    - quantum mechanics
+                    - acoustics
+                    - optics
+                year: 2020
+                authorNames:
+                    - Yang Tang
+                    - Jürgen Kurths
+                    - Wei Lin
+                    - Edward Ott
+                    - Ljupčo Kocarev
+                link: 'https://doi.org/10.1063/5.0016505'
+                pdfLink: null
+                citationCount: 95
+                citedAlexIds:
+                    - 'https://openalex.org/W2959676983'
+                    - 'https://openalex.org/W2963604378'
+                    - 'https://openalex.org/W2972462960'
+                    - 'https://openalex.org/W2973400885'
+                    - 'https://openalex.org/W2976146814'
+                    - 'https://openalex.org/W2976902166'
+                    - 'https://openalex.org/W2977331641'
+                    - 'https://openalex.org/W2978109980'
+                    - 'https://openalex.org/W2978220519'
+                    - 'https://openalex.org/W2978795453'
+                    - 'https://openalex.org/W2979458970'
+                    - 'https://openalex.org/W2979527686'
+                    - 'https://openalex.org/W2979803764'
+                    - 'https://openalex.org/W2979877685'
+                    - 'https://openalex.org/W2980314983'
+                    - 'https://openalex.org/W2980385140'
+                    - 'https://openalex.org/W2981085430'
+                    - 'https://openalex.org/W2981104679'
+                    - 'https://openalex.org/W2981502672'
+                    - 'https://openalex.org/W2982029175'
+                    - 'https://openalex.org/W2982355089'
+                    - 'https://openalex.org/W2983283454'
+                    - 'https://openalex.org/W2983707015'
+                    - 'https://openalex.org/W2983777654'
+                    - 'https://openalex.org/W2985457377'
+                    - 'https://openalex.org/W2987123209'
+                    - 'https://openalex.org/W2987789896'
+                    - 'https://openalex.org/W2988203139'
+                    - 'https://openalex.org/W2988494807'
+                    - 'https://openalex.org/W2988607083'
+                    - 'https://openalex.org/W2989628193'
+                    - 'https://openalex.org/W2989833413'
+                    - 'https://openalex.org/W2990366675'
+                    - 'https://openalex.org/W2991799208'
+                    - 'https://openalex.org/W2992344932'
+                    - 'https://openalex.org/W2994753841'
+                    - 'https://openalex.org/W2994836491'
+                    - 'https://openalex.org/W2995327117'
+                    - 'https://openalex.org/W2995360081'
+                    - 'https://openalex.org/W2995590009'
+                    - 'https://openalex.org/W2995639804'
+                    - 'https://openalex.org/W2995866605'
+                    - 'https://openalex.org/W2996325614'
+                    - 'https://openalex.org/W2997092692'
+                    - 'https://openalex.org/W2997152685'
+                    - 'https://openalex.org/W2997405608'
+                    - 'https://openalex.org/W2997885830'
+                    - 'https://openalex.org/W2998821156'
+                    - 'https://openalex.org/W3000464944'
+                    - 'https://openalex.org/W3001184417'
+                    - 'https://openalex.org/W3002310157'
+                    - 'https://openalex.org/W3002873949'
+                    - 'https://openalex.org/W3004585728'
+                    - 'https://openalex.org/W3004922031'
+                    - 'https://openalex.org/W3004965094'
+                    - 'https://openalex.org/W3011771348'
+                    - 'https://openalex.org/W3012148092'
+                    - 'https://openalex.org/W3098780444'
+                    - 'https://openalex.org/W3098895744'
+                    - 'https://openalex.org/W3099217732'
+                    - 'https://openalex.org/W3099303176'
+                    - 'https://openalex.org/W3099548371'
+                    - 'https://openalex.org/W3100969891'
+                    - 'https://openalex.org/W3101003473'
+                    - 'https://openalex.org/W3101235239'
+                    - 'https://openalex.org/W3102233618'
+                    - 'https://openalex.org/W3102502580'
+                    - 'https://openalex.org/W3102718764'
+                    - 'https://openalex.org/W3103182427'
+                    - 'https://openalex.org/W3105263508'
+                    - 'https://openalex.org/W3105319366'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4383267773'
+                    - 'https://openalex.org/W4251075027'
+                    - 'https://openalex.org/W4247599920'
+                    - 'https://openalex.org/W4243901518'
+                    - 'https://openalex.org/W3110439525'
+                    - 'https://openalex.org/W2393451533'
+                    - 'https://openalex.org/W2358131398'
+                    - 'https://openalex.org/W2320196587'
+                    - 'https://openalex.org/W2027932829'
+                    - 'https://openalex.org/W2012531322'
+                openAlexId: W3038114648
+            googleScholar:
+                title: 'Introduction to focus issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics'
+                authorNames:
+                    - Y Tang
+                    - J Kurths
+                    - W Lin
+                    - E Ott
+                    - L Kocarev
+                pdfLink: 'https://www.pik-potsdam.de/members/kurths/publikationen/2020/tang-2020-5-0016505.pdf'
+                link: 'https://pubs.aip.org/aip/cha/article/30/6/063151/1030253'
+                citationId: '14500170759193890373'
+                multiArticleId: '14500170759193890373'
+                citedByLink: 'https://scholar.google.com//scholar?cites=14500170759193890373&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Chaos: An Interdisciplinary, 2020'
+                year: 2020
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=14500170759193890373&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 121
+        score:
+            - 0
+            - 135
+            - 1
+            - 2020
+            - 0
+        scoreString: 0|135|1|2020|0
+        _:
+            title: 'Introduction to Focus Issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics'
+            doi: 10.1063/5.0016505
+            year: 2020
+            publisherFlags: null
+            authorNames:
+                - Yang Tang
+                - Jürgen Kurths
+                - Wei Lin
+                - Edward Ott
+                - Ljupčo Kocarev
+            link: 'https://doi.org/10.1063/5.0016505'
+            pdfLink: 'https://www.pik-potsdam.de/members/kurths/publikationen/2020/tang-2020-5-0016505.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Reinforcement Learning and Attractor Neural Network Models of Associative Learning: &ref_25
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T15:29:43.333Z'
+                originalQuery: multidimensional continuous attractor machine learning
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T15:29:44.032Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1007/978-3-030-16469-0_17
+            openAlex:
+                doi: 'https://doi.org/10.1007/978-3-030-16469-0_17'
+                title: Reinforcement Learning and Attractor Neural Network Models of Associative Learning
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - neural networks and applications
+                    - stochastic dynamics and bifurcation
+                    - cognitive neuroscience
+                    - artificial intelligence
+                    - statistical and nonlinear physics
+                    - reinforcement learning
+                    - computer science
+                    - attractor
+                    - generalization
+                    - artificial neural network
+                    - stability (learning theory)
+                    - content-addressable memory
+                    - property (philosophy)
+                    - machine learning
+                    - mathematics
+                    - mathematical analysis
+                    - philosophy
+                    - epistemology
+                year: 2019
+                authorNames:
+                    - Oussama H. Hamid
+                    - Jochen Braun
+                link: 'https://doi.org/10.1007/978-3-030-16469-0_17'
+                pdfLink: null
+                citationCount: 11
+                citedAlexIds:
+                    - 'https://openalex.org/W1178202497'
+                    - 'https://openalex.org/W1512746852'
+                    - 'https://openalex.org/W1520649049'
+                    - 'https://openalex.org/W1549998098'
+                    - 'https://openalex.org/W1581202840'
+                    - 'https://openalex.org/W1597739853'
+                    - 'https://openalex.org/W169931978'
+                    - 'https://openalex.org/W1702555102'
+                    - 'https://openalex.org/W1894358115'
+                    - 'https://openalex.org/W1898013618'
+                    - 'https://openalex.org/W1923344279'
+                    - 'https://openalex.org/W1965112813'
+                    - 'https://openalex.org/W1982494757'
+                    - 'https://openalex.org/W1988699227'
+                    - 'https://openalex.org/W1990404154'
+                    - 'https://openalex.org/W2000214310'
+                    - 'https://openalex.org/W2002288980'
+                    - 'https://openalex.org/W2004547450'
+                    - 'https://openalex.org/W2007267229'
+                    - 'https://openalex.org/W2012074763'
+                    - 'https://openalex.org/W2013140236'
+                    - 'https://openalex.org/W2015173963'
+                    - 'https://openalex.org/W2018523182'
+                    - 'https://openalex.org/W2019740215'
+                    - 'https://openalex.org/W2020055733'
+                    - 'https://openalex.org/W2024365408'
+                    - 'https://openalex.org/W2027600189'
+                    - 'https://openalex.org/W2029487195'
+                    - 'https://openalex.org/W2036338624'
+                    - 'https://openalex.org/W2037979274'
+                    - 'https://openalex.org/W2040124307'
+                    - 'https://openalex.org/W2043615441'
+                    - 'https://openalex.org/W2047125104'
+                    - 'https://openalex.org/W2065547152'
+                    - 'https://openalex.org/W2066947576'
+                    - 'https://openalex.org/W2068464941'
+                    - 'https://openalex.org/W2070732802'
+                    - 'https://openalex.org/W2074391612'
+                    - 'https://openalex.org/W2074870954'
+                    - 'https://openalex.org/W2076742285'
+                    - 'https://openalex.org/W2081030963'
+                    - 'https://openalex.org/W2083473390'
+                    - 'https://openalex.org/W2091789872'
+                    - 'https://openalex.org/W2096240659'
+                    - 'https://openalex.org/W2098020453'
+                    - 'https://openalex.org/W2100686511'
+                    - 'https://openalex.org/W2107726111'
+                    - 'https://openalex.org/W2115010184'
+                    - 'https://openalex.org/W2117726420'
+                    - 'https://openalex.org/W2119128116'
+                    - 'https://openalex.org/W2121863487'
+                    - 'https://openalex.org/W2124285588'
+                    - 'https://openalex.org/W2128084896'
+                    - 'https://openalex.org/W2129022756'
+                    - 'https://openalex.org/W2129386380'
+                    - 'https://openalex.org/W2132994929'
+                    - 'https://openalex.org/W2133993682'
+                    - 'https://openalex.org/W2135746467'
+                    - 'https://openalex.org/W2136469918'
+                    - 'https://openalex.org/W2137428998'
+                    - 'https://openalex.org/W2138749023'
+                    - 'https://openalex.org/W2145339207'
+                    - 'https://openalex.org/W2154446803'
+                    - 'https://openalex.org/W2160306025'
+                    - 'https://openalex.org/W2160340450'
+                    - 'https://openalex.org/W2161518694'
+                    - 'https://openalex.org/W2162459215'
+                    - 'https://openalex.org/W2165726932'
+                    - 'https://openalex.org/W2167087276'
+                    - 'https://openalex.org/W2167362547'
+                    - 'https://openalex.org/W2169323873'
+                    - 'https://openalex.org/W2169672250'
+                    - 'https://openalex.org/W2284856356'
+                    - 'https://openalex.org/W2346736747'
+                    - 'https://openalex.org/W2362143032'
+                    - 'https://openalex.org/W2460856624'
+                    - 'https://openalex.org/W2499073429'
+                    - 'https://openalex.org/W2603127499'
+                    - 'https://openalex.org/W2615223498'
+                    - 'https://openalex.org/W2752099845'
+                    - 'https://openalex.org/W2768419506'
+                    - 'https://openalex.org/W2963871073'
+                    - 'https://openalex.org/W3093243321'
+                    - 'https://openalex.org/W4214686098'
+                    - 'https://openalex.org/W4214717370'
+                    - 'https://openalex.org/W4214907476'
+                    - 'https://openalex.org/W422120042'
+                    - 'https://openalex.org/W4235391064'
+                    - 'https://openalex.org/W4246657221'
+                    - 'https://openalex.org/W4296159956'
+                    - 'https://openalex.org/W4307347247'
+                relatedAlexIds:
+                    - 'https://openalex.org/W3049714198'
+                    - 'https://openalex.org/W2960434112'
+                    - 'https://openalex.org/W2592279130'
+                    - 'https://openalex.org/W2525520510'
+                    - 'https://openalex.org/W2123827981'
+                    - 'https://openalex.org/W2091740652'
+                    - 'https://openalex.org/W2049158118'
+                    - 'https://openalex.org/W2036805113'
+                    - 'https://openalex.org/W2008149323'
+                    - 'https://openalex.org/W1999890237'
+                openAlexId: W2947867310
+            googleScholar:
+                title: Reinforcement learning and attractor neural network models of associative learning
+                authorNames:
+                    - OH Hamid
+                    - J Braun
+                pdfLink: null
+                link: 'https://link.springer.com/chapter/10.1007/978-3-030-16469-0_17'
+                citationId: '13083575867396975852'
+                multiArticleId: '13083575867396975852'
+                citedByLink: 'https://scholar.google.com//scholar?cites=13083575867396975852&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Computational Intelligence: 9th International Joint, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=13083575867396975852&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 22
+        score:
+            - 0
+            - 135
+            - 2
+            - 2019
+            - 0
+        scoreString: 0|135|2|2019|0
+        _:
+            title: Reinforcement Learning and Attractor Neural Network Models of Associative Learning
+            doi: 10.1007/978-3-030-16469-0_17
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - Oussama H. Hamid
+                - Jochen Braun
+            link: 'https://doi.org/10.1007/978-3-030-16469-0_17'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: 'Neural Networks for Navigation: From Connections to Computations'
@@ -6595,7 +6414,7 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'Neural Networks for Navigation: From Connections to Computations'
-                link: null
+                link: *ref_0
     -
         query: NeuroSLAM
         score: .nan
@@ -6605,43 +6424,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 31.1 a 65nm 8.79 TOPS/W 23.82 mW mixed-signal oscillator-based NeuroSLAM accelerator for applications in edge robotics
-                link: *ref_4
+                link: *ref_1
             -
                 hadBeenSeenBefore: false
                 title: 'NeoSLAM: Neural object SLAM for loop closure and navigation'
-                link: *ref_5
+                link: *ref_2
             -
                 hadBeenSeenBefore: false
                 title: 'NeuroSLAM: a brain-inspired SLAM system for 3D environments'
-                link: null
+                link: *ref_3
             -
                 hadBeenSeenBefore: false
                 title: 'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features'
-                link: *ref_6
+                link: *ref_4
             -
                 hadBeenSeenBefore: false
                 title: Velocity-Tuned Oscillators for NeuroSLAM and Spatial Navigation
-                link: null
+                link: *ref_5
             -
                 hadBeenSeenBefore: false
                 title: A Brain-inspired SLAM System Based on Keyframe Template Matching
-                link: *ref_7
+                link: *ref_6
             -
                 hadBeenSeenBefore: false
                 title: 'Application of Event Cameras and Neuromorphic Computing to VSLAM: A Survey'
-                link: *ref_8
+                link: *ref_7
             -
                 hadBeenSeenBefore: false
                 title: 'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain'
-                link: *ref_9
+                link: *ref_8
             -
                 hadBeenSeenBefore: false
                 title: 'NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM Accelerator for Edge Robotics'
-                link: *ref_10
+                link: *ref_9
             -
                 hadBeenSeenBefore: false
                 title: Exploiting semantic information in a spiking neural SLAM system
-                link: *ref_11
+                link: *ref_10
     -
         query: 'multidimensional continuous attractor MD-CAN '
         score: .nan
@@ -6651,43 +6470,43 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: true
                 title: 'NeuroSLAM: A brain-inspired SLAM system for 3D environments'
-                link: *ref_12
+                link: null
             -
                 hadBeenSeenBefore: false
                 title: 'The limits of min-max optimization algorithms: Convergence to spurious non-critical sets'
-                link: *ref_13
+                link: *ref_11
             -
                 hadBeenSeenBefore: false
                 title: 'Nanoscale graphene disk: a natural functionally graded material–how is Fourier''s law violated along radius direction of 2D disk'
-                link: *ref_14
+                link: *ref_12
             -
                 hadBeenSeenBefore: false
                 title: The first-principles prediction of two-dimensional indium-arsenide bilayers
-                link: *ref_15
+                link: *ref_13
             -
                 hadBeenSeenBefore: false
                 title: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective
-                link: *ref_16
+                link: *ref_14
             -
                 hadBeenSeenBefore: false
                 title: Finite‐and infinite‐dimensional attractors for porous media equations
-                link: *ref_17
+                link: *ref_15
             -
                 hadBeenSeenBefore: false
                 title: 'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective'
-                link: *ref_18
+                link: *ref_16
             -
                 hadBeenSeenBefore: false
                 title: Transformer fault diagnosis based on the improved QPSO and random forest
-                link: *ref_19
+                link: *ref_17
             -
                 hadBeenSeenBefore: false
                 title: Constrained optimization assists deviated wellbore trajectory selection from families of quadratic and cubic Bezier curves
-                link: *ref_20
+                link: *ref_18
             -
                 hadBeenSeenBefore: false
                 title: Global and exponential attractors for 3‐D wave equations with displacement dependent damping
-                link: *ref_21
+                link: *ref_19
     -
         query: multidimensional continuous attractor machine learning
         score: .nan
@@ -6697,31 +6516,31 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: Back to the continuous attractor
-                link: *ref_22
+                link: *ref_20
             -
                 hadBeenSeenBefore: false
                 title: Machine Learning with Chaotic Strange Attractors
-                link: *ref_23
+                link: *ref_21
             -
                 hadBeenSeenBefore: false
                 title: Deep reconstruction of strange attractors from time series
-                link: *ref_24
+                link: *ref_22
             -
                 hadBeenSeenBefore: false
                 title: 'Attractor memory for long-term time series forecasting: A chaos perspective'
-                link: *ref_25
+                link: *ref_23
             -
                 hadBeenSeenBefore: false
                 title: Using machine learning to replicate chaotic attractors and calculate Lyapunov exponents from data
-                link: *ref_26
+                link: *ref_24
             -
                 hadBeenSeenBefore: false
                 title: Reinforcement Learning and Attractor Neural Network Models of Associative Learning
-                link: null
+                link: *ref_25
             -
                 hadBeenSeenBefore: false
                 title: 'Introduction to Focus Issue: When machine learning meets complex systems: Networks, chaos, and nonlinear dynamics'
-                link: null
+                link: *ref_26
             -
                 hadBeenSeenBefore: false
                 title: Using machine learning to predict catastrophes in dynamical systems
@@ -6743,11 +6562,11 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: true
                 title: Back to the continuous attractor
-                link: *ref_22
+                link: *ref_20
             -
                 hadBeenSeenBefore: true
                 title: 'Attractor memory for long-term time series forecasting: A chaos perspective'
-                link: *ref_25
+                link: *ref_23
             -
                 hadBeenSeenBefore: false
                 title: Latent sdes on homogeneous spaces
