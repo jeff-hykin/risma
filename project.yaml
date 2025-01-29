@@ -9064,6 +9064,209 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    'The brain compass: a perspective on how self-motion updates the head direction cell attractor':
+        notes:
+            category: navCellExplain
+            keyTags:
+                - ring attractor
+                - accelerometer
+                - visual landmarks
+                - no-code
+            resumeStatus: unseen|title
+            comment: 'Seems easier to read than the 2023 Nature paper. Is cited by the NeuroSLAM paper'
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-01-29T17:13:32.980Z'
+                originalQuery: 'The Brain Compass: A Perspective on How Self-Motion Updates the Head Direction Cell Attractor'
+                searchEngine: googleScholar
+            events:
+                added: '2025-01-29T17:13:35.450Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1016/j.neuron.2017.12.020
+            openAlex:
+                doi: 'https://doi.org/10.1016/j.neuron.2017.12.020'
+                title: 'The Brain Compass: A Perspective on How Self-Motion Updates the Head Direction Cell Attractor'
+                abstract: null
+                concepts:
+                    - memory and neural mechanisms
+                    - sleep and wakefulness research
+                    - neuroscience and neuropharmacology research
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - compass
+                    - brain cell
+                    - perspective (graphical)
+                    - head (geology)
+                    - attractor
+                    - motion (physics)
+                    - neuroscience
+                    - psychology
+                    - computer science
+                    - computer vision
+                    - artificial intelligence
+                    - biology
+                    - mathematics
+                    - geography
+                    - cartography
+                    - mathematical analysis
+                    - paleontology
+                year: 2018
+                authorNames:
+                    - Jean Laurens
+                    - Dora E. Angelaki
+                link: 'https://doi.org/10.1016/j.neuron.2017.12.020'
+                pdfLink: 'https://www.cell.com/article/S0896627317311650/pdf'
+                citationCount: 60
+                citedAlexIds:
+                    - 'https://openalex.org/W1096877704'
+                    - 'https://openalex.org/W1502499974'
+                    - 'https://openalex.org/W1503270516'
+                    - 'https://openalex.org/W1543282353'
+                    - 'https://openalex.org/W1568089468'
+                    - 'https://openalex.org/W1582986258'
+                    - 'https://openalex.org/W1672908290'
+                    - 'https://openalex.org/W1807979745'
+                    - 'https://openalex.org/W1965070330'
+                    - 'https://openalex.org/W1965878303'
+                    - 'https://openalex.org/W1966303241'
+                    - 'https://openalex.org/W1973393017'
+                    - 'https://openalex.org/W1979084456'
+                    - 'https://openalex.org/W1979533714'
+                    - 'https://openalex.org/W1981787943'
+                    - 'https://openalex.org/W1984765656'
+                    - 'https://openalex.org/W1988437301'
+                    - 'https://openalex.org/W1996119395'
+                    - 'https://openalex.org/W1996255492'
+                    - 'https://openalex.org/W1999181984'
+                    - 'https://openalex.org/W2003192488'
+                    - 'https://openalex.org/W2003288939'
+                    - 'https://openalex.org/W2003448472'
+                    - 'https://openalex.org/W2005398129'
+                    - 'https://openalex.org/W2010013122'
+                    - 'https://openalex.org/W2013652395'
+                    - 'https://openalex.org/W2016001170'
+                    - 'https://openalex.org/W2018502805'
+                    - 'https://openalex.org/W2020469711'
+                    - 'https://openalex.org/W2023521517'
+                    - 'https://openalex.org/W2028980271'
+                    - 'https://openalex.org/W2030737328'
+                    - 'https://openalex.org/W2031242418'
+                    - 'https://openalex.org/W2040800180'
+                    - 'https://openalex.org/W2041756956'
+                    - 'https://openalex.org/W2043554842'
+                    - 'https://openalex.org/W2047638810'
+                    - 'https://openalex.org/W2047838007'
+                    - 'https://openalex.org/W2048759415'
+                    - 'https://openalex.org/W2051916693'
+                    - 'https://openalex.org/W2054004261'
+                    - 'https://openalex.org/W2057026113'
+                    - 'https://openalex.org/W2058287713'
+                    - 'https://openalex.org/W2058853524'
+                    - 'https://openalex.org/W2061548342'
+                    - 'https://openalex.org/W2066164719'
+                    - 'https://openalex.org/W2069343457'
+                    - 'https://openalex.org/W2069864586'
+                    - 'https://openalex.org/W2078915551'
+                    - 'https://openalex.org/W2080534165'
+                    - 'https://openalex.org/W2082149624'
+                    - 'https://openalex.org/W2083680074'
+                    - 'https://openalex.org/W2087563362'
+                    - 'https://openalex.org/W2090834380'
+                    - 'https://openalex.org/W2091763259'
+                    - 'https://openalex.org/W2095556772'
+                    - 'https://openalex.org/W2103692957'
+                    - 'https://openalex.org/W2104700416'
+                    - 'https://openalex.org/W2105910362'
+                    - 'https://openalex.org/W2110161683'
+                    - 'https://openalex.org/W2111689787'
+                    - 'https://openalex.org/W2115168690'
+                    - 'https://openalex.org/W2133692971'
+                    - 'https://openalex.org/W2139709619'
+                    - 'https://openalex.org/W2140063234'
+                    - 'https://openalex.org/W2147634215'
+                    - 'https://openalex.org/W2152829138'
+                    - 'https://openalex.org/W2153770884'
+                    - 'https://openalex.org/W2157607829'
+                    - 'https://openalex.org/W2159930235'
+                    - 'https://openalex.org/W2165443127'
+                    - 'https://openalex.org/W2166343885'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2169537425'
+                    - 'https://openalex.org/W2214651920'
+                    - 'https://openalex.org/W2217315849'
+                    - 'https://openalex.org/W2256732138'
+                    - 'https://openalex.org/W2300781706'
+                    - 'https://openalex.org/W2308000191'
+                    - 'https://openalex.org/W2336067451'
+                    - 'https://openalex.org/W2416542148'
+                    - 'https://openalex.org/W2535286602'
+                    - 'https://openalex.org/W2607382399'
+                    - 'https://openalex.org/W2610861664'
+                    - 'https://openalex.org/W2611096898'
+                    - 'https://openalex.org/W2614915054'
+                    - 'https://openalex.org/W2618420889'
+                    - 'https://openalex.org/W2763730878'
+                    - 'https://openalex.org/W2765649770'
+                    - 'https://openalex.org/W3164094929'
+                    - 'https://openalex.org/W4234152045'
+                    - 'https://openalex.org/W4237483257'
+                    - 'https://openalex.org/W4242553067'
+                    - 'https://openalex.org/W4298301462'
+                relatedAlexIds:
+                    - 'https://openalex.org/W638953695'
+                    - 'https://openalex.org/W2642723128'
+                    - 'https://openalex.org/W2391335452'
+                    - 'https://openalex.org/W2382913035'
+                    - 'https://openalex.org/W2366280361'
+                    - 'https://openalex.org/W2360876323'
+                    - 'https://openalex.org/W2206872286'
+                    - 'https://openalex.org/W2113447385'
+                    - 'https://openalex.org/W2109954054'
+                    - 'https://openalex.org/W1970764900'
+                openAlexId: W2754759105
+            googleScholar:
+                title: 'The brain compass: a perspective on how self-motion updates the head direction cell attractor'
+                authorNames: null
+                pdfLink: null
+                link: 'https://www.cell.com/neuron/fulltext/S0896-6273(17)31165-0'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 151.5
+            - 0
+            - 2018
+            - 0
+        scoreString: 1|151.5|0|2018|0
+        _:
+            title: 'The Brain Compass: A Perspective on How Self-Motion Updates the Head Direction Cell Attractor'
+            doi: 10.1016/j.neuron.2017.12.020
+            year: 2018
+            publisherFlags: null
+            authorNames:
+                - Jean Laurens
+                - Dora E. Angelaki
+            link: 'https://doi.org/10.1016/j.neuron.2017.12.020'
+            pdfLink: 'https://www.cell.com/article/S0896627317311650/pdf'
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: 'Neural Networks for Navigation: From Connections to Computations'
@@ -9409,3 +9612,14 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: Population dynamics of head-direction neurons during drift and reorientation
                 link: *ref_62
+    -
+        query: 'The Brain Compass: A Perspective on How Self-Motion Updates the Head Direction Cell Attractor'
+        score: .nan
+        dateTime: '2025-01-29T17:13:32.980Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: 'The Brain Compass: A Perspective on How Self-Motion Updates the Head Direction Cell Attractor'
+                link: null
+ 
