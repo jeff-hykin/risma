@@ -1467,9 +1467,10 @@ references:
     'Perspective Chapter: Role of the Hippocampal Formation in Navigation from a Simultaneous Location and Mapping Perspective': &ref_16
         notes:
             onReadingList: true
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -3458,8 +3459,9 @@ references:
                 link: null
                 pdfLink: null
                 cites: null
+                abstract: |
+                    To solve the spatial problems of mapping, localization and navigation, the mammalian lineage has developed striking spatial representations. One important spatial representation is the Nobel-prize winning grid cells: neurons that represent self-location, a local and aperiodic quantity, with seemingly bizarre non-local and spatially periodic activity patterns of a few discrete periods. Why has the mammalian lineage learnt this peculiar grid representation? Mathematical analysis suggests that this multi-periodic representation has excellent properties as an algebraic code with high capacity and intrinsic error-correction, but to date, synthesis of multi-modular grid cells in deep recurrent neural networks remains absent. In this work, we begin by identifying key insights from four families of approaches to answering the grid cell question: dynamical systems, coding theory, function optimization and supervised deep learning. We then leverage our insights to propose a new approach that elegantly combines the strengths of all four approaches. Our approach is a self-supervised learning (SSL) framework - including data, data augmentations, loss functions and a network architecture - motivated from a normative perspective, with no access to supervised position information. Without making assumptions about internal or readout representations, we show that multiple grid cell modules can emerge in networks trained on our SSL framework and that the networks generalize significantly beyond their training distribution. This work contains insights for neuroscientists interested in the origins of grid cells as well as machine learning researchers interested in novel SSL frameworks.
                 citedBy: null
-                abstract: null
             crossref:
                 doi: null
             openAlex: {}
@@ -3497,8 +3499,9 @@ references:
             link: 'https://proceedings.neurips.cc/paper_files/paper/2023/hash/4846257e355f6923fc2a1fbe35099e91-Abstract-Conference.html'
             pdfLink: 'https://proceedings.neurips.cc/paper_files/paper/2023/file/4846257e355f6923fc2a1fbe35099e91-Paper-Conference.pdf'
             cites: null
+            abstract: |
+                To solve the spatial problems of mapping, localization and navigation, the mammalian lineage has developed striking spatial representations. One important spatial representation is the Nobel-prize winning grid cells: neurons that represent self-location, a local and aperiodic quantity, with seemingly bizarre non-local and spatially periodic activity patterns of a few discrete periods. Why has the mammalian lineage learnt this peculiar grid representation? Mathematical analysis suggests that this multi-periodic representation has excellent properties as an algebraic code with high capacity and intrinsic error-correction, but to date, synthesis of multi-modular grid cells in deep recurrent neural networks remains absent. In this work, we begin by identifying key insights from four families of approaches to answering the grid cell question: dynamical systems, coding theory, function optimization and supervised deep learning. We then leverage our insights to propose a new approach that elegantly combines the strengths of all four approaches. Our approach is a self-supervised learning (SSL) framework - including data, data augmentations, loss functions and a network architecture - motivated from a normative perspective, with no access to supervised position information. Without making assumptions about internal or readout representations, we show that multiple grid cell modules can emerge in networks trained on our SSL framework and that the networks generalize significantly beyond their training distribution. This work contains insights for neuroscientists interested in the origins of grid cells as well as machine learning researchers interested in novel SSL frameworks.
             citedBy: null
-            abstract: null
     Time series forecasting with quantum machine learning architectures: &ref_34
         notes:
             resumeStatus: irrelevent|title
@@ -5429,7 +5432,7 @@ references:
             abstract: null
     'Neural Networks for Navigation: From Connections to Computations': &ref_0
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -5440,6 +5443,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:26:18.970Z'
+                sawTitle: '2025-02-11T22:50:43.049Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -5682,6 +5686,8 @@ references:
         notes:
             isFavorite: true
             category: crossField
+            keyTags:
+                - hasCode
             resumeStatus: super-relevent|title
             comment: this is one I read
             reasonsRelevant:
@@ -7530,6 +7536,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T16:26:30.358Z'
+                sawTitle: '2025-02-11T22:50:49.684Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -8555,9 +8562,10 @@ references:
             abstract: null
     Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics: &ref_60
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -8566,6 +8574,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T16:38:31.272Z'
+                sawTitle: '2025-02-11T22:50:31.771Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -9064,7 +9073,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    'The brain compass: a perspective on how self-motion updates the head direction cell attractor':
+    'The Brain Compass: A Perspective on How Self-Motion Updates the Head Direction Cell Attractor': &ref_63
         notes:
             category: navCellExplain
             keyTags:
@@ -9073,7 +9082,7 @@ references:
                 - visual landmarks
                 - no-code
             resumeStatus: unseen|title
-            comment: 'Seems easier to read than the 2023 Nature paper. Is cited by the NeuroSLAM paper'
+            comment: Seems easier to read than the 2023 Nature paper. Is cited by the NeuroSLAM paper
             reasonsRelevant: []
             reasonsNotRelevant: []
             customKeywords: []
@@ -9264,6 +9273,1045 @@ references:
                 - Dora E. Angelaki
             link: 'https://doi.org/10.1016/j.neuron.2017.12.020'
             pdfLink: 'https://www.cell.com/article/S0896627317311650/pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    A Place Cell Model for Spatio-Temporal Navigation Learning with LSTM: &ref_66
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.669Z'
+                sawTitle: '2025-02-11T22:50:11.967Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/ijcnn60899.2024.10650241
+            openAlex:
+                doi: 'https://doi.org/10.1109/ijcnn60899.2024.10650241'
+                title: A Place Cell Model for Spatio-Temporal Navigation Learning with LSTM
+                abstract: null
+                concepts:
+                    - multimodal machine learning applications
+                    - advanced image and video retrieval techniques
+                    - distributed control multi-agent systems
+                    - computer vision and pattern recognition
+                    - computer networks and communications
+                    - computer science
+                    - artificial intelligence
+                year: 2024
+                authorNames:
+                    - Thiago Emannuel Medeiros
+                    - Alfredo Weitzenfeld
+                link: 'https://doi.org/10.1109/ijcnn60899.2024.10650241'
+                pdfLink: null
+                citationCount: 0
+                citedAlexIds:
+                    - 'https://openalex.org/W2030396712'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2064675550'
+                    - 'https://openalex.org/W2107878631'
+                    - 'https://openalex.org/W2165971697'
+                    - 'https://openalex.org/W2171865010'
+                    - 'https://openalex.org/W4304693917'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4396701345'
+                    - 'https://openalex.org/W4396696052'
+                    - 'https://openalex.org/W4395014643'
+                    - 'https://openalex.org/W4391375266'
+                    - 'https://openalex.org/W2748952813'
+                    - 'https://openalex.org/W2390279801'
+                    - 'https://openalex.org/W2382290278'
+                    - 'https://openalex.org/W2376932109'
+                    - 'https://openalex.org/W2358668433'
+                    - 'https://openalex.org/W2001405890'
+                openAlexId: W4402353457
+            googleScholar:
+                title: A Place Cell Model for Spatio-Temporal Navigation Learning with LSTM
+                authorNames:
+                    - T Medeiros
+                    - A Weitzenfeld
+                pdfLink: null
+                link: 'https://ieeexplore.ieee.org/abstract/document/10650241/'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: '2024 International Joint, 2024'
+                year: 2024
+        score:
+            - 1
+            - 309
+            - 1
+            - 2024
+            - 0
+        scoreString: 1|309|1|2024|0
+        _:
+            title: A Place Cell Model for Spatio-Temporal Navigation Learning with LSTM
+            doi: 10.1109/ijcnn60899.2024.10650241
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - Thiago Emannuel Medeiros
+                - Alfredo Weitzenfeld
+            link: 'https://doi.org/10.1109/ijcnn60899.2024.10650241'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    'Decoding the Cognitive map: Learning place cells and remapping': &ref_70
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.670Z'
+                sawTitle: '2025-02-11T22:50:28.708Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.7554/elife.99302
+            openAlex:
+                doi: 'https://doi.org/10.7554/elife.99302'
+                title: 'Decoding the Cognitive map: Learning place cells and remapping'
+                abstract: null
+                concepts:
+                    - memory and neural mechanisms
+                    - zebrafish biomedical research applications
+                    - neuroscience and neuropharmacology research
+                    - cognitive neuroscience
+                    - cell biology
+                    - cellular and molecular neuroscience
+                    - place cell
+                    - cognitive map
+                    - encode
+                    - position (finance)
+                    - grid cell
+                    - computer science
+                    - decoding methods
+                    - grid
+                    - cluster analysis
+                    - artificial intelligence
+                    - cognition
+                    - hippocampal formation
+                    - algorithm
+                    - neuroscience
+                    - mathematics
+                    - biology
+                    - biochemistry
+                    - geometry
+                    - finance
+                    - gene
+                    - economics
+                year: 2024
+                authorNames:
+                    - Markus Borud Pettersen
+                    - Vemund Sigmundson Schøyen
+                    - Anders Malthe‐Sørenssen
+                    - Mikkel Elle Lepperød
+                link: 'https://doi.org/10.7554/elife.99302'
+                pdfLink: null
+                citationCount: 1
+                citedAlexIds:
+                    - 'https://openalex.org/W1540763494'
+                    - 'https://openalex.org/W1575194766'
+                    - 'https://openalex.org/W1585564530'
+                    - 'https://openalex.org/W1968023011'
+                    - 'https://openalex.org/W1968533788'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W2000214310'
+                    - 'https://openalex.org/W2014792483'
+                    - 'https://openalex.org/W2021077578'
+                    - 'https://openalex.org/W2029210342'
+                    - 'https://openalex.org/W2037628926'
+                    - 'https://openalex.org/W2046471865'
+                    - 'https://openalex.org/W2052258172'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2062509058'
+                    - 'https://openalex.org/W2067933183'
+                    - 'https://openalex.org/W2075376711'
+                    - 'https://openalex.org/W2078023722'
+                    - 'https://openalex.org/W2079390801'
+                    - 'https://openalex.org/W2084588382'
+                    - 'https://openalex.org/W2086967399'
+                    - 'https://openalex.org/W2087298647'
+                    - 'https://openalex.org/W2097816771'
+                    - 'https://openalex.org/W2123213117'
+                    - 'https://openalex.org/W2126079698'
+                    - 'https://openalex.org/W2132238259'
+                    - 'https://openalex.org/W2147027939'
+                    - 'https://openalex.org/W2151990639'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2323385084'
+                    - 'https://openalex.org/W2599683001'
+                    - 'https://openalex.org/W2800142021'
+                    - 'https://openalex.org/W2854445389'
+                    - 'https://openalex.org/W2952062681'
+                    - 'https://openalex.org/W3103493959'
+                    - 'https://openalex.org/W3104513413'
+                    - 'https://openalex.org/W3137247196'
+                    - 'https://openalex.org/W4212774754'
+                    - 'https://openalex.org/W4243930556'
+                    - 'https://openalex.org/W4293212596'
+                    - 'https://openalex.org/W4295312788'
+                    - 'https://openalex.org/W4307583652'
+                    - 'https://openalex.org/W4309949331'
+                    - 'https://openalex.org/W4380879622'
+                    - 'https://openalex.org/W4387211197'
+                    - 'https://openalex.org/W4387456977'
+                    - 'https://openalex.org/W4388515013'
+                    - 'https://openalex.org/W4391514077'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4309949331'
+                    - 'https://openalex.org/W3131925626'
+                    - 'https://openalex.org/W3121330344'
+                    - 'https://openalex.org/W2805030143'
+                    - 'https://openalex.org/W2559315176'
+                    - 'https://openalex.org/W1978034102'
+                    - 'https://openalex.org/W1968023011'
+                    - 'https://openalex.org/W192771979'
+                    - 'https://openalex.org/W1761154391'
+                    - 'https://openalex.org/W1527692558'
+                openAlexId: W4400726942
+            googleScholar:
+                title: 'Decoding the Cognitive map: Learning place cells and remapping'
+                authorNames:
+                    - MB Pettersen
+                    - VS Schyen
+                    - A Malthe-Srenssen
+                pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2024/03/25/2024.03.14.585049.full.pdf'
+                link: 'https://www.biorxiv.org/content/10.1101/2024.03.14.585049.abstract'
+                citationId: '7880143128613348340'
+                multiArticleId: '7880143128613348340'
+                citedByLink: 'https://scholar.google.com//scholar?cites=7880143128613348340&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'bioRxiv, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=7880143128613348340&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 1
+        score:
+            - 1
+            - 303
+            - 1
+            - 2024
+            - 0
+        scoreString: 1|303|1|2024|0
+        _:
+            title: 'Decoding the Cognitive map: Learning place cells and remapping'
+            doi: 10.7554/elife.99302
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - Markus Borud Pettersen
+                - Vemund Sigmundson Schøyen
+                - Anders Malthe‐Sørenssen
+                - Mikkel Elle Lepperød
+            link: 'https://doi.org/10.7554/elife.99302'
+            pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2024/03/25/2024.03.14.585049.full.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Learning Place Cell Representations and Context-Dependent Remapping: &ref_65
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.670Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: Learning Place Cell Representations and Context-Dependent Remapping
+                authorNames:
+                    - M Pettersen
+                    - F Rogge
+                    - ME Lepperd- The Thirty
+                pdfLink: 'https://openreview.net/pdf?id=7ESHFpqjNO'
+                link: 'https://openreview.net/forum?id=7ESHFpqjNO'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: eighth Annual
+        score:
+            - 1
+            - 151.5
+            - 2
+            - 2016
+            - 0
+        scoreString: 1|151.5|2|2016|0
+        _:
+            title: Learning Place Cell Representations and Context-Dependent Remapping
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames:
+                - M Pettersen
+                - F Rogge
+                - ME Lepperd- The Thirty
+            link: 'https://openreview.net/forum?id=7ESHFpqjNO'
+            pdfLink: 'https://openreview.net/pdf?id=7ESHFpqjNO'
+            cites: null
+            citedBy: null
+            abstract: null
+    Studying Place Cell Formation and Remapping in an Artificial Neural Network Model: &ref_68
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.670Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: Studying Place Cell Formation and Remapping in an Artificial Neural Network Model
+                authorNames:
+                    - MB Pettersen
+                pdfLink: 'https://www.duo.uio.no/bitstream/handle/10852/98024/5/Master_Thesis_Markus_Pettersen.pdf'
+                link: 'https://www.duo.uio.no/bitstream/handle/10852/98024/5/Master_Thesis_Markus_Pettersen.pdf'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 151.5
+            - 0
+            - 2016
+            - 0
+        scoreString: 1|151.5|0|2016|0
+        _:
+            title: Studying Place Cell Formation and Remapping in an Artificial Neural Network Model
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames:
+                - MB Pettersen
+            link: 'https://www.duo.uio.no/bitstream/handle/10852/98024/5/Master_Thesis_Markus_Pettersen.pdf'
+            pdfLink: 'https://www.duo.uio.no/bitstream/handle/10852/98024/5/Master_Thesis_Markus_Pettersen.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Do place cells dream of conditional probabilities? Learning Neural Nystr\" om representations: &ref_64
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.670Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: Do place cells dream of conditional probabilities? Learning Neural Nystr\" om representations
+                authorNames:
+                    - M Tepper
+                pdfLink: 'https://arxiv.org/pdf/1906.01102'
+                link: 'https://arxiv.org/abs/1906.01102'
+                citationId: '9470606613339996945'
+                multiArticleId: '9470606613339996945'
+                citedByLink: 'https://scholar.google.com//scholar?cites=9470606613339996945&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'arXiv preprint arXiv:1906.01102, 2019'
+                year: 2019
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=9470606613339996945&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 2
+        score:
+            - 1
+            - 151.5
+            - 2
+            - 2019
+            - 0
+        scoreString: 1|151.5|2|2019|0
+        _:
+            title: Do place cells dream of conditional probabilities? Learning Neural Nystr\" om representations
+            doi: null
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - M Tepper
+            link: 'https://arxiv.org/abs/1906.01102'
+            pdfLink: 'https://arxiv.org/pdf/1906.01102'
+            cites: null
+            citedBy: null
+            abstract: null
+    'Trading Place for Space: Increasing Location Resolution Reduces Contextual Capacity in Hippocampal Codes': &ref_69
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.670Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1101/2024.10.29.620785
+            openAlex:
+                doi: 'https://doi.org/10.1101/2024.10.29.620785'
+                title: 'Trading Place for Space: Increasing Location Resolution Reduces Contextual Capacity in Hippocampal Codes'
+                abstract: null
+                concepts:
+                    - memory and neural mechanisms
+                    - neuroscience and neuropharmacology research
+                    - neuroinflammation and neurodegeneration mechanisms
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - neurology
+                    - place cell
+                    - cognitive map
+                    - representation
+                    - position (finance)
+                    - context (archaeology)
+                    - computer science
+                    - population
+                    - representation (politics)
+                    - perception
+                    - hippocampus
+                    - space (punctuation)
+                    - hippocampal formation
+                    - neuroscience
+                    - cognition
+                    - psychology
+                    - geography
+                    - operating system
+                    - demography
+                    - archaeology
+                    - finance
+                    - sociology
+                    - politics
+                    - political science
+                    - law
+                    - economics
+                year: 2024
+                authorNames:
+                    - Spencer Rooke
+                    - Zhaoze Wang
+                    - Ronald W. DiTullio
+                    - Vijay Balasubramanian
+                link: 'https://doi.org/10.1101/2024.10.29.620785'
+                pdfLink: null
+                citationCount: 0
+                citedAlexIds:
+                    - 'https://openalex.org/W1573826536'
+                    - 'https://openalex.org/W1585564530'
+                    - 'https://openalex.org/W1928342057'
+                    - 'https://openalex.org/W196008094'
+                    - 'https://openalex.org/W1963920688'
+                    - 'https://openalex.org/W1966390421'
+                    - 'https://openalex.org/W1971392964'
+                    - 'https://openalex.org/W1977694851'
+                    - 'https://openalex.org/W1984214648'
+                    - 'https://openalex.org/W1986778626'
+                    - 'https://openalex.org/W2001783678'
+                    - 'https://openalex.org/W2003864474'
+                    - 'https://openalex.org/W2004305039'
+                    - 'https://openalex.org/W2016454630'
+                    - 'https://openalex.org/W2017399882'
+                    - 'https://openalex.org/W2024187681'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2052918792'
+                    - 'https://openalex.org/W2061922686'
+                    - 'https://openalex.org/W2086967399'
+                    - 'https://openalex.org/W2092764200'
+                    - 'https://openalex.org/W2099630522'
+                    - 'https://openalex.org/W2101991479'
+                    - 'https://openalex.org/W2105089471'
+                    - 'https://openalex.org/W2133285226'
+                    - 'https://openalex.org/W2136072088'
+                    - 'https://openalex.org/W2137753887'
+                    - 'https://openalex.org/W2142449474'
+                    - 'https://openalex.org/W2164439699'
+                    - 'https://openalex.org/W2171802424'
+                    - 'https://openalex.org/W2178512648'
+                    - 'https://openalex.org/W2304387544'
+                    - 'https://openalex.org/W2410446460'
+                    - 'https://openalex.org/W2962899493'
+                    - 'https://openalex.org/W2979858600'
+                    - 'https://openalex.org/W2990041000'
+                    - 'https://openalex.org/W3004639598'
+                    - 'https://openalex.org/W3034035428'
+                    - 'https://openalex.org/W3092142510'
+                    - 'https://openalex.org/W3165836545'
+                    - 'https://openalex.org/W4200206940'
+                    - 'https://openalex.org/W4246364355'
+                    - 'https://openalex.org/W4285097747'
+                    - 'https://openalex.org/W4290613739'
+                    - 'https://openalex.org/W4364370087'
+                    - 'https://openalex.org/W4400058250'
+                    - 'https://openalex.org/W4401510604'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4385683675'
+                    - 'https://openalex.org/W4309949331'
+                    - 'https://openalex.org/W3043853885'
+                    - 'https://openalex.org/W3006011994'
+                    - 'https://openalex.org/W2391750868'
+                    - 'https://openalex.org/W2170688882'
+                    - 'https://openalex.org/W2096876955'
+                    - 'https://openalex.org/W2090370544'
+                    - 'https://openalex.org/W2082965072'
+                    - 'https://openalex.org/W17166845'
+                openAlexId: W4403854924
+            googleScholar:
+                title: 'Trading Place for Space: Increasing Location Resolution Reduces Contextual Capacity in Hippocampal Codes'
+                authorNames:
+                    - S Rooke
+                    - Z Wang
+                    - RW Di Tullio
+                    - V Balasubramanian
+                pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2024/10/29/2024.10.29.620785.full.pdf'
+                link: 'https://www.biorxiv.org/content/10.1101/2024.10.29.620785.abstract'
+                citationId: null
+                multiArticleId: '6398863969371870250'
+                citedByLink: null
+                publisherInfo: 'bioRxiv, 2024'
+                year: 2024
+        score:
+            - 0
+            - 270
+            - 0
+            - 2024
+            - 0
+        scoreString: 0|270|0|2024|0
+        _:
+            title: 'Trading Place for Space: Increasing Location Resolution Reduces Contextual Capacity in Hippocampal Codes'
+            doi: 10.1101/2024.10.29.620785
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - Spencer Rooke
+                - Zhaoze Wang
+                - Ronald W. DiTullio
+                - Vijay Balasubramanian
+            link: 'https://doi.org/10.1101/2024.10.29.620785'
+            pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2024/10/29/2024.10.29.620785.full.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Self-supervised learning of scale-invariant neural representations of space and time: &ref_72
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.670Z'
+                sawTitle: '2025-02-11T22:50:23.115Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1007/s10827-024-00891-1
+            openAlex:
+                doi: 'https://doi.org/10.1007/s10827-024-00891-1'
+                title: Self-supervised learning of scale-invariant neural representations of space and time
+                abstract: null
+                concepts:
+                    - neural networks and applications
+                    - neural dynamics and brain function
+                    - cognitive science and education research
+                    - artificial intelligence
+                    - cognitive neuroscience
+                    - theory of computation
+                    - computer science
+                    - scale (ratio)
+                    - cognitive science
+                    - artificial neural network
+                    - machine learning
+                    - psychology
+                    - physics
+                    - algorithm
+                    - quantum mechanics
+                year: 2025
+                authorNames:
+                    - Abolfazl Alipour
+                    - Thomas W. James
+                    - Joshua W. Brown
+                    - Zoran Tiganj
+                link: 'https://doi.org/10.1007/s10827-024-00891-1'
+                pdfLink: null
+                citationCount: 0
+                citedAlexIds:
+                    - 'https://openalex.org/W129946528'
+                    - 'https://openalex.org/W1512234833'
+                    - 'https://openalex.org/W1542589715'
+                    - 'https://openalex.org/W1615091949'
+                    - 'https://openalex.org/W1677182931'
+                    - 'https://openalex.org/W1828552290'
+                    - 'https://openalex.org/W1950306692'
+                    - 'https://openalex.org/W1964521120'
+                    - 'https://openalex.org/W1977434859'
+                    - 'https://openalex.org/W1978446995'
+                    - 'https://openalex.org/W1980698104'
+                    - 'https://openalex.org/W2001788447'
+                    - 'https://openalex.org/W2003765916'
+                    - 'https://openalex.org/W2009513819'
+                    - 'https://openalex.org/W2011074553'
+                    - 'https://openalex.org/W2012493789'
+                    - 'https://openalex.org/W2016085394'
+                    - 'https://openalex.org/W2023366928'
+                    - 'https://openalex.org/W2023699349'
+                    - 'https://openalex.org/W2027415025'
+                    - 'https://openalex.org/W2038156236'
+                    - 'https://openalex.org/W2042307141'
+                    - 'https://openalex.org/W2058129430'
+                    - 'https://openalex.org/W2060694206'
+                    - 'https://openalex.org/W2063154715'
+                    - 'https://openalex.org/W2069428670'
+                    - 'https://openalex.org/W2075181276'
+                    - 'https://openalex.org/W2079390801'
+                    - 'https://openalex.org/W2081354168'
+                    - 'https://openalex.org/W2083922453'
+                    - 'https://openalex.org/W2087298647'
+                    - 'https://openalex.org/W2092013571'
+                    - 'https://openalex.org/W2092580449'
+                    - 'https://openalex.org/W2095984446'
+                    - 'https://openalex.org/W2096876955'
+                    - 'https://openalex.org/W2101782048'
+                    - 'https://openalex.org/W2103853773'
+                    - 'https://openalex.org/W2115227909'
+                    - 'https://openalex.org/W2120895008'
+                    - 'https://openalex.org/W2135065060'
+                    - 'https://openalex.org/W2145889472'
+                    - 'https://openalex.org/W2146600851'
+                    - 'https://openalex.org/W2148741637'
+                    - 'https://openalex.org/W2149422514'
+                    - 'https://openalex.org/W2150301186'
+                    - 'https://openalex.org/W2156985666'
+                    - 'https://openalex.org/W2163068658'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2167462730'
+                    - 'https://openalex.org/W2172122397'
+                    - 'https://openalex.org/W2413351379'
+                    - 'https://openalex.org/W2416064914'
+                    - 'https://openalex.org/W2464751873'
+                    - 'https://openalex.org/W2527978657'
+                    - 'https://openalex.org/W2557342183'
+                    - 'https://openalex.org/W2599683001'
+                    - 'https://openalex.org/W2736189377'
+                    - 'https://openalex.org/W2753444673'
+                    - 'https://openalex.org/W2761617879'
+                    - 'https://openalex.org/W2773393927'
+                    - 'https://openalex.org/W2788563959'
+                    - 'https://openalex.org/W2799577095'
+                    - 'https://openalex.org/W2800142021'
+                    - 'https://openalex.org/W2854445389'
+                    - 'https://openalex.org/W2885859974'
+                    - 'https://openalex.org/W2889422159'
+                    - 'https://openalex.org/W2893325263'
+                    - 'https://openalex.org/W2949966526'
+                    - 'https://openalex.org/W2951280942'
+                    - 'https://openalex.org/W2952062681'
+                    - 'https://openalex.org/W2953020290'
+                    - 'https://openalex.org/W3047556643'
+                    - 'https://openalex.org/W3083361164'
+                    - 'https://openalex.org/W3092505947'
+                    - 'https://openalex.org/W3097122371'
+                    - 'https://openalex.org/W3100397196'
+                    - 'https://openalex.org/W3108540392'
+                    - 'https://openalex.org/W3133335466'
+                    - 'https://openalex.org/W3169139819'
+                    - 'https://openalex.org/W4200206940'
+                    - 'https://openalex.org/W4200503563'
+                    - 'https://openalex.org/W4236786787'
+                    - 'https://openalex.org/W4252767703'
+                    - 'https://openalex.org/W4289278023'
+                    - 'https://openalex.org/W4296794724'
+                    - 'https://openalex.org/W4306406729'
+                    - 'https://openalex.org/W4307698912'
+                    - 'https://openalex.org/W4385482720'
+                    - 'https://openalex.org/W4385488609'
+                    - 'https://openalex.org/W4387540759'
+                    - 'https://openalex.org/W4406216443'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4309231192'
+                    - 'https://openalex.org/W4250775169'
+                    - 'https://openalex.org/W2961085424'
+                    - 'https://openalex.org/W2391251536'
+                    - 'https://openalex.org/W2375008505'
+                    - 'https://openalex.org/W2362198218'
+                    - 'https://openalex.org/W2064563243'
+                    - 'https://openalex.org/W2019521278'
+                    - 'https://openalex.org/W1984922432'
+                    - 'https://openalex.org/W1982750869'
+                openAlexId: W4406726496
+            googleScholar:
+                title: Self-supervised learning of scale-invariant neural representations of space and time
+                authorNames:
+                    - A Alipour
+                    - TW James
+                    - JW Brown
+                    - Z Tiganj
+                pdfLink: null
+                link: 'https://link.springer.com/article/10.1007/s10827-024-00891-1'
+                citationId: null
+                multiArticleId: '15377467826043123069'
+                citedByLink: null
+                publisherInfo: 'Journal of Computational, 2025'
+                year: 2025
+        score:
+            - 1
+            - 303
+            - 2
+            - 2025
+            - 0
+        scoreString: 1|303|2|2025|0
+        _:
+            title: Self-supervised learning of scale-invariant neural representations of space and time
+            doi: 10.1007/s10827-024-00891-1
+            year: 2025
+            publisherFlags: null
+            authorNames:
+                - Abolfazl Alipour
+                - Thomas W. James
+                - Joshua W. Brown
+                - Zoran Tiganj
+            link: 'https://doi.org/10.1007/s10827-024-00891-1'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    A Preliminary Study on Grid Cells and Transformers.: &ref_67
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.670Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: A Preliminary Study on Grid Cells and Transformers.
+                authorNames:
+                    - FNU Vinay Kumar
+                pdfLink: 'https://repository.lib.ncsu.edu/bitstream/handle/1840.20/39841/etd.pdf?sequence=1'
+                link: 'https://repository.lib.ncsu.edu/bitstream/handle/1840.20/39841/etd.pdf?sequence=1'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 151.5
+            - 1
+            - 2016
+            - 0
+        scoreString: 1|151.5|1|2016|0
+        _:
+            title: A Preliminary Study on Grid Cells and Transformers.
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames:
+                - FNU Vinay Kumar
+            link: 'https://repository.lib.ncsu.edu/bitstream/handle/1840.20/39841/etd.pdf?sequence=1'
+            pdfLink: 'https://repository.lib.ncsu.edu/bitstream/handle/1840.20/39841/etd.pdf?sequence=1'
+            cites: null
+            citedBy: null
+            abstract: null
+    'VPRTempo: A Fast Temporally Encoded Spiking Neural Network for Visual Place Recognition': &ref_71
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T22:48:36.114Z'
+                originalQuery: '"place cells" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T22:48:36.670Z'
+                sawTitle: '2025-02-11T22:50:18.623Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/icra57147.2024.10610918
+            openAlex:
+                doi: 'https://doi.org/10.1109/icra57147.2024.10610918'
+                title: 'VPRTempo: A Fast Temporally Encoded Spiking Neural Network for Visual Place Recognition'
+                abstract: null
+                concepts:
+                    - advanced memory and neural computing
+                    - robotics and sensor-based localization
+                    - ccd and cmos imaging sensors
+                    - electrical and electronic engineering
+                    - aerospace engineering
+                    - computer science
+                    - spiking neural network
+                    - artificial intelligence
+                    - artificial neural network
+                    - pattern recognition (psychology)
+                    - computer vision
+                    - speech recognition
+                year: 2024
+                authorNames:
+                    - Adam Hines
+                    - Peter Stratton
+                    - Michael Milford
+                    - Tobias Fischer
+                link: 'https://doi.org/10.1109/icra57147.2024.10610918'
+                pdfLink: 'https://arxiv.org/pdf/2309.10225'
+                citationCount: 2
+                citedAlexIds:
+                    - 'https://openalex.org/W1498436455'
+                    - 'https://openalex.org/W1604973310'
+                    - 'https://openalex.org/W2003465353'
+                    - 'https://openalex.org/W2006581331'
+                    - 'https://openalex.org/W2045257906'
+                    - 'https://openalex.org/W2052055672'
+                    - 'https://openalex.org/W2073761981'
+                    - 'https://openalex.org/W2107662531'
+                    - 'https://openalex.org/W2110405746'
+                    - 'https://openalex.org/W2139741681'
+                    - 'https://openalex.org/W2146881125'
+                    - 'https://openalex.org/W2147101007'
+                    - 'https://openalex.org/W2150884987'
+                    - 'https://openalex.org/W2156903694'
+                    - 'https://openalex.org/W2284029970'
+                    - 'https://openalex.org/W2558027072'
+                    - 'https://openalex.org/W2610617716'
+                    - 'https://openalex.org/W2735936361'
+                    - 'https://openalex.org/W2765138650'
+                    - 'https://openalex.org/W2793805028'
+                    - 'https://openalex.org/W2896919074'
+                    - 'https://openalex.org/W2904019300'
+                    - 'https://openalex.org/W2908544477'
+                    - 'https://openalex.org/W2914993068'
+                    - 'https://openalex.org/W2951019013'
+                    - 'https://openalex.org/W2966081953'
+                    - 'https://openalex.org/W2969331319'
+                    - 'https://openalex.org/W2984478347'
+                    - 'https://openalex.org/W3003876377'
+                    - 'https://openalex.org/W3036078768'
+                    - 'https://openalex.org/W3090895685'
+                    - 'https://openalex.org/W3117297562'
+                    - 'https://openalex.org/W3123494408'
+                    - 'https://openalex.org/W3124676898'
+                    - 'https://openalex.org/W3130821023'
+                    - 'https://openalex.org/W3131046763'
+                    - 'https://openalex.org/W3134784623'
+                    - 'https://openalex.org/W3163149666'
+                    - 'https://openalex.org/W3173736705'
+                    - 'https://openalex.org/W3174973222'
+                    - 'https://openalex.org/W3183719272'
+                    - 'https://openalex.org/W3185176958'
+                    - 'https://openalex.org/W3187923576'
+                    - 'https://openalex.org/W3193561750'
+                    - 'https://openalex.org/W3194466034'
+                    - 'https://openalex.org/W3197667407'
+                    - 'https://openalex.org/W3200857086'
+                    - 'https://openalex.org/W3201013180'
+                    - 'https://openalex.org/W3201524232'
+                    - 'https://openalex.org/W3201870057'
+                    - 'https://openalex.org/W3207611614'
+                    - 'https://openalex.org/W3214253320'
+                    - 'https://openalex.org/W4206310799'
+                    - 'https://openalex.org/W4212774754'
+                    - 'https://openalex.org/W4225108957'
+                    - 'https://openalex.org/W4283749998'
+                    - 'https://openalex.org/W4289552788'
+                    - 'https://openalex.org/W4312854990'
+                    - 'https://openalex.org/W4319300119'
+                    - 'https://openalex.org/W4320515935'
+                    - 'https://openalex.org/W4376111524'
+                    - 'https://openalex.org/W4383066471'
+                    - 'https://openalex.org/W4386076349'
+                    - 'https://openalex.org/W4386253979'
+                    - 'https://openalex.org/W4386952483'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4400065156'
+                    - 'https://openalex.org/W4388827557'
+                    - 'https://openalex.org/W4387877594'
+                    - 'https://openalex.org/W4377969828'
+                    - 'https://openalex.org/W3126544799'
+                    - 'https://openalex.org/W3111828357'
+                    - 'https://openalex.org/W3104333581'
+                    - 'https://openalex.org/W3018398156'
+                    - 'https://openalex.org/W2920832517'
+                    - 'https://openalex.org/W2542565870'
+                openAlexId: W4401416236
+            googleScholar:
+                title: 'VPRTempo: A fast temporally encoded spiking neural network for visual place recognition'
+                authorNames:
+                    - AD Hines
+                    - PG Stratton
+                    - M Milford
+                pdfLink: 'https://arxiv.org/pdf/2309.10225'
+                link: 'https://ieeexplore.ieee.org/abstract/document/10610918/'
+                citationId: '14579390010192727356'
+                multiArticleId: '14579390010192727356'
+                citedByLink: 'https://scholar.google.com//scholar?cites=14579390010192727356&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: '2024 IEEE International, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=14579390010192727356&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 6
+        score:
+            - 1
+            - 306
+            - 1
+            - 2024
+            - 0
+        scoreString: 1|306|1|2024|0
+        _:
+            title: 'VPRTempo: A Fast Temporally Encoded Spiking Neural Network for Visual Place Recognition'
+            doi: 10.1109/icra57147.2024.10610918
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - Adam Hines
+                - Peter Stratton
+                - Michael Milford
+                - Tobias Fischer
+            link: 'https://doi.org/10.1109/icra57147.2024.10610918'
+            pdfLink: 'https://arxiv.org/pdf/2309.10225'
             cites: null
             citedBy: null
             abstract: null
@@ -9621,5 +10669,50 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: 'The Brain Compass: A Perspective on How Self-Motion Updates the Head Direction Cell Attractor'
-                link: null
- 
+                link: *ref_63
+    -
+        query: '"place cells" "pytorch"'
+        score: .nan
+        dateTime: '2025-02-11T22:48:36.114Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: true
+                title: Self-supervised learning of representations for space generates multi-modular grid cells
+                link: *ref_32
+            -
+                hadBeenSeenBefore: false
+                title: Do place cells dream of conditional probabilities? Learning Neural Nystr\" om representations
+                link: *ref_64
+            -
+                hadBeenSeenBefore: false
+                title: Learning Place Cell Representations and Context-Dependent Remapping
+                link: *ref_65
+            -
+                hadBeenSeenBefore: false
+                title: A Place Cell Model for Spatio-Temporal Navigation Learning with LSTM
+                link: *ref_66
+            -
+                hadBeenSeenBefore: false
+                title: A Preliminary Study on Grid Cells and Transformers.
+                link: *ref_67
+            -
+                hadBeenSeenBefore: false
+                title: Studying Place Cell Formation and Remapping in an Artificial Neural Network Model
+                link: *ref_68
+            -
+                hadBeenSeenBefore: false
+                title: 'Trading Place for Space: Increasing Location Resolution Reduces Contextual Capacity in Hippocampal Codes'
+                link: *ref_69
+            -
+                hadBeenSeenBefore: false
+                title: 'Decoding the Cognitive map: Learning place cells and remapping'
+                link: *ref_70
+            -
+                hadBeenSeenBefore: false
+                title: 'VPRTempo: A Fast Temporally Encoded Spiking Neural Network for Visual Place Recognition'
+                link: *ref_71
+            -
+                hadBeenSeenBefore: false
+                title: Self-supervised learning of scale-invariant neural representations of space and time
+                link: *ref_72
