@@ -3437,7 +3437,7 @@ references:
     Self-supervised learning of representations for space generates multi-modular grid cells: &ref_32
         notes:
             resumeStatus: relevent|title
-            comment: ''
+            comment: 'This one doesnt mention head direction cells, grid cells or anthing similar. Its just SNN on a dataset'
             reasonsRelevant:
                 - title
             reasonsNotRelevant: []
@@ -9379,7 +9379,7 @@ references:
     'Decoding the Cognitive map: Learning place cells and remapping': &ref_70
         notes:
             resumeStatus: relevent|title
-            comment: ''
+            comment: This one mentions band cells and object vector cells
             reasonsRelevant:
                 - title
             reasonsNotRelevant: []
@@ -9402,7 +9402,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: null
+                abstract: 'Hippocampal place cells are known for their spatially selective firing and are believed to encode an animal’s location while forming part of a cognitive map of space. These cells exhibit marked tuning curve and rate changes when an animal’s environment is sufficiently manipulated, in a process known as remapping. Place cells are accompanied by many other spatially tuned cells such as border cells and grid cells, but how these cells interact during navigation and remapping is unknown. In this work, we build a normative place cell model wherein a neural network is tasked with accurate position reconstruction and path integration. Motivated by the notion of a cognitive map, the network’s position is estimated directly from its learned representations. To obtain a position estimate, we propose a non-trainable decoding scheme applied to network output units, inspired by the localized firing patterns of place cells. We find that output units learn place-like spatial representations, while upstream recurrent units become boundary-tuned. When the network is trained to perform the same task in multiple simulated environments, its place-like units learn to remap like biological place cells, displaying global, geometric and rate remapping. These remapping abilities appear to be supported by rate changes in upstream units. While the model does not learn grid-like units, its place cell centers form clusters organized in a hexagonal lattice in open fields. When we decode the center locations of CA1 place fields in mice, we find a similar clustering tendency. This suggests a potential mechanism for the interaction between place cells, border cells, and grid cells. Our model provides a normative framework for learning spatial representations previously reserved for biological place cells, providing new insight into place cell field formation and remapping.'
             crossref:
                 doi: 10.7554/elife.99302
             openAlex:
@@ -9543,7 +9543,7 @@ references:
             pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2024/03/25/2024.03.14.585049.full.pdf'
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'Hippocampal place cells are known for their spatially selective firing and are believed to encode an animal’s location while forming part of a cognitive map of space. These cells exhibit marked tuning curve and rate changes when an animal’s environment is sufficiently manipulated, in a process known as remapping. Place cells are accompanied by many other spatially tuned cells such as border cells and grid cells, but how these cells interact during navigation and remapping is unknown. In this work, we build a normative place cell model wherein a neural network is tasked with accurate position reconstruction and path integration. Motivated by the notion of a cognitive map, the network’s position is estimated directly from its learned representations. To obtain a position estimate, we propose a non-trainable decoding scheme applied to network output units, inspired by the localized firing patterns of place cells. We find that output units learn place-like spatial representations, while upstream recurrent units become boundary-tuned. When the network is trained to perform the same task in multiple simulated environments, its place-like units learn to remap like biological place cells, displaying global, geometric and rate remapping. These remapping abilities appear to be supported by rate changes in upstream units. While the model does not learn grid-like units, its place cell centers form clusters organized in a hexagonal lattice in open fields. When we decode the center locations of CA1 place fields in mice, we find a similar clustering tendency. This suggests a potential mechanism for the interaction between place cells, border cells, and grid cells. Our model provides a normative framework for learning spatial representations previously reserved for biological place cells, providing new insight into place cell field formation and remapping.'
     Learning Place Cell Representations and Context-Dependent Remapping: &ref_65
         notes:
             resumeStatus: unseen|title
@@ -10315,6 +10315,143 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    Object-vector coding in the medial entorhinal cortex: &ref_73
+        notes:
+            resumeStatus: unseen|title
+            comment: 'Good citation for Object-vector cells'
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-11T23:08:27.182Z'
+                originalQuery: Object-vector coding in the medial entorhinal cortex
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-11T23:08:28.211Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1038/s41586-019-1077-7
+            openAlex:
+                doi: 'https://doi.org/10.1038/s41586-019-1077-7'
+                title: Object-vector coding in the medial entorhinal cortex
+                abstract: null
+                concepts:
+                    - memory and neural mechanisms
+                    - neuroscience and neuropharmacology research
+                    - axon guidance and neuronal signaling
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - entorhinal cortex
+                    - grid cell
+                    - neural coding
+                    - computer science
+                    - coding (social sciences)
+                    - artificial intelligence
+                    - computer vision
+                    - neuroscience
+                    - hippocampus
+                    - grid
+                    - pattern recognition (psychology)
+                    - biology
+                    - mathematics
+                    - geometry
+                    - statistics
+                year: 2019
+                authorNames:
+                    - Øyvind Arne Høydal
+                    - Emilie Ranheim Skytøen
+                    - Sebastian O. Andersson
+                    - May‐Britt Moser
+                    - Edvard I Moser
+                link: 'https://doi.org/10.1038/s41586-019-1077-7'
+                pdfLink: null
+                citationCount: 268
+                citedAlexIds:
+                    - 'https://openalex.org/W1512234833'
+                    - 'https://openalex.org/W1585564530'
+                    - 'https://openalex.org/W1968533788'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W1977313778'
+                    - 'https://openalex.org/W1979697475'
+                    - 'https://openalex.org/W1987560912'
+                    - 'https://openalex.org/W1999349836'
+                    - 'https://openalex.org/W2014792483'
+                    - 'https://openalex.org/W2023768217'
+                    - 'https://openalex.org/W2027457149'
+                    - 'https://openalex.org/W2033832702'
+                    - 'https://openalex.org/W2037628926'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2079390801'
+                    - 'https://openalex.org/W2084588382'
+                    - 'https://openalex.org/W2092580449'
+                    - 'https://openalex.org/W2115227909'
+                    - 'https://openalex.org/W2123213117'
+                    - 'https://openalex.org/W2132495470'
+                    - 'https://openalex.org/W2147027939'
+                    - 'https://openalex.org/W2163948526'
+                    - 'https://openalex.org/W2165269820'
+                    - 'https://openalex.org/W2166846124'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2253328753'
+                    - 'https://openalex.org/W2577983519'
+                    - 'https://openalex.org/W2900523826'
+                    - 'https://openalex.org/W2951002351'
+                    - 'https://openalex.org/W2951255200'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4255358761'
+                    - 'https://openalex.org/W2385459031'
+                    - 'https://openalex.org/W2146367411'
+                    - 'https://openalex.org/W2111940573'
+                    - 'https://openalex.org/W2071334059'
+                    - 'https://openalex.org/W2038127357'
+                    - 'https://openalex.org/W2033518573'
+                    - 'https://openalex.org/W2004473215'
+                    - 'https://openalex.org/W1995540943'
+                    - 'https://openalex.org/W1976076281'
+                openAlexId: W2952062681
+            googleScholar:
+                title: Object-vector coding in the medial entorhinal cortex
+                authorNames: null
+                pdfLink: null
+                link: 'https://www.nature.com/articles/s41586-019-1077-7'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 0
+            - 135
+            - 0
+            - 2019
+            - 0
+        scoreString: 0|135|0|2019|0
+        _:
+            title: Object-vector coding in the medial entorhinal cortex
+            doi: 10.1038/s41586-019-1077-7
+            year: 2019
+            publisherFlags: null
+            authorNames:
+                - Øyvind Arne Høydal
+                - Emilie Ranheim Skytøen
+                - Sebastian O. Andersson
+                - May‐Britt Moser
+                - Edvard I Moser
+            link: 'https://doi.org/10.1038/s41586-019-1077-7'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: 'Neural Networks for Navigation: From Connections to Computations'
@@ -10716,3 +10853,13 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: Self-supervised learning of scale-invariant neural representations of space and time
                 link: *ref_72
+    -
+        query: Object-vector coding in the medial entorhinal cortex
+        score: .nan
+        dateTime: '2025-02-11T23:08:27.182Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Object-vector coding in the medial entorhinal cortex
+                link: *ref_73
