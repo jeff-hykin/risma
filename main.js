@@ -534,7 +534,7 @@ mainLoop: while (true) {
                     if (active == quit) {
                         continue mainLoop
                     }
-                    const {discoveryMethod,relatedArticles} = await getRelatedArticles(active, (index,total)=>mention(`got ${index} of ${total}`))
+                    const {discoveryMethod,relatedArticles} = await getRelatedArticles(active, (index,total)=>write(`got ${index} of ${total}\r`))
                     // await withSpinner("getting related articles", 
                     //     (mention)=>
                     // )

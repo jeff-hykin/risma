@@ -202,10 +202,11 @@ settings:
 references:
     'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features': &ref_4
         notes:
-            resumeStatus: super-relevent|title
+            resumeStatus: super-relevent|abstract
             comment: ''
             reasonsRelevant:
                 - title
+                - abstract
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -214,6 +215,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:26:59.208Z'
+                sawAbstract: '2025-02-25T02:10:13.418Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -225,7 +227,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: null
+                abstract: 'Intelligent navigation is a fundamental technology that enables unmanned systems to achieve autonomy in the intelligent era. However, existing navigation schemes suffer from high computational complexity and power consumption, as well as low robustness in complex or unknown environments. To address these challenges, this article proposes a novel 3-D brain-inspired simultaneous localization and mapping (SLAM) method, called oriented FAST and rotated BRIEF (ORB)-NeuroSLAM, based on the ORB features. The proposed method takes inspiration from the robust and low-power navigation capabilities of humans and animals. The ORB-NeuroSLAM leverages the ORB features of camera images to compute robot self-motion and visual cues. Then, continuous attractor neural networks (CANNs) model multilayered head-direction cells and 3-D grid cells that exist in animal brains. These cells are utilized jointly to represent the robot poses. Efficient and robust methods for loop closure detection and experience map construction were also developed. The proposed method was verified on ten KITTI data sets, and experimental results demonstrate that it outperforms state-of-the-art brain-inspired SLAM methods in terms of accuracy and efficiency. Additionally, it is comparable to the state-of-the-art visual SLAM method ORB-SLAM3.'
             crossref:
                 doi: null
             openAlex: {}
@@ -268,7 +270,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'Intelligent navigation is a fundamental technology that enables unmanned systems to achieve autonomy in the intelligent era. However, existing navigation schemes suffer from high computational complexity and power consumption, as well as low robustness in complex or unknown environments. To address these challenges, this article proposes a novel 3-D brain-inspired simultaneous localization and mapping (SLAM) method, called oriented FAST and rotated BRIEF (ORB)-NeuroSLAM, based on the ORB features. The proposed method takes inspiration from the robust and low-power navigation capabilities of humans and animals. The ORB-NeuroSLAM leverages the ORB features of camera images to compute robot self-motion and visual cues. Then, continuous attractor neural networks (CANNs) model multilayered head-direction cells and 3-D grid cells that exist in animal brains. These cells are utilized jointly to represent the robot poses. Efficient and robust methods for loop closure detection and experience map construction were also developed. The proposed method was verified on ten KITTI data sets, and experimental results demonstrate that it outperforms state-of-the-art brain-inspired SLAM methods in terms of accuracy and efficiency. Additionally, it is comparable to the state-of-the-art visual SLAM method ORB-SLAM3.'
     'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain': &ref_8
         notes:
             resumeStatus: super-relevent|title
@@ -491,10 +493,11 @@ references:
             abstract: null
     'NeoSLAM: Neural object SLAM for loop closure and navigation': &ref_2
         notes:
-            resumeStatus: super-relevent|title
+            resumeStatus: super-relevent|abstract
             comment: ''
             reasonsRelevant:
                 - title
+                - abstract
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -503,6 +506,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T15:26:59.209Z'
+                sawAbstract: '2025-02-25T02:11:02.791Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -514,7 +518,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: null
+                abstract: 'Simultaneous Localization and Mapping (SLAM) with fixed landmark objects creates topological maps by extracting semantic information from the environment. In this paper, we propose a new method for mapping, Neural Object SLAM (NeoSLAM), which uses objects seen in stereo images to learn associations between the pose of the robot and the observed landmark objects. We perform mapping with a biologically inspired approach based on creating patterns memorizing places in a network of grid cells and head direction cells. Our model is inspired by the object vector cells discovered recently by neuroscientists exploring the navigation of mammals. We model the firing field of these cells with a feed-forward neural network and create keyframes of objects with their 3D pose in a world-centered frame of reference. We train a Hebbian network connecting keyframe templates to the grid cells to memorize familiar places. We use the NeuroSLAM algorithm to train the grid cells and the head direction cells with the 4 Degree of Freedom (DoF) poses of the robot. Then, we detect loops in the trajectory by matching objects in the keyframes. Finally, we create an object experience map and correct the cumulative error if we detect loop closure candidates. Thus, our system performs object-based place recognition with a brain-inspired approach and produces 2D/3D object topological maps.'
             crossref:
                 doi: null
             openAlex: {}
@@ -553,7 +557,7 @@ references:
             pdfLink: 'https://www2.informatik.uni-hamburg.de/wtm/publications/2022/RWW22/paper318_postreview-revised_.pdf'
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'Simultaneous Localization and Mapping (SLAM) with fixed landmark objects creates topological maps by extracting semantic information from the environment. In this paper, we propose a new method for mapping, Neural Object SLAM (NeoSLAM), which uses objects seen in stereo images to learn associations between the pose of the robot and the observed landmark objects. We perform mapping with a biologically inspired approach based on creating patterns memorizing places in a network of grid cells and head direction cells. Our model is inspired by the object vector cells discovered recently by neuroscientists exploring the navigation of mammals. We model the firing field of these cells with a feed-forward neural network and create keyframes of objects with their 3D pose in a world-centered frame of reference. We train a Hebbian network connecting keyframe templates to the grid cells to memorize familiar places. We use the NeuroSLAM algorithm to train the grid cells and the head direction cells with the 4 Degree of Freedom (DoF) poses of the robot. Then, we detect loops in the trajectory by matching objects in the keyframes. Finally, we create an object experience map and correct the cumulative error if we detect loop closure candidates. Thus, our system performs object-based place recognition with a brain-inspired approach and produces 2D/3D object topological maps.'
     A Brain-inspired SLAM System Based on Keyframe Template Matching: &ref_6
         notes:
             resumeStatus: relevent|title
@@ -699,7 +703,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: null
+                abstract: 'Simultaneous Localization and Mapping (SLAM) is a crucial function for most autonomous systems, allowing them to both navigate through and create maps of unfamiliar surroundings. Traditional Visual SLAM, also commonly known as VSLAM, relies on frame-based cameras and structured processing pipelines, which face challenges in dynamic or low-light environments. However, recent advancements in event camera technology and neuromorphic processing offer promising opportunities to overcome these limitations. Event cameras inspired by biological vision systems capture the scenes asynchronously consuming minimal power but with higher temporal resolution. Neuromorphic processors, which are designed to mimic the parallel processing capabilities of the human brain, offer efficient computation for real-time data processing of event-based data streams. This paper provides a comprehensive overview of recent research efforts in integrating event cameras and neuromorphic processors into VSLAM systems. It discusses the principles behind event cameras and neuromorphic processors, highlighting their advantages over traditional sensing and processing methods. Furthermore, an in-depth survey was conducted on state-of-the-art approaches in event-based SLAM, including feature extraction, motion estimation, and map reconstruction techniques. Additionally, the integration of event cameras with neuromorphic processors, focusing on their synergistic benefits in terms of energy efficiency, robustness, and real-time performance was explored. The paper also discusses the challenges and open research questions in this emerging field, such as sensor calibration, data fusion, and algorithmic development. Finally, the potential applications and future directions for event-based SLAM systems are outlined, ranging from robotics and autonomous vehicles to augmented reality.'
             crossref:
                 doi: 10.20944/preprints202405.1094.v1
             openAlex:
@@ -985,7 +989,7 @@ references:
             pdfLink: 'https://www.preprints.org/manuscript/202405.1094/download/final_file'
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'Simultaneous Localization and Mapping (SLAM) is a crucial function for most autonomous systems, allowing them to both navigate through and create maps of unfamiliar surroundings. Traditional Visual SLAM, also commonly known as VSLAM, relies on frame-based cameras and structured processing pipelines, which face challenges in dynamic or low-light environments. However, recent advancements in event camera technology and neuromorphic processing offer promising opportunities to overcome these limitations. Event cameras inspired by biological vision systems capture the scenes asynchronously consuming minimal power but with higher temporal resolution. Neuromorphic processors, which are designed to mimic the parallel processing capabilities of the human brain, offer efficient computation for real-time data processing of event-based data streams. This paper provides a comprehensive overview of recent research efforts in integrating event cameras and neuromorphic processors into VSLAM systems. It discusses the principles behind event cameras and neuromorphic processors, highlighting their advantages over traditional sensing and processing methods. Furthermore, an in-depth survey was conducted on state-of-the-art approaches in event-based SLAM, including feature extraction, motion estimation, and map reconstruction techniques. Additionally, the integration of event cameras with neuromorphic processors, focusing on their synergistic benefits in terms of energy efficiency, robustness, and real-time performance was explored. The paper also discusses the challenges and open research questions in this emerging field, such as sensor calibration, data fusion, and algorithmic development. Finally, the potential applications and future directions for event-based SLAM systems are outlined, ranging from robotics and autonomous vehicles to augmented reality.'
     Exploiting semantic information in a spiking neural SLAM system: &ref_10
         notes:
             resumeStatus: super-relevent|title
@@ -7820,10 +7824,11 @@ references:
         notes:
             isFavorite: true
             category: crossField
-            resumeStatus: super-relevent|title
+            resumeStatus: super-relevent|abstract
             comment: ''
             reasonsRelevant:
                 - title
+                - abstract
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -7833,6 +7838,7 @@ references:
             events:
                 added: '2025-01-29T16:26:30.358Z'
                 sawTitle: '2025-01-29T16:27:11.163Z'
+                sawAbstract: '2025-02-25T02:07:31.169Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -7844,7 +7850,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: null
+                abstract: 'Studies of the mouse visual system have revealed a variety of visual brain areas that are thought to support a multitude of behavioral capacities, ranging from stimulus-reward associations, to goal-directed navigation, and object-centric discriminations. However, an overall understanding of the mouse’s visual cortex, and how it supports a range of behaviors, remains unknown. Here, we take a computational approach to help address these questions, providing a high-fidelity quantitative model of mouse visual cortex and identifying key structural and functional principles underlying that model’s success. Structurally, we find that a comparatively shallow network structure with a low-resolution input is optimal for modeling mouse visual cortex. Our main finding is functional—that models trained with task-agnostic, self-supervised objective functions based on the concept of contrastive embeddings are much better matches to mouse cortex, than models trained on supervised objectives or alternative self-supervised methods. This result is very much unlike in primates where prior work showed that the two were roughly equivalent, naturally leading us to ask the question of why these self-supervised objectives are better matches than supervised ones in mouse. To this end, we show that the self-supervised, contrastive objective builds a general-purpose visual representation that enables the system to achieve better transfer on out-of-distribution visual scene understanding and reward-based navigation tasks. Our results suggest that mouse visual cortex is a low-resolution, shallow network that makes best use of the mouse’s limited resources to create a light-weight, general-purpose visual system—in contrast to the deep, high-resolution, and more categorization-dominated visual system of primates.'
             crossref:
                 doi: 10.1101/2021.06.16.448730
             openAlex:
@@ -8023,7 +8029,7 @@ references:
             pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2022/08/14/2021.06.16.448730.full.pdf'
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'Studies of the mouse visual system have revealed a variety of visual brain areas that are thought to support a multitude of behavioral capacities, ranging from stimulus-reward associations, to goal-directed navigation, and object-centric discriminations. However, an overall understanding of the mouse’s visual cortex, and how it supports a range of behaviors, remains unknown. Here, we take a computational approach to help address these questions, providing a high-fidelity quantitative model of mouse visual cortex and identifying key structural and functional principles underlying that model’s success. Structurally, we find that a comparatively shallow network structure with a low-resolution input is optimal for modeling mouse visual cortex. Our main finding is functional—that models trained with task-agnostic, self-supervised objective functions based on the concept of contrastive embeddings are much better matches to mouse cortex, than models trained on supervised objectives or alternative self-supervised methods. This result is very much unlike in primates where prior work showed that the two were roughly equivalent, naturally leading us to ask the question of why these self-supervised objectives are better matches than supervised ones in mouse. To this end, we show that the self-supervised, contrastive objective builds a general-purpose visual representation that enables the system to achieve better transfer on out-of-distribution visual scene understanding and reward-based navigation tasks. Our results suggest that mouse visual cortex is a low-resolution, shallow network that makes best use of the mouse’s limited resources to create a light-weight, general-purpose visual system—in contrast to the deep, high-resolution, and more categorization-dominated visual system of primates.'
     'Ecological models of human performance based on affordance, emotion and intuition': &ref_59
         notes:
             resumeStatus: unseen|title
@@ -10474,10 +10480,11 @@ references:
             abstract: null
     RatSLAM on humanoids-a bio-inspired SLAM model adapted to a humanoid robot: &ref_74
         notes:
-            resumeStatus: super-relevent|title
+            resumeStatus: super-relevent|abstract
             comment: ''
             reasonsRelevant:
                 - title
+                - abstract
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -10487,6 +10494,7 @@ references:
             events:
                 added: '2025-02-25T01:21:53.133Z'
                 sawTitle: '2025-02-25T01:58:28.457Z'
+                sawAbstract: '2025-02-25T02:06:29.662Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -10498,7 +10506,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: null
+                abstract: 'Mapping, localization and navigation are major topics and challenges for mobile robotics. To perform tasks and to interact efficiently in the environment, a robot needs knowledge about its surroundings. Many robots today are capable of performing simultaneous mapping and localization to generate own world representations. Most assume an array of highly sophisticated artificial sensors to track landmarks placed in the environment. Recently, there has been significant interest in research approaches inspired by nature and RatSLAM is one of them. It has been introduced and tested on wheeled robots with good results. To examine how RatSLAM behaves on humanoid robots, we adapt this model for the first time to this platform by adjusting the given constraints. Furthermore, we introduce a multiple hypotheses mapping technique which improves mapping robustness in open spaces with features visible from several distant locations.'
             crossref:
                 doi: null
             openAlex: {}
@@ -10528,7 +10536,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'Mapping, localization and navigation are major topics and challenges for mobile robotics. To perform tasks and to interact efficiently in the environment, a robot needs knowledge about its surroundings. Many robots today are capable of performing simultaneous mapping and localization to generate own world representations. Most assume an array of highly sophisticated artificial sensors to track landmarks placed in the environment. Recently, there has been significant interest in research approaches inspired by nature and RatSLAM is one of them. It has been introduced and tested on wheeled robots with good results. To examine how RatSLAM behaves on humanoid robots, we adapt this model for the first time to this platform by adjusting the given constraints. Furthermore, we introduce a multiple hypotheses mapping technique which improves mapping robustness in open spaces with features visible from several distant locations.'
     An Improved Loop Closure Detection for RatSLAM: &ref_75
         notes:
             resumeStatus: relevent|title
@@ -14894,7 +14902,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: null
+                abstract: 'The simultaneous localization and mapping (SLAM) method based on the brain-space cognitive model can improve the localization accuracy of the robot through memory. The traditional method has poor robustness in complex environments such as intense motion, weak texture, and illumination changes, and lack of understanding of the environment. Our work is based on RatSLAM. To improve the robustness, we propose a multi-sensor fusion algorithm, which integrates a camera with an IMU. To improve the understanding of the environment, we use the Yolo to extract the semantic information of objects and store it in the topological nodes and construct a 2D topology map. Yolo-v4 is used to replace Yolo-v3 to improve the accuracy of semantic tag extraction. We validated our approach in the pubic dataset and real environments. The mean RMSE APE is reduced by 51.716% compared to RatSLAM. Also, our method can build a semantic topological map of the environment.'
             crossref:
                 doi: 10.1016/j.measurement.2023.113335
             openAlex:
@@ -15047,7 +15055,7 @@ references:
             pdfLink: 'https://drive.google.com/file/d/1LdauPQw6EIhrCXrGCykNsGjuP6NdyvgW/view'
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'The simultaneous localization and mapping (SLAM) method based on the brain-space cognitive model can improve the localization accuracy of the robot through memory. The traditional method has poor robustness in complex environments such as intense motion, weak texture, and illumination changes, and lack of understanding of the environment. Our work is based on RatSLAM. To improve the robustness, we propose a multi-sensor fusion algorithm, which integrates a camera with an IMU. To improve the understanding of the environment, we use the Yolo to extract the semantic information of objects and store it in the topological nodes and construct a 2D topology map. Yolo-v4 is used to replace Yolo-v3 to improve the accuracy of semantic tag extraction. We validated our approach in the pubic dataset and real environments. The mean RMSE APE is reduced by 51.716% compared to RatSLAM. Also, our method can build a semantic topological map of the environment.'
     'LatentSLAM: unsupervised multi-sensor representation learning for localization and mapping': &ref_115
         notes:
             resumeStatus: relevent|title
@@ -15862,10 +15870,11 @@ references:
             abstract: null
     An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model: &ref_118
         notes:
-            resumeStatus: super-relevent|title
+            resumeStatus: super-relevent|abstract
             comment: 'uses HSI color space, but unclear if thats really biological, seeing as we have rgb neurons'
             reasonsRelevant:
                 - title
+                - abstract
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -15875,6 +15884,7 @@ references:
             events:
                 added: '2025-02-25T01:47:15.054Z'
                 sawTitle: '2025-02-25T01:58:17.438Z'
+                sawAbstract: '2025-02-25T02:09:02.231Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -16004,10 +16014,11 @@ references:
             abstract: 'Inspired by rodents’ free navigation through a specific space, RatSLAM mimics the function of the rat hippocampus to establish an environmental model within which the agent localizes itself. However, RatSLAM suffers from the deficiencies of erroneous loop-closure detection, low reliability on the experience map, and weak adaptability to environmental changes, such as lighting variation. To enhance environmental adaptability, this paper proposes an improved algorithm based on the HSI (hue, saturation, intensity) color space, which is superior in handling the characteristics of image brightness and saturation from the perspective of a biological visual model. The proposed algorithm first converts the raw image data from the RGB (red, green, blue) space into the HSI color space using a geometry derivation method. Then, a homomorphic filter is adopted to act on the I (intensity) channel and weaken the influence of the light intensity. Finally, guided filtering is used to process the S (saturation) channel and improve the significance of image details. The experimental results reveal that the improved RatSLAM model is superior to the original method in terms of the accuracy of visual template matching and robustness.'
     An Improvement of Loop Closure Detection Based on BoW for RatSLAM: &ref_119
         notes:
-            resumeStatus: super-relevent|title
+            resumeStatus: super-relevent|abstract
             comment: ''
             reasonsRelevant:
                 - title
+                - abstract
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -16017,6 +16028,7 @@ references:
             events:
                 added: '2025-02-25T01:52:25.118Z'
                 sawTitle: '2025-02-25T01:58:25.797Z'
+                sawAbstract: '2025-02-25T02:06:06.703Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -16028,7 +16040,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: null
+                abstract: 'The visual perception of the original RatSLAM algorithm works directly on the intensities of image pixels and thus is greatly affected by illuminations, weathers, and other factors. The algorithm may result in perception errors and mapping failures in some situations. Therefore, this paper proposes an image sequence matching algorithm based on a visual dictionary model termed as Bag of Words (BoW) and the dynamic island mechanism to realize fast and accurate scene recognition. The feature vector of scene image is generated by the ORB algorithm, and then the image matching is transformed into the calculation of the distance between image feature vectors, improving the efficiency of image matching. The dynamic island mechanism is used as a detection algorithm to realize the sequence matching of the environment, improving the accuracy of loop closure detection. Experiments are performed in different environments, showing that the visual processing performance and mapping performance of the proposed algorithm are significantly better than the existing RatSLAM algorithm.'
             crossref:
                 doi: 10.1109/yac57282.2022.10023660
             openAlex:
@@ -16126,7 +16138,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'The visual perception of the original RatSLAM algorithm works directly on the intensities of image pixels and thus is greatly affected by illuminations, weathers, and other factors. The algorithm may result in perception errors and mapping failures in some situations. Therefore, this paper proposes an image sequence matching algorithm based on a visual dictionary model termed as Bag of Words (BoW) and the dynamic island mechanism to realize fast and accurate scene recognition. The feature vector of scene image is generated by the ORB algorithm, and then the image matching is transformed into the calculation of the distance between image feature vectors, improving the efficiency of image matching. The dynamic island mechanism is used as a detection algorithm to realize the sequence matching of the environment, improving the accuracy of loop closure detection. Experiments are performed in different environments, showing that the visual processing performance and mapping performance of the proposed algorithm are significantly better than the existing RatSLAM algorithm.'
     A Tapered Whisker-Based Physical Reservoir Computing System for Mobile Robot Terrain Identification in Unstructured Environments: &ref_120
         notes:
             resumeStatus: relevent|title
