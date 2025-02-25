@@ -44,14 +44,19 @@ settings:
     scoreGivers:
         byKeywords: |
             (reference, currentScoreList, {keywords, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
-                currentScoreList[0] += !!numberOfGoodKeywordsIn(reference.title)
+                const title = reference.title.toLowerCase()
+                currentScoreList[0] += !!numberOfGoodKeywordsIn(title)
                 currentScoreList[1] += 100 // prevent multiplying negative
-                currentScoreList[1] += numberOfGoodKeywordsIn(reference.title)
-                currentScoreList[1] -= numberOfBadKeywordsIn(reference.title)
-                currentScoreList[2] += numberOfNeutralKeywordsIn(reference.title)
+                currentScoreList[1] += numberOfGoodKeywordsIn(title)
+                currentScoreList[1] -= numberOfBadKeywordsIn(title)
+                currentScoreList[2] += numberOfNeutralKeywordsIn(title)
+                
+                if (title.includes('ratslam')) {
+                    currentScoreList[1] *= 2
+                }
                 
                 // needs at least one
-                if (numberOfGoodKeywordsIn(reference.title) == 0) {
+                if (numberOfGoodKeywordsIn(title) == 0) {
                     currentScoreList[1] -= 10
                 }
             }
@@ -140,6 +145,7 @@ settings:
             - hebbian
             - spatial
             - navigation
+            - ratslam
         negative:
             - large language model
             - language model
@@ -6434,9 +6440,10 @@ references:
             abstract: null
     Computational mechanisms underlying cortical responses to the affordance properties of visual scenes: &ref_57
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -6445,6 +6452,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T16:26:30.357Z'
+                sawTitle: '2025-02-25T02:01:36.672Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -6606,9 +6614,10 @@ references:
             abstract: null
     Coding of navigational affordances in the human visual system: &ref_55
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -6617,6 +6626,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T16:26:30.357Z'
+                sawTitle: '2025-02-25T02:01:19.766Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -6752,9 +6762,10 @@ references:
             abstract: null
     'Ecological approaches to perceptual learning: learning to perceive and perceiving as learning': &ref_58
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -6763,6 +6774,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T16:26:30.357Z'
+                sawTitle: '2025-02-25T02:01:03.133Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -7329,7 +7341,7 @@ references:
             abstract: null
     The brain dynamics of architectural affordances during transition: &ref_53
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: unclear|title
             comment: ''
             reasonsRelevant: []
             reasonsNotRelevant: []
@@ -7340,6 +7352,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T16:26:30.357Z'
+                sawTitle: '2025-02-25T01:59:55.292Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -8344,9 +8357,10 @@ references:
             abstract: null
     'Tool and object affordances: An ecological eye-tracking study': &ref_50
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -8355,6 +8369,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-01-29T16:26:30.357Z'
+                sawTitle: '2025-02-25T02:01:58.691Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -9546,10 +9561,11 @@ references:
             abstract: 'Hippocampal place cells are known for their spatially selective firing and are believed to encode an animal’s location while forming part of a cognitive map of space. These cells exhibit marked tuning curve and rate changes when an animal’s environment is sufficiently manipulated, in a process known as remapping. Place cells are accompanied by many other spatially tuned cells such as border cells and grid cells, but how these cells interact during navigation and remapping is unknown. In this work, we build a normative place cell model wherein a neural network is tasked with accurate position reconstruction and path integration. Motivated by the notion of a cognitive map, the network’s position is estimated directly from its learned representations. To obtain a position estimate, we propose a non-trainable decoding scheme applied to network output units, inspired by the localized firing patterns of place cells. We find that output units learn place-like spatial representations, while upstream recurrent units become boundary-tuned. When the network is trained to perform the same task in multiple simulated environments, its place-like units learn to remap like biological place cells, displaying global, geometric and rate remapping. These remapping abilities appear to be supported by rate changes in upstream units. While the model does not learn grid-like units, its place cell centers form clusters organized in a hexagonal lattice in open fields. When we decode the center locations of CA1 place fields in mice, we find a similar clustering tendency. This suggests a potential mechanism for the interaction between place cells, border cells, and grid cells. Our model provides a normative framework for learning spatial representations previously reserved for biological place cells, providing new insight into place cell field formation and remapping.'
     Learning Place Cell Representations and Context-Dependent Remapping: &ref_65
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
             reasonsRelevant: []
-            reasonsNotRelevant: []
+            reasonsNotRelevant:
+                - title
             customKeywords: []
             discoveryMethod:
                 dateTime: '2025-02-11T22:48:36.114Z'
@@ -9557,6 +9573,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-11T22:48:36.670Z'
+                sawTitle: '2025-02-25T02:02:07.829Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -9665,9 +9682,10 @@ references:
             abstract: null
     Do place cells dream of conditional probabilities? Learning Neural Nystr\" om representations: &ref_64
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -9676,6 +9694,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-11T22:48:36.670Z'
+                sawTitle: '2025-02-25T02:02:04.345Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -10455,9 +10474,10 @@ references:
             abstract: null
     RatSLAM on humanoids-a bio-inspired SLAM model adapted to a humanoid robot: &ref_74
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -10466,6 +10486,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:21:53.133Z'
+                sawTitle: '2025-02-25T01:58:28.457Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -10492,11 +10513,11 @@ references:
                 publisherInfo: null
         score:
             - 1
-            - 156
+            - 312
             - 1
             - 2016
             - 0
-        scoreString: 1|156|1|2016|0
+        scoreString: 1|312|1|2016|0
         _:
             title: RatSLAM on humanoids-a bio-inspired SLAM model adapted to a humanoid robot
             doi: 10.1007/978-3-319-11179-7_99
@@ -10510,9 +10531,10 @@ references:
             abstract: null
     An Improved Loop Closure Detection for RatSLAM: &ref_75
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -10521,6 +10543,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:35:11.414Z'
+                sawTitle: '2025-02-25T02:00:14.915Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -10532,7 +10555,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: RatSLAM is a brain-inspired simultaneous localization and mapping(SLAM) system used to construct experience maps for environments, requiring odometry data and visual scenes in the path traveled. But it does not perform well in complex indoor surroundings due to the rough visual processing approach. In this paper, we propose a modified RatSLAM, a feature-based monocular SLAM system that operates in real-time. The learned arrangements of three patch codes(LATCH) and multi-index hashing(MIH) algorithm are introduced to evaluate the similarity between the current scene and previously seen scenes. Then Bayesian filtering and sliding window are employed to filter out the most similar visual template and complete the loop closure detection(LCD). Experimental results show that the improved system achieves higher accuracy on place recognition and better experience map building performance in indoor environments.
+                abstract: 'RatSLAM is a brain-inspired simultaneous localization and mapping(SLAM) system used to construct experience maps for environments, requiring odometry data and visual scenes in the path traveled. But it does not perform well in complex indoor surroundings due to the rough visual processing approach. In this paper, we propose a modified RatSLAM, a feature-based monocular SLAM system that operates in real-time. The learned arrangements of three patch codes(LATCH) and multi-index hashing(MIH) algorithm are introduced to evaluate the similarity between the current scene and previously seen scenes. Then Bayesian filtering and sliding window are employed to filter out the most similar visual template and complete the loop closure detection(LCD). Experimental results show that the improved system achieves higher accuracy on place recognition and better experience map building performance in indoor environments.'
             crossref:
                 doi: 10.1109/iccar.2019.8813378
             openAlex:
@@ -10619,12 +10642,12 @@ references:
                 citedByLink: null
                 publisherInfo: null
         score:
-            - 0
-            - 135
+            - 1
+            - 303
             - 0
             - 2019
             - 0
-        scoreString: 0|135|0|2019|0
+        scoreString: 1|303|0|2019|0
         _:
             title: An Improved Loop Closure Detection for RatSLAM
             doi: 10.1109/iccar.2019.8813378
@@ -10637,7 +10660,7 @@ references:
             pdfLink: null
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'RatSLAM is a brain-inspired simultaneous localization and mapping(SLAM) system used to construct experience maps for environments, requiring odometry data and visual scenes in the path traveled. But it does not perform well in complex indoor surroundings due to the rough visual processing approach. In this paper, we propose a modified RatSLAM, a feature-based monocular SLAM system that operates in real-time. The learned arrangements of three patch codes(LATCH) and multi-index hashing(MIH) algorithm are introduced to evaluate the similarity between the current scene and previously seen scenes. Then Bayesian filtering and sliding window are employed to filter out the most similar visual template and complete the loop closure detection(LCD). Experimental results show that the improved system achieves higher accuracy on place recognition and better experience map building performance in indoor environments.'
     Experimental Comparison of Odometry Approaches: &ref_76
         notes:
             comment: ''
@@ -11225,15 +11248,17 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             reasonsNotRelevant: []
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             discoveryMethod:
                 dateTime: '2025-02-25T01:39:11.864Z'
                 originallyWasRelatedTo: null
                 searchEngine: openAlex
             events:
                 added: '2025-02-25T01:42:43.387Z'
+                sawTitle: '2025-02-25T02:01:26.508Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -11674,6 +11699,7 @@ references:
                 searchEngine: openAlex
             events:
                 added: '2025-02-25T01:42:43.387Z'
+                sawTitle: '2025-02-25T02:02:22.415Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -12998,15 +13024,17 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             reasonsNotRelevant: []
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             discoveryMethod:
                 dateTime: '2025-02-25T01:39:11.864Z'
                 originallyWasRelatedTo: null
                 searchEngine: openAlex
             events:
                 added: '2025-02-25T01:42:43.387Z'
+                sawTitle: '2025-02-25T02:00:34.644Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -13105,11 +13133,11 @@ references:
                 openAlexId: W2121780146
         score:
             - 1
-            - 151.5
+            - 303
             - 0
             - 2013
             - 0
-        scoreString: 1|151.5|0|2013|0
+        scoreString: 1|303|0|2013|0
         _:
             title: 'OpenRatSLAM: an open source brain-based SLAM system'
             doi: 'https://doi.org/10.1007/s10514-012-9317-9'
@@ -13514,15 +13542,17 @@ references:
         notes:
             comment: ''
             customKeywords: []
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             reasonsNotRelevant: []
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             discoveryMethod:
                 dateTime: '2025-02-25T01:39:11.864Z'
                 originallyWasRelatedTo: null
                 searchEngine: openAlex
             events:
                 added: '2025-02-25T01:42:43.387Z'
+                sawTitle: '2025-02-25T02:00:48.035Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -13598,12 +13628,12 @@ references:
                     - 'https://openalex.org/W1581933381'
                 openAlexId: W2161338791
         score:
-            - 0
-            - 85
+            - 1
+            - 197
             - 0
             - 2004
             - 0
-        scoreString: 0|85|0|2004|0
+        scoreString: 1|197|0|2004|0
         _:
             title: 'RatSLAM: a hippocampal model for simultaneous localization and mapping'
             doi: 'https://doi.org/10.1109/robot.2004.1307183'
@@ -14471,9 +14501,10 @@ references:
             abstract: null
     A Bio-inspired SLAM System for a Legged Robot: &ref_107
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -14482,6 +14513,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:45:41.526Z'
+                sawTitle: '2025-02-25T01:58:35.909Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -14596,9 +14628,10 @@ references:
             abstract: null
     'Vita-slam: Biologically-inspired visuo-tactile slam': &ref_108
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -14607,6 +14640,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:46:03.628Z'
+                sawTitle: '2025-02-25T02:01:32.966Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -14836,9 +14870,10 @@ references:
             abstract: null
     Vision-IMU multi-sensor fusion semantic topological map based on RatSLAM: &ref_114
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -14847,6 +14882,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:46:03.628Z'
+                sawTitle: '2025-02-25T01:58:05.567Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -14989,12 +15025,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=10913875497318190168&as_sdt=5,26&sciodt=0,26&hl=en&oe=ASCII'
                 citedByCount: 8
         score:
-            - 0
-            - 270
+            - 1
+            - 606
             - 1
             - 2023
             - 0
-        scoreString: 0|270|1|2023|0
+        scoreString: 1|606|1|2023|0
         _:
             title: Vision-IMU multi-sensor fusion semantic topological map based on RatSLAM
             doi: 10.1016/j.measurement.2023.113335
@@ -15014,9 +15050,10 @@ references:
             abstract: null
     'LatentSLAM: unsupervised multi-sensor representation learning for localization and mapping': &ref_115
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -15025,6 +15062,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:46:03.628Z'
+                sawTitle: '2025-02-25T01:58:57.181Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -15163,9 +15201,10 @@ references:
             abstract: null
     Event-driven Tactile Sensing With Dense Spiking Graph Neural Networks: &ref_116
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -15174,6 +15213,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:46:03.628Z'
+                sawTitle: '2025-02-25T01:59:05.044Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -15337,9 +15377,10 @@ references:
             abstract: null
     'ViTa-SLAM: A Bio-inspired Visuo-Tactile SLAM for Navigation while Interacting with Aliased Environments': &ref_109
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -15348,6 +15389,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:46:03.628Z'
+                sawTitle: '2025-02-25T02:00:52.794Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -15359,7 +15401,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: RatSLAM is a rat hippocampus-inspired visual Simultaneous Localization and Mapping (SLAM) framework capable of generating semi-metric topological representations of indoor and outdoor environments. Whisker-RatSLAM is a 6D extension of the RatSLAM and primarily focuses on object recognition by generating point clouds of objects based on tactile information from an array of biomimetic whiskers. This paper introduces a novel extension to both former works that is referred to as ViTa-SLAM that harnesses both vision and tactile information for performing SLAM. This not only allows the robot to perform natural interactions with the environment whilst navigating, as is normally seen in nature, but also provides a mechanism to fuse non-unique tactile and unique visual data. Compared to the former works, our approach can handle ambiguous scenes in which one sensor alone is not capable of identifying false-positive loop-closures.
+                abstract: 'RatSLAM is a rat hippocampus-inspired visual Simultaneous Localization and Mapping (SLAM) framework capable of generating semi-metric topological representations of indoor and outdoor environments. Whisker-RatSLAM is a 6D extension of the RatSLAM and primarily focuses on object recognition by generating point clouds of objects based on tactile information from an array of biomimetic whiskers. This paper introduces a novel extension to both former works that is referred to as ViTa-SLAM that harnesses both vision and tactile information for performing SLAM. This not only allows the robot to perform natural interactions with the environment whilst navigating, as is normally seen in nature, but also provides a mechanism to fuse non-unique tactile and unique visual data. Compared to the former works, our approach can handle ambiguous scenes in which one sensor alone is not capable of identifying false-positive loop-closures.'
             crossref:
                 doi: 10.1109/cbs46900.2019.9114526
             openAlex:
@@ -15474,12 +15516,13 @@ references:
             pdfLink: 'https://arxiv.org/pdf/1906.06422'
             cites: null
             citedBy: null
-            abstract: null
+            abstract: 'RatSLAM is a rat hippocampus-inspired visual Simultaneous Localization and Mapping (SLAM) framework capable of generating semi-metric topological representations of indoor and outdoor environments. Whisker-RatSLAM is a 6D extension of the RatSLAM and primarily focuses on object recognition by generating point clouds of objects based on tactile information from an array of biomimetic whiskers. This paper introduces a novel extension to both former works that is referred to as ViTa-SLAM that harnesses both vision and tactile information for performing SLAM. This not only allows the robot to perform natural interactions with the environment whilst navigating, as is normally seen in nature, but also provides a mechanism to fuse non-unique tactile and unique visual data. Compared to the former works, our approach can handle ambiguous scenes in which one sensor alone is not capable of identifying false-positive loop-closures.'
     Multimodal Representation Learning for Place Recognition Using Deep Hebbian Predictive Coding: &ref_112
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: relevent|title
             comment: ''
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -15488,6 +15531,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:46:03.628Z'
+                sawTitle: '2025-02-25T01:58:50.425Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -15816,11 +15860,12 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    An environmental-adaptability-improved ratslam method based on a biological vision model:
+    An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model: &ref_118
         notes:
-            resumeStatus: unseen|title
+            resumeStatus: super-relevent|title
             comment: 'uses HSI color space, but unclear if thats really biological, seeing as we have rgb neurons'
-            reasonsRelevant: []
+            reasonsRelevant:
+                - title
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
@@ -15829,6 +15874,7 @@ references:
                 searchEngine: googleScholar
             events:
                 added: '2025-02-25T01:47:15.054Z'
+                sawTitle: '2025-02-25T01:58:17.438Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -15840,7 +15886,7 @@ references:
                 pdfLink: null
                 cites: null
                 citedBy: null
-                abstract: Inspired by rodents’ free navigation through a specific space, RatSLAM mimics the function of the rat hippocampus to establish an environmental model within which the agent localizes itself. However, RatSLAM suffers from the deficiencies of erroneous loop-closure detection, low reliability on the experience map, and weak adaptability to environmental changes, such as lighting variation. To enhance environmental adaptability, this paper proposes an improved algorithm based on the HSI (hue, saturation, intensity) color space, which is superior in handling the characteristics of image brightness and saturation from the perspective of a biological visual model. The proposed algorithm first converts the raw image data from the RGB (red, green, blue) space into the HSI color space using a geometry derivation method. Then, a homomorphic filter is adopted to act on the I (intensity) channel and weaken the influence of the light intensity. Finally, guided filtering is used to process the S (saturation) channel and improve the significance of image details. The experimental results reveal that the improved RatSLAM model is superior to the original method in terms of the accuracy of visual template matching and robustness.
+                abstract: 'Inspired by rodents’ free navigation through a specific space, RatSLAM mimics the function of the rat hippocampus to establish an environmental model within which the agent localizes itself. However, RatSLAM suffers from the deficiencies of erroneous loop-closure detection, low reliability on the experience map, and weak adaptability to environmental changes, such as lighting variation. To enhance environmental adaptability, this paper proposes an improved algorithm based on the HSI (hue, saturation, intensity) color space, which is superior in handling the characteristics of image brightness and saturation from the perspective of a biological visual model. The proposed algorithm first converts the raw image data from the RGB (red, green, blue) space into the HSI color space using a geometry derivation method. Then, a homomorphic filter is adopted to act on the I (intensity) channel and weaken the influence of the light intensity. Finally, guided filtering is used to process the S (saturation) channel and improve the significance of image details. The experimental results reveal that the improved RatSLAM model is superior to the original method in terms of the accuracy of visual template matching and robustness.'
             crossref:
                 doi: 10.3390/machines10040259
             openAlex:
@@ -15935,12 +15981,12 @@ references:
                 citedByLink: null
                 publisherInfo: null
         score:
-            - 0
-            - 270
+            - 1
+            - 606
             - 1
             - 2022
             - 0
-        scoreString: 0|270|1|2022|0
+        scoreString: 1|606|1|2022|0
         _:
             title: An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model
             doi: 10.3390/machines10040259
@@ -15953,6 +15999,264 @@ references:
                 - Rongchuan Sun
             link: 'https://doi.org/10.3390/machines10040259'
             pdfLink: 'https://www.mdpi.com/2075-1702/10/4/259/pdf?version=1649064419'
+            cites: null
+            citedBy: null
+            abstract: 'Inspired by rodents’ free navigation through a specific space, RatSLAM mimics the function of the rat hippocampus to establish an environmental model within which the agent localizes itself. However, RatSLAM suffers from the deficiencies of erroneous loop-closure detection, low reliability on the experience map, and weak adaptability to environmental changes, such as lighting variation. To enhance environmental adaptability, this paper proposes an improved algorithm based on the HSI (hue, saturation, intensity) color space, which is superior in handling the characteristics of image brightness and saturation from the perspective of a biological visual model. The proposed algorithm first converts the raw image data from the RGB (red, green, blue) space into the HSI color space using a geometry derivation method. Then, a homomorphic filter is adopted to act on the I (intensity) channel and weaken the influence of the light intensity. Finally, guided filtering is used to process the S (saturation) channel and improve the significance of image details. The experimental results reveal that the improved RatSLAM model is superior to the original method in terms of the accuracy of visual template matching and robustness.'
+    An Improvement of Loop Closure Detection Based on BoW for RatSLAM: &ref_119
+        notes:
+            resumeStatus: super-relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-25T01:52:24.914Z'
+                originalQuery: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-25T01:52:25.118Z'
+                sawTitle: '2025-02-25T01:58:25.797Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/yac57282.2022.10023660
+            openAlex:
+                doi: 'https://doi.org/10.1109/yac57282.2022.10023660'
+                title: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
+                abstract: null
+                concepts:
+                    - advanced image and video retrieval techniques
+                    - robotics and sensor-based localization
+                    - robotic path planning algorithms
+                    - computer vision and pattern recognition
+                    - aerospace engineering
+                    - feature (linguistics)
+                    - orb (optics)
+                    - sequence (biology)
+                    - computer science
+                    - artificial intelligence
+                    - computer vision
+                    - matching (statistics)
+                    - image (mathematics)
+                    - feature detection (computer vision)
+                    - pixel
+                    - pattern recognition (psychology)
+                    - feature extraction
+                    - image processing
+                    - mathematics
+                    - philosophy
+                    - statistics
+                    - linguistics
+                    - biology
+                    - genetics
+                year: 2022
+                authorNames:
+                    - Jianjun Xu
+                    - Nanya Yan
+                    - Fengzhen Tang
+                link: 'https://doi.org/10.1109/yac57282.2022.10023660'
+                pdfLink: null
+                citationCount: 4
+                citedAlexIds:
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W2099253838'
+                    - 'https://openalex.org/W2115499947'
+                    - 'https://openalex.org/W2117228865'
+                    - 'https://openalex.org/W2121780146'
+                    - 'https://openalex.org/W2143864104'
+                    - 'https://openalex.org/W2162536300'
+                    - 'https://openalex.org/W2285806732'
+                    - 'https://openalex.org/W2404327188'
+                    - 'https://openalex.org/W2746973055'
+                    - 'https://openalex.org/W2970372535'
+                    - 'https://openalex.org/W3088725549'
+                    - 'https://openalex.org/W3100987515'
+                    - 'https://openalex.org/W3102617634'
+                    - 'https://openalex.org/W3155277185'
+                    - 'https://openalex.org/W4394643661'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4379791551'
+                    - 'https://openalex.org/W4312753625'
+                    - 'https://openalex.org/W4280622786'
+                    - 'https://openalex.org/W3036032503'
+                    - 'https://openalex.org/W2941415828'
+                    - 'https://openalex.org/W2561491196'
+                    - 'https://openalex.org/W2356662304'
+                    - 'https://openalex.org/W2319500318'
+                    - 'https://openalex.org/W2312819198'
+                    - 'https://openalex.org/W1997438849'
+                openAlexId: W4318604918
+            googleScholar:
+                title: An improvement of loop closure detection based on bow for ratslam
+                authorNames: null
+                pdfLink: null
+                link: 'https://ieeexplore.ieee.org/abstract/document/10023660/'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 606
+            - 0
+            - 2022
+            - 0
+        scoreString: 1|606|0|2022|0
+        _:
+            title: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
+            doi: 10.1109/yac57282.2022.10023660
+            year: 2022
+            publisherFlags: null
+            authorNames:
+                - Jianjun Xu
+                - Nanya Yan
+                - Fengzhen Tang
+            link: 'https://doi.org/10.1109/yac57282.2022.10023660'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    A Tapered Whisker-Based Physical Reservoir Computing System for Mobile Robot Terrain Identification in Unstructured Environments: &ref_120
+        notes:
+            resumeStatus: relevent|title
+            comment: ''
+            reasonsRelevant:
+                - title
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-02-25T01:53:24.481Z'
+                originalQuery: A Tapered Whisker-Based Physical Reservoir Computing System for Mobile Robot Terrain Identification in Unstructured Environments
+                searchEngine: googleScholar
+            events:
+                added: '2025-02-25T01:53:24.668Z'
+                sawTitle: '2025-02-25T01:59:41.890Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/lra.2022.3146602
+            openAlex:
+                doi: 'https://doi.org/10.1109/lra.2022.3146602'
+                title: A Tapered Whisker-Based Physical Reservoir Computing System for Mobile Robot Terrain Identification in Unstructured Environments
+                abstract: null
+                concepts:
+                    - neural networks and reservoir computing
+                    - neural networks and applications
+                    - model reduction and neural networks
+                    - artificial intelligence
+                    - statistical and nonlinear physics
+                    - mahalanobis distance
+                    - terrain
+                    - computer science
+                    - mobile robot
+                    - detector
+                    - convolutional neural network
+                    - surface roughness
+                    - computer vision
+                    - remote sensing
+                    - robot
+                    - geology
+                    - telecommunications
+                    - physics
+                    - ecology
+                    - biology
+                    - quantum mechanics
+                year: 2022
+                authorNames:
+                    - Zhenhua Yu
+                    - Shehara Perera
+                    - Helmut Häuser
+                    - Peter Childs
+                    - Thrishantha Nanayakkara
+                link: 'https://doi.org/10.1109/lra.2022.3146602'
+                pdfLink: 'http://spiral.imperial.ac.uk/bitstream/10044/1/94247/6/A_Tapered_Whisker_Based_Reservoir_Computing_System_for_Mobile_Robots_Terrain_Prediction_in_Unconstructed_Environments.pdf'
+                citationCount: 17
+                citedAlexIds:
+                    - 'https://openalex.org/W1484387568'
+                    - 'https://openalex.org/W1525595943'
+                    - 'https://openalex.org/W2002111712'
+                    - 'https://openalex.org/W2032764159'
+                    - 'https://openalex.org/W2037024114'
+                    - 'https://openalex.org/W2095689449'
+                    - 'https://openalex.org/W2113986333'
+                    - 'https://openalex.org/W2143825860'
+                    - 'https://openalex.org/W2148014896'
+                    - 'https://openalex.org/W2150364799'
+                    - 'https://openalex.org/W2151471214'
+                    - 'https://openalex.org/W2170545853'
+                    - 'https://openalex.org/W2268464208'
+                    - 'https://openalex.org/W2566228836'
+                    - 'https://openalex.org/W2837716879'
+                    - 'https://openalex.org/W2913921102'
+                    - 'https://openalex.org/W3003964794'
+                    - 'https://openalex.org/W3096411729'
+                    - 'https://openalex.org/W3100560308'
+                    - 'https://openalex.org/W3105757741'
+                    - 'https://openalex.org/W3188694765'
+                    - 'https://openalex.org/W3191426199'
+                    - 'https://openalex.org/W3191800361'
+                relatedAlexIds:
+                    - 'https://openalex.org/W3191158950'
+                    - 'https://openalex.org/W2965672371'
+                    - 'https://openalex.org/W2805209921'
+                    - 'https://openalex.org/W2139992381'
+                    - 'https://openalex.org/W2131357063'
+                    - 'https://openalex.org/W2131012217'
+                    - 'https://openalex.org/W2123436641'
+                    - 'https://openalex.org/W2118648141'
+                    - 'https://openalex.org/W2115818297'
+                    - 'https://openalex.org/W1964300160'
+                openAlexId: W4210767564
+            googleScholar:
+                title: A tapered whisker-based physical reservoir computing system for mobile robot terrain identification in unstructured environments
+                authorNames: null
+                pdfLink: null
+                link: 'https://ieeexplore.ieee.org/abstract/document/9695268/'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 303
+            - 0
+            - 2022
+            - 0
+        scoreString: 1|303|0|2022|0
+        _:
+            title: A Tapered Whisker-Based Physical Reservoir Computing System for Mobile Robot Terrain Identification in Unstructured Environments
+            doi: 10.1109/lra.2022.3146602
+            year: 2022
+            publisherFlags: null
+            authorNames:
+                - Zhenhua Yu
+                - Shehara Perera
+                - Helmut Häuser
+                - Peter Childs
+                - Thrishantha Nanayakkara
+            link: 'https://doi.org/10.1109/lra.2022.3146602'
+            pdfLink: 'http://spiral.imperial.ac.uk/bitstream/10044/1/94247/6/A_Tapered_Whisker_Based_Reservoir_Computing_System_for_Mobile_Robots_Terrain_Prediction_in_Unconstructed_Environments.pdf'
             cites: null
             citedBy: null
             abstract: null
@@ -16590,4 +16894,24 @@ discoveryAttempts:
             -
                 hadBeenSeenBefore: false
                 title: An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model
-                link: null
+                link: *ref_118
+    -
+        query: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
+        score: .nan
+        dateTime: '2025-02-25T01:52:24.914Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
+                link: *ref_119
+    -
+        query: A Tapered Whisker-Based Physical Reservoir Computing System for Mobile Robot Terrain Identification in Unstructured Environments
+        score: .nan
+        dateTime: '2025-02-25T01:53:24.481Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: A Tapered Whisker-Based Physical Reservoir Computing System for Mobile Robot Terrain Identification in Unstructured Environments
+                link: *ref_120
