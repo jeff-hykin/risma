@@ -812,7 +812,8 @@ getOpenAlexData.waitTime = 2000
 export async function getRelatedArticles(reference, onProgress) {
     onProgress = onProgress||(function(){})
     if (!reference.doi) {
-        return []
+        console.warn(`no doi for reference`, reference.name)
+        return {discoveryMethod: {}, relatedArticles: {}}
     }
     const doi = reference.doi
     let relatedArticles = {}
@@ -822,7 +823,7 @@ export async function getRelatedArticles(reference, onProgress) {
         dateTime: new Date().toISOString(),
         searchEngine: "openAlex",
     })
-    const relatedIds = (openAlexData.related_works||openAlexData.relatedAlexIds).concat(openAlexData.referenced_works||openAlexData.citedAlexIds)
+    const relatedIds = ((openAlexData.related_works||openAlexData.relatedAlexIds)||[]).concat((openAlexData.referenced_works||openAlexData.citedAlexIds)||[])
     const handleEach = async (each)=>{
         await getOpenAlexData(each).then(each=>{
             if (!relatedArticles[each.title]) {
@@ -856,7 +857,8 @@ export async function getRelatedArticles(reference, onProgress) {
         }
         onProgress(index+1,relatedIds.length)
     }
-    return {discoveryMethod,relatedArticles}
+    const output = {discoveryMethod,relatedArticles}
+    return output
 }
 
 export function crossrefToSimpleFormat(crossrefData) {

@@ -534,9 +534,10 @@ mainLoop: while (true) {
                     if (active == quit) {
                         continue mainLoop
                     }
-                    const {discoveryMethod,relatedArticles} = await withSpinner("getting related articles", 
-                        (mention)=>getRelatedArticles(active, (index,total)=>mention(`got ${index} of ${total}`))
-                    )
+                    const {discoveryMethod,relatedArticles} = await getRelatedArticles(active, (index,total)=>mention(`got ${index} of ${total}`))
+                    // await withSpinner("getting related articles", 
+                    //     (mention)=>
+                    // )
                     let addedReferences = 0
                     let newReferences = {}
                     for (const [title, each] of Object.entries(relatedArticles)) {
