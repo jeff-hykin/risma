@@ -14650,6 +14650,7 @@ references:
             events:
                 added: '2025-02-25T01:46:03.628Z'
                 sawTitle: '2025-02-25T02:01:32.966Z'
+            codebaseUrl: 'https://github.com/aalto-intelligent-robotics/ViTa-SLAM'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -16273,7 +16274,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    Continuous state estimation with synapse-constrained connectivity:
+    Continuous State Estimation With Synapse-constrained Connectivity: &ref_121
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -16403,6 +16404,177 @@ references:
                 - Joan A. Hoffmann
             link: 'https://doi.org/10.1109/ijcnn55064.2022.9892549'
             pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    Brain-inspired multimodal hybrid neural network for robot place recognition: &ref_122
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T17:14:08.852Z'
+                originalQuery: Brain-inspired multimodal hybrid neural network for robot place recognition
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T17:14:09.840Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1126/scirobotics.abm6996
+            openAlex:
+                doi: 'https://doi.org/10.1126/scirobotics.abm6996'
+                title: Brain-inspired multimodal hybrid neural network for robot place recognition
+                abstract: null
+                concepts:
+                    - robotics and sensor-based localization
+                    - advanced image and video retrieval techniques
+                    - robotics and automated systems
+                    - aerospace engineering
+                    - computer vision and pattern recognition
+                    - control and systems engineering
+                    - artificial neural network
+                    - computer science
+                    - artificial intelligence
+                    - robot
+                    - human–computer interaction
+                year: 2023
+                authorNames:
+                    - Fangwen Yu
+                    - Yujie Wu
+                    - Songchen Ma
+                    - Mingkun Xu
+                    - Hongyi Li
+                    - Huanyu Qu
+                    - Chenhang Song
+                    - Taoyi Wang
+                    - Rong Zhao
+                    - Luping Shi
+                link: 'https://doi.org/10.1126/scirobotics.abm6996'
+                pdfLink: 'https://www.science.org/doi/pdf/10.1126/scirobotics.abm6996?download=true'
+                citationCount: 33
+                citedAlexIds:
+                    - 'https://openalex.org/W1570411240'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W2012918357'
+                    - 'https://openalex.org/W2049115878'
+                    - 'https://openalex.org/W2052263019'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2058853524'
+                    - 'https://openalex.org/W2072837490'
+                    - 'https://openalex.org/W2082115891'
+                    - 'https://openalex.org/W2110405746'
+                    - 'https://openalex.org/W2112164532'
+                    - 'https://openalex.org/W2161446495'
+                    - 'https://openalex.org/W2162950292'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2260407442'
+                    - 'https://openalex.org/W2284029970'
+                    - 'https://openalex.org/W2621826044'
+                    - 'https://openalex.org/W2789373900'
+                    - 'https://openalex.org/W2889422159'
+                    - 'https://openalex.org/W2892077605'
+                    - 'https://openalex.org/W2908544477'
+                    - 'https://openalex.org/W2936249354'
+                    - 'https://openalex.org/W2950833128'
+                    - 'https://openalex.org/W2954787692'
+                    - 'https://openalex.org/W2966081953'
+                    - 'https://openalex.org/W2979058050'
+                    - 'https://openalex.org/W2999879503'
+                    - 'https://openalex.org/W3001211434'
+                    - 'https://openalex.org/W3006426821'
+                    - 'https://openalex.org/W3011454082'
+                    - 'https://openalex.org/W3011489868'
+                    - 'https://openalex.org/W3011524659'
+                    - 'https://openalex.org/W3036016986'
+                    - 'https://openalex.org/W3037063810'
+                    - 'https://openalex.org/W3040838455'
+                    - 'https://openalex.org/W3047938527'
+                    - 'https://openalex.org/W3100408631'
+                    - 'https://openalex.org/W3126631326'
+                    - 'https://openalex.org/W3130821023'
+                    - 'https://openalex.org/W3139657805'
+                    - 'https://openalex.org/W3163149666'
+                    - 'https://openalex.org/W3180344846'
+                    - 'https://openalex.org/W3184439570'
+                    - 'https://openalex.org/W3186856151'
+                    - 'https://openalex.org/W3187923576'
+                    - 'https://openalex.org/W3192186352'
+                    - 'https://openalex.org/W3201013180'
+                    - 'https://openalex.org/W3207611614'
+                    - 'https://openalex.org/W3209956815'
+                    - 'https://openalex.org/W4200589827'
+                    - 'https://openalex.org/W4210802373'
+                    - 'https://openalex.org/W4211056308'
+                    - 'https://openalex.org/W4214734943'
+                    - 'https://openalex.org/W4225463649'
+                    - 'https://openalex.org/W4225886149'
+                    - 'https://openalex.org/W4282927077'
+                    - 'https://openalex.org/W4283753774'
+                    - 'https://openalex.org/W4284888583'
+                    - 'https://openalex.org/W4297990271'
+                    - 'https://openalex.org/W4308084260'
+                    - 'https://openalex.org/W4313340261'
+                    - 'https://openalex.org/W4315490076'
+                    - 'https://openalex.org/W4362607265'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4396701345'
+                    - 'https://openalex.org/W4396696052'
+                    - 'https://openalex.org/W4391913857'
+                    - 'https://openalex.org/W4391375266'
+                    - 'https://openalex.org/W2899084033'
+                    - 'https://openalex.org/W2748952813'
+                    - 'https://openalex.org/W2390279801'
+                    - 'https://openalex.org/W2376932109'
+                    - 'https://openalex.org/W2358668433'
+                    - 'https://openalex.org/W2001405890'
+                openAlexId: W4376111524
+            googleScholar:
+                title: Brain-inspired multimodal hybrid neural network for robot place recognition
+                authorNames: null
+                pdfLink: null
+                link: 'https://www.science.org/doi/abs/10.1126/scirobotics.abm6996'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 1
+            - 303
+            - 1
+            - 2023
+            - 0
+        scoreString: 1|303|1|2023|0
+        _:
+            title: Brain-inspired multimodal hybrid neural network for robot place recognition
+            doi: 10.1126/scirobotics.abm6996
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - Fangwen Yu
+                - Yujie Wu
+                - Songchen Ma
+                - Mingkun Xu
+                - Hongyi Li
+                - Huanyu Qu
+                - Chenhang Song
+                - Taoyi Wang
+                - Rong Zhao
+                - Luping Shi
+            link: 'https://doi.org/10.1126/scirobotics.abm6996'
+            pdfLink: 'https://www.science.org/doi/pdf/10.1126/scirobotics.abm6996?download=true'
             cites: null
             citedBy: null
             abstract: null
@@ -17036,6 +17208,7 @@ discoveryAttempts:
         score: .nan
         dateTime: '2025-02-25T01:47:14.908Z'
         searchEngine: googleScholar
+        comment: "related work"
         referenceLinks:
             -
                 hadBeenSeenBefore: false
@@ -17046,6 +17219,7 @@ discoveryAttempts:
         score: .nan
         dateTime: '2025-02-25T01:52:24.914Z'
         searchEngine: googleScholar
+        comment: "related work"
         referenceLinks:
             -
                 hadBeenSeenBefore: false
@@ -17056,6 +17230,7 @@ discoveryAttempts:
         score: .nan
         dateTime: '2025-02-25T01:53:24.481Z'
         searchEngine: googleScholar
+        comment: "related work"
         referenceLinks:
             -
                 hadBeenSeenBefore: false
@@ -17066,8 +17241,20 @@ discoveryAttempts:
         score: .nan
         dateTime: '2025-03-04T15:43:39.919Z'
         searchEngine: googleScholar
+        comment: "paper from Hannah Martinez"
         referenceLinks:
             -
                 hadBeenSeenBefore: false
                 title: Continuous State Estimation With Synapse-constrained Connectivity
-                link: null
+                link: *ref_121
+    -
+        query: Brain-inspired multimodal hybrid neural network for robot place recognition
+        score: .nan
+        dateTime: '2025-03-04T17:14:08.852Z'
+        searchEngine: googleScholar
+        comment: "paper from Dr. Murphy"
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Brain-inspired multimodal hybrid neural network for robot place recognition
+                link: *ref_122
