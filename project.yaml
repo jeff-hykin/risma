@@ -85,6 +85,10 @@ settings:
             }
     keywords:
         positive:
+            - neuro-inspired
+            - neuro inspired
+            - hippocampal represent
+            - temporal
             - head direction system
             - landmark-stability
             - landmark stability
@@ -200,6 +204,7 @@ settings:
             - semantic
             - segmentation
             - depth
+            - neural
 references:
     'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features': &ref_4
         notes:
@@ -16282,11 +16287,11 @@ references:
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
-                dateTime: '2025-03-04T15:43:39.919Z'
-                originalQuery: Continuous State Estimation With Synapse-constrained Connectivity
+                dateTime: '2025-03-04T18:35:09.173Z'
+                originalQuery: '"ring attractor" "pytorch"'
                 searchEngine: googleScholar
             events:
-                added: '2025-03-04T15:43:40.512Z'
+                added: '2025-03-04T18:35:09.810Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -16375,13 +16380,18 @@ references:
                 openAlexId: W4312891150
             googleScholar:
                 title: Continuous state estimation with synapse-constrained connectivity
-                authorNames: null
+                authorNames:
+                    - R Norman-Tenazas
+                    - BS Robinson
                 pdfLink: null
                 link: 'https://ieeexplore.ieee.org/abstract/document/9892549/'
-                citationId: null
+                citationId: '8440355661423265857'
                 multiArticleId: null
-                citedByLink: null
-                publisherInfo: null
+                citedByLink: 'https://scholar.google.com//scholar?cites=8440355661423265857&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Joint Conference on, 2022'
+                year: 2022
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=8440355661423265857&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 3
         score:
             - 0
             - 270
@@ -16409,11 +16419,13 @@ references:
             abstract: null
     Brain-inspired multimodal hybrid neural network for robot place recognition: &ref_122
         notes:
-            resumeStatus: unseen|title
-            comment: ''
+            resumeStatus: super-relevent|title
+            comment: 'NeuroGPR paper'
             reasonsRelevant: []
             reasonsNotRelevant: []
             customKeywords: []
+            keyTags:
+                - hasCode
             discoveryMethod:
                 dateTime: '2025-03-04T17:14:08.852Z'
                 originalQuery: Brain-inspired multimodal hybrid neural network for robot place recognition
@@ -21499,17 +21511,17 @@ references:
             abstract: null
     A Hybrid Compact Neural Architecture for Visual Place Recognition: &ref_158
         notes:
-            comment: 'FlyNet'
-            customKeywords: []
             resumeStatus: unseen|title
-            reasonsNotRelevant: []
+            comment: ''
             reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
             discoveryMethod:
-                dateTime: '2025-03-04T17:19:09.828Z'
-                originallyWasRelatedTo: null
-                searchEngine: openAlex
+                dateTime: '2025-03-04T18:03:41.663Z'
+                originalQuery: A Hybrid Compact Neural Architecture for Visual Place Recognition
+                searchEngine: googleScholar
             events:
-                added: '2025-03-04T17:28:48.869Z'
+                added: '2025-03-04T18:03:44.590Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -21522,6 +21534,8 @@ references:
                 cites: null
                 citedBy: null
                 abstract: null
+            crossref:
+                doi: 10.1109/lra.2020.2967324
             openAlex:
                 doi: 'https://doi.org/10.1109/lra.2020.2967324'
                 title: A Hybrid Compact Neural Architecture for Visual Place Recognition
@@ -21656,6 +21670,15 @@ references:
                     - 'https://openalex.org/W2038503502'
                     - 'https://openalex.org/W2033914206'
                 openAlexId: W3105479692
+            googleScholar:
+                title: A hybrid compact neural architecture for visual place recognition
+                authorNames: null
+                pdfLink: null
+                link: 'https://ieeexplore.ieee.org/abstract/document/8962234/'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
         score:
             - 0
             - 135
@@ -21665,7 +21688,7 @@ references:
         scoreString: 0|135|1|2020|0
         _:
             title: A Hybrid Compact Neural Architecture for Visual Place Recognition
-            doi: 'https://doi.org/10.1109/lra.2020.2967324'
+            doi: 10.1109/lra.2020.2967324
             year: 2020
             publisherFlags: null
             authorNames:
@@ -27883,7 +27906,7 @@ references:
             cites: null
             citedBy: null
             abstract: null
-    A hybrid compact neural architecture for visual place recognition:
+    'Neural Dynamics and Similarity Matching: A Computational Approach Inspired by Hippocampal Mechanisms': &ref_196
         notes:
             resumeStatus: unseen|title
             comment: ''
@@ -27891,11 +27914,11 @@ references:
             reasonsNotRelevant: []
             customKeywords: []
             discoveryMethod:
-                dateTime: '2025-03-04T18:03:41.663Z'
-                originalQuery: A Hybrid Compact Neural Architecture for Visual Place Recognition
+                dateTime: '2025-03-04T18:35:09.173Z'
+                originalQuery: '"ring attractor" "pytorch"'
                 searchEngine: googleScholar
             events:
-                added: '2025-03-04T18:03:44.590Z'
+                added: '2025-03-04T18:35:09.810Z'
         accordingTo:
             $manuallyEntered:
                 title: null
@@ -27909,146 +27932,131 @@ references:
                 citedBy: null
                 abstract: null
             crossref:
-                doi: 10.1109/lra.2020.2967324
-            openAlex:
-                doi: 'https://doi.org/10.1109/lra.2020.2967324'
-                title: A Hybrid Compact Neural Architecture for Visual Place Recognition
-                abstract: null
-                concepts:
-                    - advanced image and video retrieval techniques
-                    - robotics and sensor-based localization
-                    - video surveillance and tracking methods
-                    - computer vision and pattern recognition
-                    - aerospace engineering
-                    - architecture
-                    - computer science
-                    - artificial intelligence
-                    - computer architecture
-                    - pattern recognition (psychology)
-                    - art
-                    - visual arts
-                year: 2020
-                authorNames:
-                    - Marvin Chancán
-                    - Luis Hernandez-Nunez
-                    - Ajay Narendra
-                    - Andrew B. Barron
-                    - Michael Milford
-                link: 'https://doi.org/10.1109/lra.2020.2967324'
-                pdfLink: 'http://arxiv.org/pdf/1910.06840'
-                citationCount: 33
-                citedAlexIds:
-                    - 'https://openalex.org/W1162411702'
-                    - 'https://openalex.org/W1240589429'
-                    - 'https://openalex.org/W1522301498'
-                    - 'https://openalex.org/W155607310'
-                    - 'https://openalex.org/W1592100263'
-                    - 'https://openalex.org/W1686810756'
-                    - 'https://openalex.org/W1749678571'
-                    - 'https://openalex.org/W1870428314'
-                    - 'https://openalex.org/W1903029394'
-                    - 'https://openalex.org/W1937954682'
-                    - 'https://openalex.org/W1959983357'
-                    - 'https://openalex.org/W1982009673'
-                    - 'https://openalex.org/W1986153736'
-                    - 'https://openalex.org/W1993150071'
-                    - 'https://openalex.org/W2003919215'
-                    - 'https://openalex.org/W2008936540'
-                    - 'https://openalex.org/W2028629011'
-                    - 'https://openalex.org/W2043369736'
-                    - 'https://openalex.org/W2064675550'
-                    - 'https://openalex.org/W2070287725'
-                    - 'https://openalex.org/W2073761981'
-                    - 'https://openalex.org/W2076619666'
-                    - 'https://openalex.org/W2081223351'
-                    - 'https://openalex.org/W2089861101'
-                    - 'https://openalex.org/W2095705004'
-                    - 'https://openalex.org/W2108598243'
-                    - 'https://openalex.org/W2110405746'
-                    - 'https://openalex.org/W2112669647'
-                    - 'https://openalex.org/W2118529354'
-                    - 'https://openalex.org/W2123213117'
-                    - 'https://openalex.org/W2141850017'
-                    - 'https://openalex.org/W2144588131'
-                    - 'https://openalex.org/W2159669279'
-                    - 'https://openalex.org/W2161338791'
-                    - 'https://openalex.org/W2163605009'
-                    - 'https://openalex.org/W2163886718'
-                    - 'https://openalex.org/W2169836061'
-                    - 'https://openalex.org/W2194775991'
-                    - 'https://openalex.org/W2267635276'
-                    - 'https://openalex.org/W2284029970'
-                    - 'https://openalex.org/W2289564477'
-                    - 'https://openalex.org/W2340897893'
-                    - 'https://openalex.org/W2342383553'
-                    - 'https://openalex.org/W2402905761'
-                    - 'https://openalex.org/W2558027072'
-                    - 'https://openalex.org/W2563705555'
-                    - 'https://openalex.org/W2567015638'
-                    - 'https://openalex.org/W2580440899'
-                    - 'https://openalex.org/W2589016937'
-                    - 'https://openalex.org/W2618530766'
-                    - 'https://openalex.org/W2618867898'
-                    - 'https://openalex.org/W2620629206'
-                    - 'https://openalex.org/W2626354520'
-                    - 'https://openalex.org/W26944259'
-                    - 'https://openalex.org/W2732026016'
-                    - 'https://openalex.org/W2740418457'
-                    - 'https://openalex.org/W2748551393'
-                    - 'https://openalex.org/W2773558369'
-                    - 'https://openalex.org/W2773928715'
-                    - 'https://openalex.org/W2785527097'
-                    - 'https://openalex.org/W2793805028'
-                    - 'https://openalex.org/W2800142021'
-                    - 'https://openalex.org/W2883168056'
-                    - 'https://openalex.org/W2884148180'
-                    - 'https://openalex.org/W2905820301'
-                    - 'https://openalex.org/W2914693969'
-                    - 'https://openalex.org/W2914993068'
-                    - 'https://openalex.org/W2916040547'
-                    - 'https://openalex.org/W2919115771'
-                    - 'https://openalex.org/W2939122829'
-                    - 'https://openalex.org/W2947795716'
-                    - 'https://openalex.org/W2949152168'
-                    - 'https://openalex.org/W2950407104'
-                    - 'https://openalex.org/W2951464485'
-                    - 'https://openalex.org/W2951536030'
-                    - 'https://openalex.org/W2962835968'
-                    - 'https://openalex.org/W2964086362'
-                    - 'https://openalex.org/W2964121744'
-                    - 'https://openalex.org/W2964157791'
-                    - 'https://openalex.org/W2964290573'
-                    - 'https://openalex.org/W2966081953'
-                    - 'https://openalex.org/W2968352263'
-                    - 'https://openalex.org/W2971328793'
-                    - 'https://openalex.org/W2976068632'
-                    - 'https://openalex.org/W2979058050'
-                    - 'https://openalex.org/W2995889583'
-                    - 'https://openalex.org/W3000423695'
-                    - 'https://openalex.org/W301022506'
-                    - 'https://openalex.org/W38782790'
-                    - 'https://openalex.org/W4239072543'
-                    - 'https://openalex.org/W4295262505'
-                    - 'https://openalex.org/W4297795161'
-                    - 'https://openalex.org/W4300614726'
-                    - 'https://openalex.org/W4308909683'
-                relatedAlexIds:
-                    - 'https://openalex.org/W4396701345'
-                    - 'https://openalex.org/W4391913857'
-                    - 'https://openalex.org/W4391375266'
-                    - 'https://openalex.org/W2899084033'
-                    - 'https://openalex.org/W2748952813'
-                    - 'https://openalex.org/W2390279801'
-                    - 'https://openalex.org/W2358668433'
-                    - 'https://openalex.org/W2042327336'
-                    - 'https://openalex.org/W2038503502'
-                    - 'https://openalex.org/W2033914206'
-                openAlexId: W3105479692
+                doi: null
+            openAlex: {}
             googleScholar:
-                title: A hybrid compact neural architecture for visual place recognition
+                title: 'Neural Dynamics and Similarity Matching: A Computational Approach Inspired by Hippocampal Mechanisms'
+                authorNames:
+                    - S Sridharan
+                pdfLink: 'https://rucore.libraries.rutgers.edu/rutgers-lib/73159/PDF/1/'
+                link: 'https://search.proquest.com/openview/ae5915030ac6351201fa0dbbfb2acdcf/1?pq-origsite=gscholar&cbl=18750&diss=y'
+                citationId: null
+                multiArticleId: '9716749135146685340'
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 0
+            - 135
+            - 0
+            - 2016
+            - 0
+        scoreString: 0|135|0|2016|0
+        _:
+            title: 'Neural Dynamics and Similarity Matching: A Computational Approach Inspired by Hippocampal Mechanisms'
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames:
+                - S Sridharan
+            link: 'https://search.proquest.com/openview/ae5915030ac6351201fa0dbbfb2acdcf/1?pq-origsite=gscholar&cbl=18750&diss=y'
+            pdfLink: 'https://rucore.libraries.rutgers.edu/rutgers-lib/73159/PDF/1/'
+            cites: null
+            citedBy: null
+            abstract: null
+    Overcoming sensory-memory interference in working memory circuits: &ref_195
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:35:09.173Z'
+                originalQuery: '"ring attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:35:09.810Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
                 authorNames: null
+                link: null
                 pdfLink: null
-                link: 'https://ieeexplore.ieee.org/abstract/document/8962234/'
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: Overcoming sensory-memory interference in working memory circuits
+                authorNames:
+                    - A Zahorodnii
+                    - D Mendoza-Halliday
+                    - JC Martinez
+                pdfLink: 'https://azaho.org/papers/2025_Sensory_Memory_Interference.pdf'
+                link: 'https://azaho.org/papers/2025_Sensory_Memory_Interference.pdf'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: Trujillo
+        score:
+            - 0
+            - 135
+            - 2
+            - 2016
+            - 0
+        scoreString: 0|135|2|2016|0
+        _:
+            title: Overcoming sensory-memory interference in working memory circuits
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames:
+                - A Zahorodnii
+                - D Mendoza-Halliday
+                - JC Martinez
+            link: 'https://azaho.org/papers/2025_Sensory_Memory_Interference.pdf'
+            pdfLink: 'https://azaho.org/papers/2025_Sensory_Memory_Interference.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    'FlyOrien: A bio-inspired model for incremental learning of object orientation': &ref_199
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:35:09.173Z'
+                originalQuery: '"ring attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:35:09.810Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: 'FlyOrien: A bio-inspired model for incremental learning of object orientation'
+                authorNames: null
+                pdfLink: 'https://openreview.net/pdf?id=jYyste2HLP'
+                link: 'https://openreview.net/forum?id=jYyste2HLP'
                 citationId: null
                 multiArticleId: null
                 citedByLink: null
@@ -28057,22 +28065,1497 @@ references:
             - 0
             - 135
             - 1
+            - 2016
+            - 0
+        scoreString: 0|135|1|2016|0
+        _:
+            title: 'FlyOrien: A bio-inspired model for incremental learning of object orientation'
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames: null
+            link: 'https://openreview.net/forum?id=jYyste2HLP'
+            pdfLink: 'https://openreview.net/pdf?id=jYyste2HLP'
+            cites: null
+            citedBy: null
+            abstract: null
+    Remapping in a recurrent neural network model of navigation and context inference: &ref_201
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:35:09.173Z'
+                originalQuery: '"ring attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:35:09.810Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.7554/elife.86943.2
+            openAlex:
+                doi: 'https://doi.org/10.7554/elife.86943.2'
+                title: Remapping in a recurrent neural network model of navigation and context inference
+                abstract: null
+                concepts:
+                    - memory and neural mechanisms
+                    - sleep and wakefulness research
+                    - neuroscience and neuropharmacology research
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - biological neural network
+                    - spatial contextual awareness
+                    - cued speech
+                    - computer science
+                    - inference
+                    - context (archaeology)
+                    - artificial neural network
+                    - artificial intelligence
+                    - task (project management)
+                    - machine learning
+                    - psychology
+                    - cognitive psychology
+                    - geography
+                    - archaeology
+                    - management
+                    - economics
+                year: 2023
+                authorNames:
+                    - Isabel I. C. Low
+                    - Lisa M. Giocomo
+                    - Alex H. Williams
+                link: 'https://doi.org/10.7554/elife.86943.2'
+                pdfLink: null
+                citationCount: 7
+                citedAlexIds:
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W1972869628'
+                    - 'https://openalex.org/W1980324747'
+                    - 'https://openalex.org/W1984871000'
+                    - 'https://openalex.org/W1988510861'
+                    - 'https://openalex.org/W1996856166'
+                    - 'https://openalex.org/W2016985810'
+                    - 'https://openalex.org/W2034797247'
+                    - 'https://openalex.org/W2041099773'
+                    - 'https://openalex.org/W2044108192'
+                    - 'https://openalex.org/W2058358833'
+                    - 'https://openalex.org/W2084588382'
+                    - 'https://openalex.org/W2086338669'
+                    - 'https://openalex.org/W2092580449'
+                    - 'https://openalex.org/W2110387210'
+                    - 'https://openalex.org/W2149422514'
+                    - 'https://openalex.org/W2149615516'
+                    - 'https://openalex.org/W2280725856'
+                    - 'https://openalex.org/W2434898965'
+                    - 'https://openalex.org/W2569046604'
+                    - 'https://openalex.org/W2597771082'
+                    - 'https://openalex.org/W2599683001'
+                    - 'https://openalex.org/W2605235639'
+                    - 'https://openalex.org/W2767014086'
+                    - 'https://openalex.org/W2767493192'
+                    - 'https://openalex.org/W2774672285'
+                    - 'https://openalex.org/W2883168056'
+                    - 'https://openalex.org/W2908124316'
+                    - 'https://openalex.org/W2924737142'
+                    - 'https://openalex.org/W2924887213'
+                    - 'https://openalex.org/W2929712475'
+                    - 'https://openalex.org/W2952062681'
+                    - 'https://openalex.org/W2978075572'
+                    - 'https://openalex.org/W2978632494'
+                    - 'https://openalex.org/W3007395460'
+                    - 'https://openalex.org/W3013897000'
+                    - 'https://openalex.org/W3033409638'
+                    - 'https://openalex.org/W3059320717'
+                    - 'https://openalex.org/W3103493959'
+                    - 'https://openalex.org/W3104513413'
+                    - 'https://openalex.org/W3136745559'
+                    - 'https://openalex.org/W3155593980'
+                    - 'https://openalex.org/W3158203492'
+                    - 'https://openalex.org/W3190292272'
+                    - 'https://openalex.org/W3198794212'
+                    - 'https://openalex.org/W4224213096'
+                    - 'https://openalex.org/W4281663412'
+                    - 'https://openalex.org/W4291718754'
+                relatedAlexIds:
+                    - 'https://openalex.org/W62877638'
+                    - 'https://openalex.org/W4220960781'
+                    - 'https://openalex.org/W3176549632'
+                    - 'https://openalex.org/W3157864487'
+                    - 'https://openalex.org/W3095039513'
+                    - 'https://openalex.org/W2791807133'
+                    - 'https://openalex.org/W2082933777'
+                    - 'https://openalex.org/W2082371543'
+                    - 'https://openalex.org/W2077263950'
+                    - 'https://openalex.org/W2010535944'
+                openAlexId: W4380879622
+            googleScholar:
+                title: Remapping in a recurrent neural network model of navigation and context inference
+                authorNames:
+                    - IIC Low
+                    - LM Giocomo
+                    - AH Williams
+                pdfLink: null
+                link: 'https://elifesciences.org/articles/86943'
+                citationId: '815180114399239032'
+                multiArticleId: '815180114399239032'
+                citedByLink: 'https://scholar.google.com//scholar?cites=815180114399239032&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Elife, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=815180114399239032&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 12
+        score:
+            - 1
+            - 303
+            - 0
+            - 2023
+            - 0
+        scoreString: 1|303|0|2023|0
+        _:
+            title: Remapping in a recurrent neural network model of navigation and context inference
+            doi: 10.7554/elife.86943.2
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - Isabel I. C. Low
+                - Lisa M. Giocomo
+                - Alex H. Williams
+            link: 'https://doi.org/10.7554/elife.86943.2'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
+    Predicting modular functions and neural coding of behavior from a synaptic wiring diagram: &ref_198
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:35:09.173Z'
+                originalQuery: '"ring attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:35:09.810Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1101/2020.10.28.359620
+            openAlex:
+                doi: 'https://doi.org/10.1101/2020.10.28.359620'
+                title: Predicting modular functions and neural coding of behavior from a synaptic wiring diagram
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - photoreceptor and optogenetics research
+                    - advanced memory and neural computing
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - electrical and electronic engineering
+                    - connectomics
+                    - neural coding
+                    - wiring diagram
+                    - synaptic weight
+                    - calcium imaging
+                    - nerve net
+                    - biological neural network
+                    - connectome
+                    - neuroscience
+                    - computer science
+                    - artificial neural network
+                    - modular design
+                    - coding (social sciences)
+                    - artificial intelligence
+                    - biology
+                    - functional connectivity
+                    - mathematics
+                    - chemistry
+                    - engineering
+                    - statistics
+                    - organic chemistry
+                    - electrical engineering
+                    - calcium
+                    - operating system
+                year: 2020
+                authorNames:
+                    - Ashwin Vishwanathan
+                    - Alexandro D. Ramirez
+                    - Jingpeng Wu
+                    - Alex Sood
+                    - Runzhe Yang
+                    - Nico Kemnitz
+                    - Dodam Ih
+                    - Nicholas L. Turner
+                    - Kisuk Lee
+                    - Ignacio Tartavull
+                    - William Silversmith
+                    - Chris S. Jordan
+                    - Celia David
+                    - Doug Bland
+                    - Mark S. Goldman
+                    - Emre Aksay
+                    - H. Sebastian Seung
+                link: 'https://doi.org/10.1101/2020.10.28.359620'
+                pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2021/02/03/2020.10.28.359620.full.pdf'
+                citationCount: 16
+                citedAlexIds:
+                    - 'https://openalex.org/W1495556469'
+                    - 'https://openalex.org/W1507090658'
+                    - 'https://openalex.org/W1540343830'
+                    - 'https://openalex.org/W1558736138'
+                    - 'https://openalex.org/W1608745771'
+                    - 'https://openalex.org/W1644276672'
+                    - 'https://openalex.org/W1750683838'
+                    - 'https://openalex.org/W1764826739'
+                    - 'https://openalex.org/W1815077724'
+                    - 'https://openalex.org/W1870345950'
+                    - 'https://openalex.org/W1901129140'
+                    - 'https://openalex.org/W1921182138'
+                    - 'https://openalex.org/W1962710288'
+                    - 'https://openalex.org/W1964049834'
+                    - 'https://openalex.org/W1969533226'
+                    - 'https://openalex.org/W1975389666'
+                    - 'https://openalex.org/W1977691361'
+                    - 'https://openalex.org/W1992476998'
+                    - 'https://openalex.org/W1999149787'
+                    - 'https://openalex.org/W2000616436'
+                    - 'https://openalex.org/W2000652730'
+                    - 'https://openalex.org/W2001043000'
+                    - 'https://openalex.org/W2008240154'
+                    - 'https://openalex.org/W2009912939'
+                    - 'https://openalex.org/W2012661701'
+                    - 'https://openalex.org/W2013013263'
+                    - 'https://openalex.org/W2016204025'
+                    - 'https://openalex.org/W2016397514'
+                    - 'https://openalex.org/W2019135050'
+                    - 'https://openalex.org/W2019407278'
+                    - 'https://openalex.org/W2022401803'
+                    - 'https://openalex.org/W2025543856'
+                    - 'https://openalex.org/W2025891204'
+                    - 'https://openalex.org/W2030150624'
+                    - 'https://openalex.org/W2033579242'
+                    - 'https://openalex.org/W2034538997'
+                    - 'https://openalex.org/W2040092971'
+                    - 'https://openalex.org/W2040156859'
+                    - 'https://openalex.org/W2044027491'
+                    - 'https://openalex.org/W2047807449'
+                    - 'https://openalex.org/W2048172426'
+                    - 'https://openalex.org/W2052296894'
+                    - 'https://openalex.org/W2052795301'
+                    - 'https://openalex.org/W2064907322'
+                    - 'https://openalex.org/W2068717605'
+                    - 'https://openalex.org/W2069702026'
+                    - 'https://openalex.org/W2069755236'
+                    - 'https://openalex.org/W2069992656'
+                    - 'https://openalex.org/W2071040101'
+                    - 'https://openalex.org/W2073610232'
+                    - 'https://openalex.org/W2084811348'
+                    - 'https://openalex.org/W2098004449'
+                    - 'https://openalex.org/W2101620490'
+                    - 'https://openalex.org/W2102907934'
+                    - 'https://openalex.org/W2102972654'
+                    - 'https://openalex.org/W2103744641'
+                    - 'https://openalex.org/W2103994288'
+                    - 'https://openalex.org/W2108726522'
+                    - 'https://openalex.org/W2115168690'
+                    - 'https://openalex.org/W2115900486'
+                    - 'https://openalex.org/W2119998616'
+                    - 'https://openalex.org/W2122186032'
+                    - 'https://openalex.org/W2131681506'
+                    - 'https://openalex.org/W2132238259'
+                    - 'https://openalex.org/W2133507210'
+                    - 'https://openalex.org/W2136464549'
+                    - 'https://openalex.org/W2137700545'
+                    - 'https://openalex.org/W2139919351'
+                    - 'https://openalex.org/W2140195253'
+                    - 'https://openalex.org/W2143502460'
+                    - 'https://openalex.org/W2143560481'
+                    - 'https://openalex.org/W2144251503'
+                    - 'https://openalex.org/W2149422514'
+                    - 'https://openalex.org/W2152255315'
+                    - 'https://openalex.org/W2155051950'
+                    - 'https://openalex.org/W2155893237'
+                    - 'https://openalex.org/W2157518752'
+                    - 'https://openalex.org/W2157966324'
+                    - 'https://openalex.org/W2158863573'
+                    - 'https://openalex.org/W2165443127'
+                    - 'https://openalex.org/W2167822639'
+                    - 'https://openalex.org/W2170372785'
+                    - 'https://openalex.org/W2170907559'
+                    - 'https://openalex.org/W2228548648'
+                    - 'https://openalex.org/W2231009150'
+                    - 'https://openalex.org/W2274591090'
+                    - 'https://openalex.org/W2277956273'
+                    - 'https://openalex.org/W2279238409'
+                    - 'https://openalex.org/W2309258625'
+                    - 'https://openalex.org/W2466406789'
+                    - 'https://openalex.org/W2596848926'
+                    - 'https://openalex.org/W2610861664'
+                    - 'https://openalex.org/W2614915054'
+                    - 'https://openalex.org/W2616526000'
+                    - 'https://openalex.org/W2735195016'
+                    - 'https://openalex.org/W2753297919'
+                    - 'https://openalex.org/W2803596769'
+                    - 'https://openalex.org/W2805271873'
+                    - 'https://openalex.org/W2808029579'
+                    - 'https://openalex.org/W2887242076'
+                    - 'https://openalex.org/W2892691268'
+                    - 'https://openalex.org/W2893279778'
+                    - 'https://openalex.org/W2894822713'
+                    - 'https://openalex.org/W2899299365'
+                    - 'https://openalex.org/W2899771611'
+                    - 'https://openalex.org/W2912119762'
+                    - 'https://openalex.org/W2922856569'
+                    - 'https://openalex.org/W2943035624'
+                    - 'https://openalex.org/W2949117887'
+                    - 'https://openalex.org/W2951839332'
+                    - 'https://openalex.org/W2951978378'
+                    - 'https://openalex.org/W2963958130'
+                    - 'https://openalex.org/W2964121744'
+                    - 'https://openalex.org/W2971049639'
+                    - 'https://openalex.org/W2982268628'
+                    - 'https://openalex.org/W2997235851'
+                    - 'https://openalex.org/W3000124408'
+                    - 'https://openalex.org/W3001500463'
+                    - 'https://openalex.org/W3028116930'
+                    - 'https://openalex.org/W3041725488'
+                    - 'https://openalex.org/W3084308099'
+                    - 'https://openalex.org/W3099768174'
+                    - 'https://openalex.org/W3101944716'
+                    - 'https://openalex.org/W3102532612'
+                    - 'https://openalex.org/W3107621816'
+                    - 'https://openalex.org/W3125564425'
+                    - 'https://openalex.org/W4235019172'
+                    - 'https://openalex.org/W4235068403'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4389312118'
+                    - 'https://openalex.org/W4296122806'
+                    - 'https://openalex.org/W3087638917'
+                    - 'https://openalex.org/W2912524409'
+                    - 'https://openalex.org/W2903672066'
+                    - 'https://openalex.org/W2896439494'
+                    - 'https://openalex.org/W2603705730'
+                    - 'https://openalex.org/W2289514760'
+                    - 'https://openalex.org/W2113781582'
+                    - 'https://openalex.org/W2027053009'
+                openAlexId: W3129175691
+            googleScholar:
+                title: Predicting modular functions and neural coding of behavior from a synaptic wiring diagram
+                authorNames:
+                    - A Vishwanathan
+                    - A Sood
+                    - J Wu
+                    - AD Ramirez
+                pdfLink: null
+                link: 'https://www.nature.com/articles/s41593-024-01784-3'
+                citationId: '11243275994409643103'
+                multiArticleId: '11243275994409643103'
+                citedByLink: 'https://scholar.google.com//scholar?cites=11243275994409643103&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Nature, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=11243275994409643103&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 26
+        score:
+            - 0
+            - 135
+            - 3
             - 2020
             - 0
-        scoreString: 0|135|1|2020|0
+        scoreString: 0|135|3|2020|0
         _:
-            title: A Hybrid Compact Neural Architecture for Visual Place Recognition
-            doi: 10.1109/lra.2020.2967324
+            title: Predicting modular functions and neural coding of behavior from a synaptic wiring diagram
+            doi: 10.1101/2020.10.28.359620
             year: 2020
             publisherFlags: null
             authorNames:
-                - Marvin Chancán
-                - Luis Hernandez-Nunez
-                - Ajay Narendra
-                - Andrew B. Barron
-                - Michael Milford
-            link: 'https://doi.org/10.1109/lra.2020.2967324'
-            pdfLink: 'http://arxiv.org/pdf/1910.06840'
+                - Ashwin Vishwanathan
+                - Alexandro D. Ramirez
+                - Jingpeng Wu
+                - Alex Sood
+                - Runzhe Yang
+                - Nico Kemnitz
+                - Dodam Ih
+                - Nicholas L. Turner
+                - Kisuk Lee
+                - Ignacio Tartavull
+                - William Silversmith
+                - Chris S. Jordan
+                - Celia David
+                - Doug Bland
+                - Mark S. Goldman
+                - Emre Aksay
+                - H. Sebastian Seung
+            link: 'https://doi.org/10.1101/2020.10.28.359620'
+            pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2021/02/03/2020.10.28.359620.full.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Inferring stochastic low-rank recurrent neural networks from neural data: &ref_197
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:35:09.173Z'
+                originalQuery: '"ring attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:35:09.810Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: Inferring stochastic low-rank recurrent neural networks from neural data
+                authorNames:
+                    - M Pals
+                    - AE Sağtekin
+                    - FC Pei- The Thirty
+                pdfLink: 'https://proceedings.neurips.cc/paper_files/paper/2024/file/209423f076b6479ab3a4f45886e30306-Paper-Conference.pdf'
+                link: 'https://proceedings.neurips.cc/paper_files/paper/2024/file/209423f076b6479ab3a4f45886e30306-Paper-Conference.pdf'
+                citationId: '2498707711785479578'
+                multiArticleId: '2498707711785479578'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2498707711785479578&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'eighth, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2498707711785479578&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 6
+        score:
+            - 0
+            - 270
+            - 0
+            - 2024
+            - 0
+        scoreString: 0|270|0|2024|0
+        _:
+            title: Inferring stochastic low-rank recurrent neural networks from neural data
+            doi: null
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - M Pals
+                - AE Sağtekin
+                - FC Pei- The Thirty
+            link: 'https://proceedings.neurips.cc/paper_files/paper/2024/file/209423f076b6479ab3a4f45886e30306-Paper-Conference.pdf'
+            pdfLink: 'https://proceedings.neurips.cc/paper_files/paper/2024/file/209423f076b6479ab3a4f45886e30306-Paper-Conference.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Coherently remapping toroidal cells but not Grid cells are responsible for path integration in virtual agents: &ref_200
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:35:09.173Z'
+                originalQuery: '"ring attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:35:09.810Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1016/j.isci.2023.108102
+            openAlex:
+                doi: 'https://doi.org/10.1016/j.isci.2023.108102'
+                title: Coherently remapping toroidal cells but not Grid cells are responsible for path integration in virtual agents
+                abstract: null
+                concepts:
+                    - reinforcement learning in robotics
+                    - computer graphics and visualization techniques
+                    - modular robots and swarm intelligence
+                    - artificial intelligence
+                    - computer graphics and computer-aided design
+                    - mechanical engineering
+                    - path integration
+                    - grid cell
+                    - computer science
+                    - grid
+                    - toroid
+                    - path (computing)
+                    - distributed computing
+                    - biological system
+                    - biology
+                    - physics
+                    - mathematics
+                    - computer network
+                    - geometry
+                    - plasma
+                    - quantum mechanics
+                year: 2023
+                authorNames:
+                    - Vemund Sigmundson Schøyen
+                    - Markus Borud Pettersen
+                    - Konstantin Holzhausen
+                    - Marianne Fyhn
+                    - Anders Malthe‐Sørenssen
+                    - Mikkel Elle Lepperød
+                link: 'https://doi.org/10.1016/j.isci.2023.108102'
+                pdfLink: 'https://www.duo.uio.no/bitstream/10852/107856/1/Coherently%2bremapping%2btoroidal%2bcells%2bbut%2bnot%2bGrid%2bcells%2bare%2bresponsible%2bfor%2bpath%2bintegration%2bin%2bvirtual%2bagents.pdf'
+                citationCount: 12
+                citedAlexIds:
+                    - 'https://openalex.org/W1522301498'
+                    - 'https://openalex.org/W1540763494'
+                    - 'https://openalex.org/W1572294349'
+                    - 'https://openalex.org/W1673310716'
+                    - 'https://openalex.org/W1926516508'
+                    - 'https://openalex.org/W1964539022'
+                    - 'https://openalex.org/W1968023011'
+                    - 'https://openalex.org/W1968533788'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W1977366115'
+                    - 'https://openalex.org/W1979697475'
+                    - 'https://openalex.org/W1993428681'
+                    - 'https://openalex.org/W1997692559'
+                    - 'https://openalex.org/W2001783678'
+                    - 'https://openalex.org/W2006890787'
+                    - 'https://openalex.org/W2007814182'
+                    - 'https://openalex.org/W2011301426'
+                    - 'https://openalex.org/W2014792483'
+                    - 'https://openalex.org/W2018083743'
+                    - 'https://openalex.org/W2029210342'
+                    - 'https://openalex.org/W2037628926'
+                    - 'https://openalex.org/W2043183159'
+                    - 'https://openalex.org/W2049974278'
+                    - 'https://openalex.org/W2062509058'
+                    - 'https://openalex.org/W2067933183'
+                    - 'https://openalex.org/W2082149624'
+                    - 'https://openalex.org/W2086967399'
+                    - 'https://openalex.org/W2101234009'
+                    - 'https://openalex.org/W2110161683'
+                    - 'https://openalex.org/W2110925481'
+                    - 'https://openalex.org/W2115348689'
+                    - 'https://openalex.org/W2120127728'
+                    - 'https://openalex.org/W2132238259'
+                    - 'https://openalex.org/W2137753887'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2253328753'
+                    - 'https://openalex.org/W2323385084'
+                    - 'https://openalex.org/W2610861664'
+                    - 'https://openalex.org/W2728927411'
+                    - 'https://openalex.org/W2774672285'
+                    - 'https://openalex.org/W2782398209'
+                    - 'https://openalex.org/W2785527097'
+                    - 'https://openalex.org/W2786672974'
+                    - 'https://openalex.org/W2791418051'
+                    - 'https://openalex.org/W2800142021'
+                    - 'https://openalex.org/W2883168056'
+                    - 'https://openalex.org/W2911805374'
+                    - 'https://openalex.org/W2951066214'
+                    - 'https://openalex.org/W2968451269'
+                    - 'https://openalex.org/W2971328793'
+                    - 'https://openalex.org/W3003257820'
+                    - 'https://openalex.org/W3103145119'
+                    - 'https://openalex.org/W3103493959'
+                    - 'https://openalex.org/W3120392574'
+                    - 'https://openalex.org/W3132153124'
+                    - 'https://openalex.org/W3154239738'
+                    - 'https://openalex.org/W3159859587'
+                    - 'https://openalex.org/W3198794212'
+                    - 'https://openalex.org/W3212309450'
+                    - 'https://openalex.org/W4200634264'
+                    - 'https://openalex.org/W4205399426'
+                    - 'https://openalex.org/W4226162713'
+                    - 'https://openalex.org/W4290567062'
+                    - 'https://openalex.org/W4295312788'
+                    - 'https://openalex.org/W4303647826'
+                    - 'https://openalex.org/W4307583652'
+                    - 'https://openalex.org/W4309949331'
+                    - 'https://openalex.org/W4320723784'
+                    - 'https://openalex.org/W4364376419'
+                    - 'https://openalex.org/W4392362062'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4324101813'
+                    - 'https://openalex.org/W2915833869'
+                    - 'https://openalex.org/W2774672285'
+                    - 'https://openalex.org/W2773524585'
+                    - 'https://openalex.org/W2113972883'
+                    - 'https://openalex.org/W2099901929'
+                    - 'https://openalex.org/W2075376711'
+                    - 'https://openalex.org/W1977793635'
+                    - 'https://openalex.org/W1974037309'
+                    - 'https://openalex.org/W1725969320'
+                openAlexId: W4387211197
+            googleScholar:
+                title: Coherently remapping toroidal cells but not grid cells are responsible for path integration in virtual agents
+                authorNames:
+                    - V Schyen
+                    - MB Pettersen
+                    - K Holzhausen
+                    - M Fyhn
+                pdfLink: null
+                link: 'https://www.cell.com/iscience/fulltext/S2589-0042(23)02179-X'
+                citationId: '2811684840014652023'
+                multiArticleId: '2811684840014652023'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2811684840014652023&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Iscience, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2811684840014652023&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 15
+        score:
+            - 1
+            - 306
+            - 0
+            - 2023
+            - 0
+        scoreString: 1|306|0|2023|0
+        _:
+            title: Coherently remapping toroidal cells but not Grid cells are responsible for path integration in virtual agents
+            doi: 10.1016/j.isci.2023.108102
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - Vemund Sigmundson Schøyen
+                - Markus Borud Pettersen
+                - Konstantin Holzhausen
+                - Marianne Fyhn
+                - Anders Malthe‐Sørenssen
+                - Mikkel Elle Lepperød
+            link: 'https://doi.org/10.1016/j.isci.2023.108102'
+            pdfLink: 'https://www.duo.uio.no/bitstream/10852/107856/1/Coherently%2bremapping%2btoroidal%2bcells%2bbut%2bnot%2bGrid%2bcells%2bare%2bresponsible%2bfor%2bpath%2bintegration%2bin%2bvirtual%2bagents.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Why do recurrent neural networks suddenly learn? Bifurcation mechanisms in neuro-inspired short-term memory tasks: &ref_202
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:38:43.249Z'
+                originalQuery: '"continuous attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:38:43.848Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: Why do recurrent neural networks suddenly learn? Bifurcation mechanisms in neuro-inspired short-term memory tasks
+                authorNames:
+                    - U Haputhanthri
+                    - L Storan
+                    - Y Jiang
+                    - A Shai
+                pdfLink: 'https://openreview.net/pdf?id=njmXdqzHJq'
+                link: 'https://openreview.net/forum?id=njmXdqzHJq'
+                citationId: '16898358544107419149'
+                multiArticleId: null
+                citedByLink: 'https://scholar.google.com//scholar?cites=16898358544107419149&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'ICML 2024 Workshop, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=16898358544107419149&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 1
+        score:
+            - 1
+            - 303
+            - 2
+            - 2024
+            - 0
+        scoreString: 1|303|2|2024|0
+        _:
+            title: Why do recurrent neural networks suddenly learn? Bifurcation mechanisms in neuro-inspired short-term memory tasks
+            doi: null
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - U Haputhanthri
+                - L Storan
+                - Y Jiang
+                - A Shai
+            link: 'https://openreview.net/forum?id=njmXdqzHJq'
+            pdfLink: 'https://openreview.net/pdf?id=njmXdqzHJq'
+            cites: null
+            citedBy: null
+            abstract: null
+    Leveraging attractor dynamics in spatial navigation for better language parsing: &ref_205
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:38:43.249Z'
+                originalQuery: '"continuous attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:38:43.848Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: Leveraging attractor dynamics in spatial navigation for better language parsing
+                authorNames:
+                    - X Zou
+                    - X Cao
+                    - X Yang
+                    - B Hong- Forty
+                pdfLink: 'https://openreview.net/pdf?id=eapFRURALQ'
+                link: 'https://openreview.net/forum?id=eapFRURALQ'
+                citationId: null
+                multiArticleId: '4271058175390009882'
+                citedByLink: null
+                publisherInfo: 'first International Conference, 2024'
+                year: 2024
+        score:
+            - 1
+            - 303
+            - 0
+            - 2024
+            - 0
+        scoreString: 1|303|0|2024|0
+        _:
+            title: Leveraging attractor dynamics in spatial navigation for better language parsing
+            doi: null
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - X Zou
+                - X Cao
+                - X Yang
+                - B Hong- Forty
+            link: 'https://openreview.net/forum?id=eapFRURALQ'
+            pdfLink: 'https://openreview.net/pdf?id=eapFRURALQ'
+            cites: null
+            citedBy: null
+            abstract: null
+    Coherently remapping toroidal cells but not grid cells are responsible for path integration in virtual agents:
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:38:43.249Z'
+                originalQuery: '"continuous attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:38:43.848Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1016/j.isci.2023.108102
+            openAlex:
+                doi: 'https://doi.org/10.1016/j.isci.2023.108102'
+                title: Coherently remapping toroidal cells but not Grid cells are responsible for path integration in virtual agents
+                abstract: null
+                concepts:
+                    - reinforcement learning in robotics
+                    - computer graphics and visualization techniques
+                    - modular robots and swarm intelligence
+                    - artificial intelligence
+                    - computer graphics and computer-aided design
+                    - mechanical engineering
+                    - path integration
+                    - grid cell
+                    - computer science
+                    - grid
+                    - toroid
+                    - path (computing)
+                    - distributed computing
+                    - biological system
+                    - biology
+                    - physics
+                    - mathematics
+                    - computer network
+                    - geometry
+                    - plasma
+                    - quantum mechanics
+                year: 2023
+                authorNames:
+                    - Vemund Sigmundson Schøyen
+                    - Markus Borud Pettersen
+                    - Konstantin Holzhausen
+                    - Marianne Fyhn
+                    - Anders Malthe‐Sørenssen
+                    - Mikkel Elle Lepperød
+                link: 'https://doi.org/10.1016/j.isci.2023.108102'
+                pdfLink: 'https://www.duo.uio.no/bitstream/10852/107856/1/Coherently%2bremapping%2btoroidal%2bcells%2bbut%2bnot%2bGrid%2bcells%2bare%2bresponsible%2bfor%2bpath%2bintegration%2bin%2bvirtual%2bagents.pdf'
+                citationCount: 12
+                citedAlexIds:
+                    - 'https://openalex.org/W1522301498'
+                    - 'https://openalex.org/W1540763494'
+                    - 'https://openalex.org/W1572294349'
+                    - 'https://openalex.org/W1673310716'
+                    - 'https://openalex.org/W1926516508'
+                    - 'https://openalex.org/W1964539022'
+                    - 'https://openalex.org/W1968023011'
+                    - 'https://openalex.org/W1968533788'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W1977366115'
+                    - 'https://openalex.org/W1979697475'
+                    - 'https://openalex.org/W1993428681'
+                    - 'https://openalex.org/W1997692559'
+                    - 'https://openalex.org/W2001783678'
+                    - 'https://openalex.org/W2006890787'
+                    - 'https://openalex.org/W2007814182'
+                    - 'https://openalex.org/W2011301426'
+                    - 'https://openalex.org/W2014792483'
+                    - 'https://openalex.org/W2018083743'
+                    - 'https://openalex.org/W2029210342'
+                    - 'https://openalex.org/W2037628926'
+                    - 'https://openalex.org/W2043183159'
+                    - 'https://openalex.org/W2049974278'
+                    - 'https://openalex.org/W2062509058'
+                    - 'https://openalex.org/W2067933183'
+                    - 'https://openalex.org/W2082149624'
+                    - 'https://openalex.org/W2086967399'
+                    - 'https://openalex.org/W2101234009'
+                    - 'https://openalex.org/W2110161683'
+                    - 'https://openalex.org/W2110925481'
+                    - 'https://openalex.org/W2115348689'
+                    - 'https://openalex.org/W2120127728'
+                    - 'https://openalex.org/W2132238259'
+                    - 'https://openalex.org/W2137753887'
+                    - 'https://openalex.org/W2167403166'
+                    - 'https://openalex.org/W2253328753'
+                    - 'https://openalex.org/W2323385084'
+                    - 'https://openalex.org/W2610861664'
+                    - 'https://openalex.org/W2728927411'
+                    - 'https://openalex.org/W2774672285'
+                    - 'https://openalex.org/W2782398209'
+                    - 'https://openalex.org/W2785527097'
+                    - 'https://openalex.org/W2786672974'
+                    - 'https://openalex.org/W2791418051'
+                    - 'https://openalex.org/W2800142021'
+                    - 'https://openalex.org/W2883168056'
+                    - 'https://openalex.org/W2911805374'
+                    - 'https://openalex.org/W2951066214'
+                    - 'https://openalex.org/W2968451269'
+                    - 'https://openalex.org/W2971328793'
+                    - 'https://openalex.org/W3003257820'
+                    - 'https://openalex.org/W3103145119'
+                    - 'https://openalex.org/W3103493959'
+                    - 'https://openalex.org/W3120392574'
+                    - 'https://openalex.org/W3132153124'
+                    - 'https://openalex.org/W3154239738'
+                    - 'https://openalex.org/W3159859587'
+                    - 'https://openalex.org/W3198794212'
+                    - 'https://openalex.org/W3212309450'
+                    - 'https://openalex.org/W4200634264'
+                    - 'https://openalex.org/W4205399426'
+                    - 'https://openalex.org/W4226162713'
+                    - 'https://openalex.org/W4290567062'
+                    - 'https://openalex.org/W4295312788'
+                    - 'https://openalex.org/W4303647826'
+                    - 'https://openalex.org/W4307583652'
+                    - 'https://openalex.org/W4309949331'
+                    - 'https://openalex.org/W4320723784'
+                    - 'https://openalex.org/W4364376419'
+                    - 'https://openalex.org/W4392362062'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4324101813'
+                    - 'https://openalex.org/W2915833869'
+                    - 'https://openalex.org/W2774672285'
+                    - 'https://openalex.org/W2773524585'
+                    - 'https://openalex.org/W2113972883'
+                    - 'https://openalex.org/W2099901929'
+                    - 'https://openalex.org/W2075376711'
+                    - 'https://openalex.org/W1977793635'
+                    - 'https://openalex.org/W1974037309'
+                    - 'https://openalex.org/W1725969320'
+                openAlexId: W4387211197
+            googleScholar:
+                title: Coherently remapping toroidal cells but not grid cells are responsible for path integration in virtual agents
+                authorNames:
+                    - V Schyen
+                    - MB Pettersen
+                    - K Holzhausen
+                    - M Fyhn
+                pdfLink: null
+                link: 'https://www.cell.com/iscience/fulltext/S2589-0042(23)02179-X'
+                citationId: '2811684840014652023'
+                multiArticleId: '2811684840014652023'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2811684840014652023&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Iscience, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2811684840014652023&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 15
+        score:
+            - 1
+            - 306
+            - 0
+            - 2023
+            - 0
+        scoreString: 1|306|0|2023|0
+        _:
+            title: Coherently remapping toroidal cells but not Grid cells are responsible for path integration in virtual agents
+            doi: 10.1016/j.isci.2023.108102
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - Vemund Sigmundson Schøyen
+                - Markus Borud Pettersen
+                - Konstantin Holzhausen
+                - Marianne Fyhn
+                - Anders Malthe‐Sørenssen
+                - Mikkel Elle Lepperød
+            link: 'https://doi.org/10.1016/j.isci.2023.108102'
+            pdfLink: 'https://www.duo.uio.no/bitstream/10852/107856/1/Coherently%2bremapping%2btoroidal%2bcells%2bbut%2bnot%2bGrid%2bcells%2bare%2bresponsible%2bfor%2bpath%2bintegration%2bin%2bvirtual%2bagents.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    Sequential predictive learning is a unifying theory for hippocampal representation and replay: &ref_206
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:38:43.249Z'
+                originalQuery: '"continuous attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:38:43.848Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1101/2024.04.28.591528
+            openAlex:
+                doi: 'https://doi.org/10.1101/2024.04.28.591528'
+                title: Sequential predictive learning is a unifying theory for hippocampal representation and replay
+                abstract: null
+                concepts:
+                    - memory and neural mechanisms
+                    - neuroscience and neuropharmacology research
+                    - neural dynamics and brain function
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - representation
+                    - representation (politics)
+                    - computer science
+                    - hippocampal formation
+                    - cognitive science
+                    - artificial intelligence
+                    - machine learning
+                    - psychology
+                    - neuroscience
+                    - political science
+                    - politics
+                    - law
+                year: 2024
+                authorNames:
+                    - Daniel Levenstein
+                    - Aleksei Efremov
+                    - Roy Henha Eyono
+                    - Adrien Peyrache
+                    - Blake A. Richards
+                link: 'https://doi.org/10.1101/2024.04.28.591528'
+                pdfLink: null
+                citationCount: 11
+                citedAlexIds:
+                    - 'https://openalex.org/W1548832268'
+                    - 'https://openalex.org/W1582897322'
+                    - 'https://openalex.org/W1591752419'
+                    - 'https://openalex.org/W1770958704'
+                    - 'https://openalex.org/W1953105366'
+                    - 'https://openalex.org/W1963920688'
+                    - 'https://openalex.org/W1965070330'
+                    - 'https://openalex.org/W1967456522'
+                    - 'https://openalex.org/W1973372728'
+                    - 'https://openalex.org/W1974367810'
+                    - 'https://openalex.org/W1975958074'
+                    - 'https://openalex.org/W1995681526'
+                    - 'https://openalex.org/W2000775105'
+                    - 'https://openalex.org/W2001257668'
+                    - 'https://openalex.org/W2006760951'
+                    - 'https://openalex.org/W2010087445'
+                    - 'https://openalex.org/W2017169966'
+                    - 'https://openalex.org/W2020272049'
+                    - 'https://openalex.org/W2023321272'
+                    - 'https://openalex.org/W2033218028'
+                    - 'https://openalex.org/W2037287139'
+                    - 'https://openalex.org/W2039772527'
+                    - 'https://openalex.org/W2041800086'
+                    - 'https://openalex.org/W2051682114'
+                    - 'https://openalex.org/W2060671266'
+                    - 'https://openalex.org/W2071290167'
+                    - 'https://openalex.org/W2072843066'
+                    - 'https://openalex.org/W2082974091'
+                    - 'https://openalex.org/W2090231318'
+                    - 'https://openalex.org/W2092580449'
+                    - 'https://openalex.org/W2097818966'
+                    - 'https://openalex.org/W2103853773'
+                    - 'https://openalex.org/W2110854100'
+                    - 'https://openalex.org/W2112902525'
+                    - 'https://openalex.org/W2114786345'
+                    - 'https://openalex.org/W2132238259'
+                    - 'https://openalex.org/W2144531560'
+                    - 'https://openalex.org/W2144846363'
+                    - 'https://openalex.org/W2149422514'
+                    - 'https://openalex.org/W2155505956'
+                    - 'https://openalex.org/W2156888897'
+                    - 'https://openalex.org/W2157744729'
+                    - 'https://openalex.org/W2162946779'
+                    - 'https://openalex.org/W2168101731'
+                    - 'https://openalex.org/W2286961191'
+                    - 'https://openalex.org/W2410446460'
+                    - 'https://openalex.org/W2566689527'
+                    - 'https://openalex.org/W2571848202'
+                    - 'https://openalex.org/W2593308454'
+                    - 'https://openalex.org/W2733572936'
+                    - 'https://openalex.org/W2740909715'
+                    - 'https://openalex.org/W2751166226'
+                    - 'https://openalex.org/W2781452345'
+                    - 'https://openalex.org/W2826006208'
+                    - 'https://openalex.org/W2893325263'
+                    - 'https://openalex.org/W2898208057'
+                    - 'https://openalex.org/W2898600431'
+                    - 'https://openalex.org/W2899658621'
+                    - 'https://openalex.org/W2902907165'
+                    - 'https://openalex.org/W2908664654'
+                    - 'https://openalex.org/W2948031228'
+                    - 'https://openalex.org/W2949647035'
+                    - 'https://openalex.org/W2950347959'
+                    - 'https://openalex.org/W3004187319'
+                    - 'https://openalex.org/W3008394955'
+                    - 'https://openalex.org/W3010874390'
+                    - 'https://openalex.org/W3026495316'
+                    - 'https://openalex.org/W3033644139'
+                    - 'https://openalex.org/W3103493959'
+                    - 'https://openalex.org/W3104513413'
+                    - 'https://openalex.org/W3115328114'
+                    - 'https://openalex.org/W3134545286'
+                    - 'https://openalex.org/W3154239738'
+                    - 'https://openalex.org/W3199656449'
+                    - 'https://openalex.org/W3212185810'
+                    - 'https://openalex.org/W4200206940'
+                    - 'https://openalex.org/W4239187508'
+                    - 'https://openalex.org/W4281286106'
+                    - 'https://openalex.org/W4281870941'
+                    - 'https://openalex.org/W4288855563'
+                    - 'https://openalex.org/W4289644862'
+                    - 'https://openalex.org/W4290567062'
+                    - 'https://openalex.org/W4307583652'
+                    - 'https://openalex.org/W4307931716'
+                    - 'https://openalex.org/W4308294084'
+                    - 'https://openalex.org/W4308350986'
+                    - 'https://openalex.org/W4308360680'
+                    - 'https://openalex.org/W4309646944'
+                    - 'https://openalex.org/W4310820325'
+                    - 'https://openalex.org/W4324353720'
+                    - 'https://openalex.org/W4327573869'
+                    - 'https://openalex.org/W4327587510'
+                    - 'https://openalex.org/W4327626233'
+                    - 'https://openalex.org/W4362589255'
+                    - 'https://openalex.org/W4365143757'
+                    - 'https://openalex.org/W4378834024'
+                    - 'https://openalex.org/W4385612031'
+                    - 'https://openalex.org/W4385760562'
+                    - 'https://openalex.org/W4386113771'
+                    - 'https://openalex.org/W4387003139'
+                    - 'https://openalex.org/W4387772228'
+                    - 'https://openalex.org/W4387962382'
+                    - 'https://openalex.org/W4388515013'
+                    - 'https://openalex.org/W4389167278'
+                    - 'https://openalex.org/W4390796874'
+                    - 'https://openalex.org/W4391709930'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4394896187'
+                    - 'https://openalex.org/W4386462264'
+                    - 'https://openalex.org/W4364306694'
+                    - 'https://openalex.org/W4312192474'
+                    - 'https://openalex.org/W4306674287'
+                    - 'https://openalex.org/W4283697347'
+                    - 'https://openalex.org/W3170094116'
+                    - 'https://openalex.org/W3107602296'
+                    - 'https://openalex.org/W3046775127'
+                    - 'https://openalex.org/W2961085424'
+                openAlexId: W4396240923
+            googleScholar:
+                title: Sequential predictive learning is a unifying theory for hippocampal representation and replay
+                authorNames:
+                    - D Levenstein
+                    - A Efremov
+                    - RH Eyono
+                    - A Peyrache
+                pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2024/06/04/2024.04.28.591528.full.pdf'
+                link: 'https://www.biorxiv.org/content/10.1101/2024.04.28.591528.abstract'
+                citationId: '8212586925607898850'
+                multiArticleId: '8212586925607898850'
+                citedByLink: 'https://scholar.google.com//scholar?cites=8212586925607898850&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'bioRxiv, 2024'
+                year: 2024
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=8212586925607898850&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 11
+        score:
+            - 0
+            - 270
+            - 3
+            - 2024
+            - 0
+        scoreString: 0|270|3|2024|0
+        _:
+            title: Sequential predictive learning is a unifying theory for hippocampal representation and replay
+            doi: 10.1101/2024.04.28.591528
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - Daniel Levenstein
+                - Aleksei Efremov
+                - Roy Henha Eyono
+                - Adrien Peyrache
+                - Blake A. Richards
+            link: 'https://doi.org/10.1101/2024.04.28.591528'
+            pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2024/06/04/2024.04.28.591528.full.pdf'
+            cites: null
+            citedBy: null
+            abstract: null
+    'A Recurrent Neural Circuit Mechanism of Temporal-scaling Equivariant Representation: Supplementary Information': &ref_204
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:38:43.249Z'
+                originalQuery: '"continuous attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:38:43.848Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: 'A Recurrent Neural Circuit Mechanism of Temporal-scaling Equivariant Representation: Supplementary Information'
+                authorNames: null
+                pdfLink: 'https://proceedings.neurips.cc/paper_files/paper/2023/file/c5e44243e16c9d61d3897ba1095f5f6c-Supplemental-Conference.zip'
+                link: 'https://proceedings.neurips.cc/paper_files/paper/2023/file/c5e44243e16c9d61d3897ba1095f5f6c-Supplemental-Conference.zip'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 0
+            - 135
+            - 1
+            - 2016
+            - 0
+        scoreString: 0|135|1|2016|0
+        _:
+            title: 'A Recurrent Neural Circuit Mechanism of Temporal-scaling Equivariant Representation: Supplementary Information'
+            doi: null
+            year: null
+            publisherFlags: null
+            authorNames: null
+            link: 'https://proceedings.neurips.cc/paper_files/paper/2023/file/c5e44243e16c9d61d3897ba1095f5f6c-Supplemental-Conference.zip'
+            pdfLink: 'https://proceedings.neurips.cc/paper_files/paper/2023/file/c5e44243e16c9d61d3897ba1095f5f6c-Supplemental-Conference.zip'
+            cites: null
+            citedBy: null
+            abstract: null
+    'Winning the lottery with neural connectivity constraints: Faster learning across cognitive tasks with spatially constrained sparse rnns':
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:38:43.249Z'
+                originalQuery: '"continuous attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:38:43.848Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1162/neco_a_01613
+            openAlex:
+                doi: 'https://doi.org/10.1162/neco_a_01613'
+                title: 'Winning the Lottery With Neural Connectivity Constraints: Faster Learning Across Cognitive Tasks With Spatially Constrained Sparse RNNs'
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - advanced memory and neural computing
+                    - neural networks and reservoir computing
+                    - cognitive neuroscience
+                    - electrical and electronic engineering
+                    - artificial intelligence
+                    - mnist database
+                    - computer science
+                    - recurrent neural network
+                    - task (project management)
+                    - artificial neural network
+                    - machine learning
+                    - management
+                    - economics
+                year: 2023
+                authorNames:
+                    - Mikail Khona
+                    - Sarthak Chandra
+                    - Joy Winston James
+                    - Ila Fiete
+                link: 'https://doi.org/10.1162/neco_a_01613'
+                pdfLink: 'http://arxiv.org/pdf/2207.03523'
+                citationCount: 1
+                citedAlexIds:
+                    - 'https://openalex.org/W1993665893'
+                    - 'https://openalex.org/W2103179919'
+                    - 'https://openalex.org/W2112090702'
+                    - 'https://openalex.org/W2128084896'
+                    - 'https://openalex.org/W2167845354'
+                    - 'https://openalex.org/W2171865010'
+                    - 'https://openalex.org/W2371946849'
+                    - 'https://openalex.org/W2559655401'
+                    - 'https://openalex.org/W2588048611'
+                    - 'https://openalex.org/W2754526845'
+                    - 'https://openalex.org/W2805003733'
+                    - 'https://openalex.org/W2894740066'
+                    - 'https://openalex.org/W2908124316'
+                    - 'https://openalex.org/W2948635472'
+                    - 'https://openalex.org/W2963828549'
+                    - 'https://openalex.org/W2970158300'
+                    - 'https://openalex.org/W2990844796'
+                    - 'https://openalex.org/W3005842225'
+                    - 'https://openalex.org/W3018844151'
+                    - 'https://openalex.org/W3041256625'
+                    - 'https://openalex.org/W3101959160'
+                    - 'https://openalex.org/W3167810990'
+                    - 'https://openalex.org/W3184481189'
+                    - 'https://openalex.org/W3198296750'
+                    - 'https://openalex.org/W4210958102'
+                    - 'https://openalex.org/W4212774754'
+                    - 'https://openalex.org/W4213055974'
+                    - 'https://openalex.org/W4280533591'
+                    - 'https://openalex.org/W4281557725'
+                    - 'https://openalex.org/W4287756710'
+                    - 'https://openalex.org/W4291718754'
+                    - 'https://openalex.org/W4297689207'
+                    - 'https://openalex.org/W4300971654'
+                    - 'https://openalex.org/W4308294084'
+                    - 'https://openalex.org/W4309758341'
+                    - 'https://openalex.org/W4317438807'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4386603768'
+                    - 'https://openalex.org/W4380078352'
+                    - 'https://openalex.org/W3088091256'
+                    - 'https://openalex.org/W3046591097'
+                    - 'https://openalex.org/W2950475743'
+                    - 'https://openalex.org/W2886711096'
+                    - 'https://openalex.org/W2809732489'
+                    - 'https://openalex.org/W2750384547'
+                    - 'https://openalex.org/W2734358244'
+                    - 'https://openalex.org/W2590796488'
+                openAlexId: W4386857325
+            googleScholar:
+                title: 'Winning the lottery with neural connectivity constraints: Faster learning across cognitive tasks with spatially constrained sparse rnns'
+                authorNames:
+                    - M Khona
+                    - S Chandra
+                    - JJ Ma
+                    - IR Fiete
+                pdfLink: 'https://arxiv.org/pdf/2207.03523'
+                link: 'https://direct.mit.edu/neco/article/35/11/1850/117576'
+                citationId: '3241654030833681266'
+                multiArticleId: '3241654030833681266'
+                citedByLink: 'https://scholar.google.com//scholar?cites=3241654030833681266&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'Neural Computation, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=3241654030833681266&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citedByCount: 6
+        score:
+            - 1
+            - 306
+            - 1
+            - 2023
+            - 0
+        scoreString: 1|306|1|2023|0
+        _:
+            title: 'Winning the Lottery With Neural Connectivity Constraints: Faster Learning Across Cognitive Tasks With Spatially Constrained Sparse RNNs'
+            doi: 10.1162/neco_a_01613
+            year: 2023
+            publisherFlags: null
+            authorNames:
+                - Mikail Khona
+                - Sarthak Chandra
+                - Joy Winston James
+                - Ila Fiete
+            link: 'https://doi.org/10.1162/neco_a_01613'
+            pdfLink: 'http://arxiv.org/pdf/2207.03523'
+            cites: null
+            citedBy: null
+            abstract: null
+    Geometric sparsification in recurrent neural networks: &ref_203
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T18:38:43.249Z'
+                originalQuery: '"continuous attractor" "pytorch"'
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T18:38:43.848Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: null
+            openAlex: {}
+            googleScholar:
+                title: Geometric sparsification in recurrent neural networks
+                authorNames:
+                    - W Mackey
+                    - I Schizas
+                    - J Deighton
+                    - DL Boothe Jr
+                pdfLink: 'https://arxiv.org/pdf/2406.06290'
+                link: 'https://arxiv.org/abs/2406.06290'
+                citationId: null
+                multiArticleId: '8160557508491402889'
+                citedByLink: null
+                publisherInfo: 'arXiv preprint arXiv, 2024'
+                year: 2024
+        score:
+            - 0
+            - 270
+            - 0
+            - 2024
+            - 0
+        scoreString: 0|270|0|2024|0
+        _:
+            title: Geometric sparsification in recurrent neural networks
+            doi: null
+            year: 2024
+            publisherFlags: null
+            authorNames:
+                - W Mackey
+                - I Schizas
+                - J Deighton
+                - DL Boothe Jr
+            link: 'https://arxiv.org/abs/2406.06290'
+            pdfLink: 'https://arxiv.org/pdf/2406.06290'
             cites: null
             citedBy: null
             abstract: null
@@ -29065,3 +30548,95 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: A Hybrid Compact Neural Architecture for Visual Place Recognition
                 link: *ref_158
+    -
+        query: '"ring attractor" "pytorch"'
+        score: .nan
+        dateTime: '2025-03-04T18:35:09.173Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: true
+                title: Back to the continuous attractor
+                link: *ref_20
+            -
+                hadBeenSeenBefore: true
+                title: Persistent learning signals and working memory without continuous attractors
+                link: *ref_33
+            -
+                hadBeenSeenBefore: false
+                title: Overcoming sensory-memory interference in working memory circuits
+                link: *ref_195
+            -
+                hadBeenSeenBefore: false
+                title: 'Neural Dynamics and Similarity Matching: A Computational Approach Inspired by Hippocampal Mechanisms'
+                link: *ref_196
+            -
+                hadBeenSeenBefore: false
+                title: Continuous State Estimation With Synapse-constrained Connectivity
+                link: *ref_121
+            -
+                hadBeenSeenBefore: false
+                title: Inferring stochastic low-rank recurrent neural networks from neural data
+                link: *ref_197
+            -
+                hadBeenSeenBefore: false
+                title: Predicting modular functions and neural coding of behavior from a synaptic wiring diagram
+                link: *ref_198
+            -
+                hadBeenSeenBefore: false
+                title: 'FlyOrien: A bio-inspired model for incremental learning of object orientation'
+                link: *ref_199
+            -
+                hadBeenSeenBefore: false
+                title: Coherently remapping toroidal cells but not Grid cells are responsible for path integration in virtual agents
+                link: *ref_200
+            -
+                hadBeenSeenBefore: false
+                title: Remapping in a recurrent neural network model of navigation and context inference
+                link: *ref_201
+    -
+        query: '"continuous attractor" "pytorch"'
+        score: .nan
+        dateTime: '2025-03-04T18:38:43.249Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: true
+                title: Back to the continuous attractor
+                link: *ref_20
+            -
+                hadBeenSeenBefore: true
+                title: Persistent learning signals and working memory without continuous attractors
+                link: *ref_33
+            -
+                hadBeenSeenBefore: true
+                title: Self-supervised learning of representations for space generates multi-modular grid cells
+                link: *ref_32
+            -
+                hadBeenSeenBefore: false
+                title: Coherently remapping toroidal cells but not Grid cells are responsible for path integration in virtual agents
+                link: *ref_200
+            -
+                hadBeenSeenBefore: false
+                title: Why do recurrent neural networks suddenly learn? Bifurcation mechanisms in neuro-inspired short-term memory tasks
+                link: *ref_202
+            -
+                hadBeenSeenBefore: false
+                title: Geometric sparsification in recurrent neural networks
+                link: *ref_203
+            -
+                hadBeenSeenBefore: false
+                title: 'A Recurrent Neural Circuit Mechanism of Temporal-scaling Equivariant Representation: Supplementary Information'
+                link: *ref_204
+            -
+                hadBeenSeenBefore: false
+                title: Leveraging attractor dynamics in spatial navigation for better language parsing
+                link: *ref_205
+            -
+                hadBeenSeenBefore: false
+                title: Sequential predictive learning is a unifying theory for hippocampal representation and replay
+                link: *ref_206
+            -
+                hadBeenSeenBefore: false
+                title: 'Winning the Lottery With Neural Connectivity Constraints: Faster Learning Across Cognitive Tasks With Spatially Constrained Sparse RNNs'
+                link: null

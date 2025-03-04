@@ -1,20 +1,26 @@
 ToDo:
 - Understand the Simplified Higher Order Sequence Memory (SHOSM) algorithm (place recognition and HTM theory) from Neubert (cited in NeoSLAM paper)
-- Figure out what "FlyNet" is (comparision used in NeuroGPR paper)
 - Figure out what "SPL" is (comparision used in NeuroGPR paper)
-- what is Tianjic (a hybrid neuromorphic chip)
-- Search more for components and implementation, ex: "head direction cells" and "pytorch"
+- non-navigation searches
+    - navigation components and implementation, ex: "head direction cells" and "pytorch"
+        - done: "ring attractor" and "pytorch"
+            - seismic
+            - rat in a box
+        - done: "continuous attractor" and "pytorch"
+            - none
+    - finish exploring the spiking neural network stuff
+        - LoCS-Net: Localizing convolutional spiking neural network for fast visual place recognition
+        - Ensembles of Compact, Region-specific & Regularized Spiking Neural Networks for Scalable Place Recognition
+        - Reinforcement co-Learning of Deep and Spiking Neural Networks for Energy-Efficient Mapless Navigation with Neuromorphic Hardware
+        - Spiking Neural Networks for Visual Place Recognition Via Weighted Neuronal Assignments
+        - Exploiting semantic information in a spiking neural SLAM system
+    - current neuro knowledge
+        - Summarize the key facts of the 3D rat paper
+        - Learn what a "mushroom body" is, in relation to insect navigation (has to do with object recognition)
+- Do a full annotated pass of NeuroGPR paper
+- what is Tianjic (a hybrid neuromorphic chip), how expensive is it? how hard is it to program? how powerful is it?
 - Create a refreshed map of navigation and implementation "Are we bio-navigating yet?"
-- Create a performance table of methods (NeoSLAM, LFVB-BioSLAM, ViTa-SLAM, etc)
-    - Performance compared to ORB-SLAM3
-    - Is codebase available? (what language?)
-    - Year
-    - Tested on hardware
-    - 3D
-    - Stero cameras
-    - Spectrums range (grayscale, color, polarization, IR-depth, lidar)
-- Summarize the key facts of the 3D rat paper
-- Learn what a "mushroom body" is, in relation to insect navigation (has to do with object recognition)
+- DONE: Create a performance table of methods (NeoSLAM, LFVB-BioSLAM, ViTa-SLAM, etc)
 - Look for related work of "Brain-inspired multimodal hybrid neural network for robot place recognition"
     - A compact neuromorphic system for ultra energy-efficient, on-device robot localization
     - Enhancing Visual Place Recognition via Fast and Slow Adaptive Biasing in Event Cameras
@@ -42,6 +48,7 @@ Future Code help:
 - Ring attractor code: https://github.com/aplbrain/seismic/blob/main/neuroaiengines/networks/ring_attractor.py 
 - Ring attractor code from NeuroGPR: https://github.com/cognav/NeuroGPR/blob/main/src/model/cann.py
 - Vita SLAM: https://github.com/aalto-intelligent-robotics/ViTa-SLAM
+- Rat Simulator for getting data: https://github.com/RatInABox-Lab/RatInABox
 
 Datasets:
 - Nordland summer/fall/winter/sprign
