@@ -6,8 +6,8 @@ notes:
         - hebbianExplain
         - navCellExplain
     narriative q & a:
-        - Did the NeuroSLAM paper use ring attractors?
-        - Is the multidimensional continuous attractor network (MD-CAN) (that NeuroSLAM uses) a good model of the ring attractor?
+        - Did the NeuroSLAM paper use ring attractors? yes
+        - Is the multidimensional continuous attractor network (MD-CAN) (that NeuroSLAM uses) a good model of the ring attractor? kinda
 manual_need_converting:
     Immense World:
         relevant: true
@@ -135,6 +135,7 @@ settings:
             - boundary vector cell
             - multidimensional continuous attractor
             - ring attractor
+            - continuous attractor
             - spiking
             - snn
             - slam
@@ -274,7 +275,7 @@ references:
     'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain': &ref_8
         notes:
             resumeStatus: super-relevent|title
-            comment: ''
+            comment: 'has github link, but not only is it broken, it seems it never existed. Emailed author to try and get access.'
             reasonsRelevant:
                 - title
             reasonsNotRelevant: []
