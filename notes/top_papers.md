@@ -14,6 +14,12 @@ ToDo:
         - Reinforcement co-Learning of Deep and Spiking Neural Networks for Energy-Efficient Mapless Navigation with Neuromorphic Hardware
         - Spiking Neural Networks for Visual Place Recognition Via Weighted Neuronal Assignments
         - Exploiting semantic information in a spiking neural SLAM system
+        - VPRTempo: A Fast Temporally Encoded Spiking Neural Network for Visual Place Recognition
+        - Event-driven Tactile Sensing With Dense Spiking Graph Neural Networks
+        - Spatio-Temporal Backpropagation for Training High-Performance Spiking Neural Networks
+        - Pose Estimation and Map Formation with Spiking Neural Networks: towards Neuromorphic SLAM (2018) 
+        - Reinforcement co-Learning of Deep and Spiking Neural Networks for Energy-Efficient Mapless Navigation with Neuromorphic Hardware (2020)
+        - Spiking Neural Networks for Visual Place Recognition Via Weighted Neuronal Assignments (2022)
     - current neuro knowledge
         - Summarize the key facts of the 3D rat paper
         - Learn what a "mushroom body" is, in relation to insect navigation (has to do with object recognition)
