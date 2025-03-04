@@ -40,6 +40,7 @@ Random facts:
 Future Code help:
 - CNN based on fly's brain https://github.com/borstlab/normalization_paper/blob/master/cnn/model.py
 - Ring attractor code: https://github.com/aplbrain/seismic/blob/main/neuroaiengines/networks/ring_attractor.py 
+- Ring attractor code from NeuroGPR: https://github.com/cognav/NeuroGPR/blob/main/src/model/cann.py
 - Vita SLAM: https://github.com/aalto-intelligent-robotics/ViTa-SLAM
 
 Datasets:
