@@ -1,5 +1,8 @@
 ToDo:
 - Understand the Simplified Higher Order Sequence Memory (SHOSM) algorithm (place recognition and HTM theory) from Neubert (cited in NeoSLAM paper)
+- Figure out what "FlyNet" is (comparision used in NeuroGPR paper)
+- Figure out what "SPL" is (comparision used in NeuroGPR paper)
+- what is Tianjic (a hybrid neuromorphic chip)
 - Search more for components and implementation, ex: "head direction cells" and "pytorch"
 - Create a refreshed map of navigation and implementation "Are we bio-navigating yet?"
 - Create a performance table of methods (NeoSLAM, LFVB-BioSLAM, ViTa-SLAM, etc)
@@ -11,6 +14,12 @@ ToDo:
     - Stero cameras
     - Spectrums range (grayscale, color, polarization, IR-depth, lidar)
 - Summarize the key facts of the 3D rat paper
+- Learn what a "mushroom body" is, in relation to insect navigation (has to do with object recognition)
+- Look for related work of "Brain-inspired multimodal hybrid neural network for robot place recognition"
+    - A compact neuromorphic system for ultra energy-efficient, on-device robot localization
+    - Enhancing Visual Place Recognition via Fast and Slow Adaptive Biasing in Event Cameras
+    - Neuromorphic sequence learning with an event camera on routes through vegetation
+    - Ensembles of Compact, Region-specific & Regularized Spiking Neural Networks for Scalable Place Recognition
 
 Top Papers:
 - Continuous State Estimation With Synapse-constrained Connectivity
@@ -32,3 +41,7 @@ Future Code help:
 - CNN based on fly's brain https://github.com/borstlab/normalization_paper/blob/master/cnn/model.py
 - Ring attractor code: https://github.com/aplbrain/seismic/blob/main/neuroaiengines/networks/ring_attractor.py 
 - Vita SLAM: https://github.com/aalto-intelligent-robotics/ViTa-SLAM
+
+Datasets:
+- Nordland summer/fall/winter/sprign
+- Oxford RobotCar

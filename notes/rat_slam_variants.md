@@ -33,3 +33,10 @@ Ball et al
 
 Chong Wu
     Added HSL to RatSLAM in "An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model"
+
+Taiping Zeng
+    NeuroBayesSLAM: Neurobiologically inspired Bayesian integration of multisensory information for robot navigation
+
+Fangwen Yu
+    (2019) NeuroSLAM
+    (2023) Brain-inspired multimodal hybrid neural network for robot place recognition 
