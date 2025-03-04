@@ -2274,12 +2274,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=10890030544373591667&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 2
         score:
-            - 0
-            - 270
+            - 1
+            - 303
             - 0
             - 2024
             - 0
-        scoreString: 0|270|0|2024|0
+        scoreString: 1|303|0|2024|0
         _:
             title: Back to the continuous attractor
             doi: null
@@ -3179,12 +3179,12 @@ references:
                 linkToCitedBy: 'https://scholar.google.com//scholar?cites=9646362531022416202&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
                 citedByCount: 8
         score:
-            - 0
-            - 270
+            - 1
+            - 303
             - 2
             - 2023
             - 0
-        scoreString: 0|270|2|2023|0
+        scoreString: 1|303|2|2023|0
         _:
             title: Persistent learning signals and working memory without continuous attractors
             doi: null
@@ -8764,11 +8764,11 @@ references:
                 publisherInfo: null
         score:
             - 1
-            - 303
+            - 306
             - 1
             - 2021
             - 0
-        scoreString: 1|303|1|2021|0
+        scoreString: 1|306|1|2021|0
         _:
             title: Neuromorphic Implementation of a Continuous Attractor Neural Network With Various Synaptic Dynamics
             doi: 10.1109/access.2021.3101290
@@ -16273,6 +16273,139 @@ references:
             cites: null
             citedBy: null
             abstract: null
+    Continuous state estimation with synapse-constrained connectivity:
+        notes:
+            resumeStatus: unseen|title
+            comment: ''
+            reasonsRelevant: []
+            reasonsNotRelevant: []
+            customKeywords: []
+            discoveryMethod:
+                dateTime: '2025-03-04T15:43:39.919Z'
+                originalQuery: Continuous State Estimation With Synapse-constrained Connectivity
+                searchEngine: googleScholar
+            events:
+                added: '2025-03-04T15:43:40.512Z'
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: null
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: null
+            crossref:
+                doi: 10.1109/ijcnn55064.2022.9892549
+            openAlex:
+                doi: 'https://doi.org/10.1109/ijcnn55064.2022.9892549'
+                title: Continuous State Estimation With Synapse-constrained Connectivity
+                abstract: null
+                concepts:
+                    - neurobiology and insect physiology research
+                    - neural dynamics and brain function
+                    - photoreceptor and optogenetics research
+                    - cellular and molecular neuroscience
+                    - cognitive neuroscience
+                    - computer science
+                    - attractor
+                    - synapse
+                    - heading (navigation)
+                    - artificial neural network
+                    - artificial intelligence
+                    - mathematics
+                    - neuroscience
+                    - engineering
+                    - biology
+                    - mathematical analysis
+                    - aerospace engineering
+                year: 2022
+                authorNames:
+                    - Raphael Norman-Tenazas
+                    - Brian S. Robinson
+                    - Justin Joyce
+                    - Isaac Western
+                    - Erik C. Johnson
+                    - William Gray-Roncal
+                    - Joan A. Hoffmann
+                link: 'https://doi.org/10.1109/ijcnn55064.2022.9892549'
+                pdfLink: null
+                citationCount: 2
+                citedAlexIds:
+                    - 'https://openalex.org/W1503270516'
+                    - 'https://openalex.org/W2012190017'
+                    - 'https://openalex.org/W2018502805'
+                    - 'https://openalex.org/W2083890928'
+                    - 'https://openalex.org/W2115168690'
+                    - 'https://openalex.org/W2133917215'
+                    - 'https://openalex.org/W2152829138'
+                    - 'https://openalex.org/W2165443127'
+                    - 'https://openalex.org/W2343489693'
+                    - 'https://openalex.org/W2610861664'
+                    - 'https://openalex.org/W2614915054'
+                    - 'https://openalex.org/W2618420889'
+                    - 'https://openalex.org/W2736970863'
+                    - 'https://openalex.org/W2884269856'
+                    - 'https://openalex.org/W2890691917'
+                    - 'https://openalex.org/W2902189904'
+                    - 'https://openalex.org/W2951061187'
+                    - 'https://openalex.org/W2998606959'
+                    - 'https://openalex.org/W3016007634'
+                    - 'https://openalex.org/W3038283922'
+                    - 'https://openalex.org/W3084308099'
+                    - 'https://openalex.org/W3208266771'
+                    - 'https://openalex.org/W4200478016'
+                    - 'https://openalex.org/W4221097924'
+                    - 'https://openalex.org/W4295312788'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4252778923'
+                    - 'https://openalex.org/W4244052565'
+                    - 'https://openalex.org/W2391014597'
+                    - 'https://openalex.org/W2385042721'
+                    - 'https://openalex.org/W2378649906'
+                    - 'https://openalex.org/W2367929022'
+                    - 'https://openalex.org/W2358719579'
+                    - 'https://openalex.org/W2351754530'
+                    - 'https://openalex.org/W2350113401'
+                    - 'https://openalex.org/W2348727246'
+                openAlexId: W4312891150
+            googleScholar:
+                title: Continuous state estimation with synapse-constrained connectivity
+                authorNames: null
+                pdfLink: null
+                link: 'https://ieeexplore.ieee.org/abstract/document/9892549/'
+                citationId: null
+                multiArticleId: null
+                citedByLink: null
+                publisherInfo: null
+        score:
+            - 0
+            - 270
+            - 0
+            - 2022
+            - 0
+        scoreString: 0|270|0|2022|0
+        _:
+            title: Continuous State Estimation With Synapse-constrained Connectivity
+            doi: 10.1109/ijcnn55064.2022.9892549
+            year: 2022
+            publisherFlags: null
+            authorNames:
+                - Raphael Norman-Tenazas
+                - Brian S. Robinson
+                - Justin Joyce
+                - Isaac Western
+                - Erik C. Johnson
+                - William Gray-Roncal
+                - Joan A. Hoffmann
+            link: 'https://doi.org/10.1109/ijcnn55064.2022.9892549'
+            pdfLink: null
+            cites: null
+            citedBy: null
+            abstract: null
 discoveryAttempts:
     -
         query: 'Neural Networks for Navigation: From Connections to Computations'
@@ -16928,3 +17061,13 @@ discoveryAttempts:
                 hadBeenSeenBefore: false
                 title: A Tapered Whisker-Based Physical Reservoir Computing System for Mobile Robot Terrain Identification in Unstructured Environments
                 link: *ref_120
+    -
+        query: Continuous State Estimation With Synapse-constrained Connectivity
+        score: .nan
+        dateTime: '2025-03-04T15:43:39.919Z'
+        searchEngine: googleScholar
+        referenceLinks:
+            -
+                hadBeenSeenBefore: false
+                title: Continuous State Estimation With Synapse-constrained Connectivity
+                link: null
