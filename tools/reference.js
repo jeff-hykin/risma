@@ -82,6 +82,9 @@ export class Reference {
                 },
             })
         }
+        if (!this.title) {
+            throw Error(`new Reference is missing title`)
+        }
     }
     beforeSave() {
         this._ = {}
