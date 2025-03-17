@@ -15,7 +15,7 @@ import { rankedCompare } from "https://deno.land/x/good@1.13.5.0/flattened/ranke
 
 import { version } from "../tools/version.js"
 import { selectMany, selectOne, askForFilePath, askForParagraph, withSpinner, listenToKeypresses, dim, wordWrap, write } from "../tools/input_tools.js"  
-import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, getOpenAlexData, openAlexToSimpleFormat } from "../tools/search_tools.js"
+import { searchOptions, title2Doi, crossrefToSimpleFormat, doiToCrossrefInfo, getRelatedArticles, openAlexToSimpleFormat } from "../tools/search_tools.js"
 import { versionSort, versionToList, executeConversation } from "../tools/misc.js"
 import { Reference } from "../tools/reference.js"
 

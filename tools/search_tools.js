@@ -2,13 +2,12 @@
 import { DOMParser } from "https://deno.land/x/deno_dom@v0.1.43/deno-dom-wasm.ts"
 import { zip, enumerate, count, permute, combinations, wrapAroundGet } from "https://deno.land/x/good@1.13.5.0/array.js"
 import { deepCopy, deepCopySymbol, allKeyDescriptions, allKeys } from "https://deno.land/x/good@1.13.5.0/value.js"
-import { run, Out, Stdout, Stderr, returnAsString } from "https://deno.land/x/quickr@0.6.54/main/run.js"
-import { FileSystem } from "https://deno.land/x/quickr@0.6.56/main/file_system.js"
 import DateTime from "https://deno.land/x/good@1.13.5.0/date.js"
 // import { Parser, parserFromWasm } from "https://deno.land/x/deno_tree_sitter@0.1.3.0/main.js"
 // import html from "https://github.com/jeff-hykin/common_tree_sitter_languages/raw/4d8a6d34d7f6263ff570f333cdcf5ded6be89e3d/main/html.js"
 import { toCamelCase } from "https://deno.land/x/good@1.13.5.0/flattened/to_camel_case.js"
 
+import { openAlexDataFromDoi, getLinkedOpenAlexArticles } from "./citation_gather_tools/open_alex.js"
 import { versionToList, versionSort } from "./misc.js"
 
 import { DiscoveryMethod } from "./discovery_method.js"
@@ -765,43 +764,7 @@ export async function doiToCrossrefInfo(doi, { cacheObject, onUpdateCache=_=>0,}
 doiToCrossrefInfo.cache = {}
 doiToCrossrefInfo.lastFetchTime = new Date()
 doiToCrossrefInfo.waitTime = 100
-/**
- * this exists mostly for caching
- */
-export async function getOpenAlexData(urlOrDoi, {cacheObject, onUpdateCache=_=>0,}={}) {
-    cacheObject = cacheObject||getOpenAlexData.cache
-    urlOrDoi = urlOrDoi.replace("https://openalex.org","https://api.openalex.org")
-    if (!urlOrDoi.startsWith("https://api.openalex.org") && !urlOrDoi.startsWith("https://doi.org/")) {
-        urlOrDoi = `https://api.openalex.org/works/https://doi.org/${urlOrDoi}`
-    }
-    if (!cacheObject[urlOrDoi]) {
-        let needToWait
-        do {
-            // avoid hitting rate limit
-            const thresholdTime = getOpenAlexData.lastFetchTime.getTime() + getOpenAlexData.waitTime
-            const now = new Date().getTime()
-            needToWait = thresholdTime - now
-            if (needToWait > 0) {
-                await new Promise(r=>setTimeout(r, needToWait))
-            }
-        } while (needToWait > 0)
-        getOpenAlexData.lastFetchTime = new Date()
-        const result = await fetch(urlOrDoi)
-        if (result.ok) {
-            let output = (await result.json())
-            if (output instanceof Object) {
-                cacheObject[urlOrDoi] = output
-                await onUpdateCache(urlOrDoi)
-            }
-        } else {
-            throw Error(`when fetching ${urlOrDoi} I got an error response ${result.statusText}`, result)
-        }
-    }
-    return cacheObject[urlOrDoi]
-}
-getOpenAlexData.cache = {}
-getOpenAlexData.lastFetchTime = new Date()
-getOpenAlexData.waitTime = 2000
+
 
 /**
  * @example
@@ -817,45 +780,22 @@ export async function getRelatedArticles(reference, onProgress) {
     }
     const doi = reference.doi
     let relatedArticles = {}
-    const openAlexData = reference?.accordingTo?.openAlex || (await getOpenAlexData(`https://api.openalex.org/works/https://doi.org/${doi}`))
+    const openAlexData = reference?.accordingTo?.openAlex || (await openAlexDataFromDoi(doi))
     const discoveryMethod = new DiscoveryMethod({
         wasRelatedTo: reference.title,
         dateTime: new Date().toISOString(),
         searchEngine: "openAlex",
     })
     const relatedIds = ((openAlexData.related_works||openAlexData.relatedAlexIds)||[]).concat((openAlexData.referenced_works||openAlexData.citedAlexIds)||[])
-    const handleEach = async (each)=>{
-        await getOpenAlexData(each).then(each=>{
-            if (!relatedArticles[each.title]) {
-                relatedArticles[each.title] = new Reference()
-                relatedArticles[each.title].discoveryMethod = { dateTime: discoveryMethod.dateTime, originallyWasRelatedTo: discoveryMethod.title, searchEngine: discoveryMethod.searchEngine }
-            }
-            relatedArticles[each.title].accordingTo = relatedArticles[each.title].accordingTo || {}
-            relatedArticles[each.title].accordingTo.openAlex = openAlexToSimpleFormat(each)
-        })
-    }
-    // cant use Promise.all because of throttling
-    let rateLimit = 0
-    let index = -1
-    for (let each of relatedIds) {
-        index++
-        try {
-            await handleEach(each)
-        } catch (error) {
-            if (error.message.match(/Too Many Requests/i)) {
-                console.warn(`rate limit error when getting ${each.doi} from openAlex\n slowing down request`)
-                rateLimit += 1000
-                await new Promise(resolve=>setTimeout(resolve,rateLimit))
-                try {
-                    await handleEach(each)
-                } catch (error) {
-                    console.debug(`error is:`,error)
-                    console.warn(`still unable to get ${each.doi} from openAlex\nprobably need to try again later`)
-                    break
-                }
-            }
+    // bulk request all related articles
+    const { citedBy, cites } = await getLinkedOpenAlexArticles(openAlexData.id.replace("https://openalex.org/",""))
+    for (let each of citedBy.concat(cites)) {
+        if (!relatedArticles[each.title]) {
+            relatedArticles[each.title] = new Reference()
+            relatedArticles[each.title].discoveryMethod = { dateTime: discoveryMethod.dateTime, originallyWasRelatedTo: discoveryMethod.title, searchEngine: discoveryMethod.searchEngine }
         }
-        onProgress(index+1,relatedIds.length)
+        relatedArticles[each.title].accordingTo = relatedArticles[each.title].accordingTo || {}
+        relatedArticles[each.title].accordingTo.openAlex = openAlexToSimpleFormat(each)
     }
     const output = {discoveryMethod,relatedArticles}
     return output
@@ -1573,7 +1513,7 @@ export async function autofillDataFor(reference, {crossrefCacheObject, openAlexC
         if (Object.keys(reference.accordingTo.openAlex||{}).length == 0) {
             promises.push((async ()=>{
                 try {
-                    reference.accordingTo.openAlex = openAlexToSimpleFormat(await getOpenAlexData(reference.doi, { cacheObject: openAlexCacheObject, }))
+                    reference.accordingTo.openAlex = openAlexToSimpleFormat(await openAlexDataFromDoi(reference.doi))
                 } catch (error) {
                 }
             })())
@@ -1587,8 +1527,9 @@ export async function autofillDataFor(reference, {crossrefCacheObject, openAlexC
 export async function relatedWorkIncludes({source, }, refChecker) {
     let reference = await autofillDataFor(source)
     if (reference.accordingTo?.openAlex?.citedAlexIds instanceof Array) {
-        for (let citedAlexId of reference.accordingTo.openAlex.citedAlexIds) {
-            let citedWork = openAlexToSimpleFormat(await getOpenAlexData(citedAlexId))
+        const { citedBy, cites } = await getLinkedOpenAlexArticles(reference.accordingTo.openAlex.openAlexId)
+        for (let each of citedBy.concat(cites)) {
+            let citedWork = openAlexToSimpleFormat(each)
             if (citedWork) {
                 if (await refChecker(citedWork)) {
                     return true
