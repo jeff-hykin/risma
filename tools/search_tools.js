@@ -6,26 +6,25 @@ import DateTime from "https://deno.land/x/good@1.13.5.0/date.js"
 // import { Parser, parserFromWasm } from "https://deno.land/x/deno_tree_sitter@0.1.3.0/main.js"
 // import html from "https://github.com/jeff-hykin/common_tree_sitter_languages/raw/4d8a6d34d7f6263ff570f333cdcf5ded6be89e3d/main/html.js"
 import { toCamelCase } from "https://deno.land/x/good@1.13.5.0/flattened/to_camel_case.js"
-
+import { FileSystem, glob } from "https://deno.land/x/quickr@0.7.6/main/file_system.js"
 import { openAlexDataFromDoi, getLinkedOpenAlexArticles } from "./citation_gather_tools/open_alex.js"
 import { versionToList, versionSort } from "./misc.js"
 
 import { DiscoveryMethod } from "./discovery_method.js"
 import { Reference } from "./reference.js"
 
-const jsonFetch = async (url, options)=>{
-    const response = await fetch(url, options)
-    if (response.ok) {
-        const text = await response.text()
-        try {
-            return JSON.parse(text)
-        } catch (error) {
-            console.debug(`fetch couldn't parse as JSON:`,text)
-        }
-    } else {
-        throw Error(`when fetching ${url} I got an error response: ${response.statusText}`, response)
+import { jsonFetch, createCachedJsonFetcher, createCachedTextFetcher } from "./citation_gather_tools/fetch_tools.js"
+
+export const googleScholarFetcher = createCachedTextFetcher({
+    cache: {},
+    rateLimit: 15000, // google is picky and defensive
+    onUpdateCache(url) {
+       
+    },
+    urlNormalizer(url) {
+        return new URL(url)
     }
-}
+})
 
 export async function title2Doi(title, { cacheObject, onUpdateCache=_=>0,}={}) {
     cacheObject = cacheObject||title2Doi.cache
@@ -830,6 +829,9 @@ export function openAlexToSimpleFormat(each) {
     //         { id: "https://openalex.org/C107457646", wikidata: "https://www.wikidata.org/wiki/Q207434", display_name: "Human–computer interaction", level: 1, score: 0.59470433 },
     //         { id: "https://openalex.org/C154945302", wikidata: "https://www.wikidata.org/wiki/Q11660", display_name: "Artificial intelligence", level: 1, score: 0.49061385 },
     //     ],
+    if (!each.title) {
+        console.debug(`openAlexToSimpleFormat() got a reference that has no title:`,each)
+    }
     return {
         doi: each.doi,
         title: each.title,
@@ -1185,37 +1187,50 @@ export const searchOptions = {
             const getHref = (element)=>element.getAttribute("href").startsWith("/")?`${baseUrl}/${element.getAttribute("href")}`:element.getAttribute("href")
             
             // 
-            // avoid hitting rate limit
-            // 
-            let needToWait
-            do {
-                const thresholdTime = this.urlToListOfResults.lastFetchTime.getTime() + this.urlToListOfResults.waitTime
-                const now = new Date().getTime()
-                needToWait = thresholdTime - now
-                if (needToWait > 0) {
-                    await new Promise(r=>setTimeout(r, needToWait * (Math.random()+1)))
-                }
-            } while (needToWait > 0)
-            this.urlToListOfResults.lastFetchTime = new Date()
-            
-            // 
             // fetch
             // 
             try {
-                htmlResult = await fetch(new URL(url)).then(result=>result.text())
+                htmlResult = await googleScholarFetcher(url, {
+                    "credentials": "include",
+                    "headers": {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 11.0; rv:133.0) Gecko/20100101 Firefox/133.0",
+                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                        "Accept-Language": "en-US,en;q=0.5",
+                        "Sec-GPC": "1",
+                        "Upgrade-Insecure-Requests": "1",
+                        "Sec-Fetch-Dest": "document",
+                        "Sec-Fetch-Mode": "navigate",
+                        "Sec-Fetch-Site": "same-origin",
+                        "Priority": "u=0, i",
+                        "Pragma": "no-cache",
+                        "Cache-Control": "no-cache"
+                    },
+                    "referrer": "https://scholar.google.com/",
+                    "method": "GET",
+                    "mode": "cors"
+                })
             } catch (error) {
-                console.debug(`error when getting ${url} is:`,error)
-                return []
+                if (error.message.match(/too many requests/i)) {
+                    console.debug(`detected too many requests error, doubling rate limit`,error)
+                    googleScholarFetcher.rateLimit = googleScholarFetcher.rateLimit*2
+                }
+                throw error
             }
-            const document = new DOMParser().parseFromString(
-                htmlResult,
-                "text/html",
-            )
-                // debug:
+            let document
+            try {
+                document = new DOMParser().parseFromString(
+                    htmlResult,
+                    "text/html",
+                )
+            } catch (error) {
+                console.debug(`htmlResult is:`,htmlResult)
+                // // debug:
                 // FileSystem.write({
                 //     path: `${debugCount++}.html`,
                 //     data: htmlResult,
                 // })
+                throw error
+            }
             // 
             // pull article info
             // 
@@ -1468,9 +1483,6 @@ export const searchOptions = {
     // "science-direct": {
     // },
 }
-searchOptions.googleScholar.urlToListOfResults.lastFetchTime = new Date()
-searchOptions.googleScholar.urlToListOfResults.waitTime = 5000 // google is picky and defensive
-
 
 let ramCache = new Map()
 export async function autofillDataFor(reference, {crossrefCacheObject, openAlexCacheObject, }={}) {
