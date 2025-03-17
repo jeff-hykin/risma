@@ -180,7 +180,7 @@ openAlexFetch.cache = createStorageObject(openAlexCachePath)
             searchEngine: searchEngineName,
             ...otherData,
         })
-        const references = await Promise.resolve(resultsPromise).then(all=>all.map(each=>new Reference({
+        const references = await Promise.resolve(resultsPromise).then(all=>all.filter(each=>each.title).map(each=>new Reference({
             title: each.title,
             notes: {
                 resumeStatus: "unseen|title",
