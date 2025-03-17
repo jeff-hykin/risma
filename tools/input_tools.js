@@ -179,16 +179,24 @@ export const askForParagraph = async (message, other={}) => {
 
 export const write = (text)=>Deno.stdout.writeSync(text instanceof Uint8Array ? text : new TextEncoder().encode(text))
 
-import { TerminalSpinner, SpinnerTypes } from "https://deno.land/x/spinners@v1.1.2/mod.ts"
+// import { TerminalSpinner, SpinnerTypes } from "https://deno.land/x/spinners@v1.1.2/mod.ts"
+// import { wait } from "https://esm.sh/jsr/@denosaurs/wait@0.2.2/mod.ts"
+import { wait } from "./wait.js"
+
 export const withSpinner = async (taskName, func) => {
-    const terminalSpinner = new TerminalSpinner({
-        text: taskName,
-        color: "green",
-        spinner: SpinnerTypes.dots, // check the file - see import
-        indent: 0, // The level of indentation of the spinner in spaces
-        cursor: false, // Whether or not to display a cursor when the spinner is active
-        writer: Deno.stderr
-    })
+    const terminalSpinner = wait(taskName)
+    terminalSpinner.color = "green"
+    // color
+    // discardStdin
+    // enabled
+    // hideCursor
+    // indent
+    // interceptConsole
+    // interval
+    // prefix
+    // spinner
+    // stream
+    // text
     const spinnerWidth = 2
     const baseLength = spinnerWidth + terminalStringLength(taskName)
     const mention = (message)=>{
