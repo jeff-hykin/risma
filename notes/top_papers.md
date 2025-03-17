@@ -1,4 +1,24 @@
 ToDo:
+- notes:
+    - positive:
+    - negative:
+        - õ
+        - for stock trading
+        - LiDAR
+    - neutral:
+        - goal
+        - FPGA
+    - look at:
+        - AntBot: A six-legged walking robot able to home like desert ants in outdoor environments
+        - SMCN: Simplified mini-column network for visual place recognition
+        - Self-organized attractoring in locomoting animals and robots: an emerging field
+        - NeuroMechFly v2: simulating embodied sensorimotor control in adult Drosophila
+        - Cortical mechanisms of multisensory linear self-motion perception
+    - personal curiosity:
+        - Neurodynamic sensory-motor phase binding for multi-legged walking robots
+        - Bioinspired sensors and applications in intelligent robots: a review
+         
+         
 - Understand the Simplified Higher Order Sequence Memory (SHOSM) algorithm (place recognition and HTM theory) from Neubert (cited in NeoSLAM paper)
 - Figure out what "SPL" is (comparision used in NeuroGPR paper)
 - non-navigation searches
