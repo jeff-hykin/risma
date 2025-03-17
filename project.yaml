@@ -44,6 +44,10 @@ settings:
     scoreGivers:
         byKeywords: |
             (reference, currentScoreList, {keywords, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
+                if (!reference.title) {
+                    console.debug(`reference is:`,reference)
+                    throw Error(`reference.title is undefined`)
+                }
                 const title = reference.title.toLowerCase()
                 currentScoreList[0] += !!numberOfGoodKeywordsIn(title)
                 currentScoreList[1] += 100 // prevent multiplying negative
@@ -87,6 +91,10 @@ settings:
         positive:
             - neuro-inspired
             - neuro inspired
+            - brain-inspired
+            - brain inspired
+            - legged
+            - quadruped
             - hippocampal represent
             - temporal
             - head direction system
