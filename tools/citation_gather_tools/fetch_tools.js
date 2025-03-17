@@ -17,7 +17,33 @@ export const normalizeDoiString = (doi)=>{
     return doi.replace(/^(https?:\/\/)(doi\.org|dx.doi.org)\/+/,"")
 }
 
-export function createCachedJsonFetcher({ cache={}, rateLimit=null, onUpdateCache=_=>0, urlNormalizer=_=>_, lastFetchTime=new Date() }={}) {
+/**
+ * Description
+ *
+ * @example
+ * ```js
+ * let cachedFetcher = createCachedFetcher({
+ *     cache: {},
+ *     rateLimit: 5000, // google is picky and defensive
+ *     onUpdateCache(url) {
+ *        
+ *     },
+ *     urlNormalizer(url) {
+ *         return new URL(url)
+ *     }
+ * })
+ * cachedFetcher.cache // Object
+ * cachedFetcher.lastFetchTime // number, unix epoch
+ * cachedFetcher.rateLimit // number, milliseconds (it can be dynamically changed)
+ * ```
+ *
+ * @param arg1 - description
+ * @param arg1.parameter - description
+ * @returns {Object} output - description
+ * @returns output.x - description
+ *
+ */
+export function createCachedFetcher({ cache={}, rateLimit=null, onUpdateCache=_=>0, urlNormalizer=_=>_, lastFetchTime=new Date(), outputModifyer=result=>result.bytes() }={}) {
     async function cachedFetcher(url, options, {onUpdateCache=_=>0,}={}) {
         const cache = cachedFetcher.cache
         url = urlNormalizer(url)
@@ -37,8 +63,8 @@ export function createCachedJsonFetcher({ cache={}, rateLimit=null, onUpdateCach
             cachedFetcher.lastFetchTime = new Date()
             const result = await fetch(url, options)
             if (result.ok) {
-                let output = (await result.json())
-                if (output instanceof Object) {
+                let output = await outputModifyer(result)
+                if (output) {
                     cache[url] = output
                     await onUpdateCache(url)
                 }
@@ -54,4 +80,28 @@ export function createCachedJsonFetcher({ cache={}, rateLimit=null, onUpdateCach
         rateLimit,
     })
     return cachedFetcher
+}
+
+export function createCachedJsonFetcher({ cache={}, rateLimit=null, onUpdateCache=_=>0, urlNormalizer=_=>_, lastFetchTime=new Date(), ...args }={}) {
+    return createCachedFetcher({
+        cache,
+        rateLimit,
+        onUpdateCache,
+        urlNormalizer,
+        lastFetchTime,
+        outputModifyer: result=>result.json(),
+        ...args
+    })
+}
+
+export function createCachedTextFetcher({ cache={}, rateLimit=null, onUpdateCache=_=>0, urlNormalizer=_=>_, lastFetchTime=new Date(), ...args }={}) {
+    return createCachedFetcher({
+        cache,
+        rateLimit,
+        onUpdateCache,
+        urlNormalizer,
+        lastFetchTime,
+        outputModifyer: result=>result.text(),
+        ...args
+    })
 }
