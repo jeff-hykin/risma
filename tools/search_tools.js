@@ -1193,7 +1193,7 @@ export const searchOptions = {
                 htmlResult = await googleScholarFetcher(url, {
                     "credentials": "include",
                     "headers": {
-                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 11.0; rv:133.0) Gecko/20100101 Firefox/133.0",
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:133.0) Gecko/20100101 Firefox/133.0",
                         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
                         "Accept-Language": "en-US,en;q=0.5",
                         "Sec-GPC": "1",
