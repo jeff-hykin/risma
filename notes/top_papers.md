@@ -1,4 +1,20 @@
 ToDo:
+- create some buckets:
+    - possible-state of the art bio-solutions solving core problem
+    - reference work:
+        - neuro work (mushroom body, hebbian learning, behavior of drosophila, etc)
+        - spiking neural work
+        - memory approaches and justifications (hierarchical temporal memory, etc)
+        - old RatSLAM
+    - related work:
+        - locomotion
+        - sound localization
+        - pose estimation
+    - appendix:
+        - sensor limitations
+        - survey of neuromorphic hardware
+        - survey of spiking neural network performance
+        - survey of SLAM performance
 - notes:
     - positive:
     - negative:
