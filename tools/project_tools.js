@@ -65,7 +65,7 @@ export const loadProject = async (path) => {
     return project
 }
 
-export const saveProject = ({activeProject, path})=>{
+const innerSave = ({activeProject, path})=>{
     const projectToSave = structuredClone(activeProject)
     // fixup references
     for (const [key, value] of Object.entries(projectToSave.references)) {
@@ -87,6 +87,15 @@ export const saveProject = ({activeProject, path})=>{
         value.beforeSave()
     }
     return FileSystem.write({path, data: yaml.stringify(projectToSave,{ indent: 4, lineWidth: Infinity, skipInvalid: true, })})
+}
+
+// this wrapper acts as a lock to prevent multiple saves at the same time causing a race condition (only really matters for non-interactive use)
+let activeSave = Promise.resolve()
+export const saveProject = async ({activeProject, path})=>{
+    return await activeSave.then(()=>{
+        activeSave = innerSave({activeProject, path})
+        return activeSave
+    })
 }
 
 //
