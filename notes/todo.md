@@ -1,4 +1,10 @@
 ToDo:
+- check:
+    - A Brain-inspired SLAM System Based on Keyframe Template Matching
+    - Continuous State Estimation With Synapse-constrained Connectivity
+    - Vision-IMU multi-sensor fusion semantic topological map based on RatSLAM
+    - An Improved Loop Closure Detection for RatSLAM
+
 - create some buckets:
     - possible-state of the art bio-solutions solving core problem
     - reference work:
@@ -69,18 +75,32 @@ ToDo:
     - Neuromorphic sequence learning with an event camera on routes through vegetation
     - Ensembles of Compact, Region-specific & Regularized Spiking Neural Networks for Scalable Place Recognition
 
-Top Papers:
-- Continuous State Estimation With Synapse-constrained Connectivity
-- (ORB)-neuroslam (2024, IEEE Internet of Things Journal)
-- An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model
-- An Improvement of Loop Closure Detection Based on BoW for RatSLAM
-- Vision-IMU multi-sensor fusion semantic topological map based on RatSLAM
-
-Check performance / results of:
-- NeoSLAM (hierchical temporal memory), code
+Qualified Systems:
+- NeoSLAM:
+- NeuroGPR: 
+- NeuroSLAM:
+- ORB-NeuroSLAM: (ORB)-neuroslam (2024, IEEE Internet of Things Journal)
+- HsiSLAM: An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model
+- BoWSLAM: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
 - LFVB-BioSLAM: A Bionic SLAM System with a Light-Weight LiDAR Front End and a Bio-Inspired Visual Back End
-- ViTa-SLAM: A Bio-inspired Visuo-Tactile SLAM for Navigation while Interacting with Aliased Environments (2019, IEEE)
+- VitaSLAM: A Bio-inspired Visuo-Tactile SLAM for Navigation while Interacting with Aliased Environments
+- RatSLAM:
 
+Spiking Systems:
+- VPRTempo: A Fast Temporally Encoded Spiking Neural Network for Visual Place Recognition
+- LoCS-Net: Localizing convolutional spiking neural network for fast visual place recognition
+- Spiking Neural Networks for Visual Place Recognition Via Weighted Neuronal Assignments (2022)
+- Ensembles of Compact, Region-specific & Regularized Spiking Neural Networks for Scalable Place Recognition
+- Pose Estimation and Map Formation with Spiking Neural Networks: towards Neuromorphic SLAM (2018)
+- Reinforcement co-Learning of Deep and Spiking Neural Networks for Energy-Efficient Mapless Navigation with Neuromorphic Hardware
+- Exploiting semantic information in a spiking neural SLAM system
+- Event-driven Tactile Sensing With Dense Spiking Graph Neural Networks
+- Spatio-Temporal Backpropagation for Training High-Performance Spiking Neural Networks
+- Reinforcement co-Learning of Deep and Spiking Neural Networks for Energy-Efficient Mapless Navigation with Neuromorphic Hardware (2020)
+
+
+Misc Papers I might want to cite:
+- VPR-Bench: An Open-Source Visual Place Recognition Evaluation Framework with Quantifiable Viewpoint and Appearance Change
 
 Random facts:
 - Anesthesia disrupts distance, but not direction, of path integration memory (that is also the title of the paper)
@@ -91,6 +111,7 @@ Future Code help:
 - Ring attractor code from NeuroGPR: https://github.com/cognav/NeuroGPR/blob/main/src/model/cann.py
 - Vita SLAM: https://github.com/aalto-intelligent-robotics/ViTa-SLAM
 - Rat Simulator for getting data: https://github.com/RatInABox-Lab/RatInABox
+- Event Camera Emulation: https://github.com/af-a/event_camera_emulation.
 
 Datasets:
 - Nordland summer/fall/winter/sprign
