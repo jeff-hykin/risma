@@ -1,9 +1,14 @@
 ToDo:
+- Manually add:
+    - Multi-Scale Extension in an Entorhinal-Hippocampal Model for Cognitive Map Building, https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.592057/full
+    - Robustness Improvement of Visual Templates Matching Based on Frequency-Tuned Model in RatSLAM
+    
 - check:
     - A Brain-inspired SLAM System Based on Keyframe Template Matching
     - Continuous State Estimation With Synapse-constrained Connectivity
     - Vision-IMU multi-sensor fusion semantic topological map based on RatSLAM
     - An Improved Loop Closure Detection for RatSLAM
+    - The Graph SLAM Algorithm with Applications to Large-Scale Mapping of Urban Structures
 
 - create some buckets:
     - possible-state of the art bio-solutions solving core problem
@@ -116,3 +121,4 @@ Future Code help:
 Datasets:
 - Nordland summer/fall/winter/sprign
 - Oxford RobotCar
+- Fusionopolis Building Singapore
