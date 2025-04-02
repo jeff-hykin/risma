@@ -5,7 +5,14 @@ import { main } from './main.js'
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.7.6/main/console.js"
 import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@4b807ad/deno.js'
 
+// maybe add:
+    // neurorobotics
+    // neuroethology
+    // biomimetic
 var problemBeingSolved = [
+    "localisation",
+    "localization",
+    "place recognition",
     "visual place recognition",
     "SLAM",
     "landmark stability",
@@ -15,6 +22,7 @@ var problemBeingSolved = [
     "multimodal perception",
     "scene understanding",
     "locomotion",
+    "",
 ]
 var groundingInNeuroScience = [
     'neuro-inspired',
@@ -51,17 +59,23 @@ var groundingInNeuroScience = [
     'ring attractor',
     'multidimensional continuous attractor',
     'drosophila',
+    'fly',
+    "",
 ]
 var groundingInApplication = [
     // code
+    'code implementation'
+    '"python"',
+    '"c++"',
     '"pytorch"',
     '"tensorflow"',
     '"tensorflow.js"',
     '"jax"',
-    '"C++"',
+    '"bindsnet"',
     // hardware
+    'robot',
     '"robotics"',
-    '"UGV"',
+    '"ugv"',
     '"quadruped"',
     '"legged"',
     '"jetson"',
@@ -71,6 +85,7 @@ var groundingInApplication = [
     'unitree go1',
     'unitree go2',
     '"simulation"',
+    "",
 ]
 
 var outcomes = [...combinationOfChoices([
@@ -79,6 +94,8 @@ var outcomes = [...combinationOfChoices([
     groundingInApplication,
 ])]
 
+// remove the completely empty string
+outcomes = outcomes.filter(each=>each.join("").trim().length>0)
 randomlyShuffle(outcomes)
 
 // don't redo valid queries
