@@ -71,6 +71,7 @@ for (const reference of references) {
 // 
     import { Reference, search, loadReferences, getReferences } from '../../academic_api/main/main.js'
     import { coerceInsignificantEdgeCases } from '../../academic_api/main/reference.js'
+    import { getRedirectedUrl } from '../../academic_api/main/tools/fetch_tools.js'
     import { toRepresentation } from '../../academic_api/main/imports/good.js'
     
     // convert to newer cleaner format
@@ -106,7 +107,17 @@ for (const reference of references) {
     import { launch } from "../subrepos/astral.js"
     const astralBrowser = await launch()
     try {
+        let resumeAt = "KInNeSS: a new software environment for simulations of neuronal activity"
         for (const reference of references) {
+            // skip to specific title
+            if (resumeAt) {
+                if (reference.title==resumeAt) {
+                    resumeAt = null
+                } else {
+                    continue
+                }
+            }
+
             console.log(`reference.title is:`,blue`${reference.title}`)
             console.group()
             // skip if already has abstract
@@ -115,6 +126,7 @@ for (const reference of references) {
                 console.groupEnd()
                 continue
             }
+            
             let otherRef
             // unify by doi
             if (typeof reference.doi == "string") {
@@ -136,6 +148,26 @@ for (const reference of references) {
             // get abstract
             // 
             if (otherRef && !reference.abstract) {
+                // 
+                // get redirected doi value
+                // 
+                for (const [source, value] of Object.entries(otherRef.$accordingTo)) {
+                    if ((value?.url||"").startsWith("https://www.doi.org/")) {
+                        const newUrl = await getRedirectedUrl(value.url)
+                        if (typeof newUrl =="string" && !newUrl.startsWith("https://validate.perfdrive.com")) {
+                            value.url = newUrl
+                        }
+                    }
+                }
+                // for (const [source, value] of Object.entries(reference.accordingTo)) {
+                //     if ((value?.link||"").startsWith("https://www.doi.org/")) {
+                //         const newUrl = await getRedirectedUrl(value.link)
+                //         if (typeof newUrl =="string" && !newUrl.startsWith("https://validate.perfdrive.com")) {
+                //             value.link = newUrl
+                //         }
+                //     }
+                // }
+
                 try {
                     const { abstracts, warnings } = await otherRef.fillAbstractsFromHtml({astralBrowser})
                     console.debug(`abstracts is:`,JSON.stringify(abstracts))
@@ -144,7 +176,7 @@ for (const reference of references) {
                         reference.accordingTo.$manuallyEntered.abstract = abstracts[0]
                         let simpleWarnings
                         try {
-                            reference.accordingTo.$manuallyEntered.warnings = JSON.parse(JSON.stringify(warnings))
+                            reference.accordingTo.$manuallyEntered.warnings = JSON.parse(JSON.stringify(warnings,0,4))
                         } catch (error) {
                             
                         }
@@ -152,7 +184,7 @@ for (const reference of references) {
                     }
                     try {
                         if (Object.values(warnings||{}).length > 0) {
-                            console.warn(`${otherRef.title} warnings:`)
+                            console.warn(`warnings:`)
                         }
                         for (const [key, warningMessage] of Object.entries(warnings||{})) {
                             let message
