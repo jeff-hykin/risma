@@ -6,6 +6,8 @@ import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, c
 import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@4b807ad/deno.js'
 import { rankedCompare } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/ranked_compare.js'
 import { indent } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/indent.js'
+import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
+
 
 const references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
 const discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
@@ -73,9 +75,41 @@ for (const reference of references) {
     import { coerceInsignificantEdgeCases } from '../../academic_api/main/reference.js'
     import { getRedirectedUrl } from '../../academic_api/main/tools/fetch_tools.js'
     import { toRepresentation } from '../../academic_api/main/imports/good.js'
-    
+    console.log(`running add_stuff`)
+    console.group()
+    const processNext = [
+        
+    ]
+    const refsToProcess = []
+    for (let each of processNext) {
+        try {
+            let match = references.find(ref=>ref.title==each)
+            if (match) {
+                refsToProcess.push(
+                    match
+                )
+            } else {
+                let match = references.find(ref=>ref.title.toLowerCase()==each.toLowerCase())
+                if (match) {
+                    refsToProcess.push(
+                        match
+                    )
+                } else {
+                    console.debug(`    no match for:`,each)
+                }
+            }
+        } catch (error) {
+            console.debug(`    error is:`,error)
+        }
+    }
+    console.debug(`refsToProcess.length is:`,refsToProcess.length)
+    for (let each of refsToProcess) {
+        if (!(each.accordingTo instanceof Object)) {
+            console.debug(`each is:`,each)
+        }
+    }
     // convert to newer cleaner format
-    let processed = references.map(each=>({
+    let processed = refsToProcess.map(each=>({
         $accordingTo: Object.fromEntries(Object.entries(each.accordingTo).map(
             ([key, value])=>{
                 if (key=="crossref") {
@@ -107,8 +141,8 @@ for (const reference of references) {
     import { launch } from "../subrepos/astral.js"
     const astralBrowser = await launch()
     try {
-        let resumeAt = "KInNeSS: a new software environment for simulations of neuronal activity"
-        for (const reference of references) {
+        let resumeAt = null
+        for (const reference of refsToProcess) {
             // skip to specific title
             if (resumeAt) {
                 if (reference.title==resumeAt) {
@@ -118,14 +152,15 @@ for (const reference of references) {
                 }
             }
 
-            console.log(`reference.title is:`,blue`${reference.title}`)
-            console.group()
             // skip if already has abstract
-            if (reference.abstract || reference?.link?.startsWith?.("https://books.google.com/") || reference?.link?.includes?.("search.proquest.com")) {
-                console.log(`has abstract already`)
-                console.groupEnd()
+            if (reference.abstract || reference?.link?.startsWith?.("https://books.google.com/")) {
+                // console.log(`has abstract already`)
+                // console.groupEnd()
                 continue
+            } else {
+                console.log(`reference.title is:`,blue`${JSON.stringify(reference.title)}`)
             }
+            console.group()
             
             let otherRef
             // unify by doi
@@ -171,15 +206,24 @@ for (const reference of references) {
                 try {
                     const { abstracts, warnings } = await otherRef.fillAbstractsFromHtml({astralBrowser})
                     console.debug(`abstracts is:`,JSON.stringify(abstracts))
-                    if (abstracts.length >= 1) {
+                    const hadAbstract = abstracts.length >= 1
+                    if (hadAbstract) {
                         // save it on old object
                         reference.accordingTo.$manuallyEntered.abstract = abstracts[0]
-                        let simpleWarnings
+                    }
+                    const hadWarnings = (Object.values(warnings||{}).length > 0)
+                    if (hadWarnings) {
+                        console.warn(`warnings:`)
+                        console.warn(warnings)
                         try {
                             reference.accordingTo.$manuallyEntered.warnings = JSON.parse(JSON.stringify(warnings,0,4))
                         } catch (error) {
-                            
+                            console.error(error)
                         }
+                    } else {
+                        delete reference.accordingTo.$manuallyEntered.warnings
+                    }
+                    if (hadWarnings || hadAbstract) {
                         await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
                     }
                     try {
