@@ -12,38 +12,42 @@ import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
 const references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
 const discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
 
-const badLinks = JSON.parse(Deno.readTextFileSync("/Users/jeffhykin/repos/risma/links.json"))
-let promises = []
-let fixedCount = 0
-for (let eachBadLink of badLinks) {
-    const refWithBadLink = references.find(ref=>ref.link==eachBadLink)
-    if (refWithBadLink) {
-        promises.push(((async ()=>{
-            let fixedTheLink = false
-            try {
-                const fixedLink = await getRedirectedUrl(eachBadLink)
-                if (fixedLink) {
-                    fixedCount++
-                    console.log(`fixed: ${eachBadLink}`)
-                    fixedTheLink = true
-                    refWithBadLink.accordingTo.$manuallyEntered.oldLink = eachBadLink
-                    refWithBadLink.accordingTo.$manuallyEntered.link = fixedLink
-                    if (fixedCount % 10 == 0) {
-                        await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
-                    }
-                }
-            } catch (error) {
-                
-            }
-            if (!fixedTheLink) {
-                console.warn(`could not fix link for ${refWithBadLink.title}: ${eachBadLink}`)
-            }
-        })()))
-    }
-}
-await Promise.all(promises)
-await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
-Deno.exit()
+
+// 
+// link fixer
+// 
+    // const badLinks = JSON.parse(Deno.readTextFileSync("/Users/jeffhykin/repos/risma/links.json"))
+    // let promises = []
+    // let fixedCount = 0
+    // for (let eachBadLink of badLinks) {
+    //     const refWithBadLink = references.find(ref=>ref.link==eachBadLink)
+    //     if (refWithBadLink) {
+    //         promises.push(((async ()=>{
+    //             let fixedTheLink = false
+    //             try {
+    //                 const fixedLink = await getRedirectedUrl(eachBadLink)
+    //                 if (fixedLink) {
+    //                     fixedCount++
+    //                     console.log(`fixed: ${eachBadLink}`)
+    //                     fixedTheLink = true
+    //                     refWithBadLink.accordingTo.$manuallyEntered.oldLink = eachBadLink
+    //                     refWithBadLink.accordingTo.$manuallyEntered.link = fixedLink
+    //                     if (fixedCount % 10 == 0) {
+    //                         await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
+    //                     }
+    //                 }
+    //             } catch (error) {
+                    
+    //             }
+    //             if (!fixedTheLink) {
+    //                 console.warn(`could not fix link for ${refWithBadLink.title}: ${eachBadLink}`)
+    //             }
+    //         })()))
+    //     }
+    // }
+    // await Promise.all(promises)
+    // await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
+    // Deno.exit()
 
 
 // 

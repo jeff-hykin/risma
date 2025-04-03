@@ -146,14 +146,14 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         if (urls.size == 0) {
             continue
         }
-        for (let url of urls) {
-            if (url.startsWith("https://www.doi.org/")) {
-                const re = (await getRedirectedUrl(url))
-                if (re) {
-                    urls.add(re)
-                }
-            }
-        }
+        // for (let url of urls) {
+        //     if (url.startsWith("https://www.doi.org/")) {
+        //         const re = (await getRedirectedUrl(url))
+        //         if (re) {
+        //             urls.add(re)
+        //         }
+        //     }
+        // }
         urls = [...urls]
     
         // if (reference.notes.nickname) {
@@ -177,6 +177,9 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
             }
             continue
         }
+        // if (!reference.abstract && reference.score[0] < 3) {
+        //     continue
+        // }
         goodTitles.add(reference.title.toLowerCase())
         if (reference.notes.category) {
             filteredCategoryOnes.add(reference.title.toLowerCase())
