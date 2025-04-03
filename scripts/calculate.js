@@ -9,6 +9,8 @@ import { indent } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/fla
 import { getRedirectedUrl } from "/Users/jeffhykin/repos/academic_api/main/tools/fetch_tools.js"
 import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
 import { FileSystem, glob } from "https://deno.land/x/quickr@0.7.6/main/file_system.js"
+import { intersection } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/intersection.js'
+import { setSubtract } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/set_subtract.js'
 
 const references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
 const discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
@@ -18,6 +20,8 @@ for (const [key, value] of Object.entries(warningLogs)) {
     warningLogs[key.toLowerCase()] = value
     warningTitles.add(key.toLowerCase())
 }
+const unfilteredCategoryOnes = new Set()
+const filteredCategoryOnes = new Set()
 const importantSources = [
     "https://ieeexplore.ieee.org",
     "https://link.springer.com",
@@ -50,6 +54,7 @@ const importantSources = [
     "https://www.taylorfrancis.com",
     "https://www.academia.edu",
     
+    "https://link.springer.com/",
     "https://eprints.qut.edu.au/",
 ]
 let nicknames = []
@@ -129,21 +134,53 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
     // 
     // get link
     // 
-        let url = reference.link || reference.url
-        if (typeof url !== "string") {
+        let urls = new Set()
+        for (const [key, value] of Object.entries(reference.accordingTo)) {
+            if (typeof value?.link=="string") {
+                urls.add(value.link)
+            }
+            if (typeof value?.pdfLink=="string") {
+                urls.add(value.pdfLink)
+            }
+        }
+        if (urls.size == 0) {
             continue
         }
-        if (url.startsWith("https://www.doi.org/")) {
-            url = (await getRedirectedUrl(url)) || url
+        for (let url of urls) {
+            if (url.startsWith("https://www.doi.org/")) {
+                const re = (await getRedirectedUrl(url))
+                if (re) {
+                    urls.add(re)
+                }
+            }
         }
+        urls = [...urls]
     
+        // if (reference.notes.nickname) {
+        //     nicknames.push(reference.notes.nickname)
+        // }
+        if (reference.notes.category) {
+            unfilteredCategoryOnes.add(reference.title.toLowerCase())
+        }
     // 
     // only good sources filter
     // 
-        if (!importantSources.some(source=>url.includes(source))) {
+        if (!importantSources.some(source=>urls.some(url=>url.includes(source)))) {
+            if (reference.title.toLowerCase().includes("neuroslam")) {
+                console.debug(`urls is:`,urls)
+                for (let url of urls) {
+                    console.debug(`    url is:`,url)
+                    for (let each of importantSources) {
+                        console.debug(`    url.includes(${each}) is:`,url.includes(each))
+                    }
+                }
+            }
             continue
         }
         goodTitles.add(reference.title.toLowerCase())
+        if (reference.notes.category) {
+            filteredCategoryOnes.add(reference.title.toLowerCase())
+        }
     // 
     // nicknames and other
     // 
@@ -174,14 +211,14 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         } else {
             probablyNeedToGetManually++
             // skip if google book
-            if (url.startsWith("https://books.google.com/")) {
+            if (urls.some(url=>url.startsWith("https://books.google.com/"))) {
                 isBook++
             } else {
-                if (url.startsWith("https://www.researchgate.net") || url.match(/https:\/\/(link\.springer\.com|www\.academia\.edu|www\.jneurosci\.org).+\.pdf$/)) {
+                if (urls.some(url=>url.startsWith("https://www.researchgate.net")) || urls.some(url=>url.match(/https:\/\/(link\.springer\.com|www\.academia\.edu|www\.jneurosci\.org).+\.pdf$/))) {
                     isPdf++
                 } else {
                     if (!hasWarnings) {
-                        console.debug(`    `,JSON.stringify(reference.title))
+                        // console.debug(`    `,JSON.stringify(reference.title))
                         unexplainedLackOfWarnings++
                     } else {
                         probablyNeedToGetManuallyWithWarning++
@@ -208,4 +245,12 @@ console.debug(`    isPdf is:`,isPdf)
 console.debug(`    unexplainedLackOfWarnings is:`,unexplainedLackOfWarnings)
 console.debug(`    probablyNeedToGetManuallyWithWarning is:`,probablyNeedToGetManuallyWithWarning)
 console.debug(`nicknames is:`,nicknames)
+
+
+// const totalLost = unfilteredCategoryOnes.size-intersection(unfilteredCategoryOnes,filteredCategoryOnes).size
+// const percentLost = (totalLost/unfilteredCategoryOnes.size)*100
+// console.debug(`category totalLost is:`,totalLost)
+// console.debug(`category percentLost is:`,percentLost)
+// console.debug(`lost are:`,setSubtract({ value: filteredCategoryOnes, from: unfilteredCategoryOnes }))
+
 // await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
