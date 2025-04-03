@@ -7,10 +7,17 @@ import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@4
 import { rankedCompare } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/ranked_compare.js'
 import { indent } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/indent.js'
 import { getRedirectedUrl } from "/Users/jeffhykin/repos/academic_api/main/tools/fetch_tools.js"
+import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
+import { FileSystem, glob } from "https://deno.land/x/quickr@0.7.6/main/file_system.js"
 
 const references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
 const discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
-
+const warningLogs = yaml.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/warnings.yml'))
+const warningTitles = new Set()
+for (const [key, value] of Object.entries(warningLogs)) {
+    warningLogs[key.toLowerCase()] = value
+    warningTitles.add(key.toLowerCase())
+}
 const importantSources = [
     "https://ieeexplore.ieee.org",
     "https://link.springer.com",
@@ -42,7 +49,10 @@ const importantSources = [
     "https://www.annualreviews.org",
     "https://www.taylorfrancis.com",
     "https://www.academia.edu",
+    
+    "https://eprints.qut.edu.au/",
 ]
+let nicknames = []
 
 const manualAbstracts = {
     "3D pose estimation enables virtual head fixation in freely moving rats": "The impact of spontaneous movements on neuronal activity has created the need to quantify behavior. We present a versatile framework to directly capture the 3D motion of freely definable body points in a marker-free manner with high precision and reliability. Combining the tracking with neural recordings revealed multiplexing of information in the motor cortex neurons of freely moving rats. By integrating multiple behavioral variables into a model of the neural response, we derived a virtual head fixation for which the influence of specific body movements was removed. This strategy enabled us to analyze the behavior of interest (e.g., front paw movements). Thus, we unveiled an unexpectedly large fraction of neurons in the motor cortex with tuning to the paw movements, which was previously masked by body posture tuning. Once established, our framework can be efficiently applied to large datasets while minimizing the experimental workload caused by animal training and manual labeling.",
@@ -85,24 +95,36 @@ let hasAbstract = 0
 let withWarnings = 0
 let abstractAndWarnings = 0
 let abstractNoWarnings = 0
-let noAbstractNoWarningsNotBook = 0
+let unexplainedLackOfWarnings = 0
 let isBook = 0
 let probablyNeedToGetManually = 0
+let probablyNeedToGetManuallyWithWarning = 0
+let hasWarningLog = 0
+let isPdf = 0
 const referenceByLowerCaseTitle = {}
 import { merge } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/merge.js'
 for (const reference of references) {
-    let existing = referenceByLowerCaseTitle[reference.title.toLowerCase()]
+    const title = reference.title.toLowerCase()
+    let existing = referenceByLowerCaseTitle[title]
     if (existing) {
         console.log(`duplicate reference found:`,reference.title)
         if (JSON.stringify(reference).length > JSON.stringify(existing)) {
-            referenceByLowerCaseTitle[reference.title.toLowerCase()] = reference
+            referenceByLowerCaseTitle[title] = reference
         } 
-    }else {
-        referenceByLowerCaseTitle[reference.title.toLowerCase()] = reference
+    } else {
+        referenceByLowerCaseTitle[title] = reference
+    }
+    // 
+    // attach warnings from logs
+    // 
+    if (warningLogs[title]?.warnings!=null) {
+        hasWarningLog++
+        referenceByLowerCaseTitle[title].accordingTo.$manuallyEntered.warnings = warningLogs[title]?.warnings
     }
 }
 console.log(``)
 
+const goodTitles = new Set()
 for (const reference of Object.values(referenceByLowerCaseTitle)) {
     // 
     // get link
@@ -121,7 +143,13 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         if (!importantSources.some(source=>url.includes(source))) {
             continue
         }
-
+        goodTitles.add(reference.title.toLowerCase())
+    // 
+    // nicknames and other
+    // 
+        if (reference.notes.nickname) {
+            nicknames.push(reference.notes.nickname)
+        }
     // 
     // add manual abstracts
     // 
@@ -144,14 +172,20 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
                 abstractNoWarnings++
             }
         } else {
+            probablyNeedToGetManually++
             // skip if google book
             if (url.startsWith("https://books.google.com/")) {
                 isBook++
             } else {
-                probablyNeedToGetManually++
-                console.debug(`- `,reference.title)
-                if (!hasWarnings) {
-                    noAbstractNoWarningsNotBook++
+                if (url.startsWith("https://www.researchgate.net") || url.match(/https:\/\/(link\.springer\.com|www\.academia\.edu|www\.jneurosci\.org).+\.pdf$/)) {
+                    isPdf++
+                } else {
+                    if (!hasWarnings) {
+                        console.debug(`    `,JSON.stringify(reference.title))
+                        unexplainedLackOfWarnings++
+                    } else {
+                        probablyNeedToGetManuallyWithWarning++
+                    }
                 }
             }
         }
@@ -166,8 +200,12 @@ console.debug(`withWarnings/total % is:`,(withWarnings/total)*100)
 console.debug(`both/total % is:`,((hasAbstract/total)+(withWarnings/total))*100)
 console.debug(`both/total % is:`,(abstractAndWarnings/total)*100)
 console.debug(`abstractNoWarnings/total % is:`,(abstractNoWarnings/total)*100)
-console.debug(`noAbstractNoWarningsNotBook/total % is:`,(noAbstractNoWarningsNotBook/total)*100)
-console.debug(`noAbstractNoWarningsNotBook/total % is:`,(noAbstractNoWarningsNotBook/total)*100)
+console.debug(`unexplainedLackOfWarnings/total % is:`,(unexplainedLackOfWarnings/total)*100)
 console.debug(`probablyNeedToGetManually/total % is:`,(probablyNeedToGetManually/total)*100)
 console.debug(`probablyNeedToGetManually is:`,probablyNeedToGetManually)
+console.debug(`    isBook is:`,isBook)
+console.debug(`    isPdf is:`,isPdf)
+console.debug(`    unexplainedLackOfWarnings is:`,unexplainedLackOfWarnings)
+console.debug(`    probablyNeedToGetManuallyWithWarning is:`,probablyNeedToGetManuallyWithWarning)
+console.debug(`nicknames is:`,nicknames)
 // await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})

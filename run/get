@@ -13,12 +13,22 @@ const references = Object.values(main.activeProject.references).sort((a,b)=>rank
 // 
 // filtering
 // 
+let nicknamed = []
 let results = []
 for (let each of references) {
-    if (each.title.toLowerCase().includes(Deno.args.join(" ").toLowerCase())) {
-        results.push(each)
+    if ((each?.notes?.nickname||"").toLowerCase().includes(Deno.args.join(" ").toLowerCase())) {
+        nicknamed.push(each)
+    } else {
+        if (each.title.toLowerCase().includes(Deno.args.join(" ").toLowerCase())) {
+            results.push(each)
+        }
     }
 }
+const limit = 10
+const hitLimit = results.length > limit
+results = [...nicknamed,...results]
+results = results.slice(0,limit)
+results.reverse() // important at bottom
 
 
 // 
@@ -100,3 +110,7 @@ console.log(
         return each.replace(/^\s+(\w+?):/,`${blue(`$&`)}`)
     })
 )
+
+if (hitLimit) {
+    console.log(`note: only showing first ${limit}`)
+}
