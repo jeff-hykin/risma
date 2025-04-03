@@ -6,10 +6,43 @@ import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, c
 import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@4b807ad/deno.js'
 import { rankedCompare } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/ranked_compare.js'
 import { indent } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/indent.js'
+import { getRedirectedUrl } from "/Users/jeffhykin/repos/academic_api/main/tools/fetch_tools.js"
 
 const references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
 const discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
 
+const importantSources = [
+    "https://ieeexplore.ieee.org",
+    "https://link.springer.com",
+    "https://linkinghub.elsevier.com",
+    "https://www.mdpi.com",
+    "https://www.nature.com",
+    "https://arxiv.org",
+    "https://www.frontiersin.org",
+    "https://www.sciencedirect.com",
+    "https://search.proquest.com",
+    "https://onlinelibrary.wiley.com",
+    "https://books.google.com",
+    "https://journals.sagepub.com",
+    "https://dl.acm.org",
+    "https://www.biorxiv.org",
+    "https://academic.oup.com",
+    "https://www.tandfonline.com",
+    "https://www.cell.com",
+    "https://www.science.org",
+    "https://journals.plos.org",
+    "https://www.researchgate.net",
+    "https://direct.mit.edu",
+    "https://elifesciences.org",
+    "https://proceedings.neurips.cc",
+    "https://www.cambridge.org",
+    "https://www.jneurosci.org",
+    "https://iopscience.iop.org",
+    "https://pubs.aip.org",
+    "https://www.annualreviews.org",
+    "https://www.taylorfrancis.com",
+    "https://www.academia.edu",
+]
 
 const manualAbstracts = {
     "3D pose estimation enables virtual head fixation in freely moving rats": "The impact of spontaneous movements on neuronal activity has created the need to quantify behavior. We present a versatile framework to directly capture the 3D motion of freely definable body points in a marker-free manner with high precision and reliability. Combining the tracking with neural recordings revealed multiplexing of information in the motor cortex neurons of freely moving rats. By integrating multiple behavioral variables into a model of the neural response, we derived a virtual head fixation for which the influence of specific body movements was removed. This strategy enabled us to analyze the behavior of interest (e.g., front paw movements). Thus, we unveiled an unexpectedly large fraction of neurons in the motor cortex with tuning to the paw movements, which was previously masked by body posture tuning. Once established, our framework can be efficiently applied to large datasets while minimizing the experimental workload caused by animal training and manual labeling.",
@@ -50,28 +83,91 @@ const manualAbstracts = {
 let total = 0
 let hasAbstract = 0
 let withWarnings = 0
+let abstractAndWarnings = 0
+let abstractNoWarnings = 0
+let noAbstractNoWarningsNotBook = 0
+let isBook = 0
+let probablyNeedToGetManually = 0
+const referenceByLowerCaseTitle = {}
+import { merge } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/merge.js'
 for (const reference of references) {
-    if (manualAbstracts[reference.title]) {
-        reference.accordingTo.$manuallyEntered.abstract = manualAbstracts[reference.title]
+    let existing = referenceByLowerCaseTitle[reference.title.toLowerCase()]
+    if (existing) {
+        console.log(`duplicate reference found:`,reference.title)
+        if (JSON.stringify(reference).length > JSON.stringify(existing)) {
+            referenceByLowerCaseTitle[reference.title.toLowerCase()] = reference
+        } 
+    }else {
+        referenceByLowerCaseTitle[reference.title.toLowerCase()] = reference
     }
-    if (reference.accordingTo.$manuallyEntered.warnings) {
-        withWarnings++
-    }
-    if (reference.abstract) {
-        hasAbstract++
-    } else {
-        if ((reference?.link||"").includes("www.cell.com")) {
-            console.log(`${reference.title}:`, reference.link)
-        }
-    }
-    total++
 }
+console.log(``)
 
+for (const reference of Object.values(referenceByLowerCaseTitle)) {
+    // 
+    // get link
+    // 
+        let url = reference.link || reference.url
+        if (typeof url !== "string") {
+            continue
+        }
+        if (url.startsWith("https://www.doi.org/")) {
+            url = (await getRedirectedUrl(url)) || url
+        }
+    
+    // 
+    // only good sources filter
+    // 
+        if (!importantSources.some(source=>url.includes(source))) {
+            continue
+        }
+
+    // 
+    // add manual abstracts
+    // 
+        if (manualAbstracts[reference.title]) {
+            reference.accordingTo.$manuallyEntered.abstract = manualAbstracts[reference.title]
+        }
+
+    // 
+    // counters
+    // 
+        const hasWarnings = Object.keys(reference.accordingTo.$manuallyEntered.warnings||{}).length > 0
+        if (hasWarnings) {
+            withWarnings++
+        }
+        if (reference.abstract) {
+            hasAbstract++
+            if (hasWarnings) {
+                abstractAndWarnings++
+            } else{
+                abstractNoWarnings++
+            }
+        } else {
+            // skip if google book
+            if (url.startsWith("https://books.google.com/")) {
+                isBook++
+            } else {
+                probablyNeedToGetManually++
+                console.debug(`- `,reference.title)
+                if (!hasWarnings) {
+                    noAbstractNoWarningsNotBook++
+                }
+            }
+        }
+        total++
+}
 
 console.debug(`withWarnings is:`,withWarnings)
 console.debug(`hasAbstract is:`,hasAbstract)
 console.debug(`total is:`,total)
 console.debug(`hasAbstract/total % is:`,(hasAbstract/total)*100)
-console.debug(`hasAbstract/total % is:`,(withWarnings/total)*100)
+console.debug(`withWarnings/total % is:`,(withWarnings/total)*100)
 console.debug(`both/total % is:`,((hasAbstract/total)+(withWarnings/total))*100)
+console.debug(`both/total % is:`,(abstractAndWarnings/total)*100)
+console.debug(`abstractNoWarnings/total % is:`,(abstractNoWarnings/total)*100)
+console.debug(`noAbstractNoWarningsNotBook/total % is:`,(noAbstractNoWarningsNotBook/total)*100)
+console.debug(`noAbstractNoWarningsNotBook/total % is:`,(noAbstractNoWarningsNotBook/total)*100)
+console.debug(`probablyNeedToGetManually/total % is:`,(probablyNeedToGetManually/total)*100)
+console.debug(`probablyNeedToGetManually is:`,probablyNeedToGetManually)
 // await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
