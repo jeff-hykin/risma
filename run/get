@@ -1,0 +1,102 @@
+#!/usr/bin/env -S deno run --allow-all --no-lock
+import { combinationOfChoices } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/source/flattened/combination_of_choices.js'
+import { randomlyShuffle } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/source/flattened/randomly_shuffle.js'
+import { main } from '../main.js'
+import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.7.6/main/console.js"
+import {createStorageObject} from 'https://esm.sh/gh/jeff-hykin/storage-object@4b807ad/deno.js'
+import { rankedCompare } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/ranked_compare.js'
+import { indent } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/indent.js'
+import { escapeRegexReplace } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/escape_regex_replace.js'
+
+const references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
+
+// 
+// filtering
+// 
+let results = []
+for (let each of references) {
+    if (each.title.toLowerCase().includes(Deno.args.join(" ").toLowerCase())) {
+        results.push(each)
+    }
+}
+
+
+// 
+// output formatting
+// 
+import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
+// results = yaml.parse(yaml.stringify(results))
+let simplifiedResults = []
+for (const reference of results) {
+    // delete each.score
+    let each = {
+        title: reference.title,
+        nickname: null,
+        category: null,
+        comment: null,
+        year: reference.year,
+        scoreString: reference.scoreString,
+        link: null,
+        pdfLink: null,
+        resumeStatus: null,
+        citationCount: null,
+        authorNames: null,
+        keyTags: null,
+        ...reference._,
+        ...reference.notes,
+    }
+    for (const [sourceName, source] of Object.entries(reference.accordingTo||{}).reverse()) {
+        for (const [key, value] of Object.entries(source)) {
+            if (value != null) {
+                each[key] = value
+            }
+        }
+    }
+    each = {
+        ...each,
+        ...reference._,
+        ...reference.notes,
+    }
+    delete each.score
+    delete each.reasonsRelevant
+    delete each.reasonsNotRelevant
+    delete each.events
+    delete each.citedAlexIds
+    delete each.relatedAlexIds
+    delete each.openAlexId
+    delete each.citedDois
+    const concepts = each.concepts
+    delete each.concepts
+    each.concepts = concepts // put at bottom
+
+    for (const [key, value] of Object.entries(each)) {
+        if (value == null) {
+            delete each[key]
+        }
+    }
+    const keys = Object.keys(each).reverse()
+    let newEach = {}
+    for (let key of keys) {
+        newEach[key]=each[key]
+    }
+    simplifiedResults.push(newEach)
+}
+console.log(
+    yaml.stringify(simplifiedResults).replace(/\n  (\w+?):(.*)/g,(each)=>{
+        let match
+        let regex
+        if (match=each.match(regex=/^(\s+title:)(.+)/)) {
+            return each.replace(regex,escapeRegexReplace(`${blue(match[1])}${yellow(match[2])}`))
+        }
+        if (match=each.match(regex=/^(\s+(?:year|citationCount):)(.+)/)) {
+            return each.replace(regex,escapeRegexReplace(`${blue(match[1])}${red(match[2])}`))
+        }
+        if (match=each.match(regex=/^(\s+(?:link|pdfLink):)(.+)/)) {
+            return each.replace(regex,escapeRegexReplace(`${blue(match[1])}${cyan(match[2])}`))
+        }
+        if (match=each.match(regex=/^(\s+(?:resumeStatus):)(.+)/)) {
+            return each.replace(regex,escapeRegexReplace(`${blue(match[1])}${magenta(match[2])}`))
+        }
+        return each.replace(/^\s+(\w+?):/,`${blue(`$&`)}`)
+    })
+)
