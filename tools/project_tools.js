@@ -342,7 +342,7 @@ export async function displayReferences(references,{limit=10}={}) {
     var { highlightKeywords } = main
     console.log(
         yaml.stringify(simplifiedResults).replace(
-            /(?<=^  abstract:)\s*(>-|"|')[\w\W]*(?=\n  \w)/gm,
+            /(?<=^  abstract:)\s*(>-?|"|')[\w\W]*(?=\n  \w)/gm,
             (each)=>{
                 return highlightKeywords(each)
             }

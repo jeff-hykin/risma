@@ -44,7 +44,7 @@ let filteredRefs = removeDuplicates(references).filter(
     // each=>importantSources.some(source=>each.link.startsWith(source))
     each=>each
 ).filter(
-    each=>each.score[0]>=103, // e.g. from right source, and score >=3
+    each=>each.score[0]>105, // e.g. from right source 
 )
 const total = filteredRefs.length
 let index = -1
