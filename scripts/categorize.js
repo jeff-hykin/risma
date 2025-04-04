@@ -8,10 +8,10 @@ import { rankedCompare } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/sou
 import { indent } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/indent.js'
 import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
 import { selectOne } from "../tools/input_tools.js"
+import { displayReferences, removeDuplicates } from "../tools/project_tools.js"
 
 const references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
 const discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
-
 
 const categories = [
     "qualifiedSystem",
@@ -25,27 +25,96 @@ const categories = [
     "similarProblemSurveys",
     "tooling",
 ]
-import { displayReferences } from "../tools/project_tools.js"
+
 for (const reference of references) {
     if (typeof reference.notes?.category == "string") {
         categories.push(reference.notes.category)
     }
 }
 
-for (const reference of references) {
+const importantSources = [
+    "https://ieeexplore.ieee.org",
+    "https://www.science.org",
+    "https://www.mdpi.com",
+    "https://link.springer.com",
+    "https://linkinghub.elsevier.com",
+]
+let filteredRefs = removeDuplicates(references).filter(
+    // source filter
+    // each=>importantSources.some(source=>each.link.startsWith(source))
+    each=>each
+).filter(
+    each=>each.score[0]>=103, // e.g. from right source, and score >=3
+)
+const total = filteredRefs.length
+let index = -1
+for (const reference of filteredRefs) {
+    index++
     try {
+        // tag ideas:
+            // bio inspired (hippocampus, hippocampal)
+                // spiking
+                // ring attractor
+                // continuous attractor
+                // grid cell
+                // place cell
+                // pose cell
+                // spatial cell
+            // non rgb input
+                // lidar input
+                // infared (rgb-d)
+                // tactile input
+                // event camera (neuromorphic camera)
+                // echo location
+            // neuromorphic hardware
+            // phsyical robot
+                // spot
+                // go2
+                // husky
+                // jackal
+                // custom
+            // code available
+            // solves mobility problem
+                // enhancing navigation
+                // enhancing locomotion
+                // enhancing mapping
+                // enhancing place recognition
+                    // enhancing visual place recognition
+                // enhancing visual processing
+                // enhancing localization
+                // enhancing head direction
+                // enhancing path planning
+                // enhancing loop closure (closed-loop detection)
+                // enhancing simultaneous localization and mapping
+            // reinforcement learning
+            // deep learning
+            // simulated environment
         if (!reference.notes.category) {
             displayReferences([reference])
             const skipOption = "skip (ignore)"
+            const quitOption = "quit (save)"
+            const saveOption = "save"
+            console.log(`(${index+1}/${total})`)
             const whichAction = await selectOne({
                 message: "which category?",
                 options: [
-                    ...categories,
                     skipOption,
+                    ...categories,
+                    quitOption,
+                    saveOption,
                 ],
             })
             if (whichAction == skipOption) {
                 continue
+            } else if (whichAction == saveOption) {
+                console.log(`saving`)
+                await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
+                console.log(`done saving`)
+            } else if (whichAction == quitOption) {
+                console.log(`saving`)
+                await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
+                console.log(`done saving`)
+                Deno.exit()
             } else {
                 reference.notes.category = whichAction
             }
@@ -57,5 +126,7 @@ for (const reference of references) {
         throw error
     }
 }
+console.log(`saving`)
 await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
+console.log(`done saving`)
 Deno.exit()

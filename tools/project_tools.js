@@ -342,7 +342,7 @@ export async function displayReferences(references,{limit=10}={}) {
     var { highlightKeywords } = main
     console.log(
         yaml.stringify(simplifiedResults).replace(
-            /^  abstract: >-[\w\W]*(?=\n  \w)/gm,
+            /(?<=^  abstract:)\s*(>-|"|')[\w\W]*(?=\n  \w)/gm,
             (each)=>{
                 return highlightKeywords(each)
             }
@@ -354,7 +354,7 @@ export async function displayReferences(references,{limit=10}={}) {
                 if (match=each.match(regex=/^(\s+title:)(.+)/)) {
                     return each.replace(regex,escapeRegexReplace(highlightKeywords(`${yellow(match[1])}${white(match[2])}`)))
                 }
-                if (match=each.match(regex=/^(\s+(?:year|citationCount):)(.+)/)) {
+                if (match=each.match(regex=/^(\s+(?:year|citationCount|citedByCount):)(.+)/)) {
                     return each.replace(regex,escapeRegexReplace(`${blue(match[1])}${red(match[2])}`))
                 }
                 if (match=each.match(regex=/^(\s+(?:link|pdfLink):)(.+)/)) {
@@ -371,4 +371,23 @@ export async function displayReferences(references,{limit=10}={}) {
     if (hitLimit) {
         console.log(`note: only showing first ${limit}`)
     }
+}
+
+import { merge } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/merge.js'
+export function removeDuplicates(references) {
+    const referenceByLowerCaseTitle = {}
+    for (const reference of references) {
+        const title = reference.title.toLowerCase()
+        let existing = referenceByLowerCaseTitle[title]
+        if (existing) {
+            // pick the bigger one
+            if (JSON.stringify(reference).length > JSON.stringify(existing)) {
+                existing.isDuplicate = true
+                referenceByLowerCaseTitle[title] = reference
+            }
+        } else {
+            referenceByLowerCaseTitle[title] = reference
+        }
+    }
+    return Object.values(referenceByLowerCaseTitle)
 }
