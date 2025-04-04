@@ -52,7 +52,7 @@ for (const reference of filteredRefs) {
     index++
     try {
         // tag ideas:
-            // bio inspired (hippocampus, hippocampal)
+            // bio inspired (hippocampus, hippocampal, entorhinal cortex, neurophysiologically)
                 // spiking
                 // ring attractor
                 // continuous attractor
@@ -73,6 +73,11 @@ for (const reference of filteredRefs) {
                 // husky
                 // jackal
                 // custom
+            // legged robot 
+            // wheeled robot
+            // humanoid robot
+            // underwater robot
+            // flying robot
             // code available
             // solves mobility problem
                 // enhancing navigation
@@ -81,20 +86,24 @@ for (const reference of filteredRefs) {
                 // enhancing place recognition
                     // enhancing visual place recognition
                 // enhancing visual processing
+                    // scene perception
                 // enhancing localization
                 // enhancing head direction
                 // enhancing path planning
                 // enhancing loop closure (closed-loop detection)
                 // enhancing simultaneous localization and mapping
+                // enhancing memory
             // reinforcement learning
             // deep learning
             // simulated environment
         if (!reference.notes.category) {
-            displayReferences([reference])
+            await displayReferences([reference])
             const skipOption = "skip (ignore)"
             const quitOption = "quit (save)"
             const saveOption = "save"
+            console.log(``)
             console.log(`(${index+1}/${total})`)
+            console.log(``)
             const whichAction = await selectOne({
                 message: "which category?",
                 options: [
