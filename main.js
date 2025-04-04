@@ -265,8 +265,16 @@ export const main = {
     loadProject,
 }
 
+let saverInterval
+const clearSaver = () => {
+    if (saverInterval) {
+        clearInterval(saverInterval)
+        saverInterval = null
+    }
+}
 if (import.meta.main) {
     mainLoop: while (true) {
+        clearSaver()
         showProjectStatus()
         const whichAction = await selectOne({
             message: "next action",
@@ -345,6 +353,7 @@ if (import.meta.main) {
             saveProject({activeProject, path: storageObject.activeProjectPath})
         } else if (whichAction == "review references") {
             reviewLoop: while (true) {
+                clearSaver()
                 let references = Object.values(activeProject.references)
                 const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
                 const counts = getReferenceStatusCounts()
@@ -361,10 +370,17 @@ if (import.meta.main) {
                 // 
                 if (whatKind == "nothing (quit)") {
                     continue mainLoop
-                } else if (whatKind == "unseen|title" || whatKind == "skipped|title") {
+                } else if (false) {
+                // } else if (whatKind == "unseen|title" || whatKind == "skipped|title") {
+                    write(`sorting...\r`)
+                    const sortedRefs = references.filter(each=>each.resumeStatus == whatKind).sort(referenceSorter({project: activeProject}))
+                    write(`sorted     \n`)
                     console.log(cyan`\nCONTROLS: g=relevent (good), s=super relevent, b=not relevent (bad), u=unclear, n=skip (next), q=quit`)
-                    nextReferenceLoop: for (let each of references.filter(each=>each.resumeStatus == whatKind).sort(referenceSorter({project: activeProject}))) {
-                        // TODO: highlight good and bad keywords
+                    clearSaver()
+                    saverInterval = setInterval(async () => {
+                        await saveProject({activeProject, path: storageObject.activeProjectPath})
+                    }, 20_000) 
+                    nextReferenceLoop: for (let each of sortedRefs) {
                         let message = `${cyan`${score(each, activeProject)} (${each?.year}) `}${highlightKeywords(each.title)}: `
                         write(message)
                         each.reasonsNotRelevant = each.reasonsNotRelevant || []
@@ -372,9 +388,9 @@ if (import.meta.main) {
                         each.events = each.events || {}
                         each.events["sawTitle"] =  each.events["sawTitle"] || new DateTime().toISOString()
                         activeProject.references[each.title] = each // I don't know why/how this fixes anything, but I can confirm that it does
-                        await saveProject({activeProject, path: storageObject.activeProjectPath})
                         for await (let { name: keyName, sequence, code, ctrl, meta, shift } of listenToKeypresses()) {
-                            activeProject = await loadProject(storageObject.activeProjectPath)
+                            // activeProject = await loadProject(storageObject.activeProjectPath)
+
                             // to handle live reloading of data
                             each = activeProject.references[each.title]
                             
@@ -406,7 +422,7 @@ if (import.meta.main) {
                                     console.log(`\nunrecognized key: ${keyName}                                `)
                                     continue
                                 }
-                                await saveProject({activeProject, path: storageObject.activeProjectPath})
+                                // await saveProject({activeProject, path: storageObject.activeProjectPath})
                             }
                             break
                         }
@@ -416,85 +432,139 @@ if (import.meta.main) {
                     let quit = { title: "quit", }
                     let activeReferences
                     let skippedReferences = []
+                    // activeReferences = references.filter(each=>each.resumeStatus == whatKind && !skippedReferences.includes(each.title)).concat([quit])
+                    // activeReferences = references.filter(each=>!skippedReferences.includes(each.title)).concat([quit])
+                    // FIXME: temporary
+                    activeReferences = references.filter(each=>typeof each.abstract != "string").concat([quit])
+                    const sources = [
+                        "https://ieeexplore.ieee.org",
+                        "https://www.science.org",
+                        "https://www.mdpi.com",
+                        "https://link.springer.com",
+                        "https://linkinghub.elsevier.com",
+                    ]
+                    activeReferences = activeReferences.filter(each=>sources.some(source=>each.link?.includes(source)))
+                    // console.log(`scoring`)
+                    // const scores = activeReferences.map(each=>score(each, activeProject))
+                    // console.log(`checking`)
+                    // let needToSort = false
+                    // let prev
+                    // for (let each of activeReferences) {
+                    //     if (prev) {
+                    //         // out of order
+                    //         if (1 != rankedCompare(prev, each)) {
+                    //             needToSort = true
+                    //             break
+                    //         }
+                    //         prev = each
+                    //     }
+                    // }
+                    // if (needToSort) {
+                    //     console.log(`sorting`)
+                    //     console.log(`sorted`)
+                    // }
+                    activeReferences.sort(referenceSorter({project: activeProject}))
                     nextReferenceLoop: while (1) {
-                        activeReferences = references.filter(each=>each.resumeStatus == whatKind && !skippedReferences.includes(each.title)).concat([quit])
-                        if (activeReferences.length == 1) {
-                            await saveProject({activeProject, path: storageObject.activeProjectPath})
-                            prompt(`finished reviewing ${whatKind}! (press enter to continue)`)
-                            continue reviewLoop
-                        }
-                        // TODO: sort by publisher and year, allow ranking publishers
-                        activeReferences.sort(referenceSorter({project: activeProject}))
-                        const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${highlightKeywords(each.title)}`), each]))
-                        let active = await selectOne({
-                            message: "which title do you want to explore?",
-                            options: colorObject,
-                            optionDescriptions: activeReferences.map(each=>cyan`${each.year}, ${each.abstract?"📜":""}`),
-                            descriptionHighlighter: dim,
-                        })
-                        active = activeProject.references[active.title]
-                        if (active == quit || !active) {
-                            continue mainLoop
-                        }
-                        // TODO: fetch the webpage and attempt parsing some of it
-                        if (!active.abstract) {
-                            await OperatingSystem.openUrl(active.link||active.pdfLink)
-                            activeProject = await loadProject(storageObject.activeProjectPath)
-                            references = Object.values(activeProject.references)
-                            active = activeProject.references[active.title]
-                            active.accordingTo = active.accordingTo || {}
-                            active.accordingTo.$manuallyEntered = active.accordingTo.$manuallyEntered || {}
-                            active.accordingTo.$manuallyEntered.abstract = await askForParagraph(reset`paste in the abstract (press enter 3 times to submit)`)
-                            active.events = active.events || {}
-                            saveProject({activeProject, path: storageObject.activeProjectPath})
-                        }
-                        console.log(`\nabstract:\n\n${highlightKeywords(wordWrap(active.abstract, 80))}\n`)
-                        const choice = await selectOne({
-                            message: "abstract was",
-                            options: [
-                                "(skip question)",
-                                "irrelevent",
-                                "slightly-irrelevent",
-                                "unclear",
-                                "appendix",
-                                "relevent",
-                                "super-relevent",
-                            ],
-                        })
-                        if (active.pdfLink && !active.pdfWasDownloaded) {
-                            const downloadPath = FileSystem.parentPath(storageObject.activeProjectPath) + "/pdfs/"+active.title+".pdf"
-                            if (await Console.askFor.yesNo(reset`want me to download the pdf for you?\n` + cyan(downloadPath))) {
-                                FileSystem.write({
-                                    path: downloadPath,
-                                    data: await fetch(active.pdfLink).then(each=>each.arrayBuffer().then(buffer=>new Uint8Array(buffer))).catch(error=>`error: ${error}`),
-                                }).then(async ()=>{
-                                    activeProject = await loadProject(storageObject.activeProjectPath)
-                                    references = Object.values(activeProject.references)
-                                    active = activeProject.references[active.title]
-                                    active.pdfWasDownloaded = true
-                                    saveProject({activeProject, path: storageObject.activeProjectPath})
-                                })
+                        try {
+                            // FIXME: temporary
+                            activeReferences = activeReferences.filter(each=>!(each.abstract||each.accordingTo?.$manuallyEntered?.abstract))
+                            if (activeReferences.length == 1) { // the quit option
+                                await saveProject({activeProject, path: storageObject.activeProjectPath})
+                                prompt(`finished reviewing ${whatKind}! (press enter to continue)`)
+                                continue reviewLoop
                             }
+                            // TODO: sort by publisher and year, allow ranking publishers
+                            const colorObject = Object.fromEntries(activeReferences.map(each=>[ dim(`${each.abstract?"📜":""} ${red`${each.scoreString}`} ${highlightKeywords(each.title)}`.slice(0,129)), each]))
+                            colorObject["quit"] = quit
+                            let active = await selectOne({
+                                message: "which title do you want to explore?",
+                                options: colorObject,
+                                optionDescriptions: activeReferences.map(each=>cyan`${red`${each.scoreString}`} ${each.year}, ${each.abstract?"📜":""}`),
+                                descriptionHighlighter: dim,
+                            })
+                            if (!active?.title) {
+                                console.debug(`active is:`,active)
+                                console.debug(`active.title is:`,active?.title)
+                                console.log(`problem with active.title`)
+                                continue nextReferenceLoop
+                            }
+                            active = activeProject.references[active.title]
+                            if (active == quit || !active) {
+                                console.log(`saving...`)
+                                await saveProject({activeProject, path: storageObject.activeProjectPath})
+                                console.log(`saved`)
+                                continue mainLoop
+                            }
+                            if (!active.abstract) {
+                                await OperatingSystem.openUrl(active.link||active.pdfLink)
+                                // activeProject = await loadProject(storageObject.activeProjectPath)
+                                references = Object.values(activeProject.references)
+                                const original = active
+                                // idk why this is necessary, but I don't have time to fully debug it
+                                const abstract = await askForParagraph(reset`paste in the abstract (press enter 3 times to submit)`)
+                                for (let active of [original,activeProject.references[original.title], activeProject.references[original.title.toLowerCase()]].filter(each=>each?.title)) {
+                                    active.accordingTo = active.accordingTo || {}
+                                    active.accordingTo.$manuallyEntered = active.accordingTo.$manuallyEntered || {}
+                                    active.accordingTo.$manuallyEntered.abstract = abstract
+                                    active.events = active.events || {}
+                                    activeReferences = activeReferences.filter(each=>each.title != active.title)
+                                }
+                            }
+                            console.log(`\nabstract:\n\n${highlightKeywords(wordWrap(active.abstract, 80))}\n`)
+                            const choice = await selectOne({
+                                message: "abstract was",
+                                options: [
+                                    "(skip question)",
+                                    "irrelevent",
+                                    "slightly-irrelevent",
+                                    "unclear",
+                                    "appendix",
+                                    "relevent",
+                                    "super-relevent",
+                                ],
+                            })
+                            // if (active.pdfLink && !active.pdfWasDownloaded) {
+                            //     const downloadPath = FileSystem.parentPath(storageObject.activeProjectPath) + "/pdfs/"+active.title+".pdf"
+                            //     if (await Console.askFor.yesNo(reset`want me to download the pdf for you?\n` + cyan(downloadPath))) {
+                            //         FileSystem.write({
+                            //             path: downloadPath,
+                            //             data: await fetch(active.pdfLink).then(each=>each.arrayBuffer().then(buffer=>new Uint8Array(buffer))).catch(error=>`error: ${error}`),
+                            //         }).then(async ()=>{
+                            //             activeProject = await loadProject(storageObject.activeProjectPath)
+                            //             references = Object.values(activeProject.references)
+                            //             active = activeProject.references[active.title]
+                            //             active.pdfWasDownloaded = true
+                            //             saveProject({activeProject, path: storageObject.activeProjectPath})
+                            //         })
+                            //     }
+                            // }
+                            if (choice == "(skip question)" || choice.length == 0) {
+                                skippedReferences.push(active.title)
+                                continue nextReferenceLoop
+                            }
+                            // TODO: uncomment
+                                // activeProject = await loadProject(storageObject.activeProjectPath)
+                                // references = Object.values(activeProject.references)
+                                // active = activeProject.references[active.title]
+                                // active.events = active.events || {}
+                                // active.events["sawAbstract"] =  active.events["sawAbstract"] || new DateTime().toISOString()
+                                // active.reasonsRelevant = active.reasonsRelevant || [ ]
+                                // active.reasonsNotRelevant = active.reasonsNotRelevant || []
+                                // active.resumeStatus = `${choice}|abstract`
+                                // if (choice == "irrelevent" || choice == "slightly-irrelevent") {
+                                //     active.reasonsNotRelevant.push("abstract")
+                                // }
+                                // if (choice == "relevent" || choice == "super-relevent") {
+                                //     active.reasonsRelevant.push("abstract")
+                                // }
+                                // saveProject({activeProject, path: storageObject.activeProjectPath})
+                        } catch (error) {
+                            console.log(`error is:`,error)
+                            console.log(`saving...`)
+                            await saveProject({activeProject, path: storageObject.activeProjectPath})
+                            console.log(`saved`)
+                            throw error
                         }
-                        if (choice == "(skip question)" || choice.length == 0) {
-                            skippedReferences.push(active.title)
-                            continue nextReferenceLoop
-                        }
-                        activeProject = await loadProject(storageObject.activeProjectPath)
-                        references = Object.values(activeProject.references)
-                        active = activeProject.references[active.title]
-                        active.events = active.events || {}
-                        active.events["sawAbstract"] =  active.events["sawAbstract"] || new DateTime().toISOString()
-                        active.reasonsRelevant = active.reasonsRelevant || [ ]
-                        active.reasonsNotRelevant = active.reasonsNotRelevant || []
-                        active.resumeStatus = `${choice}|abstract`
-                        if (choice == "irrelevent" || choice == "slightly-irrelevent") {
-                            active.reasonsNotRelevant.push("abstract")
-                        }
-                        if (choice == "relevent" || choice == "super-relevent") {
-                            active.reasonsRelevant.push("abstract")
-                        }
-                        saveProject({activeProject, path: storageObject.activeProjectPath})
                     }
                 } else {
                     let quit = { title: "quit", }
