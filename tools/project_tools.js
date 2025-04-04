@@ -140,8 +140,34 @@ export function getKeywordCount(title, project) {
     }
     return {good: numberOfGoodKeywords, bad: numberOfBadKeywords, neutral: numberOfNeutralKeywords}
 }
+const projectCache = new Map()
+const refCache = new Map()
+const scoreCache = new Map()
+export const score = (ref, project)=>{
+    // caching
+        const settingsId = JSON.stringify(project.settings)
+        if (!projectCache.has(project) && projectCache.has(settingsId)) {
+            const id = Math.random()
+            projectCache.set(settingsId, id)
+            projectCache.set(project, id)
+        } else {
+            if (projectCache.has(settingsId)) {
+                projectCache.set(project, projectCache.get(settingsId))
+            }
+            if (projectCache.has(project)) {
+                projectCache.set(settingsId, projectCache.get(project))
+            }
+        }
+        const projectId = projectCache.get(project)
+        if (!refCache.has(ref)) {
+            refCache.set(ref, Math.random())
+        }
+        const refId = refCache.get(ref)
+        const cacheId = `${projectId}|${refId}`
+        if (scoreCache.has(cacheId)) {
+            return scoreCache.get(cacheId)
+        }
 
-export const score = (each, project)=>{
     project = project || activeProject // TODO: remove
     //
     // keyword count
@@ -165,7 +191,7 @@ export const score = (each, project)=>{
         try {
             const func = eval(value)
             func(
-                each,
+                ref,
                 scoreList,
                 {
                     keywords,
@@ -182,9 +208,10 @@ export const score = (each, project)=>{
     }
     if (Object.values(project?.settings?.scoreGivers||{}).length == 0) {
         // use year (currently gets added to keyword score)
-        scoreList[0] += (each.year-0||0)
+        scoreList[0] += (ref.year-0||0)
     }
     
+    scoreCache.set(cacheId, scoreList)
     return scoreList
 }
 
