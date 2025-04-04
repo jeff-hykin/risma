@@ -276,3 +276,99 @@ export function rateDiscoveryAttempts(discoveryAttempts, project) {
         each.score = scoreDiscoveryAttempt(each, project)
     }
 }
+
+export async function displayReferences(references,{limit=10}={}) {
+    const hitLimit = references.length > limit
+    references = references.slice(0,limit)
+    references.reverse() // important at bottom
+
+    // results = yaml.parse(yaml.stringify(results))
+    let simplifiedResults = []
+    for (const reference of references) {
+        // delete each.score
+        let each = {
+            title: reference.title,
+            nickname: null,
+            category: null,
+            comment: null,
+            year: reference.year,
+            scoreString: reference.scoreString,
+            link: null,
+            pdfLink: null,
+            resumeStatus: null,
+            citationCount: null,
+            authorNames: null,
+            keyTags: null,
+            ...reference._,
+            ...reference.notes,
+        }
+        for (const [sourceName, source] of Object.entries(reference.accordingTo||{}).reverse()) {
+            for (const [key, value] of Object.entries(source)) {
+                if (value != null) {
+                    each[key] = value
+                }
+            }
+        }
+        each = {
+            ...each,
+            ...reference._,
+            ...reference.notes,
+        }
+        delete each.score
+        delete each.reasonsRelevant
+        delete each.reasonsNotRelevant
+        delete each.events
+        delete each.citedAlexIds
+        delete each.relatedAlexIds
+        delete each.openAlexId
+        delete each.citedDois
+        const concepts = each.concepts
+        delete each.concepts
+        each.concepts = concepts // put at bottom
+
+        for (const [key, value] of Object.entries(each)) {
+            if (value == null) {
+                delete each[key]
+            }
+        }
+        const keys = Object.keys(each).reverse()
+        let newEach = {}
+        for (let key of keys) {
+            newEach[key]=each[key]
+        }
+        simplifiedResults.push(newEach)
+    }
+    var { main } = await import("../main.js")
+    var { highlightKeywords } = main
+    console.log(
+        yaml.stringify(simplifiedResults).replace(
+            /^  abstract: >-[\w\W]*(?=\n  \w)/gm,
+            (each)=>{
+                return highlightKeywords(each)
+            }
+        ).replace(
+            /\n  (\w+?):(.*)/g,
+            (each)=>{
+                let match
+                let regex
+                if (match=each.match(regex=/^(\s+title:)(.+)/)) {
+                    return each.replace(regex,escapeRegexReplace(highlightKeywords(`${yellow(match[1])}${white(match[2])}`)))
+                }
+                if (match=each.match(regex=/^(\s+(?:year|citationCount):)(.+)/)) {
+                    return each.replace(regex,escapeRegexReplace(`${blue(match[1])}${red(match[2])}`))
+                }
+                if (match=each.match(regex=/^(\s+(?:link|pdfLink):)(.+)/)) {
+                    return each.replace(regex,escapeRegexReplace(`${blue(match[1])}${cyan(match[2])}`))
+                }
+                if (match=each.match(regex=/^(\s+(?:resumeStatus):)(.+)/)) {
+                    return each.replace(regex,escapeRegexReplace(`${blue(match[1])}${magenta(match[2])}`))
+                }
+                return each.replace(/^\s+(\w+?):/,`${blue(`$&`)}`)
+            }
+        )
+    )
+    
+    if (hitLimit) {
+        console.log(`note: only showing first ${limit}`)
+    }
+}
