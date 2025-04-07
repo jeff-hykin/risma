@@ -174,7 +174,6 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         if (reference.score[0] > 105) {
             titlesForManualReview.add(reference.title.toLowerCase())
         }
-        continue
     // 
     // nicknames and other
     // 
