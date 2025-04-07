@@ -20,8 +20,6 @@ for (const [key, value] of Object.entries(warningLogs)) {
     warningLogs[key.toLowerCase()] = value
     warningTitles.add(key.toLowerCase())
 }
-const unfilteredCategoryOnes = new Set()
-const filteredCategoryOnes = new Set()
 const importantSources = [
     // must have's
     "https://ieeexplore.ieee.org",
@@ -74,11 +72,18 @@ for (let each of references) {
     }
 }
 import { frequencyCount } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/frequency_count.js'
-console.debug(`frequencyCount(mustHave, {sort:1}) is:`,frequencyCount(mustHave, {sort:1}))
-console.debug(`frequencyCount(origins, {sort:1}) is:`,frequencyCount(origins, {sort:1}))
-console.debug(`importantSources is:`,importantSources)
-let nicknamesQualified = new Set()
-let nicknamesNoFilter = new Set()
+
+const automatedResults = discoveryAttempts.filter(each=>each.automatedQuery)
+const automatedResultsTitles = new Set(automatedResults.map(each=>each.referenceLinks.map(each=>each.title.toLowerCase())).flat())
+
+const _nicknamesNoFilter = new Set()
+const _onesWithCategoryNoFilter = new Set()
+const titlesFromAutomatedSearches = new Set()
+const titlesFromAutomatedSearchesWithGoodSources = new Set()
+const titlesWithCategoriesAfterAllFilters = new Set()
+const nicknamesAfterAllFilters = new Set()
+const qualifiedSystemsAfterAllFilters = new Set()
+const titlesForManualReview = new Set()
 
 let total = 0
 let hasAbstract = 0
@@ -114,7 +119,6 @@ for (const reference of references) {
 }
 console.log(``)
 
-const goodTitles = new Set()
 for (const reference of Object.values(referenceByLowerCaseTitle)) {
     // 
     // get link
@@ -142,38 +146,46 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         urls = [...urls]
     
         if (reference.notes.nickname) {
-            nicknamesNoFilter.add(reference.notes.nickname)
+            _nicknamesNoFilter.add(reference.notes.nickname)
         }
         if (reference.notes.category) {
-            unfilteredCategoryOnes.add(reference.title.toLowerCase())
+            _onesWithCategoryNoFilter.add(reference.title.toLowerCase())
         }
+    // 
+    // only automated results filter
+    // 
+        if (!automatedResultsTitles.has(reference.title.toLowerCase())) {
+            continue
+        }
+        titlesFromAutomatedSearches.add(reference.title.toLowerCase())
     // 
     // only good sources filter
     // 
         if (!importantSources.some(source=>urls.some(url=>url.includes(source)))) {
-            if (reference.title.toLowerCase().includes("neuroslam")) {
-                console.debug(`urls is:`,urls)
-                for (let url of urls) {
-                    console.debug(`    url is:`,url)
-                    for (let each of importantSources) {
-                        console.debug(`    url.includes(${each}) is:`,url.includes(each))
-                    }
-                }
-            }
             continue
         }
         // if (!reference.abstract && reference.score[0] < 3) {
         //     continue
         // }
-        goodTitles.add(reference.title.toLowerCase())
+        titlesFromAutomatedSearchesWithGoodSources.add(reference.title.toLowerCase())
+    // 
+    // score filter
+    // 
+        if (reference.score[0] > 105) {
+            titlesForManualReview.add(reference.title.toLowerCase())
+        }
+        continue
     // 
     // nicknames and other
     // 
         if (reference.notes.nickname) {
-            nicknamesQualified.add(reference.notes.nickname)
+            nicknamesAfterAllFilters.add(reference.notes.nickname)
         }
         if (reference.notes.category) {
-            filteredCategoryOnes.add(reference.title.toLowerCase())
+            titlesWithCategoriesAfterAllFilters.add(reference.title.toLowerCase())
+        }
+        if (reference.notes.category == "qualifiedSystem") {
+            qualifiedSystemsAfterAllFilters.add(reference.title.toLowerCase())
         }
     // 
     // counters
@@ -210,28 +222,31 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         total++
 }
 
-console.debug(`withWarnings is:`,withWarnings)
-console.debug(`hasAbstract is:`,hasAbstract)
-console.debug(`total is:`,total)
-console.debug(`hasAbstract/total % is:`,(hasAbstract/total)*100)
-console.debug(`withWarnings/total % is:`,(withWarnings/total)*100)
-console.debug(`both/total % is:`,((hasAbstract/total)+(withWarnings/total))*100)
-console.debug(`both/total % is:`,(abstractAndWarnings/total)*100)
-console.debug(`abstractNoWarnings/total % is:`,(abstractNoWarnings/total)*100)
-console.debug(`unexplainedLackOfWarnings/total % is:`,(unexplainedLackOfWarnings/total)*100)
-console.debug(`probablyNeedToGetManually/total % is:`,(probablyNeedToGetManually/total)*100)
-console.debug(`probablyNeedToGetManually is:`,probablyNeedToGetManually)
-console.debug(`    isBook is:`,isBook)
-console.debug(`    isPdf is:`,isPdf)
+console.debug(`total is:`,titlesFromAutomatedSearches.size)
+console.debug(`    after source filter is:`,titlesFromAutomatedSearchesWithGoodSources.size)
+console.debug(`    after score filter:`,titlesForManualReview.size)
+console.debug(`    manually reviewed is:`,titlesWithCategoriesAfterAllFilters.size)
+console.debug(`    withCategories is:`,titlesWithCategoriesAfterAllFilters.size)
+console.debug(`    withWarnings is:`,withWarnings)
+console.debug(`    hasAbstract is:`,hasAbstract)
+console.debug(`    hasAbstract/total % is:`,(hasAbstract/total)*100)
+console.debug(`    withWarnings/total % is:`,(withWarnings/total)*100)
+console.debug(`    abstractAndWarnings % is:`,(abstractAndWarnings/total)*100)
+console.debug(`    unexplainedLackOfWarnings/total % is:`,(unexplainedLackOfWarnings/total)*100)
 console.debug(`    unexplainedLackOfWarnings is:`,unexplainedLackOfWarnings)
 console.debug(`    probablyNeedToGetManuallyWithWarning is:`,probablyNeedToGetManuallyWithWarning)
-console.debug(`nicknames lost:`,setSubtract({ value: nicknamesQualified, from: nicknamesNoFilter }))
+console.debug(`    isBook is:`,isBook)
+console.debug(`    link isPdf is:`,isPdf)
+console.debug(`    probablyNeedToGetManually % is:`,(probablyNeedToGetManually/total)*100)
+console.debug(`    probablyNeedToGetManually is:`,probablyNeedToGetManually)
+console.debug(`nicknames lost:`,setSubtract({ value: nicknamesAfterAllFilters, from: _nicknamesNoFilter }))
+console.debug(`nicknames kept:`,setSubtract({ value: _nicknamesNoFilter, from: nicknamesAfterAllFilters }))
 
 
-const totalLost = unfilteredCategoryOnes.size-intersection(unfilteredCategoryOnes,filteredCategoryOnes).size
-const percentLost = (totalLost/unfilteredCategoryOnes.size)*100
+const totalLost = _onesWithCategoryNoFilter.size-intersection(_onesWithCategoryNoFilter,titlesWithCategoriesAfterAllFilters).size
+const percentLost = (totalLost/_onesWithCategoryNoFilter.size)*100
 // console.debug(`category totalLost is:`,totalLost)
 // console.debug(`category percentLost is:`,percentLost)
-console.debug(`category lost are:`,setSubtract({ value: filteredCategoryOnes, from: unfilteredCategoryOnes }))
+console.debug(`category lost are:`,setSubtract({ value: titlesWithCategoriesAfterAllFilters, from: _onesWithCategoryNoFilter }))
 
 // await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})

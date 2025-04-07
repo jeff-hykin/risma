@@ -1,7 +1,16 @@
 ToDo:
+- Run ranking filter on all references
+- Redo title of
+    "of the simultaneous localization and mapping" to "An Application of the Simultaneous Localization and Mapping (SLAM) Method Based on the Unscented Kalman Filter (UKF) to a Reconfigurable Quadruped Robot with Crawling Locomotion"
+
+- Negative filters:
+    antibiotic
+    Extracellular
+    Pseudomonas aeruginosa Ocular Biofilms
+    
 - Manually add:
-    - Multi-Scale Extension in an Entorhinal-Hippocampal Model for Cognitive Map Building, https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.592057/full
     - Robustness Improvement of Visual Templates Matching Based on Frequency-Tuned Model in RatSLAM
+    - Multi-Scale Extension in an Entorhinal-Hippocampal Model for Cognitive Map Building, https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.592057/full
     
 - check:
     - A Brain-inspired SLAM System Based on Keyframe Template Matching
@@ -9,6 +18,14 @@ ToDo:
     - Vision-IMU multi-sensor fusion semantic topological map based on RatSLAM
     - An Improved Loop Closure Detection for RatSLAM
     - The Graph SLAM Algorithm with Applications to Large-Scale Mapping of Urban Structures
+- In paper
+    - Check if paper used spiking neural network or neuromorphic chip
+- conclusions:
+    - We need a 3D environment in the browser, a benchmark (contrast, elongation, etc)
+    - Lacking a spiking ring attractor RatSLAM
+
+
+- rename citedByCount to citationCount
 
 - create some buckets:
     - possible-state of the art bio-solutions solving core problem
@@ -26,6 +43,8 @@ ToDo:
         - survey of neuromorphic hardware
         - survey of spiking neural network performance
         - survey of SLAM performance
+- todo:
+    - Look at spiking network based on: https://github.com/TomKnowles1994/Biomimetics-Ring-Attractors
 - notes:
     - positive:
     - negative:
@@ -45,8 +64,10 @@ ToDo:
         - Neurodynamic sensory-motor phase binding for multi-legged walking robots
         - Bioinspired sensors and applications in intelligent robots: a review
          
-         
-- Understand the Simplified Higher Order Sequence Memory (SHOSM) algorithm (place recognition and HTM theory) from Neubert (cited in NeoSLAM paper)
+- Understand:
+    - pike-Timing-Dependent Plasticity (STDP) learning rule
+    - Understand the Simplified Higher Order Sequence Memory (SHOSM) algorithm (place recognition and HTM theory) from Neubert (cited in NeoSLAM paper)
+
 - Figure out what "SPL" is (comparision used in NeuroGPR paper)
 - non-navigation searches
     - navigation components and implementation, ex: "head direction cells" and "pytorch"
