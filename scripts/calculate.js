@@ -12,15 +12,15 @@ import { FileSystem, glob } from "https://deno.land/x/quickr@0.7.6/main/file_sys
 import { intersection } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/intersection.js'
 import { setSubtract } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/set_subtract.js'
 
-const references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
-const discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
-const warningLogs = yaml.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/warnings.yml'))
-const warningTitles = new Set()
-for (const [key, value] of Object.entries(warningLogs)) {
+var references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
+var discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
+var warningLogs = yaml.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/warnings.yml'))
+var warningTitles = new Set()
+for (var [key, value] of Object.entries(warningLogs)) {
     warningLogs[key.toLowerCase()] = value
     warningTitles.add(key.toLowerCase())
 }
-const importantSources = [
+var importantSources = [
     // must have's
     "https://ieeexplore.ieee.org",
     "https://www.science.org",
@@ -61,8 +61,8 @@ const importantSources = [
     
     // // "https://eprints.qut.edu.au/",
 ]
-let origins = []
-let mustHave = []
+var origins = []
+var mustHave = []
 for (let each of references) {
     if (each.notes.category||each.notes.nickname) {
         origins.push(new URL(each.link).origin)
@@ -73,33 +73,34 @@ for (let each of references) {
 }
 import { frequencyCount } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/frequency_count.js'
 
-const automatedResults = discoveryAttempts.filter(each=>each.automatedQuery)
-const automatedResultsTitles = new Set(automatedResults.map(each=>each.referenceLinks.map(each=>each.title.toLowerCase())).flat())
+var automatedResults = discoveryAttempts.filter(each=>each.automatedQuery)
+var automatedResultsTitles = new Set(automatedResults.map(each=>each.referenceLinks.map(each=>each.title.toLowerCase())).flat())
 
-const _nicknamesNoFilter = new Set()
-const _onesWithCategoryNoFilter = new Set()
-const titlesFromAutomatedSearches = new Set()
-const titlesFromAutomatedSearchesWithGoodSources = new Set()
-const titlesWithCategoriesAfterAllFilters = new Set()
-const nicknamesAfterAllFilters = new Set()
-const qualifiedSystemsAfterAllFilters = new Set()
-const titlesForManualReview = new Set()
+var _nicknamesNoFilter = new Set()
+var _onesWithCategoryNoFilter = new Set()
+var titlesFromAutomatedSearches = new Set()
+var titlesFromAutomatedSearchesWithGoodSources = new Set()
+var titlesWithCategoriesAfterAllFilters = new Set()
+var nicknamesAfterAllFilters = new Set()
+var qualifiedSystemsAfterAllFilters = new Set()
+var titlesForManualReview = new Set()
 
-let total = 0
-let hasAbstract = 0
-let withWarnings = 0
-let abstractAndWarnings = 0
-let abstractNoWarnings = 0
-let unexplainedLackOfWarnings = 0
-let isBook = 0
-let probablyNeedToGetManually = 0
-let probablyNeedToGetManuallyWithWarning = 0
-let hasWarningLog = 0
-let isPdf = 0
-const referenceByLowerCaseTitle = {}
+var categories = {}
+var total = 0
+var hasAbstract = 0
+var withWarnings = 0
+var abstractAndWarnings = 0
+var abstractNoWarnings = 0
+var unexplainedLackOfWarnings = 0
+var isBook = 0
+var probablyNeedToGetManually = 0
+var probablyNeedToGetManuallyWithWarning = 0
+var hasWarningLog = 0
+var isPdf = 0
+var referenceByLowerCaseTitle = {}
 import { merge } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/source/flattened/merge.js'
-for (const reference of references) {
-    const title = reference.title.toLowerCase()
+for (var reference of references) {
+    var title = reference.title.toLowerCase()
     let existing = referenceByLowerCaseTitle[title]
     if (existing) {
         // console.log(`duplicate reference found:`,reference.title)
@@ -119,12 +120,12 @@ for (const reference of references) {
 }
 console.log(``)
 
-for (const reference of Object.values(referenceByLowerCaseTitle)) {
+for (var reference of Object.values(referenceByLowerCaseTitle)) {
     // 
     // get link
     // 
         let urls = new Set()
-        for (const [key, value] of Object.entries(reference.accordingTo)) {
+        for (var [key, value] of Object.entries(reference.accordingTo)) {
             if (typeof value?.link=="string") {
                 urls.add(value.link)
             }
@@ -137,7 +138,7 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         }
         // for (let url of urls) {
         //     if (url.startsWith("https://www.doi.org/")) {
-        //         const re = (await getRedirectedUrl(url))
+        //         var re = (await getRedirectedUrl(url))
         //         if (re) {
         //             urls.add(re)
         //         }
@@ -171,11 +172,12 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
     // 
     // score filter
     // 
-        if (reference.score[0] > 105) {
-            titlesForManualReview.add(reference.title.toLowerCase())
+        if (reference.score[0] <= 105) {
+            continue
         }
+        titlesForManualReview.add(reference.title.toLowerCase())
     // 
-    // nicknames and other
+    // nicknames and other simple counts
     // 
         if (reference.notes.nickname) {
             nicknamesAfterAllFilters.add(reference.notes.nickname)
@@ -186,10 +188,16 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         if (reference.notes.category == "qualifiedSystem") {
             qualifiedSystemsAfterAllFilters.add(reference.title.toLowerCase())
         }
+        if (reference.notes.category) {
+            if (!categories[reference.notes.category]) {
+                categories[reference.notes.category] = new Set()
+            }
+            categories[reference.notes.category].add(reference.title.toLowerCase())
+        }
     // 
     // counters
     // 
-        const hasWarnings = Object.keys(reference.accordingTo.$manuallyEntered.warnings||{}).length > 0
+        var hasWarnings = Object.keys(reference.accordingTo.$manuallyEntered.warnings||{}).length > 0
         if (hasWarnings) {
             withWarnings++
         }
@@ -221,6 +229,53 @@ for (const reference of Object.values(referenceByLowerCaseTitle)) {
         total++
 }
 
+console.debug(`nicknames lost:`,setSubtract({ value: nicknamesAfterAllFilters, from: _nicknamesNoFilter }))
+console.debug(`nicknames kept:`,setSubtract({ value: _nicknamesNoFilter, from: nicknamesAfterAllFilters }))
+
+var totalLost = _onesWithCategoryNoFilter.size-intersection(_onesWithCategoryNoFilter,titlesWithCategoriesAfterAllFilters).size
+var percentLost = (totalLost/_onesWithCategoryNoFilter.size)*100
+// console.debug(`category totalLost is:`,totalLost)
+// console.debug(`category percentLost is:`,percentLost)
+console.debug(`category lost are:`,setSubtract({ value: titlesWithCategoriesAfterAllFilters, from: _onesWithCategoryNoFilter }))
+console.debug(`need to manually review is:`,setSubtract({ value: titlesWithCategoriesAfterAllFilters, from: titlesForManualReview }))
+// await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
+
+console.log(`categories:`)
+for (const [key, value] of Object.entries(categories)) {
+    console.log(`    ${key}: ${value.size}`)
+}
+
+console.log(`qualifiedSystems:`)
+var qualifiedSystemReferences = [...categories["qualifiedSystem"]].sort().map(eachTitle=>Object.values(p.references).find(each=>each.title.toLowerCase()==eachTitle))
+var qualifiedSystemReferences = [...categories["qualifiedSystem"]].sort().map(eachTitle=>references.find(each=>each.title.toLowerCase()==eachTitle))
+for (let ref of qualifiedSystemReferences) {
+    try {
+        const count = eval(`JSON.stringify(ref).match(/(?:citedByCount|citationCount)":(\\d+)/)[1]`)-0  //")/g)
+        if (count<2) {
+            continue
+        }
+    } catch (error) {
+        
+    }
+
+    let citationCount
+    // console.debug(`ref._.citedByCount is:`,ref._.citedByCount)
+    // if (typeof ref._.citationCount-0 == "number" || typeof ref._.citedByCount-0 == "number") {
+    //     console.debug(`ref._.citationCount is:`,ref._.citationCount)
+    //     console.debug(`ref._.citedByCount is:`,ref._.citedByCount)
+    //     citationCount = Math.max((ref._.citationCount||0), (ref._.citedByCount||0))
+    //     console.debug(`citationCount is:`,citationCount)
+    //     if (citationCount==citationCount) {
+    //         if (citationCount<2) {
+    //             continue
+    //         }
+    //     } else {
+    //         citationCount = null
+    //     }
+    // }
+    console.log(`    ${(ref.notes.nickname||"").padEnd(20)} | ${ref.authorNames.sort().join(", ").padEnd(120)}: ${ref.title}`)
+}
+
 console.debug(`total is:`,titlesFromAutomatedSearches.size)
 console.debug(`    after source filter is:`,titlesFromAutomatedSearchesWithGoodSources.size)
 console.debug(`    after score filter:`,titlesForManualReview.size)
@@ -238,14 +293,3 @@ console.debug(`    isBook is:`,isBook)
 console.debug(`    link isPdf is:`,isPdf)
 console.debug(`    probablyNeedToGetManually % is:`,(probablyNeedToGetManually/total)*100)
 console.debug(`    probablyNeedToGetManually is:`,probablyNeedToGetManually)
-console.debug(`nicknames lost:`,setSubtract({ value: nicknamesAfterAllFilters, from: _nicknamesNoFilter }))
-console.debug(`nicknames kept:`,setSubtract({ value: _nicknamesNoFilter, from: nicknamesAfterAllFilters }))
-
-
-const totalLost = _onesWithCategoryNoFilter.size-intersection(_onesWithCategoryNoFilter,titlesWithCategoriesAfterAllFilters).size
-const percentLost = (totalLost/_onesWithCategoryNoFilter.size)*100
-// console.debug(`category totalLost is:`,totalLost)
-// console.debug(`category percentLost is:`,percentLost)
-console.debug(`category lost are:`,setSubtract({ value: titlesWithCategoriesAfterAllFilters, from: _onesWithCategoryNoFilter }))
-
-// await main.saveProject({activeProject: main.activeProject, path: main.storageObject.activeProjectPath})
