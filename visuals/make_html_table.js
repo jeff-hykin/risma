@@ -1,0 +1,1712 @@
+import { enumerate } from 'https://esm.sh/gh/jeff-hykin/good-js@1.17.0.0/source/flattened/enumerate.js'
+import escapeHtml from "https://esm.sh/lodash@4.17.21/es2022/escape.mjs"
+
+function escapeForStyleTag(string) {
+    return string.replace(/<\/style>/g, "\\003C/style>")
+}
+function escapeForScriptTag(string) {
+    return string.replace(/<\/script>/g, "<\\/script>")
+}
+
+/**
+ * make an html table from data
+ *
+ * @example
+ * ```js
+ * const rows = [
+ *     [       "",       "Elongation","Vestibular","Local v Distant"             ,"Contrast"                 ,"Color v Mono"                 ,"Pose Cell Quantity",],
+ *     [ "RatSLAM",               "?",         "x",                           "?",                        "?",                               "~",              "x",],
+ *     [ "WhiskerSLAM",           "?",         "_",                           "?",                        "?",                               "?",              "?",],
+ *     [ "VitaSLAM",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
+ *     [ "FlyNet",                "?",         "x",                           "?",                        "?",                               "?",              "?",],
+ *     [ "NeuroSLAM",             "?",         "~",                           "?",                        "?",                               "?",              "?",],
+ *     [ "ORB-NeuroSLAM",         "?",         "~",                           "?",                        "?",                               "?",              "?",],
+ *     [ "HsiSLAM",               "?",         "~",                           "?",                        "✓",                               "?",              "?",],
+ *     [ "NeoSLAM",               "?",         "~",                           "?",                        "?",                               "?",              "?",],
+ *     [ "NeuroGPR",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
+ *     [ "SurfSLAM",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
+ * ]
+ * const contentToStyle = ({content, columnIndex, rowIndex, thisRow, rows, thisColumnHeader}) => ({
+ *     backgroundColor: ({
+ *         "?": "gray",
+ *         "~": "burlywood",
+ *         "✓": "mediumseagreen",
+ *         "x": "salmon",
+ *     })[content] || "transparent",
+ *     
+ *     classes: [
+ *         (content == "" ? "empty" : "filled"),
+ *         (thisColumnHeader == "" ? "emptyColumn" : "nonEmptyColumn"),
+ *     ],
+ * })
+ * const css = `
+ *     .header .cell {
+ *         writing-mode: sideways-lr;
+ *         vertical-align: bottom;
+ *         padding: 1rem;
+ *         text-align: center;
+ *         max-width: 48px;
+ *         transform: translate(2.4rem,1rem) rotate(45deg);
+ *     }
+ *     .cell {
+ *         padding: 8px;
+ *         border: 1px solid gray;
+ *         text-align: center;
+ *         background-color: transparent;
+ *     }
+ *     .cell.emptyColumn {
+ *         border: none;
+ *         background: transparent;
+ *         color: black;
+ *     }
+ *     .cell.filled.emptyColumn {
+ *         text-align: right;
+ *     }
+ *     .cell.filled:not(.emptyColumn) {
+ *         color: white;
+ *         background: mediumseagreen;
+ *     }
+ *     .cell.questionMark { background-color: gray; }
+ *     .cell.tilde        { background-color: burlywood; }
+ *     .cell.checkMark    { background-color: mediumseagreen; }
+ *     .cell.x            { background-color: salmon; }
+ * `
+ * const htmlContent = makeHtmlTable({rows, contentToStyle, css})
+ * import { FileSystem, glob } from "https://deno.land/x/quickr@0.8.0/main/file_system.js"
+ * await FileSystem.write({path:`${FileSystem.thisFolder}/table.html`, data: htmlContent, overwrite: true})
+ * ```
+ *
+ * @param arg1 - 
+ * @param arg1.rows - array of arrays of strings, first array is header-row
+ * @param arg1.contentToStyle - function that takes in a cell and returns an object with style properties
+ * @param arg1.css - css to include in the html file
+ * @returns {string} output - description
+ */
+export function makeHtmlTable({rows, contentToStyle, css, title="Html Table"}) {
+    const styleForEachCell = []
+    for (let [columnIndex, eachRow] of enumerate(rows)) {
+        styleForEachCell[columnIndex] = []
+        for (let [rowIndex, eachCell] of enumerate(eachRow)) {
+            styleForEachCell[columnIndex][rowIndex] = contentToStyle({content: eachCell, columnIndex, rowIndex, thisRow: eachRow, rows, thisColumnHeader: rows[0][rowIndex], })
+        }
+    }
+    return `<!DOCTYPE html>
+<head>
+    <title>${escapeHtml(title)}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>@-ms-viewport {
+  width: device-width;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main, summary {
+  display: block;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  touch-action: manipulation;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* 4 */
+  -ms-overflow-style: scrollbar;
+  /* 5 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  line-height: 1;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, main {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  /* 1 */
+  box-sizing: content-box;
+  height: 0;
+  /* 2 */
+  overflow: visible;
+}
+
+pre, code, kbd, samp {
+  /* 1 */
+  font-family: monospace, monospace;
+}
+
+pre {
+  /* 2 */
+  overflow: auto;
+  /* 3 */
+  -ms-overflow-style: scrollbar;
+}
+
+a {
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  /* 1 */
+  border-bottom: none;
+  /* 2 */
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button {
+  border-radius: 0;
+}
+
+input, button, select, optgroup, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button, [type=reset], [type=submit], html [type=button] {
+  -webkit-appearance: button;
+}
+
+input[type=date], input[type=time], input[type=datetime-local], input[type=month] {
+  -webkit-appearance: listbox;
+}
+
+fieldset {
+  min-width: 0;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+legend {
+  /* 1 */
+  max-width: 100%;
+  white-space: normal;
+  /* 2 */
+  color: inherit;
+  /* 3 */
+  display: block;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  /* 1 */
+  -webkit-appearance: textfield;
+  /* 2 */
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */
+  font: inherit;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+input, button, select, optgroup, textarea {
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: visible;
+  scroll-behavior: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+br {
+  display: block;
+  content: "";
+  border-bottom: 0px solid transparent;
+}
+
+h1 {
+  font-size: 2.78rem;
+}
+
+h2 {
+  font-size: 2.454rem;
+}
+
+h3 {
+  font-size: 2.128rem;
+}
+
+h4 {
+  font-size: 1.802rem;
+}
+
+h5 {
+  font-size: 1.476rem;
+}
+
+h6 {
+  font-size: 1.15rem;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+:root {
+  --css-baseline-scrollbar-background: lightgray;
+  --css-baseline-scrollbar-foreground: dimgray;
+}
+
+* {
+  scrollbar-color: var(--css-baseline-scrollbar-foreground) var(--css-baseline-scrollbar-background);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--css-baseline-scrollbar-background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--css-baseline-scrollbar-foreground);
+  border: 2px solid var(--css-baseline-scrollbar-background);
+  border-radius: 20px;
+}
+</style>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto");
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+        :root {
+            --gray-pallet-background: rgb(30, 37, 53);
+            --red-pallet-background: lightcoral;
+            --off-white: hsl(0, 0%, 87.8%);
+            --charcoal: hsl(180, 0%, 31%);
+            --charcoal-on-charcoal: hsl(0deg 0% 50%);
+            --soft-gray-gradient: linear-gradient(-110deg, whitesmoke, var(--off-white));
+            /* misc */
+            --red-pallet-font: white;
+            --decent-color-1: lightcoral;
+            --decent-color-2: salmon;
+            --decent-color-3: lightpink;
+            --decent-color-4: lightsalmon;
+            --decent-color-5: coral;
+            --decent-color-6: lightcyan;
+            --decent-color-7: lightblue;
+            --decent-color-8: lightsteelblue;
+            --decent-color-9: skyblue;
+            --decent-color-10: lightskyblue;
+            --decent-color-11: cornflowerblue;
+            --decent-color-12: dodgerblue;
+            --decent-color-13: aquamarine;
+            --decent-color-14: turquoise;
+            --decent-color-15: darkturquoise;
+            --decent-color-16: lightseagreen;
+            --decent-color-17: darkcyan;
+            --decent-color-18: teal;
+            --decent-color-19: mediumspringgreen;
+            --decent-color-20: lightgreen;
+            --decent-color-21: cadetblue;
+            --decent-color-22: darkorchid;
+            --decent-color-23: blueviolet;
+        }
+        * {
+            min-width: 0;
+        }
+        body {
+            font-size: 0.9em;
+            font-family: Roboto;
+        }
+        .animate {
+            transition: all 0.5s ease-in-out 0s;
+        }
+        .weak-shadow {
+            transition: all 0.3s ease-in-out 0s;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.24);
+        }
+        .weak-shadow:hover {
+            box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.1), 0 6px 30px 5px rgba(0, 0, 0, 0.08), 0 8px 10px -7px rgba(0, 0, 0, 0.16);
+        }
+        button {
+            border-radius: 1em;
+            border: none;
+            background-color: cornflowerblue;
+            padding: 0.5em 1em;
+            color: white;
+        }
+        a {
+            color: lightskyblue;
+            text-decoration: underline;
+        }
+        span {
+            vertical-align: text-top;
+        }
+    ${escapeForStyleTag(css)}
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh">
+        <div style="width: 50px; height: 50px; border: 10px solid #dddddd; border-top-color: #009579; border-radius: 50%; transform: rotate(0.16turn)" id="good-component--initial-loader"></div>
+    </div>
+
+<script>
+    const animateLoader = () => {
+        const element = document.getElementById("good-component--initial-loader")
+        element &&
+            element.animate([{ transform: "rotate(0turn)" }, { transform: "rotate(1turn)" }], {
+                duration: 1000,
+                iterations: Infinity,
+                easing: "ease",
+            })
+    }
+    document.body ? animateLoader() : document.addEventListener("DOMContentLoaded", animateLoader)
+</script>
+
+<script type="module">
+    const html = (function () {
+
+        // https://deno.land/x/good@1.13.2.0/flattened/empty_generator_object.js
+        var emptyGeneratorObject = function* () {
+        }();
+        emptyGeneratorObject.length = 0;
+
+        // https://deno.land/x/good@1.13.2.0/flattened/make_iterator.js
+        var makeIterator = (value) => {
+        if (typeof value?.next == "function") {
+            return value;
+        } else if (value == null) {
+            return emptyGeneratorObject;
+        } else if (typeof value[Symbol.iterator] == "function") {
+            const iterator = value[Symbol.iterator]();
+            if (!Number.isFinite(iterator?.length)) {
+            if (Number.isFinite(value?.length)) {
+                iterator.length = value.length;
+            } else if (Number.isFinite(value?.size)) {
+                iterator.length = value.size;
+            }
+            }
+            return iterator;
+        } else if (typeof value[Symbol.asyncIterator] == "function") {
+            const iterator = value[Symbol.asyncIterator]();
+            if (!Number.isFinite(iterator?.length)) {
+            if (Number.isFinite(value?.length)) {
+                iterator.length = value.length;
+            } else if (Number.isFinite(value?.size)) {
+                iterator.length = value.size;
+            }
+            }
+            return iterator;
+        } else if (typeof value == "function") {
+            return value();
+        } else if (Object.getPrototypeOf(value).constructor == Object) {
+            const entries = Object.entries(value);
+            const output = entries[Symbol.iterator]();
+            output.length = entries.length;
+            return output;
+        }
+        return emptyGeneratorObject;
+        };
+
+        // https://deno.land/x/good@1.13.2.0/flattened/iter_zip_long_sync.js
+        var innerIterZipLongSync = function* (...iterables) {
+        const iterators = iterables.map(makeIterator);
+        while (true) {
+            const nexts = iterators.map((each) => each.next());
+            if (nexts.every((each) => each.done)) {
+            break;
+            }
+            yield nexts.map((each) => each.value);
+        }
+        };
+        var iterZipLongSync = function(...iterables) {
+        const generatorObject = innerIterZipLongSync(...iterables);
+        const finalLength = Math.max(...iterables.map((each) => typeof each != "function" && (typeof each?.length == "number" ? each?.length : each.size)));
+        if (finalLength == finalLength) {
+            generatorObject.length = finalLength;
+        }
+        return generatorObject;
+        };
+
+        // https://deno.land/x/good@1.13.2.0/flattened/indent.js
+        var indent = ({ string, by = "    ", noLead = false }) => (noLead ? "" : by) + string.replace(/\\n/g, "\\n" + by);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/typed_array__class.js
+        var TypedArray = typeof globalThis?.Uint8Array != "function" ? class {
+        } : Object.getPrototypeOf(Uint8Array.prototype).constructor;
+
+        // https://deno.land/x/good@1.13.2.0/flattened/typed_array_classes.js
+        var typedArrayClasses = [
+        Uint16Array,
+        Uint32Array,
+        Uint8Array,
+        Uint8ClampedArray,
+        Int16Array,
+        Int32Array,
+        Int8Array,
+        Float32Array,
+        Float64Array
+        ];
+        if (globalThis.BigInt64Array) {
+        typedArrayClasses.push(globalThis.BigInt64Array);
+        }
+        if (globalThis.BigUint64Array) {
+        typedArrayClasses.push(globalThis.BigUint64Array);
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/all_keys.js
+        var allKeys = function(obj) {
+        const listOfKeys = [];
+        if (obj == null) {
+            return [];
+        }
+        if (!(obj instanceof Object)) {
+            obj = Object.getPrototypeOf(obj);
+        }
+        while (obj) {
+            listOfKeys.push(Reflect.ownKeys(obj));
+            obj = Object.getPrototypeOf(obj);
+        }
+        return [...new Set(listOfKeys.flat(1))];
+        };
+
+        // https://deno.land/x/good@1.13.2.0/flattened/is_valid_identifier.js
+        var regexIdentifier = /^(?:[\\$A-Z_a-z\\xAA\\xB5\\xBA\\xC0-\\xD6\\xD8-\\xF6\\xF8-\\u02C1\\u02C6-\\u02D1\\u02E0-\\u02E4\\u02EC\\u02EE\\u0370-\\u0374\\u0376\\u0377\\u037A-\\u037D\\u037F\\u0386\\u0388-\\u038A\\u038C\\u038E-\\u03A1\\u03A3-\\u03F5\\u03F7-\\u0481\\u048A-\\u052F\\u0531-\\u0556\\u0559\\u0561-\\u0587\\u05D0-\\u05EA\\u05F0-\\u05F2\\u0620-\\u064A\\u066E\\u066F\\u0671-\\u06D3\\u06D5\\u06E5\\u06E6\\u06EE\\u06EF\\u06FA-\\u06FC\\u06FF\\u0710\\u0712-\\u072F\\u074D-\\u07A5\\u07B1\\u07CA-\\u07EA\\u07F4\\u07F5\\u07FA\\u0800-\\u0815\\u081A\\u0824\\u0828\\u0840-\\u0858\\u08A0-\\u08B4\\u0904-\\u0939\\u093D\\u0950\\u0958-\\u0961\\u0971-\\u0980\\u0985-\\u098C\\u098F\\u0990\\u0993-\\u09A8\\u09AA-\\u09B0\\u09B2\\u09B6-\\u09B9\\u09BD\\u09CE\\u09DC\\u09DD\\u09DF-\\u09E1\\u09F0\\u09F1\\u0A05-\\u0A0A\\u0A0F\\u0A10\\u0A13-\\u0A28\\u0A2A-\\u0A30\\u0A32\\u0A33\\u0A35\\u0A36\\u0A38\\u0A39\\u0A59-\\u0A5C\\u0A5E\\u0A72-\\u0A74\\u0A85-\\u0A8D\\u0A8F-\\u0A91\\u0A93-\\u0AA8\\u0AAA-\\u0AB0\\u0AB2\\u0AB3\\u0AB5-\\u0AB9\\u0ABD\\u0AD0\\u0AE0\\u0AE1\\u0AF9\\u0B05-\\u0B0C\\u0B0F\\u0B10\\u0B13-\\u0B28\\u0B2A-\\u0B30\\u0B32\\u0B33\\u0B35-\\u0B39\\u0B3D\\u0B5C\\u0B5D\\u0B5F-\\u0B61\\u0B71\\u0B83\\u0B85-\\u0B8A\\u0B8E-\\u0B90\\u0B92-\\u0B95\\u0B99\\u0B9A\\u0B9C\\u0B9E\\u0B9F\\u0BA3\\u0BA4\\u0BA8-\\u0BAA\\u0BAE-\\u0BB9\\u0BD0\\u0C05-\\u0C0C\\u0C0E-\\u0C10\\u0C12-\\u0C28\\u0C2A-\\u0C39\\u0C3D\\u0C58-\\u0C5A\\u0C60\\u0C61\\u0C85-\\u0C8C\\u0C8E-\\u0C90\\u0C92-\\u0CA8\\u0CAA-\\u0CB3\\u0CB5-\\u0CB9\\u0CBD\\u0CDE\\u0CE0\\u0CE1\\u0CF1\\u0CF2\\u0D05-\\u0D0C\\u0D0E-\\u0D10\\u0D12-\\u0D3A\\u0D3D\\u0D4E\\u0D5F-\\u0D61\\u0D7A-\\u0D7F\\u0D85-\\u0D96\\u0D9A-\\u0DB1\\u0DB3-\\u0DBB\\u0DBD\\u0DC0-\\u0DC6\\u0E01-\\u0E30\\u0E32\\u0E33\\u0E40-\\u0E46\\u0E81\\u0E82\\u0E84\\u0E87\\u0E88\\u0E8A\\u0E8D\\u0E94-\\u0E97\\u0E99-\\u0E9F\\u0EA1-\\u0EA3\\u0EA5\\u0EA7\\u0EAA\\u0EAB\\u0EAD-\\u0EB0\\u0EB2\\u0EB3\\u0EBD\\u0EC0-\\u0EC4\\u0EC6\\u0EDC-\\u0EDF\\u0F00\\u0F40-\\u0F47\\u0F49-\\u0F6C\\u0F88-\\u0F8C\\u1000-\\u102A\\u103F\\u1050-\\u1055\\u105A-\\u105D\\u1061\\u1065\\u1066\\u106E-\\u1070\\u1075-\\u1081\\u108E\\u10A0-\\u10C5\\u10C7\\u10CD\\u10D0-\\u10FA\\u10FC-\\u1248\\u124A-\\u124D\\u1250-\\u1256\\u1258\\u125A-\\u125D\\u1260-\\u1288\\u128A-\\u128D\\u1290-\\u12B0\\u12B2-\\u12B5\\u12B8-\\u12BE\\u12C0\\u12C2-\\u12C5\\u12C8-\\u12D6\\u12D8-\\u1310\\u1312-\\u1315\\u1318-\\u135A\\u1380-\\u138F\\u13A0-\\u13F5\\u13F8-\\u13FD\\u1401-\\u166C\\u166F-\\u167F\\u1681-\\u169A\\u16A0-\\u16EA\\u16EE-\\u16F8\\u1700-\\u170C\\u170E-\\u1711\\u1720-\\u1731\\u1740-\\u1751\\u1760-\\u176C\\u176E-\\u1770\\u1780-\\u17B3\\u17D7\\u17DC\\u1820-\\u1877\\u1880-\\u18A8\\u18AA\\u18B0-\\u18F5\\u1900-\\u191E\\u1950-\\u196D\\u1970-\\u1974\\u1980-\\u19AB\\u19B0-\\u19C9\\u1A00-\\u1A16\\u1A20-\\u1A54\\u1AA7\\u1B05-\\u1B33\\u1B45-\\u1B4B\\u1B83-\\u1BA0\\u1BAE\\u1BAF\\u1BBA-\\u1BE5\\u1C00-\\u1C23\\u1C4D-\\u1C4F\\u1C5A-\\u1C7D\\u1CE9-\\u1CEC\\u1CEE-\\u1CF1\\u1CF5\\u1CF6\\u1D00-\\u1DBF\\u1E00-\\u1F15\\u1F18-\\u1F1D\\u1F20-\\u1F45\\u1F48-\\u1F4D\\u1F50-\\u1F57\\u1F59\\u1F5B\\u1F5D\\u1F5F-\\u1F7D\\u1F80-\\u1FB4\\u1FB6-\\u1FBC\\u1FBE\\u1FC2-\\u1FC4\\u1FC6-\\u1FCC\\u1FD0-\\u1FD3\\u1FD6-\\u1FDB\\u1FE0-\\u1FEC\\u1FF2-\\u1FF4\\u1FF6-\\u1FFC\\u2071\\u207F\\u2090-\\u209C\\u2102\\u2107\\u210A-\\u2113\\u2115\\u2118-\\u211D\\u2124\\u2126\\u2128\\u212A-\\u2139\\u213C-\\u213F\\u2145-\\u2149\\u214E\\u2160-\\u2188\\u2C00-\\u2C2E\\u2C30-\\u2C5E\\u2C60-\\u2CE4\\u2CEB-\\u2CEE\\u2CF2\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\u2D30-\\u2D67\\u2D6F\\u2D80-\\u2D96\\u2DA0-\\u2DA6\\u2DA8-\\u2DAE\\u2DB0-\\u2DB6\\u2DB8-\\u2DBE\\u2DC0-\\u2DC6\\u2DC8-\\u2DCE\\u2DD0-\\u2DD6\\u2DD8-\\u2DDE\\u3005-\\u3007\\u3021-\\u3029\\u3031-\\u3035\\u3038-\\u303C\\u3041-\\u3096\\u309B-\\u309F\\u30A1-\\u30FA\\u30FC-\\u30FF\\u3105-\\u312D\\u3131-\\u318E\\u31A0-\\u31BA\\u31F0-\\u31FF\\u3400-\\u4DB5\\u4E00-\\u9FD5\\uA000-\\uA48C\\uA4D0-\\uA4FD\\uA500-\\uA60C\\uA610-\\uA61F\\uA62A\\uA62B\\uA640-\\uA66E\\uA67F-\\uA69D\\uA6A0-\\uA6EF\\uA717-\\uA71F\\uA722-\\uA788\\uA78B-\\uA7AD\\uA7B0-\\uA7B7\\uA7F7-\\uA801\\uA803-\\uA805\\uA807-\\uA80A\\uA80C-\\uA822\\uA840-\\uA873\\uA882-\\uA8B3\\uA8F2-\\uA8F7\\uA8FB\\uA8FD\\uA90A-\\uA925\\uA930-\\uA946\\uA960-\\uA97C\\uA984-\\uA9B2\\uA9CF\\uA9E0-\\uA9E4\\uA9E6-\\uA9EF\\uA9FA-\\uA9FE\\uAA00-\\uAA28\\uAA40-\\uAA42\\uAA44-\\uAA4B\\uAA60-\\uAA76\\uAA7A\\uAA7E-\\uAAAF\\uAAB1\\uAAB5\\uAAB6\\uAAB9-\\uAABD\\uAAC0\\uAAC2\\uAADB-\\uAADD\\uAAE0-\\uAAEA\\uAAF2-\\uAAF4\\uAB01-\\uAB06\\uAB09-\\uAB0E\\uAB11-\\uAB16\\uAB20-\\uAB26\\uAB28-\\uAB2E\\uAB30-\\uAB5A\\uAB5C-\\uAB65\\uAB70-\\uABE2\\uAC00-\\uD7A3\\uD7B0-\\uD7C6\\uD7CB-\\uD7FB\\uF900-\\uFA6D\\uFA70-\\uFAD9\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFB1D\\uFB1F-\\uFB28\\uFB2A-\\uFB36\\uFB38-\\uFB3C\\uFB3E\\uFB40\\uFB41\\uFB43\\uFB44\\uFB46-\\uFBB1\\uFBD3-\\uFD3D\\uFD50-\\uFD8F\\uFD92-\\uFDC7\\uFDF0-\\uFDFB\\uFE70-\\uFE74\\uFE76-\\uFEFC\\uFF21-\\uFF3A\\uFF41-\\uFF5A\\uFF66-\\uFFBE\\uFFC2-\\uFFC7\\uFFCA-\\uFFCF\\uFFD2-\\uFFD7\\uFFDA-\\uFFDC]|\\uD800[\\uDC00-\\uDC0B\\uDC0D-\\uDC26\\uDC28-\\uDC3A\\uDC3C\\uDC3D\\uDC3F-\\uDC4D\\uDC50-\\uDC5D\\uDC80-\\uDCFA\\uDD40-\\uDD74\\uDE80-\\uDE9C\\uDEA0-\\uDED0\\uDF00-\\uDF1F\\uDF30-\\uDF4A\\uDF50-\\uDF75\\uDF80-\\uDF9D\\uDFA0-\\uDFC3\\uDFC8-\\uDFCF\\uDFD1-\\uDFD5]|\\uD801[\\uDC00-\\uDC9D\\uDD00-\\uDD27\\uDD30-\\uDD63\\uDE00-\\uDF36\\uDF40-\\uDF55\\uDF60-\\uDF67]|\\uD802[\\uDC00-\\uDC05\\uDC08\\uDC0A-\\uDC35\\uDC37\\uDC38\\uDC3C\\uDC3F-\\uDC55\\uDC60-\\uDC76\\uDC80-\\uDC9E\\uDCE0-\\uDCF2\\uDCF4\\uDCF5\\uDD00-\\uDD15\\uDD20-\\uDD39\\uDD80-\\uDDB7\\uDDBE\\uDDBF\\uDE00\\uDE10-\\uDE13\\uDE15-\\uDE17\\uDE19-\\uDE33\\uDE60-\\uDE7C\\uDE80-\\uDE9C\\uDEC0-\\uDEC7\\uDEC9-\\uDEE4\\uDF00-\\uDF35\\uDF40-\\uDF55\\uDF60-\\uDF72\\uDF80-\\uDF91]|\\uD803[\\uDC00-\\uDC48\\uDC80-\\uDCB2\\uDCC0-\\uDCF2]|\\uD804[\\uDC03-\\uDC37\\uDC83-\\uDCAF\\uDCD0-\\uDCE8\\uDD03-\\uDD26\\uDD50-\\uDD72\\uDD76\\uDD83-\\uDDB2\\uDDC1-\\uDDC4\\uDDDA\\uDDDC\\uDE00-\\uDE11\\uDE13-\\uDE2B\\uDE80-\\uDE86\\uDE88\\uDE8A-\\uDE8D\\uDE8F-\\uDE9D\\uDE9F-\\uDEA8\\uDEB0-\\uDEDE\\uDF05-\\uDF0C\\uDF0F\\uDF10\\uDF13-\\uDF28\\uDF2A-\\uDF30\\uDF32\\uDF33\\uDF35-\\uDF39\\uDF3D\\uDF50\\uDF5D-\\uDF61]|\\uD805[\\uDC80-\\uDCAF\\uDCC4\\uDCC5\\uDCC7\\uDD80-\\uDDAE\\uDDD8-\\uDDDB\\uDE00-\\uDE2F\\uDE44\\uDE80-\\uDEAA\\uDF00-\\uDF19]|\\uD806[\\uDCA0-\\uDCDF\\uDCFF\\uDEC0-\\uDEF8]|\\uD808[\\uDC00-\\uDF99]|\\uD809[\\uDC00-\\uDC6E\\uDC80-\\uDD43]|[\\uD80C\\uD840-\\uD868\\uD86A-\\uD86C\\uD86F-\\uD872][\\uDC00-\\uDFFF]|\\uD80D[\\uDC00-\\uDC2E]|\\uD811[\\uDC00-\\uDE46]|\\uD81A[\\uDC00-\\uDE38\\uDE40-\\uDE5E\\uDED0-\\uDEED\\uDF00-\\uDF2F\\uDF40-\\uDF43\\uDF63-\\uDF77\\uDF7D-\\uDF8F]|\\uD81B[\\uDF00-\\uDF44\\uDF50\\uDF93-\\uDF9F]|\\uD82C[\\uDC00\\uDC01]|\\uD82F[\\uDC00-\\uDC6A\\uDC70-\\uDC7C\\uDC80-\\uDC88\\uDC90-\\uDC99]|\\uD835[\\uDC00-\\uDC54\\uDC56-\\uDC9C\\uDC9E\\uDC9F\\uDCA2\\uDCA5\\uDCA6\\uDCA9-\\uDCAC\\uDCAE-\\uDCB9\\uDCBB\\uDCBD-\\uDCC3\\uDCC5-\\uDD05\\uDD07-\\uDD0A\\uDD0D-\\uDD14\\uDD16-\\uDD1C\\uDD1E-\\uDD39\\uDD3B-\\uDD3E\\uDD40-\\uDD44\\uDD46\\uDD4A-\\uDD50\\uDD52-\\uDEA5\\uDEA8-\\uDEC0\\uDEC2-\\uDEDA\\uDEDC-\\uDEFA\\uDEFC-\\uDF14\\uDF16-\\uDF34\\uDF36-\\uDF4E\\uDF50-\\uDF6E\\uDF70-\\uDF88\\uDF8A-\\uDFA8\\uDFAA-\\uDFC2\\uDFC4-\\uDFCB]|\\uD83A[\\uDC00-\\uDCC4]|\\uD83B[\\uDE00-\\uDE03\\uDE05-\\uDE1F\\uDE21\\uDE22\\uDE24\\uDE27\\uDE29-\\uDE32\\uDE34-\\uDE37\\uDE39\\uDE3B\\uDE42\\uDE47\\uDE49\\uDE4B\\uDE4D-\\uDE4F\\uDE51\\uDE52\\uDE54\\uDE57\\uDE59\\uDE5B\\uDE5D\\uDE5F\\uDE61\\uDE62\\uDE64\\uDE67-\\uDE6A\\uDE6C-\\uDE72\\uDE74-\\uDE77\\uDE79-\\uDE7C\\uDE7E\\uDE80-\\uDE89\\uDE8B-\\uDE9B\\uDEA1-\\uDEA3\\uDEA5-\\uDEA9\\uDEAB-\\uDEBB]|\\uD869[\\uDC00-\\uDED6\\uDF00-\\uDFFF]|\\uD86D[\\uDC00-\\uDF34\\uDF40-\\uDFFF]|\\uD86E[\\uDC00-\\uDC1D\\uDC20-\\uDFFF]|\\uD873[\\uDC00-\\uDEA1]|\\uD87E[\\uDC00-\\uDE1D])(?:[\\$0-9A-Z_a-z\\xAA\\xB5\\xB7\\xBA\\xC0-\\xD6\\xD8-\\xF6\\xF8-\\u02C1\\u02C6-\\u02D1\\u02E0-\\u02E4\\u02EC\\u02EE\\u0300-\\u0374\\u0376\\u0377\\u037A-\\u037D\\u037F\\u0386-\\u038A\\u038C\\u038E-\\u03A1\\u03A3-\\u03F5\\u03F7-\\u0481\\u0483-\\u0487\\u048A-\\u052F\\u0531-\\u0556\\u0559\\u0561-\\u0587\\u0591-\\u05BD\\u05BF\\u05C1\\u05C2\\u05C4\\u05C5\\u05C7\\u05D0-\\u05EA\\u05F0-\\u05F2\\u0610-\\u061A\\u0620-\\u0669\\u066E-\\u06D3\\u06D5-\\u06DC\\u06DF-\\u06E8\\u06EA-\\u06FC\\u06FF\\u0710-\\u074A\\u074D-\\u07B1\\u07C0-\\u07F5\\u07FA\\u0800-\\u082D\\u0840-\\u085B\\u08A0-\\u08B4\\u08E3-\\u0963\\u0966-\\u096F\\u0971-\\u0983\\u0985-\\u098C\\u098F\\u0990\\u0993-\\u09A8\\u09AA-\\u09B0\\u09B2\\u09B6-\\u09B9\\u09BC-\\u09C4\\u09C7\\u09C8\\u09CB-\\u09CE\\u09D7\\u09DC\\u09DD\\u09DF-\\u09E3\\u09E6-\\u09F1\\u0A01-\\u0A03\\u0A05-\\u0A0A\\u0A0F\\u0A10\\u0A13-\\u0A28\\u0A2A-\\u0A30\\u0A32\\u0A33\\u0A35\\u0A36\\u0A38\\u0A39\\u0A3C\\u0A3E-\\u0A42\\u0A47\\u0A48\\u0A4B-\\u0A4D\\u0A51\\u0A59-\\u0A5C\\u0A5E\\u0A66-\\u0A75\\u0A81-\\u0A83\\u0A85-\\u0A8D\\u0A8F-\\u0A91\\u0A93-\\u0AA8\\u0AAA-\\u0AB0\\u0AB2\\u0AB3\\u0AB5-\\u0AB9\\u0ABC-\\u0AC5\\u0AC7-\\u0AC9\\u0ACB-\\u0ACD\\u0AD0\\u0AE0-\\u0AE3\\u0AE6-\\u0AEF\\u0AF9\\u0B01-\\u0B03\\u0B05-\\u0B0C\\u0B0F\\u0B10\\u0B13-\\u0B28\\u0B2A-\\u0B30\\u0B32\\u0B33\\u0B35-\\u0B39\\u0B3C-\\u0B44\\u0B47\\u0B48\\u0B4B-\\u0B4D\\u0B56\\u0B57\\u0B5C\\u0B5D\\u0B5F-\\u0B63\\u0B66-\\u0B6F\\u0B71\\u0B82\\u0B83\\u0B85-\\u0B8A\\u0B8E-\\u0B90\\u0B92-\\u0B95\\u0B99\\u0B9A\\u0B9C\\u0B9E\\u0B9F\\u0BA3\\u0BA4\\u0BA8-\\u0BAA\\u0BAE-\\u0BB9\\u0BBE-\\u0BC2\\u0BC6-\\u0BC8\\u0BCA-\\u0BCD\\u0BD0\\u0BD7\\u0BE6-\\u0BEF\\u0C00-\\u0C03\\u0C05-\\u0C0C\\u0C0E-\\u0C10\\u0C12-\\u0C28\\u0C2A-\\u0C39\\u0C3D-\\u0C44\\u0C46-\\u0C48\\u0C4A-\\u0C4D\\u0C55\\u0C56\\u0C58-\\u0C5A\\u0C60-\\u0C63\\u0C66-\\u0C6F\\u0C81-\\u0C83\\u0C85-\\u0C8C\\u0C8E-\\u0C90\\u0C92-\\u0CA8\\u0CAA-\\u0CB3\\u0CB5-\\u0CB9\\u0CBC-\\u0CC4\\u0CC6-\\u0CC8\\u0CCA-\\u0CCD\\u0CD5\\u0CD6\\u0CDE\\u0CE0-\\u0CE3\\u0CE6-\\u0CEF\\u0CF1\\u0CF2\\u0D01-\\u0D03\\u0D05-\\u0D0C\\u0D0E-\\u0D10\\u0D12-\\u0D3A\\u0D3D-\\u0D44\\u0D46-\\u0D48\\u0D4A-\\u0D4E\\u0D57\\u0D5F-\\u0D63\\u0D66-\\u0D6F\\u0D7A-\\u0D7F\\u0D82\\u0D83\\u0D85-\\u0D96\\u0D9A-\\u0DB1\\u0DB3-\\u0DBB\\u0DBD\\u0DC0-\\u0DC6\\u0DCA\\u0DCF-\\u0DD4\\u0DD6\\u0DD8-\\u0DDF\\u0DE6-\\u0DEF\\u0DF2\\u0DF3\\u0E01-\\u0E3A\\u0E40-\\u0E4E\\u0E50-\\u0E59\\u0E81\\u0E82\\u0E84\\u0E87\\u0E88\\u0E8A\\u0E8D\\u0E94-\\u0E97\\u0E99-\\u0E9F\\u0EA1-\\u0EA3\\u0EA5\\u0EA7\\u0EAA\\u0EAB\\u0EAD-\\u0EB9\\u0EBB-\\u0EBD\\u0EC0-\\u0EC4\\u0EC6\\u0EC8-\\u0ECD\\u0ED0-\\u0ED9\\u0EDC-\\u0EDF\\u0F00\\u0F18\\u0F19\\u0F20-\\u0F29\\u0F35\\u0F37\\u0F39\\u0F3E-\\u0F47\\u0F49-\\u0F6C\\u0F71-\\u0F84\\u0F86-\\u0F97\\u0F99-\\u0FBC\\u0FC6\\u1000-\\u1049\\u1050-\\u109D\\u10A0-\\u10C5\\u10C7\\u10CD\\u10D0-\\u10FA\\u10FC-\\u1248\\u124A-\\u124D\\u1250-\\u1256\\u1258\\u125A-\\u125D\\u1260-\\u1288\\u128A-\\u128D\\u1290-\\u12B0\\u12B2-\\u12B5\\u12B8-\\u12BE\\u12C0\\u12C2-\\u12C5\\u12C8-\\u12D6\\u12D8-\\u1310\\u1312-\\u1315\\u1318-\\u135A\\u135D-\\u135F\\u1369-\\u1371\\u1380-\\u138F\\u13A0-\\u13F5\\u13F8-\\u13FD\\u1401-\\u166C\\u166F-\\u167F\\u1681-\\u169A\\u16A0-\\u16EA\\u16EE-\\u16F8\\u1700-\\u170C\\u170E-\\u1714\\u1720-\\u1734\\u1740-\\u1753\\u1760-\\u176C\\u176E-\\u1770\\u1772\\u1773\\u1780-\\u17D3\\u17D7\\u17DC\\u17DD\\u17E0-\\u17E9\\u180B-\\u180D\\u1810-\\u1819\\u1820-\\u1877\\u1880-\\u18AA\\u18B0-\\u18F5\\u1900-\\u191E\\u1920-\\u192B\\u1930-\\u193B\\u1946-\\u196D\\u1970-\\u1974\\u1980-\\u19AB\\u19B0-\\u19C9\\u19D0-\\u19DA\\u1A00-\\u1A1B\\u1A20-\\u1A5E\\u1A60-\\u1A7C\\u1A7F-\\u1A89\\u1A90-\\u1A99\\u1AA7\\u1AB0-\\u1ABD\\u1B00-\\u1B4B\\u1B50-\\u1B59\\u1B6B-\\u1B73\\u1B80-\\u1BF3\\u1C00-\\u1C37\\u1C40-\\u1C49\\u1C4D-\\u1C7D\\u1CD0-\\u1CD2\\u1CD4-\\u1CF6\\u1CF8\\u1CF9\\u1D00-\\u1DF5\\u1DFC-\\u1F15\\u1F18-\\u1F1D\\u1F20-\\u1F45\\u1F48-\\u1F4D\\u1F50-\\u1F57\\u1F59\\u1F5B\\u1F5D\\u1F5F-\\u1F7D\\u1F80-\\u1FB4\\u1FB6-\\u1FBC\\u1FBE\\u1FC2-\\u1FC4\\u1FC6-\\u1FCC\\u1FD0-\\u1FD3\\u1FD6-\\u1FDB\\u1FE0-\\u1FEC\\u1FF2-\\u1FF4\\u1FF6-\\u1FFC\\u200C\\u200D\\u203F\\u2040\\u2054\\u2071\\u207F\\u2090-\\u209C\\u20D0-\\u20DC\\u20E1\\u20E5-\\u20F0\\u2102\\u2107\\u210A-\\u2113\\u2115\\u2118-\\u211D\\u2124\\u2126\\u2128\\u212A-\\u2139\\u213C-\\u213F\\u2145-\\u2149\\u214E\\u2160-\\u2188\\u2C00-\\u2C2E\\u2C30-\\u2C5E\\u2C60-\\u2CE4\\u2CEB-\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\u2D30-\\u2D67\\u2D6F\\u2D7F-\\u2D96\\u2DA0-\\u2DA6\\u2DA8-\\u2DAE\\u2DB0-\\u2DB6\\u2DB8-\\u2DBE\\u2DC0-\\u2DC6\\u2DC8-\\u2DCE\\u2DD0-\\u2DD6\\u2DD8-\\u2DDE\\u2DE0-\\u2DFF\\u3005-\\u3007\\u3021-\\u302F\\u3031-\\u3035\\u3038-\\u303C\\u3041-\\u3096\\u3099-\\u309F\\u30A1-\\u30FA\\u30FC-\\u30FF\\u3105-\\u312D\\u3131-\\u318E\\u31A0-\\u31BA\\u31F0-\\u31FF\\u3400-\\u4DB5\\u4E00-\\u9FD5\\uA000-\\uA48C\\uA4D0-\\uA4FD\\uA500-\\uA60C\\uA610-\\uA62B\\uA640-\\uA66F\\uA674-\\uA67D\\uA67F-\\uA6F1\\uA717-\\uA71F\\uA722-\\uA788\\uA78B-\\uA7AD\\uA7B0-\\uA7B7\\uA7F7-\\uA827\\uA840-\\uA873\\uA880-\\uA8C4\\uA8D0-\\uA8D9\\uA8E0-\\uA8F7\\uA8FB\\uA8FD\\uA900-\\uA92D\\uA930-\\uA953\\uA960-\\uA97C\\uA980-\\uA9C0\\uA9CF-\\uA9D9\\uA9E0-\\uA9FE\\uAA00-\\uAA36\\uAA40-\\uAA4D\\uAA50-\\uAA59\\uAA60-\\uAA76\\uAA7A-\\uAAC2\\uAADB-\\uAADD\\uAAE0-\\uAAEF\\uAAF2-\\uAAF6\\uAB01-\\uAB06\\uAB09-\\uAB0E\\uAB11-\\uAB16\\uAB20-\\uAB26\\uAB28-\\uAB2E\\uAB30-\\uAB5A\\uAB5C-\\uAB65\\uAB70-\\uABEA\\uABEC\\uABED\\uABF0-\\uABF9\\uAC00-\\uD7A3\\uD7B0-\\uD7C6\\uD7CB-\\uD7FB\\uF900-\\uFA6D\\uFA70-\\uFAD9\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFB1D-\\uFB28\\uFB2A-\\uFB36\\uFB38-\\uFB3C\\uFB3E\\uFB40\\uFB41\\uFB43\\uFB44\\uFB46-\\uFBB1\\uFBD3-\\uFD3D\\uFD50-\\uFD8F\\uFD92-\\uFDC7\\uFDF0-\\uFDFB\\uFE00-\\uFE0F\\uFE20-\\uFE2F\\uFE33\\uFE34\\uFE4D-\\uFE4F\\uFE70-\\uFE74\\uFE76-\\uFEFC\\uFF10-\\uFF19\\uFF21-\\uFF3A\\uFF3F\\uFF41-\\uFF5A\\uFF66-\\uFFBE\\uFFC2-\\uFFC7\\uFFCA-\\uFFCF\\uFFD2-\\uFFD7\\uFFDA-\\uFFDC]|\\uD800[\\uDC00-\\uDC0B\\uDC0D-\\uDC26\\uDC28-\\uDC3A\\uDC3C\\uDC3D\\uDC3F-\\uDC4D\\uDC50-\\uDC5D\\uDC80-\\uDCFA\\uDD40-\\uDD74\\uDDFD\\uDE80-\\uDE9C\\uDEA0-\\uDED0\\uDEE0\\uDF00-\\uDF1F\\uDF30-\\uDF4A\\uDF50-\\uDF7A\\uDF80-\\uDF9D\\uDFA0-\\uDFC3\\uDFC8-\\uDFCF\\uDFD1-\\uDFD5]|\\uD801[\\uDC00-\\uDC9D\\uDCA0-\\uDCA9\\uDD00-\\uDD27\\uDD30-\\uDD63\\uDE00-\\uDF36\\uDF40-\\uDF55\\uDF60-\\uDF67]|\\uD802[\\uDC00-\\uDC05\\uDC08\\uDC0A-\\uDC35\\uDC37\\uDC38\\uDC3C\\uDC3F-\\uDC55\\uDC60-\\uDC76\\uDC80-\\uDC9E\\uDCE0-\\uDCF2\\uDCF4\\uDCF5\\uDD00-\\uDD15\\uDD20-\\uDD39\\uDD80-\\uDDB7\\uDDBE\\uDDBF\\uDE00-\\uDE03\\uDE05\\uDE06\\uDE0C-\\uDE13\\uDE15-\\uDE17\\uDE19-\\uDE33\\uDE38-\\uDE3A\\uDE3F\\uDE60-\\uDE7C\\uDE80-\\uDE9C\\uDEC0-\\uDEC7\\uDEC9-\\uDEE6\\uDF00-\\uDF35\\uDF40-\\uDF55\\uDF60-\\uDF72\\uDF80-\\uDF91]|\\uD803[\\uDC00-\\uDC48\\uDC80-\\uDCB2\\uDCC0-\\uDCF2]|\\uD804[\\uDC00-\\uDC46\\uDC66-\\uDC6F\\uDC7F-\\uDCBA\\uDCD0-\\uDCE8\\uDCF0-\\uDCF9\\uDD00-\\uDD34\\uDD36-\\uDD3F\\uDD50-\\uDD73\\uDD76\\uDD80-\\uDDC4\\uDDCA-\\uDDCC\\uDDD0-\\uDDDA\\uDDDC\\uDE00-\\uDE11\\uDE13-\\uDE37\\uDE80-\\uDE86\\uDE88\\uDE8A-\\uDE8D\\uDE8F-\\uDE9D\\uDE9F-\\uDEA8\\uDEB0-\\uDEEA\\uDEF0-\\uDEF9\\uDF00-\\uDF03\\uDF05-\\uDF0C\\uDF0F\\uDF10\\uDF13-\\uDF28\\uDF2A-\\uDF30\\uDF32\\uDF33\\uDF35-\\uDF39\\uDF3C-\\uDF44\\uDF47\\uDF48\\uDF4B-\\uDF4D\\uDF50\\uDF57\\uDF5D-\\uDF63\\uDF66-\\uDF6C\\uDF70-\\uDF74]|\\uD805[\\uDC80-\\uDCC5\\uDCC7\\uDCD0-\\uDCD9\\uDD80-\\uDDB5\\uDDB8-\\uDDC0\\uDDD8-\\uDDDD\\uDE00-\\uDE40\\uDE44\\uDE50-\\uDE59\\uDE80-\\uDEB7\\uDEC0-\\uDEC9\\uDF00-\\uDF19\\uDF1D-\\uDF2B\\uDF30-\\uDF39]|\\uD806[\\uDCA0-\\uDCE9\\uDCFF\\uDEC0-\\uDEF8]|\\uD808[\\uDC00-\\uDF99]|\\uD809[\\uDC00-\\uDC6E\\uDC80-\\uDD43]|[\\uD80C\\uD840-\\uD868\\uD86A-\\uD86C\\uD86F-\\uD872][\\uDC00-\\uDFFF]|\\uD80D[\\uDC00-\\uDC2E]|\\uD811[\\uDC00-\\uDE46]|\\uD81A[\\uDC00-\\uDE38\\uDE40-\\uDE5E\\uDE60-\\uDE69\\uDED0-\\uDEED\\uDEF0-\\uDEF4\\uDF00-\\uDF36\\uDF40-\\uDF43\\uDF50-\\uDF59\\uDF63-\\uDF77\\uDF7D-\\uDF8F]|\\uD81B[\\uDF00-\\uDF44\\uDF50-\\uDF7E\\uDF8F-\\uDF9F]|\\uD82C[\\uDC00\\uDC01]|\\uD82F[\\uDC00-\\uDC6A\\uDC70-\\uDC7C\\uDC80-\\uDC88\\uDC90-\\uDC99\\uDC9D\\uDC9E]|\\uD834[\\uDD65-\\uDD69\\uDD6D-\\uDD72\\uDD7B-\\uDD82\\uDD85-\\uDD8B\\uDDAA-\\uDDAD\\uDE42-\\uDE44]|\\uD835[\\uDC00-\\uDC54\\uDC56-\\uDC9C\\uDC9E\\uDC9F\\uDCA2\\uDCA5\\uDCA6\\uDCA9-\\uDCAC\\uDCAE-\\uDCB9\\uDCBB\\uDCBD-\\uDCC3\\uDCC5-\\uDD05\\uDD07-\\uDD0A\\uDD0D-\\uDD14\\uDD16-\\uDD1C\\uDD1E-\\uDD39\\uDD3B-\\uDD3E\\uDD40-\\uDD44\\uDD46\\uDD4A-\\uDD50\\uDD52-\\uDEA5\\uDEA8-\\uDEC0\\uDEC2-\\uDEDA\\uDEDC-\\uDEFA\\uDEFC-\\uDF14\\uDF16-\\uDF34\\uDF36-\\uDF4E\\uDF50-\\uDF6E\\uDF70-\\uDF88\\uDF8A-\\uDFA8\\uDFAA-\\uDFC2\\uDFC4-\\uDFCB\\uDFCE-\\uDFFF]|\\uD836[\\uDE00-\\uDE36\\uDE3B-\\uDE6C\\uDE75\\uDE84\\uDE9B-\\uDE9F\\uDEA1-\\uDEAF]|\\uD83A[\\uDC00-\\uDCC4\\uDCD0-\\uDCD6]|\\uD83B[\\uDE00-\\uDE03\\uDE05-\\uDE1F\\uDE21\\uDE22\\uDE24\\uDE27\\uDE29-\\uDE32\\uDE34-\\uDE37\\uDE39\\uDE3B\\uDE42\\uDE47\\uDE49\\uDE4B\\uDE4D-\\uDE4F\\uDE51\\uDE52\\uDE54\\uDE57\\uDE59\\uDE5B\\uDE5D\\uDE5F\\uDE61\\uDE62\\uDE64\\uDE67-\\uDE6A\\uDE6C-\\uDE72\\uDE74-\\uDE77\\uDE79-\\uDE7C\\uDE7E\\uDE80-\\uDE89\\uDE8B-\\uDE9B\\uDEA1-\\uDEA3\\uDEA5-\\uDEA9\\uDEAB-\\uDEBB]|\\uD869[\\uDC00-\\uDED6\\uDF00-\\uDFFF]|\\uD86D[\\uDC00-\\uDF34\\uDF40-\\uDFFF]|\\uD86E[\\uDC00-\\uDC1D\\uDC20-\\uDFFF]|\\uD873[\\uDC00-\\uDEA1]|\\uD87E[\\uDC00-\\uDE1D]|\\uDB40[\\uDD00-\\uDDEF])*$/;
+        var regexIdentifierES5 = /^(?!(?:do|if|in|for|let|new|try|var|case|else|enum|eval|null|this|true|void|with|break|catch|class|const|false|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof)$)(?:[\\$A-Z_a-z\\xAA\\xB5\\xBA\\xC0-\\xD6\\xD8-\\xF6\\xF8-\\u02C1\\u02C6-\\u02D1\\u02E0-\\u02E4\\u02EC\\u02EE\\u0370-\\u0374\\u0376\\u0377\\u037A-\\u037D\\u037F\\u0386\\u0388-\\u038A\\u038C\\u038E-\\u03A1\\u03A3-\\u03F5\\u03F7-\\u0481\\u048A-\\u052F\\u0531-\\u0556\\u0559\\u0561-\\u0587\\u05D0-\\u05EA\\u05F0-\\u05F2\\u0620-\\u064A\\u066E\\u066F\\u0671-\\u06D3\\u06D5\\u06E5\\u06E6\\u06EE\\u06EF\\u06FA-\\u06FC\\u06FF\\u0710\\u0712-\\u072F\\u074D-\\u07A5\\u07B1\\u07CA-\\u07EA\\u07F4\\u07F5\\u07FA\\u0800-\\u0815\\u081A\\u0824\\u0828\\u0840-\\u0858\\u08A0-\\u08B4\\u0904-\\u0939\\u093D\\u0950\\u0958-\\u0961\\u0971-\\u0980\\u0985-\\u098C\\u098F\\u0990\\u0993-\\u09A8\\u09AA-\\u09B0\\u09B2\\u09B6-\\u09B9\\u09BD\\u09CE\\u09DC\\u09DD\\u09DF-\\u09E1\\u09F0\\u09F1\\u0A05-\\u0A0A\\u0A0F\\u0A10\\u0A13-\\u0A28\\u0A2A-\\u0A30\\u0A32\\u0A33\\u0A35\\u0A36\\u0A38\\u0A39\\u0A59-\\u0A5C\\u0A5E\\u0A72-\\u0A74\\u0A85-\\u0A8D\\u0A8F-\\u0A91\\u0A93-\\u0AA8\\u0AAA-\\u0AB0\\u0AB2\\u0AB3\\u0AB5-\\u0AB9\\u0ABD\\u0AD0\\u0AE0\\u0AE1\\u0AF9\\u0B05-\\u0B0C\\u0B0F\\u0B10\\u0B13-\\u0B28\\u0B2A-\\u0B30\\u0B32\\u0B33\\u0B35-\\u0B39\\u0B3D\\u0B5C\\u0B5D\\u0B5F-\\u0B61\\u0B71\\u0B83\\u0B85-\\u0B8A\\u0B8E-\\u0B90\\u0B92-\\u0B95\\u0B99\\u0B9A\\u0B9C\\u0B9E\\u0B9F\\u0BA3\\u0BA4\\u0BA8-\\u0BAA\\u0BAE-\\u0BB9\\u0BD0\\u0C05-\\u0C0C\\u0C0E-\\u0C10\\u0C12-\\u0C28\\u0C2A-\\u0C39\\u0C3D\\u0C58-\\u0C5A\\u0C60\\u0C61\\u0C85-\\u0C8C\\u0C8E-\\u0C90\\u0C92-\\u0CA8\\u0CAA-\\u0CB3\\u0CB5-\\u0CB9\\u0CBD\\u0CDE\\u0CE0\\u0CE1\\u0CF1\\u0CF2\\u0D05-\\u0D0C\\u0D0E-\\u0D10\\u0D12-\\u0D3A\\u0D3D\\u0D4E\\u0D5F-\\u0D61\\u0D7A-\\u0D7F\\u0D85-\\u0D96\\u0D9A-\\u0DB1\\u0DB3-\\u0DBB\\u0DBD\\u0DC0-\\u0DC6\\u0E01-\\u0E30\\u0E32\\u0E33\\u0E40-\\u0E46\\u0E81\\u0E82\\u0E84\\u0E87\\u0E88\\u0E8A\\u0E8D\\u0E94-\\u0E97\\u0E99-\\u0E9F\\u0EA1-\\u0EA3\\u0EA5\\u0EA7\\u0EAA\\u0EAB\\u0EAD-\\u0EB0\\u0EB2\\u0EB3\\u0EBD\\u0EC0-\\u0EC4\\u0EC6\\u0EDC-\\u0EDF\\u0F00\\u0F40-\\u0F47\\u0F49-\\u0F6C\\u0F88-\\u0F8C\\u1000-\\u102A\\u103F\\u1050-\\u1055\\u105A-\\u105D\\u1061\\u1065\\u1066\\u106E-\\u1070\\u1075-\\u1081\\u108E\\u10A0-\\u10C5\\u10C7\\u10CD\\u10D0-\\u10FA\\u10FC-\\u1248\\u124A-\\u124D\\u1250-\\u1256\\u1258\\u125A-\\u125D\\u1260-\\u1288\\u128A-\\u128D\\u1290-\\u12B0\\u12B2-\\u12B5\\u12B8-\\u12BE\\u12C0\\u12C2-\\u12C5\\u12C8-\\u12D6\\u12D8-\\u1310\\u1312-\\u1315\\u1318-\\u135A\\u1380-\\u138F\\u13A0-\\u13F5\\u13F8-\\u13FD\\u1401-\\u166C\\u166F-\\u167F\\u1681-\\u169A\\u16A0-\\u16EA\\u16EE-\\u16F8\\u1700-\\u170C\\u170E-\\u1711\\u1720-\\u1731\\u1740-\\u1751\\u1760-\\u176C\\u176E-\\u1770\\u1780-\\u17B3\\u17D7\\u17DC\\u1820-\\u1877\\u1880-\\u18A8\\u18AA\\u18B0-\\u18F5\\u1900-\\u191E\\u1950-\\u196D\\u1970-\\u1974\\u1980-\\u19AB\\u19B0-\\u19C9\\u1A00-\\u1A16\\u1A20-\\u1A54\\u1AA7\\u1B05-\\u1B33\\u1B45-\\u1B4B\\u1B83-\\u1BA0\\u1BAE\\u1BAF\\u1BBA-\\u1BE5\\u1C00-\\u1C23\\u1C4D-\\u1C4F\\u1C5A-\\u1C7D\\u1CE9-\\u1CEC\\u1CEE-\\u1CF1\\u1CF5\\u1CF6\\u1D00-\\u1DBF\\u1E00-\\u1F15\\u1F18-\\u1F1D\\u1F20-\\u1F45\\u1F48-\\u1F4D\\u1F50-\\u1F57\\u1F59\\u1F5B\\u1F5D\\u1F5F-\\u1F7D\\u1F80-\\u1FB4\\u1FB6-\\u1FBC\\u1FBE\\u1FC2-\\u1FC4\\u1FC6-\\u1FCC\\u1FD0-\\u1FD3\\u1FD6-\\u1FDB\\u1FE0-\\u1FEC\\u1FF2-\\u1FF4\\u1FF6-\\u1FFC\\u2071\\u207F\\u2090-\\u209C\\u2102\\u2107\\u210A-\\u2113\\u2115\\u2119-\\u211D\\u2124\\u2126\\u2128\\u212A-\\u212D\\u212F-\\u2139\\u213C-\\u213F\\u2145-\\u2149\\u214E\\u2160-\\u2188\\u2C00-\\u2C2E\\u2C30-\\u2C5E\\u2C60-\\u2CE4\\u2CEB-\\u2CEE\\u2CF2\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\u2D30-\\u2D67\\u2D6F\\u2D80-\\u2D96\\u2DA0-\\u2DA6\\u2DA8-\\u2DAE\\u2DB0-\\u2DB6\\u2DB8-\\u2DBE\\u2DC0-\\u2DC6\\u2DC8-\\u2DCE\\u2DD0-\\u2DD6\\u2DD8-\\u2DDE\\u2E2F\\u3005-\\u3007\\u3021-\\u3029\\u3031-\\u3035\\u3038-\\u303C\\u3041-\\u3096\\u309D-\\u309F\\u30A1-\\u30FA\\u30FC-\\u30FF\\u3105-\\u312D\\u3131-\\u318E\\u31A0-\\u31BA\\u31F0-\\u31FF\\u3400-\\u4DB5\\u4E00-\\u9FD5\\uA000-\\uA48C\\uA4D0-\\uA4FD\\uA500-\\uA60C\\uA610-\\uA61F\\uA62A\\uA62B\\uA640-\\uA66E\\uA67F-\\uA69D\\uA6A0-\\uA6EF\\uA717-\\uA71F\\uA722-\\uA788\\uA78B-\\uA7AD\\uA7B0-\\uA7B7\\uA7F7-\\uA801\\uA803-\\uA805\\uA807-\\uA80A\\uA80C-\\uA822\\uA840-\\uA873\\uA882-\\uA8B3\\uA8F2-\\uA8F7\\uA8FB\\uA8FD\\uA90A-\\uA925\\uA930-\\uA946\\uA960-\\uA97C\\uA984-\\uA9B2\\uA9CF\\uA9E0-\\uA9E4\\uA9E6-\\uA9EF\\uA9FA-\\uA9FE\\uAA00-\\uAA28\\uAA40-\\uAA42\\uAA44-\\uAA4B\\uAA60-\\uAA76\\uAA7A\\uAA7E-\\uAAAF\\uAAB1\\uAAB5\\uAAB6\\uAAB9-\\uAABD\\uAAC0\\uAAC2\\uAADB-\\uAADD\\uAAE0-\\uAAEA\\uAAF2-\\uAAF4\\uAB01-\\uAB06\\uAB09-\\uAB0E\\uAB11-\\uAB16\\uAB20-\\uAB26\\uAB28-\\uAB2E\\uAB30-\\uAB5A\\uAB5C-\\uAB65\\uAB70-\\uABE2\\uAC00-\\uD7A3\\uD7B0-\\uD7C6\\uD7CB-\\uD7FB\\uF900-\\uFA6D\\uFA70-\\uFAD9\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFB1D\\uFB1F-\\uFB28\\uFB2A-\\uFB36\\uFB38-\\uFB3C\\uFB3E\\uFB40\\uFB41\\uFB43\\uFB44\\uFB46-\\uFBB1\\uFBD3-\\uFD3D\\uFD50-\\uFD8F\\uFD92-\\uFDC7\\uFDF0-\\uFDFB\\uFE70-\\uFE74\\uFE76-\\uFEFC\\uFF21-\\uFF3A\\uFF41-\\uFF5A\\uFF66-\\uFFBE\\uFFC2-\\uFFC7\\uFFCA-\\uFFCF\\uFFD2-\\uFFD7\\uFFDA-\\uFFDC])(?:[\\$0-9A-Z_a-z\\xAA\\xB5\\xBA\\xC0-\\xD6\\xD8-\\xF6\\xF8-\\u02C1\\u02C6-\\u02D1\\u02E0-\\u02E4\\u02EC\\u02EE\\u0300-\\u0374\\u0376\\u0377\\u037A-\\u037D\\u037F\\u0386\\u0388-\\u038A\\u038C\\u038E-\\u03A1\\u03A3-\\u03F5\\u03F7-\\u0481\\u0483-\\u0487\\u048A-\\u052F\\u0531-\\u0556\\u0559\\u0561-\\u0587\\u0591-\\u05BD\\u05BF\\u05C1\\u05C2\\u05C4\\u05C5\\u05C7\\u05D0-\\u05EA\\u05F0-\\u05F2\\u0610-\\u061A\\u0620-\\u0669\\u066E-\\u06D3\\u06D5-\\u06DC\\u06DF-\\u06E8\\u06EA-\\u06FC\\u06FF\\u0710-\\u074A\\u074D-\\u07B1\\u07C0-\\u07F5\\u07FA\\u0800-\\u082D\\u0840-\\u085B\\u08A0-\\u08B4\\u08E3-\\u0963\\u0966-\\u096F\\u0971-\\u0983\\u0985-\\u098C\\u098F\\u0990\\u0993-\\u09A8\\u09AA-\\u09B0\\u09B2\\u09B6-\\u09B9\\u09BC-\\u09C4\\u09C7\\u09C8\\u09CB-\\u09CE\\u09D7\\u09DC\\u09DD\\u09DF-\\u09E3\\u09E6-\\u09F1\\u0A01-\\u0A03\\u0A05-\\u0A0A\\u0A0F\\u0A10\\u0A13-\\u0A28\\u0A2A-\\u0A30\\u0A32\\u0A33\\u0A35\\u0A36\\u0A38\\u0A39\\u0A3C\\u0A3E-\\u0A42\\u0A47\\u0A48\\u0A4B-\\u0A4D\\u0A51\\u0A59-\\u0A5C\\u0A5E\\u0A66-\\u0A75\\u0A81-\\u0A83\\u0A85-\\u0A8D\\u0A8F-\\u0A91\\u0A93-\\u0AA8\\u0AAA-\\u0AB0\\u0AB2\\u0AB3\\u0AB5-\\u0AB9\\u0ABC-\\u0AC5\\u0AC7-\\u0AC9\\u0ACB-\\u0ACD\\u0AD0\\u0AE0-\\u0AE3\\u0AE6-\\u0AEF\\u0AF9\\u0B01-\\u0B03\\u0B05-\\u0B0C\\u0B0F\\u0B10\\u0B13-\\u0B28\\u0B2A-\\u0B30\\u0B32\\u0B33\\u0B35-\\u0B39\\u0B3C-\\u0B44\\u0B47\\u0B48\\u0B4B-\\u0B4D\\u0B56\\u0B57\\u0B5C\\u0B5D\\u0B5F-\\u0B63\\u0B66-\\u0B6F\\u0B71\\u0B82\\u0B83\\u0B85-\\u0B8A\\u0B8E-\\u0B90\\u0B92-\\u0B95\\u0B99\\u0B9A\\u0B9C\\u0B9E\\u0B9F\\u0BA3\\u0BA4\\u0BA8-\\u0BAA\\u0BAE-\\u0BB9\\u0BBE-\\u0BC2\\u0BC6-\\u0BC8\\u0BCA-\\u0BCD\\u0BD0\\u0BD7\\u0BE6-\\u0BEF\\u0C00-\\u0C03\\u0C05-\\u0C0C\\u0C0E-\\u0C10\\u0C12-\\u0C28\\u0C2A-\\u0C39\\u0C3D-\\u0C44\\u0C46-\\u0C48\\u0C4A-\\u0C4D\\u0C55\\u0C56\\u0C58-\\u0C5A\\u0C60-\\u0C63\\u0C66-\\u0C6F\\u0C81-\\u0C83\\u0C85-\\u0C8C\\u0C8E-\\u0C90\\u0C92-\\u0CA8\\u0CAA-\\u0CB3\\u0CB5-\\u0CB9\\u0CBC-\\u0CC4\\u0CC6-\\u0CC8\\u0CCA-\\u0CCD\\u0CD5\\u0CD6\\u0CDE\\u0CE0-\\u0CE3\\u0CE6-\\u0CEF\\u0CF1\\u0CF2\\u0D01-\\u0D03\\u0D05-\\u0D0C\\u0D0E-\\u0D10\\u0D12-\\u0D3A\\u0D3D-\\u0D44\\u0D46-\\u0D48\\u0D4A-\\u0D4E\\u0D57\\u0D5F-\\u0D63\\u0D66-\\u0D6F\\u0D7A-\\u0D7F\\u0D82\\u0D83\\u0D85-\\u0D96\\u0D9A-\\u0DB1\\u0DB3-\\u0DBB\\u0DBD\\u0DC0-\\u0DC6\\u0DCA\\u0DCF-\\u0DD4\\u0DD6\\u0DD8-\\u0DDF\\u0DE6-\\u0DEF\\u0DF2\\u0DF3\\u0E01-\\u0E3A\\u0E40-\\u0E4E\\u0E50-\\u0E59\\u0E81\\u0E82\\u0E84\\u0E87\\u0E88\\u0E8A\\u0E8D\\u0E94-\\u0E97\\u0E99-\\u0E9F\\u0EA1-\\u0EA3\\u0EA5\\u0EA7\\u0EAA\\u0EAB\\u0EAD-\\u0EB9\\u0EBB-\\u0EBD\\u0EC0-\\u0EC4\\u0EC6\\u0EC8-\\u0ECD\\u0ED0-\\u0ED9\\u0EDC-\\u0EDF\\u0F00\\u0F18\\u0F19\\u0F20-\\u0F29\\u0F35\\u0F37\\u0F39\\u0F3E-\\u0F47\\u0F49-\\u0F6C\\u0F71-\\u0F84\\u0F86-\\u0F97\\u0F99-\\u0FBC\\u0FC6\\u1000-\\u1049\\u1050-\\u109D\\u10A0-\\u10C5\\u10C7\\u10CD\\u10D0-\\u10FA\\u10FC-\\u1248\\u124A-\\u124D\\u1250-\\u1256\\u1258\\u125A-\\u125D\\u1260-\\u1288\\u128A-\\u128D\\u1290-\\u12B0\\u12B2-\\u12B5\\u12B8-\\u12BE\\u12C0\\u12C2-\\u12C5\\u12C8-\\u12D6\\u12D8-\\u1310\\u1312-\\u1315\\u1318-\\u135A\\u135D-\\u135F\\u1380-\\u138F\\u13A0-\\u13F5\\u13F8-\\u13FD\\u1401-\\u166C\\u166F-\\u167F\\u1681-\\u169A\\u16A0-\\u16EA\\u16EE-\\u16F8\\u1700-\\u170C\\u170E-\\u1714\\u1720-\\u1734\\u1740-\\u1753\\u1760-\\u176C\\u176E-\\u1770\\u1772\\u1773\\u1780-\\u17D3\\u17D7\\u17DC\\u17DD\\u17E0-\\u17E9\\u180B-\\u180D\\u1810-\\u1819\\u1820-\\u1877\\u1880-\\u18AA\\u18B0-\\u18F5\\u1900-\\u191E\\u1920-\\u192B\\u1930-\\u193B\\u1946-\\u196D\\u1970-\\u1974\\u1980-\\u19AB\\u19B0-\\u19C9\\u19D0-\\u19D9\\u1A00-\\u1A1B\\u1A20-\\u1A5E\\u1A60-\\u1A7C\\u1A7F-\\u1A89\\u1A90-\\u1A99\\u1AA7\\u1AB0-\\u1ABD\\u1B00-\\u1B4B\\u1B50-\\u1B59\\u1B6B-\\u1B73\\u1B80-\\u1BF3\\u1C00-\\u1C37\\u1C40-\\u1C49\\u1C4D-\\u1C7D\\u1CD0-\\u1CD2\\u1CD4-\\u1CF6\\u1CF8\\u1CF9\\u1D00-\\u1DF5\\u1DFC-\\u1F15\\u1F18-\\u1F1D\\u1F20-\\u1F45\\u1F48-\\u1F4D\\u1F50-\\u1F57\\u1F59\\u1F5B\\u1F5D\\u1F5F-\\u1F7D\\u1F80-\\u1FB4\\u1FB6-\\u1FBC\\u1FBE\\u1FC2-\\u1FC4\\u1FC6-\\u1FCC\\u1FD0-\\u1FD3\\u1FD6-\\u1FDB\\u1FE0-\\u1FEC\\u1FF2-\\u1FF4\\u1FF6-\\u1FFC\\u200C\\u200D\\u203F\\u2040\\u2054\\u2071\\u207F\\u2090-\\u209C\\u20D0-\\u20DC\\u20E1\\u20E5-\\u20F0\\u2102\\u2107\\u210A-\\u2113\\u2115\\u2119-\\u211D\\u2124\\u2126\\u2128\\u212A-\\u212D\\u212F-\\u2139\\u213C-\\u213F\\u2145-\\u2149\\u214E\\u2160-\\u2188\\u2C00-\\u2C2E\\u2C30-\\u2C5E\\u2C60-\\u2CE4\\u2CEB-\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\u2D30-\\u2D67\\u2D6F\\u2D7F-\\u2D96\\u2DA0-\\u2DA6\\u2DA8-\\u2DAE\\u2DB0-\\u2DB6\\u2DB8-\\u2DBE\\u2DC0-\\u2DC6\\u2DC8-\\u2DCE\\u2DD0-\\u2DD6\\u2DD8-\\u2DDE\\u2DE0-\\u2DFF\\u2E2F\\u3005-\\u3007\\u3021-\\u302F\\u3031-\\u3035\\u3038-\\u303C\\u3041-\\u3096\\u3099\\u309A\\u309D-\\u309F\\u30A1-\\u30FA\\u30FC-\\u30FF\\u3105-\\u312D\\u3131-\\u318E\\u31A0-\\u31BA\\u31F0-\\u31FF\\u3400-\\u4DB5\\u4E00-\\u9FD5\\uA000-\\uA48C\\uA4D0-\\uA4FD\\uA500-\\uA60C\\uA610-\\uA62B\\uA640-\\uA66F\\uA674-\\uA67D\\uA67F-\\uA6F1\\uA717-\\uA71F\\uA722-\\uA788\\uA78B-\\uA7AD\\uA7B0-\\uA7B7\\uA7F7-\\uA827\\uA840-\\uA873\\uA880-\\uA8C4\\uA8D0-\\uA8D9\\uA8E0-\\uA8F7\\uA8FB\\uA8FD\\uA900-\\uA92D\\uA930-\\uA953\\uA960-\\uA97C\\uA980-\\uA9C0\\uA9CF-\\uA9D9\\uA9E0-\\uA9FE\\uAA00-\\uAA36\\uAA40-\\uAA4D\\uAA50-\\uAA59\\uAA60-\\uAA76\\uAA7A-\\uAAC2\\uAADB-\\uAADD\\uAAE0-\\uAAEF\\uAAF2-\\uAAF6\\uAB01-\\uAB06\\uAB09-\\uAB0E\\uAB11-\\uAB16\\uAB20-\\uAB26\\uAB28-\\uAB2E\\uAB30-\\uAB5A\\uAB5C-\\uAB65\\uAB70-\\uABEA\\uABEC\\uABED\\uABF0-\\uABF9\\uAC00-\\uD7A3\\uD7B0-\\uD7C6\\uD7CB-\\uD7FB\\uF900-\\uFA6D\\uFA70-\\uFAD9\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFB1D-\\uFB28\\uFB2A-\\uFB36\\uFB38-\\uFB3C\\uFB3E\\uFB40\\uFB41\\uFB43\\uFB44\\uFB46-\\uFBB1\\uFBD3-\\uFD3D\\uFD50-\\uFD8F\\uFD92-\\uFDC7\\uFDF0-\\uFDFB\\uFE00-\\uFE0F\\uFE20-\\uFE2F\\uFE33\\uFE34\\uFE4D-\\uFE4F\\uFE70-\\uFE74\\uFE76-\\uFEFC\\uFF10-\\uFF19\\uFF21-\\uFF3A\\uFF3F\\uFF41-\\uFF5A\\uFF66-\\uFFBE\\uFFC2-\\uFFC7\\uFFCA-\\uFFCF\\uFFD2-\\uFFD7\\uFFDA-\\uFFDC])*$/;
+        var regexES6ReservedWord = /^(?:do|if|in|for|let|new|try|var|case|else|enum|eval|false|null|this|true|void|with|await|break|catch|class|const|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof)$/;
+        function isValidIdentifier(value) {
+        if (typeof value != "string") {
+            return false;
+        }
+        const tmp = value.replace(/\\\\u([a-fA-F0-9]{4})|\\\\u\\{([0-9a-fA-F]{1,})\\}/g, function($0, $1, $2) {
+            var codePoint = parseInt($2 || $1, 16);
+            if (codePoint >= 55296 && codePoint <= 57343) {
+            return "\\0";
+            }
+            return String.fromCodePoint(codePoint);
+        });
+        const es5Warning = !regexIdentifierES5.test(
+            // Only Unicode escapes are allowed in ES5 identifiers.
+            value.replace(/\\\\u([a-fA-F0-9]{4})/g, function($0, $1) {
+            return String.fromCodePoint(parseInt($1, 16));
+            })
+        );
+        var isReserved;
+        if ((isReserved = regexES6ReservedWord.test(tmp)) || !regexIdentifier.test(tmp)) {
+            return false;
+        } else {
+            return true;
+        }
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/is_valid_key_literal.js
+        function isValidKeyLiteral(value) {
+        if (typeof value != "string") {
+            return false;
+        }
+        if (value.match(/^[a-zA-Z_$][a-zA-Z0-9_$]*$/)) {
+            return true;
+        }
+        return isValidIdentifier(value);
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/to_representation.js
+        var reprSymbol = Symbol.for("representation");
+        var denoInspectSymbol = Symbol.for("Deno.customInspect");
+        var RegExpPrototype = RegExp.prototype;
+        var BigIntPrototype = BigInt.prototype;
+        var DatePrototype = Date.prototype;
+        var ArrayPrototype = Array.prototype;
+        var SetPrototype = Set.prototype;
+        var MapPrototype = Map.prototype;
+        var ObjectPrototype = Object.prototype;
+        var ErrorPrototype = Error.prototype;
+        var PromisePrototype = Promise.prototype;
+        var UrlPrototype = globalThis.URL?.prototype;
+        var isProbablyAPrototype = (item) => typeof item?.constructor == "function" && item.constructor?.prototype == item && isValidIdentifier(item.constructor?.name);
+        var representSymbol = (item) => {
+        if (!item.description) {
+            return "Symbol()";
+        } else {
+            const description = item.description;
+            let globalVersion = Symbol.for(description);
+            if (globalVersion == item) {
+            return \`Symbol.for(\${JSON.stringify(description)})\`;
+            } else if (description.startsWith("Symbol.") && Symbol[description.slice(7)]) {
+            return description;
+            } else {
+            return \`Symbol(\${JSON.stringify(description)})\`;
+            }
+        }
+        };
+        var reprKey = (key2) => {
+        if (typeof key2 == "symbol") {
+            return \`[\${representSymbol(key2)}]\`;
+        } else if (isValidKeyLiteral(key2)) {
+            return key2;
+        } else {
+            return JSON.stringify(key2);
+        }
+        };
+        var allGlobalKeysAtInit = Object.freeze(allKeys(globalThis));
+        var toRepresentation = (item, { alreadySeen = /* @__PURE__ */ new Map(), debug = false, simplified, indent: indent2 = "    ", globalValues } = {}) => {
+        if (Number.isFinite(indent2)) {
+            indent2 = " ".repeat(indent2);
+        }
+        const options = { alreadySeen, debug, simplified, indent: indent2 };
+        const recursionWrapper = (item2, options2) => {
+            let groupIsOn = false;
+            try {
+            if (item2 === void 0) {
+                return "undefined";
+            } else if (item2 === null) {
+                return "null";
+            }
+            const { alreadySeen: alreadySeen2, simplified: simplified2, indent: indent3 } = options2;
+            if (item2 instanceof Object) {
+                if (alreadySeen2.has(item2)) {
+                const output2 = alreadySeen2.get(item2);
+                if (output2 != null) {
+                    return output2;
+                } else {
+                    return \`\${String(item2)} /*Self Reference*/\`;
+                }
+                } else {
+                alreadySeen2.set(item2, null);
+                }
+            }
+            const prototype = Object.getPrototypeOf(item2);
+            if (typeof item2[reprSymbol] == "function") {
+                try {
+                const output2 = item2[reprSymbol](options2);
+                alreadySeen2.set(item2, output2);
+                return output2;
+                } catch (error) {
+                if (debug) {
+                    console.error(\`calling Symbol.for("representation") method failed (skipping)
+        Error was: \${error?.stack || error}\`);
+                }
+                }
+            }
+            if (typeof item2[denoInspectSymbol] == "function") {
+                try {
+                const output2 = item2[denoInspectSymbol](options2);
+                alreadySeen2.set(item2, output2);
+                return output2;
+                } catch (error) {
+                if (debug) {
+                    console.error(\`calling Symbol.for("Deno.customInspect") method failed (skipping)
+        Error was: \${error?.stack || error}\`);
+                }
+                }
+            }
+            if (debug) {
+                console.group();
+                groupIsOn = true;
+            }
+            let output;
+            if (typeof item2 == "number" || typeof item2 == "boolean" || prototype == RegExpPrototype) {
+                output = String(item2);
+            } else if (typeof item2 == "string") {
+                output = JSON.stringify(item2);
+            } else if (typeof item2 == "symbol") {
+                output = representSymbol(item2);
+            } else if (prototype == BigIntPrototype) {
+                output = \`BigInt(\${item2.toString()})\`;
+            } else if (prototype == DatePrototype) {
+                output = \`new Date(\${item2.getTime()})\`;
+            } else if (prototype == ArrayPrototype) {
+                output = arrayLikeRepr(item2, options2);
+                let nonIndexKeys;
+                try {
+                nonIndexKeys = Object.keys(item2).filter((each) => !(Number.isInteger(each - 0) && each >= 0));
+                } catch (error) {
+                if (debug) {
+                    console.error(\`[toRepresentation] error checking nonIndexKeys
+        \${error?.stack || error}\`);
+                }
+                }
+                if (nonIndexKeys.length > 0) {
+                let extraKeys = {};
+                for (const each of nonIndexKeys) {
+                    try {
+                    extraKeys[each] = item2[each];
+                    } catch (error) {
+                    }
+                }
+                if (Object.keys(extraKeys).length > 0) {
+                    output = \`Object.assign(\${output}, \${pureObjectRepr(extraKeys)})\`;
+                }
+                }
+            } else if (prototype == SetPrototype) {
+                output = \`new Set(\${arrayLikeRepr(item2, options2)})\`;
+            } else if (prototype == MapPrototype) {
+                output = \`new Map(\${mapLikeObject(item2.entries(), options2)})\`;
+            } else if (prototype == PromisePrototype) {
+                output = \`Promise.resolve(/*unknown*/)\`;
+            } else if (prototype == UrlPrototype) {
+                output = \`new URL(\${JSON.stringify(item2?.href)})\`;
+            } else if (isGlobalValue(item2)) {
+                const key2 = globalValueMap.get(item2);
+                if (isValidIdentifier(key2) || key2 == "eval") {
+                output = key2;
+                } else {
+                if (typeof key2 == "symbol") {
+                    output = \`globalThis[\${representSymbol(key2)}]\`;
+                } else if (isValidKeyLiteral(key2)) {
+                    output = \`globalThis.\${key2}\`;
+                } else {
+                    output = \`globalThis[\${JSON.stringify(key2)}]\`;
+                }
+                }
+            } else if (isProbablyAPrototype(item2)) {
+                const name = item2.constructor.name;
+                let isPrototypeOfGlobal;
+                try {
+                isPrototypeOfGlobal = globalThis[name]?.prototype == item2;
+                } catch (error) {
+                }
+                if (isPrototypeOfGlobal) {
+                output = \`\${name}.prototype\`;
+                } else {
+                if (simplified2) {
+                    output = \`\${name}.prototype /*\${name} is local*/\`;
+                } else {
+                    output = \`/*prototype of \${name}*/ \${customObjectRepr(item2, options2)}\`;
+                }
+                }
+            } else if (prototype == ErrorPrototype && item2?.constructor != globalThis.DOMException) {
+                try {
+                output = \`new Error(\${JSON.stringify(item2?.message)})\`;
+                } catch (error) {
+                output = \`new Error(\${JSON.stringify(item2)})\`;
+                }
+            } else if (typeof item2 == "function") {
+                let isNativeCode;
+                let asString;
+                let isClass;
+                const getAsString = () => {
+                if (asString != null) {
+                    return asString;
+                }
+                try {
+                    asString = Function.prototype.toString.call(item2);
+                } catch (error) {
+                }
+                return asString;
+                };
+                const getIsNativeCode = () => {
+                if (isNativeCode != null) {
+                    return isNativeCode;
+                }
+                try {
+                    isNativeCode = !!getAsString().match(/{\\s*\\[native code\\]\\s*}$/);
+                } catch (error) {
+                }
+                return isNativeCode;
+                };
+                const getIsClass = () => {
+                if (isClass != null) {
+                    return isClass;
+                }
+                try {
+                    isClass = item2.name && getAsString().match(/^class\\b/);
+                } catch (error) {
+                }
+                return isClass;
+                };
+                const name = item2.name;
+                if (isValidIdentifier(name)) {
+                if (getIsNativeCode()) {
+                    output = \`\${name} /*native function*/\`;
+                } else if (getIsClass()) {
+                    if (simplified2) {
+                    output = \`\${name} /*class*/\`;
+                    } else {
+                    output = getAsString();
+                    }
+                } else {
+                    if (simplified2) {
+                    output = \`\${item2.name} /*function*/\`;
+                    } else {
+                    output = \`(\${getAsString()})\`;
+                    }
+                }
+                } else if (getIsClass()) {
+                if (typeof name == "string") {
+                    output = \`/*name: \${JSON.stringify(name)}*/ class { /*...*/ }\`;
+                } else if (simplified2) {
+                    output = \`class { /*...*/ }\`;
+                } else {
+                    output = getAsString();
+                }
+                } else if (typeof name == "string" && getAsString().match(/^(function )?(g|s)et\\b/)) {
+                const realName = name.slice(4);
+                if (name[0] == "g") {
+                    output = \`Object.getOwnPropertyDescriptor({/*unknown obj*/},\${JSON.stringify(realName)}).get\`;
+                } else {
+                    output = \`Object.getOwnPropertyDescriptor({/*unknown obj*/},\${JSON.stringify(realName)}).set\`;
+                }
+                } else if (name) {
+                if (simplified2) {
+                    if (getIsNativeCode()) {
+                    if (name.startsWith("get ")) {
+                        const realName = name.slice(4);
+                        if (Object.getOwnPropertyDescriptor(globalThis, realName)?.get == item2) {
+                        output = \`Object.getOwnPropertyDescriptor(globalThis, \${JSON.stringify(realName)}).get /*native getter*/\`;
+                        } else {
+                        output = \`Object.getOwnPropertyDescriptor({/*unknown obj*/}, \${JSON.stringify(realName)}).get\`;
+                        }
+                    } else if (name.startsWith("set ")) {
+                        const realName = name.slice(4);
+                        if (Object.getOwnPropertyDescriptor(globalThis, realName)?.set == item2) {
+                        output = \`Object.getOwnPropertyDescriptor(globalThis, \${JSON.stringify(realName)}).set /*native setter*/\`;
+                        } else {
+                        output = \`Object.getOwnPropertyDescriptor({/*unknown obj*/}, \${JSON.stringify(realName)}).set\`;
+                        }
+                    } else {
+                        output = \`(function(){/*name: \${recursionWrapper(name, options2)}, native function*/}})\`;
+                    }
+                    } else {
+                    output = \`(function(){/*name: \${recursionWrapper(name, options2)}*/}})\`;
+                    }
+                } else {
+                    output = \`/*name: \${recursionWrapper(name, options2)}*/ (\${getAsString()})\`;
+                }
+                } else {
+                if (simplified2) {
+                    if (getIsNativeCode()) {
+                    output = \`(function(){/*native function*/}})\`;
+                    } else {
+                    output = \`(function(){/*...*/}})\`;
+                    }
+                } else {
+                    output = \`(\${getAsString()})\`;
+                }
+                }
+            } else {
+                output = customObjectRepr(item2, options2);
+            }
+            if (groupIsOn) {
+                console.groupEnd();
+            }
+            alreadySeen2.set(item2, output);
+            return output;
+            } catch (error) {
+            if (groupIsOn) {
+                console.groupEnd();
+            }
+            if (debug) {
+                console.debug(\`[toRepresentation] error is: \${error}\`, error?.stack || error);
+            }
+            try {
+                return String(item2);
+            } catch (error2) {
+                return "{} /*error: catestrophic representation failure*/";
+            }
+            }
+        };
+        let globalValueMap;
+        const isGlobalValue = (item2) => {
+            if (globalValueMap == null) {
+            globalValueMap = globalValueMap || new Map(allGlobalKeysAtInit.filter((each) => {
+                try {
+                globalThis[each];
+                } catch (error) {
+                return false;
+                }
+                return true;
+            }).map((each) => [globalThis[each], each]));
+            for (const [key2, value] of Object.entries(globalValues || {})) {
+                globalValueMap.set(key2, value);
+            }
+            }
+            return globalValueMap.has(item2);
+        };
+        const pureObjectRepr = (item2) => {
+            if (options.simplified == null) {
+            options.simplified = true;
+            }
+            let string = "{";
+            let propertyDescriptors;
+            try {
+            propertyDescriptors = Object.entries(Object.getOwnPropertyDescriptors(item2));
+            } catch (error) {
+            if (debug) {
+                console.error(\`[toRepresentation] error getting Object.propertyDescriptor
+        \${error?.stack || error}\`);
+            }
+            try {
+                return String(item2);
+            } catch (error2) {
+                return "undefined /*error: catestrophic representation failure*/";
+            }
+            }
+            for (const [key2, { value, writable, enumerable, configurable, get, set }] of propertyDescriptors) {
+            const stringKey = reprKey(key2);
+            if (get) {
+                string += \`
+        \${indent2}get \${stringKey}(){/*contents*/}\`;
+            } else {
+                string += \`
+        \${indent2}\${stringKey}: \${indent({ string: recursionWrapper(value, options), by: options.indent, noLead: true })},\`;
+            }
+            }
+            if (propertyDescriptors.length == 0) {
+            string += "}";
+            } else {
+            string += "\\n}";
+            }
+            return string;
+        };
+        const arrayLikeRepr = (item2, options2) => {
+            if (options2.simplified == null) {
+            options2.simplified = true;
+            }
+            const chunks = [];
+            let oneHasNewLine = false;
+            for (const each of item2) {
+            const repr = recursionWrapper(each, options2);
+            chunks.push(repr);
+            if (!oneHasNewLine && repr.includes("\\n")) {
+                oneHasNewLine = true;
+            }
+            }
+            if (!oneHasNewLine) {
+            return \`[\${chunks.join(",")}]\`;
+            } else {
+            return \`[
+        \${chunks.map((each) => indent({ string: each, by: options2.indent, noLead: false })).join(",\\n")}
+        ]\`;
+            }
+        };
+        const mapLikeObject = (entries, options2) => {
+            let string = "";
+            for (const [key2, value] of entries) {
+            if (options2.simplified == null) {
+                options2.simplified = true;
+            }
+            const stringKey = recursionWrapper(key2, options2);
+            const stringValue = recursionWrapper(value, options2);
+            if (!stringKey.includes("\\n")) {
+                const formattedValue = stringValue.includes("\\n") ? indent({ string: stringValue, by: options2.indent, noLead: true }) : indent({ string: stringValue, by: options2.indent, noLead: true });
+                string += \`
+        \${options2.indent}[\${stringKey}, \${formattedValue}],\`;
+            } else {
+                const doubleIndent = options2.indent + options2.indent;
+                string += \`
+        \${options2.indent}[
+        \${indent({ string: stringKey, by: doubleIndent, noLead: false })},
+        \${indent({ string: stringValue, by: doubleIndent, noLead: false })}
+        \${options2.indent}],\`;
+            }
+            }
+            if (string.length == 0) {
+            return "";
+            } else {
+            return \`[\${string}
+        ]\`;
+            }
+        };
+        const customObjectRepr = (item2, options2) => {
+            const prototype = Object.getPrototypeOf(item2);
+            if (prototype == ObjectPrototype) {
+            return pureObjectRepr(item2);
+            }
+            let className = prototype.constructor?.name;
+            let output;
+            if (typeof className != "string" || className == "Object" || className == "Function") {
+            className = null;
+            }
+            const vanillaCustomObjRepr = () => {
+            if (className) {
+                if (options2.simplified) {
+                return \`new \${className}(/*...*/)\`;
+                } else {
+                return \`new \${className}(\${pureObjectRepr(item2)})\`;
+                }
+            } else {
+                return pureObjectRepr(item2);
+            }
+            };
+            if (item2 instanceof Array || item2 instanceof TypedArray || item2 instanceof Set) {
+            let isAllIndexKeys;
+            try {
+                isAllIndexKeys = Object.keys(item2).every((each) => Number.isInteger(each - 0) && each >= 0);
+            } catch (error) {
+                if (debug) {
+                console.error(\`[toRepresentation] error checking isAllIndexKeys
+        \${error?.stack || error}\`);
+                }
+            }
+            let arrayLikeReprString;
+            if (isAllIndexKeys) {
+                try {
+                arrayLikeReprString = arrayLikeRepr(item2, options2);
+                } catch (error) {
+                isAllIndexKeys = false;
+                }
+            }
+            if (isAllIndexKeys) {
+                if (className) {
+                output = \`new \${className}(\${arrayLikeReprString})\`;
+                } else {
+                if (item2 instanceof Array) {
+                    output = arrayLikeReprString;
+                } else if (item2 instanceof TypedArray) {
+                    for (const each of typedArrayClasses) {
+                    if (item2 instanceof each) {
+                        output = \`new \${each.name}(\${arrayLikeReprString})\`;
+                        break;
+                    }
+                    }
+                } else if (item2 instanceof Set) {
+                    output = \`new Set(\${arrayLikeReprString})\`;
+                }
+                }
+            } else {
+                output = vanillaCustomObjRepr(item2);
+            }
+            } else if (item2 instanceof Map) {
+            if (className && options2.simplified) {
+                output = \`new \${className}(/*...*/)\`;
+            } else {
+                let entries = [];
+                try {
+                entries = Map.prototype.entries.call(item2);
+                } catch (error) {
+                if (debug) {
+                    console.error(\`[toRepresentation] error getting Map.prototype.entries
+        \${error?.stack || error}\`);
+                }
+                }
+                const core = mapLikeObject(entries, options2);
+                if (className) {
+                output = \`new \${className}(\${core})\`;
+                } else {
+                output = \`new Map(\${core})\`;
+                }
+            }
+            } else {
+            try {
+                output = vanillaCustomObjRepr(item2);
+            } catch (error) {
+                try {
+                output = pureObjectRepr(item2);
+                } catch (error2) {
+                try {
+                    output = item2.toString();
+                } catch (error3) {
+                    return "undefined /*error: catestrophic representation failure*/";
+                }
+                }
+            }
+            }
+            return output;
+        };
+        try {
+            const output = recursionWrapper(item, options);
+            return output;
+        } catch (error) {
+            if (debug) {
+            console.debug(\`[toRepresentation] error is:\`, error);
+            }
+            return String(item);
+        }
+        };
+
+        // https://deno.land/x/good@1.13.2.0/flattened/to_string.js
+        var toString = (value) => {
+        if (typeof value == "symbol") {
+            return toRepresentation(value);
+        } else if (!(value instanceof Object)) {
+            return value != null ? value.toString() : \`\${value}\`;
+        } else {
+            return toRepresentation(value);
+        }
+        };
+
+        // https://deno.land/x/good@1.13.2.0/flattened/escape_regex_match.js
+        var reservedCharMap = {
+        "&": "\\\\x26",
+        "!": "\\\\x21",
+        "#": "\\\\x23",
+        "$": "\\\\$",
+        "%": "\\\\x25",
+        "*": "\\\\*",
+        "+": "\\\\+",
+        ",": "\\\\x2c",
+        ".": "\\\\.",
+        ":": "\\\\x3a",
+        ";": "\\\\x3b",
+        "<": "\\\\x3c",
+        "=": "\\\\x3d",
+        ">": "\\\\x3e",
+        "?": "\\\\?",
+        "@": "\\\\x40",
+        "^": "\\\\^",
+        "\`": "\\\\x60",
+        "~": "\\\\x7e",
+        "(": "\\\\(",
+        ")": "\\\\)",
+        "[": "\\\\[",
+        "]": "\\\\]",
+        "{": "\\\\{",
+        "}": "\\\\}",
+        "/": "\\\\/",
+        "-": "\\\\x2d",
+        "\\\\": "\\\\\\\\",
+        "|": "\\\\|"
+        };
+        var RX_REGEXP_ESCAPE = new RegExp(
+        \`[\${Object.values(reservedCharMap).join("")}]\`,
+        "gu"
+        );
+        function escapeRegexMatch(str) {
+        return str.replaceAll(
+            RX_REGEXP_ESCAPE,
+            (m) => reservedCharMap[m]
+        );
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/regex.js
+        var regexpProxy = Symbol("regexpProxy");
+        var realExec = RegExp.prototype.exec;
+        RegExp.prototype.exec = function(...args) {
+        if (this[regexpProxy]) {
+            return realExec.apply(this[regexpProxy], args);
+        }
+        return realExec.apply(this, args);
+        };
+        var proxyRegExp;
+        var regexProxyOptions = Object.freeze({
+        get(original, key2) {
+            if (typeof key2 == "string" && key2.match(/^[igmusyv]+$/)) {
+            return proxyRegExp(original, key2);
+            }
+            if (key2 == regexpProxy) {
+            return original;
+            }
+            return original[key2];
+        },
+        set(original, key2, value) {
+            original[key2] = value;
+            return true;
+        }
+        });
+        proxyRegExp = (parent, flags) => {
+        const regex2 = new RegExp(parent, flags);
+        const output = new Proxy(regex2, regexProxyOptions);
+        Object.setPrototypeOf(output, Object.getPrototypeOf(regex2));
+        return output;
+        };
+        function regexWithStripWarning(shouldStrip) {
+        return (strings, ...values) => {
+            let newRegexString = "";
+            for (const [string, value] of iterZipLongSync(strings, values)) {
+            newRegexString += string;
+            if (value instanceof RegExp) {
+                if (!shouldStrip && value.flags.replace(/g/, "").length > 0) {
+                console.warn(\`Warning: flags inside of regex:
+            The RegExp trigging this warning is: \${value}
+            When calling the regex interpolater (e.g. regex\\\`something\\\${stuff}\\\`)
+            one of the \\\${} values (the one above) was a RegExp with a flag enabled
+            e.g. /stuff/i  <- i = ignoreCase flag enabled
+            When the /stuff/i gets interpolated, its going to loose its flags
+            (thats what I'm warning you about)
+            
+            To disable/ignore this warning do:
+                regex.stripFlags\\\`something\\\${/stuff/i}\\\`
+            If you want to add flags to the output of regex\\\`something\\\${stuff}\\\` do:
+                regex\\\`something\\\${stuff}\\\`.i   // ignoreCase
+                regex\\\`something\\\${stuff}\\\`.ig  // ignoreCase and global
+                regex\\\`something\\\${stuff}\\\`.gi  // functionally equivlent
+        \`);
+                }
+                newRegexString += \`(?:\${value.source})\`;
+            } else if (value != null) {
+                newRegexString += escapeRegexMatch(toString(value));
+            }
+            }
+            return proxyRegExp(newRegexString, "");
+        };
+        }
+        var regex = regexWithStripWarning(false);
+        regex.stripFlags = regexWithStripWarning(true);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/utf8_bytes_to_string.js
+        var textDecoder = new TextDecoder("utf-8");
+        var utf8BytesToString = textDecoder.decode.bind(textDecoder);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/string_to_utf8_bytes.js
+        var textEncoder = new TextEncoder("utf-8");
+        var stringToUtf8Bytes = textEncoder.encode.bind(textEncoder);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/built_in_copyable_primitive_classes.js
+        var builtInCopyablePrimitiveClasses = /* @__PURE__ */ new Set([RegExp, Date, URL, ...typedArrayClasses, globalThis.ArrayBuffer, globalThis.DataView]);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/sync_iterator_prototype.js
+        var syncIteratorPrototype = Object.getPrototypeOf(Object.getPrototypeOf([][Symbol.iterator]()));
+
+        // https://deno.land/x/good@1.13.2.0/flattened/array_iterator__class.js
+        var ArrayIterator = Object.getPrototypeOf([][Symbol.iterator]);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/map_iterator__class.js
+        var MapIterator = Object.getPrototypeOf((/* @__PURE__ */ new Map())[Symbol.iterator]);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/set_iterator__class.js
+        var SetIterator = Object.getPrototypeOf((/* @__PURE__ */ new Set())[Symbol.iterator]);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/async_function__class.js
+        var AsyncFunction = class {
+        };
+        try {
+        AsyncFunction = eval("(async function(){}).constructor");
+        } catch (err) {
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/sync_generator_function__class.js
+        var SyncGeneratorFunction = class {
+        };
+        try {
+        SyncGeneratorFunction = eval("(function*(){}).constructor");
+        } catch (err) {
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/async_generator_function__class.js
+        var AsyncGeneratorFunction = class {
+        };
+        try {
+        AsyncGeneratorFunction = eval("(async function*(){}).constructor");
+        } catch (err) {
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/sync_generator_object__class.js
+        var SyncGeneratorObject = class {
+        };
+        try {
+        SyncGeneratorObject = eval("((function*(){})()).constructor");
+        } catch (err) {
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/async_generator_object__class.js
+        var AsyncGeneratorObject = class {
+        };
+        try {
+        AsyncGeneratorObject = eval("((async function*(){})()).constructor");
+        } catch (err) {
+        }
+
+        // https://deno.land/x/good@1.13.2.0/flattened/is_built_in_sync_iterator.js
+        var isBuiltInSyncIterator = syncIteratorPrototype.isPrototypeOf.bind(syncIteratorPrototype);
+
+        // https://deno.land/x/good@1.13.2.0/flattened/deep_copy_symbol.js
+        var deepCopySymbol = Symbol.for("deepCopy");
+
+        // https://deno.land/x/good@1.13.2.0/flattened/deep_copy.js
+        var clonedFromSymbol = Symbol();
+        var getThis = Symbol();
+        Object.getPrototypeOf(function() {
+        })[getThis] = function() {
+        return this;
+        };
+
+        // https://deno.land/x/good@1.13.2.0/flattened/all_key_descriptions.js
+        var allKeyDescriptions = function(value, options = { includingBuiltin: false }) {
+        var { includingBuiltin } = { ...options };
+        let descriptions = [];
+        if (value == null) {
+            return {};
+        }
+        if (!(value instanceof Object)) {
+            value = Object.getPrototypeOf(value);
+        }
+        const rootPrototype = Object.getPrototypeOf({});
+        let prevObj;
+        while (value && value != prevObj) {
+            if (!includingBuiltin && value == rootPrototype) {
+            break;
+            }
+            descriptions = descriptions.concat(Object.entries(Object.getOwnPropertyDescriptors(value)));
+            prevObj = value;
+            value = Object.getPrototypeOf(value);
+        }
+        descriptions.reverse();
+        return Object.fromEntries(descriptions);
+        };
+
+        // https://esm.sh/gh/jeff-hykin/elemental@0.6.5/denonext/main/deno.mjs
+        var J = "";
+        var F = "";
+        function k(r2) {
+        let e = this, o = 0, t = [null], n = 0, i, s, d, a = [], l = 0, c, f = 0, m = false, h = (p, b = [], E) => {
+            let x = 0;
+            return p = !E && p === F ? a[l++].slice(1, -1) : p.replace(/\\ue001/g, (g) => a[l++]), p && (p.replace(/\\ue000/g, (g, y) => (y && b.push(p.slice(x, y)), x = y + 1, b.push(arguments[++n]))), x < p.length && b.push(p.slice(x)), b.length > 1 ? b : b[0]);
+        }, v = () => {
+            [t, c, ...i] = t, t.push(e(c, ...i)), m === f-- && (m = false);
+        };
+        return r2.join(J).replace(/<!--[^]*?-->/g, "").replace(/<!\\[CDATA\\[[^]*\\]\\]>/g, "").replace(/('|")[^\\1]*?\\1/g, (p) => (a.push(p), F)).replace(/(?:^|>)((?:[^<]|<[^\\w\\ue000\\/?!>])*)(?:$|<)/g, (p, b, E, x) => {
+            let g, y;
+            if (E && x.slice(o, E).replace(/(\\S)\\/$/, "$1 /").split(/\\s+/).map((w, D) => {
+            if (w[0] === "/") {
+                if (w = w.slice(1), P[w]) return;
+                y = g || w || 1;
+            } else if (D) {
+                if (w) {
+                let z = t[2] || (t[2] = {});
+                w.slice(0, 3) === "..." ? Object.assign(z, arguments[++n]) : ([s, d] = w.split("="), Array.isArray(d = z[h(s)] = d ? h(d) : true) && (d.toString = d.join.bind(d, "")));
+                }
+            } else {
+                if (g = h(w), typeof g == "string") for (; S[t[1] + g]; ) v();
+                t = [t, g, null], f++, !m && U[g] && (m = f), P[g] && (y = g);
+            }
+            }), y) for (t[0] || T(\`Wrong close tag \\\`\${y}\\\`\`), v(); c !== y && S[c]; ) v();
+            o = E + p.length, m || (b = b.replace(/\\s*\\n\\s*/g, "").replace(/\\s+/g, " ")), b && h((c = 0, b), t, true);
+        }), t[0] && S[t[1]] && v(), f && T(\`Unclosed \\\`\${t[1]}\\\`.\`), t.length < 3 ? t[1] : (t.shift(), t);
+        }
+        var T = (r2) => {
+        throw SyntaxError(r2);
+        };
+        var P = k.empty = {};
+        var S = k.close = {};
+        var U = k.pre = {};
+        "area base basefont bgsound br col command embed frame hr image img input keygen link meta param source track wbr ! !doctype ? ?xml".split(" ").map((r2) => k.empty[r2] = true);
+        var L = { li: "", dt: "dd", dd: "dt", p: "address article aside blockquote details div dl fieldset figcaption figure footer form h1 h2 h3 h4 h5 h6 header hgroup hr main menu nav ol pre section table", rt: "rp", rp: "rt", optgroup: "", option: "optgroup", caption: "tbody thead tfoot tr colgroup", colgroup: "thead tbody tfoot tr caption", thead: "tbody tfoot caption", tbody: "tfoot caption", tfoot: "caption", tr: "tbody tfoot", td: "th tr", th: "td tr tbody" };
+        for (let r2 in L) for (let e of [...L[r2].split(" "), r2]) k.close[r2] = k.close[r2 + e] = true;
+        "pre textarea".split(" ").map((r2) => k.pre[r2] = true);
+        var G = k;
+        var R = Object.freeze(/* @__PURE__ */ new Set(["accent-color", "align-content", "align-items", "align-self", "align-tracks", "all", "animation", "animation-delay", "animation-direction", "animation-duration", "animation-fill-mode", "animation-iteration-count", "animation-name", "animation-play-state", "animation-timeline", "animation-timing-function", "appearance", "ascent-override", "aspect-ratio", "backdrop-filter", "backface-visibility", "background", "background-attachment", "background-blend-mode", "background-clip", "background-color", "background-image", "background-origin", "background-position", "background-position-x", "background-position-y", "background-repeat", "background-size", "bleed", "block-overflow", "block-size", "border", "border-block", "border-block-color", "border-block-end", "border-block-end-color", "border-block-end-style", "border-block-end-width", "border-block-start", "border-block-start-color", "border-block-start-style", "border-block-start-width", "border-block-style", "border-block-width", "border-bottom", "border-bottom-color", "border-bottom-left-radius", "border-bottom-right-radius", "border-bottom-style", "border-bottom-width", "border-collapse", "border-color", "border-end-end-radius", "border-end-start-radius", "border-image", "border-image-outset", "border-image-repeat", "border-image-slice", "border-image-source", "border-image-width", "border-inline", "border-inline-color", "border-inline-end", "border-inline-end-color", "border-inline-end-style", "border-inline-end-width", "border-inline-start", "border-inline-start-color", "border-inline-start-style", "border-inline-start-width", "border-inline-style", "border-inline-width", "border-left", "border-left-color", "border-left-style", "border-left-width", "border-radius", "border-right", "border-right-color", "border-right-style", "border-right-width", "border-spacing", "border-start-end-radius", "border-start-start-radius", "border-style", "border-top", "border-top-color", "border-top-left-radius", "border-top-right-radius", "border-top-style", "border-top-width", "border-width", "bottom", "box-decoration-break", "box-shadow", "box-sizing", "break-after", "break-before", "break-inside", "caption-side", "caret-color", "clear", "clip", "clip-path", "color", "color-scheme", "column-count", "column-fill", "column-gap", "column-rule", "column-rule-color", "column-rule-style", "column-rule-width", "column-span", "column-width", "columns", "contain", "content", "content-visibility", "counter-increment", "counter-reset", "counter-set", "cursor", "length", "angle", "descent-override", "direction", "display", "resolution", "empty-cells", "fallback", "filter", "flex", "flex-basis", "flex-direction", "flex-flow", "flex-grow", "flex-shrink", "flex-wrap", "flex_value", "float", "font", "font-display", "font-family", "font-feature-settings", "font-kerning", "font-language-override", "font-optical-sizing", "font-size", "font-size-adjust", "font-stretch", "font-style", "font-synthesis", "font-variant", "font-variant-alternates", "font-variant-caps", "font-variant-east-asian", "font-variant-ligatures", "font-variant-numeric", "font-variant-position", "font-variation-settings", "font-weight", "forced-color-adjust", "gap", "grid", "grid-area", "grid-auto-columns", "grid-auto-flow", "grid-auto-rows", "grid-column", "grid-column-end", "grid-column-start", "grid-row", "grid-row-end", "grid-row-start", "grid-template", "grid-template-areas", "grid-template-columns", "grid-template-rows", "frequency", "hanging-punctuation", "height", "hyphenate-character", "hyphens", "image-orientation", "image-rendering", "image-resolution", "inherit", "inherits", "initial", "initial-letter", "initial-letter-align", "initial-value", "inline-size", "input-security", "inset", "inset-block", "inset-block-end", "inset-block-start", "inset-inline", "inset-inline-end", "inset-inline-start", "isolation", "justify-content", "justify-items", "justify-self", "justify-tracks", "left", "letter-spacing", "line-break", "line-clamp", "line-gap-override", "line-height", "line-height-step", "list-style", "list-style-image", "list-style-position", "list-style-type", "margin", "margin-block", "margin-block-end", "margin-block-start", "margin-bottom", "margin-inline", "margin-inline-end", "margin-inline-start", "margin-left", "margin-right", "margin-top", "margin-trim", "marks", "mask", "mask-border", "mask-border-mode", "mask-border-outset", "mask-border-repeat", "mask-border-slice", "mask-border-source", "mask-border-width", "mask-clip", "mask-composite", "mask-image", "mask-mode", "mask-origin", "mask-position", "mask-repeat", "mask-size", "mask-type", "masonry-auto-flow", "math-style", "max-block-size", "max-height", "max-inline-size", "max-lines", "max-width", "max-zoom", "min-block-size", "min-height", "min-inline-size", "min-width", "min-zoom", "mix-blend-mode", "time", "negative", "object-fit", "object-position", "offset", "offset-anchor", "offset-distance", "offset-path", "offset-position", "offset-rotate", "opacity", "order", "orientation", "orphans", "outline", "outline-color", "outline-offset", "outline-style", "outline-width", "overflow", "overflow-anchor", "overflow-block", "overflow-clip-margin", "overflow-inline", "overflow-wrap", "overflow-x", "overflow-y", "overscroll-behavior", "overscroll-behavior-block", "overscroll-behavior-inline", "overscroll-behavior-x", "overscroll-behavior-y", "Pseudo-classes", "Pseudo-elements", "pad", "padding", "padding-block", "padding-block-end", "padding-block-start", "padding-bottom", "padding-inline", "padding-inline-end", "padding-inline-start", "padding-left", "padding-right", "padding-top", "page-break-after", "page-break-before", "page-break-inside", "paint-order", "perspective", "perspective-origin", "place-content", "place-items", "place-self", "pointer-events", "position", "prefix", "print-color-adjust", "quotes", "range", "resize", "revert", "right", "rotate", "row-gap", "ruby-align", "ruby-merge", "ruby-position", "scale", "scroll-behavior", "scroll-margin", "scroll-margin-block", "scroll-margin-block-end", "scroll-margin-block-start", "scroll-margin-bottom", "scroll-margin-inline", "scroll-margin-inline-end", "scroll-margin-inline-start", "scroll-margin-left", "scroll-margin-right", "scroll-margin-top", "scroll-padding", "scroll-padding-block", "scroll-padding-block-end", "scroll-padding-block-start", "scroll-padding-bottom", "scroll-padding-inline", "scroll-padding-inline-end", "scroll-padding-inline-start", "scroll-padding-left", "scroll-padding-right", "scroll-padding-top", "scroll-snap-align", "scroll-snap-stop", "scroll-snap-type", "scrollbar-color", "scrollbar-gutter", "scrollbar-width", "shape-image-threshold", "shape-margin", "shape-outside", "size", "size-adjust", "speak-as", "src", "suffix", "symbols", "syntax", "system", "tab-size", "table-layout", "text-align", "text-align-last", "text-combine-upright", "text-decoration", "text-decoration-color", "text-decoration-line", "text-decoration-skip", "text-decoration-skip-ink", "text-decoration-style", "text-decoration-thickness", "text-emphasis", "text-emphasis-color", "text-emphasis-position", "text-emphasis-style", "text-indent", "text-justify", "text-orientation", "text-overflow", "text-rendering", "text-shadow", "text-size-adjust", "text-transform", "text-underline-offset", "text-underline-position", "top", "touch-action", "transform", "transform-box", "transform-origin", "transform-style", "transition", "transition-delay", "transition-duration", "transition-property", "transition-timing-function", "translate", "unicode-bidi", "unicode-range", "unset", "user-select", "user-zoom", "vertical-align", "viewport-fit", "visibility", "white-space", "widows", "width", "will-change", "word-break", "word-spacing", "word-wrap", "writing-mode", "z-index", "zoom"]));
+        var I = Object.freeze(/* @__PURE__ */ new Set(["class", "style", "value", "id", "contenteditable", "href", "hidden", "autofocus", "src", "name", "accept", "accesskey", "action", "align", "alt", "async", "autocomplete", "autoplay", "border", "charset", "checked", "cite", "cols", "colspan", "content", "controls", "coords", "data", "datetime", "default", "defer", "dir", "dirname", "disabled", "download", "draggable", "enctype", "for", "form", "formaction", "headers", "high", "hreflang", "http", "ismap", "kind", "label", "lang", "list", "loop", "low", "max", "maxlength", "media", "method", "min", "multiple", "muted", "novalidate", "open", "optimum", "pattern", "placeholder", "poster", "preload", "readonly", "rel", "required", "reversed", "rows", "rowspan", "sandbox", "scope", "selected", "shape", "size", "sizes", "span", "spellcheck", "srcdoc", "srclang", "srcset", "start", "step", "tabindex", "target", "title", "translate", "type", "usemap", "wrap", "bgcolor", "width", "color", "height"]));
+        var B = (r2) => r2.startsWith("-") || R.has(r2);
+        var C = (r2) => r2.replace(/[a-z]([A-Z])(?=[a-z])/g, (e) => \`\${e[0]}-\${e.slice(1).toLowerCase()}\`);
+        var V = (r2) => !!r2.prototype && !!r2.prototype.constructor.name;
+        var $ = (r2, e) => {
+        let o = allKeyDescriptions(r2), t = {};
+        for (let [n, i] of Object.entries(o)) ["constructor", "prototype", "length"].includes(n) || (t[n] = { get: () => r2[n] });
+        return Object.defineProperties(e, t), e;
+        };
+        var M = Symbol.for("toHtmlElement");
+        var u = class r {
+        constructor(e = {}, o = {}) {
+            let { middleware: t, errorComponentFactory: n, defaultPlaceholderFactory: i } = o || {};
+            this.components = e || {}, this.middleware = t || {}, this.defaultPlaceholderFactory = i || (() => document.createElement("div")), this.errorComponentFactory = n || N, this.html = this.createElement.bind(this), this.xhtm = G.bind((...s) => this.createElement(...s));
+        }
+        static debug = false;
+        static allTags = Symbol.for("allTags");
+        static exclusivelySvgElements = /* @__PURE__ */ new Set(["svg", "animate", "animateMotion", "animateTransform", "circle", "clipPath", "defs", "desc", "discard", "ellipse", "feBlend", "feColorMatrix", "feComponentTransfer", "feComposite", "feConvolveMatrix", "feDiffuseLighting", "feDisplacementMap", "feDistantLight", "feDropShadow", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feImage", "feMerge", "feMergeNode", "feMorphology", "feOffset", "fePointLight", "feSpecularLighting", "feSpotLight", "feTile", "feTurbulence", "filter", "foreignObject", "g", "hatch", "hatchpath", "image", "line", "linearGradient", "marker", "mask", "mesh", "meshgradient", "meshpatch", "meshrow", "metadata", "mpath", "path", "pattern", "polygon", "polyline", "radialGradient", "rect", "set", "stop", "switch", "symbol", "text", "textPath", "tspan", "unknown", "use", "view"]);
+        static randomId = (e) => \`\${e}\${Math.random()}\`.replace(".", "");
+        static makeHtmlElement = function(e) {
+            if (e instanceof Node || e instanceof Element || e instanceof HTMLDocument) return e;
+            if (e == null) return new globalThis.Text("");
+            if (typeof e == "string") return new globalThis.Text(e);
+            if (typeof e == "symbol") return new globalThis.Text(e.toString());
+            if (e instanceof Object) {
+            if (e[M] != null) return r.makeHtmlElement(e[M]);
+            {
+                let o;
+                try {
+                o = Object.getPrototypeOf(e).constructor.name, o = o && \`class \${JSON.stringify(o)}\`;
+                } catch {
+                }
+                throw Error(\`Cannot coerce \${o || e} into an html element
+        \`, e);
+            }
+            } else return new globalThis.Text(\`\${e}\`);
+        };
+        static appendChildren = function(e, ...o) {
+            let { element: t, insertBefore: n } = e, i = (s) => e.appendChild(s);
+            n && !(n instanceof Function) && (e = t, i = (s) => e.insertBefore(n, s));
+            for (let s of o) if (s instanceof Array) r.appendChildren(e, ...s);
+            else if (s instanceof Function) r.appendChildren(e, s());
+            else if (s instanceof Promise) {
+            let d = s, a = d.placeholder || document.createElement("div");
+            i(a), setTimeout(async () => {
+                try {
+                let l = await d;
+                if (l instanceof Array) {
+                    let c = a.parentElement;
+                    c || (c = await new Promise((f, m) => {
+                    let h = setInterval(() => {
+                        a.parentElement && (f(a.parentElement), clearInterval(h));
+                    }, 70);
+                    }));
+                    for (let f of l) try {
+                    r.appendChildren({ element: c, insertBefore: a }, f);
+                    } catch (m) {
+                    c.insertBefore(a, H(\`When async component \${toString(e)} resolved, it created an array. One of those elements in the array caused an error when it tried to be added as a child:
+        \${toString(m)}\`));
+                    }
+                } else {
+                    let c = r.makeHtmlElement(l);
+                    a.replaceWith(c);
+                }
+                } catch (l) {
+                a.replaceWith(N({ ...properties, children: o }, key, l));
+                }
+            }, 0);
+            } else i(r.makeHtmlElement(s));
+            return e;
+        };
+        static css = function(e, ...o) {
+            if (typeof e == "string") return e;
+            if (e == null) return "";
+            if (e instanceof Array) {
+            let t = e, n = o, i = "";
+            for (let s of t) if (i += s, n.length > 0) {
+                let d = n.shift();
+                d instanceof Object ? i += j.css(d) : i += \`\${d}\`;
+            }
+            return i;
+            } else if (e instanceof Object) {
+            let t = "";
+            for (let [n, i] of Object.entries(e)) i != null && (t += \`\${C(n)}: \${i};\`);
+            return t;
+            } else return e;
+        };
+        static combineClasses = (...e) => {
+            e = e.filter((t) => t != null);
+            let o = [];
+            for (let t of e) if (typeof t == "string" && (t = t.split(" ")), t instanceof Array) {
+            t = t.flat(1 / 0);
+            for (let n of t) o.push(n);
+            } else if (t instanceof Object) for (let [n, i] of Object.entries(t)) i && o.push(n);
+            return o;
+        };
+        createElement(...e) {
+            if (e[0] instanceof Array) return this.xhtm(...e);
+            {
+            r.debug && console.debug("args is:", e);
+            for (let a of (this.middleware[r.allTags] || []).concat(this.middleware[e[0]] || [])) try {
+                e = eachMiddleWare(e);
+            } catch {
+                console.error("[ElementalClass] one of the middleware functions failed:", eachMiddleWare, e);
+            }
+            let [o, t, ...n] = e;
+            if (r.debug && console.debug("key, properties, children is:", o, t, n), this.components[o] instanceof Function && (o = this.components[o]), o instanceof Function) {
+                let a;
+                try {
+                a = V(o) ? new o({ ...t, children: n }) : o({ ...t, children: n });
+                } catch (l) {
+                return this.errorComponentFactory({ ...t, children: n }, o, l);
+                }
+                if (a instanceof Promise) {
+                let l = a, c = l.placeholder || this.defaultPlaceholderFactory(a);
+                return setTimeout(async () => {
+                    try {
+                    let f = await l;
+                    if (f instanceof Array) {
+                        let m = c.parentElement;
+                        m || (m = await new Promise((h, v) => {
+                        let A = setInterval(() => {
+                            c.parentElement && (h(c.parentElement), clearInterval(A));
+                        }, 70);
+                        }));
+                        for (let h of f) try {
+                        r.appendChildren({ element: m, insertBefore: c }, h);
+                        } catch (v) {
+                        m.insertBefore(c, H(\`Something returned a promise, which resolved to an array, and then something tried to append those to an element (this element: \${s}). One of the items in the array \${h} caused an error when it tried to be added as a child:
+        \${toString(v)}\`));
+                        }
+                    } else {
+                        let m = r.makeHtmlElement(f);
+                        c.replaceWith(m);
+                    }
+                    } catch (f) {
+                    c.replaceWith(this.errorComponentFactory({ ...t, children: n }, o, f));
+                    }
+                }, 0), c;
+                } else return a;
+            }
+            let i = r.exclusivelySvgElements.has(o), s;
+            if (o == "iframe" && t.src) {
+                let a = document.createElement("div");
+                a.innerHTML = \`<iframe src=\${JSON.stringify(t.src)}></iframe>\`, s = a.children[0], delete t.src;
+            } else i ? s = document.createElementNS("http://www.w3.org/2000/svg", o) : s = document.createElement(o);
+            let d = "";
+            if (t instanceof Object) for (let [a, l] of Object.entries(t)) {
+                if (a == "style") {
+                d += r.css(l);
+                continue;
+                }
+                if (a.slice(0, 2) == "on" && a.slice(2, 3).toLowerCase() !== a.slice(2, 3) && l instanceof Function && s.addEventListener(a.slice(2).toLowerCase(), l), a == "class") {
+                if (l instanceof Array) l = l.join(" ");
+                else if (l instanceof Object) {
+                    let c = "";
+                    for (let [f, m] of Object.entries(l)) m && (c += f);
+                    l = c;
+                }
+                }
+                if (i) {
+                l instanceof Array && (l = l.join(" ")), s.setAttribute(a, l), s.setAttribute(C(a), l);
+                continue;
+                }
+                l != null && !(l instanceof Object) && I.has(a) && s.setAttribute(a, l);
+                try {
+                s[a] = l;
+                } catch {
+                }
+                B(a) && (d += \`;\${a}: \${l};\`);
+            }
+            return d && s.setAttribute("style", d), r.appendChildren(s, ...n);
+            }
+        }
+        extend(e = {}, o = {}) {
+            let { middleware: t, ...n } = o || {};
+            return j({ ...this.components, ...e }, { middleware: { ...this.middleware, ...t }, ...n });
+        }
+        };
+        var j = (...r2) => {
+        let e = new u(...r2), o = e.createElement.bind(e);
+        return $(u, o), $(e, o), o;
+        };
+        $(u, j);
+        function H(r2) {
+        let e = document.createElement("div");
+        e.setAttribute("style", \`
+                all:              unset;
+                display:          flex;
+                flex-direction:   column;
+                padding:          1.5rem;
+                background-color: #f5a5a8;
+                color:            white;
+                font-family:      -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+                font-size:        18px;
+                font-weight:      400;
+                overflow:         auto;
+            \`), e.innerHTML = \`I'm sorry, there was an error when loading this part of the page 🙁.<br>Here's the error message: \${Option(toString(r2 != null && r2.message || r2)).innerHTML}\`;
+        }
+        function N({ children: r2, ...e }, o, t) {
+        let n = document.createElement("div"), i = document.createElement("div"), s = document.createElement("div");
+        n.setAttribute("style", \`
+                all:              unset;
+                display:          flex;
+                flex-direction:   column;
+                padding:          1.5rem;
+                background-color: #f5a5a8;
+                color:            white;
+                font-family:      -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+                font-size:        18px;
+                font-weight:      400;
+                overflow:         auto;
+            \`), n.innerHTML = "I'm sorry, there was an error when loading this part of the page 🙁 ";
+        let d;
+        if (typeof o == "string") d = \`&lt;\${o} />\`;
+        else try {
+            d = \`&lt;\${o.prototype.constructor.name} />\`;
+        } catch {
+            try {
+            d = \`&lt;\${o.name} />\`;
+            } catch {
+            d = \`&lt;\${o} />\`;
+            }
+        }
+        let a = {};
+        for (let [l, c] of Object.entries(e)) try {
+            a[l] = JSON.parse(JSON.stringify(c));
+        } catch {
+            typeof c == "symbol" ? a[l] = c.toString() : a[l] = \`\${c}\`;
+        }
+        i.innerHTML = \`<span>error: \${\`\${t}\`.replace(/\\n/, "<br>")}<br>location:<br>\${indent({ string: t.stack, by: "    " }).replace(/\\n/, "<br>")}</span><br><span>tag: \${d}</span><br><div>properties:<br><code style="max-height: 12rem; overflow: auto;">\${JSON.stringify(a, 0, 4)}</code></div>\`, i.setAttribute("style", \`
+                padding: 1rem;
+                background-color: #161b22;
+                color: #789896;
+                white-space: pre;
+                max-width: 85vw;
+                overflow: auto;
+            \`), n.appendChild(i), s.setAttribute("style", \`
+                all: unset
+                display: flex
+                flex-direction: column
+                margin-top: 1.3rem
+            \`);
+        for (let l of r2 || []) try {
+            u.appendChildren(s, [l]);
+        } catch {
+        }
+        return n.appendChild(s), n;
+        }
+        try {
+        let r2 = document.head;
+        Object.defineProperty(document, "head", { set: (e) => u.appendChildren(r2, ...e.childNodes), get: () => r2, writable: true });
+        } catch {
+        }
+        var K = u.combineClasses;
+        var Q = j();
+        var Y = u.css;
+        var Z = u.allTags;
+        return Q
+    })()
+
+    function generateTableFromRows(rows) {
+        if (rows.length === 0) {
+            return html\`<table class="table"></table>\`
+        }
+        const styleForEachCell = ${escapeForScriptTag(JSON.stringify(styleForEachCell))}
+        let columnIndex = 0
+        
+        // Assuming the first row contains the column headers
+        const headerElements = rows[0].map((cell, rowIndex)=>{
+            let {classes, ...style} = styleForEachCell[columnIndex][rowIndex]
+            classes = classes||[]
+            classes.push("cell")
+            return html\`<th class="cell" style="\${style}">\${cell}</th>\`
+        })
+        const head = html\`<thead class="header">
+            <tr>
+                \${headerElements}
+            </tr>
+        </thead>\`
+        
+        const newRows = []
+        for (let eachRow of rows.slice(1)) {
+            columnIndex++
+            let rowIndex = -1
+            const elements = []
+            for (let each of eachRow) {
+                rowIndex++
+                let {classes, ...style} = styleForEachCell[columnIndex][rowIndex]
+                classes=classes||[]
+                classes.push("cell")
+                elements.push(html\`<td class="\${classes}" style="\${style}">\${each}</td>\`)
+            }
+            newRows.push(html\`<tr class="row">
+                \${elements}
+            </tr>\`)
+        }
+        return html\`<table>
+            \${head}
+            <tbody>\${newRows}</tbody>
+        </table>\`
+    }
+    
+    const htmlTable = generateTableFromRows(${escapeForScriptTag(JSON.stringify(rows))})
+    
+    document.body = html\`
+        <body font-size=15px background-color=whitesmoke overflow=scroll width=100%>
+            \${htmlTable}
+        </body>
+    \`
+</script>
+</body>
+`
+}
