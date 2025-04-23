@@ -82,7 +82,12 @@ var titlesFromAutomatedSearches = new Set()
 var titlesFromAutomatedSearchesWithGoodSources = new Set()
 var titlesWithCategoriesAfterAllFilters = new Set()
 var nicknamesAfterAllFilters = new Set()
-var qualifiedSystemsAfterAllFilters = new Set()
+var qualifiedSystemsBeforeAllFilters = new Set()
+var qualifiedSystemsAfterAllAutomatedFilters = new Set()
+var qualifiedSystemsAfterAllManualFilters = new Set()
+var almostQualifiedSystemsBeforeAllFilters = new Set()
+var almostQualifiedSystemsAfterAutomatedFilters = new Set()
+var almostQualifiedSystemsAfterManualFilters = new Set()
 var titlesForManualReview = new Set()
 
 var categories = {}
@@ -120,7 +125,21 @@ for (var reference of references) {
 }
 console.log(``)
 
+var yearFreqAll = {}
+var yearFreqManual = {}
 for (var reference of Object.values(referenceByLowerCaseTitle)) {
+    if (reference.year) {
+        if (!yearFreqAll[reference.year]) {
+            yearFreqAll[reference.year] = 0
+        }
+        yearFreqAll[reference.year]++
+    }
+    if (reference.notes.category == "qualifiedSystem") {
+        qualifiedSystemsBeforeAllFilters.add(reference.title.toLowerCase())
+    }
+    if (reference.notes.category == "almostQualifiedSystem") {
+        almostQualifiedSystemsBeforeAllFilters.add(reference.title.toLowerCase())
+    }
     // 
     // get link
     // 
@@ -176,6 +195,13 @@ for (var reference of Object.values(referenceByLowerCaseTitle)) {
             continue
         }
         titlesForManualReview.add(reference.title.toLowerCase())
+        if (reference.year) {
+            if (!yearFreqManual[reference.year]) {
+                yearFreqManual[reference.year] = 0
+            }
+            yearFreqManual[reference.year]++
+        }
+        almostQualifiedSystemsAfterAutomatedFilters.add(reference.title.toLowerCase())
     // 
     // nicknames and other simple counts
     // 
@@ -186,7 +212,7 @@ for (var reference of Object.values(referenceByLowerCaseTitle)) {
             titlesWithCategoriesAfterAllFilters.add(reference.title.toLowerCase())
         }
         if (reference.notes.category == "qualifiedSystem") {
-            qualifiedSystemsAfterAllFilters.add(reference.title.toLowerCase())
+            qualifiedSystemsAfterAllAutomatedFilters.add(reference.title.toLowerCase())
         }
         if (reference.notes.category) {
             if (!categories[reference.notes.category]) {
@@ -229,8 +255,29 @@ for (var reference of Object.values(referenceByLowerCaseTitle)) {
         total++
 }
 
+console.debug(`qualifiedSystemsBeforeAllFilters is:`,qualifiedSystemsBeforeAllFilters)
+console.debug(`qualifiedSystemsAfterAllAutomatedFilters is:`,qualifiedSystemsAfterAllAutomatedFilters)
+const duplicates = [
+    "31.1 A 65nm 8.79TOPS/W 23.82mW Mixed-Signal Oscillator-Based NeuroSLAM Accelerator for Applications in Edge Robotics",
+]
+const manuallyDisqualified = [
+    "ViTa-SLAM: A Bio-inspired Visuo-Tactile SLAM for Navigation while Interacting with Aliased Environments",
+]
+for (let each of manuallyDisqualified) {
+    almostQualifiedSystemsAfterManualFilters.add(each)
+}
+for (let each of almostQualifiedSystemsAfterAutomatedFilters) {
+    almostQualifiedSystemsAfterManualFilters.add(referenceByLowerCaseTitle[each].title)
+}
+for (let ref of [...qualifiedSystemsAfterAllAutomatedFilters].map(each=>referenceByLowerCaseTitle[each]).sort((a,b)=>a.year-b.year)) {
+    if (duplicates.includes(ref.title) || manuallyDisqualified.includes(ref.title)) {
+        continue
+    }
+    qualifiedSystemsAfterAllManualFilters.add(ref.title)
+    console.log(`    ${ref.notes.nickname}\t${ref.year}\t${ref.authorNames.join(", ")}\t${ref.title}`)
+}
 console.debug(`nicknames lost:`,setSubtract({ value: nicknamesAfterAllFilters, from: _nicknamesNoFilter }))
-console.debug(`nicknames kept:`,setSubtract({ value: _nicknamesNoFilter, from: nicknamesAfterAllFilters }))
+console.debug(`nicknames kept:`,nicknamesAfterAllFilters)
 
 var totalLost = _onesWithCategoryNoFilter.size-intersection(_onesWithCategoryNoFilter,titlesWithCategoriesAfterAllFilters).size
 var percentLost = (totalLost/_onesWithCategoryNoFilter.size)*100
@@ -246,7 +293,6 @@ for (const [key, value] of Object.entries(categories)) {
 }
 
 console.log(`qualifiedSystems:`)
-var qualifiedSystemReferences = [...categories["qualifiedSystem"]].sort().map(eachTitle=>Object.values(p.references).find(each=>each.title.toLowerCase()==eachTitle))
 var qualifiedSystemReferences = [...categories["qualifiedSystem"]].sort().map(eachTitle=>references.find(each=>each.title.toLowerCase()==eachTitle))
 for (let ref of qualifiedSystemReferences) {
     try {
@@ -276,6 +322,57 @@ for (let ref of qualifiedSystemReferences) {
     console.log(`    ${(ref.notes.nickname||"").padEnd(20)} | ${ref.authorNames.sort().join(", ").padEnd(120)}: ${ref.title}`)
 }
 
+// 
+// survey papers
+// 
+    var queryRefs = references.filter(each=>automatedResultsTitles.has(each.title.toLowerCase()))
+    var relatedSurveys = new Set( queryRefs.filter(each=>each.title.match(/a (review|survey|perspective)/i)).filter(each=>each.citationCount>1).filter(each=>{
+        let score = each.score[0]
+        if (score>100) { // cited source
+            score -= 100
+        }
+        return score>4 // score filter
+    }).map(each=>each.title.toLowerCase()))
+    var relatedSurveysPrintout = new Set( queryRefs.filter(each=>each.title.match(/a (review|survey|perspective)/i)).filter(each=>each.citationCount>1).filter(each=>{
+        let score = each.score[0]
+        if (score>100) { // cited source
+            score -= 100
+        }
+        return score>4 // score filter
+    }).map(each=>`(${each.year}) ${each.title.toLowerCase()}`))
+    console.debug(`relatedSurveys is:`,relatedSurveysPrintout)
+    var manuallyRuledOut = new Set([
+        "kalman filter for robot vision: a survey", // (2011) 
+        "deep ehr: a survey of recent advances in deep learning techniques for electronic health record (ehr) analysis", // (2017) 
+        "deep learning in mobile and wireless networking: a survey", // (2019) 
+        "a review of the deep learning methods for medical images super resolution problems", // (2020) 
+        "medical image fusion: a survey of the state of the art", // (2014) 
+        "sensing solutions for collecting spatio-temporal data for wildlife monitoring applications: a review", // (2013) 
+        "internet of things: a survey on enabling technologies, protocols, and applications", // (2015) 
+        "a survey on explainable artificial intelligence (xai): toward medical xai", // (2020) 
+        "a survey on mobile crowdsensing systems: challenges, solutions, and opportunities", // (2019) 
+        "satellite communications in the new space era: a survey and future challenges", // (2020) 
+        "cognitive assisted living ambient system: a survey", // (2015) 
+        "a review of models of consciousness", // (2010) 
+        "human motion tracking for rehabilitation—a survey", // (2007) 
+        "a survey of human gait-based artificial intelligence applications", // (2022)
+    ])
+    var surveyTitleList = [...relatedSurveys].filter(each=>!manuallyRuledOut.has(each))
+    console.debug(`surveyTitleList.length is:`,surveyTitleList.length)
+    // ruled in:
+    // "(2023) bioinspired perception and navigation of service robots in indoor environments: a review",                       // mentions continuous attractors
+    // "(2024) neuromorphic perception and navigation for mobile robots: a review",                                             // mentions continuous attractors
+    // "(2015) computational cognitive models of spatial memory in navigation space: a review",                                 // mentions continuous attractors
+
+    // "(2024) a review of brain-inspired cognition and navigation technology for mobile robots",                               // mentions continuous attractors
+    // "(2019) combined sensing, cognition, learning, and control for developing future neuro-robotics systems: a survey",      // does not mention continuous attractors
+    // "(2024) application of event cameras and neuromorphic computing to vslam: a survey",                                     // does not mention continuous attractors
+    // "(2023) neuromorphic electronics for robotic perception, navigation and control: a survey",
+    // "(2023) a perspective on the neuromorphic control of legged locomotion in past, present, and future insect-like robots", // does not mention continuous attractors
+    // "(2015) visual place recognition: a survey",                                                                             // does not mention continuous attractors
+    // "(2024) event-based stereo depth estimation: a survey",                                                                  // does not mention continuous attractors
+    // "(2023) integration of feedforward and feedback control in the neuromechanics of vertebrate locomotion: a review of experimental, simulation and robotic studies", // nope
+
 console.debug(`total is:`,titlesFromAutomatedSearches.size)
 console.debug(`    after source filter is:`,titlesFromAutomatedSearchesWithGoodSources.size)
 console.debug(`    after score filter:`,titlesForManualReview.size)
@@ -293,3 +390,39 @@ console.debug(`    isBook is:`,isBook)
 console.debug(`    link isPdf is:`,isPdf)
 console.debug(`    probablyNeedToGetManually % is:`,(probablyNeedToGetManually/total)*100)
 console.debug(`    probablyNeedToGetManually is:`,probablyNeedToGetManually)
+
+console.debug(`yearFreqAll is:`,yearFreqAll)
+console.debug(`yearFreqManual is:`,yearFreqManual)
+
+references.filter(each=>each.title.match(/review|survery|perspective/i)).filter(each=>each.citationCount>1).length
+
+
+// 
+// Survey Papers:
+// 
+console.log(`Survey Papers:`)
+console.log((surveyTitleList).map(each=>`- ${each}`).join("\n"))
+
+// 
+// Qualified Systems:
+// 
+console.log(`Qualified Systems:`)
+console.log(([...qualifiedSystemsAfterAllManualFilters]).map(each=>`- ${each}`).join("\n"))
+
+// 
+// Almost Qualified Systems:
+// 
+console.log(`Almost Qualified Systems:`)
+console.log(([...almostQualifiedSystemsAfterManualFilters]).map(each=>`- ${each}`).join("\n"))
+
+// 
+// System Enhancements:
+// 
+console.log(`System Enhancements:`)
+console.log(([...categories["noteForQualifiedSystem"]]).map(each=>`- ${each}`).join("\n"))
+
+// 
+// External Contributions:
+// 
+console.log(`External Contributions:`)
+console.log(([...categories["surroundingWork"], ...categories["nonBioSlam"]]).map(each=>`- ${each}`).join("\n"))
