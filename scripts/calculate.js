@@ -358,7 +358,7 @@ for (let ref of qualifiedSystemReferences) {
         "a survey of human gait-based artificial intelligence applications", // (2022)
     ])
     var surveyTitleList = [...relatedSurveys].filter(each=>!manuallyRuledOut.has(each))
-    console.debug(`surveyTitleList.length is:`,surveyTitleList.length)
+    surveyTitleList = surveyTitleList.map(each=>referenceByLowerCaseTitle[each].title)
     // ruled in:
     // "(2023) bioinspired perception and navigation of service robots in indoor environments: a review",                       // mentions continuous attractors
     // "(2024) neuromorphic perception and navigation for mobile robots: a review",                                             // mentions continuous attractors
@@ -396,33 +396,36 @@ console.debug(`yearFreqManual is:`,yearFreqManual)
 
 references.filter(each=>each.title.match(/review|survery|perspective/i)).filter(each=>each.citationCount>1).length
 
+for (const [key, value] of Object.entries(categories)) {
+    categories[key] = [...value].map(each=>referenceByLowerCaseTitle[each].title)
+}
 
 // 
 // Survey Papers:
 // 
-console.log(`Survey Papers:`)
+console.log(`\n\nSurvey Papers:`)
 console.log((surveyTitleList).map(each=>`- ${each}`).join("\n"))
 
 // 
 // Qualified Systems:
 // 
-console.log(`Qualified Systems:`)
+console.log(`\n\nQualified Systems:`)
 console.log(([...qualifiedSystemsAfterAllManualFilters]).map(each=>`- ${each}`).join("\n"))
 
 // 
 // Almost Qualified Systems:
 // 
-console.log(`Almost Qualified Systems:`)
+console.log(`\n\nAlmost Qualified Systems:`)
 console.log(([...almostQualifiedSystemsAfterManualFilters]).map(each=>`- ${each}`).join("\n"))
 
 // 
 // System Enhancements:
 // 
-console.log(`System Enhancements:`)
+console.log(`\n\nSystem Enhancements:`)
 console.log(([...categories["noteForQualifiedSystem"]]).map(each=>`- ${each}`).join("\n"))
 
 // 
 // External Contributions:
 // 
-console.log(`External Contributions:`)
+console.log(`\n\nExternal Contributions:`)
 console.log(([...categories["surroundingWork"], ...categories["nonBioSlam"]]).map(each=>`- ${each}`).join("\n"))
