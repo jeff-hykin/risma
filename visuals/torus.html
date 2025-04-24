@@ -23,15 +23,18 @@
             import { Elemental, passAlongProps } from "https://esm.sh/gh/jeff-hykin/elemental@0.6.5/main/deno.js"
             const { html } = Elemental({
             })
-            globalThis.params ={}
-            document.body.appendChild(html`<input style="position: fixed; top: 1rem; left: 1rem;" type="range" id="slider" min="0" max="360" value="50" step="1" onInput="${(event)=>{
-                    globalThis.params.y = (event.target.value-0)/(2 * Math.PI)
+            globalThis.params = {
+                radius: 3.9947890716065735,
+                thickness: 0.9103662744856413,
+            }
+            document.body.appendChild(html`<input style="position: fixed; top: 1rem; left: 1rem; width: 27rem;" type="range" id="slider" min="0.1" max="10" value="0.9103662744856413" step="0.01" onInput="${(event)=>{
+                    globalThis.params.thickness = (event.target.value-0)/(2 * Math.PI)
             }}">`)
-            document.body.appendChild(html`<input style="position: fixed; top: 3rem; left: 1rem;" type="range" id="slider" min="0" max="360" value="50" step="1" onInput="${(event)=>{
-                    globalThis.params.x = (event.target.value-0)/(2 * Math.PI)
+            document.body.appendChild(html`<input style="position: fixed; top: 3rem; left: 1rem; width: 27rem;" type="range" id="slider" min="1" max="30" value="3.9947890716065735" step="0.1" onInput="${(event)=>{
+                    globalThis.params.radius = (event.target.value-0)/(2 * Math.PI)
             }}">`)
             const scene = new THREE.Scene()
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+            const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000)
             const renderer = new THREE.WebGLRenderer({ antialias: true })
             renderer.setSize(window.innerWidth, window.innerHeight)
             document.body.appendChild(renderer.domElement)
@@ -44,8 +47,14 @@
             scene.add(new THREE.AmbientLight(0xffffff, 1.5))
 
             // Function to create a ring of spheres
-            function createRingOfSpheres(quantity, sphereRadius, circleRadius, position, orientation) {
-                const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xadd8e6 })
+            function createRingOfSpheres(quantity, sphereRadius, circleRadius, position, orientation, color) {
+                const sphereMaterial = new THREE.MeshPhysicalMaterial({
+                    color: new THREE.Color(color),
+                    roughness: 0.3,
+                    metalness: 0.1,
+                    clearcoat: 0.2
+                })
+
                 const group = new THREE.Group()
 
                 for (let i = 0; i < quantity; i++) {
@@ -60,6 +69,8 @@
                     sphere.position.set(x, y, z)
                     sphere.position.applyQuaternion(orientation)
                     sphere.position.add(position)
+                    
+                    sphere.castShadow = false
 
                     group.add(sphere)
                 }
@@ -75,7 +86,7 @@
                     const angle = (i / ringCount) * 2 * Math.PI
                     const x = Math.cos(angle) * donutRadius
                     const z = Math.sin(angle) * donutRadius
-                    // const z = 0
+                    const y = 0
 
                     const position = new THREE.Vector3(x, 0, z)
 
@@ -83,8 +94,19 @@
                     const up = new THREE.Vector3(1, 0, 0)
                     const direction = new THREE.Vector3(x, y, z).normalize()
                     const quaternion = new THREE.Quaternion().setFromUnitVectors(up, direction)
-                    
-                    const ring = createRingOfSpheres(spheresPerRing, sphereRadius, ringRadius, position, quaternion)
+
+                    // Color: hue based on position around donut
+                    const hue = i / ringCount
+                    const hslColor = new THREE.Color().setHSL(hue, 0.7, 0.6)
+
+                    const ring = createRingOfSpheres(
+                        spheresPerRing,
+                        sphereRadius,
+                        ringRadius,
+                        position,
+                        quaternion,
+                        hslColor
+                    )
 
                     mainGroup.add(ring)
                 }
@@ -103,13 +125,66 @@
             scene.add(group)
             
             camera.position.z = 10
+
+            // Enable shadows on the renderer
+            renderer.shadowMap.enabled = true
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap
+
+            // Directional light with shadows
+            const dirLight = new THREE.DirectionalLight(0xffffff, 1)
+            dirLight.position.set(5, 10, 7)
+            dirLight.castShadow = true
+            dirLight.shadow.mapSize.width = 2048
+            dirLight.shadow.mapSize.height = 2048
+            dirLight.shadow.camera.near = 1
+            dirLight.shadow.camera.far = 20
+            scene.add(dirLight)
+
+            // Ground plane to receive shadows (optional)
+            const groundGeo = new THREE.PlaneGeometry(100, 100)
+            const groundMat = new THREE.ShadowMaterial({ opacity: 0.2 })
+            const ground = new THREE.Mesh(groundGeo, groundMat)
+            ground.rotation.x = -Math.PI / 2
+            ground.position.y = -2
+            ground.receiveShadow = true
+            scene.add(ground)
+
             let params = JSON.stringify(globalThis.params)
+            
+            function createTorus({ x = 0, y = 0, z = 0 }, thickness = 0.2, radius = 1.5, color = "0xff6347") {
+                const geometry = new THREE.TorusGeometry(radius, thickness, 32, 100)
+                const material = new THREE.MeshStandardMaterial({
+                    color: color,
+                    roughness: 0.95,  // High roughness = matte
+                    metalness: 0      // No metallic sheen
+                })
+                // const material = new THREE.MeshPhysicalMaterial({
+                //     color: color,
+                //     metalness: 0.3,
+                //     roughness: 0.4,
+                //     clearcoat: 0.1,
+                // })
+                const torus = new THREE.Mesh(geometry, material)
+
+                torus.position.set(x, y, z)
+
+                torus.rotation.x = Math.PI / 2 // Rotate 90° around X to lay flat
+                torus.castShadow = false
+                torus.receiveShadow = true
+
+                return torus
+            }
+            
+            let torus = createTorus({ x: 0, y: 0, z: 0 }, globalThis.params.thickness || 0.3, globalThis.params.radius || 2.5)
+            scene.add(torus)
+
             function animate() {
                 const p = JSON.stringify(globalThis.params)
                 if (params!=p) {
                     console.log(`params changed`)
                     params = p
                     scene.remove(group)
+                    scene.remove(torus)
                     group = createDonutOfRings(
                         16, // Number of rings
                         4, // Donut radius
@@ -117,6 +192,8 @@
                         0.15, // Sphere radius
                         1 // Circle (ring) radius
                     )
+                    torus = createTorus({ x: 0, y: 0, z: 0 }, globalThis.params.thickness || 0.3, globalThis.params.radius || 2.5)
+                    scene.add(torus)
                     scene.add(group)
                 }
                 requestAnimationFrame(animate)
