@@ -2,7 +2,7 @@
 import { FileSystem, glob } from "https://deno.land/x/quickr@0.8.0/main/file_system.js"
 
 const concepts = {
-    "spike-based": ["spike based", "spiking", "snn"],
+    "spike-based": ["spike based", "spiking", "snn", "spiking neural network", "spiking neural networks"],
     "neuromorphic": ["memristive","loihi"],
     "event-based camera": ["event based camera", "neuromorphic camera", "event camera "],
     "neurorobotic": ["neuro-robotic", "neuro robotic", ],
@@ -18,6 +18,7 @@ const concepts = {
     "boundary vector cells": ["BVC"],
     "head direction cells": ["HDC"],
     "pose cells": [],
+    "object vector cells": [],
     "view cells": [],
     "multidimensional continuous attractor": ["MD-CAN", "MD-CANN"],
     "continuous attractor nerual network": ["CANN"],
@@ -49,6 +50,10 @@ const concepts = {
     "navigation": [],
     "ratslam": [],
     "Kalman Filters": [],
+    "RatNav": ["RatNav1", "RatNav2",],
+    "NeuroSLAM": [],
+    "NeoSLAM": [],
+    "Underwater": ["water"],
 }
 for (const [key, value] of Object.entries(concepts)) {
     value.push(key)
@@ -64,6 +69,18 @@ import { escapeRegexMatch } from 'https://esm.sh/gh/jeff-hykin/good-js@1.17.0.0/
 import { shallowSortObject } from 'https://esm.sh/gh/jeff-hykin/good-js@1.17.0.0/source/flattened/shallow_sort_object.js'
 let frequencyMapOf = {}
 for (let each of await glob(`${FileSystem.thisFolder}/../pdfs/qualified_systems/*.txt`)) {
+    let [folders, name, ext] = pathPieces(each)
+    let bodyText = await FileSystem.read(each)
+    bodyText = bodyText.toLowerCase().replace(/\s+/g," ")
+    frequencyMapOf[name] = {}
+    for (const [key, value] of Object.entries(concepts)) {
+        const pattern = new RegExp(`\\b(${value.map(escapeRegexMatch).join("|")})\\b`, "g")
+        let count = (bodyText.match(pattern)||[]).length
+        frequencyMapOf[name][key] = count
+    }
+    frequencyMapOf[name] = Object.fromEntries([...Object.entries(frequencyMapOf[name])].sort((a,b)=>b[1]-a[1]))
+}
+for (let each of await glob(`${FileSystem.thisFolder}/../pdfs/nicknamed/*.txt`)) {
     let [folders, name, ext] = pathPieces(each)
     let bodyText = await FileSystem.read(each)
     bodyText = bodyText.toLowerCase().replace(/\s+/g," ")
@@ -373,7 +390,7 @@ var output = {
         "attention": 0,
         "Kalman Filters": 0
     },
-    "2024_SurfSLAM": {
+    "2024_SalientSLAM": {
         "ratslam": 95,
         "experience map": 26,
         "robot": 20,
@@ -766,3 +783,29 @@ var output = {
         "attention": 0
     }
 }
+let totalFreq = {}
+for (const [whichPaper, value] of Object.entries(frequencyMapOf)) {
+    for (const [whichTerm, count] of Object.entries(value)) {
+        totalFreq[whichTerm] = (totalFreq[whichTerm] || 0) + count
+    }
+}
+// sort
+totalFreq = Object.fromEntries([...Object.entries(totalFreq)].sort((a,b)=>b[1]-a[1]))
+const conceptNames = Object.keys(totalFreq)
+let csvOutput=[]
+const columnNames = conceptNames
+csvOutput.push(["Name","Year", ...columnNames])
+const keys = Object.keys(frequencyMapOf).sort()
+for (const key of keys) {
+    const value = frequencyMapOf[key]
+    const [name, year] = key.split("_").reverse()
+    csvOutput.push([name, year||"", ...columnNames.map(each=>value[each]||0)])
+}
+await FileSystem.write({path:`${FileSystem.thisFolder}/terms.ignore.tsv`, data: csvOutput.map(each=>each.join(`\t`)).join("\n"), overwrite: true})
+import { OperatingSystem } from "https://deno.land/x/quickr@0.8.0/main/operating_system.js"
+import $ from "https://esm.sh/@jsr/david__dax@0.43.0/mod.ts"
+const $$ = (...args)=>$(...args).noThrow()
+// await $$`false`
+// await $$`false`.text("stderr")
+await $$`code ${FileSystem.thisFolder}/terms.ignore.tsv`
+// OperatingSystem.openUrl(`file://${FileSystem.makeAbsolutePath(`${FileSystem.thisFolder}/terms.ignore.tsv`)}`)
