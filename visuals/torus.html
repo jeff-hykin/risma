@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Donut of Rings</title>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                background-color: white;
+            }
+            canvas {
+                display: block;
+            }
+        </style>
+    </head>
+    <body width="100%" height="100vh">
+        <!-- Three.js (latest) -->
+        <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+        <!-- OrbitControls from r136 -->
+        <script src="https://cdn.jsdelivr.net/npm/three@0.136.0/examples/js/controls/OrbitControls.js"></script>
+        <script type="module">
+            import { Elemental, passAlongProps } from "https://esm.sh/gh/jeff-hykin/elemental@0.6.5/main/deno.js"
+            const { html } = Elemental({
+            })
+            globalThis.params ={}
+            document.body.appendChild(html`<input style="position: fixed; top: 1rem; left: 1rem;" type="range" id="slider" min="0" max="360" value="50" step="1" onInput="${(event)=>{
+                    globalThis.params.y = (event.target.value-0)/(2 * Math.PI)
+            }}">`)
+            document.body.appendChild(html`<input style="position: fixed; top: 3rem; left: 1rem;" type="range" id="slider" min="0" max="360" value="50" step="1" onInput="${(event)=>{
+                    globalThis.params.x = (event.target.value-0)/(2 * Math.PI)
+            }}">`)
+            const scene = new THREE.Scene()
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+            const renderer = new THREE.WebGLRenderer({ antialias: true })
+            renderer.setSize(window.innerWidth, window.innerHeight)
+            document.body.appendChild(renderer.domElement)
+            renderer.setClearColor(0xffffff, 1)
+
+            const controls = new THREE.OrbitControls(camera, renderer.domElement)
+
+            // Lights
+            scene.add(new THREE.DirectionalLight(0xffffff, 1).position.set(5, 5, 5).normalize())
+            scene.add(new THREE.AmbientLight(0xffffff, 1.5))
+
+            // Function to create a ring of spheres
+            function createRingOfSpheres(quantity, sphereRadius, circleRadius, position, orientation) {
+                const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xadd8e6 })
+                const group = new THREE.Group()
+
+                for (let i = 0; i < quantity; i++) {
+                    const angle = (i / quantity) * 2 * Math.PI
+                    const x = Math.cos(angle) * circleRadius
+                    const y = Math.sin(angle) * circleRadius
+                    const z = 0
+
+                    const sphereGeometry = new THREE.SphereGeometry(sphereRadius, 32, 32)
+                    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
+
+                    sphere.position.set(x, y, z)
+                    sphere.position.applyQuaternion(orientation)
+                    sphere.position.add(position)
+
+                    group.add(sphere)
+                }
+
+                return group
+            }
+
+            // Function to create a donut of rings
+            function createDonutOfRings(ringCount, donutRadius, spheresPerRing, sphereRadius, ringRadius) {
+                const mainGroup = new THREE.Group()
+
+                for (let i = 0; i < ringCount; i++) {
+                    const angle = (i / ringCount) * 2 * Math.PI
+                    const x = Math.cos(angle) * donutRadius
+                    const z = Math.sin(angle) * donutRadius
+                    // const z = 0
+
+                    const position = new THREE.Vector3(x, 0, z)
+
+                    // Create orientation quaternion so the ring faces outward
+                    const up = new THREE.Vector3(1, 0, 0)
+                    const direction = new THREE.Vector3(x, y, z).normalize()
+                    const quaternion = new THREE.Quaternion().setFromUnitVectors(up, direction)
+                    
+                    const ring = createRingOfSpheres(spheresPerRing, sphereRadius, ringRadius, position, quaternion)
+
+                    mainGroup.add(ring)
+                }
+
+                return mainGroup
+            }
+
+            // Example usage
+            let group = createDonutOfRings(
+                16, // Number of rings
+                4, // Donut radius
+                12, // Spheres per ring
+                0.15, // Sphere radius
+                1 // Circle (ring) radius
+            )
+            scene.add(group)
+            
+            camera.position.z = 10
+            let params = JSON.stringify(globalThis.params)
+            function animate() {
+                const p = JSON.stringify(globalThis.params)
+                if (params!=p) {
+                    console.log(`params changed`)
+                    params = p
+                    scene.remove(group)
+                    group = createDonutOfRings(
+                        16, // Number of rings
+                        4, // Donut radius
+                        12, // Spheres per ring
+                        0.15, // Sphere radius
+                        1 // Circle (ring) radius
+                    )
+                    scene.add(group)
+                }
+                requestAnimationFrame(animate)
+                controls.update()
+                renderer.render(scene, camera)
+            }
+            animate()
+
+            window.addEventListener("resize", () => {
+                camera.aspect = window.innerWidth / window.innerHeight
+                camera.updateProjectionMatrix()
+                renderer.setSize(window.innerWidth, window.innerHeight)
+            })
+        </script>
+    </body>
+</html>
