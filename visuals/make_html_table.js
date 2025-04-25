@@ -1717,7 +1717,7 @@ export const nicknameData = {
     AdaptSLAM: { year: 2017, lastName: "Zeno", },
     ResetSLAM: { year: 2018, lastName: "Tejera", },
     NeuroSLAM1: { year: 2019, lastName: "F Yu", },
-    BionicSLAM: { year: 2019, lastName: "N Yu", },
+    StripeSLAM: { year: 2019, lastName: "N Yu", },
     NeuroSLAM2: { year: 2020, lastName: "Yoon", },
     NeoSLAM1: { year: 2022, lastName: "Raoui", },
     NeuroGPR: { year: 2023, lastName: "F Yu", },
@@ -1733,7 +1733,7 @@ export const nicknameMapping = {
     // AdaptSLAM: "Zeno, 2017",
     // ResetSLAM: "Tejera, 2018",
     // NeuroSLAM1: "NeuroSLAM (Yu, 2019)",
-    // BionicSLAM: "N Yu, 2019",
+    // StripeSLAM: "N Yu, 2019",
     // NeuroSLAM2: "NeuroSLAM (Yoon, 2020)",
     // NeoSLAM1: "NeoSLAM (Raoui, 2022)",
     // NeuroGPR: "NeuroGPR",
@@ -1748,7 +1748,7 @@ export const nicknameMapping = {
     AdaptSLAM: "ZenoSLAM", // fixme
     ResetSLAM: "TejeraSLAM", // fixme
     NeuroSLAM1: "NeuroSLAM1", 
-    BionicSLAM: "BionicSLAM",
+    StripeSLAM: "StripeSLAM",
     NeuroSLAM2: "NeuroSLAM2",
     NeoSLAM1: "NeoSLAM1",
     NeuroGPR: "NeuroGPR",

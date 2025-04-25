@@ -1,6 +1,20 @@
 ToDo:
 - Need to add:
     - Biologically-inspired robot spatial cognition based on rat neurophysiological studies (Barrera & Weitzenfeld, 2007, 2008), cited by AdaptSLAM
+
+- Core questions:
+- What are the novel contributions of this paper, specifically things that are different from RatSLAM's approach?
+- What kind of visual processing does the system use. This includes visual templating, feature extraction, etc. Is it stero vision or monocular? Was it grayscale or color?
+- How does the system keep track of head direction? Does it do anything novel to keep track of head direction?
+- How does the system keep track of location? Does it use an "experience map"? is it 3D or 2D?
+- Did the paper use a robot? If so, which robot?
+- If the paper used a robot, what kind of sensors did it use (IMU, lidar, gyro, rgb-d camera, etc)? 
+- What metrics of performance did the paper use?
+- Did the paper compare against any existing SLAM methods? or only against ground truth?
+- Does the paper provide a codebase? Does it mention a programming language?
+- Does the paper use an existing dataset or make its own? If it uses one, which one?
+- Does the work use a neuromorphic chip or FPGA? If so, which one?
+- Does this system take into account goals or tasks? (e.g. beyond localization)
     
 - From research rabbit:
     - 2021: Towards a Predictive Bio-Inspired Navigation Model

@@ -15,7 +15,7 @@ EpisodicSLAM
 AdaptSLAM									
 ResetSLAM									
 NeuroSLAM1	✅	✅	✅						
-BionicSLAM									
+StripeSLAM									
 NeuroSLAM2				✅	✅	✅	✅		
 NeoSLAM1								✅	
 NeuroGPR									

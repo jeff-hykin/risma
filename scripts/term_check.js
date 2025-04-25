@@ -34,6 +34,8 @@ const concepts = {
     "hebbian": [],
     "plasticity": [],
     "hippocampus": ["hippocampal",],
+    "CA3": [],
+    "CA1": [],
     "landmark":[],
     "landmark stability": [],
     "robot": ["robotics",],
@@ -124,6 +126,7 @@ var output = {
         "stereo": 0,
         "stripe cells": 0,
         "border cells": 0,
+        "band cells": 0,
         "boundary vector cells": 0,
         "pose cells": 0,
         "multidimensional continuous attractor": 0,
@@ -586,7 +589,7 @@ var output = {
         "uav": 0,
         "attention": 0
     },
-    "2019_BionicSLAM": {
+    "2019_StripeSLAM": {
         "navigation": 68,
         "grid cells": 63,
         "place cells": 51,
