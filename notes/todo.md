@@ -2,6 +2,10 @@ ToDo:
 - Need to add:
     - Biologically-inspired robot spatial cognition based on rat neurophysiological studies (Barrera & Weitzenfeld, 2007, 2008), cited by AdaptSLAM
 
+- Cited by NeoSLAM1:
+    - (growing when required network): self-organizing method for robot navigation based on learned place and head-direction cells
+    - (LSTM): Vector-based navigation using grid-like representations in artificial agents
+
 - Core questions:
 - What are the novel contributions of this paper, specifically things that are different from RatSLAM's approach?
 - What kind of visual processing does the system use. This includes visual templating, feature extraction, etc. Is it stero vision or monocular? Was it grayscale or color?
