@@ -1,4 +1,6 @@
 
+`run/main.ps1` to start the CLI
+
 <!--                                                          -->
 <!--                                                          -->
 <!-- DO NOT EDIT ME; EDIT ./build_helper/readme_workaround.md -->
