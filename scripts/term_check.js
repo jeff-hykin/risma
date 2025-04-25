@@ -96,7 +96,7 @@ for (let each of await glob(`${FileSystem.thisFolder}/../pdfs/nicknamed/*.txt`))
 console.log(JSON.stringify(frequencyMapOf, null, 4))
 
 var output = {
-    "2018_HippoSLAM": {
+    "2018_ResetSLAM": {
         "spatial": 68,
         "localization": 61,
         "robot": 49,

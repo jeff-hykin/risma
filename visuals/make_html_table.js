@@ -1715,7 +1715,7 @@ export const nicknameData = {
     WaterSLAM1: { year: 2013, lastName: "Guth", },
     EpisodicSLAM: { year: 2017, lastName: "Tang", },
     AdaptSLAM: { year: 2017, lastName: "Zeno", },
-    HippoSLAM: { year: 2018, lastName: "Tejera", },
+    ResetSLAM: { year: 2018, lastName: "Tejera", },
     NeuroSLAM1: { year: 2019, lastName: "F Yu", },
     BionicSLAM: { year: 2019, lastName: "N Yu", },
     NeuroSLAM2: { year: 2020, lastName: "Yoon", },
@@ -1731,7 +1731,7 @@ export const nicknameMapping = {
     // WaterSLAM1:"Guth, 2013",
     // EpisodicSLAM: "Tang, 2017",
     // AdaptSLAM: "Zeno, 2017",
-    // HippoSLAM: "Tejera, 2018",
+    // ResetSLAM: "Tejera, 2018",
     // NeuroSLAM1: "NeuroSLAM (Yu, 2019)",
     // BionicSLAM: "N Yu, 2019",
     // NeuroSLAM2: "NeuroSLAM (Yoon, 2020)",
@@ -1746,7 +1746,7 @@ export const nicknameMapping = {
     WaterSLAM1: "WaterSLAM1",
     EpisodicSLAM: "TangSLAM", // fixme
     AdaptSLAM: "ZenoSLAM", // fixme
-    HippoSLAM: "TejeraSLAM", // fixme
+    ResetSLAM: "TejeraSLAM", // fixme
     NeuroSLAM1: "NeuroSLAM1", 
     BionicSLAM: "BionicSLAM",
     NeuroSLAM2: "NeuroSLAM2",

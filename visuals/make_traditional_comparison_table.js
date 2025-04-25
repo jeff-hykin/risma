@@ -13,7 +13,7 @@ RatSLAM
 WaterSLAM1									
 EpisodicSLAM									
 AdaptSLAM									
-HippoSLAM									
+ResetSLAM									
 NeuroSLAM1	✅	✅	✅						
 BionicSLAM									
 NeuroSLAM2				✅	✅	✅	✅		
