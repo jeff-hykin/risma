@@ -24,7 +24,7 @@ function escapeForScriptTag(string) {
  *     [ "HsiSLAM",               "?",         "~",                           "?",                        "✓",                               "?",              "?",],
  *     [ "NeoSLAM",               "?",         "~",                           "?",                        "?",                               "?",              "?",],
  *     [ "NeuroGPR",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
- *     [ "SalientSLAM",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
+ *     [ "SurfSLAM",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
  * ]
  * const contentToStyle = ({content, columnIndex, rowIndex, thisRow, rows, thisColumnHeader}) => ({
  *     backgroundColor: ({
@@ -1713,15 +1713,15 @@ body {
 export const nicknameData = {
     RatSLAM: { year: 2004, lastName: "Milford", },
     WaterSLAM1: { year: 2013, lastName: "Guth", },
-    CogSLAM: { year: 2017, lastName: "Tang", },
-    RodentSLAM: { year: 2017, lastName: "Zeno", },
+    EpisodicSLAM: { year: 2017, lastName: "Tang", },
+    AdaptSLAM: { year: 2017, lastName: "Zeno", },
     HippoSLAM: { year: 2018, lastName: "Tejera", },
     NeuroSLAM1: { year: 2019, lastName: "F Yu", },
     BionicSLAM: { year: 2019, lastName: "N Yu", },
     NeuroSLAM2: { year: 2020, lastName: "Yoon", },
     NeoSLAM1: { year: 2022, lastName: "Raoui", },
     NeuroGPR: { year: 2023, lastName: "F Yu", },
-    SalientSLAM: { year: 2024, lastName: "Y Liu", },
+    SurfSLAM: { year: 2024, lastName: "Y Liu", },
     NeoSLAM2: { year: 2024, lastName: "Pizzino", },
     SbcSLAM: { year: 2024, lastName: "D Liu", },
     WaterSLAM2: { year: 2024, lastName: "Pirozzo", },
@@ -1729,30 +1729,30 @@ export const nicknameData = {
 export const nicknameMapping = {
     // RatSLAM: "RatSLAM",
     // WaterSLAM1:"Guth, 2013",
-    // CogSLAM: "Tang, 2017",
-    // RodentSLAM: "Zeno, 2017",
+    // EpisodicSLAM: "Tang, 2017",
+    // AdaptSLAM: "Zeno, 2017",
     // HippoSLAM: "Tejera, 2018",
     // NeuroSLAM1: "NeuroSLAM (Yu, 2019)",
     // BionicSLAM: "N Yu, 2019",
     // NeuroSLAM2: "NeuroSLAM (Yoon, 2020)",
     // NeoSLAM1: "NeoSLAM (Raoui, 2022)",
     // NeuroGPR: "NeuroGPR",
-    // SalientSLAM: "Y Liu, 2024",
+    // SurfSLAM: "Y Liu, 2024",
     // NeoSLAM2: "NeoSLAM (Pizzino, 2024)",
     // SbcSLAM: "SBC-SLAM",
     // WaterSLAM2: "Pirozzo, 2024",
     
     RatSLAM: "RatSLAM",
     WaterSLAM1: "WaterSLAM1",
-    CogSLAM: "TangSLAM", // fixme
-    RodentSLAM: "ZenoSLAM", // fixme
+    EpisodicSLAM: "TangSLAM", // fixme
+    AdaptSLAM: "ZenoSLAM", // fixme
     HippoSLAM: "TejeraSLAM", // fixme
     NeuroSLAM1: "NeuroSLAM1", 
     BionicSLAM: "BionicSLAM",
     NeuroSLAM2: "NeuroSLAM2",
     NeoSLAM1: "NeoSLAM1",
     NeuroGPR: "NeuroGPR",
-    SalientSLAM: "SalientSLAM",
+    SurfSLAM: "SurfSLAM",
     NeoSLAM2: "NeoSLAM2",
     SbcSLAM: "SbcSLAM",
     WaterSLAM2: "WaterSLAM2",

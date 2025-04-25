@@ -64,7 +64,7 @@ var groundingInNeuroScience = [
 ]
 var groundingInApplication = [
     // code
-    'code implementation'
+    'code implementation',
     '"python"',
     '"c++"',
     '"pytorch"',
@@ -93,6 +93,7 @@ var outcomes = [...combinationOfChoices([
     groundingInNeuroScience,
     groundingInApplication,
 ])]
+console.debug(`outcomes.length is:`,outcomes.length)
 
 // remove the completely empty string
 outcomes = outcomes.filter(each=>each.join("").trim().length>0)

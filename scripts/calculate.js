@@ -127,12 +127,17 @@ console.log(``)
 
 var yearFreqAll = {}
 var yearFreqManual = {}
+var filtedOutReason = {}
+var nicknameToTitle = {}
 for (var reference of Object.values(referenceByLowerCaseTitle)) {
     if (reference.year) {
         if (!yearFreqAll[reference.year]) {
             yearFreqAll[reference.year] = 0
         }
         yearFreqAll[reference.year]++
+    }
+    if (reference.nickname) {
+        nicknameToTitle[reference.notes.nickname] = reference.title
     }
     if (reference.notes.category == "qualifiedSystem") {
         qualifiedSystemsBeforeAllFilters.add(reference.title.toLowerCase())
@@ -175,6 +180,7 @@ for (var reference of Object.values(referenceByLowerCaseTitle)) {
     // only automated results filter
     // 
         if (!automatedResultsTitles.has(reference.title.toLowerCase())) {
+            filtedOutReason[reference.title.toLowerCase()] = "not in automated results"
             continue
         }
         titlesFromAutomatedSearches.add(reference.title.toLowerCase())
@@ -182,6 +188,7 @@ for (var reference of Object.values(referenceByLowerCaseTitle)) {
     // only good sources filter
     // 
         if (!importantSources.some(source=>urls.some(url=>url.includes(source)))) {
+            filtedOutReason[reference.title.toLowerCase()] = "not from important source"
             continue
         }
         // if (!reference.abstract && reference.score[0] < 3) {
@@ -192,6 +199,7 @@ for (var reference of Object.values(referenceByLowerCaseTitle)) {
     // score filter
     // 
         if (reference.score[0] <= 105) {
+            filtedOutReason[reference.title.toLowerCase()] = "not high enough score"
             continue
         }
         titlesForManualReview.add(reference.title.toLowerCase())
@@ -276,7 +284,8 @@ for (let ref of [...qualifiedSystemsAfterAllAutomatedFilters].map(each=>referenc
     qualifiedSystemsAfterAllManualFilters.add(ref.title)
     console.log(`    ${ref.notes.nickname}\t${ref.year}\t${ref.authorNames.join(", ")}\t${ref.title}`)
 }
-console.debug(`nicknames lost:`,setSubtract({ value: nicknamesAfterAllFilters, from: _nicknamesNoFilter }))
+var lostNicknames = setSubtract({ value: nicknamesAfterAllFilters, from: _nicknamesNoFilter })
+console.debug(`nicknames lost:`,lostNicknames)
 console.debug(`nicknames kept:`,nicknamesAfterAllFilters)
 
 var totalLost = _onesWithCategoryNoFilter.size-intersection(_onesWithCategoryNoFilter,titlesWithCategoriesAfterAllFilters).size
@@ -400,6 +409,16 @@ for (const [key, value] of Object.entries(categories)) {
     categories[key] = [...value].map(each=>referenceByLowerCaseTitle[each].title)
 }
 
+console.log(`ruled out stuff`)
+const ruledOutNicknames = new Set([...lostNicknames].map(each=>nicknameToTitle[each].toLowerCase()))
+for (const [key, value] of Object.entries(filtedOutReason)) {
+    if (ruledOutNicknames.has(key)) {
+        console.debug(`    (${referenceByLowerCaseTitle[key].notes.nickname}) ${key}:`,value)
+    } else if (key.includes("ORB-NeuroSLAM".toLowerCase())) {
+        console.debug(`    ${key}:`,value)
+    }
+}
+
 // 
 // Survey Papers:
 // 
@@ -429,3 +448,4 @@ console.log(([...categories["noteForQualifiedSystem"]]).map(each=>`- ${each}`).j
 // 
 console.log(`\n\nExternal Contributions:`)
 console.log(([...categories["surroundingWork"], ...categories["nonBioSlam"]]).map(each=>`- ${each}`).join("\n"))
+

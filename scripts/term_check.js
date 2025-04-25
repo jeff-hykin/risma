@@ -390,7 +390,7 @@ var output = {
         "attention": 0,
         "Kalman Filters": 0
     },
-    "2024_SalientSLAM": {
+    "2024_SurfSLAM": {
         "ratslam": 95,
         "experience map": 26,
         "robot": 20,
@@ -488,7 +488,7 @@ var output = {
         "attention": 0,
         "Kalman Filters": 0
     },
-    "2017_RodentSLAM": {
+    "2017_AdaptSLAM": {
         "navigation": 75,
         "robot": 55,
         "hippocampus": 31,
@@ -684,7 +684,7 @@ var output = {
         "attention": 0,
         "Kalman Filters": 0
     },
-    "2017_CogSLAM": {
+    "2017_EpisodicSLAM": {
         "robot": 107,
         "task": 64,
         "navigation": 47,

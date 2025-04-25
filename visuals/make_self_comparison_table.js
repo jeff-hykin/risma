@@ -7,18 +7,18 @@ import { parseCsv, createCsv } from "https://esm.sh/gh/jeff-hykin/good-js@1.17.0
 
 var {comments, columnNames, rows} = await parseCsv({
     separator: "\t",
-    input: nicknameToFormalName(`        	RatSLAM	WaterSLAM1	CogSLAM	RodentSLAM	HippoSLAM	NeuroSLAM1	BionicSLAM	NeuroSLAM2	NeoSLAM1	NeuroGPR	SalientSLAM	NeoSLAM2	SbcSLAM	WaterSLAM2
+    input: nicknameToFormalName(`        	RatSLAM	WaterSLAM1	EpisodicSLAM	AdaptSLAM	HippoSLAM	NeuroSLAM1	BionicSLAM	NeuroSLAM2	NeoSLAM1	NeuroGPR	SurfSLAM	NeoSLAM2	SbcSLAM	WaterSLAM2
 RatSLAM	NA													
 WaterSLAM1		NA												
-CogSLAM	✓		NA											
-RodentSLAM				NA										
+EpisodicSLAM	✓		NA											
+AdaptSLAM				NA										
 HippoSLAM					NA									
 NeuroSLAM1						NA								
 BionicSLAM							NA							
 NeuroSLAM2								NA						
 NeoSLAM1	✓								NA					
 NeuroGPR										NA				
-SalientSLAM	✓										NA			
+SurfSLAM	✓										NA			
 NeoSLAM2												NA		
 SbcSLAM						✓							NA	
 WaterSLAM2														NA
@@ -36,7 +36,7 @@ WaterSLAM2														NA
 //     [ "HsiSLAM",               "?",         "~",                           "?",                        "✓",                               "?",              "?",],
 //     [ "NeoSLAM",               "?",         "~",                           "?",                        "?",                               "?",              "?",],
 //     [ "NeuroGPR",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
-//     [ "SalientSLAM",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
+//     [ "SurfSLAM",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
 // ]
 const contentToStyle = ({content, columnIndex, rowIndex, thisRow, rows, thisColumnHeader}) => ({
     backgroundColor: ({

@@ -11,15 +11,15 @@ var {comments, columnNames, rows} = await parseCsv({
     input: nicknameToFormalName(`	OrbSLAM	Aidvo	Ldso	TVLSI 2013	JSSC 2015	JSSC 2019	ISSCC 2019	SPL	Vins-mono
 RatSLAM									
 WaterSLAM1									
-CogSLAM									
-RodentSLAM									
+EpisodicSLAM									
+AdaptSLAM									
 HippoSLAM									
 NeuroSLAM1	✅	✅	✅						
 BionicSLAM									
 NeuroSLAM2				✅	✅	✅	✅		
 NeoSLAM1								✅	
 NeuroGPR									
-SalientSLAM									
+SurfSLAM									
 NeoSLAM2									
 SbcSLAM									✅
 WaterSLAM2									
@@ -37,7 +37,7 @@ WaterSLAM2
 //     [ "HsiSLAM",               "?",         "~",                           "?",                        "✓",                               "?",              "?",],
 //     [ "NeoSLAM",               "?",         "~",                           "?",                        "?",                               "?",              "?",],
 //     [ "NeuroGPR",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
-//     [ "SalientSLAM",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
+//     [ "SurfSLAM",              "?",         "~",                           "?",                        "?",                               "?",              "?",],
 // ]
 const contentToStyle = ({content, columnIndex, rowIndex, thisRow, rows, thisColumnHeader}) => ({
     backgroundColor: ({

@@ -273,3 +273,25 @@ export function wordWrap(text, maxLength=80) {
     }
     return text.replace(/\n/g," ").replace(new RegExp(`(.{0,${maxLength}})`, "g"),"$1\n").replace(/\n\s+/g,"\n")
 }
+
+// await Checkbox.prompt({
+//     message: "Pick some books",
+//     search: true,
+//     options: [
+//         {
+//             name: "Harry Potter",
+//             options: ["unknown", "yes"],
+//         },
+//         {
+//             name: "Middle-Earth",
+//             options: [
+//                 "The Hobbit",
+//                 {
+//                     name: "The Lord of the Rings",
+//                     options: ["The Fellowship of the Ring", "The Two Towers", "The Return of the King"],
+//                 },
+//                 "Silmarillion",
+//             ],
+//         },
+//     ],
+// })

@@ -60,6 +60,8 @@ for (const reference of filteredRefs) {
                 // place cell
                 // pose cell
                 // spatial cell
+                // space cell
+                // stripe cell
             // non rgb input
                 // lidar input
                 // infared (rgb-d)

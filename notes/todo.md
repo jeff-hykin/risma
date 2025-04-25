@@ -1,4 +1,7 @@
 ToDo:
+- Need to add:
+    - Biologically-inspired robot spatial cognition based on rat neurophysiological studies (Barrera & Weitzenfeld, 2007, 2008), cited by AdaptSLAM
+
 - Redo title of
     "of the simultaneous localization and mapping" to "An Application of the Simultaneous Localization and Mapping (SLAM) Method Based on the Unscented Kalman Filter (UKF) to a Reconfigurable Quadruped Robot with Crawling Locomotion"
 

@@ -858,7 +858,8 @@ export const searchOptions = {
     "openAlex": {
         "base": "https://api.openalex.org/works",
         searchStringToParams(string) {
-            return `?page=1&filter=default.search:${encodeURIComponent(string)}&sort=relevance_score:desc&per_page=10`
+            string = `?page=1&filter=default.search:${encodeURIComponent(string)}&sort=relevance_score:desc&per_page=10`
+            return string
             // {
             // 	"results": [
             // 		{
