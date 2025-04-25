@@ -1,5 +1,4 @@
 ToDo:
-- Run ranking filter on all references
 - Redo title of
     "of the simultaneous localization and mapping" to "An Application of the Simultaneous Localization and Mapping (SLAM) Method Based on the Unscented Kalman Filter (UKF) to a Reconfigurable Quadruped Robot with Crawling Locomotion"
 
@@ -13,7 +12,6 @@ ToDo:
     - Multi-Scale Extension in an Entorhinal-Hippocampal Model for Cognitive Map Building, https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.592057/full
     
 - check:
-    - A Brain-inspired SLAM System Based on Keyframe Template Matching
     - Continuous State Estimation With Synapse-constrained Connectivity
     - Vision-IMU multi-sensor fusion semantic topological map based on RatSLAM
     - An Improved Loop Closure Detection for RatSLAM
@@ -23,9 +21,6 @@ ToDo:
 - conclusions:
     - We need a 3D environment in the browser, a benchmark (contrast, elongation, etc)
     - Lacking a spiking ring attractor RatSLAM
-
-
-- rename citedByCount to citationCount
 
 - create some buckets:
     - possible-state of the art bio-solutions solving core problem
@@ -66,7 +61,9 @@ ToDo:
          
 - Understand:
     - pike-Timing-Dependent Plasticity (STDP) learning rule
+    - PEPITA - A Forward-Forward Alternative to Backpropagation
     - Understand the Simplified Higher Order Sequence Memory (SHOSM) algorithm (place recognition and HTM theory) from Neubert (cited in NeoSLAM paper)
+    - "Multiple bumps can enhance robustness to noise in continuous attractor networks"
 
 - Figure out what "SPL" is (comparision used in NeuroGPR paper)
 - non-navigation searches
@@ -100,8 +97,10 @@ ToDo:
     - Enhancing Visual Place Recognition via Fast and Slow Adaptive Biasing in Event Cameras
     - Neuromorphic sequence learning with an event camera on routes through vegetation
     - Ensembles of Compact, Region-specific & Regularized Spiking Neural Networks for Scalable Place Recognition
+- Cited (by HsiSLAM), an RGB-D based RatSLAM: "RGB-D based cognitive map building and navigation" by Tian, B.; Shim, V.A.; Yuan, M.; Srinivasan, C.; Tang, H.; Li
+- https://www.numenta.com/blog/2018/05/25/how-grid-cells-map-space/
 
-Qualified Systems:
+Roughly Qualified Systems:
 - NeoSLAM:
 - NeuroGPR: 
 - NeuroSLAM:
@@ -111,6 +110,9 @@ Qualified Systems:
 - LFVB-BioSLAM: A Bionic SLAM System with a Light-Weight LiDAR Front End and a Bio-Inspired Visual Back End
 - VitaSLAM: A Bio-inspired Visuo-Tactile SLAM for Navigation while Interacting with Aliased Environments
 - RatSLAM:
+- CannFlyNet: A Hybrid Compact Neural Architecture for Visual Place Recognition
+- KeySLAM: A Brain-inspired SLAM System Based on Keyframe Template Matching
+
 
 Spiking Systems:
 - VPRTempo: A Fast Temporally Encoded Spiking Neural Network for Visual Place Recognition
