@@ -14,7 +14,7 @@ import { setSubtract } from 'https://esm.sh/gh/jeff-hykin/good-js@1.15.0.0/sourc
 
 var references = Object.values(main.activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
 var discoveryAttempts = Object.values(main.activeProject.discoveryAttempts)
-var warningLogs = yaml.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/warnings.yml'))
+var warningLogs = yaml.parse(await FileSystem.read('/Users/jeffhykin/repos/risma/warnings.yml') || "{}")
 var warningTitles = new Set()
 for (var [key, value] of Object.entries(warningLogs)) {
     warningLogs[key.toLowerCase()] = value
