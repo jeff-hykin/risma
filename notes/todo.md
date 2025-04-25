@@ -1,7 +1,18 @@
 ToDo:
 - Need to add:
     - Biologically-inspired robot spatial cognition based on rat neurophysiological studies (Barrera & Weitzenfeld, 2007, 2008), cited by AdaptSLAM
-
+    
+- From research rabbit:
+    - 2021: Towards a Predictive Bio-Inspired Navigation Model
+    - 2024: Brain-Inspired Multisensor Navigation Information Fusion Model Based on Spatial Representation Cells
+    - 2015: Emulating the Functionality of rodents' neurobiological Navigation and Spatial Cognition cells in a Mobile robot
+    - 2022: Robotic Navigation Based on Experiences and Predictive Map Inspired by Spatial Cognition
+    - 2021: Semi-Bionic SLAM Based on Visual Odometry and Deep Learning Network
+    - 2020: Robotic Episodic Cognitive Learning Inspired by Hippocampal Spatial Cells
+        - sounds very useful/relevant, but was not anywhere in the search or cited by anything in the search
+    - almostQualifiedSystem, 2020 An On-chip Spiking Neural Network for Estimation of the Head Pose of the iCub Robot. 
+    - 2020: The Self-Motion Information Response Model in Brain-Inspired Navigation
+    
 - Redo title of
     "of the simultaneous localization and mapping" to "An Application of the Simultaneous Localization and Mapping (SLAM) Method Based on the Unscented Kalman Filter (UKF) to a Reconfigurable Quadruped Robot with Crawling Locomotion"
 
@@ -91,6 +102,7 @@ ToDo:
     - current neuro knowledge
         - Summarize the key facts of the 3D rat paper
         - Learn what a "mushroom body" is, in relation to insect navigation (has to do with object recognition)
+        - 2024 "A new dynamic shift mechanism based on cyclic group theory for continuous attractor neural networks"
 - Do a full annotated pass of NeuroGPR paper
 - what is Tianjic (a hybrid neuromorphic chip), how expensive is it? how hard is it to program? how powerful is it?
 - Create a refreshed map of navigation and implementation "Are we bio-navigating yet?"
