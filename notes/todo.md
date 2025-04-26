@@ -5,6 +5,9 @@ ToDo:
 - Cited by NeoSLAM1:
     - (growing when required network): self-organizing method for robot navigation based on learned place and head-direction cells
     - (LSTM): Vector-based navigation using grid-like representations in artificial agents
+- Cited by NeoSLAM2:
+    - Gist+RatSLAM, a framework that integrates the Gist descriptor into the RatSLAM pipeline
+    - [ 32 ], Kasebi et al. used the Scale-Invariant Feature Transform (SIFT) algorithm to improve the visual matching of the RatSLAM system.
 
 - Core questions:
 - What are the novel contributions of this paper, specifically things that are different from RatSLAM's approach?
@@ -15,7 +18,7 @@ ToDo:
 - If the paper used a robot, what kind of sensors did it use (IMU, lidar, gyro, rgb-d camera, etc)? 
 - What metrics of performance did the paper use?
 - Did the paper compare against any existing SLAM methods? or only against ground truth?
-- Does the paper provide a codebase? Does it mention a programming language?
+- Does the paper provide a link to github or mention a codebase? Does it mention a programming language or specific software tools?
 - Does the paper use an existing dataset or make its own? If it uses one, which one?
 - Does the work use a neuromorphic chip or FPGA? If so, which one?
 - Does this system take into account goals or tasks? (e.g. beyond localization)
@@ -130,7 +133,7 @@ ToDo:
     - Enhancing Visual Place Recognition via Fast and Slow Adaptive Biasing in Event Cameras
     - Neuromorphic sequence learning with an event camera on routes through vegetation
     - Ensembles of Compact, Region-specific & Regularized Spiking Neural Networks for Scalable Place Recognition
-- Cited (by HsiSLAM), an RGB-D based RatSLAM: "RGB-D based cognitive map building and navigation" by Tian, B.; Shim, V.A.; Yuan, M.; Srinivasan, C.; Tang, H.; Li
+- Cited (by HsiRatSLAM), an RGB-D based RatSLAM: "RGB-D based cognitive map building and navigation" by Tian, B.; Shim, V.A.; Yuan, M.; Srinivasan, C.; Tang, H.; Li
 - https://www.numenta.com/blog/2018/05/25/how-grid-cells-map-space/
 
 Roughly Qualified Systems:
@@ -138,7 +141,7 @@ Roughly Qualified Systems:
 - NeuroGPR: 
 - NeuroSLAM:
 - ORB-NeuroSLAM: (ORB)-neuroslam (2024, IEEE Internet of Things Journal)
-- HsiSLAM: An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model
+- HsiRatSLAM: An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model
 - BoWSLAM: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
 - LFVB-BioSLAM: A Bionic SLAM System with a Light-Weight LiDAR Front End and a Bio-Inspired Visual Back End
 - VitaSLAM: A Bio-inspired Visuo-Tactile SLAM for Navigation while Interacting with Aliased Environments

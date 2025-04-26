@@ -21,6 +21,6 @@ for (let each of references) {
     }
 }
 
-for (let eachKey of ["LfvbSLAM", "VitaSLAM", "BatSLAM", "ORB-NeuroSLAM", "BowSLAM", "WhiskerSLAM", "CannFlyNet", "HsiSLAM", "VifSLAM", "KeySLAM"]) {
+for (let eachKey of ["LfvbSLAM", "VitaSLAM", "BatSLAM", "ORB-NeuroSLAM", "BowSLAM", "WhiskerSLAM", "CannFlyNet", "HsiRatSLAM", "VifSLAM", "KeySLAM"]) {
     console.log(dataForEach[eachKey].join("\t"))
 }
