@@ -21,7 +21,7 @@ ToDo:
 - Does the paper provide a link to github or mention a codebase? Does it mention a programming language or specific software tools?
 - Does the paper use an existing dataset or make its own? If it uses one, which one?
 - Does the work use a neuromorphic chip or FPGA? If so, which one?
-- Does this system take into account goals or tasks? (e.g. beyond localization)
+- Does this system take into account goals or tasks (e.g. beyond localization)?
     
 - From research rabbit:
     - 2021: Towards a Predictive Bio-Inspired Navigation Model
@@ -133,7 +133,7 @@ ToDo:
     - Enhancing Visual Place Recognition via Fast and Slow Adaptive Biasing in Event Cameras
     - Neuromorphic sequence learning with an event camera on routes through vegetation
     - Ensembles of Compact, Region-specific & Regularized Spiking Neural Networks for Scalable Place Recognition
-- Cited (by HsiRatSLAM), an RGB-D based RatSLAM: "RGB-D based cognitive map building and navigation" by Tian, B.; Shim, V.A.; Yuan, M.; Srinivasan, C.; Tang, H.; Li
+- Cited (by HsiSLAM), an RGB-D based RatSLAM: "RGB-D based cognitive map building and navigation" by Tian, B.; Shim, V.A.; Yuan, M.; Srinivasan, C.; Tang, H.; Li
 - https://www.numenta.com/blog/2018/05/25/how-grid-cells-map-space/
 
 Roughly Qualified Systems:
@@ -141,7 +141,7 @@ Roughly Qualified Systems:
 - NeuroGPR: 
 - NeuroSLAM:
 - ORB-NeuroSLAM: (ORB)-neuroslam (2024, IEEE Internet of Things Journal)
-- HsiRatSLAM: An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model
+- HsiSLAM: An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological Vision Model
 - BoWSLAM: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
 - LFVB-BioSLAM: A Bionic SLAM System with a Light-Weight LiDAR Front End and a Bio-Inspired Visual Back End
 - VitaSLAM: A Bio-inspired Visuo-Tactile SLAM for Navigation while Interacting with Aliased Environments

@@ -1724,7 +1724,7 @@ export const nicknameData = {
     SurfSLAM: { year: 2024, lastName: "Y Liu", },
     NeoSLAM2: { year: 2024, lastName: "Pizzino", },
     SbcSLAM: { year: 2024, lastName: "D Liu", },
-    WaterSLAM2: { year: 2024, lastName: "Pirozzo", },
+    WaterSLAM3: { year: 2024, lastName: "Pirozzo", },
 }
 export const nicknameMapping = {
     // RatSLAM: "RatSLAM",
@@ -1740,7 +1740,7 @@ export const nicknameMapping = {
     // SurfSLAM: "Y Liu, 2024",
     // NeoSLAM2: "NeoSLAM (Pizzino, 2024)",
     // SbcSLAM: "SBC-SLAM",
-    // WaterSLAM2: "Pirozzo, 2024",
+    // WaterSLAM3: "Pirozzo, 2024",
     
     RatSLAM: "RatSLAM",
     WaterSLAM1: "WaterSLAM1",
@@ -1755,7 +1755,7 @@ export const nicknameMapping = {
     SurfSLAM: "SurfSLAM",
     NeoSLAM2: "NeoSLAM2",
     SbcSLAM: "SbcSLAM",
-    WaterSLAM2: "WaterSLAM2",
+    WaterSLAM3: "WaterSLAM3",
 }
 export function nicknameToFormalName(string) {
     for (const [key, value] of Object.entries(nicknameMapping)) {

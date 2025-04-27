@@ -22,7 +22,7 @@ NeuroGPR
 SurfSLAM									
 NeoSLAM2									
 SbcSLAM									✅
-WaterSLAM2									
+WaterSLAM3									
 `.slice(0,-1).replace(/✅/g,"✓")),
 })
 

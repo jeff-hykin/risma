@@ -7,7 +7,7 @@ import { parseCsv, createCsv } from "https://esm.sh/gh/jeff-hykin/good-js@1.17.0
 
 var {comments, columnNames, rows} = await parseCsv({
     separator: "\t",
-    input: nicknameToFormalName(`        	RatSLAM	WaterSLAM1	EpisodicSLAM	AdaptSLAM	ResetSLAM	NeuroSLAM1	StripeSLAM	NeuroSLAM2	NeoSLAM1	NeuroGPR	SurfSLAM	NeoSLAM2	SbcSLAM	WaterSLAM2
+    input: nicknameToFormalName(`        	RatSLAM	WaterSLAM1	EpisodicSLAM	AdaptSLAM	ResetSLAM	NeuroSLAM1	StripeSLAM	NeuroSLAM2	NeoSLAM1	NeuroGPR	SurfSLAM	NeoSLAM2	SbcSLAM	WaterSLAM3
 RatSLAM	NA													
 WaterSLAM1		NA												
 EpisodicSLAM	✓		NA											
@@ -21,7 +21,7 @@ NeuroGPR										NA
 SurfSLAM	✓										NA			
 NeoSLAM2												NA		
 SbcSLAM						✓							NA	
-WaterSLAM2														NA
+WaterSLAM3														NA
     `.trimEnd()),
 })
 

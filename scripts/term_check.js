@@ -201,7 +201,7 @@ var output = {
         "attention": 0,
         "Kalman Filters": 0
     },
-    "2024_WaterSLAM2": {
+    "2024_WaterSLAM3": {
         "localization": 16,
         "robot": 16,
         "spike-based": 14,
