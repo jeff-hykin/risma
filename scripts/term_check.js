@@ -2,7 +2,7 @@
 import { FileSystem, glob } from "https://deno.land/x/quickr@0.8.0/main/file_system.js"
 
 const concepts = {
-    "spike-based": ["spike based", "spiking", "snn", "spiking neural network", "spiking neural networks"],
+    "spike-based": ["spike based", "spiking", "snn", "spiking neural network", "spiking neural networks",],
     "neuromorphic": ["memristive","loihi"],
     "event-based camera": ["event based camera", "neuromorphic camera", "event camera "],
     "neurorobotic": ["neuro-robotic", "neuro robotic", ],
@@ -11,34 +11,49 @@ const concepts = {
     "hierarchical temporal memory": [],
     "stereo": ["stereoscopic"],
     "place recognition":[],
+    "pose cells": [],
+    "view cells": [],
+    "neuron": [],
+    "multidimensional continuous attractor": ["MD-CAN", "MD-CANN"],
+    "continuous attractor nerual network": ["CANN"],
+    "continuous attractor network": [],
+    "continuous attractor": [ "CANN", "MD-CAN", "MD-CANN", /\bCAN\b/, "Attractor Dynamics" ],
+    "ring attractor": [],
+    "annular attractor": [],
+    "path integration": [],
+    "activity bump": [],
+    
+    "bio terminology": [ "place cells", "grid cells", "stripe cells", "border cells", "boundary vector cells", "BVC", "head direction cells", "HDC", "object vector cells", "entorhinal", "MEC", "temporal lobe", "firing fields", "synaptic", "hippocampus", "hippocampal", "dorsolateral", "dorsal", "thalamic", "parasubiculum", "CA3", "CA1", "Drosophila" ],
     "place cells": [],
     "grid cells": [],
     "stripe cells": [],
     "border cells": [],
     "boundary vector cells": ["BVC"],
     "head direction cells": ["HDC"],
-    "pose cells": [],
     "object vector cells": [],
-    "view cells": [],
-    "multidimensional continuous attractor": ["MD-CAN", "MD-CANN"],
-    "continuous attractor nerual network": ["CANN"],
-    "continuous attractor network": [],
-    "continuous attractor": [ "CANN", "MD-CAN", "MD-CANN"],
-    "ring attractor": [],
-    "annular attractor": [],
-    "path integration": [],
-    "activity bump": [],
     "entorhinal": ["MEC"],
+    "temporal lobe": [],
+    "firing fields": [],
+    "synaptic": [],
+    "hippocampus": ["hippocampal",],
+    "dorsolateral": ["dorsal"],
+    "thalamic": [],
+    "parasubiculum":[],
+    "CA3": [],
+    "CA1": [],
+    "Drosophila": [],
+    "Sparse representation": ["Sparse representations"],
+
     "experience map": [],
     "3d experience map": [],
     "activity packet": [ "activity package" ],
     "pose estimation": [],
     "sparse distributed representation": ["SDR"],
-    "hebbian": [],
+    "hebbian": ["hebb"],
     "plasticity": [],
-    "hippocampus": ["hippocampal",],
-    "CA3": [],
-    "CA1": [],
+    "excitatory": [],
+    "inhibitory": [],
+    "asynchronous": [],
     "landmark":[],
     "landmark stability": [],
     "robot": ["robotics",],
@@ -57,15 +72,20 @@ const concepts = {
     "Kalman Filters": [],
     "RatNav": ["RatNav1", "RatNav2",],
     "NeuroSLAM": [],
+    "gaussian":[],
     "NeoSLAM": [],
     "Underwater": ["water"],
+    "Absolute Trajectory Error": [/\bATE\b/],
 }
 for (const [key, value] of Object.entries(concepts)) {
     value.push(key)
     var i=-1
     for (var each of value) {
         i++
-        value[i] = each.toLowerCase()
+        if (typeof each === "string") {
+            each = each.toLowerCase()
+        }
+        value[i] = each
     }
 }
 
@@ -73,25 +93,19 @@ import { pathPieces } from 'https://esm.sh/gh/jeff-hykin/good-js@1.17.0.0/source
 import { escapeRegexMatch } from 'https://esm.sh/gh/jeff-hykin/good-js@1.17.0.0/source/flattened/escape_regex_match.js'
 import { shallowSortObject } from 'https://esm.sh/gh/jeff-hykin/good-js@1.17.0.0/source/flattened/shallow_sort_object.js'
 let frequencyMapOf = {}
-for (let each of await glob(`${FileSystem.thisFolder}/../pdfs/qualified_systems/*.txt`)) {
+for (let each of [...await glob(`${FileSystem.thisFolder}/../pdfs/qualified_systems/*.txt`), ...await glob(`${FileSystem.thisFolder}/../pdfs/nicknamed/*.txt`)]) {
     let [folders, name, ext] = pathPieces(each)
     let bodyText = await FileSystem.read(each)
-    bodyText = bodyText.toLowerCase().replace(/\s+/g," ")
+    bodyText = bodyText.replace(/\s+/g," ")
+    const bodyTextLower = bodyText.toLowerCase()
     frequencyMapOf[name] = {}
     for (const [key, value] of Object.entries(concepts)) {
-        const pattern = new RegExp(`\\b(${value.map(escapeRegexMatch).join("|")})\\b`, "g")
-        let count = (bodyText.match(pattern)||[]).length
-        frequencyMapOf[name][key] = count
-    }
-    frequencyMapOf[name] = Object.fromEntries([...Object.entries(frequencyMapOf[name])].sort((a,b)=>b[1]-a[1]))
-}
-for (let each of await glob(`${FileSystem.thisFolder}/../pdfs/nicknamed/*.txt`)) {
-    let [folders, name, ext] = pathPieces(each)
-    let bodyText = await FileSystem.read(each)
-    bodyText = bodyText.toLowerCase().replace(/\s+/g," ")
-    frequencyMapOf[name] = {}
-    for (const [key, value] of Object.entries(concepts)) {
-        const pattern = new RegExp(`\\b(${value.map(escapeRegexMatch).join("|")})\\b`, "g")
+        const pattern = new RegExp(`\\b(${value.map(each=>{
+            if (each instanceof RegExp) {
+                return each.source
+            }
+            return escapeRegexMatch(each).replace(/[a-zA-Z]/g,each=>`[${each.toLowerCase()}${each.toUpperCase()}]`)
+        }).join("|")})\\b`, "g")
         let count = (bodyText.match(pattern)||[]).length
         frequencyMapOf[name][key] = count
     }
