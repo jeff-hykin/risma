@@ -4,7 +4,7 @@ echo "1.42.1"; : --% ' |out-null <#'; }; version="$(dv)"; deno="$HOME/.deno/$ver
 # */0}`;
 
 import { FileSystem, glob } from "https://deno.land/x/quickr@0.8.0/main/file_system.js"
-import { Console, bold, lightRed, yellow } from "https://deno.land/x/quickr@0.6.67/main/console.js"
+import { Console, bold, lightRed, yellow, blue, magenta } from "https://deno.land/x/quickr@0.6.67/main/console.js"
 import { indent } from "https://deno.land/x/good@1.7.1.1/flattened/indent.js"
 import { compress, decompress } from "https://deno.land/x/zip@v1.2.5/mod.ts"
 import $ from "https://esm.sh/@jsr/david__dax@0.43.0/mod.ts"
@@ -17,10 +17,19 @@ const latexFilePath = `${FileSystem.thisFolder}/../writing/root.tex`
 
 
 let throttledCompileFunction = throttle(1000, async ()=>{
-        console.log(`running: pdflatex ./root.tex`)
-        await $$`pdflatex ./root.tex`
+        console.log(blue`\n\n\n\n\n\n\n\n\nrunning: pdflatex ./root.tex\n\n\n\n\n\n\n\n\n`)
+        try {
+            await FileSystem.sync.remove("./root.pdf")
+            console.log(`removed pdf`)
+            await $$`pdflatex -interaction=nonstopmode -halt-on-error -output-directory=. ./root.tex`.timeout("5s")
+            // await $$`pdflatex -interaction=nonstopmode ./root.tex`.timeout("5s")
+        } catch (error) {
+            console.debug(`error is:`,yellow(error))
+        }
+        console.log(magenta`done running`)
     }
 )
+throttledCompileFunction()
 
 await Deno.chdir(FileSystem.parentPath(latexFilePath))
 for await (const event of Deno.watchFs(latexFilePath)) {
