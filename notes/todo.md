@@ -2,16 +2,39 @@ ToDo:
 - Need to add:
     - Biologically-inspired robot spatial cognition based on rat neurophysiological studies (Barrera & Weitzenfeld, 2007, 2008), cited by AdaptSLAM
 
-- Cited by NeoSLAM1:
-    - (growing when required network): self-organizing method for robot navigation based on learned place and head-direction cells
-    - (LSTM): Vector-based navigation using grid-like representations in artificial agents
-- Cited by NeoSLAM2:
-    - Gist+RatSLAM, a framework that integrates the Gist descriptor into the RatSLAM pipeline
-    - [ 32 ], Kasebi et al. used the Scale-Invariant Feature Transform (SIFT) algorithm to improve the visual matching of the RatSLAM system.
+
+- Lingering: 
+    - Cited by NeoSLAM1:
+        - (growing when required network): self-organizing method for robot navigation based on learned place and head-direction cells
+        - (LSTM): Vector-based navigation using grid-like representations in artificial agents
+    - Cited by NeoSLAM2:
+        - Gist+RatSLAM, a framework that integrates the Gist descriptor into the RatSLAM pipeline
+        - [ 32 ], Kasebi et al. used the Scale-Invariant Feature Transform (SIFT) algorithm to improve the visual matching of the RatSLAM system.
+    - misc:
+        - "Neuromorphic systems are still far away"
+            - (2022) https://www.nature.com/articles/s41467-022-28487-2
+            - "In general, the overall system design of traditional robotics and even current neuromorphic approaches is still far from any biological inspiration"
+            - "the neuromorphic community should focus on the design of modular and reusable sensing and computing module"
+            - beyond grasp:
+                - full Hebbian learning
+                     - Short-Term Depression (STD) and Short-Term Facilitation (STF), or Spike Frequency Adaptation (SFA)
+                - rhythmic activity
+                - Central Pattern Generator (CPG)
+            
+        - (2019) Robust Visual Self-localization and Navigation in Outdoor Environments Using Slow Feature Analysis by Benjamin Metka
+        - (2020) Visual Localization and Mapping with Hybrid SFA. by M Haris, M Franzius, U Bauer-Wersing, SKK Karanam - CoRL, 
+        - (2009) Unsupervised learning in reservoir computing: Modeling hippocampal place cells for small mobile robots by EA Antonelo, B Schrauwen - Artificial Neural Networks–ICANN 
+        - (2017) Gridbot: Towards a Neuroinspired Navigation System For Robot Planning
+        - (2025) Deep Learning-Emerged Grid Cells-Based Bio-Inspired Navigation in Robotics
+            - doesn't mention ring attractor or continuous attractor
+            - "Supervised Learning Grid Cell Module" could be used to enhance other systems
+        - Prior survey paper: Review of Neurobiologically Based Mobile Robot Navigation System Research Performed Since 2000
+        - survey paper: Bioinspired perception and navigation of service robots in indoor environments: A review
 
 - Core questions:
-- What are the novel contributions of this paper, specifically things that are different from RatSLAM's approach?
-- What kind of visual processing does the system use. This includes visual templating, feature extraction, etc. Is it stero vision or monocular? Was it grayscale or color?
+- What are the novel contributions of this paper, specifically things that are different from RatSLAM's approach (RatSLAM uses pose cells, local view cells and an experience map)?
+- Does the system use any visual input features (This includes visual templating, feature extraction, etc)?
+- Is the camera/image input for the system stereo or monocular? Was it grayscale or color?
 - How does the system keep track of head direction? Does it do anything novel to keep track of head direction?
 - How does the system keep track of location? Does it use an "experience map"? is it 3D or 2D?
 - Did the paper use a robot? If so, which robot?
@@ -176,6 +199,7 @@ Future Code help:
 - Vita SLAM: https://github.com/aalto-intelligent-robotics/ViTa-SLAM
 - Rat Simulator for getting data: https://github.com/RatInABox-Lab/RatInABox
 - Event Camera Emulation: https://github.com/af-a/event_camera_emulation.
+- Vector-based navigation using grid-like representations in artificial agents: https://github.com/Crouzbehmeshkin/BaninoGrid-Torch
 
 Datasets:
 - Nordland summer/fall/winter/sprign

@@ -23,7 +23,7 @@ var problemBeingSolved = [
     "scene understanding",
     "locomotion",
     "",
-]
+] // 12
 var groundingInNeuroScience = [
     'neuro-inspired',
     'neuro inspired',
@@ -61,7 +61,7 @@ var groundingInNeuroScience = [
     'drosophila',
     'fly',
     "",
-]
+] // 35
 var groundingInApplication = [
     // code
     'code implementation',
@@ -86,7 +86,7 @@ var groundingInApplication = [
     'unitree go2',
     '"simulation"',
     "",
-]
+] // 19
 
 var outcomes = [...combinationOfChoices([
     problemBeingSolved,

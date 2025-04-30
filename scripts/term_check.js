@@ -23,14 +23,14 @@ const concepts = {
     "path integration": [],
     "activity bump": [],
     
-    "bio terminology": [ "place cells", "grid cells", "stripe cells", "border cells", "boundary vector cells", "BVC", "head direction cells", "HDC", "object vector cells", "entorhinal", "MEC", "temporal lobe", "firing fields", "synaptic", "hippocampus", "hippocampal", "dorsolateral", "dorsal", "thalamic", "parasubiculum", "CA3", "CA1", "Drosophila" ],
-    "place cells": [],
-    "grid cells": [],
-    "stripe cells": [],
-    "border cells": [],
-    "boundary vector cells": ["BVC"],
-    "head direction cells": ["HDC"],
-    "object vector cells": [],
+    "bio terminology": [ "place cells", "grid cells", "stripe cells", "border cells", "boundary vector cells", "BVC", "head direction cells", "HDC", "object vector cells", "entorhinal", "MEC", "temporal lobe", "firing fields", "synaptic", "hippocampus", "hippocampal", "dorsolateral", "dorsal", "thalamic", "parasubiculum", "CA3", "CA1", "Drosophila", "neocortex" ],
+    "place cells": ["place cell", "spacial view cells", "spacial view cell", "spacial-view-cells", "spacial-view-cell"],
+    "grid cells": ["grid cell"],
+    "stripe cells": ["stripe cell"],
+    "border cells": ["border cell"],
+    "boundary vector cells": ["BVC", "boundary vector cell"],
+    "head direction cells": ["HDC", "head direction cell"],
+    "object vector cells": ["object vector cell"],
     "entorhinal": ["MEC"],
     "temporal lobe": [],
     "firing fields": [],
@@ -43,6 +43,7 @@ const concepts = {
     "CA1": [],
     "Drosophila": [],
     "Sparse representation": ["Sparse representations"],
+    "neocortex": ["neo cortex", "neo-cortex"],
 
     "experience map": [],
     "3d experience map": [],
@@ -61,7 +62,7 @@ const concepts = {
     "task": [],
     "optical flow": [],
     "ecological": ["ecology",],
-    "low-energy": [],
+    "energy": [],
     "ugv": ["unmanned ground vehicle", "legged", "quadruped",],
     "uav": ["unmanned aerial vehicle"],
     "attention": [],
@@ -820,7 +821,7 @@ const keys = Object.keys(frequencyMapOf).sort()
 for (const key of keys) {
     const value = frequencyMapOf[key]
     const [name, year] = key.split("_").reverse()
-    csvOutput.push([name, year||"", ...columnNames.map(each=>value[each]||0)])
+    csvOutput.push([name, year||"", ...columnNames.map(each=>Math.log(1+(value[each]||0))/Math.log(1.1))])
 }
 await FileSystem.write({path:`${FileSystem.thisFolder}/terms.ignore.tsv`, data: csvOutput.map(each=>each.join(`\t`)).join("\n"), overwrite: true})
 import { OperatingSystem } from "https://deno.land/x/quickr@0.8.0/main/operating_system.js"
