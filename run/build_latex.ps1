@@ -20,6 +20,7 @@ let throttledCompileFunction = throttle(1000, async ()=>{
         console.log(blue`\n\n\n\n\n\n\n\n\nrunning: pdflatex ./root.tex\n\n\n\n\n\n\n\n\n`)
         try {
             await FileSystem.sync.remove("./root.pdf")
+            await FileSystem.sync.remove("./root.out")
             console.log(`removed pdf`)
             await $$`pdflatex -interaction=nonstopmode -halt-on-error -output-directory=. ./root.tex`.timeout("5s")
             // await $$`pdflatex -interaction=nonstopmode ./root.tex`.timeout("5s")
