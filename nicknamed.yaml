@@ -1,0 +1,364 @@
+- nickname: ORB-NeuroSLAM
+  title: 'ORB-NeuroSLAM: A brain-inspired 3D SLAM system based on ORB features'
+  year: 2023
+  authorNames:
+    - D Shen
+    - G Liu
+    - T Li
+    - F Yu
+    - F Gu
+  doi: null
+  link: 'https://ieeexplore.ieee.org/abstract/document/10325604/'
+  pdfLink: null
+- nickname: NeoSLAM2
+  title: 'NeoSLAM: Long-Term SLAM Using Computational Models of the Brain'
+  year: 2024
+  authorNames:
+    - Carlos Alexandre Pontes Pizzino
+    - Ramon R. Costa
+    - Daniel Mitchell
+    - Patrícia A. Vargas
+  doi: 10.3390/s24041143
+  link: 'https://www.mdpi.com/1424-8220/24/4/1143'
+  pdfLink: 'https://www.mdpi.com/1424-8220/24/4/1143/pdf?version=1707467876'
+- nickname: NeoSLAM1
+  title: 'NeoSLAM: Neural object SLAM for loop closure and navigation'
+  year: 2022
+  authorNames:
+    - Y Raoui
+    - C Weber
+    - S Wermter
+  doi: null
+  link: 'https://link.springer.com/chapter/10.1007/978-3-031-15934-3_37'
+  pdfLink: >-
+    https://www2.informatik.uni-hamburg.de/wtm/publications/2022/RWW22/paper318_postreview-revised_.pdf
+- nickname: KeySLAM
+  title: A Brain-inspired SLAM System Based on Keyframe Template Matching
+  year: 2024
+  authorNames:
+    - Pijia Wei
+    - Bo Shao
+    - Qiuxian Chen
+    - Xiumin Li
+  doi: 10.1109/isas61044.2024.10552602
+  link: 'https://ieeexplore.ieee.org/document/10552602/'
+  pdfLink: null
+- nickname: NeuroSLAM2
+  title: >-
+    NeuroSLAM: A 65-nm 7.25-to-8.79-TOPS/W Mixed-Signal Oscillator-Based SLAM
+    Accelerator for Edge Robotics
+  year: 2020
+  authorNames:
+    - Jong-Hyeok Yoon
+    - Arijit Raychowdhury
+  doi: 10.1109/jssc.2020.3028298
+  link: 'https://ieeexplore.ieee.org/document/9222208/'
+  pdfLink: 'https://icsrl.ece.gatech.edu/files/2021/06/09222208.pdf'
+- nickname: NeuroSLAM1
+  title: 'NeuroSLAM: a brain-inspired SLAM system for 3D environments'
+  year: 2019
+  authorNames:
+    - Fangwen Yu
+    - Jianga Shang
+    - Youjian Hu
+    - Michael Milford
+  doi: 10.1007/s00422-019-00806-9
+  link: >-
+    https://link.springer.com/article/10.1007/s00422-019-00806-9?error=cookies_not_supported&code=3c8e14b5-fb55-44dc-b901-8dda06de1511
+  pdfLink: 'https://eprints.qut.edu.au/198104/1/56922761.pdf'
+- nickname: RatSLAM
+  title: 'RatSLAM: a hippocampal model for simultaneous localization and mapping'
+  year: 2004
+  authorNames:
+    - Michael Milford
+    - Gordon Wyeth
+    - David Prasser
+  doi: 'https://doi.org/10.1109/robot.2004.1307183'
+  link: 'https://ieeexplore.ieee.org/document/1307183'
+  pdfLink: null
+- nickname: VitaSLAM
+  title: 'Vita-slam: Biologically-inspired visuo-tactile slam'
+  year: 2019
+  authorNames:
+    - O Struckmeier
+    - K Tiwari
+    - MJ Pearson
+    - V Kyrki
+  doi: null
+  link: 'https://arxiv.org/abs/1904.05667'
+  pdfLink: 'https://arxiv.org/pdf/1904.05667'
+- nickname: VifSLAM
+  title: Vision-IMU multi-sensor fusion semantic topological map based on RatSLAM
+  year: 2023
+  authorNames:
+    - Xin Liu
+    - Shuhuan Wen
+    - Zheng Pan
+    - Chengrui Xu
+    - Jianyi Hu
+    - Hui Meng
+  doi: 10.1016/j.measurement.2023.113335
+  link: 'https://linkinghub.elsevier.com/retrieve/pii/S0263224123008990'
+  pdfLink: 'https://drive.google.com/file/d/1LdauPQw6EIhrCXrGCykNsGjuP6NdyvgW/view'
+- nickname: LatentSLAM
+  title: >-
+    LatentSLAM: unsupervised multi-sensor representation learning for
+    localization and mapping
+  year: 2021
+  authorNames:
+    - Ozan Çatal
+    - Wouter Jansen
+    - Tim Verbelen
+    - Bart Dhoedt
+    - Jan Steckel
+  doi: 10.1109/icra48506.2021.9560768
+  link: 'https://ieeexplore.ieee.org/document/9560768/'
+  pdfLink: 'https://arxiv.org/pdf/2105.03265'
+- nickname: VitaSLAM
+  title: >-
+    ViTa-SLAM: A Bio-inspired Visuo-Tactile SLAM for Navigation while
+    Interacting with Aliased Environments
+  year: 2019
+  authorNames:
+    - Oliver Struckmeier
+    - Kshitij Tiwari
+    - Salman Mohammed
+    - Martin J. Pearson
+    - Ville Kyrki
+  doi: 10.1109/cbs46900.2019.9114526
+  link: 'https://ieeexplore.ieee.org/document/9114526/'
+  pdfLink: 'https://arxiv.org/pdf/1906.06422'
+- nickname: HsiRatSLAM
+  title: >-
+    An Environmental-Adaptability-Improved RatSLAM Method Based on a Biological
+    Vision Model
+  year: 2022
+  authorNames:
+    - Chong Wu
+    - Shumei Yu
+    - Liang Chen
+    - Rongchuan Sun
+  doi: 10.3390/machines10040259
+  link: 'https://www.mdpi.com/2075-1702/10/4/259'
+  pdfLink: 'https://www.mdpi.com/2075-1702/10/4/259/pdf?version=1649064419'
+- nickname: BowSLAM
+  title: An Improvement of Loop Closure Detection Based on BoW for RatSLAM
+  year: 2022
+  authorNames:
+    - Jianjun Xu
+    - Nanya Yan
+    - Fengzhen Tang
+  doi: 10.1109/yac57282.2022.10023660
+  link: 'https://ieeexplore.ieee.org/document/10023660/'
+  pdfLink: null
+- nickname: NeuroGPR
+  title: Brain-inspired multimodal hybrid neural network for robot place recognition
+  year: 2023
+  authorNames:
+    - Fangwen Yu
+    - Yujie Wu
+    - Songchen Ma
+    - Mingkun Xu
+    - Hongyi Li
+    - Huanyu Qu
+    - Chenhang Song
+    - Taoyi Wang
+    - Rong Zhao
+    - Luping Shi
+  doi: 10.1126/scirobotics.abm6996
+  link: 'https://www.science.org/doi/10.1126/scirobotics.abm6996'
+  pdfLink: 'https://www.science.org/doi/pdf/10.1126/scirobotics.abm6996?download=true'
+- nickname: CannFlyNet
+  title: A Hybrid Compact Neural Architecture for Visual Place Recognition
+  year: 2020
+  authorNames:
+    - Marvin Chancán
+    - Luis Hernandez-Nunez
+    - Ajay Narendra
+    - Andrew B. Barron
+    - Michael Milford
+  doi: 10.1109/lra.2020.2967324
+  link: 'https://ieeexplore.ieee.org/document/8962234/'
+  pdfLink: 'http://arxiv.org/pdf/1910.06840'
+- nickname: WaterSLAM3
+  title: Underwater Rat-SLAM with Memristive Spiking Neural Networks
+  year: 2024
+  authorNames:
+    - BM Pirozzo
+    - M De Paula
+    - SA Villar
+  doi: null
+  link: 'https://ieeexplore.ieee.org/abstract/document/10754319/'
+  pdfLink: null
+- nickname: EpisodicSLAM
+  title: >-
+    Cognitive navigation by neuro-inspired localization, mapping, and episodic
+    memory
+  year: 2017
+  authorNames:
+    - H Tang
+    - R Yan
+    - KC Tan
+  doi: null
+  link: 'https://ieeexplore.ieee.org/abstract/document/8119542/'
+  pdfLink: null
+- nickname: BatSLAM
+  title: 'BatSLAM: Simultaneous Localization and Mapping Using Biomimetic Sonar'
+  year: 2013
+  authorNames:
+    - Jan Steckel
+    - Herbert Peremans
+  doi: 'https://doi.org/10.1371/journal.pone.0054076'
+  link: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0054076'
+  pdfLink: >-
+    https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0054076&type=printable
+- nickname: StripeSLAM
+  title: >-
+    A bionic robot navigation algorithm based on cognitive mechanism of
+    hippocampus
+  year: 2019
+  authorNames:
+    - N Yu
+    - Y Zhai
+    - Y Yuan
+    - Z Wang
+  doi: null
+  link: 'https://ieeexplore.ieee.org/abstract/document/8698317/'
+  pdfLink: null
+- nickname: RatNav2
+  title: >-
+    Learning spatial localization: from rat studies to computational models of
+    the hippocampus
+  year: 2015
+  authorNames:
+    - A Barrera
+    - G Tejera
+    - M Llofriu
+  doi: null
+  link: 'https://www.tandfonline.com/doi/abs/10.1080/13875868.2014.961602'
+  pdfLink: null
+- nickname: RatNav1
+  title: >-
+    Biologically-inspired robot spatial cognition based on rat
+    neurophysiological studies
+  year: 2008
+  authorNames:
+    - A Barrera
+    - A Weitzenfeld
+  doi: null
+  link: 'https://link.springer.com/article/10.1007/s10514-007-9074-3'
+  pdfLink: >-
+    ftp://nova.itam.mx/pub/investigadores/alfredo/PAPERS/BarreraWeitzenfeldJAutoRobots2008.pdf
+- nickname: AdaptSLAM
+  title: A novel neurophysiological based navigation system
+  year: 2017
+  authorNames:
+    - Peter J. Zeno
+    - Sarosh Patel
+    - Tarek Sobh
+  doi: 'https://doi.org/10.1016/j.bica.2017.09.002'
+  link: 'https://linkinghub.elsevier.com/retrieve/pii/S2212683X17300440'
+  pdfLink: null
+- nickname: LfvbSLAM
+  title: >-
+    LFVB-BioSLAM: A Bionic SLAM System with a Light-Weight LiDAR Front End and a
+    Bio-Inspired Visual Back End
+  year: 2023
+  authorNames:
+    - R L Gao
+    - Zeyu Wan
+    - Sitong Guo
+    - Changjian Jiang
+    - Yu Zhang
+  doi: 'https://doi.org/10.3390/biomimetics8050410'
+  link: 'https://www.mdpi.com/2313-7673/8/5/410'
+  pdfLink: 'https://www.mdpi.com/2313-7673/8/5/410/pdf?version=1693902984'
+- nickname: ResetSLAM
+  title: >-
+    Bio-inspired robotics: a spatial cognition model integrating place cells,
+    grid cells and head direction cells
+  year: 2018
+  authorNames:
+    - G Tejera
+    - M Llofriu
+    - A Barrera
+    - A Weitzenfeld
+  doi: null
+  link: 'https://link.springer.com/article/10.1007/s10846-018-0852-2'
+  pdfLink: >-
+    https://weitzenfeld.robolat.org/wp-content/uploads/2019/06/TejeraLlofriuBarreraWeitzenfeld2018v2.pdf
+- nickname: SbcSLAM
+  title: >-
+    SBC-SLAM: Semantic Bio-inspired Collaborative SLAM for Large-Scale
+    Environment Perception of Heterogeneous Systems
+  year: 2024
+  authorNames:
+    - D Liu
+    - J Wu
+    - Y Du
+    - R Zhang
+  doi: null
+  link: 'https://ieeexplore.ieee.org/abstract/document/10494317/'
+  pdfLink: null
+- nickname: SurfSLAM
+  title: SURF Improved Brain-Inspired Navigation Algorithm Based on RatSLAM
+  year: 2024
+  authorNames:
+    - Y Liu
+    - Z Zhang
+    - L Wang
+    - KA Neusypin
+  doi: null
+  link: 'https://link.springer.com/chapter/10.1007/978-981-96-2264-1_45'
+  pdfLink: null
+- nickname: WaterSLAM1
+  title: Underwater visual 3D SLAM using a bio-inspired system
+  year: 2013
+  authorNames:
+    - FA Guth
+    - L Silveira
+    - M Amaral
+  doi: null
+  link: 'https://ieeexplore.ieee.org/abstract/document/6686120/'
+  pdfLink: null
+- nickname: WhiskerSLAM
+  title: Whisker-RatSLAM Applied to 6D Object Identification and Spatial Localisation
+  year: 2018
+  authorNames:
+    - Salman Mohammed
+    - Martin J. Pearson
+  doi: 10.1007/978-3-319-95972-6_44
+  link: >-
+    https://link.springer.com/chapter/10.1007/978-3-319-95972-6_44?error=cookies_not_supported&code=a613c08b-e116-4787-9ee2-a65e761e3a22
+  pdfLink: null
+- nickname: DolphinSLAM
+  title: An Open-source Bio-inspired Solution to Underwater SLAM★
+  year: 2015
+  authorNames:
+    - Luan Silveira
+    - Felipe Guth
+    - Paulo Drews
+    - Pedro L. Ballester
+    - Matheus Machado
+    - Felipe Codevilla
+    - Nelson Duarte-Filho
+    - Sílvia Silva da Costa Botelho
+  doi: 'https://doi.org/10.1016/j.ifacol.2015.06.035'
+  link: 'https://doi.org/10.1016/j.ifacol.2015.06.035'
+  pdfLink: null
+- nickname: FtRatSLAM
+  title: >-
+    Robustness Improvement of Visual Templates Matching Based on Frequency-Tuned
+    Model in RatSLAM
+  year: 2020
+  authorNames:
+    - Shumei Yu
+    - Junyi Wu
+    - Haidong Xu
+    - Rongchuan Sun
+    - Lining Sun
+  doi: 'https://doi.org/10.3389/fnbot.2020.568091'
+  link: 'https://doi.org/10.3389/fnbot.2020.568091'
+  pdfLink: >-
+    https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.568091/pdf
+
