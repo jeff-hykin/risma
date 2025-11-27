@@ -123,8 +123,6 @@ export const boringWords = [
     "both",
     "been",
     "those",
-    // boring just for this application
-    "state-of-the-art",
 ]
 export const genericSingularWords = [
     "theory",

@@ -20,14 +20,13 @@ import { openAlexFetch } from "./tools/citation_gather_tools/open_alex.js"
 import { versionSort, versionToList, executeConversation } from "./tools/misc.js"
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
-import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, rateDiscoveryAttempts } from "./tools/project_tools.js"
+import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, rateDiscoveryAttempts, displayReferences } from "./tools/project_tools.js"
 import { combinationOfChoices } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/source/flattened/combination_of_choices.js'
 import { randomlyShuffle } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/source/flattened/randomly_shuffle.js'
 import { bibtexToRef } from "./tools/bibtex_to_ref.js"
 
-
 // TODO:
-    // import bibtex
+    // get
     // export bibtex
 
 if (Deno.args.includes("--help")) {
@@ -314,6 +313,7 @@ if (import.meta.main) {
             message: "next action",
             options: [
                 "review references",
+                "find",
                 "run a query (gather references)",
                 "run a multi-query",
                 "import bibtex",
@@ -351,6 +351,65 @@ if (import.meta.main) {
             }
             await saveProject({activeProject, path: storageObject.activeProjectPath})
             prompt(`\n\n${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
+        } else if (whichAction == "find") {
+            clearScreen()
+            console.log(`\n\nNOTE: when you press enter I will search the abstract, title, and notes.nickname\nI only auto-complete on title\nuse \\b for word bounds (ex: test\\b will not match "tests" but will match "retest")\n\n`)
+            let searchQuery = await selectOne({
+                message: "search query",
+                options: Object.values(activeProject.references).map(each=>each.title.toLowerCase()),
+            })
+            
+            findExistingRefLoop: while (1) {
+                const references = Object.values(activeProject.references).sort((a,b)=>rankedCompare(b.score,a.score))
+                if (typeof searchQuery == "string") {
+                    searchQuery = new RegExp(".*"+escapeRegexMatch(searchQuery).replace(/\\b/g,"\\b")+".*","i")
+                }
+                // 
+                // filtering
+                // 
+                let nicknamed = []
+                let authorMatches = []
+                let titleMatches = []
+                let abstractMatches = []
+                for (let each of references) {
+                    if ((each?.notes?.nickname||"").match(searchQuery)) {
+                        nicknamed.push(each)
+                    } else if ((each.authorNames||[]).join(" ").match(searchQuery)) {
+                        authorMatches.push(each)
+                    } else if (each.title.match(searchQuery)) {
+                        titleMatches.push(each)
+                    } else if ((each?.abstract||"").match(searchQuery)) {
+                        abstractMatches.push(each)
+                    }
+                }
+                const limit = 10
+                let results = [...nicknamed, ...authorMatches, ...titleMatches, ...abstractMatches]
+
+                // 
+                // output formatting
+                // 
+                if (results.length == 0) {
+                    console.log(`no results found for ${searchQuery}`)
+                }
+                for (let each of results) {
+                    displayReferences([each], {limit, main})
+                    let response = prompt(`${cyan("<enter>=")}next result, ${cyan("q+<enter>=")}main menu, ${cyan("anything else+<enter>=")}run find with <what you typed>\n`)
+                    if (response == "q") {
+                        break findExistingRefLoop
+                    } else if (response.trim().length == 0) {
+                        continue
+                    } else {
+                        searchQuery = response
+                        continue findExistingRefLoop
+                    }
+                }
+                console.log(cyan`\n[all results shown]\n`)
+                searchQuery = prompt(`\n\n(press enter to go back to main menu, or type a new search term to search again)\n`)
+                if (searchQuery.trim().length != 0) {
+                    continue
+                }
+                break
+            }
         } else if (whichAction == "run a multi-query") {
             console.log(`Okay Lets build a multi-query`)
             console.log(`Ex: `)

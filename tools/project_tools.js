@@ -305,7 +305,7 @@ export function rateDiscoveryAttempts(discoveryAttempts, project) {
     }
 }
 
-export async function displayReferences(references,{limit=10}={}) {
+export async function displayReferences(references,{limit=10, main}={}) {
     const hitLimit = references.length > limit
     references = references.slice(0,limit)
     references.reverse() // important at bottom
@@ -366,7 +366,9 @@ export async function displayReferences(references,{limit=10}={}) {
         }
         simplifiedResults.push(newEach)
     }
-    var { main } = await import("../main.js")
+    if (!main) {
+        var { main } = await import("../main.js")
+    }
     var { highlightKeywords } = main
     console.log(
         yaml.stringify(simplifiedResults).replace(
