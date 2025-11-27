@@ -21,7 +21,30 @@ import { versionSort, versionToList, executeConversation } from "./tools/misc.js
 import { DiscoveryMethod } from "./tools/discovery_method.js"
 import { Reference } from "./tools/reference.js"
 import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, rateDiscoveryAttempts } from "./tools/project_tools.js"
+import { combinationOfChoices } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/source/flattened/combination_of_choices.js'
+import { randomlyShuffle } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/source/flattened/randomly_shuffle.js'
 
+
+// TODO:
+    // help that explains negative positive terms etc
+    // import bibtex
+    // export bibtex
+
+if (Deno.args.includes("--help")) {
+    console.log(`
+risma
+    An interactive CLI tool for conducting a research literature review.
+    
+USAGE:
+    risma [options]
+
+OPTIONS:
+    --help
+        print this help
+    --cache-path
+        change where the cache is stored folder
+    `)
+}
 
 const defaultCachePath = `${FileSystem.home}/.cache/risma/`
 let options = {
@@ -66,7 +89,8 @@ openAlexFetch.cache = createStorageObject(openAlexCachePath)
     storageObject.previouslyActiveProjectPaths = storageObject.previouslyActiveProjectPaths || {}
     if (!storageObject.activeProjectPath) {
         if (await Console.askFor.yesNo(`No active project set (path to a yaml file), do you want to set one now?`)) {
-            storageObject.activeProjectPath = FileSystem.makeAbsolutePath(await askForFilePath(`What is the path to the yaml file? (if what you enter doesn't exist, I'll create it)`,))
+            clearScreen()
+            storageObject.activeProjectPath = FileSystem.makeAbsolutePath(await askForFilePath(`Start typing a filepath for the project.\nIf the path you enter doesn't exist, I'll create it as a new project\n(use right arrow to auto complete)\n\n`,))
             let name = (await Console.askFor.line(`What is a good name for this project? (empty will use date)`)) || new DateTime().date
             storageObject.previouslyActiveProjectPaths[name] = storageObject.activeProjectPath
         } else {
@@ -194,7 +218,6 @@ openAlexFetch.cache = createStorageObject(openAlexCachePath)
             accordingTo: {
                 crossref: {},
                 openAlex: {},
-                openAlex: {},
                 [searchEngineName]: each,
             },
         })))
@@ -272,7 +295,8 @@ if (import.meta.main) {
             message: "next action",
             options: [
                 "review references",
-                "gather references (search internet)",
+                "run a query (gather references)",
+                "run a multi-query",
                 "get related work",
                 "change project",
                 "modify keywords",
@@ -286,7 +310,7 @@ if (import.meta.main) {
         // in case file has been edited
         activeProject = await loadProject(storageObject.activeProjectPath)
         
-        if (whichAction == "gather references (search internet)") {
+        if (whichAction == "run a query (gather references)") {
             const searchEngineName = await selectOne({
                 message: "which engine?",
                 options: Object.keys(searchOptions),
@@ -307,6 +331,87 @@ if (import.meta.main) {
             }
             await saveProject({activeProject, path: storageObject.activeProjectPath})
             prompt(`\n\n${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
+        } else if (whichAction == "run a multi-query") {
+            console.log(`Okay Lets build a multi-query`)
+            console.log(`Ex: `)
+            console.log(`    // criteria 1 robotics`)
+            console.log(`    drone, quadruped, robot`)
+            console.log(`    // criteria 2 neuroscience`)
+            console.log(`    neural network, artificial intelligence`)
+            console.log(`multi-query:`)
+            console.log(`    - drone AND neural network`)
+            console.log(`    - drone AND artificial intelligence`)
+            console.log(`    - quadruped AND neural network`)
+            console.log(`    - quadruped AND artificial intelligence`)
+            console.log(`    - robot AND neural network`)
+            console.log(`    - robot AND artificial intelligence`)
+            console.log(`\nOkay, lets build yours`)
+            prompt(`(press enter to continue)`)
+            clearScreen()
+            console.log(`\nplease enter a comma separated list of terms and press enter\n- type the # symbol (and press enter) to stop adding lists\n- NOTE: if you use quotes or other special characters they will be passed as-is to the search engines\n`)
+            const listOfLists = []
+            listCriteria: while (true) {
+                const criteraTerms = prompt().trim()
+                if (criteraTerms.length == 0) {
+                    continue
+                }
+                if (criteraTerms == "#") {
+                    break listCriteria
+                }
+                listOfLists.push(criteraTerms.split(",").map(each=>each.trim()))
+            }
+            if (listOfLists.length == 0) {
+                console.log(red`no criteria entered`)
+                prompt(`\n(press enter to go back to main menu)\n`)
+                continue mainLoop
+            }
+            let choices = combinationOfChoices(listOfLists)
+            console.log(`\n\nTo create a good statistical distribution, I normally shuffle the combinations before searching`)
+            if (!await Console.askFor.yesNo(`Do you want to skip the random shuffle? (y/n)`)) {
+                choices = randomlyShuffle(choices)
+            }
+            let quantity = choices.length
+            clearScreen()
+            console.log(`Note: we can't do these searches in parallel because search engines will rate limit and potentially ban your IP`)
+            if (choices.length > 8) {
+                console.log(`how many combinations would you like me to search? (enter a number between 1 and ${choices.length})`)
+                quantity = await Number.prompt({
+                    message: "Number of queries to run",
+                    min: 1,
+                    max: choices.length,
+                    float: false,
+                    suggestions: [16,32,64,128].filter(each=>each<=choices.length),
+                })
+            }
+            
+            let totalNumberOfNewReferences = 0
+            let count = 0
+            for (let query of choices) {
+                count++
+                query = query.join(" AND ")
+                console.log(`\n(${count} of ${choices.length}) searching: ${query}`)
+                for (let searchEngineName of Object.keys(searchOptions)) {
+                    console.log(`    ${searchEngineName}`)
+                    const searchEngine = searchOptions[searchEngineName]
+                    const {references, newReferences, discoveryMethod} = await getSearchResults({
+                        query, 
+                        resultsPromise: searchEngine.urlToListOfResults(`${searchEngine.base}${searchEngine.searchStringToParams(query)}`), 
+                        searchEngineName,
+                        project: activeProject,
+                        otherData: {},
+                        getFullData: true,
+                        message: `searching ...`,
+                    })
+                    for (const each of newReferences.sort(referenceSorter({project: activeProject}))) {
+                        console.log(`        ${score(each, activeProject)}  ${highlightKeywords(each.title)}`)
+                    }
+                    totalNumberOfNewReferences += newReferences.length
+                    await saveProject({activeProject, path: storageObject.activeProjectPath})
+                    console.log(`    ${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}`)
+                }
+            }
+            prompt(`\n\nIn total ${cyan(totalNumberOfNewReferences)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
+            break mainLoop
         } else if (whichAction == "change project") {
             const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
             let project = await selectOne({
@@ -346,6 +451,11 @@ if (import.meta.main) {
         } else if (whichAction == "review references") {
             reviewLoop: while (true) {
                 let references = Object.values(activeProject.references)
+                if (references.length == 0) {
+                    console.log(red`no references to review`)
+                    prompt(`\n(press enter to go back to main menu)\n`)
+                    continue mainLoop
+                }
                 const statuses = Object.values(activeProject.references).map(each=>each.resumeStatus)
                 const counts = getReferenceStatusCounts()
                 

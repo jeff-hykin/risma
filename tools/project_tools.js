@@ -23,10 +23,33 @@ export const loadProject = async (path) => {
     let project
     const defaultObject = {
         settings: {
+            scoreGivers: { myScoring1: `(reference, currentScoreList, {keywords, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
+                const titleOrAbstract = reference.title.toLowerCase() + " " + (reference.abstract||"").toLowerCase().replace(/\\s+/g," ")
+                // currentScoreList[0] is most important
+                // currentScoreList[1] is a tie-breaker
+                // currentScoreList[2] is a tie-breaker tie-breaker
+                // (you can keep adding to the score list as much as you want)
+                
+                // EDIT ME
+
+                currentScoreList[0] = numberOfGoodKeywordsIn(titleOrAbstract) - numberOfBadKeywordsIn(titleOrAbstract)
+                // currentScoreList[2] = parseInt(reference.year)
+                
+                // const goodSources = [
+                //     "https://ieeexplore.ieee.org",
+                //     "https://www.science.org",
+                //     "https://www.mdpi.com",
+                //     "https://link.springer.com",
+                //     "https://linkinghub.elsevier.com",
+                // ]
+                // // "if the reference has a link that starts with one of these, give it a bonus"
+                // currentScoreList[1] = goodSources.filter(each=>reference.link?.startsWith?.(each)).length
+            }
+            `.replace(/\n            /g,"\n").trim()},
             keywords: {
-                positive: [],
-                negative: [],
-                neutral: [],
+                positive: [ "EXAMPLE POSITIVE PHRASE 1", "EXAMPLE POSITIVE PHRASE 2" ],
+                negative: [ "EXAMPLE NEGATIVE PHRASE 1" ],
+                neutral: [ "EXAMPLE NEUTRAL (will be highlighted) PHRASE 1" ],
             },
         },
         references: {},
@@ -34,6 +57,11 @@ export const loadProject = async (path) => {
     }
     project = await FileSystem.read(path) || JSON.stringify(defaultObject)
     project = yaml.parse(project)
+    project.settings = project.settings || {}
+    project.settings.keywords = project.settings?.keywords || {}
+    project.settings.keywords.positive = project.settings?.keywords?.positive || []
+    project.settings.keywords.negative = project.settings?.keywords?.negative || []
+    project.settings.keywords.neutral = project.settings?.keywords?.neutral || []
     if (!project.discoveryAttempts || !project.references) {
         console.warn(`Active project ${green(JSON.stringify(path))}\ndoesn't seem to have core fields`)
         project = defaultObject

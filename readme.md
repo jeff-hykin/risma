@@ -21,7 +21,7 @@ yq -e '[ .references.[] | ._.title ]' project.yaml
 # get all titles that are not yet reviewed
 yq -e '[ .references.[] | select(.notes.resumeStatus == "unseen|title") | [._.title, .score] ]' project.yaml
 # get the year of all works with nicknames
-yq -e '[ .references.[] | select(.notes.nickname) | [.notes.nickname, ._.year] ]' project.yaml
+yq -e '[ .references.[] | select(.notes.nickname) | { nickname: .notes.nickname, title: ._.title, year: ._.year, authorNames: ._.authorNames, doi: ._.doi, link: ._.link, pdfLink: ._.pdfLink, } ]' project.yaml
 # get all titles that have one or the other tag
 yq -e '[ .references.[] | select(.notes.keyTags | index("hasCode") or index("spiking")) | [._.title, .score] ]' project.yaml
 # get abstracts for all relevent titles

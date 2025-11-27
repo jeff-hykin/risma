@@ -205,3 +205,183 @@ Datasets:
 - Nordland summer/fall/winter/sprign
 - Oxford RobotCar
 - Fusionopolis Building Singapore
+
+
+
+
+
+Cite:
+
+
+A virtual rodent predicts the structure of neural activity across behaviours
+visual cortex as a limited resource system that self-learns an ecologically-general representation:
+        accordingTo:
+            $manuallyEntered:
+                title: null
+                doi: null
+                year: null
+                publisherFlags: null
+                authorNames: null
+                link: 'https://www.biorxiv.org/content/10.1101/2021.06.16.448730v6'
+                pdfLink: null
+                cites: null
+                citedBy: null
+                abstract: 'Studies of the mouse visual system have revealed a variety of visual brain areas that are thought to support a multitude of behavioral capacities, ranging from stimulus-reward associations, to goal-directed navigation, and object-centric discriminations. However, an overall understanding of the mouse’s visual cortex, and how it supports a range of behaviors, remains unknown. Here, we take a computational approach to help address these questions, providing a high-fidelity quantitative model of mouse visual cortex and identifying key structural and functional principles underlying that model’s success. Structurally, we find that a comparatively shallow network structure with a low-resolution input is optimal for modeling mouse visual cortex. Our main finding is functional—that models trained with task-agnostic, self-supervised objective functions based on the concept of contrastive embeddings are much better matches to mouse cortex, than models trained on supervised objectives or alternative self-supervised methods. This result is very much unlike in primates where prior work showed that the two were roughly equivalent, naturally leading us to ask the question of why these self-supervised objectives are better matches than supervised ones in mouse. To this end, we show that the self-supervised, contrastive objective builds a general-purpose visual representation that enables the system to achieve better transfer on out-of-distribution visual scene understanding and reward-based navigation tasks. Our results suggest that mouse visual cortex is a low-resolution, shallow network that makes best use of the mouse’s limited resources to create a light-weight, general-purpose visual system—in contrast to the deep, high-resolution, and more categorization-dominated visual system of primates.'
+                oldLink: 'https://doi.org/10.1101/2021.06.16.448730'
+                citationCount: null
+            crossref:
+                doi: 10.1101/2021.06.16.448730
+            openAlex:
+                doi: 'https://doi.org/10.1101/2021.06.16.448730'
+                title: Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation
+                abstract: null
+                concepts:
+                    - neural dynamics and brain function
+                    - neuroscience and neuropharmacology research
+                    - neuroinflammation and neurodegeneration mechanisms
+                    - cognitive neuroscience
+                    - cellular and molecular neuroscience
+                    - neurology
+                    - visual objects
+                    - representation
+                    - visual cortex
+                    - computer science
+                    - categorization
+                    - cognitive neuroscience of visual object recognition
+                    - artificial intelligence
+                    - machine learning
+                    - representation (politics)
+                    - object (grammar)
+                    - psychology
+                    - neuroscience
+                    - perception
+                    - political science
+                    - law
+                    - politics
+                year: 2021
+                authorNames:
+                    - Aran Nayebi
+                    - Nathan C. L. Kong
+                    - Chengxu Zhuang
+                    - Justin L. Gardner
+                    - Anthony M. Norcia
+                    - Daniel Yamins
+                link: 'https://doi.org/10.1101/2021.06.16.448730'
+                pdfLink: 'https://www.biorxiv.org/content/biorxiv/early/2022/08/14/2021.06.16.448730.full.pdf'
+                citationCount: 11
+                citedAlexIds:
+                    - 'https://openalex.org/W114517082'
+                    - 'https://openalex.org/W1437335841'
+                    - 'https://openalex.org/W1512234833'
+                    - 'https://openalex.org/W1715013381'
+                    - 'https://openalex.org/W1903029394'
+                    - 'https://openalex.org/W1970792572'
+                    - 'https://openalex.org/W1984578972'
+                    - 'https://openalex.org/W2001901429'
+                    - 'https://openalex.org/W2025520018'
+                    - 'https://openalex.org/W2032628202'
+                    - 'https://openalex.org/W2040036684'
+                    - 'https://openalex.org/W2047643928'
+                    - 'https://openalex.org/W2052515926'
+                    - 'https://openalex.org/W2058616551'
+                    - 'https://openalex.org/W2066071461'
+                    - 'https://openalex.org/W2084588382'
+                    - 'https://openalex.org/W2085989895'
+                    - 'https://openalex.org/W2092580449'
+                    - 'https://openalex.org/W2094450831'
+                    - 'https://openalex.org/W2098580305'
+                    - 'https://openalex.org/W2108598243'
+                    - 'https://openalex.org/W2116360511'
+                    - 'https://openalex.org/W2117940227'
+                    - 'https://openalex.org/W2121008432'
+                    - 'https://openalex.org/W2135238780'
+                    - 'https://openalex.org/W2143886954'
+                    - 'https://openalex.org/W2145889472'
+                    - 'https://openalex.org/W2146257965'
+                    - 'https://openalex.org/W2150412316'
+                    - 'https://openalex.org/W2156303437'
+                    - 'https://openalex.org/W2160654481'
+                    - 'https://openalex.org/W2163605009'
+                    - 'https://openalex.org/W2274405424'
+                    - 'https://openalex.org/W2286279415'
+                    - 'https://openalex.org/W2338467621'
+                    - 'https://openalex.org/W2345201999'
+                    - 'https://openalex.org/W2407986585'
+                    - 'https://openalex.org/W2412480261'
+                    - 'https://openalex.org/W2557270725'
+                    - 'https://openalex.org/W2563100679'
+                    - 'https://openalex.org/W2568734123'
+                    - 'https://openalex.org/W2569458742'
+                    - 'https://openalex.org/W2717347056'
+                    - 'https://openalex.org/W2737416093'
+                    - 'https://openalex.org/W2757910899'
+                    - 'https://openalex.org/W2785325870'
+                    - 'https://openalex.org/W2798991696'
+                    - 'https://openalex.org/W2800311957'
+                    - 'https://openalex.org/W2809940376'
+                    - 'https://openalex.org/W2811245934'
+                    - 'https://openalex.org/W2842511635'
+                    - 'https://openalex.org/W2892147425'
+                    - 'https://openalex.org/W2898929289'
+                    - 'https://openalex.org/W2949449018'
+                    - 'https://openalex.org/W2949489566'
+                    - 'https://openalex.org/W2951506741'
+                    - 'https://openalex.org/W2962867885'
+                    - 'https://openalex.org/W2963108696'
+                    - 'https://openalex.org/W2963463006'
+                    - 'https://openalex.org/W2970104209'
+                    - 'https://openalex.org/W2971293928'
+                    - 'https://openalex.org/W2972831213'
+                    - 'https://openalex.org/W2978664050'
+                    - 'https://openalex.org/W2982557070'
+                    - 'https://openalex.org/W2994737554'
+                    - 'https://openalex.org/W2998594809'
+                    - 'https://openalex.org/W3009561768'
+                    - 'https://openalex.org/W3034978746'
+                    - 'https://openalex.org/W3035524453'
+                    - 'https://openalex.org/W3048485349'
+                    - 'https://openalex.org/W3073499157'
+                    - 'https://openalex.org/W3094408775'
+                    - 'https://openalex.org/W3097116240'
+                    - 'https://openalex.org/W3107175997'
+                    - 'https://openalex.org/W3107668149'
+                    - 'https://openalex.org/W3118608800'
+                    - 'https://openalex.org/W3119948327'
+                    - 'https://openalex.org/W3132028004'
+                    - 'https://openalex.org/W3142226569'
+                    - 'https://openalex.org/W3171007011'
+                    - 'https://openalex.org/W3173685023'
+                    - 'https://openalex.org/W3193978033'
+                    - 'https://openalex.org/W3212185810'
+                    - 'https://openalex.org/W3215337369'
+                    - 'https://openalex.org/W3217316163'
+                    - 'https://openalex.org/W343636949'
+                    - 'https://openalex.org/W4284895573'
+                relatedAlexIds:
+                    - 'https://openalex.org/W4379014468'
+                    - 'https://openalex.org/W4242099210'
+                    - 'https://openalex.org/W4211183178'
+                    - 'https://openalex.org/W3197963161'
+                    - 'https://openalex.org/W2158100814'
+                    - 'https://openalex.org/W2140151361'
+                    - 'https://openalex.org/W2122540908'
+                    - 'https://openalex.org/W2101216464'
+                    - 'https://openalex.org/W2008808038'
+                    - 'https://openalex.org/W1984891974'
+                openAlexId: W3195997287
+            googleScholar:
+                title: Mouse visual cortex as a limited resource system that self-learns an ecologically-general representation
+                authorNames:
+                    - A Nayebi
+                    - NCL Kong
+                    - C Zhuang
+                pdfLink: null
+                link: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011506'
+                citationId: '2471520982509518470'
+                multiArticleId: '2471520982509518470'
+                citedByLink: 'https://scholar.google.com//scholar?cites=2471520982509518470&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                publisherInfo: 'PLOS Computational, 2023'
+                year: 2023
+                linkToCitedBy: 'https://scholar.google.com//scholar?cites=2471520982509518470&as_sdt=5,44&sciodt=0,44&hl=en&oe=ASCII'
+                citationCount: 30
+        
