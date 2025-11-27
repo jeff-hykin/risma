@@ -26,7 +26,6 @@ import { randomlyShuffle } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/so
 import { bibtexToRef } from "./tools/bibtex_to_ref.js"
 
 // TODO:
-    // get
     // export bibtex
 
 if (Deno.args.includes("--help")) {
