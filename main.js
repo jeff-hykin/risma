@@ -2,7 +2,7 @@ import { zip, enumerate, count, permute, combinations, wrapAroundGet } from "htt
 // import { FileSystem } from "https://deno.land/x/quickr@0.6.51/main/file_system.js"
 // import $ from "https://deno.land/x/dax@0.39.2/mod.ts"
 import { capitalize, indent, toCamelCase, digitsToEnglishArray, toPascalCase, toKebabCase, toSnakeCase, toRepresentation, toString, regex, findAll, iterativelyFindAll, escapeRegexMatch, escapeRegexReplace, extractFirst, isValidIdentifier, removeCommonPrefix, didYouMean } from "https://deno.land/x/good@1.13.5.0/string.js"
-import { FileSystem, glob } from "https://deno.land/x/quickr@0.7.6/main/file_system.js"
+import { FileSystem, glob } from "https://deno.land/x/quickr@0.8.6/main/file_system.js"
 import { Console, clearAnsiStylesFrom, black, white, red, green, blue, yellow, cyan, magenta, lightBlack, lightWhite, lightRed, lightGreen, lightBlue, lightYellow, lightMagenta, lightCyan, blackBackground, whiteBackground, redBackground, greenBackground, blueBackground, yellowBackground, magentaBackground, cyanBackground, lightBlackBackground, lightRedBackground, lightGreenBackground, lightYellowBackground, lightBlueBackground, lightMagentaBackground, lightCyanBackground, lightWhiteBackground, bold, reset, italic, underline, inverse, strikethrough, gray, grey, lightGray, lightGrey, grayBackground, greyBackground, lightGrayBackground, lightGreyBackground, } from "https://deno.land/x/quickr@0.7.6/main/console.js"
 import { OperatingSystem } from "https://deno.land/x/quickr@0.7.6/main/operating_system.js"
 // import * as yaml from "https://deno.land/std@0.168.0/encoding/yaml.ts"
@@ -23,6 +23,7 @@ import { Reference } from "./tools/reference.js"
 import { loadProject, saveProject, score, referenceSorter, sortReferencesByDate, rateDiscoveryAttempts } from "./tools/project_tools.js"
 import { combinationOfChoices } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/source/flattened/combination_of_choices.js'
 import { randomlyShuffle } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/source/flattened/randomly_shuffle.js'
+import { bibtexToRef } from "./tools/bibtex_to_ref.js"
 
 
 // TODO:
@@ -315,6 +316,7 @@ if (import.meta.main) {
                 "review references",
                 "run a query (gather references)",
                 "run a multi-query",
+                "import bibtex",
                 "get related work",
                 "change project",
                 "modify keywords",
@@ -430,6 +432,70 @@ if (import.meta.main) {
             }
             prompt(`\n\nIn total ${cyan(totalNumberOfNewReferences)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
             break mainLoop
+        } else if (whichAction == "import bibtex") {
+            let bibtextPath = await askForFilePath(`What is the path to the bibtex file? (paste or start typing the path)`)
+            if (bibtextPath.startsWith("'/") && bibtextPath.endsWith("'")) {
+                bibtextPath = bibtextPath.slice(1,-1)
+            }
+            const bibtextString = await FileSystem.read(bibtextPath)
+            if (!bibtextString) {
+                console.log(`no bibtext found at ${bibtextPath}`)
+            } else {
+                let referencesList
+                try {
+                    referencesList = bibtexToRef(bibtextString)
+                } catch (error) {
+                    console.warn(`Looks like I'm unable to parse this bibtex file, sorry about that`)
+                    console.warn(`Here's the error:`)
+                    console.warn(error)
+                    console.warn(error?.stack)
+                    prompt(`(press enter to continue)`)
+                    continue mainLoop
+                }
+                clearScreen()
+                const note = prompt(`Type something here to add a note to the import (ex: search engine name / query that maybe generated the bibtex)\npress enter when done:\n`).trim()
+                const discoveryMethod = new DiscoveryMethod({
+                    query: "",
+                    dateTime: new Date().toISOString(),
+                    searchEngine: "",
+                    bibtextImport: FileSystem.makeRelativePath({from: Deno.cwd(), to: bibtextPath}),
+                    note,
+                })
+                const references = referencesList.filter(each=>each.title).map(each=>new Reference({
+                    title: each.title,
+                    notes: {
+                        resumeStatus: "unseen|title",
+                        comment: "",
+                        reasonsRelevant: [],
+                        reasonsNotRelevant: [],
+                        customKeywords: [],
+                        discoveryMethod: { dateTime: discoveryMethod.dateTime, originalQuery: discoveryMethod.query, searchEngine: discoveryMethod.searchEngine },
+                        events: {},
+                    },
+                    accordingTo: {
+                        crossref: {},
+                        openAlex: {},
+                        'bibtex': each,
+                    },
+                }))
+
+                let newReferences = []
+                await Promise.all(references.map(async each=>{
+                    const { hadBeenSeenBefore } = await addReference(each, {project: activeProject, getFullData: false})
+                    discoveryMethod.referenceLinks.push({
+                        hadBeenSeenBefore,
+                        title: each.title,
+                        // link to object directly rather than spread so that yaml will make it a anchor to it
+                        link: each,
+                    })
+                    if (!hadBeenSeenBefore) {
+                        newReferences.push(each)
+                    }
+                }))
+                activeProject.discoveryAttempts.push(discoveryMethod)
+                console.log(`added ${cyan(newReferences.length)} new references`)
+            }
+            prompt(`\n\n(press enter to continue)`)
         } else if (whichAction == "change project") {
             const options = ["<new project>"].concat(Object.keys(storageObject.previouslyActiveProjectPaths).map(each=>`- ${each}`))
             let project = await selectOne({
@@ -511,7 +577,7 @@ if (import.meta.main) {
                             }
                             const maxTagLength = 23
                             if (keyName == "n") {
-                                console.log(`\r${cyan`⏺  skipped`}`.padEnd(maxTagLength), message)
+                                console.log(`\r${cyan`⏺  skipped `}`.padEnd(maxTagLength), message)
                                 continue nextReferenceLoop
                             } else {
                                 if (keyName == "g") {

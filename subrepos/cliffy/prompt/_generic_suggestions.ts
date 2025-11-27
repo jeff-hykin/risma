@@ -241,8 +241,12 @@ export abstract class GenericSuggestions<TValue, TRawValue>
     const path = await Deno.stat(input)
       .then((file) => file.isDirectory ? input : dirname(input))
       .catch(() => dirname(input));
-
-    return await listDir(path, this.settings.files);
+    
+    try {
+        return await listDir(path, this.settings.files);
+    } catch (error) {
+        return [];
+    }
   }
 
   protected async getSuggestions(): Promise<Array<string | number>> {
