@@ -410,30 +410,35 @@ if (import.meta.main) {
                 break
             }
         } else if (whichAction == "run a multi-query") {
-            console.log(`Okay Lets build a multi-query`)
-            console.log(`Ex: `)
-            console.log(`    // criteria 1 robotics`)
-            console.log(`    drone, quadruped, robot`)
-            console.log(`    // criteria 2 neuroscience`)
-            console.log(`    neural network, artificial intelligence`)
-            console.log(`multi-query:`)
-            console.log(`    - drone AND neural network`)
-            console.log(`    - drone AND artificial intelligence`)
-            console.log(`    - quadruped AND neural network`)
-            console.log(`    - quadruped AND artificial intelligence`)
-            console.log(`    - robot AND neural network`)
-            console.log(`    - robot AND artificial intelligence`)
-            console.log(`\nOkay, lets build yours`)
-            prompt(`(press enter to continue)`)
             clearScreen()
-            console.log(`\nplease enter a comma separated list of terms and press enter\n- type the # symbol (and press enter) to stop adding lists\n- NOTE: if you use quotes or other special characters they will be passed as-is to the search engines\n`)
+            console.log(`Lets build a multi-query. For example:`)
+            console.log(dim`If you want your results to include both:`)
+            console.log(dim`    - criteria 1: robotics`)
+            console.log(dim`    - criteria 2: neuroscience`)
+            console.log(dim`What you would type:`)
+            console.log(dim`    drone, quadruped, robot`,`${reset}${cyan.dim(`<enter> // these represent robotics`)}`)
+            console.log(dim`    dendrite, synapse`, `${reset}${cyan.dim(`<enter> // these represent neuroscience`)}`)
+            console.log(dim`    `,`${reset}${cyan.dim(`<enter>`)}`)
+            console.log(dim`That would generate (and run) these queries on`,`${JSON.stringify(Object.keys(searchOptions))}:`)
+            console.log(dim`    "drone AND dendrite"`)
+            console.log(dim`    "drone AND synapse"`)
+            console.log(dim`    "quadruped AND dendrite"`)
+            console.log(dim`    "quadruped AND synapse"`)
+            console.log(dim`    "robot AND dendrite"`)
+            console.log(dim`    "robot AND synapse"`)
+            console.log(`${reset}\nOkay, lets build your multi-query`)
+            let response = prompt(dim`(press enter to continue, type q+<enter> to quit)`)
+            if (response == "q") {
+                continue mainLoop
+            }
+            clearScreen()
+            console.log(`\nEnter a comma separated list of terms and press enter\n- press enter on an empty line to stop adding lists\n- NOTE: if you use quotes or other special characters they will be passed as-is to the search engines\n`)
+            console.log(reset)
             const listOfLists = []
+            let criteriaCount = 0
             listCriteria: while (true) {
-                const criteraTerms = prompt().trim()
+                const criteraTerms = prompt(`terms for criteria ${++criteriaCount}: `).trim()
                 if (criteraTerms.length == 0) {
-                    continue
-                }
-                if (criteraTerms == "#") {
                     break listCriteria
                 }
                 listOfLists.push(criteraTerms.split(",").map(each=>each.trim()))
@@ -443,14 +448,24 @@ if (import.meta.main) {
                 prompt(`\n(press enter to go back to main menu)\n`)
                 continue mainLoop
             }
-            let choices = combinationOfChoices(listOfLists)
-            console.log(`\n\nTo create a good statistical distribution, I normally shuffle the combinations before searching`)
-            if (!await Console.askFor.yesNo(`Do you want to skip the random shuffle? (y/n)`)) {
-                choices = randomlyShuffle(choices)
+            let choices = [...combinationOfChoices(listOfLists)]
+            const previewLength = 5
+            console.log(`\n${choices.length} queries generated. First ${previewLength}:`)
+            console.log(yellow(choices.slice(0,previewLength).map(each=>each.join(" AND ")).map(each=>`\n    ${each}`).join("")))
+            if (choices.length > previewLength) {
+                console.log(`    etc...`)
+            }
+            console.log(``)
+            if (await Console.askFor.yesNo(`Randomly shuffle queries before performing search? (highly recommended) [y/n]`)) {
+                randomlyShuffle(choices)
             }
             let quantity = choices.length
             clearScreen()
-            console.log(`Note: we can't do these searches in parallel because search engines will rate limit and potentially ban your IP`)
+            console.log(`Note1: we can't do these searches in parallel because search engines will rate limit (and potentially ban) your IP`)
+            console.log(`Note2: even if this crashes halfway through, all the intermediate results will be saved and you can see which results came from what query`)
+            console.log(`Note3: google scholar can be picky. If seeing a wait but no response, switch your VPN, or try again later, or on a different physical network`)
+            console.log(``)
+            prompt(dim(`press enter to start the search`))
             if (choices.length > 8) {
                 console.log(`how many combinations would you like me to search? (enter a number between 1 and ${choices.length})`)
                 quantity = await Number.prompt({
@@ -467,7 +482,7 @@ if (import.meta.main) {
             for (let query of choices) {
                 count++
                 query = query.join(" AND ")
-                console.log(`\n(${count} of ${choices.length}) searching: ${query}`)
+                console.log(yellow(`\n(${count} of ${choices.length}) searching: ${query}`))
                 for (let searchEngineName of Object.keys(searchOptions)) {
                     console.log(`    ${searchEngineName}`)
                     const searchEngine = searchOptions[searchEngineName]
@@ -485,11 +500,11 @@ if (import.meta.main) {
                     }
                     totalNumberOfNewReferences += newReferences.length
                     await saveProject({activeProject, path: storageObject.activeProjectPath})
-                    console.log(`    ${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}`)
+                    console.log(`    ${cyan(newReferences.length)} new references (${references.length} search results)\n         check them out under ${cyan("review references")} -> ${cyan("unseen|title")}`)
                 }
             }
-            prompt(`\n\nIn total ${cyan(totalNumberOfNewReferences)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
-            break mainLoop
+            prompt(`\n\nIn total ${cyan(totalNumberOfNewReferences)} new references\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
+            continue mainLoop
         } else if (whichAction == "import bibtex") {
             let bibtextPath = await askForFilePath(`What is the path to the bibtex file? (paste or start typing the path)`)
             if (bibtextPath.startsWith("'/") && bibtextPath.endsWith("'")) {
