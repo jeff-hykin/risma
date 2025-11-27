@@ -312,8 +312,8 @@ if (import.meta.main) {
             message: "next action",
             options: [
                 "review references",
-                "find",
-                "run a query (gather references)",
+                "find (within this project)",
+                "search (search engine scrape)",
                 "run a multi-query",
                 "import bibtex",
                 "get related work",
@@ -329,7 +329,7 @@ if (import.meta.main) {
         // in case file has been edited
         activeProject = await loadProject(storageObject.activeProjectPath)
         
-        if (whichAction == "run a query (gather references)") {
+        if (whichAction == "search (search engine scrape)") {
             const searchEngineName = await selectOne({
                 message: "which engine?",
                 options: Object.keys(searchOptions),
@@ -350,7 +350,7 @@ if (import.meta.main) {
             }
             await saveProject({activeProject, path: storageObject.activeProjectPath})
             prompt(`\n\n${cyan(newReferences.length)} new references (${references.length} search results)\ncheck them out under ${cyan("review references")} -> ${cyan("unseen|title")}\n(press enter to continue)\n`)
-        } else if (whichAction == "find") {
+        } else if (whichAction == "find (within this project)") {
             clearScreen()
             console.log(`\n\nNOTE: when you press enter I will search the abstract, title, and notes.nickname\nI only auto-complete on title\nuse \\b for word bounds (ex: test\\b will not match "tests" but will match "retest")\n\n`)
             let searchQuery = await selectOne({
