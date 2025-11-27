@@ -1,15 +1,35 @@
-
-`run/main.ps1` to start the CLI
-
-<!--                                                          -->
-<!--                                                          -->
-<!-- DO NOT EDIT ME; EDIT ./build_helper/readme_workaround.md -->
-<!--                                                          -->
-<!--                                                          -->
-
 ## What is this?
 
-under construction research lit review tool
+The alpha version of a tool for conducting a research literature review.
+
+
+## How do I use it?
+
+
+### Install 
+
+```sh
+# install deno
+# for Linux/MacOS run:
+curl -fsSL https://deno.land/install.sh|sh
+# for Windows:
+irm https://deno.land/install.ps1 | iex
+    
+# install risma
+deno install -n risma -Afgr https://raw.githubusercontent.com/jeff-hykin/risma/master/main.js
+```
+
+### Use
+
+```
+risma 
+# everything is interactive (just run that command)
+```
+
+
+## Extracting information
+
+Everything (and I mean everything) is stored inside the project yaml file. While you can always write a program or open the file yourself manually, there's a little tool called [yq](https://github.com/mikefarah/yq) (based on jq) that can quickly extract all kinds of stuff. Here are some examples:
 
 ```sh
 # 
@@ -32,9 +52,4 @@ yq -e '[ .references.[] | select(.notes.resumeStatus == "super-relevent|abstract
 yq -e '[ .references.[] | select(.notes.resumeStatus == "super-relevent|abstract") | [._.title, ._.year ] ] | sort_by(.[1])' project.yaml
 # find all searches and sort by year
 yq -e '[ .discoveryAttempts.[] | select(.query == "ecological affordance based object perception machine learning") | select(.yearRange) | [.yearRange[0], .score ] ] | sort_by(.[1])' project.yaml
-
-# 
-# run main
-# 
-~/.deno/1.43.3/bin/deno run --no-lock -A ./main.js
 ```
