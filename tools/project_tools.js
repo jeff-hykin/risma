@@ -23,6 +23,11 @@ export const loadProject = async (path) => {
     let project
     const defaultObject = {
         settings: {
+            keywords: {
+                positive: [ "EXAMPLE POSITIVE PHRASE 1", "EXAMPLE POSITIVE PHRASE 2" ],
+                negative: [ "EXAMPLE NEGATIVE PHRASE 1" ],
+                neutral: [ "EXAMPLE NEUTRAL (will be highlighted) PHRASE 1" ],
+            },
             scoreGivers: { myScoring1: `(reference, currentScoreList, {keywords, numberOfGoodKeywordsIn, numberOfBadKeywordsIn, numberOfNeutralKeywordsIn})=>{
                 const titleOrAbstract = reference.title.toLowerCase() + " " + (reference.abstract||"").toLowerCase().replace(/\\s+/g," ")
                 // currentScoreList[0] is most important
@@ -46,11 +51,6 @@ export const loadProject = async (path) => {
                 // currentScoreList[1] = goodSources.filter(each=>reference.link?.startsWith?.(each)).length
             }
             `.replace(/\n            /g,"\n").trim()},
-            keywords: {
-                positive: [ "EXAMPLE POSITIVE PHRASE 1", "EXAMPLE POSITIVE PHRASE 2" ],
-                negative: [ "EXAMPLE NEGATIVE PHRASE 1" ],
-                neutral: [ "EXAMPLE NEUTRAL (will be highlighted) PHRASE 1" ],
-            },
         },
         references: {},
         discoveryAttempts: [],

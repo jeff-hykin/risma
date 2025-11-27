@@ -26,7 +26,6 @@ import { randomlyShuffle } from 'https://esm.sh/gh/jeff-hykin/good-js@06a5077/so
 
 
 // TODO:
-    // help that explains negative positive terms etc
     // import bibtex
     // export bibtex
 
@@ -128,7 +127,7 @@ openAlexFetch.cache = createStorageObject(openAlexCachePath)
     function showProjectStatus() {
         const counts = getReferenceStatusCounts()
         clearScreen()
-        console.log(green`project summary`)
+        console.log(green`project summary: ${FileSystem.makeRelativePath({ from: Deno.cwd(), to: storageObject.activeProjectPath })}`)
         console.log(green`------------------------------------------`)
         console.log(cyan(`${(yaml.stringify({
             references: {
@@ -289,6 +288,25 @@ export const main = {
 }
 
 if (import.meta.main) {
+    if (activeProject.settings?.keywords?.negative?.length == 1 && activeProject.settings.keywords.negative[0] == "EXAMPLE NEGATIVE PHRASE 1") {
+        console.log(`
+        
+
+
+        Let me help you get started!
+        - Open up ${JSON.stringify(storageObject.activeProjectPath)}
+        - Add some positive keywords (you can change them later)
+        - Now take a look at the scoreGiver
+        - Your scoreGiver is a function that lets you ranks stuff however you want (its a javascript function)
+        - NOTE: this message will stop popping up as soon as you get rid of "EXAMPLE NEGATIVE PHRASE 1"
+        - Think of this tool a literal form of something like A* search, and that function is your heuristic
+
+
+        Inside that yaml file will be every reference you've ever added to the project and every discovery attempt you've made
+
+        `)
+        prompt(`\n\n(press enter to continue)\n`)
+    }
     mainLoop: while (true) {
         showProjectStatus()
         const whichAction = await selectOne({
